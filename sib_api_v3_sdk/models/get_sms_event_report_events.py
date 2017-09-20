@@ -151,7 +151,7 @@ class GetSmsEventReportEvents(object):
     def event(self):
         """
         Gets the event of this GetSmsEventReportEvents.
-        Event which occured
+        Event which occurred
 
         :return: The event of this GetSmsEventReportEvents.
         :rtype: str
@@ -162,7 +162,7 @@ class GetSmsEventReportEvents(object):
     def event(self, event):
         """
         Sets the event of this GetSmsEventReportEvents.
-        Event which occured
+        Event which occurred
 
         :param event: The event of this GetSmsEventReportEvents.
         :type: str
@@ -182,7 +182,7 @@ class GetSmsEventReportEvents(object):
     def reason(self):
         """
         Gets the reason of this GetSmsEventReportEvents.
-        Reason of bounce (only availble if the event is hardbounce or softbounce)
+        Reason of bounce (only available if the event is hardbounce or softbounce)
 
         :return: The reason of this GetSmsEventReportEvents.
         :rtype: str
@@ -193,7 +193,7 @@ class GetSmsEventReportEvents(object):
     def reason(self, reason):
         """
         Sets the reason of this GetSmsEventReportEvents.
-        Reason of bounce (only availble if the event is hardbounce or softbounce)
+        Reason of bounce (only available if the event is hardbounce or softbounce)
 
         :param reason: The reason of this GetSmsEventReportEvents.
         :type: str
