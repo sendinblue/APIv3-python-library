@@ -184,7 +184,7 @@ class GetEmailEventReportEvents(object):
     def event(self):
         """
         Gets the event of this GetEmailEventReportEvents.
-        Event which occured
+        Event which occurred
 
         :return: The event of this GetEmailEventReportEvents.
         :rtype: str
@@ -195,7 +195,7 @@ class GetEmailEventReportEvents(object):
     def event(self, event):
         """
         Sets the event of this GetEmailEventReportEvents.
-        Event which occured
+        Event which occurred
 
         :param event: The event of this GetEmailEventReportEvents.
         :type: str
@@ -215,7 +215,7 @@ class GetEmailEventReportEvents(object):
     def reason(self):
         """
         Gets the reason of this GetEmailEventReportEvents.
-        Reason of bounce (only availble if the event is hardbounce or softbounce)
+        Reason of bounce (only available if the event is hardbounce or softbounce)
 
         :return: The reason of this GetEmailEventReportEvents.
         :rtype: str
@@ -226,7 +226,7 @@ class GetEmailEventReportEvents(object):
     def reason(self, reason):
         """
         Sets the reason of this GetEmailEventReportEvents.
-        Reason of bounce (only availble if the event is hardbounce or softbounce)
+        Reason of bounce (only available if the event is hardbounce or softbounce)
 
         :param reason: The reason of this GetEmailEventReportEvents.
         :type: str
@@ -265,7 +265,7 @@ class GetEmailEventReportEvents(object):
     def ip(self):
         """
         Gets the ip of this GetEmailEventReportEvents.
-        IP from which the user has opened the email or clicked on the link (only availble if the event is opened or clicks)
+        IP from which the user has opened the email or clicked on the link (only available if the event is opened or clicks)
 
         :return: The ip of this GetEmailEventReportEvents.
         :rtype: str
@@ -276,7 +276,7 @@ class GetEmailEventReportEvents(object):
     def ip(self, ip):
         """
         Sets the ip of this GetEmailEventReportEvents.
-        IP from which the user has opened the email or clicked on the link (only availble if the event is opened or clicks)
+        IP from which the user has opened the email or clicked on the link (only available if the event is opened or clicks)
 
         :param ip: The ip of this GetEmailEventReportEvents.
         :type: str
@@ -288,7 +288,7 @@ class GetEmailEventReportEvents(object):
     def link(self):
         """
         Gets the link of this GetEmailEventReportEvents.
-        The link which is sent to the user (only availble if the event is requests or opened or clicks)
+        The link which is sent to the user (only available if the event is requests or opened or clicks)
 
         :return: The link of this GetEmailEventReportEvents.
         :rtype: str
@@ -299,7 +299,7 @@ class GetEmailEventReportEvents(object):
     def link(self, link):
         """
         Sets the link of this GetEmailEventReportEvents.
-        The link which is sent to the user (only availble if the event is requests or opened or clicks)
+        The link which is sent to the user (only available if the event is requests or opened or clicks)
 
         :param link: The link of this GetEmailEventReportEvents.
         :type: str
