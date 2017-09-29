@@ -154,7 +154,7 @@ class SendersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str sender_id: Id of the sender (required)
+        :param int sender_id: Id of the sender (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -179,7 +179,7 @@ class SendersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str sender_id: Id of the sender (required)
+        :param int sender_id: Id of the sender (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -354,7 +354,7 @@ class SendersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str sender_id: Id of the sender (required)
+        :param int sender_id: Id of the sender (required)
         :return: GetIpsFromSender
                  If the method is called asynchronously,
                  returns the request thread.
@@ -379,7 +379,7 @@ class SendersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str sender_id: Id of the sender (required)
+        :param int sender_id: Id of the sender (required)
         :return: GetIpsFromSender
                  If the method is called asynchronously,
                  returns the request thread.
@@ -563,7 +563,7 @@ class SendersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str sender_id: Id of the sender (required)
+        :param int sender_id: Id of the sender (required)
         :param UpdateSender sender: sender's name
         :return: None
                  If the method is called asynchronously,
@@ -589,7 +589,7 @@ class SendersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str sender_id: Id of the sender (required)
+        :param int sender_id: Id of the sender (required)
         :param UpdateSender sender: sender's name
         :return: None
                  If the method is called asynchronously,

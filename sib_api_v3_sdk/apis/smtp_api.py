@@ -382,7 +382,7 @@ class SMTPApi(object):
         :param str event: Filter the report for a specific event type
         :param str tags: Filter the report for tags (serialized and urlencoded array)
         :param str message_id: Filter on a specific message id
-        :param str template_id: Filter on a specific template id
+        :param int template_id: Filter on a specific template id
         :return: GetEmailEventReport
                  If the method is called asynchronously,
                  returns the request thread.
@@ -416,7 +416,7 @@ class SMTPApi(object):
         :param str event: Filter the report for a specific event type
         :param str tags: Filter the report for tags (serialized and urlencoded array)
         :param str message_id: Filter on a specific message id
-        :param str template_id: Filter on a specific template id
+        :param int template_id: Filter on a specific template id
         :return: GetEmailEventReport
                  If the method is called asynchronously,
                  returns the request thread.
@@ -635,7 +635,7 @@ class SMTPApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str template_id: id of the template (required)
+        :param int template_id: id of the template (required)
         :return: GetSmtpTemplateOverview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -660,7 +660,7 @@ class SMTPApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str template_id: id of the template (required)
+        :param int template_id: id of the template (required)
         :return: GetSmtpTemplateOverview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -850,7 +850,7 @@ class SMTPApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str template_id: Id of the template (required)
+        :param int template_id: Id of the template (required)
         :param SendEmail send_email: (required)
         :return: SendTemplateEmail
                  If the method is called asynchronously,
@@ -876,7 +876,7 @@ class SMTPApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str template_id: Id of the template (required)
+        :param int template_id: Id of the template (required)
         :param SendEmail send_email: (required)
         :return: SendTemplateEmail
                  If the method is called asynchronously,
@@ -961,7 +961,7 @@ class SMTPApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str template_id: Id of the template (required)
+        :param int template_id: Id of the template (required)
         :param SendTestEmail send_test_email: (required)
         :return: None
                  If the method is called asynchronously,
@@ -987,7 +987,7 @@ class SMTPApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str template_id: Id of the template (required)
+        :param int template_id: Id of the template (required)
         :param SendTestEmail send_test_email: (required)
         :return: None
                  If the method is called asynchronously,
@@ -1176,7 +1176,7 @@ class SMTPApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str template_id: id of the template (required)
+        :param int template_id: id of the template (required)
         :param UpdateSmtpTemplate smtp_template: values to update in smtp template (required)
         :return: None
                  If the method is called asynchronously,
@@ -1202,7 +1202,7 @@ class SMTPApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str template_id: id of the template (required)
+        :param int template_id: id of the template (required)
         :param UpdateSmtpTemplate smtp_template: values to update in smtp template (required)
         :return: None
                  If the method is called asynchronously,

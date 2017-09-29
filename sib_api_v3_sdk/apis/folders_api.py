@@ -40,7 +40,7 @@ class FoldersApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def create_folder(self, name, **kwargs):
+    def create_folder(self, create_folder, **kwargs):
         """
         Create a folder
         This method makes a synchronous HTTP request by default. To make an
@@ -49,23 +49,23 @@ class FoldersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_folder(name, callback=callback_function)
+        >>> thread = api.create_folder(create_folder, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CreaUpdateFolder name: Name of the folder (required)
+        :param CreateUpdateFolder create_folder: Name of the folder (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_folder_with_http_info(name, **kwargs)
+            return self.create_folder_with_http_info(create_folder, **kwargs)
         else:
-            (data) = self.create_folder_with_http_info(name, **kwargs)
+            (data) = self.create_folder_with_http_info(create_folder, **kwargs)
             return data
 
-    def create_folder_with_http_info(self, name, **kwargs):
+    def create_folder_with_http_info(self, create_folder, **kwargs):
         """
         Create a folder
         This method makes a synchronous HTTP request by default. To make an
@@ -74,17 +74,17 @@ class FoldersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_folder_with_http_info(name, callback=callback_function)
+        >>> thread = api.create_folder_with_http_info(create_folder, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CreaUpdateFolder name: Name of the folder (required)
+        :param CreateUpdateFolder create_folder: Name of the folder (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name']
+        all_params = ['create_folder']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -99,9 +99,9 @@ class FoldersApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `create_folder`")
+        # verify the required parameter 'create_folder' is set
+        if ('create_folder' not in params) or (params['create_folder'] is None):
+            raise ValueError("Missing the required parameter `create_folder` when calling `create_folder`")
 
 
         collection_formats = {}
@@ -116,8 +116,8 @@ class FoldersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'name' in params:
-            body_params = params['name']
+        if 'create_folder' in params:
+            body_params = params['create_folder']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['application/json'])
@@ -157,7 +157,7 @@ class FoldersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -182,7 +182,7 @@ class FoldersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -261,7 +261,7 @@ class FoldersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: id of the folder (required)
+        :param int folder_id: id of the folder (required)
         :return: GetFolder
                  If the method is called asynchronously,
                  returns the request thread.
@@ -286,7 +286,7 @@ class FoldersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: id of the folder (required)
+        :param int folder_id: id of the folder (required)
         :return: GetFolder
                  If the method is called asynchronously,
                  returns the request thread.
@@ -365,7 +365,7 @@ class FoldersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetFolderLists
@@ -392,7 +392,7 @@ class FoldersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetFolderLists
@@ -579,7 +579,7 @@ class FoldersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def update_folder(self, folder_id, name, **kwargs):
+    def update_folder(self, folder_id, update_folder, **kwargs):
         """
         Update a contact folder
         This method makes a synchronous HTTP request by default. To make an
@@ -588,24 +588,24 @@ class FoldersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_folder(folder_id, name, callback=callback_function)
+        >>> thread = api.update_folder(folder_id, update_folder, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
-        :param CreaUpdateFolder name: Name of the folder (required)
+        :param int folder_id: Id of the folder (required)
+        :param CreateUpdateFolder update_folder: Name of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.update_folder_with_http_info(folder_id, name, **kwargs)
+            return self.update_folder_with_http_info(folder_id, update_folder, **kwargs)
         else:
-            (data) = self.update_folder_with_http_info(folder_id, name, **kwargs)
+            (data) = self.update_folder_with_http_info(folder_id, update_folder, **kwargs)
             return data
 
-    def update_folder_with_http_info(self, folder_id, name, **kwargs):
+    def update_folder_with_http_info(self, folder_id, update_folder, **kwargs):
         """
         Update a contact folder
         This method makes a synchronous HTTP request by default. To make an
@@ -614,18 +614,18 @@ class FoldersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_folder_with_http_info(folder_id, name, callback=callback_function)
+        >>> thread = api.update_folder_with_http_info(folder_id, update_folder, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
-        :param CreaUpdateFolder name: Name of the folder (required)
+        :param int folder_id: Id of the folder (required)
+        :param CreateUpdateFolder update_folder: Name of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['folder_id', 'name']
+        all_params = ['folder_id', 'update_folder']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -643,9 +643,9 @@ class FoldersApi(object):
         # verify the required parameter 'folder_id' is set
         if ('folder_id' not in params) or (params['folder_id'] is None):
             raise ValueError("Missing the required parameter `folder_id` when calling `update_folder`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `update_folder`")
+        # verify the required parameter 'update_folder' is set
+        if ('update_folder' not in params) or (params['update_folder'] is None):
+            raise ValueError("Missing the required parameter `update_folder` when calling `update_folder`")
 
 
         collection_formats = {}
@@ -662,8 +662,8 @@ class FoldersApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'name' in params:
-            body_params = params['name']
+        if 'update_folder' in params:
+            body_params = params['update_folder']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['application/json'])

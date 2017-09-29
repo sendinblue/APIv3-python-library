@@ -87,7 +87,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi()
-campaign_id = 'campaign_id_example' # str | id of the SMS campaign
+campaign_id = 789 # int | id of the SMS campaign
 
 try: 
     # Delete the SMS campaign
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| id of the SMS campaign | 
+ **campaign_id** | **int**| id of the SMS campaign | 
 
 ### Return type
 
@@ -137,7 +137,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi()
-campaign_id = 'campaign_id_example' # str | id of the SMS campaign
+campaign_id = 789 # int | id of the SMS campaign
 get_sms_campaign = sib_api_v3_sdk.GetSmsCampaign() # GetSmsCampaign | Values to update an SMS Campaign
 
 try: 
@@ -152,7 +152,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| id of the SMS campaign | 
+ **campaign_id** | **int**| id of the SMS campaign | 
  **get_sms_campaign** | [**GetSmsCampaign**](GetSmsCampaign.md)| Values to update an SMS Campaign | 
 
 ### Return type
@@ -247,7 +247,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi()
-campaign_id = 'campaign_id_example' # str | id of the campaign
+campaign_id = 789 # int | id of the campaign
 recipient_export = sib_api_v3_sdk.RequestSMSRecipientExport() # RequestSMSRecipientExport | Values to send for a recipient export request (optional)
 
 try: 
@@ -262,7 +262,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| id of the campaign | 
+ **campaign_id** | **int**| id of the campaign | 
  **recipient_export** | [**RequestSMSRecipientExport**](RequestSMSRecipientExport.md)| Values to send for a recipient export request | [optional] 
 
 ### Return type
@@ -300,7 +300,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi()
-campaign_id = 'campaign_id_example' # str | id of the campaign
+campaign_id = 789 # int | id of the campaign
 
 try: 
     # Send your SMS campaign immediately
@@ -313,7 +313,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| id of the campaign | 
+ **campaign_id** | **int**| id of the campaign | 
 
 ### Return type
 
@@ -352,7 +352,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi()
-campaign_id = 'campaign_id_example' # str | id of the campaign
+campaign_id = 789 # int | id of the campaign
 send_report = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
 
 try: 
@@ -366,7 +366,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| id of the campaign | 
+ **campaign_id** | **int**| id of the campaign | 
  **send_report** | [**SendReport**](SendReport.md)| Values for send a report | 
 
 ### Return type
@@ -404,7 +404,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi()
-campaign_id = 'campaign_id_example' # str | Id of the SMS campaign
+campaign_id = 789 # int | Id of the SMS campaign
 send_test_sms = sib_api_v3_sdk.SendTestSms() # SendTestSms | Mobile number to which send the test
 
 try: 
@@ -418,7 +418,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the SMS campaign | 
+ **campaign_id** | **int**| Id of the SMS campaign | 
  **send_test_sms** | [**SendTestSms**](SendTestSms.md)| Mobile number to which send the test | 
 
 ### Return type
@@ -456,7 +456,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi()
-campaign_id = 'campaign_id_example' # str | id of the SMS campaign
+campaign_id = 789 # int | id of the SMS campaign
 update_sms_campaign = sib_api_v3_sdk.UpdateSmsCampaign() # UpdateSmsCampaign | Values to update an SMS Campaign
 
 try: 
@@ -470,7 +470,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| id of the SMS campaign | 
+ **campaign_id** | **int**| id of the SMS campaign | 
  **update_sms_campaign** | [**UpdateSmsCampaign**](UpdateSmsCampaign.md)| Values to update an SMS Campaign | 
 
 ### Return type
@@ -508,7 +508,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi()
-campaign_id = 'campaign_id_example' # str | id of the campaign
+campaign_id = 789 # int | id of the campaign
 status = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign.
 
 try: 
@@ -522,7 +522,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| id of the campaign | 
+ **campaign_id** | **int**| id of the campaign | 
  **status** | [**UpdateCampaignStatus**](UpdateCampaignStatus.md)| Status of the campaign. | 
 
 ### Return type

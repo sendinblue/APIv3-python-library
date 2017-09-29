@@ -35,7 +35,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi()
-child_id = 56 # int | id of reseller's child
+child_id = 789 # int | id of reseller's child
 add_credits = sib_api_v3_sdk.AddCredits() # AddCredits | Values to post to add credit to a specific child account
 
 try: 
@@ -88,7 +88,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi()
-child_id = 56 # int | id of reseller's child
+child_id = 789 # int | id of reseller's child
 ip_id = sib_api_v3_sdk.ManageIp() # ManageIp | IP's id
 
 try: 
@@ -191,7 +191,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi()
-child_id = 56 # int | id of reseller's child
+child_id = 789 # int | id of reseller's child
 
 try: 
     # Deletes a single reseller child based on the childId supplied
@@ -241,7 +241,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi()
-child_id = 56 # int | id of reseller's child
+child_id = 789 # int | id of reseller's child
 ip_id = sib_api_v3_sdk.ManageIp() # ManageIp | IP's id
 
 try: 
@@ -293,7 +293,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi()
-child_id = 56 # int | id of reseller's child
+child_id = 789 # int | id of reseller's child
 
 try: 
     # Gets the info about a specific child account
@@ -391,7 +391,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi()
-child_id = 56 # int | id of reseller's child
+child_id = 789 # int | id of reseller's child
 remove_credits = sib_api_v3_sdk.RemoveCredits() # RemoveCredits | Values to post to remove email or SMS credits from a specific child account
 
 try: 
@@ -444,7 +444,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi()
-child_id = 56 # int | id of reseller's child
+child_id = 789 # int | id of reseller's child
 reseller_child = sib_api_v3_sdk.UpdateChild() # UpdateChild | values to update in child profile
 
 try: 

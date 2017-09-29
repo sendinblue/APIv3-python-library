@@ -80,7 +80,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.AttributesApi()
-attribute_id = 'attribute_id_example' # str | id of the attribute
+attribute_id = 789 # int | id of the attribute
 
 try: 
     # Deletes an attribute
@@ -93,7 +93,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attribute_id** | **str**| id of the attribute | 
+ **attribute_id** | **int**| id of the attribute | 
 
 ### Return type
 

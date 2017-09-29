@@ -36,7 +36,7 @@ class GetCampaignOverview(object):
         'subject': 'str',
         'type': 'str',
         'status': 'str',
-        'scheduled_at': 'str'
+        'scheduled_at': 'datetime'
     }
 
     attribute_map = {
@@ -209,10 +209,10 @@ class GetCampaignOverview(object):
     def scheduled_at(self):
         """
         Gets the scheduled_at of this GetCampaignOverview.
-        Date on which campaign is scheduled (YYYY-MM-DD HH:mm:ss)
+        Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The scheduled_at of this GetCampaignOverview.
-        :rtype: str
+        :rtype: datetime
         """
         return self._scheduled_at
 
@@ -220,13 +220,11 @@ class GetCampaignOverview(object):
     def scheduled_at(self, scheduled_at):
         """
         Sets the scheduled_at of this GetCampaignOverview.
-        Date on which campaign is scheduled (YYYY-MM-DD HH:mm:ss)
+        Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param scheduled_at: The scheduled_at of this GetCampaignOverview.
-        :type: str
+        :type: datetime
         """
-        if scheduled_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$', scheduled_at):
-            raise ValueError("Invalid value for `scheduled_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/`")
 
         self._scheduled_at = scheduled_at
 

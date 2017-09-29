@@ -53,7 +53,7 @@ class ProcessApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str process_id: Id of the process (required)
+        :param int process_id: Id of the process (required)
         :return: GetProcess
                  If the method is called asynchronously,
                  returns the request thread.
@@ -78,7 +78,7 @@ class ProcessApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str process_id: Id of the process (required)
+        :param int process_id: Id of the process (required)
         :return: GetProcess
                  If the method is called asynchronously,
                  returns the request thread.

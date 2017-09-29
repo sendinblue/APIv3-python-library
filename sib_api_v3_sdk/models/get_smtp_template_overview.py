@@ -41,8 +41,8 @@ class GetSmtpTemplateOverview(object):
         'to_field': 'str',
         'tag': 'str',
         'html_content': 'str',
-        'created_at': 'str',
-        'modified_at': 'str'
+        'created_at': 'datetime',
+        'modified_at': 'datetime'
     }
 
     attribute_map = {
@@ -342,10 +342,10 @@ class GetSmtpTemplateOverview(object):
     def created_at(self):
         """
         Gets the created_at of this GetSmtpTemplateOverview.
-        Creation date of the template (YYYY-MM-DD HH:mm:ss)
+        Creation date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetSmtpTemplateOverview.
-        :rtype: str
+        :rtype: datetime
         """
         return self._created_at
 
@@ -353,15 +353,13 @@ class GetSmtpTemplateOverview(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetSmtpTemplateOverview.
-        Creation date of the template (YYYY-MM-DD HH:mm:ss)
+        Creation date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetSmtpTemplateOverview.
-        :type: str
+        :type: datetime
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")
-        if created_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$', created_at):
-            raise ValueError("Invalid value for `created_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/`")
 
         self._created_at = created_at
 
@@ -369,10 +367,10 @@ class GetSmtpTemplateOverview(object):
     def modified_at(self):
         """
         Gets the modified_at of this GetSmtpTemplateOverview.
-        Last modification date of the template (YYYY-MM-DD HH:mm:ss)
+        Last modification date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The modified_at of this GetSmtpTemplateOverview.
-        :rtype: str
+        :rtype: datetime
         """
         return self._modified_at
 
@@ -380,15 +378,13 @@ class GetSmtpTemplateOverview(object):
     def modified_at(self, modified_at):
         """
         Sets the modified_at of this GetSmtpTemplateOverview.
-        Last modification date of the template (YYYY-MM-DD HH:mm:ss)
+        Last modification date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param modified_at: The modified_at of this GetSmtpTemplateOverview.
-        :type: str
+        :type: datetime
         """
         if modified_at is None:
             raise ValueError("Invalid value for `modified_at`, must not be `None`")
-        if modified_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$', modified_at):
-            raise ValueError("Invalid value for `modified_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/`")
 
         self._modified_at = modified_at
 

@@ -83,7 +83,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi()
-sender_id = 'sender_id_example' # str | Id of the sender
+sender_id = 789 # int | Id of the sender
 
 try: 
     # Delete a sender
@@ -96,7 +96,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender_id** | **str**| Id of the sender | 
+ **sender_id** | **int**| Id of the sender | 
 
 ### Return type
 
@@ -180,7 +180,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi()
-sender_id = 'sender_id_example' # str | Id of the sender
+sender_id = 789 # int | Id of the sender
 
 try: 
     # Return all the dedicated IPs for a sender
@@ -194,7 +194,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender_id** | **str**| Id of the sender | 
+ **sender_id** | **int**| Id of the sender | 
 
 ### Return type
 
@@ -284,7 +284,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi()
-sender_id = 'sender_id_example' # str | Id of the sender
+sender_id = 789 # int | Id of the sender
 sender = sib_api_v3_sdk.UpdateSender() # UpdateSender | sender's name (optional)
 
 try: 
@@ -298,7 +298,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender_id** | **str**| Id of the sender | 
+ **sender_id** | **int**| Id of the sender | 
  **sender** | [**UpdateSender**](UpdateSender.md)| sender&#39;s name | [optional] 
 
 ### Return type

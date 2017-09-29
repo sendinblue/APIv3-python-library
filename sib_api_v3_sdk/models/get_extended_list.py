@@ -36,7 +36,7 @@ class GetExtendedList(object):
         'total_blacklisted': 'int',
         'total_subscribers': 'int',
         'folder_id': 'int',
-        'created_at': 'str',
+        'created_at': 'datetime',
         'campaign_stats': 'list[GetExtendedListCampaignStats]',
         'dynamic_list': 'bool'
     }
@@ -206,10 +206,10 @@ class GetExtendedList(object):
     def created_at(self):
         """
         Gets the created_at of this GetExtendedList.
-        Creation Date of the list (YYYY-MM-DD)
+        Creation Date of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetExtendedList.
-        :rtype: str
+        :rtype: datetime
         """
         return self._created_at
 
@@ -217,15 +217,13 @@ class GetExtendedList(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetExtendedList.
-        Creation Date of the list (YYYY-MM-DD)
+        Creation Date of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetExtendedList.
-        :type: str
+        :type: datetime
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")
-        if created_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2})?$', created_at):
-            raise ValueError("Invalid value for `created_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/`")
 
         self._created_at = created_at
 

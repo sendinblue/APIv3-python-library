@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_folder**
-> CreateModel create_folder(name)
+> CreateModel create_folder(create_folder)
 
 Create a folder
 
@@ -32,11 +32,11 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi()
-name = sib_api_v3_sdk.CreaUpdateFolder() # CreaUpdateFolder | Name of the folder
+create_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try: 
     # Create a folder
-    api_response = api_instance.create_folder(name)
+    api_response = api_instance.create_folder(create_folder)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FoldersApi->create_folder: %s\n" % e)
@@ -46,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | [**CreaUpdateFolder**](CreaUpdateFolder.md)| Name of the folder | 
+ **create_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
@@ -83,7 +83,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi()
-folder_id = 'folder_id_example' # str | Id of the folder
+folder_id = 789 # int | Id of the folder
 
 try: 
     # Delete a folder (and all its lists)
@@ -96,7 +96,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **str**| Id of the folder | 
+ **folder_id** | **int**| Id of the folder | 
 
 ### Return type
 
@@ -133,7 +133,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi()
-folder_id = 'folder_id_example' # str | id of the folder
+folder_id = 789 # int | id of the folder
 
 try: 
     # Returns folder details
@@ -147,7 +147,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **str**| id of the folder | 
+ **folder_id** | **int**| id of the folder | 
 
 ### Return type
 
@@ -184,7 +184,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi()
-folder_id = 'folder_id_example' # str | Id of the folder
+folder_id = 789 # int | Id of the folder
 limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
@@ -200,7 +200,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **str**| Id of the folder | 
+ **folder_id** | **int**| Id of the folder | 
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_folder**
-> update_folder(folder_id, name)
+> update_folder(folder_id, update_folder)
 
 Update a contact folder
 
@@ -292,12 +292,12 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi()
-folder_id = 'folder_id_example' # str | Id of the folder
-name = sib_api_v3_sdk.CreaUpdateFolder() # CreaUpdateFolder | Name of the folder
+folder_id = 789 # int | Id of the folder
+update_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try: 
     # Update a contact folder
-    api_instance.update_folder(folder_id, name)
+    api_instance.update_folder(folder_id, update_folder)
 except ApiException as e:
     print("Exception when calling FoldersApi->update_folder: %s\n" % e)
 ```
@@ -306,8 +306,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **str**| Id of the folder | 
- **name** | [**CreaUpdateFolder**](CreaUpdateFolder.md)| Name of the folder | 
+ **folder_id** | **int**| Id of the folder | 
+ **update_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 

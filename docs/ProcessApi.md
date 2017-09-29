@@ -28,7 +28,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ProcessApi()
-process_id = 'process_id_example' # str | Id of the process
+process_id = 789 # int | Id of the process
 
 try: 
     # Return the informations for a process
@@ -42,7 +42,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **process_id** | **str**| Id of the process | 
+ **process_id** | **int**| Id of the process | 
 
 ### Return type
 

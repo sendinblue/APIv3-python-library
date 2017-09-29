@@ -206,7 +206,7 @@ email = 'email_example' # str | Filter the report for a specific email addresses
 event = 'event_example' # str | Filter the report for a specific event type (optional)
 tags = 'tags_example' # str | Filter the report for tags (serialized and urlencoded array) (optional)
 message_id = 'message_id_example' # str | Filter on a specific message id (optional)
-template_id = 'template_id_example' # str | Filter on a specific template id (optional)
+template_id = 789 # int | Filter on a specific template id (optional)
 
 try: 
     # Get all your SMTP activity (unaggregated events)
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
  **event** | **str**| Filter the report for a specific event type | [optional] 
  **tags** | **str**| Filter the report for tags (serialized and urlencoded array) | [optional] 
  **message_id** | **str**| Filter on a specific message id | [optional] 
- **template_id** | **str**| Filter on a specific template id | [optional] 
+ **template_id** | **int**| Filter on a specific template id | [optional] 
 
 ### Return type
 
@@ -327,7 +327,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi()
-template_id = 'template_id_example' # str | id of the template
+template_id = 789 # int | id of the template
 
 try: 
     # Returns the template informations
@@ -341,7 +341,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_id** | **str**| id of the template | 
+ **template_id** | **int**| id of the template | 
 
 ### Return type
 
@@ -433,7 +433,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi()
-template_id = 'template_id_example' # str | Id of the template
+template_id = 789 # int | Id of the template
 send_email = sib_api_v3_sdk.SendEmail() # SendEmail | 
 
 try: 
@@ -448,7 +448,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_id** | **str**| Id of the template | 
+ **template_id** | **int**| Id of the template | 
  **send_email** | [**SendEmail**](SendEmail.md)|  | 
 
 ### Return type
@@ -486,7 +486,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi()
-template_id = 'template_id_example' # str | Id of the template
+template_id = 789 # int | Id of the template
 send_test_email = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
 
 try: 
@@ -500,7 +500,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_id** | **str**| Id of the template | 
+ **template_id** | **int**| Id of the template | 
  **send_test_email** | [**SendTestEmail**](SendTestEmail.md)|  | 
 
 ### Return type
@@ -589,7 +589,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi()
-template_id = 'template_id_example' # str | id of the template
+template_id = 789 # int | id of the template
 smtp_template = sib_api_v3_sdk.UpdateSmtpTemplate() # UpdateSmtpTemplate | values to update in smtp template
 
 try: 
@@ -603,7 +603,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_id** | **str**| id of the template | 
+ **template_id** | **int**| id of the template | 
  **smtp_template** | [**UpdateSmtpTemplate**](UpdateSmtpTemplate.md)| values to update in smtp template | 
 
 ### Return type

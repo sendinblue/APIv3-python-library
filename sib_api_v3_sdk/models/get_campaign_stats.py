@@ -78,7 +78,8 @@ class GetCampaignStats(object):
         self._viewed = None
         self._deferred = None
 
-        self.list_id = list_id
+        if list_id is not None:
+          self.list_id = list_id
         self.unique_clicks = unique_clicks
         self.clickers = clickers
         self.complaints = complaints
@@ -111,8 +112,6 @@ class GetCampaignStats(object):
         :param list_id: The list_id of this GetCampaignStats.
         :type: int
         """
-        if list_id is None:
-            raise ValueError("Invalid value for `list_id`, must not be `None`")
 
         self._list_id = list_id
 
