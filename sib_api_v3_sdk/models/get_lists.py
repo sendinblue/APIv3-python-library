@@ -31,25 +31,50 @@ class GetLists(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'count': 'int',
-        'lists': 'list[GetListsLists]'
+        'lists': 'list[object]',
+        'count': 'int'
     }
 
     attribute_map = {
-        'count': 'count',
-        'lists': 'lists'
+        'lists': 'lists',
+        'count': 'count'
     }
 
-    def __init__(self, count=None, lists=None):
+    def __init__(self, lists=None, count=None):
         """
         GetLists - a model defined in Swagger
         """
 
-        self._count = None
         self._lists = None
+        self._count = None
 
-        self.count = count
         self.lists = lists
+        self.count = count
+
+    @property
+    def lists(self):
+        """
+        Gets the lists of this GetLists.
+        Listing of all the lists available in your account
+
+        :return: The lists of this GetLists.
+        :rtype: list[object]
+        """
+        return self._lists
+
+    @lists.setter
+    def lists(self, lists):
+        """
+        Sets the lists of this GetLists.
+        Listing of all the lists available in your account
+
+        :param lists: The lists of this GetLists.
+        :type: list[object]
+        """
+        if lists is None:
+            raise ValueError("Invalid value for `lists`, must not be `None`")
+
+        self._lists = lists
 
     @property
     def count(self):
@@ -75,31 +100,6 @@ class GetLists(object):
             raise ValueError("Invalid value for `count`, must not be `None`")
 
         self._count = count
-
-    @property
-    def lists(self):
-        """
-        Gets the lists of this GetLists.
-        Listing of all the lists available in your account
-
-        :return: The lists of this GetLists.
-        :rtype: list[GetListsLists]
-        """
-        return self._lists
-
-    @lists.setter
-    def lists(self, lists):
-        """
-        Sets the lists of this GetLists.
-        Listing of all the lists available in your account
-
-        :param lists: The lists of this GetLists.
-        :type: list[GetListsLists]
-        """
-        if lists is None:
-            raise ValueError("Invalid value for `lists`, must not be `None`")
-
-        self._lists = lists
 
     def to_dict(self):
         """

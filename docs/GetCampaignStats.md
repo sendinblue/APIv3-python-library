@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**list_id** | **int** | List Id of email campaign (only in case of get email campaign(s)) | 
+**list_id** | **int** | List Id of email campaign (only in case of get email campaign(s)) | [optional] 
 **unique_clicks** | **int** | Number of unique clicks for the campaign | 
 **clickers** | **int** | Number of clicks for the campaign | 
 **complaints** | **int** | Number of complaints (Spam reports) for the campaign | 

@@ -53,7 +53,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param AddRemoveContactToList contact_emails: Emails addresses of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
@@ -79,7 +79,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param AddRemoveContactToList contact_emails: Emails addresses of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
@@ -268,7 +268,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -293,7 +293,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -372,8 +372,8 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
-        :param str modified_since: Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
+        :param int list_id: Id of the list (required)
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetContacts
@@ -400,8 +400,8 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
-        :param str modified_since: Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
+        :param int list_id: Id of the list (required)
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetContacts
@@ -428,8 +428,6 @@ class ListsApi(object):
         if ('list_id' not in params) or (params['list_id'] is None):
             raise ValueError("Missing the required parameter `list_id` when calling `get_contacts_from_list`")
 
-        if 'modified_since' in params and not re.search('YYYY-MM-DD HH:mm:ss', params['modified_since']):
-            raise ValueError("Invalid value for parameter `modified_since` when calling `get_contacts_from_list`, must conform to the pattern `/YYYY-MM-DD HH:mm:ss/`")
         if 'limit' in params and params['limit'] > 500:
             raise ValueError("Invalid value for parameter `limit` when calling `get_contacts_from_list`, must be a value less than or equal to `500`")
 
@@ -492,7 +490,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetFolderLists
@@ -519,7 +517,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetFolderLists
@@ -606,7 +604,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :return: GetExtendedList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -631,7 +629,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :return: GetExtendedList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -817,7 +815,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param AddRemoveContactToList contact_emails: Emails adresses of the contact (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
@@ -843,7 +841,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param AddRemoveContactToList contact_emails: Emails adresses of the contact (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
@@ -928,7 +926,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param UpdateList update_list: Values to update a list (required)
         :return: None
                  If the method is called asynchronously,
@@ -954,7 +952,7 @@ class ListsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param UpdateList update_list: Values to update a list (required)
         :return: None
                  If the method is called asynchronously,

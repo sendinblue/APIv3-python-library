@@ -33,16 +33,20 @@ class GetAccountPlan(object):
     swagger_types = {
         'type': 'str',
         'credits_type': 'str',
-        'credits': 'int'
+        'credits': 'float',
+        'start_date': 'date',
+        'end_date': 'date'
     }
 
     attribute_map = {
         'type': 'type',
         'credits_type': 'creditsType',
-        'credits': 'credits'
+        'credits': 'credits',
+        'start_date': 'startDate',
+        'end_date': 'endDate'
     }
 
-    def __init__(self, type=None, credits_type=None, credits=None):
+    def __init__(self, type=None, credits_type=None, credits=None, start_date=None, end_date=None):
         """
         GetAccountPlan - a model defined in Swagger
         """
@@ -50,10 +54,16 @@ class GetAccountPlan(object):
         self._type = None
         self._credits_type = None
         self._credits = None
+        self._start_date = None
+        self._end_date = None
 
         self.type = type
         self.credits_type = credits_type
         self.credits = credits
+        if start_date is not None:
+          self.start_date = start_date
+        if end_date is not None:
+          self.end_date = end_date
 
     @property
     def type(self):
@@ -124,7 +134,7 @@ class GetAccountPlan(object):
         Remaining credits of the user. This can either be \"User Limit\" or \"Send Limit\" depending on the plan.
 
         :return: The credits of this GetAccountPlan.
-        :rtype: int
+        :rtype: float
         """
         return self._credits
 
@@ -135,12 +145,58 @@ class GetAccountPlan(object):
         Remaining credits of the user. This can either be \"User Limit\" or \"Send Limit\" depending on the plan.
 
         :param credits: The credits of this GetAccountPlan.
-        :type: int
+        :type: float
         """
         if credits is None:
             raise ValueError("Invalid value for `credits`, must not be `None`")
 
         self._credits = credits
+
+    @property
+    def start_date(self):
+        """
+        Gets the start_date of this GetAccountPlan.
+        Date of the period from which the plan will start (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)
+
+        :return: The start_date of this GetAccountPlan.
+        :rtype: date
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """
+        Sets the start_date of this GetAccountPlan.
+        Date of the period from which the plan will start (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)
+
+        :param start_date: The start_date of this GetAccountPlan.
+        :type: date
+        """
+
+        self._start_date = start_date
+
+    @property
+    def end_date(self):
+        """
+        Gets the end_date of this GetAccountPlan.
+        Date of the period from which the plan will end (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)
+
+        :return: The end_date of this GetAccountPlan.
+        :rtype: date
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """
+        Sets the end_date of this GetAccountPlan.
+        Date of the period from which the plan will end (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)
+
+        :param end_date: The end_date of this GetAccountPlan.
+        :type: date
+        """
+
+        self._end_date = end_date
 
     def to_dict(self):
         """

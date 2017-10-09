@@ -36,8 +36,8 @@ class GetWebhook(object):
         'description': 'str',
         'events': 'list[str]',
         'type': 'str',
-        'created_at': 'str',
-        'modified_at': 'str'
+        'created_at': 'datetime',
+        'modified_at': 'datetime'
     }
 
     attribute_map = {
@@ -204,10 +204,10 @@ class GetWebhook(object):
     def created_at(self):
         """
         Gets the created_at of this GetWebhook.
-        Creation date of the webhook (YYYY-MM-DD)
+        Creation date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetWebhook.
-        :rtype: str
+        :rtype: datetime
         """
         return self._created_at
 
@@ -215,15 +215,13 @@ class GetWebhook(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetWebhook.
-        Creation date of the webhook (YYYY-MM-DD)
+        Creation date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetWebhook.
-        :type: str
+        :type: datetime
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")
-        if created_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2})?$', created_at):
-            raise ValueError("Invalid value for `created_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/`")
 
         self._created_at = created_at
 
@@ -231,10 +229,10 @@ class GetWebhook(object):
     def modified_at(self):
         """
         Gets the modified_at of this GetWebhook.
-        Last modification date of the webhook (YYYY-MM-DD)
+        Last modification date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The modified_at of this GetWebhook.
-        :rtype: str
+        :rtype: datetime
         """
         return self._modified_at
 
@@ -242,15 +240,13 @@ class GetWebhook(object):
     def modified_at(self, modified_at):
         """
         Sets the modified_at of this GetWebhook.
-        Last modification date of the webhook (YYYY-MM-DD)
+        Last modification date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param modified_at: The modified_at of this GetWebhook.
-        :type: str
+        :type: datetime
         """
         if modified_at is None:
             raise ValueError("Invalid value for `modified_at`, must not be `None`")
-        if modified_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2})?$', modified_at):
-            raise ValueError("Invalid value for `modified_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2})?$/`")
 
         self._modified_at = modified_at
 

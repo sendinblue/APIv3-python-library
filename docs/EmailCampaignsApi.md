@@ -87,7 +87,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi()
-campaign_id = 'campaign_id_example' # str | id of the campaign
+campaign_id = 789 # int | id of the campaign
 
 try: 
     # Delete an email campaign
@@ -100,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| id of the campaign | 
+ **campaign_id** | **int**| id of the campaign | 
 
 ### Return type
 
@@ -137,7 +137,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi()
-campaign_id = 'campaign_id_example' # str | Id of the campaign
+campaign_id = 789 # int | Id of the campaign
 recipient_export = sib_api_v3_sdk.EmailExportRecipients() # EmailExportRecipients | Values to send for a recipient export request (optional)
 
 try: 
@@ -152,7 +152,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign | 
+ **campaign_id** | **int**| Id of the campaign | 
  **recipient_export** | [**EmailExportRecipients**](EmailExportRecipients.md)| Values to send for a recipient export request | [optional] 
 
 ### Return type
@@ -190,7 +190,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi()
-campaign_id = 'campaign_id_example' # str | Id of the campaign
+campaign_id = 789 # int | Id of the campaign
 
 try: 
     # Get campaign informations
@@ -204,7 +204,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign | 
+ **campaign_id** | **int**| Id of the campaign | 
 
 ### Return type
 
@@ -298,7 +298,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi()
-campaign_id = 'campaign_id_example' # str | Id of the campaign
+campaign_id = 789 # int | Id of the campaign
 
 try: 
     # Send an email campaign id of the campaign immediately
@@ -311,7 +311,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign | 
+ **campaign_id** | **int**| Id of the campaign | 
 
 ### Return type
 
@@ -350,7 +350,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi()
-campaign_id = 'campaign_id_example' # str | Id of the campaign
+campaign_id = 789 # int | Id of the campaign
 send_report = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
 
 try: 
@@ -364,7 +364,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign | 
+ **campaign_id** | **int**| Id of the campaign | 
  **send_report** | [**SendReport**](SendReport.md)| Values for send a report | 
 
 ### Return type
@@ -402,7 +402,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi()
-campaign_id = 'campaign_id_example' # str | Id of the campaign
+campaign_id = 789 # int | Id of the campaign
 email_to = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
 
 try: 
@@ -416,7 +416,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign | 
+ **campaign_id** | **int**| Id of the campaign | 
  **email_to** | [**SendTestEmail**](SendTestEmail.md)|  | 
 
 ### Return type
@@ -454,7 +454,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi()
-campaign_id = 'campaign_id_example' # str | Id of the campaign
+campaign_id = 789 # int | Id of the campaign
 status = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign
 
 try: 
@@ -468,7 +468,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign | 
+ **campaign_id** | **int**| Id of the campaign | 
  **status** | [**UpdateCampaignStatus**](UpdateCampaignStatus.md)| Status of the campaign | 
 
 ### Return type
@@ -506,7 +506,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi()
-campaign_id = 'campaign_id_example' # str | Id of the campaign
+campaign_id = 789 # int | Id of the campaign
 email_campaign = sib_api_v3_sdk.UpdateEmailCampaign() # UpdateEmailCampaign | Values to update a campaign
 
 try: 
@@ -520,7 +520,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign | 
+ **campaign_id** | **int**| Id of the campaign | 
  **email_campaign** | [**UpdateEmailCampaign**](UpdateEmailCampaign.md)| Values to update a campaign | 
 
 ### Return type

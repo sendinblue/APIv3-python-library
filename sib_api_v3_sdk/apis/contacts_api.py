@@ -53,7 +53,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param AddRemoveContactToList contact_emails: Emails addresses of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
@@ -79,7 +79,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param AddRemoveContactToList contact_emails: Emails addresses of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
@@ -359,7 +359,7 @@ class ContactsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def create_folder(self, name, **kwargs):
+    def create_folder(self, create_folder, **kwargs):
         """
         Create a folder
         This method makes a synchronous HTTP request by default. To make an
@@ -368,23 +368,23 @@ class ContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_folder(name, callback=callback_function)
+        >>> thread = api.create_folder(create_folder, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CreaUpdateFolder name: Name of the folder (required)
+        :param CreateUpdateFolder create_folder: Name of the folder (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_folder_with_http_info(name, **kwargs)
+            return self.create_folder_with_http_info(create_folder, **kwargs)
         else:
-            (data) = self.create_folder_with_http_info(name, **kwargs)
+            (data) = self.create_folder_with_http_info(create_folder, **kwargs)
             return data
 
-    def create_folder_with_http_info(self, name, **kwargs):
+    def create_folder_with_http_info(self, create_folder, **kwargs):
         """
         Create a folder
         This method makes a synchronous HTTP request by default. To make an
@@ -393,17 +393,17 @@ class ContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_folder_with_http_info(name, callback=callback_function)
+        >>> thread = api.create_folder_with_http_info(create_folder, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CreaUpdateFolder name: Name of the folder (required)
+        :param CreateUpdateFolder create_folder: Name of the folder (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name']
+        all_params = ['create_folder']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -418,9 +418,9 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `create_folder`")
+        # verify the required parameter 'create_folder' is set
+        if ('create_folder' not in params) or (params['create_folder'] is None):
+            raise ValueError("Missing the required parameter `create_folder` when calling `create_folder`")
 
 
         collection_formats = {}
@@ -435,8 +435,8 @@ class ContactsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'name' in params:
-            body_params = params['name']
+        if 'create_folder' in params:
+            body_params = params['create_folder']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['application/json'])
@@ -580,7 +580,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str attribute_id: id of the attribute (required)
+        :param int attribute_id: id of the attribute (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -605,7 +605,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str attribute_id: id of the attribute (required)
+        :param int attribute_id: id of the attribute (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -684,7 +684,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -709,7 +709,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -788,7 +788,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -813,7 +813,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1303,8 +1303,8 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
-        :param str modified_since: Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
+        :param int list_id: Id of the list (required)
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetContacts
@@ -1331,8 +1331,8 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
-        :param str modified_since: Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss)
+        :param int list_id: Id of the list (required)
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetContacts
@@ -1359,8 +1359,6 @@ class ContactsApi(object):
         if ('list_id' not in params) or (params['list_id'] is None):
             raise ValueError("Missing the required parameter `list_id` when calling `get_contacts_from_list`")
 
-        if 'modified_since' in params and not re.search('YYYY-MM-DD HH:mm:ss', params['modified_since']):
-            raise ValueError("Invalid value for parameter `modified_since` when calling `get_contacts_from_list`, must conform to the pattern `/YYYY-MM-DD HH:mm:ss/`")
         if 'limit' in params and params['limit'] > 500:
             raise ValueError("Invalid value for parameter `limit` when calling `get_contacts_from_list`, must be a value less than or equal to `500`")
 
@@ -1423,7 +1421,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: id of the folder (required)
+        :param int folder_id: id of the folder (required)
         :return: GetFolder
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1448,7 +1446,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: id of the folder (required)
+        :param int folder_id: id of the folder (required)
         :return: GetFolder
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1527,7 +1525,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetFolderLists
@@ -1554,7 +1552,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
+        :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetFolderLists
@@ -1754,7 +1752,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :return: GetExtendedList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1779,7 +1777,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :return: GetExtendedList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2071,7 +2069,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param AddRemoveContactToList contact_emails: Emails adresses of the contact (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
@@ -2097,7 +2095,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param AddRemoveContactToList contact_emails: Emails adresses of the contact (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
@@ -2386,7 +2384,7 @@ class ContactsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def update_folder(self, folder_id, name, **kwargs):
+    def update_folder(self, folder_id, update_folder, **kwargs):
         """
         Update a contact folder
         This method makes a synchronous HTTP request by default. To make an
@@ -2395,24 +2393,24 @@ class ContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_folder(folder_id, name, callback=callback_function)
+        >>> thread = api.update_folder(folder_id, update_folder, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
-        :param CreaUpdateFolder name: Name of the folder (required)
+        :param int folder_id: Id of the folder (required)
+        :param CreateUpdateFolder update_folder: Name of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.update_folder_with_http_info(folder_id, name, **kwargs)
+            return self.update_folder_with_http_info(folder_id, update_folder, **kwargs)
         else:
-            (data) = self.update_folder_with_http_info(folder_id, name, **kwargs)
+            (data) = self.update_folder_with_http_info(folder_id, update_folder, **kwargs)
             return data
 
-    def update_folder_with_http_info(self, folder_id, name, **kwargs):
+    def update_folder_with_http_info(self, folder_id, update_folder, **kwargs):
         """
         Update a contact folder
         This method makes a synchronous HTTP request by default. To make an
@@ -2421,18 +2419,18 @@ class ContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_folder_with_http_info(folder_id, name, callback=callback_function)
+        >>> thread = api.update_folder_with_http_info(folder_id, update_folder, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str folder_id: Id of the folder (required)
-        :param CreaUpdateFolder name: Name of the folder (required)
+        :param int folder_id: Id of the folder (required)
+        :param CreateUpdateFolder update_folder: Name of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['folder_id', 'name']
+        all_params = ['folder_id', 'update_folder']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2450,9 +2448,9 @@ class ContactsApi(object):
         # verify the required parameter 'folder_id' is set
         if ('folder_id' not in params) or (params['folder_id'] is None):
             raise ValueError("Missing the required parameter `folder_id` when calling `update_folder`")
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `update_folder`")
+        # verify the required parameter 'update_folder' is set
+        if ('update_folder' not in params) or (params['update_folder'] is None):
+            raise ValueError("Missing the required parameter `update_folder` when calling `update_folder`")
 
 
         collection_formats = {}
@@ -2469,8 +2467,8 @@ class ContactsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'name' in params:
-            body_params = params['name']
+        if 'update_folder' in params:
+            body_params = params['update_folder']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['application/json'])
@@ -2510,7 +2508,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param UpdateList update_list: Values to update a list (required)
         :return: None
                  If the method is called asynchronously,
@@ -2536,7 +2534,7 @@ class ContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str list_id: Id of the list (required)
+        :param int list_id: Id of the list (required)
         :param UpdateList update_list: Values to update a list (required)
         :return: None
                  If the method is called asynchronously,

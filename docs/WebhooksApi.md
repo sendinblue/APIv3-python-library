@@ -82,7 +82,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi()
-webhook_id = 'webhook_id_example' # str | Id of the webhook
+webhook_id = 789 # int | Id of the webhook
 
 try: 
     # Delete a webhook
@@ -95,7 +95,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | **str**| Id of the webhook | 
+ **webhook_id** | **int**| Id of the webhook | 
 
 ### Return type
 
@@ -132,7 +132,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi()
-webhook_id = 'webhook_id_example' # str | Id of the webhook
+webhook_id = 789 # int | Id of the webhook
 
 try: 
     # Get a webhook details
@@ -146,7 +146,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | **str**| Id of the webhook | 
+ **webhook_id** | **int**| Id of the webhook | 
 
 ### Return type
 
@@ -234,7 +234,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi()
-webhook_id = 'webhook_id_example' # str | Id of the webhook
+webhook_id = 789 # int | Id of the webhook
 update_webhook = sib_api_v3_sdk.UpdateWebhook() # UpdateWebhook | Values to update a webhook
 
 try: 
@@ -248,7 +248,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | **str**| Id of the webhook | 
+ **webhook_id** | **int**| Id of the webhook | 
  **update_webhook** | [**UpdateWebhook**](UpdateWebhook.md)| Values to update a webhook | 
 
 ### Return type

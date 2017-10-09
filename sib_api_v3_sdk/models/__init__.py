@@ -16,7 +16,6 @@ from __future__ import absolute_import
 # import models into model package
 from .add_credits import AddCredits
 from .add_remove_contact_to_list import AddRemoveContactToList
-from .crea_update_folder import CreaUpdateFolder
 from .create_attribute import CreateAttribute
 from .create_attribute_enumemaration import CreateAttributeEnumemaration
 from .create_child import CreateChild
@@ -34,6 +33,7 @@ from .create_sms_campaign_recipients import CreateSmsCampaignRecipients
 from .create_smtp_email import CreateSmtpEmail
 from .create_smtp_template import CreateSmtpTemplate
 from .create_smtp_template_sender import CreateSmtpTemplateSender
+from .create_update_folder import CreateUpdateFolder
 from .create_webhook import CreateWebhook
 from .created_process_id import CreatedProcessId
 from .delete_hardbounces import DeleteHardbounces
@@ -90,8 +90,6 @@ from .get_ips import GetIps
 from .get_ips_from_sender import GetIpsFromSender
 from .get_list import GetList
 from .get_lists import GetLists
-from .get_lists_folder import GetListsFolder
-from .get_lists_lists import GetListsLists
 from .get_process import GetProcess
 from .get_processes import GetProcesses
 from .get_reports import GetReports

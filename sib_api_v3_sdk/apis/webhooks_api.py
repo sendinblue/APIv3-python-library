@@ -157,7 +157,7 @@ class WebhooksApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str webhook_id: Id of the webhook (required)
+        :param int webhook_id: Id of the webhook (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -182,7 +182,7 @@ class WebhooksApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str webhook_id: Id of the webhook (required)
+        :param int webhook_id: Id of the webhook (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -261,7 +261,7 @@ class WebhooksApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str webhook_id: Id of the webhook (required)
+        :param int webhook_id: Id of the webhook (required)
         :return: GetWebhook
                  If the method is called asynchronously,
                  returns the request thread.
@@ -286,7 +286,7 @@ class WebhooksApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str webhook_id: Id of the webhook (required)
+        :param int webhook_id: Id of the webhook (required)
         :return: GetWebhook
                  If the method is called asynchronously,
                  returns the request thread.
@@ -466,7 +466,7 @@ class WebhooksApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str webhook_id: Id of the webhook (required)
+        :param int webhook_id: Id of the webhook (required)
         :param UpdateWebhook update_webhook: Values to update a webhook (required)
         :return: None
                  If the method is called asynchronously,
@@ -492,7 +492,7 @@ class WebhooksApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str webhook_id: Id of the webhook (required)
+        :param int webhook_id: Id of the webhook (required)
         :param UpdateWebhook update_webhook: Values to update a webhook (required)
         :return: None
                  If the method is called asynchronously,

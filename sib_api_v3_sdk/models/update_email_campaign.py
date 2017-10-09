@@ -36,7 +36,7 @@ class UpdateEmailCampaign(object):
         'name': 'str',
         'html_content': 'str',
         'html_url': 'str',
-        'scheduled_at': 'str',
+        'scheduled_at': 'datetime',
         'subject': 'str',
         'reply_to': 'str',
         'to_field': 'str',
@@ -245,10 +245,10 @@ class UpdateEmailCampaign(object):
     def scheduled_at(self):
         """
         Gets the scheduled_at of this UpdateEmailCampaign.
-        Date and time on which the campaign has to run (YYYY-MM-DD HH:mm:ss)
+        Date and time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The scheduled_at of this UpdateEmailCampaign.
-        :rtype: str
+        :rtype: datetime
         """
         return self._scheduled_at
 
@@ -256,13 +256,11 @@ class UpdateEmailCampaign(object):
     def scheduled_at(self, scheduled_at):
         """
         Sets the scheduled_at of this UpdateEmailCampaign.
-        Date and time on which the campaign has to run (YYYY-MM-DD HH:mm:ss)
+        Date and time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param scheduled_at: The scheduled_at of this UpdateEmailCampaign.
-        :type: str
+        :type: datetime
         """
-        if scheduled_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$', scheduled_at):
-            raise ValueError("Invalid value for `scheduled_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/`")
 
         self._scheduled_at = scheduled_at
 

@@ -157,7 +157,7 @@ class AttributesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str attribute_id: id of the attribute (required)
+        :param int attribute_id: id of the attribute (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -182,7 +182,7 @@ class AttributesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str attribute_id: id of the attribute (required)
+        :param int attribute_id: id of the attribute (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

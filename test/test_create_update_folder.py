@@ -19,11 +19,11 @@ import unittest
 
 import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
-from sib_api_v3_sdk.models.get_lists_folder import GetListsFolder
+from sib_api_v3_sdk.models.create_update_folder import CreateUpdateFolder
 
 
-class TestGetListsFolder(unittest.TestCase):
-    """ GetListsFolder unit test stubs """
+class TestCreateUpdateFolder(unittest.TestCase):
+    """ CreateUpdateFolder unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestGetListsFolder(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testGetListsFolder(self):
+    def testCreateUpdateFolder(self):
         """
-        Test GetListsFolder
+        Test CreateUpdateFolder
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = sib_api_v3_sdk.models.get_lists_folder.GetListsFolder()
+        #model = sib_api_v3_sdk.models.create_update_folder.CreateUpdateFolder()
         pass
 
 

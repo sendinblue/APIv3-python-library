@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the webhook | 
 **events** | **list[str]** |  | 
 **type** | **str** | Type of webhook (marketing or transac) | 
-**created_at** | **str** | Creation date of the webhook (YYYY-MM-DD) | 
-**modified_at** | **str** | Last modification date of the webhook (YYYY-MM-DD) | 
+**created_at** | **datetime** | Creation date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
+**modified_at** | **datetime** | Last modification date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

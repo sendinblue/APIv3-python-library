@@ -157,7 +157,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the SMS campaign (required)
+        :param int campaign_id: id of the SMS campaign (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -182,7 +182,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the SMS campaign (required)
+        :param int campaign_id: id of the SMS campaign (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -261,7 +261,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the SMS campaign (required)
+        :param int campaign_id: id of the SMS campaign (required)
         :param GetSmsCampaign get_sms_campaign: Values to update an SMS Campaign (required)
         :return: GetSmsCampaign
                  If the method is called asynchronously,
@@ -287,7 +287,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the SMS campaign (required)
+        :param int campaign_id: id of the SMS campaign (required)
         :param GetSmsCampaign get_sms_campaign: Values to update an SMS Campaign (required)
         :return: GetSmsCampaign
                  If the method is called asynchronously,
@@ -484,7 +484,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the campaign (required)
+        :param int campaign_id: id of the campaign (required)
         :param RequestSMSRecipientExport recipient_export: Values to send for a recipient export request
         :return: CreatedProcessId
                  If the method is called asynchronously,
@@ -511,7 +511,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the campaign (required)
+        :param int campaign_id: id of the campaign (required)
         :param RequestSMSRecipientExport recipient_export: Values to send for a recipient export request
         :return: CreatedProcessId
                  If the method is called asynchronously,
@@ -593,7 +593,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the campaign (required)
+        :param int campaign_id: id of the campaign (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -618,7 +618,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the campaign (required)
+        :param int campaign_id: id of the campaign (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -698,7 +698,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the campaign (required)
+        :param int campaign_id: id of the campaign (required)
         :param SendReport send_report: Values for send a report (required)
         :return: None
                  If the method is called asynchronously,
@@ -725,7 +725,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the campaign (required)
+        :param int campaign_id: id of the campaign (required)
         :param SendReport send_report: Values for send a report (required)
         :return: None
                  If the method is called asynchronously,
@@ -810,7 +810,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: Id of the SMS campaign (required)
+        :param int campaign_id: Id of the SMS campaign (required)
         :param SendTestSms send_test_sms: Mobile number to which send the test (required)
         :return: None
                  If the method is called asynchronously,
@@ -836,7 +836,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: Id of the SMS campaign (required)
+        :param int campaign_id: Id of the SMS campaign (required)
         :param SendTestSms send_test_sms: Mobile number to which send the test (required)
         :return: None
                  If the method is called asynchronously,
@@ -921,7 +921,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the SMS campaign (required)
+        :param int campaign_id: id of the SMS campaign (required)
         :param UpdateSmsCampaign update_sms_campaign: Values to update an SMS Campaign (required)
         :return: None
                  If the method is called asynchronously,
@@ -947,7 +947,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the SMS campaign (required)
+        :param int campaign_id: id of the SMS campaign (required)
         :param UpdateSmsCampaign update_sms_campaign: Values to update an SMS Campaign (required)
         :return: None
                  If the method is called asynchronously,
@@ -1032,7 +1032,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the campaign (required)
+        :param int campaign_id: id of the campaign (required)
         :param UpdateCampaignStatus status: Status of the campaign. (required)
         :return: None
                  If the method is called asynchronously,
@@ -1058,7 +1058,7 @@ class SMSCampaignsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str campaign_id: id of the campaign (required)
+        :param int campaign_id: id of the campaign (required)
         :param UpdateCampaignStatus status: Status of the campaign. (required)
         :return: None
                  If the method is called asynchronously,

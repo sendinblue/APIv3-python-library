@@ -34,6 +34,7 @@ class SendTransacSms(object):
         'sender': 'str',
         'recipient': 'str',
         'content': 'str',
+        'type': 'str',
         'tag': 'str',
         'web_url': 'str'
     }
@@ -42,11 +43,12 @@ class SendTransacSms(object):
         'sender': 'sender',
         'recipient': 'recipient',
         'content': 'content',
+        'type': 'type',
         'tag': 'tag',
         'web_url': 'webUrl'
     }
 
-    def __init__(self, sender=None, recipient=None, content=None, tag=None, web_url=None):
+    def __init__(self, sender=None, recipient=None, content=None, type='transactional', tag=None, web_url=None):
         """
         SendTransacSms - a model defined in Swagger
         """
@@ -54,12 +56,15 @@ class SendTransacSms(object):
         self._sender = None
         self._recipient = None
         self._content = None
+        self._type = None
         self._tag = None
         self._web_url = None
 
         self.sender = sender
         self.recipient = recipient
         self.content = content
+        if type is not None:
+          self.type = type
         if tag is not None:
           self.tag = tag
         if web_url is not None:
@@ -143,6 +148,35 @@ class SendTransacSms(object):
             raise ValueError("Invalid value for `content`, length must be less than or equal to `160`")
 
         self._content = content
+
+    @property
+    def type(self):
+        """
+        Gets the type of this SendTransacSms.
+        Type of the SMS
+
+        :return: The type of this SendTransacSms.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this SendTransacSms.
+        Type of the SMS
+
+        :param type: The type of this SendTransacSms.
+        :type: str
+        """
+        allowed_values = ["transactional", "marketing"]
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"
+                .format(type, allowed_values)
+            )
+
+        self._type = type
 
     @property
     def tag(self):

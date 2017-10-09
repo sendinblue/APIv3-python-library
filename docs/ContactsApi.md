@@ -50,7 +50,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-list_id = 'list_id_example' # str | Id of the list
+list_id = 789 # int | Id of the list
 contact_emails = sib_api_v3_sdk.AddRemoveContactToList() # AddRemoveContactToList | Emails addresses of the contacts
 
 try: 
@@ -65,7 +65,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **str**| Id of the list | 
+ **list_id** | **int**| Id of the list | 
  **contact_emails** | [**AddRemoveContactToList**](AddRemoveContactToList.md)| Emails addresses of the contacts | 
 
 ### Return type
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_folder**
-> CreateModel create_folder(name)
+> CreateModel create_folder(create_folder)
 
 Create a folder
 
@@ -205,11 +205,11 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-name = sib_api_v3_sdk.CreaUpdateFolder() # CreaUpdateFolder | Name of the folder
+create_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try: 
     # Create a folder
-    api_response = api_instance.create_folder(name)
+    api_response = api_instance.create_folder(create_folder)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->create_folder: %s\n" % e)
@@ -219,7 +219,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | [**CreaUpdateFolder**](CreaUpdateFolder.md)| Name of the folder | 
+ **create_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
@@ -307,7 +307,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-attribute_id = 'attribute_id_example' # str | id of the attribute
+attribute_id = 789 # int | id of the attribute
 
 try: 
     # Deletes an attribute
@@ -320,7 +320,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attribute_id** | **str**| id of the attribute | 
+ **attribute_id** | **int**| id of the attribute | 
 
 ### Return type
 
@@ -357,7 +357,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-folder_id = 'folder_id_example' # str | Id of the folder
+folder_id = 789 # int | Id of the folder
 
 try: 
     # Delete a folder (and all its lists)
@@ -370,7 +370,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **str**| Id of the folder | 
+ **folder_id** | **int**| Id of the folder | 
 
 ### Return type
 
@@ -407,7 +407,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-list_id = 'list_id_example' # str | Id of the list
+list_id = 789 # int | Id of the list
 
 try: 
     # Delete a list
@@ -420,7 +420,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **str**| Id of the list | 
+ **list_id** | **int**| Id of the list | 
 
 ### Return type
 
@@ -659,8 +659,8 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-list_id = 'list_id_example' # str | Id of the list
-modified_since = 'modified_since_example' # str | Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) (optional)
+list_id = 789 # int | Id of the list
+modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
 limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
@@ -676,8 +676,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **str**| Id of the list | 
- **modified_since** | **str**| Filter the contacts modified after a given date (YYYY-MM-DD HH:mm:ss) | [optional] 
+ **list_id** | **int**| Id of the list | 
+ **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
@@ -716,7 +716,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-folder_id = 'folder_id_example' # str | id of the folder
+folder_id = 789 # int | id of the folder
 
 try: 
     # Returns folder details
@@ -730,7 +730,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **str**| id of the folder | 
+ **folder_id** | **int**| id of the folder | 
 
 ### Return type
 
@@ -767,7 +767,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-folder_id = 'folder_id_example' # str | Id of the folder
+folder_id = 789 # int | Id of the folder
 limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
@@ -783,7 +783,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **str**| Id of the folder | 
+ **folder_id** | **int**| Id of the folder | 
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
@@ -875,7 +875,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-list_id = 'list_id_example' # str | Id of the list
+list_id = 789 # int | Id of the list
 
 try: 
     # Get the details of a list
@@ -889,7 +889,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **str**| Id of the list | 
+ **list_id** | **int**| Id of the list | 
 
 ### Return type
 
@@ -1032,7 +1032,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-list_id = 'list_id_example' # str | Id of the list
+list_id = 789 # int | Id of the list
 contact_emails = sib_api_v3_sdk.AddRemoveContactToList() # AddRemoveContactToList | Emails adresses of the contact
 
 try: 
@@ -1047,7 +1047,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **str**| Id of the list | 
+ **list_id** | **int**| Id of the list | 
  **contact_emails** | [**AddRemoveContactToList**](AddRemoveContactToList.md)| Emails adresses of the contact | 
 
 ### Return type
@@ -1171,7 +1171,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_folder**
-> update_folder(folder_id, name)
+> update_folder(folder_id, update_folder)
 
 Update a contact folder
 
@@ -1190,12 +1190,12 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-folder_id = 'folder_id_example' # str | Id of the folder
-name = sib_api_v3_sdk.CreaUpdateFolder() # CreaUpdateFolder | Name of the folder
+folder_id = 789 # int | Id of the folder
+update_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try: 
     # Update a contact folder
-    api_instance.update_folder(folder_id, name)
+    api_instance.update_folder(folder_id, update_folder)
 except ApiException as e:
     print("Exception when calling ContactsApi->update_folder: %s\n" % e)
 ```
@@ -1204,8 +1204,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **str**| Id of the folder | 
- **name** | [**CreaUpdateFolder**](CreaUpdateFolder.md)| Name of the folder | 
+ **folder_id** | **int**| Id of the folder | 
+ **update_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
@@ -1242,7 +1242,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
-list_id = 'list_id_example' # str | Id of the list
+list_id = 789 # int | Id of the list
 update_list = sib_api_v3_sdk.UpdateList() # UpdateList | Values to update a list
 
 try: 
@@ -1256,7 +1256,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | **str**| Id of the list | 
+ **list_id** | **int**| Id of the list | 
  **update_list** | [**UpdateList**](UpdateList.md)| Values to update a list | 
 
 ### Return type

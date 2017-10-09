@@ -36,7 +36,7 @@ class GetEmailCampaign(object):
         'subject': 'str',
         'type': 'str',
         'status': 'str',
-        'scheduled_at': 'str',
+        'scheduled_at': 'datetime',
         'test_sent': 'bool',
         'header': 'str',
         'footer': 'str',
@@ -46,8 +46,8 @@ class GetEmailCampaign(object):
         'html_content': 'str',
         'share_link': 'str',
         'tag': 'str',
-        'created_at': 'str',
-        'modified_at': 'str',
+        'created_at': 'datetime',
+        'modified_at': 'datetime',
         'inline_image_activation': 'bool',
         'mirror_active': 'bool',
         'recurring': 'bool'
@@ -117,7 +117,8 @@ class GetEmailCampaign(object):
         self.reply_to = reply_to
         self.to_field = to_field
         self.html_content = html_content
-        self.share_link = share_link
+        if share_link is not None:
+          self.share_link = share_link
         self.tag = tag
         self.created_at = created_at
         self.modified_at = modified_at
@@ -269,10 +270,10 @@ class GetEmailCampaign(object):
     def scheduled_at(self):
         """
         Gets the scheduled_at of this GetEmailCampaign.
-        Date on which campaign is scheduled (YYYY-MM-DD HH:mm:ss)
+        Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The scheduled_at of this GetEmailCampaign.
-        :rtype: str
+        :rtype: datetime
         """
         return self._scheduled_at
 
@@ -280,13 +281,11 @@ class GetEmailCampaign(object):
     def scheduled_at(self, scheduled_at):
         """
         Sets the scheduled_at of this GetEmailCampaign.
-        Date on which campaign is scheduled (YYYY-MM-DD HH:mm:ss)
+        Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param scheduled_at: The scheduled_at of this GetEmailCampaign.
-        :type: str
+        :type: datetime
         """
-        if scheduled_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$', scheduled_at):
-            raise ValueError("Invalid value for `scheduled_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/`")
 
         self._scheduled_at = scheduled_at
 
@@ -481,8 +480,6 @@ class GetEmailCampaign(object):
         :param share_link: The share_link of this GetEmailCampaign.
         :type: str
         """
-        if share_link is None:
-            raise ValueError("Invalid value for `share_link`, must not be `None`")
 
         self._share_link = share_link
 
@@ -515,10 +512,10 @@ class GetEmailCampaign(object):
     def created_at(self):
         """
         Gets the created_at of this GetEmailCampaign.
-        Creation date of the campaign (YYYY-MM-DD HH:mm:ss)
+        Creation date of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetEmailCampaign.
-        :rtype: str
+        :rtype: datetime
         """
         return self._created_at
 
@@ -526,15 +523,13 @@ class GetEmailCampaign(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetEmailCampaign.
-        Creation date of the campaign (YYYY-MM-DD HH:mm:ss)
+        Creation date of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetEmailCampaign.
-        :type: str
+        :type: datetime
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")
-        if created_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$', created_at):
-            raise ValueError("Invalid value for `created_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/`")
 
         self._created_at = created_at
 
@@ -542,10 +537,10 @@ class GetEmailCampaign(object):
     def modified_at(self):
         """
         Gets the modified_at of this GetEmailCampaign.
-        Date of last modification of the campaign (YYYY-MM-DD HH:mm:ss)
+        Date of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The modified_at of this GetEmailCampaign.
-        :rtype: str
+        :rtype: datetime
         """
         return self._modified_at
 
@@ -553,15 +548,13 @@ class GetEmailCampaign(object):
     def modified_at(self, modified_at):
         """
         Sets the modified_at of this GetEmailCampaign.
-        Date of last modification of the campaign (YYYY-MM-DD HH:mm:ss)
+        Date of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param modified_at: The modified_at of this GetEmailCampaign.
-        :type: str
+        :type: datetime
         """
         if modified_at is None:
             raise ValueError("Invalid value for `modified_at`, must not be `None`")
-        if modified_at is not None and not re.search('^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$', modified_at):
-            raise ValueError("Invalid value for `modified_at`, must be a follow pattern or equal to `/^([1-9]\\d{3}-\\d{2}-\\d{2} [0-2]\\d:[0-5]\\d:[0-5]\\d)?$/`")
 
         self._modified_at = modified_at
 
