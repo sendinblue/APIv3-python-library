@@ -124,6 +124,13 @@ class UpdateWebhook(object):
         :param events: The events of this UpdateWebhook.
         :type: list[str]
         """
+        allowed_values = ["hardBounce", "softBounce", "blocked", "spam", "delivered", "request", "click", "invalid", "deferred", "opened", "uniqueOpened", "unsubscribed", "listAddition"]
+        if not set(events).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `events` [{0}], must be a subset of [{1}]"
+                .format(", ".join(map(str, set(events)-set(allowed_values))),
+                        ", ".join(map(str, allowed_values)))
+            )
 
         self._events = events
 
