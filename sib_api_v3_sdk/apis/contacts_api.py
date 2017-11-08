@@ -1198,6 +1198,7 @@ class ContactsApi(object):
             for asynchronous request. (optional)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1224,12 +1225,13 @@ class ContactsApi(object):
             for asynchronous request. (optional)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'offset']
+        all_params = ['limit', 'offset', 'modified_since']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1257,6 +1259,8 @@ class ContactsApi(object):
             query_params.append(('limit', params['limit']))
         if 'offset' in params:
             query_params.append(('offset', params['offset']))
+        if 'modified_since' in params:
+            query_params.append(('modifiedSince', params['modified_since']))
 
         header_params = {}
 

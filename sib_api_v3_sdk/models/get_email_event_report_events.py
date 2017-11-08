@@ -32,14 +32,15 @@ class GetEmailEventReportEvents(object):
     """
     swagger_types = {
         'email': 'str',
-        'date': 'date',
+        'date': 'datetime',
         'subject': 'str',
         'message_id': 'str',
         'event': 'str',
         'reason': 'str',
         'tag': 'str',
         'ip': 'str',
-        'link': 'str'
+        'link': 'str',
+        '_from': 'str'
     }
 
     attribute_map = {
@@ -51,10 +52,11 @@ class GetEmailEventReportEvents(object):
         'reason': 'reason',
         'tag': 'tag',
         'ip': 'ip',
-        'link': 'link'
+        'link': 'link',
+        '_from': 'from'
     }
 
-    def __init__(self, email=None, date=None, subject=None, message_id=None, event=None, reason=None, tag=None, ip=None, link=None):
+    def __init__(self, email=None, date=None, subject=None, message_id=None, event=None, reason=None, tag=None, ip=None, link=None, _from=None):
         """
         GetEmailEventReportEvents - a model defined in Swagger
         """
@@ -68,6 +70,7 @@ class GetEmailEventReportEvents(object):
         self._tag = None
         self._ip = None
         self._link = None
+        self.__from = None
 
         self.email = email
         self.date = date
@@ -75,12 +78,14 @@ class GetEmailEventReportEvents(object):
           self.subject = subject
         self.message_id = message_id
         self.event = event
-        self.reason = reason
+        if reason is not None:
+          self.reason = reason
         self.tag = tag
         if ip is not None:
           self.ip = ip
         if link is not None:
           self.link = link
+        self._from = _from
 
     @property
     def email(self):
@@ -114,7 +119,7 @@ class GetEmailEventReportEvents(object):
         Date on which the event has been generated
 
         :return: The date of this GetEmailEventReportEvents.
-        :rtype: date
+        :rtype: datetime
         """
         return self._date
 
@@ -125,7 +130,7 @@ class GetEmailEventReportEvents(object):
         Date on which the event has been generated
 
         :param date: The date of this GetEmailEventReportEvents.
-        :type: date
+        :type: datetime
         """
         if date is None:
             raise ValueError("Invalid value for `date`, must not be `None`")
@@ -231,8 +236,6 @@ class GetEmailEventReportEvents(object):
         :param reason: The reason of this GetEmailEventReportEvents.
         :type: str
         """
-        if reason is None:
-            raise ValueError("Invalid value for `reason`, must not be `None`")
 
         self._reason = reason
 
@@ -306,6 +309,31 @@ class GetEmailEventReportEvents(object):
         """
 
         self._link = link
+
+    @property
+    def _from(self):
+        """
+        Gets the _from of this GetEmailEventReportEvents.
+        Sender email from which the emails are sent
+
+        :return: The _from of this GetEmailEventReportEvents.
+        :rtype: str
+        """
+        return self.__from
+
+    @_from.setter
+    def _from(self, _from):
+        """
+        Sets the _from of this GetEmailEventReportEvents.
+        Sender email from which the emails are sent
+
+        :param _from: The _from of this GetEmailEventReportEvents.
+        :type: str
+        """
+        if _from is None:
+            raise ValueError("Invalid value for `_from`, must not be `None`")
+
+        self.__from = _from
 
     def to_dict(self):
         """

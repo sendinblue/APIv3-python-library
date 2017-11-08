@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contacts**
-> GetContacts get_contacts(limit=limit, offset=offset)
+> GetContacts get_contacts(limit=limit, offset=offset, modified_since=modified_since)
 
 Get all the contacts
 
@@ -608,10 +608,11 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.ContactsApi()
 limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
+modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
 
 try: 
     # Get all the contacts
-    api_response = api_instance.get_contacts(limit=limit, offset=offset)
+    api_response = api_instance.get_contacts(limit=limit, offset=offset, modified_since=modified_since)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->get_contacts: %s\n" % e)
@@ -623,6 +624,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
+ **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
 
 ### Return type
 

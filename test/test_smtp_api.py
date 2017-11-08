@@ -47,6 +47,14 @@ class TestSMTPApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_smtp_template(self):
+        """
+        Test case for delete_smtp_template
+
+        Delete an inactive smtp template
+        """
+        pass
+
     def test_get_aggregated_smtp_report(self):
         """
         Test case for get_aggregated_smtp_report
