@@ -42,7 +42,7 @@ class SMSCampaignsApi(object):
 
     def create_sms_campaign(self, create_sms_campaign, **kwargs):
         """
-        Creates a SMS campaign
+        Creates an SMS campaign
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -67,7 +67,7 @@ class SMSCampaignsApi(object):
 
     def create_sms_campaign_with_http_info(self, create_sms_campaign, **kwargs):
         """
-        Creates a SMS campaign
+        Creates an SMS campaign
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -250,7 +250,7 @@ class SMSCampaignsApi(object):
 
     def get_sms_campaign(self, campaign_id, get_sms_campaign, **kwargs):
         """
-        Get a SMS campaign
+        Get an SMS campaign
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -276,7 +276,7 @@ class SMSCampaignsApi(object):
 
     def get_sms_campaign_with_http_info(self, campaign_id, get_sms_campaign, **kwargs):
         """
-        Get a SMS campaign
+        Get an SMS campaign
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -910,7 +910,7 @@ class SMSCampaignsApi(object):
 
     def update_sms_campaign(self, campaign_id, update_sms_campaign, **kwargs):
         """
-        Updates a SMS campaign
+        Updates an SMS campaign
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -936,7 +936,7 @@ class SMSCampaignsApi(object):
 
     def update_sms_campaign_with_http_info(self, campaign_id, update_sms_campaign, **kwargs):
         """
-        Updates a SMS campaign
+        Updates an SMS campaign
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

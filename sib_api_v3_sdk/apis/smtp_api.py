@@ -247,6 +247,110 @@ class SMTPApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
+    def delete_smtp_template(self, template_id, **kwargs):
+        """
+        Delete an inactive smtp template
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_smtp_template(template_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int template_id: id of the template (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.delete_smtp_template_with_http_info(template_id, **kwargs)
+        else:
+            (data) = self.delete_smtp_template_with_http_info(template_id, **kwargs)
+            return data
+
+    def delete_smtp_template_with_http_info(self, template_id, **kwargs):
+        """
+        Delete an inactive smtp template
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_smtp_template_with_http_info(template_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int template_id: id of the template (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['template_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_smtp_template" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'template_id' is set
+        if ('template_id' not in params) or (params['template_id'] is None):
+            raise ValueError("Missing the required parameter `template_id` when calling `delete_smtp_template`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'template_id' in params:
+            path_params['templateId'] = params['template_id']
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api-key']
+
+        return self.api_client.call_api('/smtp/templates/{templateId}', 'DELETE',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type=None,
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def get_aggregated_smtp_report(self, **kwargs):
         """
         Get your SMTP activity aggregated over a period of time

@@ -35,7 +35,7 @@ class TestSMSCampaignsApi(unittest.TestCase):
         """
         Test case for create_sms_campaign
 
-        Creates a SMS campaign
+        Creates an SMS campaign
         """
         pass
 
@@ -51,7 +51,7 @@ class TestSMSCampaignsApi(unittest.TestCase):
         """
         Test case for get_sms_campaign
 
-        Get a SMS campaign
+        Get an SMS campaign
         """
         pass
 
@@ -99,7 +99,7 @@ class TestSMSCampaignsApi(unittest.TestCase):
         """
         Test case for update_sms_campaign
 
-        Updates a SMS campaign
+        Updates an SMS campaign
         """
         pass
 

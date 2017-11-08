@@ -35,7 +35,8 @@ class CreateContact(object):
         'attributes': 'object',
         'email_blacklisted': 'bool',
         'sms_blacklisted': 'bool',
-        'list_ids': 'list[int]'
+        'list_ids': 'list[int]',
+        'update_enabled': 'bool'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class CreateContact(object):
         'attributes': 'attributes',
         'email_blacklisted': 'emailBlacklisted',
         'sms_blacklisted': 'smsBlacklisted',
-        'list_ids': 'listIds'
+        'list_ids': 'listIds',
+        'update_enabled': 'updateEnabled'
     }
 
-    def __init__(self, email=None, attributes=None, email_blacklisted=None, sms_blacklisted=None, list_ids=None):
+    def __init__(self, email=None, attributes=None, email_blacklisted=None, sms_blacklisted=None, list_ids=None, update_enabled=False):
         """
         CreateContact - a model defined in Swagger
         """
@@ -56,6 +58,7 @@ class CreateContact(object):
         self._email_blacklisted = None
         self._sms_blacklisted = None
         self._list_ids = None
+        self._update_enabled = None
 
         if email is not None:
           self.email = email
@@ -67,6 +70,8 @@ class CreateContact(object):
           self.sms_blacklisted = sms_blacklisted
         if list_ids is not None:
           self.list_ids = list_ids
+        if update_enabled is not None:
+          self.update_enabled = update_enabled
 
     @property
     def email(self):
@@ -182,6 +187,29 @@ class CreateContact(object):
         """
 
         self._list_ids = list_ids
+
+    @property
+    def update_enabled(self):
+        """
+        Gets the update_enabled of this CreateContact.
+        Facilitate to update existing contact in same request (updateEnabled = true)
+
+        :return: The update_enabled of this CreateContact.
+        :rtype: bool
+        """
+        return self._update_enabled
+
+    @update_enabled.setter
+    def update_enabled(self, update_enabled):
+        """
+        Sets the update_enabled of this CreateContact.
+        Facilitate to update existing contact in same request (updateEnabled = true)
+
+        :param update_enabled: The update_enabled of this CreateContact.
+        :type: bool
+        """
+
+        self._update_enabled = update_enabled
 
     def to_dict(self):
         """
