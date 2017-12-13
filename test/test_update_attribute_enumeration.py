@@ -19,11 +19,11 @@ import unittest
 
 import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
-from sib_api_v3_sdk.models.create_attribute_enumemaration import CreateAttributeEnumemaration
+from sib_api_v3_sdk.models.update_attribute_enumeration import UpdateAttributeEnumeration
 
 
-class TestCreateAttributeEnumemaration(unittest.TestCase):
-    """ CreateAttributeEnumemaration unit test stubs """
+class TestUpdateAttributeEnumeration(unittest.TestCase):
+    """ UpdateAttributeEnumeration unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestCreateAttributeEnumemaration(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCreateAttributeEnumemaration(self):
+    def testUpdateAttributeEnumeration(self):
         """
-        Test CreateAttributeEnumemaration
+        Test UpdateAttributeEnumeration
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = sib_api_v3_sdk.models.create_attribute_enumemaration.CreateAttributeEnumemaration()
+        #model = sib_api_v3_sdk.models.update_attribute_enumeration.UpdateAttributeEnumeration()
         pass
 
 

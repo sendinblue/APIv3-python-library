@@ -31,7 +31,6 @@ class GetAttributesAttributes(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'int',
         'name': 'str',
         'category': 'str',
         'type': 'str',
@@ -40,7 +39,6 @@ class GetAttributesAttributes(object):
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
         'category': 'category',
         'type': 'type',
@@ -48,19 +46,17 @@ class GetAttributesAttributes(object):
         'calculated_value': 'calculatedValue'
     }
 
-    def __init__(self, id=None, name=None, category=None, type=None, enumeration=None, calculated_value=None):
+    def __init__(self, name=None, category=None, type=None, enumeration=None, calculated_value=None):
         """
         GetAttributesAttributes - a model defined in Swagger
         """
 
-        self._id = None
         self._name = None
         self._category = None
         self._type = None
         self._enumeration = None
         self._calculated_value = None
 
-        self.id = id
         self.name = name
         self.category = category
         if type is not None:
@@ -69,31 +65,6 @@ class GetAttributesAttributes(object):
           self.enumeration = enumeration
         if calculated_value is not None:
           self.calculated_value = calculated_value
-
-    @property
-    def id(self):
-        """
-        Gets the id of this GetAttributesAttributes.
-        ID of the attribute
-
-        :return: The id of this GetAttributesAttributes.
-        :rtype: int
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this GetAttributesAttributes.
-        ID of the attribute
-
-        :param id: The id of this GetAttributesAttributes.
-        :type: int
-        """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")
-
-        self._id = id
 
     @property
     def name(self):

@@ -19,48 +19,24 @@ import unittest
 
 import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
-from sib_api_v3_sdk.apis.attributes_api import AttributesApi
+from sib_api_v3_sdk.models.update_attribute import UpdateAttribute
 
 
-class TestAttributesApi(unittest.TestCase):
-    """ AttributesApi unit test stubs """
+class TestUpdateAttribute(unittest.TestCase):
+    """ UpdateAttribute unit test stubs """
 
     def setUp(self):
-        self.api = sib_api_v3_sdk.apis.attributes_api.AttributesApi()
+        pass
 
     def tearDown(self):
         pass
 
-    def test_create_attribute(self):
+    def testUpdateAttribute(self):
         """
-        Test case for create_attribute
-
-        Creates contact attribute
+        Test UpdateAttribute
         """
-        pass
-
-    def test_delete_attribute(self):
-        """
-        Test case for delete_attribute
-
-        Deletes an attribute
-        """
-        pass
-
-    def test_get_attributes(self):
-        """
-        Test case for get_attributes
-
-        Lists all attributes
-        """
-        pass
-
-    def test_update_attribute(self):
-        """
-        Test case for update_attribute
-
-        Updates contact attribute
-        """
+        # FIXME: construct object with mandatory attributes with example values
+        #model = sib_api_v3_sdk.models.update_attribute.UpdateAttribute()
         pass
 
 

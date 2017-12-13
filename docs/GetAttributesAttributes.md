@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | ID of the attribute | 
 **name** | **str** | Name of the attribute | 
 **category** | **str** | Category of the attribute | 
 **type** | **str** | Type of the attribute | [optional] 

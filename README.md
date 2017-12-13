@@ -80,15 +80,16 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountApi* | [**get_account**](docs/AccountApi.md#get_account) | **GET** /account | Get your account informations, plans and credits details
-*AttributesApi* | [**create_attribute**](docs/AttributesApi.md#create_attribute) | **POST** /contacts/attributes | Creates contact attributes
-*AttributesApi* | [**delete_attribute**](docs/AttributesApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeId} | Deletes an attribute
+*AttributesApi* | [**create_attribute**](docs/AttributesApi.md#create_attribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Creates contact attribute
+*AttributesApi* | [**delete_attribute**](docs/AttributesApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Deletes an attribute
 *AttributesApi* | [**get_attributes**](docs/AttributesApi.md#get_attributes) | **GET** /contacts/attributes | Lists all attributes
+*AttributesApi* | [**update_attribute**](docs/AttributesApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
 *ContactsApi* | [**add_contact_to_list**](docs/ContactsApi.md#add_contact_to_list) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
-*ContactsApi* | [**create_attribute**](docs/ContactsApi.md#create_attribute) | **POST** /contacts/attributes | Creates contact attributes
+*ContactsApi* | [**create_attribute**](docs/ContactsApi.md#create_attribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Creates contact attribute
 *ContactsApi* | [**create_contact**](docs/ContactsApi.md#create_contact) | **POST** /contacts | Create a contact
 *ContactsApi* | [**create_folder**](docs/ContactsApi.md#create_folder) | **POST** /contacts/folders | Create a folder
 *ContactsApi* | [**create_list**](docs/ContactsApi.md#create_list) | **POST** /contacts/lists | Create a list
-*ContactsApi* | [**delete_attribute**](docs/ContactsApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeId} | Deletes an attribute
+*ContactsApi* | [**delete_attribute**](docs/ContactsApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Deletes an attribute
 *ContactsApi* | [**delete_folder**](docs/ContactsApi.md#delete_folder) | **DELETE** /contacts/folders/{folderId} | Delete a folder (and all its lists)
 *ContactsApi* | [**delete_list**](docs/ContactsApi.md#delete_list) | **DELETE** /contacts/lists/{listId} | Delete a list
 *ContactsApi* | [**get_attributes**](docs/ContactsApi.md#get_attributes) | **GET** /contacts/attributes | Lists all attributes
@@ -104,6 +105,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**import_contacts**](docs/ContactsApi.md#import_contacts) | **POST** /contacts/import | Import contacts
 *ContactsApi* | [**remove_contact_to_list**](docs/ContactsApi.md#remove_contact_to_list) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
 *ContactsApi* | [**request_contact_export**](docs/ContactsApi.md#request_contact_export) | **POST** /contacts/export | Export contacts
+*ContactsApi* | [**update_attribute**](docs/ContactsApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
 *ContactsApi* | [**update_contact**](docs/ContactsApi.md#update_contact) | **PUT** /contacts/{email} | Updates a contact
 *ContactsApi* | [**update_folder**](docs/ContactsApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a contact folder
 *ContactsApi* | [**update_list**](docs/ContactsApi.md#update_list) | **PUT** /contacts/lists/{listId} | Update a list
@@ -187,7 +189,7 @@ Class | Method | HTTP request | Description
  - [AddCredits](docs/AddCredits.md)
  - [AddRemoveContactToList](docs/AddRemoveContactToList.md)
  - [CreateAttribute](docs/CreateAttribute.md)
- - [CreateAttributeEnumemaration](docs/CreateAttributeEnumemaration.md)
+ - [CreateAttributeEnumeration](docs/CreateAttributeEnumeration.md)
  - [CreateChild](docs/CreateChild.md)
  - [CreateContact](docs/CreateContact.md)
  - [CreateEmailCampaign](docs/CreateEmailCampaign.md)
@@ -310,6 +312,8 @@ Class | Method | HTTP request | Description
  - [SendTestEmail](docs/SendTestEmail.md)
  - [SendTestSms](docs/SendTestSms.md)
  - [SendTransacSms](docs/SendTransacSms.md)
+ - [UpdateAttribute](docs/UpdateAttribute.md)
+ - [UpdateAttributeEnumeration](docs/UpdateAttributeEnumeration.md)
  - [UpdateCampaignStatus](docs/UpdateCampaignStatus.md)
  - [UpdateChild](docs/UpdateChild.md)
  - [UpdateContact](docs/UpdateContact.md)

@@ -151,51 +151,55 @@ class ContactsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def create_attribute(self, create_attribute, **kwargs):
+    def create_attribute(self, attribute_category, attribute_name, create_attribute, **kwargs):
         """
-        Creates contact attributes
+        Creates contact attribute
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_attribute(create_attribute, callback=callback_function)
+        >>> thread = api.create_attribute(attribute_category, attribute_name, create_attribute, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str attribute_category: Category of the attribute (required)
+        :param str attribute_name: Name of the attribute (required)
         :param CreateAttribute create_attribute: Values to create an attribute (required)
-        :return: CreateModel
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_attribute_with_http_info(create_attribute, **kwargs)
+            return self.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, **kwargs)
         else:
-            (data) = self.create_attribute_with_http_info(create_attribute, **kwargs)
+            (data) = self.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, **kwargs)
             return data
 
-    def create_attribute_with_http_info(self, create_attribute, **kwargs):
+    def create_attribute_with_http_info(self, attribute_category, attribute_name, create_attribute, **kwargs):
         """
-        Creates contact attributes
+        Creates contact attribute
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_attribute_with_http_info(create_attribute, callback=callback_function)
+        >>> thread = api.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str attribute_category: Category of the attribute (required)
+        :param str attribute_name: Name of the attribute (required)
         :param CreateAttribute create_attribute: Values to create an attribute (required)
-        :return: CreateModel
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['create_attribute']
+        all_params = ['attribute_category', 'attribute_name', 'create_attribute']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -210,6 +214,12 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'attribute_category' is set
+        if ('attribute_category' not in params) or (params['attribute_category'] is None):
+            raise ValueError("Missing the required parameter `attribute_category` when calling `create_attribute`")
+        # verify the required parameter 'attribute_name' is set
+        if ('attribute_name' not in params) or (params['attribute_name'] is None):
+            raise ValueError("Missing the required parameter `attribute_name` when calling `create_attribute`")
         # verify the required parameter 'create_attribute' is set
         if ('create_attribute' not in params) or (params['create_attribute'] is None):
             raise ValueError("Missing the required parameter `create_attribute` when calling `create_attribute`")
@@ -218,6 +228,10 @@ class ContactsApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'attribute_category' in params:
+            path_params['attributeCategory'] = params['attribute_category']
+        if 'attribute_name' in params:
+            path_params['attributeName'] = params['attribute_name']
 
         query_params = []
 
@@ -240,14 +254,14 @@ class ContactsApi(object):
         # Authentication setting
         auth_settings = ['api-key']
 
-        return self.api_client.call_api('/contacts/attributes', 'POST',
+        return self.api_client.call_api('/contacts/attributes/{attributeCategory}/{attributeName}', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='CreateModel',
+                                        response_type=None,
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -567,7 +581,7 @@ class ContactsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def delete_attribute(self, attribute_id, **kwargs):
+    def delete_attribute(self, attribute_category, attribute_name, **kwargs):
         """
         Deletes an attribute
         This method makes a synchronous HTTP request by default. To make an
@@ -576,23 +590,24 @@ class ContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_attribute(attribute_id, callback=callback_function)
+        >>> thread = api.delete_attribute(attribute_category, attribute_name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int attribute_id: id of the attribute (required)
+        :param str attribute_category: Category of the attribute (required)
+        :param str attribute_name: Name of the existing attribute (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_attribute_with_http_info(attribute_id, **kwargs)
+            return self.delete_attribute_with_http_info(attribute_category, attribute_name, **kwargs)
         else:
-            (data) = self.delete_attribute_with_http_info(attribute_id, **kwargs)
+            (data) = self.delete_attribute_with_http_info(attribute_category, attribute_name, **kwargs)
             return data
 
-    def delete_attribute_with_http_info(self, attribute_id, **kwargs):
+    def delete_attribute_with_http_info(self, attribute_category, attribute_name, **kwargs):
         """
         Deletes an attribute
         This method makes a synchronous HTTP request by default. To make an
@@ -601,17 +616,18 @@ class ContactsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_attribute_with_http_info(attribute_id, callback=callback_function)
+        >>> thread = api.delete_attribute_with_http_info(attribute_category, attribute_name, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int attribute_id: id of the attribute (required)
+        :param str attribute_category: Category of the attribute (required)
+        :param str attribute_name: Name of the existing attribute (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['attribute_id']
+        all_params = ['attribute_category', 'attribute_name']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -626,16 +642,21 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'attribute_id' is set
-        if ('attribute_id' not in params) or (params['attribute_id'] is None):
-            raise ValueError("Missing the required parameter `attribute_id` when calling `delete_attribute`")
+        # verify the required parameter 'attribute_category' is set
+        if ('attribute_category' not in params) or (params['attribute_category'] is None):
+            raise ValueError("Missing the required parameter `attribute_category` when calling `delete_attribute`")
+        # verify the required parameter 'attribute_name' is set
+        if ('attribute_name' not in params) or (params['attribute_name'] is None):
+            raise ValueError("Missing the required parameter `attribute_name` when calling `delete_attribute`")
 
 
         collection_formats = {}
 
         path_params = {}
-        if 'attribute_id' in params:
-            path_params['attributeId'] = params['attribute_id']
+        if 'attribute_category' in params:
+            path_params['attributeCategory'] = params['attribute_category']
+        if 'attribute_name' in params:
+            path_params['attributeName'] = params['attribute_name']
 
         query_params = []
 
@@ -656,7 +677,7 @@ class ContactsApi(object):
         # Authentication setting
         auth_settings = ['api-key']
 
-        return self.api_client.call_api('/contacts/attributes/{attributeId}', 'DELETE',
+        return self.api_client.call_api('/contacts/attributes/{attributeCategory}/{attributeName}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2270,6 +2291,124 @@ class ContactsApi(object):
                                         post_params=form_params,
                                         files=local_var_files,
                                         response_type='CreatedProcessId',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def update_attribute(self, attribute_category, attribute_name, update_attribute, **kwargs):
+        """
+        Updates contact attribute
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_attribute(attribute_category, attribute_name, update_attribute, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str attribute_category: Category of the attribute (required)
+        :param str attribute_name: Name of the existing attribute (required)
+        :param UpdateAttribute update_attribute: Values to update an attribute (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, **kwargs)
+        else:
+            (data) = self.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, **kwargs)
+            return data
+
+    def update_attribute_with_http_info(self, attribute_category, attribute_name, update_attribute, **kwargs):
+        """
+        Updates contact attribute
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str attribute_category: Category of the attribute (required)
+        :param str attribute_name: Name of the existing attribute (required)
+        :param UpdateAttribute update_attribute: Values to update an attribute (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['attribute_category', 'attribute_name', 'update_attribute']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_attribute" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'attribute_category' is set
+        if ('attribute_category' not in params) or (params['attribute_category'] is None):
+            raise ValueError("Missing the required parameter `attribute_category` when calling `update_attribute`")
+        # verify the required parameter 'attribute_name' is set
+        if ('attribute_name' not in params) or (params['attribute_name'] is None):
+            raise ValueError("Missing the required parameter `attribute_name` when calling `update_attribute`")
+        # verify the required parameter 'update_attribute' is set
+        if ('update_attribute' not in params) or (params['update_attribute'] is None):
+            raise ValueError("Missing the required parameter `update_attribute` when calling `update_attribute`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'attribute_category' in params:
+            path_params['attributeCategory'] = params['attribute_category']
+        if 'attribute_name' in params:
+            path_params['attributeName'] = params['attribute_name']
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'update_attribute' in params:
+            body_params = params['update_attribute']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api-key']
+
+        return self.api_client.call_api('/contacts/attributes/{attributeCategory}/{attributeName}', 'PUT',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type=None,
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

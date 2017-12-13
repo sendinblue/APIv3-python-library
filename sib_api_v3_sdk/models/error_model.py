@@ -73,7 +73,7 @@ class ErrorModel(object):
         """
         if code is None:
             raise ValueError("Invalid value for `code`, must not be `None`")
-        allowed_values = ["invalid_parameter", "missing_parameter", "out_of_range", "campaign_processing", "campaign_sent", "document_not_found", "reseller_permission", "not_enough_credits", "permission_denied", "duplicate_parameter", "method_not_allowed", "unauthorized", "account_under_validation", "not_acceptable"]
+        allowed_values = ["invalid_parameter", "missing_parameter", "out_of_range", "campaign_processing", "campaign_sent", "document_not_found", "reseller_permission", "not_enough_credits", "permission_denied", "duplicate_parameter", "duplicate_request", "method_not_allowed", "unauthorized", "account_under_validation", "not_acceptable"]
         if code not in allowed_values:
             raise ValueError(
                 "Invalid value for `code` ({0}), must be one of {1}"

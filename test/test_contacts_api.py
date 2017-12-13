@@ -43,7 +43,7 @@ class TestContactsApi(unittest.TestCase):
         """
         Test case for create_attribute
 
-        Creates contact attributes
+        Creates contact attribute
         """
         pass
 
@@ -196,6 +196,14 @@ class TestContactsApi(unittest.TestCase):
         Test case for request_contact_export
 
         Export contacts
+        """
+        pass
+
+    def test_update_attribute(self):
+        """
+        Test case for update_attribute
+
+        Updates contact attribute
         """
         pass
 
