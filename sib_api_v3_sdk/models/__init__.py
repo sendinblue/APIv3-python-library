@@ -17,7 +17,7 @@ from __future__ import absolute_import
 from .add_credits import AddCredits
 from .add_remove_contact_to_list import AddRemoveContactToList
 from .create_attribute import CreateAttribute
-from .create_attribute_enumemaration import CreateAttributeEnumemaration
+from .create_attribute_enumeration import CreateAttributeEnumeration
 from .create_child import CreateChild
 from .create_contact import CreateContact
 from .create_email_campaign import CreateEmailCampaign
@@ -140,6 +140,8 @@ from .send_template_email import SendTemplateEmail
 from .send_test_email import SendTestEmail
 from .send_test_sms import SendTestSms
 from .send_transac_sms import SendTransacSms
+from .update_attribute import UpdateAttribute
+from .update_attribute_enumeration import UpdateAttributeEnumeration
 from .update_campaign_status import UpdateCampaignStatus
 from .update_child import UpdateChild
 from .update_contact import UpdateContact

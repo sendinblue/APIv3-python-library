@@ -31,21 +31,25 @@ class SendSms(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'reference': 'str'
+        'reference': 'str',
+        'message_id': 'int'
     }
 
     attribute_map = {
-        'reference': 'reference'
+        'reference': 'reference',
+        'message_id': 'messageId'
     }
 
-    def __init__(self, reference=None):
+    def __init__(self, reference=None, message_id=None):
         """
         SendSms - a model defined in Swagger
         """
 
         self._reference = None
+        self._message_id = None
 
         self.reference = reference
+        self.message_id = message_id
 
     @property
     def reference(self):
@@ -69,6 +73,29 @@ class SendSms(object):
             raise ValueError("Invalid value for `reference`, must not be `None`")
 
         self._reference = reference
+
+    @property
+    def message_id(self):
+        """
+        Gets the message_id of this SendSms.
+
+        :return: The message_id of this SendSms.
+        :rtype: int
+        """
+        return self._message_id
+
+    @message_id.setter
+    def message_id(self, message_id):
+        """
+        Sets the message_id of this SendSms.
+
+        :param message_id: The message_id of this SendSms.
+        :type: int
+        """
+        if message_id is None:
+            raise ValueError("Invalid value for `message_id`, must not be `None`")
+
+        self._message_id = message_id
 
     def to_dict(self):
         """

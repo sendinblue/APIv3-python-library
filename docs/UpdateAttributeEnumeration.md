@@ -1,10 +1,10 @@
-# SendSms
+# UpdateAttributeEnumeration
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reference** | **str** |  | 
-**message_id** | **int** |  | 
+**id** | **int** | Id of the value | [optional] 
+**label** | **str** | Label of the value | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
