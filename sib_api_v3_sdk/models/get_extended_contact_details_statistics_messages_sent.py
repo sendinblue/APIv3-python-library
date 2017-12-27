@@ -80,7 +80,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent(object):
     def event_time(self):
         """
         Gets the event_time of this GetExtendedContactDetailsStatisticsMessagesSent.
-        Date of the event
+        UTC date-time of the event
 
         :return: The event_time of this GetExtendedContactDetailsStatisticsMessagesSent.
         :rtype: datetime
@@ -91,7 +91,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this GetExtendedContactDetailsStatisticsMessagesSent.
-        Date of the event
+        UTC date-time of the event
 
         :param event_time: The event_time of this GetExtendedContactDetailsStatisticsMessagesSent.
         :type: datetime

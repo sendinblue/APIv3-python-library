@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the campaign | 
 **html_content** | **str** | Mandatory if htmlUrl is empty. Body of the message (HTML) | [optional] 
 **html_url** | **str** | Mandatory if htmlContent is empty. Url to the message (HTML) | [optional] 
-**scheduled_at** | **datetime** | Sending date and time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
+**scheduled_at** | **datetime** | Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
 **subject** | **str** | Subject of the campaign | 
 **reply_to** | **str** | Email on which the campaign recipients will be able to reply to | [optional] 
 **to_field** | **str** | To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, use [FNAME] [LNAME]. These attributes must already exist in your contact database | [optional] 

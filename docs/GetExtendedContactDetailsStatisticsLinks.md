@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** | Number of clicks on this link for the campaign | 
-**event_time** | **datetime** | Date of the event | 
+**event_time** | **datetime** | UTC date-time of the event | 
 **ip** | **str** | IP from which the user has clicked on the link | 
 **url** | **str** | URL of the clicked link | 
 

@@ -88,7 +88,7 @@ class GetExtendedContactDetailsStatisticsLinks(object):
     def event_time(self):
         """
         Gets the event_time of this GetExtendedContactDetailsStatisticsLinks.
-        Date of the event
+        UTC date-time of the event
 
         :return: The event_time of this GetExtendedContactDetailsStatisticsLinks.
         :rtype: datetime
@@ -99,7 +99,7 @@ class GetExtendedContactDetailsStatisticsLinks(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this GetExtendedContactDetailsStatisticsLinks.
-        Date of the event
+        UTC date-time of the event
 
         :param event_time: The event_time of this GetExtendedContactDetailsStatisticsLinks.
         :type: datetime

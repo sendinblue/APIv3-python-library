@@ -270,7 +270,7 @@ class GetExtendedCampaignOverview(object):
     def scheduled_at(self):
         """
         Gets the scheduled_at of this GetExtendedCampaignOverview.
-        Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The scheduled_at of this GetExtendedCampaignOverview.
         :rtype: datetime
@@ -281,7 +281,7 @@ class GetExtendedCampaignOverview(object):
     def scheduled_at(self, scheduled_at):
         """
         Sets the scheduled_at of this GetExtendedCampaignOverview.
-        Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param scheduled_at: The scheduled_at of this GetExtendedCampaignOverview.
         :type: datetime
@@ -512,7 +512,7 @@ class GetExtendedCampaignOverview(object):
     def created_at(self):
         """
         Gets the created_at of this GetExtendedCampaignOverview.
-        Creation date of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetExtendedCampaignOverview.
         :rtype: datetime
@@ -523,7 +523,7 @@ class GetExtendedCampaignOverview(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetExtendedCampaignOverview.
-        Creation date of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetExtendedCampaignOverview.
         :type: datetime
@@ -537,7 +537,7 @@ class GetExtendedCampaignOverview(object):
     def modified_at(self):
         """
         Gets the modified_at of this GetExtendedCampaignOverview.
-        Date of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The modified_at of this GetExtendedCampaignOverview.
         :rtype: datetime
@@ -548,7 +548,7 @@ class GetExtendedCampaignOverview(object):
     def modified_at(self, modified_at):
         """
         Sets the modified_at of this GetExtendedCampaignOverview.
-        Date of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param modified_at: The modified_at of this GetExtendedCampaignOverview.
         :type: datetime

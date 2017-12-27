@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the campaign | [optional] 
 **html_content** | **str** | Body of the message (HTML version). REQUIRED if htmlUrl is empty | [optional] 
 **html_url** | **str** | Url which contents the body of the email message. REQUIRED if htmlContent is empty | [optional] 
-**scheduled_at** | **datetime** | Date and time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
+**scheduled_at** | **datetime** | UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
 **subject** | **str** | Subject of the campaign | [optional] 
 **reply_to** | **str** | Email on which campaign recipients will be able to reply to | [optional] 
 **to_field** | **str** | This is to personalize the «To» Field. If you want to include the first name and last name of your recipient, add [FNAME] [LNAME]. To use the contact attributes here, these must already exist in SendinBlue account | [optional] 

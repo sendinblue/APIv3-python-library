@@ -249,7 +249,7 @@ class CreateEmailCampaign(object):
     def scheduled_at(self):
         """
         Gets the scheduled_at of this CreateEmailCampaign.
-        Sending date and time (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The scheduled_at of this CreateEmailCampaign.
         :rtype: datetime
@@ -260,7 +260,7 @@ class CreateEmailCampaign(object):
     def scheduled_at(self, scheduled_at):
         """
         Sets the scheduled_at of this CreateEmailCampaign.
-        Sending date and time (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param scheduled_at: The scheduled_at of this CreateEmailCampaign.
         :type: datetime

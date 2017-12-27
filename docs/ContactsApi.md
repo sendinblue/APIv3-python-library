@@ -614,7 +614,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.ContactsApi()
 limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
-modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
+modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
 
 try: 
     # Get all the contacts
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
- **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
+ **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
 
 ### Return type
 
@@ -668,7 +668,7 @@ sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi()
 list_id = 789 # int | Id of the list
-modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
+modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
 limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
@@ -685,7 +685,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**| Id of the list | 
- **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
+ **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
