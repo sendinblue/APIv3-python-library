@@ -209,7 +209,7 @@ class GetCampaignOverview(object):
     def scheduled_at(self):
         """
         Gets the scheduled_at of this GetCampaignOverview.
-        Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The scheduled_at of this GetCampaignOverview.
         :rtype: datetime
@@ -220,7 +220,7 @@ class GetCampaignOverview(object):
     def scheduled_at(self, scheduled_at):
         """
         Sets the scheduled_at of this GetCampaignOverview.
-        Date on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param scheduled_at: The scheduled_at of this GetCampaignOverview.
         :type: datetime

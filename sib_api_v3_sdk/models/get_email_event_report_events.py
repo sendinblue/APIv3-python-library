@@ -116,7 +116,7 @@ class GetEmailEventReportEvents(object):
     def date(self):
         """
         Gets the date of this GetEmailEventReportEvents.
-        Date on which the event has been generated
+        UTC date-time on which the event has been generated
 
         :return: The date of this GetEmailEventReportEvents.
         :rtype: datetime
@@ -127,7 +127,7 @@ class GetEmailEventReportEvents(object):
     def date(self, date):
         """
         Sets the date of this GetEmailEventReportEvents.
-        Date on which the event has been generated
+        UTC date-time on which the event has been generated
 
         :param date: The date of this GetEmailEventReportEvents.
         :type: datetime

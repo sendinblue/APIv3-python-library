@@ -113,7 +113,7 @@ class GetContactCampaignStatsOpened(object):
     def event_time(self):
         """
         Gets the event_time of this GetContactCampaignStatsOpened.
-        Date of the event
+        UTC date-time of the event
 
         :return: The event_time of this GetContactCampaignStatsOpened.
         :rtype: datetime
@@ -124,7 +124,7 @@ class GetContactCampaignStatsOpened(object):
     def event_time(self, event_time):
         """
         Sets the event_time of this GetContactCampaignStatsOpened.
-        Date of the event
+        UTC date-time of the event
 
         :param event_time: The event_time of this GetContactCampaignStatsOpened.
         :type: datetime

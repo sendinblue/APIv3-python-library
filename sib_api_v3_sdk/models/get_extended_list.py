@@ -206,7 +206,7 @@ class GetExtendedList(object):
     def created_at(self):
         """
         Gets the created_at of this GetExtendedList.
-        Creation Date of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetExtendedList.
         :rtype: datetime
@@ -217,7 +217,7 @@ class GetExtendedList(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetExtendedList.
-        Creation Date of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetExtendedList.
         :type: datetime

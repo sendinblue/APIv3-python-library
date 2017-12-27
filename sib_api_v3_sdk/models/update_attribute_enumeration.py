@@ -31,50 +31,50 @@ class UpdateAttributeEnumeration(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'int',
+        'value': 'int',
         'label': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
+        'value': 'value',
         'label': 'label'
     }
 
-    def __init__(self, id=None, label=None):
+    def __init__(self, value=None, label=None):
         """
         UpdateAttributeEnumeration - a model defined in Swagger
         """
 
-        self._id = None
+        self._value = None
         self._label = None
 
-        if id is not None:
-          self.id = id
-        if label is not None:
-          self.label = label
+        self.value = value
+        self.label = label
 
     @property
-    def id(self):
+    def value(self):
         """
-        Gets the id of this UpdateAttributeEnumeration.
+        Gets the value of this UpdateAttributeEnumeration.
         Id of the value
 
-        :return: The id of this UpdateAttributeEnumeration.
+        :return: The value of this UpdateAttributeEnumeration.
         :rtype: int
         """
-        return self._id
+        return self._value
 
-    @id.setter
-    def id(self, id):
+    @value.setter
+    def value(self, value):
         """
-        Sets the id of this UpdateAttributeEnumeration.
+        Sets the value of this UpdateAttributeEnumeration.
         Id of the value
 
-        :param id: The id of this UpdateAttributeEnumeration.
+        :param value: The value of this UpdateAttributeEnumeration.
         :type: int
         """
+        if value is None:
+            raise ValueError("Invalid value for `value`, must not be `None`")
 
-        self._id = id
+        self._value = value
 
     @property
     def label(self):
@@ -96,6 +96,8 @@ class UpdateAttributeEnumeration(object):
         :param label: The label of this UpdateAttributeEnumeration.
         :type: str
         """
+        if label is None:
+            raise ValueError("Invalid value for `label`, must not be `None`")
 
         self._label = label
 

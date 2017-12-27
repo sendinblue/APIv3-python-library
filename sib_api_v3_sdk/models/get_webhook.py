@@ -204,7 +204,7 @@ class GetWebhook(object):
     def created_at(self):
         """
         Gets the created_at of this GetWebhook.
-        Creation date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetWebhook.
         :rtype: datetime
@@ -215,7 +215,7 @@ class GetWebhook(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetWebhook.
-        Creation date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetWebhook.
         :type: datetime
@@ -229,7 +229,7 @@ class GetWebhook(object):
     def modified_at(self):
         """
         Gets the modified_at of this GetWebhook.
-        Last modification date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Last modification UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The modified_at of this GetWebhook.
         :rtype: datetime
@@ -240,7 +240,7 @@ class GetWebhook(object):
     def modified_at(self, modified_at):
         """
         Sets the modified_at of this GetWebhook.
-        Last modification date of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Last modification UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param modified_at: The modified_at of this GetWebhook.
         :type: datetime

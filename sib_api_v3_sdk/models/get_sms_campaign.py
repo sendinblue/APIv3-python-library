@@ -189,7 +189,7 @@ class GetSmsCampaign(object):
     def scheduled_at(self):
         """
         Gets the scheduled_at of this GetSmsCampaign.
-        Date on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format
+        UTC date-time on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format
 
         :return: The scheduled_at of this GetSmsCampaign.
         :rtype: datetime
@@ -200,7 +200,7 @@ class GetSmsCampaign(object):
     def scheduled_at(self, scheduled_at):
         """
         Sets the scheduled_at of this GetSmsCampaign.
-        Date on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format
+        UTC date-time on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format
 
         :param scheduled_at: The scheduled_at of this GetSmsCampaign.
         :type: datetime
@@ -264,7 +264,7 @@ class GetSmsCampaign(object):
     def created_at(self):
         """
         Gets the created_at of this GetSmsCampaign.
-        Creation date of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetSmsCampaign.
         :rtype: datetime
@@ -275,7 +275,7 @@ class GetSmsCampaign(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetSmsCampaign.
-        Creation date of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetSmsCampaign.
         :type: datetime
@@ -289,7 +289,7 @@ class GetSmsCampaign(object):
     def modified_at(self):
         """
         Gets the modified_at of this GetSmsCampaign.
-        Date of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The modified_at of this GetSmsCampaign.
         :rtype: datetime
@@ -300,7 +300,7 @@ class GetSmsCampaign(object):
     def modified_at(self, modified_at):
         """
         Sets the modified_at of this GetSmsCampaign.
-        Date of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param modified_at: The modified_at of this GetSmsCampaign.
         :type: datetime

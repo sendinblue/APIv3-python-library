@@ -84,7 +84,7 @@ class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription(objec
     def event_time(self):
         """
         Gets the event_time of this GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription.
-        Date of the event
+        UTC date-time of the event
 
         :return: The event_time of this GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription.
         :rtype: datetime
@@ -95,7 +95,7 @@ class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription(objec
     def event_time(self, event_time):
         """
         Sets the event_time of this GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription.
-        Date of the event
+        UTC date-time of the event
 
         :param event_time: The event_time of this GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription.
         :type: datetime

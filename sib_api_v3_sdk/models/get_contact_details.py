@@ -180,7 +180,7 @@ class GetContactDetails(object):
     def modified_at(self):
         """
         Gets the modified_at of this GetContactDetails.
-        Last modification date of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Last modification UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The modified_at of this GetContactDetails.
         :rtype: datetime
@@ -191,7 +191,7 @@ class GetContactDetails(object):
     def modified_at(self, modified_at):
         """
         Sets the modified_at of this GetContactDetails.
-        Last modification date of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Last modification UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param modified_at: The modified_at of this GetContactDetails.
         :type: datetime

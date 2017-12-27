@@ -164,7 +164,7 @@ class UpdateSmsCampaign(object):
     def scheduled_at(self):
         """
         Gets the scheduled_at of this UpdateSmsCampaign.
-        Date and time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The scheduled_at of this UpdateSmsCampaign.
         :rtype: datetime
@@ -175,7 +175,7 @@ class UpdateSmsCampaign(object):
     def scheduled_at(self, scheduled_at):
         """
         Sets the scheduled_at of this UpdateSmsCampaign.
-        Date and time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param scheduled_at: The scheduled_at of this UpdateSmsCampaign.
         :type: datetime

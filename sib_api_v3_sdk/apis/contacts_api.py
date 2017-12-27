@@ -1219,7 +1219,7 @@ class ContactsApi(object):
             for asynchronous request. (optional)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
-        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1246,7 +1246,7 @@ class ContactsApi(object):
             for asynchronous request. (optional)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
-        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1329,7 +1329,7 @@ class ContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int list_id: Id of the list (required)
-        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetContacts
@@ -1357,7 +1357,7 @@ class ContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int list_id: Id of the list (required)
-        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetContacts

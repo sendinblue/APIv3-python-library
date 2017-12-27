@@ -342,7 +342,7 @@ class GetSmtpTemplateOverview(object):
     def created_at(self):
         """
         Gets the created_at of this GetSmtpTemplateOverview.
-        Creation date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The created_at of this GetSmtpTemplateOverview.
         :rtype: datetime
@@ -353,7 +353,7 @@ class GetSmtpTemplateOverview(object):
     def created_at(self, created_at):
         """
         Sets the created_at of this GetSmtpTemplateOverview.
-        Creation date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Creation UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param created_at: The created_at of this GetSmtpTemplateOverview.
         :type: datetime
@@ -367,7 +367,7 @@ class GetSmtpTemplateOverview(object):
     def modified_at(self):
         """
         Gets the modified_at of this GetSmtpTemplateOverview.
-        Last modification date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Last modification UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :return: The modified_at of this GetSmtpTemplateOverview.
         :rtype: datetime
@@ -378,7 +378,7 @@ class GetSmtpTemplateOverview(object):
     def modified_at(self, modified_at):
         """
         Sets the modified_at of this GetSmtpTemplateOverview.
-        Last modification date of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
+        Last modification UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)
 
         :param modified_at: The modified_at of this GetSmtpTemplateOverview.
         :type: datetime
