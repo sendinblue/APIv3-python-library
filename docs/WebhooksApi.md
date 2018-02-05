@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create a webhook
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -25,15 +25,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.WebhooksApi()
+api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
 create_webhook = sib_api_v3_sdk.CreateWebhook() # CreateWebhook | Values to create a webhook
 
-try: 
+try:
     # Create a webhook
     api_response = api_instance.create_webhook(create_webhook)
     pprint(api_response)
@@ -67,7 +68,7 @@ Name | Type | Description  | Notes
 
 Delete a webhook
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -76,15 +77,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.WebhooksApi()
+api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
 webhook_id = 789 # int | Id of the webhook
 
-try: 
+try:
     # Delete a webhook
     api_instance.delete_webhook(webhook_id)
 except ApiException as e:
@@ -117,7 +119,7 @@ void (empty response body)
 
 Get a webhook details
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -126,15 +128,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.WebhooksApi()
+api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
 webhook_id = 789 # int | Id of the webhook
 
-try: 
+try:
     # Get a webhook details
     api_response = api_instance.get_webhook(webhook_id)
     pprint(api_response)
@@ -168,7 +171,7 @@ Name | Type | Description  | Notes
 
 Get all webhooks
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -177,15 +180,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.WebhooksApi()
+api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
 type = 'transactional' # str | Filter on webhook type (optional) (default to transactional)
 
-try: 
+try:
     # Get all webhooks
     api_response = api_instance.get_webhooks(type=type)
     pprint(api_response)
@@ -219,7 +223,7 @@ Name | Type | Description  | Notes
 
 Update a webhook
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -228,16 +232,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.WebhooksApi()
+api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
 webhook_id = 789 # int | Id of the webhook
 update_webhook = sib_api_v3_sdk.UpdateWebhook() # UpdateWebhook | Values to update a webhook
 
-try: 
+try:
     # Update a webhook
     api_instance.update_webhook(webhook_id, update_webhook)
 except ApiException as e:

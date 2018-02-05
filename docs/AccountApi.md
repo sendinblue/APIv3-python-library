@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Get your account informations, plans and credits details
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -21,14 +21,15 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.AccountApi()
+api_instance = sib_api_v3_sdk.AccountApi(sib_api_v3_sdk.ApiClient(configuration))
 
-try: 
+try:
     # Get your account informations, plans and credits details
     api_response = api_instance.get_account()
     pprint(api_response)

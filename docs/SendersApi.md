@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create a new sender
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -26,15 +26,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SendersApi()
+api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
 sender = sib_api_v3_sdk.CreateSender() # CreateSender | sender's name (optional)
 
-try: 
+try:
     # Create a new sender
     api_response = api_instance.create_sender(sender=sender)
     pprint(api_response)
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 Delete a sender
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -77,15 +78,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SendersApi()
+api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
 sender_id = 789 # int | Id of the sender
 
-try: 
+try:
     # Delete a sender
     api_instance.delete_sender(sender_id)
 except ApiException as e:
@@ -118,7 +120,7 @@ void (empty response body)
 
 Return all the dedicated IPs for your account
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -127,14 +129,15 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SendersApi()
+api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
 
-try: 
+try:
     # Return all the dedicated IPs for your account
     api_response = api_instance.get_ips()
     pprint(api_response)
@@ -165,7 +168,7 @@ This endpoint does not need any parameter.
 
 Return all the dedicated IPs for a sender
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -174,15 +177,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SendersApi()
+api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
 sender_id = 789 # int | Id of the sender
 
-try: 
+try:
     # Return all the dedicated IPs for a sender
     api_response = api_instance.get_ips_from_sender(sender_id)
     pprint(api_response)
@@ -216,7 +220,7 @@ Name | Type | Description  | Notes
 
 Get the list of all your senders
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -225,16 +229,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SendersApi()
+api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
 ip = 'ip_example' # str | Filter your senders for a specific ip (available for dedicated IP usage only) (optional)
 domain = 'domain_example' # str | Filter your senders for a specific domain (optional)
 
-try: 
+try:
     # Get the list of all your senders
     api_response = api_instance.get_senders(ip=ip, domain=domain)
     pprint(api_response)
@@ -269,7 +274,7 @@ Name | Type | Description  | Notes
 
 Update a sender
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -278,16 +283,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SendersApi()
+api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
 sender_id = 789 # int | Id of the sender
 sender = sib_api_v3_sdk.UpdateSender() # UpdateSender | sender's name (optional)
 
-try: 
+try:
     # Update a sender
     api_instance.update_sender(sender_id, sender=sender)
 except ApiException as e:

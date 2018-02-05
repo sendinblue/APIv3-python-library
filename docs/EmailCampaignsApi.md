@@ -5,7 +5,7 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_email_campaign**](EmailCampaignsApi.md#create_email_campaign) | **POST** /emailCampaigns | Create an email campaign
-[**delete_email_campaigns**](EmailCampaignsApi.md#delete_email_campaigns) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
+[**delete_email_campaign**](EmailCampaignsApi.md#delete_email_campaign) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
 [**email_export_recipients**](EmailCampaignsApi.md#email_export_recipients) | **POST** /emailCampaigns/{campaignId}/exportRecipients | Export the recipients of a campaign
 [**get_email_campaign**](EmailCampaignsApi.md#get_email_campaign) | **GET** /emailCampaigns/{campaignId} | Get campaign informations
 [**get_email_campaigns**](EmailCampaignsApi.md#get_email_campaigns) | **GET** /emailCampaigns | Return all your created campaigns
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**send_report**](EmailCampaignsApi.md#send_report) | **POST** /emailCampaigns/{campaignId}/sendReport | Send the report of a campaigns
 [**send_test_email**](EmailCampaignsApi.md#send_test_email) | **POST** /emailCampaigns/{campaignId}/sendTest | Send an email campaign to your test list
 [**update_campaign_status**](EmailCampaignsApi.md#update_campaign_status) | **PUT** /emailCampaigns/{campaignId}/status | Update a campaign status
-[**update_email_campaigns**](EmailCampaignsApi.md#update_email_campaigns) | **PUT** /emailCampaigns/{campaignId} | Update a campaign
+[**update_email_campaign**](EmailCampaignsApi.md#update_email_campaign) | **PUT** /emailCampaigns/{campaignId} | Update a campaign
 
 
 # **create_email_campaign**
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Create an email campaign
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -30,15 +30,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 email_campaigns = sib_api_v3_sdk.CreateEmailCampaign() # CreateEmailCampaign | Values to create a campaign
 
-try: 
+try:
     # Create an email campaign
     api_response = api_instance.create_email_campaign(email_campaigns)
     pprint(api_response)
@@ -67,12 +68,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_email_campaigns**
-> delete_email_campaigns(campaign_id)
+# **delete_email_campaign**
+> delete_email_campaign(campaign_id)
 
 Delete an email campaign
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -81,19 +82,20 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the campaign
 
-try: 
+try:
     # Delete an email campaign
-    api_instance.delete_email_campaigns(campaign_id)
+    api_instance.delete_email_campaign(campaign_id)
 except ApiException as e:
-    print("Exception when calling EmailCampaignsApi->delete_email_campaigns: %s\n" % e)
+    print("Exception when calling EmailCampaignsApi->delete_email_campaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -122,7 +124,7 @@ void (empty response body)
 
 Export the recipients of a campaign
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -131,16 +133,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
 recipient_export = sib_api_v3_sdk.EmailExportRecipients() # EmailExportRecipients | Values to send for a recipient export request (optional)
 
-try: 
+try:
     # Export the recipients of a campaign
     api_response = api_instance.email_export_recipients(campaign_id, recipient_export=recipient_export)
     pprint(api_response)
@@ -175,7 +178,7 @@ Name | Type | Description  | Notes
 
 Get campaign informations
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -184,15 +187,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
 
-try: 
+try:
     # Get campaign informations
     api_response = api_instance.get_email_campaign(campaign_id)
     pprint(api_response)
@@ -226,7 +230,7 @@ Name | Type | Description  | Notes
 
 Return all your created campaigns
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -235,18 +239,19 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 type = 'type_example' # str | Filter on the type of the campaigns (optional)
 status = 'status_example' # str | Filter on the status of the campaign (optional)
 limit = 500 # int | Number of documents per page (optional) (default to 500)
 offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 
-try: 
+try:
     # Return all your created campaigns
     api_response = api_instance.get_email_campaigns(type=type, status=status, limit=limit, offset=offset)
     pprint(api_response)
@@ -283,7 +288,7 @@ Name | Type | Description  | Notes
 
 Send an email campaign id of the campaign immediately
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -292,15 +297,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
 
-try: 
+try:
     # Send an email campaign id of the campaign immediately
     api_instance.send_email_campaign_now(campaign_id)
 except ApiException as e:
@@ -335,7 +341,7 @@ Send the report of a campaigns
 
 A PDF will be sent to the specified email addresses
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -344,16 +350,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
 send_report = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
 
-try: 
+try:
     # Send the report of a campaigns
     api_instance.send_report(campaign_id, send_report)
 except ApiException as e:
@@ -387,7 +394,7 @@ void (empty response body)
 
 Send an email campaign to your test list
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -396,16 +403,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
 email_to = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
 
-try: 
+try:
     # Send an email campaign to your test list
     api_instance.send_test_email(campaign_id, email_to)
 except ApiException as e:
@@ -439,7 +447,7 @@ void (empty response body)
 
 Update a campaign status
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -448,16 +456,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
 status = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign
 
-try: 
+try:
     # Update a campaign status
     api_instance.update_campaign_status(campaign_id, status)
 except ApiException as e:
@@ -486,12 +495,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_email_campaigns**
-> update_email_campaigns(campaign_id, email_campaign)
+# **update_email_campaign**
+> update_email_campaign(campaign_id, email_campaign)
 
 Update a campaign
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -500,20 +509,21 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.EmailCampaignsApi()
+api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
 email_campaign = sib_api_v3_sdk.UpdateEmailCampaign() # UpdateEmailCampaign | Values to update a campaign
 
-try: 
+try:
     # Update a campaign
-    api_instance.update_email_campaigns(campaign_id, email_campaign)
+    api_instance.update_email_campaign(campaign_id, email_campaign)
 except ApiException as e:
-    print("Exception when calling EmailCampaignsApi->update_email_campaigns: %s\n" % e)
+    print("Exception when calling EmailCampaignsApi->update_email_campaign: %s\n" % e)
 ```
 
 ### Parameters

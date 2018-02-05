@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 Creates contact attribute
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -24,17 +24,18 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.AttributesApi()
+api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the attribute
 create_attribute = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 
-try: 
+try:
     # Creates contact attribute
     api_instance.create_attribute(attribute_category, attribute_name, create_attribute)
 except ApiException as e:
@@ -69,7 +70,7 @@ void (empty response body)
 
 Deletes an attribute
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -78,16 +79,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.AttributesApi()
+api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the existing attribute
 
-try: 
+try:
     # Deletes an attribute
     api_instance.delete_attribute(attribute_category, attribute_name)
 except ApiException as e:
@@ -121,7 +123,7 @@ void (empty response body)
 
 Lists all attributes
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -130,14 +132,15 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.AttributesApi()
+api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
 
-try: 
+try:
     # Lists all attributes
     api_response = api_instance.get_attributes()
     pprint(api_response)
@@ -168,7 +171,7 @@ This endpoint does not need any parameter.
 
 Updates contact attribute
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -177,17 +180,18 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.AttributesApi()
+api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the existing attribute
 update_attribute = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 
-try: 
+try:
     # Updates contact attribute
     api_instance.update_attribute(attribute_category, attribute_name, update_attribute)
 except ApiException as e:
