@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Return the informations for a process
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -22,15 +22,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ProcessApi()
+api_instance = sib_api_v3_sdk.ProcessApi(sib_api_v3_sdk.ApiClient(configuration))
 process_id = 789 # int | Id of the process
 
-try: 
+try:
     # Return the informations for a process
     api_response = api_instance.get_process(process_id)
     pprint(api_response)
@@ -64,7 +65,7 @@ Name | Type | Description  | Notes
 
 Return all the processes for your account
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -73,16 +74,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ProcessApi()
+api_instance = sib_api_v3_sdk.ProcessApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 10 # int | Number limitation for the result returned (optional) (default to 10)
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
 
-try: 
+try:
     # Return all the processes for your account
     api_response = api_instance.get_processes(limit=limit, offset=offset)
     pprint(api_response)

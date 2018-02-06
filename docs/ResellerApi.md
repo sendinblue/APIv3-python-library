@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Add Email and/or SMS credits to a specific child account
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -29,16 +29,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 child_id = 789 # int | id of reseller's child
 add_credits = sib_api_v3_sdk.AddCredits() # AddCredits | Values to post to add credit to a specific child account
 
-try: 
+try:
     # Add Email and/or SMS credits to a specific child account
     api_response = api_instance.add_credits(child_id, add_credits)
     pprint(api_response)
@@ -73,7 +74,7 @@ Name | Type | Description  | Notes
 
 Associate a dedicated IP to the child
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -82,16 +83,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 child_id = 789 # int | id of reseller's child
 ip_id = sib_api_v3_sdk.ManageIp() # ManageIp | IP's id
 
-try: 
+try:
     # Associate a dedicated IP to the child
     api_instance.associate_ip_to_child(child_id, ip_id)
 except ApiException as e:
@@ -125,7 +127,7 @@ void (empty response body)
 
 Creates a reseller child
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -134,15 +136,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 reseller_child = sib_api_v3_sdk.CreateChild() # CreateChild | reseller child to add (optional)
 
-try: 
+try:
     # Creates a reseller child
     api_response = api_instance.create_reseller_child(reseller_child=reseller_child)
     pprint(api_response)
@@ -176,7 +179,7 @@ Name | Type | Description  | Notes
 
 Deletes a single reseller child based on the childId supplied
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -185,15 +188,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 child_id = 789 # int | id of reseller's child
 
-try: 
+try:
     # Deletes a single reseller child based on the childId supplied
     api_instance.delete_reseller_child(child_id)
 except ApiException as e:
@@ -226,7 +230,7 @@ void (empty response body)
 
 Dissociate a dedicated IP to the child
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -235,16 +239,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 child_id = 789 # int | id of reseller's child
 ip_id = sib_api_v3_sdk.ManageIp() # ManageIp | IP's id
 
-try: 
+try:
     # Dissociate a dedicated IP to the child
     api_instance.dissociate_ip_from_child(child_id, ip_id)
 except ApiException as e:
@@ -278,7 +283,7 @@ void (empty response body)
 
 Gets the info about a specific child account
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -287,15 +292,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 child_id = 789 # int | id of reseller's child
 
-try: 
+try:
     # Gets the info about a specific child account
     api_response = api_instance.get_child_info(child_id)
     pprint(api_response)
@@ -329,7 +335,7 @@ Name | Type | Description  | Notes
 
 Gets the list of all reseller's children accounts
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -338,14 +344,15 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 
-try: 
+try:
     # Gets the list of all reseller's children accounts
     api_response = api_instance.get_reseller_childs()
     pprint(api_response)
@@ -376,7 +383,7 @@ This endpoint does not need any parameter.
 
 Remove Email and/or SMS credits from a specific child account
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -385,16 +392,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 child_id = 789 # int | id of reseller's child
 remove_credits = sib_api_v3_sdk.RemoveCredits() # RemoveCredits | Values to post to remove email or SMS credits from a specific child account
 
-try: 
+try:
     # Remove Email and/or SMS credits from a specific child account
     api_response = api_instance.remove_credits(child_id, remove_credits)
     pprint(api_response)
@@ -429,7 +437,7 @@ Name | Type | Description  | Notes
 
 Updates infos of reseller's child based on the childId supplied
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -438,16 +446,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ResellerApi()
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 child_id = 789 # int | id of reseller's child
 reseller_child = sib_api_v3_sdk.UpdateChild() # UpdateChild | values to update in child profile
 
-try: 
+try:
     # Updates infos of reseller's child based on the childId supplied
     api_instance.update_reseller_child(child_id, reseller_child)
 except ApiException as e:

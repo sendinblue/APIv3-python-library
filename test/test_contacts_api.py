@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  | 
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -13,221 +13,194 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import sib_api_v3_sdk
+from sib_api_v3_sdk.api.contacts_api import ContactsApi  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
-from sib_api_v3_sdk.apis.contacts_api import ContactsApi
 
 
 class TestContactsApi(unittest.TestCase):
-    """ ContactsApi unit test stubs """
+    """ContactsApi unit test stubs"""
 
     def setUp(self):
-        self.api = sib_api_v3_sdk.apis.contacts_api.ContactsApi()
+        self.api = sib_api_v3_sdk.api.contacts_api.ContactsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_add_contact_to_list(self):
-        """
-        Test case for add_contact_to_list
+        """Test case for add_contact_to_list
 
-        Add existing contacts to a list
+        Add existing contacts to a list  # noqa: E501
         """
         pass
 
     def test_create_attribute(self):
-        """
-        Test case for create_attribute
+        """Test case for create_attribute
 
-        Creates contact attribute
+        Creates contact attribute  # noqa: E501
         """
         pass
 
     def test_create_contact(self):
-        """
-        Test case for create_contact
+        """Test case for create_contact
 
-        Create a contact
+        Create a contact  # noqa: E501
         """
         pass
 
     def test_create_folder(self):
-        """
-        Test case for create_folder
+        """Test case for create_folder
 
-        Create a folder
+        Create a folder  # noqa: E501
         """
         pass
 
     def test_create_list(self):
-        """
-        Test case for create_list
+        """Test case for create_list
 
-        Create a list
+        Create a list  # noqa: E501
         """
         pass
 
     def test_delete_attribute(self):
-        """
-        Test case for delete_attribute
+        """Test case for delete_attribute
 
-        Deletes an attribute
+        Deletes an attribute  # noqa: E501
         """
         pass
 
     def test_delete_folder(self):
-        """
-        Test case for delete_folder
+        """Test case for delete_folder
 
-        Delete a folder (and all its lists)
+        Delete a folder (and all its lists)  # noqa: E501
         """
         pass
 
     def test_delete_list(self):
-        """
-        Test case for delete_list
+        """Test case for delete_list
 
-        Delete a list
+        Delete a list  # noqa: E501
         """
         pass
 
     def test_get_attributes(self):
-        """
-        Test case for get_attributes
+        """Test case for get_attributes
 
-        Lists all attributes
+        Lists all attributes  # noqa: E501
         """
         pass
 
     def test_get_contact_info(self):
-        """
-        Test case for get_contact_info
+        """Test case for get_contact_info
 
-        Retrieves contact informations
+        Retrieves contact informations  # noqa: E501
         """
         pass
 
     def test_get_contact_stats(self):
-        """
-        Test case for get_contact_stats
+        """Test case for get_contact_stats
 
-        Get the campaigns statistics for a contact
+        Get the campaigns statistics for a contact  # noqa: E501
         """
         pass
 
     def test_get_contacts(self):
-        """
-        Test case for get_contacts
+        """Test case for get_contacts
 
-        Get all the contacts
+        Get all the contacts  # noqa: E501
         """
         pass
 
     def test_get_contacts_from_list(self):
-        """
-        Test case for get_contacts_from_list
+        """Test case for get_contacts_from_list
 
-        Get the contacts in a list
+        Get the contacts in a list  # noqa: E501
         """
         pass
 
     def test_get_folder(self):
-        """
-        Test case for get_folder
+        """Test case for get_folder
 
-        Returns folder details
+        Returns folder details  # noqa: E501
         """
         pass
 
     def test_get_folder_lists(self):
-        """
-        Test case for get_folder_lists
+        """Test case for get_folder_lists
 
-        Get the lists in a folder
+        Get the lists in a folder  # noqa: E501
         """
         pass
 
     def test_get_folders(self):
-        """
-        Test case for get_folders
+        """Test case for get_folders
 
-        Get all the folders
+        Get all the folders  # noqa: E501
         """
         pass
 
     def test_get_list(self):
-        """
-        Test case for get_list
+        """Test case for get_list
 
-        Get the details of a list
+        Get the details of a list  # noqa: E501
         """
         pass
 
     def test_get_lists(self):
-        """
-        Test case for get_lists
+        """Test case for get_lists
 
-        Get all the lists
+        Get all the lists  # noqa: E501
         """
         pass
 
     def test_import_contacts(self):
-        """
-        Test case for import_contacts
+        """Test case for import_contacts
 
-        Import contacts
+        Import contacts  # noqa: E501
         """
         pass
 
     def test_remove_contact_to_list(self):
-        """
-        Test case for remove_contact_to_list
+        """Test case for remove_contact_to_list
 
-        Remove existing contacts from a list
+        Remove existing contacts from a list  # noqa: E501
         """
         pass
 
     def test_request_contact_export(self):
-        """
-        Test case for request_contact_export
+        """Test case for request_contact_export
 
-        Export contacts
+        Export contacts  # noqa: E501
         """
         pass
 
     def test_update_attribute(self):
-        """
-        Test case for update_attribute
+        """Test case for update_attribute
 
-        Updates contact attribute
+        Updates contact attribute  # noqa: E501
         """
         pass
 
     def test_update_contact(self):
-        """
-        Test case for update_contact
+        """Test case for update_contact
 
-        Updates a contact
+        Updates a contact  # noqa: E501
         """
         pass
 
     def test_update_folder(self):
-        """
-        Test case for update_folder
+        """Test case for update_folder
 
-        Update a contact folder
+        Update a contact folder  # noqa: E501
         """
         pass
 
     def test_update_list(self):
-        """
-        Test case for update_list
+        """Test case for update_list
 
-        Update a list
+        Update a list  # noqa: E501
         """
         pass
 

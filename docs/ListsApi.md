@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Add existing contacts to a list
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -29,16 +29,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 list_id = 789 # int | Id of the list
 contact_emails = sib_api_v3_sdk.AddRemoveContactToList() # AddRemoveContactToList | Emails addresses of the contacts
 
-try: 
+try:
     # Add existing contacts to a list
     api_response = api_instance.add_contact_to_list(list_id, contact_emails)
     pprint(api_response)
@@ -73,7 +74,7 @@ Name | Type | Description  | Notes
 
 Create a list
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -82,15 +83,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 create_list = sib_api_v3_sdk.CreateList() # CreateList | Values to create a list
 
-try: 
+try:
     # Create a list
     api_response = api_instance.create_list(create_list)
     pprint(api_response)
@@ -124,7 +126,7 @@ Name | Type | Description  | Notes
 
 Delete a list
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -133,15 +135,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 list_id = 789 # int | Id of the list
 
-try: 
+try:
     # Delete a list
     api_instance.delete_list(list_id)
 except ApiException as e:
@@ -174,7 +177,7 @@ void (empty response body)
 
 Get the contacts in a list
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -183,18 +186,19 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 list_id = 789 # int | Id of the list
-modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) (optional)
+modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
 limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
-try: 
+try:
     # Get the contacts in a list
     api_response = api_instance.get_contacts_from_list(list_id, modified_since=modified_since, limit=limit, offset=offset)
     pprint(api_response)
@@ -207,7 +211,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**| Id of the list | 
- **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) | [optional] 
+ **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
@@ -231,7 +235,7 @@ Name | Type | Description  | Notes
 
 Get the lists in a folder
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -240,17 +244,18 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 folder_id = 789 # int | Id of the folder
 limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
-try: 
+try:
     # Get the lists in a folder
     api_response = api_instance.get_folder_lists(folder_id, limit=limit, offset=offset)
     pprint(api_response)
@@ -286,7 +291,7 @@ Name | Type | Description  | Notes
 
 Get the details of a list
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -295,15 +300,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 list_id = 789 # int | Id of the list
 
-try: 
+try:
     # Get the details of a list
     api_response = api_instance.get_list(list_id)
     pprint(api_response)
@@ -337,7 +343,7 @@ Name | Type | Description  | Notes
 
 Get all the lists
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -346,16 +352,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
-try: 
+try:
     # Get all the lists
     api_response = api_instance.get_lists(limit=limit, offset=offset)
     pprint(api_response)
@@ -390,7 +397,7 @@ Name | Type | Description  | Notes
 
 Remove existing contacts from a list
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -399,16 +406,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 list_id = 789 # int | Id of the list
 contact_emails = sib_api_v3_sdk.AddRemoveContactToList() # AddRemoveContactToList | Emails adresses of the contact
 
-try: 
+try:
     # Remove existing contacts from a list
     api_response = api_instance.remove_contact_to_list(list_id, contact_emails)
     pprint(api_response)
@@ -443,7 +451,7 @@ Name | Type | Description  | Notes
 
 Update a list
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -452,16 +460,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.ListsApi()
+api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 list_id = 789 # int | Id of the list
 update_list = sib_api_v3_sdk.UpdateList() # UpdateList | Values to update a list
 
-try: 
+try:
     # Update a list
     api_instance.update_list(list_id, update_list)
 except ApiException as e:

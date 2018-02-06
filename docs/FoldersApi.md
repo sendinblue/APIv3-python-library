@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create a folder
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -26,15 +26,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.FoldersApi()
+api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
 create_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
-try: 
+try:
     # Create a folder
     api_response = api_instance.create_folder(create_folder)
     pprint(api_response)
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 Delete a folder (and all its lists)
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -77,15 +78,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.FoldersApi()
+api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
 folder_id = 789 # int | Id of the folder
 
-try: 
+try:
     # Delete a folder (and all its lists)
     api_instance.delete_folder(folder_id)
 except ApiException as e:
@@ -118,7 +120,7 @@ void (empty response body)
 
 Returns folder details
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -127,15 +129,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.FoldersApi()
+api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
 folder_id = 789 # int | id of the folder
 
-try: 
+try:
     # Returns folder details
     api_response = api_instance.get_folder(folder_id)
     pprint(api_response)
@@ -169,7 +172,7 @@ Name | Type | Description  | Notes
 
 Get the lists in a folder
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -178,17 +181,18 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.FoldersApi()
+api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
 folder_id = 789 # int | Id of the folder
 limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
-try: 
+try:
     # Get the lists in a folder
     api_response = api_instance.get_folder_lists(folder_id, limit=limit, offset=offset)
     pprint(api_response)
@@ -224,7 +228,7 @@ Name | Type | Description  | Notes
 
 Get all the folders
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -233,16 +237,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.FoldersApi()
+api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 10 # int | Number of documents per page (default to 10)
 offset = 0 # int | Index of the first document of the page (default to 0)
 
-try: 
+try:
     # Get all the folders
     api_response = api_instance.get_folders(limit, offset)
     pprint(api_response)
@@ -277,7 +282,7 @@ Name | Type | Description  | Notes
 
 Update a contact folder
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -286,16 +291,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.FoldersApi()
+api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
 folder_id = 789 # int | Id of the folder
 update_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
-try: 
+try:
     # Update a contact folder
     api_instance.update_folder(folder_id, update_folder)
 except ApiException as e:

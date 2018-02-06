@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **test_sent** | **bool** | Retrieved the status of test email sending. (true&#x3D;Test email has been sent  false&#x3D;Test email has not been sent) | 
 **header** | **str** | Header of the campaign | 
 **footer** | **str** | Footer of the campaign | 
-**sender** | [**GetExtendedCampaignOverviewSender**](GetExtendedCampaignOverviewSender.md) |  | [optional] 
+**sender** | [**GetExtendedCampaignOverviewSender**](GetExtendedCampaignOverviewSender.md) |  | 
 **reply_to** | **str** | Email defined as the \&quot;Reply to\&quot; of the campaign | 
 **to_field** | **str** | Customisation of the \&quot;to\&quot; field of the campaign | 
 **html_content** | **str** | HTML content of the campaign | 

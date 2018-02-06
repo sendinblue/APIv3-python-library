@@ -5,7 +5,7 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_sms_campaign**](SMSCampaignsApi.md#create_sms_campaign) | **POST** /smsCampaigns | Creates an SMS campaign
-[**delete_sms_campaigns**](SMSCampaignsApi.md#delete_sms_campaigns) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
+[**delete_sms_campaign**](SMSCampaignsApi.md#delete_sms_campaign) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
 [**get_sms_campaign**](SMSCampaignsApi.md#get_sms_campaign) | **GET** /smsCampaigns/{campaignId} | Get an SMS campaign
 [**get_sms_campaigns**](SMSCampaignsApi.md#get_sms_campaigns) | **GET** /smsCampaigns | Returns the informations for all your created SMS campaigns
 [**request_sms_recipient_export**](SMSCampaignsApi.md#request_sms_recipient_export) | **POST** /smsCampaigns/{campaignId}/exportRecipients | Exports the recipients of the specified campaign.
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 Creates an SMS campaign
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -30,15 +30,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 create_sms_campaign = sib_api_v3_sdk.CreateSmsCampaign() # CreateSmsCampaign | Values to create an SMS Campaign
 
-try: 
+try:
     # Creates an SMS campaign
     api_response = api_instance.create_sms_campaign(create_sms_campaign)
     pprint(api_response)
@@ -67,12 +68,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_sms_campaigns**
-> delete_sms_campaigns(campaign_id)
+# **delete_sms_campaign**
+> delete_sms_campaign(campaign_id)
 
 Delete the SMS campaign
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -81,19 +82,20 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the SMS campaign
 
-try: 
+try:
     # Delete the SMS campaign
-    api_instance.delete_sms_campaigns(campaign_id)
+    api_instance.delete_sms_campaign(campaign_id)
 except ApiException as e:
-    print("Exception when calling SMSCampaignsApi->delete_sms_campaigns: %s\n" % e)
+    print("Exception when calling SMSCampaignsApi->delete_sms_campaign: %s\n" % e)
 ```
 
 ### Parameters
@@ -122,7 +124,7 @@ void (empty response body)
 
 Get an SMS campaign
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -131,16 +133,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the SMS campaign
 get_sms_campaign = sib_api_v3_sdk.GetSmsCampaign() # GetSmsCampaign | Values to update an SMS Campaign
 
-try: 
+try:
     # Get an SMS campaign
     api_response = api_instance.get_sms_campaign(campaign_id, get_sms_campaign)
     pprint(api_response)
@@ -175,7 +178,7 @@ Name | Type | Description  | Notes
 
 Returns the informations for all your created SMS campaigns
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -184,17 +187,18 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 status = 'status_example' # str | Status of campaign. (optional)
 limit = 500 # int | Number limitation for the result returned (optional) (default to 500)
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
 
-try: 
+try:
     # Returns the informations for all your created SMS campaigns
     api_response = api_instance.get_sms_campaigns(status=status, limit=limit, offset=offset)
     pprint(api_response)
@@ -232,7 +236,7 @@ Exports the recipients of the specified campaign.
 
 It returns the background process ID which on completion calls the notify URL that you have set in the input.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -241,16 +245,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the campaign
-recipient_export = sib_api_v3_sdk.RequestSMSRecipientExport() # RequestSMSRecipientExport | Values to send for a recipient export request (optional)
+recipient_export = sib_api_v3_sdk.RequestSmsRecipientExport() # RequestSmsRecipientExport | Values to send for a recipient export request (optional)
 
-try: 
+try:
     # Exports the recipients of the specified campaign.
     api_response = api_instance.request_sms_recipient_export(campaign_id, recipient_export=recipient_export)
     pprint(api_response)
@@ -263,7 +268,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| id of the campaign | 
- **recipient_export** | [**RequestSMSRecipientExport**](RequestSMSRecipientExport.md)| Values to send for a recipient export request | [optional] 
+ **recipient_export** | [**RequestSmsRecipientExport**](RequestSmsRecipientExport.md)| Values to send for a recipient export request | [optional] 
 
 ### Return type
 
@@ -285,7 +290,7 @@ Name | Type | Description  | Notes
 
 Send your SMS campaign immediately
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -294,15 +299,16 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the campaign
 
-try: 
+try:
     # Send your SMS campaign immediately
     api_instance.send_sms_campaign_now(campaign_id)
 except ApiException as e:
@@ -337,7 +343,7 @@ Send report of SMS campaigns
 
 Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -346,16 +352,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the campaign
 send_report = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
 
-try: 
+try:
     # Send report of SMS campaigns
     api_instance.send_sms_report(campaign_id, send_report)
 except ApiException as e:
@@ -389,7 +396,7 @@ void (empty response body)
 
 Send an SMS
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -398,16 +405,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the SMS campaign
 send_test_sms = sib_api_v3_sdk.SendTestSms() # SendTestSms | Mobile number to which send the test
 
-try: 
+try:
     # Send an SMS
     api_instance.send_test_sms(campaign_id, send_test_sms)
 except ApiException as e:
@@ -441,7 +449,7 @@ void (empty response body)
 
 Updates an SMS campaign
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -450,16 +458,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the SMS campaign
 update_sms_campaign = sib_api_v3_sdk.UpdateSmsCampaign() # UpdateSmsCampaign | Values to update an SMS Campaign
 
-try: 
+try:
     # Updates an SMS campaign
     api_instance.update_sms_campaign(campaign_id, update_sms_campaign)
 except ApiException as e:
@@ -493,7 +502,7 @@ void (empty response body)
 
 Update the campaign status
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -502,16 +511,17 @@ from sib_api_v3_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: api-key
-sib_api_v3_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# sib_api_v3_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = sib_api_v3_sdk.SMSCampaignsApi()
+api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the campaign
 status = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign.
 
-try: 
+try:
     # Update the campaign status
     api_instance.update_sms_campaign_status(campaign_id, status)
 except ApiException as e:

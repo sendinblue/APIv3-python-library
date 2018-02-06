@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **list_ids** | **list[int]** |  | 
 **list_unsubscribed** | **list[int]** |  | [optional] 
 **attributes** | **dict(str, str)** |  | 
-**statistics** | [**GetExtendedContactDetailsStatistics**](GetExtendedContactDetailsStatistics.md) |  | [optional] 
+**statistics** | [**GetExtendedContactDetailsStatistics**](GetExtendedContactDetailsStatistics.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

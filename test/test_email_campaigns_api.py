@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  | 
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -13,101 +13,89 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import sib_api_v3_sdk
+from sib_api_v3_sdk.api.email_campaigns_api import EmailCampaignsApi  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
-from sib_api_v3_sdk.apis.email_campaigns_api import EmailCampaignsApi
 
 
 class TestEmailCampaignsApi(unittest.TestCase):
-    """ EmailCampaignsApi unit test stubs """
+    """EmailCampaignsApi unit test stubs"""
 
     def setUp(self):
-        self.api = sib_api_v3_sdk.apis.email_campaigns_api.EmailCampaignsApi()
+        self.api = sib_api_v3_sdk.api.email_campaigns_api.EmailCampaignsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_create_email_campaign(self):
-        """
-        Test case for create_email_campaign
+        """Test case for create_email_campaign
 
-        Create an email campaign
+        Create an email campaign  # noqa: E501
         """
         pass
 
-    def test_delete_email_campaigns(self):
-        """
-        Test case for delete_email_campaigns
+    def test_delete_email_campaign(self):
+        """Test case for delete_email_campaign
 
-        Delete an email campaign
+        Delete an email campaign  # noqa: E501
         """
         pass
 
     def test_email_export_recipients(self):
-        """
-        Test case for email_export_recipients
+        """Test case for email_export_recipients
 
-        Export the recipients of a campaign
+        Export the recipients of a campaign  # noqa: E501
         """
         pass
 
     def test_get_email_campaign(self):
-        """
-        Test case for get_email_campaign
+        """Test case for get_email_campaign
 
-        Get campaign informations
+        Get campaign informations  # noqa: E501
         """
         pass
 
     def test_get_email_campaigns(self):
-        """
-        Test case for get_email_campaigns
+        """Test case for get_email_campaigns
 
-        Return all your created campaigns
+        Return all your created campaigns  # noqa: E501
         """
         pass
 
     def test_send_email_campaign_now(self):
-        """
-        Test case for send_email_campaign_now
+        """Test case for send_email_campaign_now
 
-        Send an email campaign id of the campaign immediately
+        Send an email campaign id of the campaign immediately  # noqa: E501
         """
         pass
 
     def test_send_report(self):
-        """
-        Test case for send_report
+        """Test case for send_report
 
-        Send the report of a campaigns
+        Send the report of a campaigns  # noqa: E501
         """
         pass
 
     def test_send_test_email(self):
-        """
-        Test case for send_test_email
+        """Test case for send_test_email
 
-        Send an email campaign to your test list
+        Send an email campaign to your test list  # noqa: E501
         """
         pass
 
     def test_update_campaign_status(self):
-        """
-        Test case for update_campaign_status
+        """Test case for update_campaign_status
 
-        Update a campaign status
+        Update a campaign status  # noqa: E501
         """
         pass
 
-    def test_update_email_campaigns(self):
-        """
-        Test case for update_email_campaigns
+    def test_update_email_campaign(self):
+        """Test case for update_email_campaign
 
-        Update a campaign
+        Update a campaign  # noqa: E501
         """
         pass
 
