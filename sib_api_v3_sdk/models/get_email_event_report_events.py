@@ -79,12 +79,14 @@ class GetEmailEventReportEvents(object):
         self.event = event
         if reason is not None:
             self.reason = reason
-        self.tag = tag
+        if tag is not None:
+            self.tag = tag
         if ip is not None:
             self.ip = ip
         if link is not None:
             self.link = link
-        self._from = _from
+        if _from is not None:
+            self._from = _from
 
     @property
     def email(self):
@@ -258,8 +260,6 @@ class GetEmailEventReportEvents(object):
         :param tag: The tag of this GetEmailEventReportEvents.  # noqa: E501
         :type: str
         """
-        if tag is None:
-            raise ValueError("Invalid value for `tag`, must not be `None`")  # noqa: E501
 
         self._tag = tag
 
@@ -329,8 +329,6 @@ class GetEmailEventReportEvents(object):
         :param _from: The _from of this GetEmailEventReportEvents.  # noqa: E501
         :type: str
         """
-        if _from is None:
-            raise ValueError("Invalid value for `_from`, must not be `None`")  # noqa: E501
 
         self.__from = _from
 
