@@ -35,8 +35,7 @@ class UpdateChild(object):
         'first_name': 'str',
         'last_name': 'str',
         'company_name': 'str',
-        'password': 'str',
-        'ips': 'list[int]'
+        'password': 'str'
     }
 
     attribute_map = {
@@ -44,11 +43,10 @@ class UpdateChild(object):
         'first_name': 'firstName',
         'last_name': 'lastName',
         'company_name': 'companyName',
-        'password': 'password',
-        'ips': 'ips'
+        'password': 'password'
     }
 
-    def __init__(self, email=None, first_name=None, last_name=None, company_name=None, password=None, ips=None):  # noqa: E501
+    def __init__(self, email=None, first_name=None, last_name=None, company_name=None, password=None):  # noqa: E501
         """UpdateChild - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
@@ -56,7 +54,6 @@ class UpdateChild(object):
         self._last_name = None
         self._company_name = None
         self._password = None
-        self._ips = None
         self.discriminator = None
 
         if email is not None:
@@ -69,8 +66,6 @@ class UpdateChild(object):
             self.company_name = company_name
         if password is not None:
             self.password = password
-        if ips is not None:
-            self.ips = ips
 
     @property
     def email(self):
@@ -186,27 +181,6 @@ class UpdateChild(object):
         """
 
         self._password = password
-
-    @property
-    def ips(self):
-        """Gets the ips of this UpdateChild.  # noqa: E501
-
-
-        :return: The ips of this UpdateChild.  # noqa: E501
-        :rtype: list[int]
-        """
-        return self._ips
-
-    @ips.setter
-    def ips(self, ips):
-        """Sets the ips of this UpdateChild.
-
-
-        :param ips: The ips of this UpdateChild.  # noqa: E501
-        :type: list[int]
-        """
-
-        self._ips = ips
 
     def to_dict(self):
         """Returns the model properties as a dict"""

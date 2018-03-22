@@ -103,7 +103,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**get_list**](docs/ContactsApi.md#get_list) | **GET** /contacts/lists/{listId} | Get the details of a list
 *ContactsApi* | [**get_lists**](docs/ContactsApi.md#get_lists) | **GET** /contacts/lists | Get all the lists
 *ContactsApi* | [**import_contacts**](docs/ContactsApi.md#import_contacts) | **POST** /contacts/import | Import contacts
-*ContactsApi* | [**remove_contact_to_list**](docs/ContactsApi.md#remove_contact_to_list) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+*ContactsApi* | [**remove_contact_from_list**](docs/ContactsApi.md#remove_contact_from_list) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
 *ContactsApi* | [**request_contact_export**](docs/ContactsApi.md#request_contact_export) | **POST** /contacts/export | Export contacts
 *ContactsApi* | [**update_attribute**](docs/ContactsApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
 *ContactsApi* | [**update_contact**](docs/ContactsApi.md#update_contact) | **PUT** /contacts/{email} | Updates a contact
@@ -132,19 +132,19 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**get_folder_lists**](docs/ListsApi.md#get_folder_lists) | **GET** /contacts/folders/{folderId}/lists | Get the lists in a folder
 *ListsApi* | [**get_list**](docs/ListsApi.md#get_list) | **GET** /contacts/lists/{listId} | Get the details of a list
 *ListsApi* | [**get_lists**](docs/ListsApi.md#get_lists) | **GET** /contacts/lists | Get all the lists
-*ListsApi* | [**remove_contact_to_list**](docs/ListsApi.md#remove_contact_to_list) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+*ListsApi* | [**remove_contact_from_list**](docs/ListsApi.md#remove_contact_from_list) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
 *ListsApi* | [**update_list**](docs/ListsApi.md#update_list) | **PUT** /contacts/lists/{listId} | Update a list
 *ProcessApi* | [**get_process**](docs/ProcessApi.md#get_process) | **GET** /processes/{processId} | Return the informations for a process
 *ProcessApi* | [**get_processes**](docs/ProcessApi.md#get_processes) | **GET** /processes | Return all the processes for your account
-*ResellerApi* | [**add_credits**](docs/ResellerApi.md#add_credits) | **POST** /reseller/children/{childId}/credits/add | Add Email and/or SMS credits to a specific child account
-*ResellerApi* | [**associate_ip_to_child**](docs/ResellerApi.md#associate_ip_to_child) | **POST** /reseller/children/{childId}/ips/associate | Associate a dedicated IP to the child
+*ResellerApi* | [**add_credits**](docs/ResellerApi.md#add_credits) | **POST** /reseller/children/{childAuthKey}/credits/add | Add Email and/or SMS credits to a specific child account
+*ResellerApi* | [**associate_ip_to_child**](docs/ResellerApi.md#associate_ip_to_child) | **POST** /reseller/children/{childAuthKey}/ips/associate | Associate a dedicated IP to the child
 *ResellerApi* | [**create_reseller_child**](docs/ResellerApi.md#create_reseller_child) | **POST** /reseller/children | Creates a reseller child
-*ResellerApi* | [**delete_reseller_child**](docs/ResellerApi.md#delete_reseller_child) | **DELETE** /reseller/children/{childId} | Deletes a single reseller child based on the childId supplied
-*ResellerApi* | [**dissociate_ip_from_child**](docs/ResellerApi.md#dissociate_ip_from_child) | **POST** /reseller/children/{childId}/ips/dissociate | Dissociate a dedicated IP to the child
-*ResellerApi* | [**get_child_info**](docs/ResellerApi.md#get_child_info) | **GET** /reseller/children/{childId} | Gets the info about a specific child account
+*ResellerApi* | [**delete_reseller_child**](docs/ResellerApi.md#delete_reseller_child) | **DELETE** /reseller/children/{childAuthKey} | Deletes a single reseller child based on the childAuthKey supplied
+*ResellerApi* | [**dissociate_ip_from_child**](docs/ResellerApi.md#dissociate_ip_from_child) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
+*ResellerApi* | [**get_child_info**](docs/ResellerApi.md#get_child_info) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 *ResellerApi* | [**get_reseller_childs**](docs/ResellerApi.md#get_reseller_childs) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
-*ResellerApi* | [**remove_credits**](docs/ResellerApi.md#remove_credits) | **POST** /reseller/children/{childId}/credits/remove | Remove Email and/or SMS credits from a specific child account
-*ResellerApi* | [**update_reseller_child**](docs/ResellerApi.md#update_reseller_child) | **PUT** /reseller/children/{childId} | Updates infos of reseller&#39;s child based on the childId supplied
+*ResellerApi* | [**remove_credits**](docs/ResellerApi.md#remove_credits) | **POST** /reseller/children/{childAuthKey}/credits/remove | Remove Email and/or SMS credits from a specific child account
+*ResellerApi* | [**update_reseller_child**](docs/ResellerApi.md#update_reseller_child) | **PUT** /reseller/children/{childAuthKey} | Updates infos of reseller&#39;s child based on the childAuthKey supplied
 *SMSCampaignsApi* | [**create_sms_campaign**](docs/SMSCampaignsApi.md#create_sms_campaign) | **POST** /smsCampaigns | Creates an SMS campaign
 *SMSCampaignsApi* | [**delete_sms_campaign**](docs/SMSCampaignsApi.md#delete_sms_campaign) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
 *SMSCampaignsApi* | [**get_sms_campaign**](docs/SMSCampaignsApi.md#get_sms_campaign) | **GET** /smsCampaigns/{campaignId} | Get an SMS campaign
@@ -186,8 +186,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AddContactToList](docs/AddContactToList.md)
  - [AddCredits](docs/AddCredits.md)
- - [AddRemoveContactToList](docs/AddRemoveContactToList.md)
  - [CreateAttribute](docs/CreateAttribute.md)
  - [CreateAttributeEnumeration](docs/CreateAttributeEnumeration.md)
  - [CreateChild](docs/CreateChild.md)
@@ -197,6 +197,7 @@ Class | Method | HTTP request | Description
  - [CreateEmailCampaignSender](docs/CreateEmailCampaignSender.md)
  - [CreateList](docs/CreateList.md)
  - [CreateModel](docs/CreateModel.md)
+ - [CreateReseller](docs/CreateReseller.md)
  - [CreateSender](docs/CreateSender.md)
  - [CreateSenderIps](docs/CreateSenderIps.md)
  - [CreateSenderModel](docs/CreateSenderModel.md)
@@ -223,8 +224,9 @@ Class | Method | HTTP request | Description
  - [GetCampaignRecipients](docs/GetCampaignRecipients.md)
  - [GetCampaignStats](docs/GetCampaignStats.md)
  - [GetChildInfoApiKeys](docs/GetChildInfoApiKeys.md)
+ - [GetChildInfoApiKeysV2](docs/GetChildInfoApiKeysV2.md)
+ - [GetChildInfoApiKeysV3](docs/GetChildInfoApiKeysV3.md)
  - [GetChildInfoCredits](docs/GetChildInfoCredits.md)
- - [GetChildInfoIps](docs/GetChildInfoIps.md)
  - [GetChildInfoStatistics](docs/GetChildInfoStatistics.md)
  - [GetChildrenList](docs/GetChildrenList.md)
  - [GetClient](docs/GetClient.md)
@@ -289,6 +291,7 @@ Class | Method | HTTP request | Description
  - [RemainingCreditModel](docs/RemainingCreditModel.md)
  - [RemainingCreditModelChild](docs/RemainingCreditModelChild.md)
  - [RemainingCreditModelReseller](docs/RemainingCreditModelReseller.md)
+ - [RemoveContactFromList](docs/RemoveContactFromList.md)
  - [RemoveCredits](docs/RemoveCredits.md)
  - [RequestContactExport](docs/RequestContactExport.md)
  - [RequestContactImport](docs/RequestContactImport.md)

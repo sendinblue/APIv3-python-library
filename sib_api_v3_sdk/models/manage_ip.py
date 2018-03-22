@@ -31,44 +31,44 @@ class ManageIp(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ip_id': 'int'
+        'ip': 'str'
     }
 
     attribute_map = {
-        'ip_id': 'ipId'
+        'ip': 'ip'
     }
 
-    def __init__(self, ip_id=None):  # noqa: E501
+    def __init__(self, ip=None):  # noqa: E501
         """ManageIp - a model defined in Swagger"""  # noqa: E501
 
-        self._ip_id = None
+        self._ip = None
         self.discriminator = None
 
-        if ip_id is not None:
-            self.ip_id = ip_id
+        if ip is not None:
+            self.ip = ip
 
     @property
-    def ip_id(self):
-        """Gets the ip_id of this ManageIp.  # noqa: E501
+    def ip(self):
+        """Gets the ip of this ManageIp.  # noqa: E501
 
-        ID of the IP  # noqa: E501
+        Dedicated ID  # noqa: E501
 
-        :return: The ip_id of this ManageIp.  # noqa: E501
-        :rtype: int
+        :return: The ip of this ManageIp.  # noqa: E501
+        :rtype: str
         """
-        return self._ip_id
+        return self._ip
 
-    @ip_id.setter
-    def ip_id(self, ip_id):
-        """Sets the ip_id of this ManageIp.
+    @ip.setter
+    def ip(self, ip):
+        """Sets the ip of this ManageIp.
 
-        ID of the IP  # noqa: E501
+        Dedicated ID  # noqa: E501
 
-        :param ip_id: The ip_id of this ManageIp.  # noqa: E501
-        :type: int
+        :param ip: The ip of this ManageIp.  # noqa: E501
+        :type: str
         """
 
-        self._ip_id = ip_id
+        self._ip = ip
 
     def to_dict(self):
         """Returns the model properties as a dict"""

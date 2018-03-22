@@ -34,8 +34,8 @@ from sib_api_v3_sdk.api.webhooks_api import WebhooksApi
 from sib_api_v3_sdk.api_client import ApiClient
 from sib_api_v3_sdk.configuration import Configuration
 # import models into sdk package
+from sib_api_v3_sdk.models.add_contact_to_list import AddContactToList
 from sib_api_v3_sdk.models.add_credits import AddCredits
-from sib_api_v3_sdk.models.add_remove_contact_to_list import AddRemoveContactToList
 from sib_api_v3_sdk.models.create_attribute import CreateAttribute
 from sib_api_v3_sdk.models.create_attribute_enumeration import CreateAttributeEnumeration
 from sib_api_v3_sdk.models.create_child import CreateChild
@@ -45,6 +45,7 @@ from sib_api_v3_sdk.models.create_email_campaign_recipients import CreateEmailCa
 from sib_api_v3_sdk.models.create_email_campaign_sender import CreateEmailCampaignSender
 from sib_api_v3_sdk.models.create_list import CreateList
 from sib_api_v3_sdk.models.create_model import CreateModel
+from sib_api_v3_sdk.models.create_reseller import CreateReseller
 from sib_api_v3_sdk.models.create_sender import CreateSender
 from sib_api_v3_sdk.models.create_sender_ips import CreateSenderIps
 from sib_api_v3_sdk.models.create_sender_model import CreateSenderModel
@@ -71,8 +72,9 @@ from sib_api_v3_sdk.models.get_campaign_overview import GetCampaignOverview
 from sib_api_v3_sdk.models.get_campaign_recipients import GetCampaignRecipients
 from sib_api_v3_sdk.models.get_campaign_stats import GetCampaignStats
 from sib_api_v3_sdk.models.get_child_info_api_keys import GetChildInfoApiKeys
+from sib_api_v3_sdk.models.get_child_info_api_keys_v2 import GetChildInfoApiKeysV2
+from sib_api_v3_sdk.models.get_child_info_api_keys_v3 import GetChildInfoApiKeysV3
 from sib_api_v3_sdk.models.get_child_info_credits import GetChildInfoCredits
-from sib_api_v3_sdk.models.get_child_info_ips import GetChildInfoIps
 from sib_api_v3_sdk.models.get_child_info_statistics import GetChildInfoStatistics
 from sib_api_v3_sdk.models.get_children_list import GetChildrenList
 from sib_api_v3_sdk.models.get_client import GetClient
@@ -137,6 +139,7 @@ from sib_api_v3_sdk.models.post_send_sms_test_failed import PostSendSmsTestFaile
 from sib_api_v3_sdk.models.remaining_credit_model import RemainingCreditModel
 from sib_api_v3_sdk.models.remaining_credit_model_child import RemainingCreditModelChild
 from sib_api_v3_sdk.models.remaining_credit_model_reseller import RemainingCreditModelReseller
+from sib_api_v3_sdk.models.remove_contact_from_list import RemoveContactFromList
 from sib_api_v3_sdk.models.remove_credits import RemoveCredits
 from sib_api_v3_sdk.models.request_contact_export import RequestContactExport
 from sib_api_v3_sdk.models.request_contact_import import RequestContactImport

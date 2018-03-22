@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from sib_api_v3_sdk.models.get_child_info_ips import GetChildInfoIps  # noqa: E501
+from sib_api_v3_sdk.models.get_child_info_api_keys_v2 import GetChildInfoApiKeysV2  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
-class TestGetChildInfoIps(unittest.TestCase):
-    """GetChildInfoIps unit test stubs"""
+class TestGetChildInfoApiKeysV2(unittest.TestCase):
+    """GetChildInfoApiKeysV2 unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestGetChildInfoIps(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testGetChildInfoIps(self):
-        """Test GetChildInfoIps"""
+    def testGetChildInfoApiKeysV2(self):
+        """Test GetChildInfoApiKeysV2"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = sib_api_v3_sdk.models.get_child_info_ips.GetChildInfoIps()  # noqa: E501
+        # model = sib_api_v3_sdk.models.get_child_info_api_keys_v2.GetChildInfoApiKeysV2()  # noqa: E501
         pass
 
 

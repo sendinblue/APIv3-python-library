@@ -41,7 +41,9 @@ class GetSmsCampaign(object):
         'test_sent': 'bool',
         'sender': 'str',
         'created_at': 'datetime',
-        'modified_at': 'datetime'
+        'modified_at': 'datetime',
+        'recipients': 'object',
+        'statistics': 'object'
     }
 
     attribute_map = {
@@ -53,10 +55,12 @@ class GetSmsCampaign(object):
         'test_sent': 'testSent',
         'sender': 'sender',
         'created_at': 'createdAt',
-        'modified_at': 'modifiedAt'
+        'modified_at': 'modifiedAt',
+        'recipients': 'recipients',
+        'statistics': 'statistics'
     }
 
-    def __init__(self, id=None, name=None, status=None, content=None, scheduled_at=None, test_sent=None, sender=None, created_at=None, modified_at=None):  # noqa: E501
+    def __init__(self, id=None, name=None, status=None, content=None, scheduled_at=None, test_sent=None, sender=None, created_at=None, modified_at=None, recipients=None, statistics=None):  # noqa: E501
         """GetSmsCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -68,6 +72,8 @@ class GetSmsCampaign(object):
         self._sender = None
         self._created_at = None
         self._modified_at = None
+        self._recipients = None
+        self._statistics = None
         self.discriminator = None
 
         self.id = id
@@ -79,6 +85,8 @@ class GetSmsCampaign(object):
         self.sender = sender
         self.created_at = created_at
         self.modified_at = modified_at
+        self.recipients = recipients
+        self.statistics = statistics
 
     @property
     def id(self):
@@ -310,6 +318,52 @@ class GetSmsCampaign(object):
             raise ValueError("Invalid value for `modified_at`, must not be `None`")  # noqa: E501
 
         self._modified_at = modified_at
+
+    @property
+    def recipients(self):
+        """Gets the recipients of this GetSmsCampaign.  # noqa: E501
+
+
+        :return: The recipients of this GetSmsCampaign.  # noqa: E501
+        :rtype: object
+        """
+        return self._recipients
+
+    @recipients.setter
+    def recipients(self, recipients):
+        """Sets the recipients of this GetSmsCampaign.
+
+
+        :param recipients: The recipients of this GetSmsCampaign.  # noqa: E501
+        :type: object
+        """
+        if recipients is None:
+            raise ValueError("Invalid value for `recipients`, must not be `None`")  # noqa: E501
+
+        self._recipients = recipients
+
+    @property
+    def statistics(self):
+        """Gets the statistics of this GetSmsCampaign.  # noqa: E501
+
+
+        :return: The statistics of this GetSmsCampaign.  # noqa: E501
+        :rtype: object
+        """
+        return self._statistics
+
+    @statistics.setter
+    def statistics(self, statistics):
+        """Sets the statistics of this GetSmsCampaign.
+
+
+        :param statistics: The statistics of this GetSmsCampaign.  # noqa: E501
+        :type: object
+        """
+        if statistics is None:
+            raise ValueError("Invalid value for `statistics`, must not be `None`")  # noqa: E501
+
+        self._statistics = statistics
 
     def to_dict(self):
         """Returns the model properties as a dict"""

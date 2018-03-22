@@ -162,8 +162,8 @@ class TestContactsApi(unittest.TestCase):
         """
         pass
 
-    def test_remove_contact_to_list(self):
-        """Test case for remove_contact_to_list
+    def test_remove_contact_from_list(self):
+        """Test case for remove_contact_from_list
 
         Remove existing contacts from a list  # noqa: E501
         """

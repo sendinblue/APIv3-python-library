@@ -53,7 +53,9 @@ class GetEmailCampaign(object):
         'modified_at': 'datetime',
         'inline_image_activation': 'bool',
         'mirror_active': 'bool',
-        'recurring': 'bool'
+        'recurring': 'bool',
+        'recipients': 'object',
+        'statistics': 'object'
     }
 
     attribute_map = {
@@ -76,10 +78,12 @@ class GetEmailCampaign(object):
         'modified_at': 'modifiedAt',
         'inline_image_activation': 'inlineImageActivation',
         'mirror_active': 'mirrorActive',
-        'recurring': 'recurring'
+        'recurring': 'recurring',
+        'recipients': 'recipients',
+        'statistics': 'statistics'
     }
 
-    def __init__(self, id=None, name=None, subject=None, type=None, status=None, scheduled_at=None, test_sent=None, header=None, footer=None, sender=None, reply_to=None, to_field=None, html_content=None, share_link=None, tag=None, created_at=None, modified_at=None, inline_image_activation=None, mirror_active=None, recurring=None):  # noqa: E501
+    def __init__(self, id=None, name=None, subject=None, type=None, status=None, scheduled_at=None, test_sent=None, header=None, footer=None, sender=None, reply_to=None, to_field=None, html_content=None, share_link=None, tag=None, created_at=None, modified_at=None, inline_image_activation=None, mirror_active=None, recurring=None, recipients=None, statistics=None):  # noqa: E501
         """GetEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -102,6 +106,8 @@ class GetEmailCampaign(object):
         self._inline_image_activation = None
         self._mirror_active = None
         self._recurring = None
+        self._recipients = None
+        self._statistics = None
         self.discriminator = None
 
         self.id = id
@@ -129,6 +135,8 @@ class GetEmailCampaign(object):
             self.mirror_active = mirror_active
         if recurring is not None:
             self.recurring = recurring
+        self.recipients = recipients
+        self.statistics = statistics
 
     @property
     def id(self):
@@ -629,6 +637,52 @@ class GetEmailCampaign(object):
         """
 
         self._recurring = recurring
+
+    @property
+    def recipients(self):
+        """Gets the recipients of this GetEmailCampaign.  # noqa: E501
+
+
+        :return: The recipients of this GetEmailCampaign.  # noqa: E501
+        :rtype: object
+        """
+        return self._recipients
+
+    @recipients.setter
+    def recipients(self, recipients):
+        """Sets the recipients of this GetEmailCampaign.
+
+
+        :param recipients: The recipients of this GetEmailCampaign.  # noqa: E501
+        :type: object
+        """
+        if recipients is None:
+            raise ValueError("Invalid value for `recipients`, must not be `None`")  # noqa: E501
+
+        self._recipients = recipients
+
+    @property
+    def statistics(self):
+        """Gets the statistics of this GetEmailCampaign.  # noqa: E501
+
+
+        :return: The statistics of this GetEmailCampaign.  # noqa: E501
+        :rtype: object
+        """
+        return self._statistics
+
+    @statistics.setter
+    def statistics(self, statistics):
+        """Sets the statistics of this GetEmailCampaign.
+
+
+        :param statistics: The statistics of this GetEmailCampaign.  # noqa: E501
+        :type: object
+        """
+        if statistics is None:
+            raise ValueError("Invalid value for `statistics`, must not be `None`")  # noqa: E501
+
+        self._statistics = statistics
 
     def to_dict(self):
         """Returns the model properties as a dict"""

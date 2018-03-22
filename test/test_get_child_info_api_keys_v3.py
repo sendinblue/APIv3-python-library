@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from sib_api_v3_sdk.models.add_remove_contact_to_list import AddRemoveContactToList  # noqa: E501
+from sib_api_v3_sdk.models.get_child_info_api_keys_v3 import GetChildInfoApiKeysV3  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
-class TestAddRemoveContactToList(unittest.TestCase):
-    """AddRemoveContactToList unit test stubs"""
+class TestGetChildInfoApiKeysV3(unittest.TestCase):
+    """GetChildInfoApiKeysV3 unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAddRemoveContactToList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAddRemoveContactToList(self):
-        """Test AddRemoveContactToList"""
+    def testGetChildInfoApiKeysV3(self):
+        """Test GetChildInfoApiKeysV3"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = sib_api_v3_sdk.models.add_remove_contact_to_list.AddRemoveContactToList()  # noqa: E501
+        # model = sib_api_v3_sdk.models.get_child_info_api_keys_v3.GetChildInfoApiKeysV3()  # noqa: E501
         pass
 
 
