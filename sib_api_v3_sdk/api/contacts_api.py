@@ -43,7 +43,7 @@ class ContactsApi(object):
 
         :param async bool
         :param int list_id: Id of the list (required)
-        :param AddRemoveContactToList contact_emails: Emails addresses of the contacts (required)
+        :param AddContactToList contact_emails: Emails addresses of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class ContactsApi(object):
 
         :param async bool
         :param int list_id: Id of the list (required)
-        :param AddRemoveContactToList contact_emails: Emails addresses of the contacts (required)
+        :param AddContactToList contact_emails: Emails addresses of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1944,39 +1944,39 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def remove_contact_to_list(self, list_id, contact_emails, **kwargs):  # noqa: E501
+    def remove_contact_from_list(self, list_id, contact_emails, **kwargs):  # noqa: E501
         """Remove existing contacts from a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.remove_contact_to_list(list_id, contact_emails, async=True)
+        >>> thread = api.remove_contact_from_list(list_id, contact_emails, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param int list_id: Id of the list (required)
-        :param AddRemoveContactToList contact_emails: Emails adresses of the contact (required)
+        :param RemoveContactFromList contact_emails: Emails adresses of the contact (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.remove_contact_to_list_with_http_info(list_id, contact_emails, **kwargs)  # noqa: E501
+            return self.remove_contact_from_list_with_http_info(list_id, contact_emails, **kwargs)  # noqa: E501
         else:
-            (data) = self.remove_contact_to_list_with_http_info(list_id, contact_emails, **kwargs)  # noqa: E501
+            (data) = self.remove_contact_from_list_with_http_info(list_id, contact_emails, **kwargs)  # noqa: E501
             return data
 
-    def remove_contact_to_list_with_http_info(self, list_id, contact_emails, **kwargs):  # noqa: E501
+    def remove_contact_from_list_with_http_info(self, list_id, contact_emails, **kwargs):  # noqa: E501
         """Remove existing contacts from a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.remove_contact_to_list_with_http_info(list_id, contact_emails, async=True)
+        >>> thread = api.remove_contact_from_list_with_http_info(list_id, contact_emails, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param int list_id: Id of the list (required)
-        :param AddRemoveContactToList contact_emails: Emails adresses of the contact (required)
+        :param RemoveContactFromList contact_emails: Emails adresses of the contact (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1993,18 +1993,18 @@ class ContactsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method remove_contact_to_list" % key
+                    " to method remove_contact_from_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'list_id' is set
         if ('list_id' not in params or
                 params['list_id'] is None):
-            raise ValueError("Missing the required parameter `list_id` when calling `remove_contact_to_list`")  # noqa: E501
+            raise ValueError("Missing the required parameter `list_id` when calling `remove_contact_from_list`")  # noqa: E501
         # verify the required parameter 'contact_emails' is set
         if ('contact_emails' not in params or
                 params['contact_emails'] is None):
-            raise ValueError("Missing the required parameter `contact_emails` when calling `remove_contact_to_list`")  # noqa: E501
+            raise ValueError("Missing the required parameter `contact_emails` when calling `remove_contact_from_list`")  # noqa: E501
 
         collection_formats = {}
 

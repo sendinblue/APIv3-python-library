@@ -4,19 +4,19 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_credits**](ResellerApi.md#add_credits) | **POST** /reseller/children/{childId}/credits/add | Add Email and/or SMS credits to a specific child account
-[**associate_ip_to_child**](ResellerApi.md#associate_ip_to_child) | **POST** /reseller/children/{childId}/ips/associate | Associate a dedicated IP to the child
+[**add_credits**](ResellerApi.md#add_credits) | **POST** /reseller/children/{childAuthKey}/credits/add | Add Email and/or SMS credits to a specific child account
+[**associate_ip_to_child**](ResellerApi.md#associate_ip_to_child) | **POST** /reseller/children/{childAuthKey}/ips/associate | Associate a dedicated IP to the child
 [**create_reseller_child**](ResellerApi.md#create_reseller_child) | **POST** /reseller/children | Creates a reseller child
-[**delete_reseller_child**](ResellerApi.md#delete_reseller_child) | **DELETE** /reseller/children/{childId} | Deletes a single reseller child based on the childId supplied
-[**dissociate_ip_from_child**](ResellerApi.md#dissociate_ip_from_child) | **POST** /reseller/children/{childId}/ips/dissociate | Dissociate a dedicated IP to the child
-[**get_child_info**](ResellerApi.md#get_child_info) | **GET** /reseller/children/{childId} | Gets the info about a specific child account
+[**delete_reseller_child**](ResellerApi.md#delete_reseller_child) | **DELETE** /reseller/children/{childAuthKey} | Deletes a single reseller child based on the childAuthKey supplied
+[**dissociate_ip_from_child**](ResellerApi.md#dissociate_ip_from_child) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
+[**get_child_info**](ResellerApi.md#get_child_info) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 [**get_reseller_childs**](ResellerApi.md#get_reseller_childs) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
-[**remove_credits**](ResellerApi.md#remove_credits) | **POST** /reseller/children/{childId}/credits/remove | Remove Email and/or SMS credits from a specific child account
-[**update_reseller_child**](ResellerApi.md#update_reseller_child) | **PUT** /reseller/children/{childId} | Updates infos of reseller&#39;s child based on the childId supplied
+[**remove_credits**](ResellerApi.md#remove_credits) | **POST** /reseller/children/{childAuthKey}/credits/remove | Remove Email and/or SMS credits from a specific child account
+[**update_reseller_child**](ResellerApi.md#update_reseller_child) | **PUT** /reseller/children/{childAuthKey} | Updates infos of reseller&#39;s child based on the childAuthKey supplied
 
 
 # **add_credits**
-> RemainingCreditModel add_credits(child_id, add_credits)
+> RemainingCreditModel add_credits(child_auth_key, add_credits)
 
 Add Email and/or SMS credits to a specific child account
 
@@ -36,12 +36,12 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
-child_id = 789 # int | id of reseller's child
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 add_credits = sib_api_v3_sdk.AddCredits() # AddCredits | Values to post to add credit to a specific child account
 
 try:
     # Add Email and/or SMS credits to a specific child account
-    api_response = api_instance.add_credits(child_id, add_credits)
+    api_response = api_instance.add_credits(child_auth_key, add_credits)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ResellerApi->add_credits: %s\n" % e)
@@ -51,7 +51,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child | 
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
  **add_credits** | [**AddCredits**](AddCredits.md)| Values to post to add credit to a specific child account | 
 
 ### Return type
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **associate_ip_to_child**
-> associate_ip_to_child(child_id, ip_id)
+> associate_ip_to_child(child_auth_key, ip)
 
 Associate a dedicated IP to the child
 
@@ -90,12 +90,12 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
-child_id = 789 # int | id of reseller's child
-ip_id = sib_api_v3_sdk.ManageIp() # ManageIp | IP's id
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
+ip = sib_api_v3_sdk.ManageIp() # ManageIp | IP to associate
 
 try:
     # Associate a dedicated IP to the child
-    api_instance.associate_ip_to_child(child_id, ip_id)
+    api_instance.associate_ip_to_child(child_auth_key, ip)
 except ApiException as e:
     print("Exception when calling ResellerApi->associate_ip_to_child: %s\n" % e)
 ```
@@ -104,8 +104,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child | 
- **ip_id** | [**ManageIp**](ManageIp.md)| IP&#39;s id | 
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
+ **ip** | [**ManageIp**](ManageIp.md)| IP to associate | 
 
 ### Return type
 
@@ -123,7 +123,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_reseller_child**
-> CreateModel create_reseller_child(reseller_child=reseller_child)
+> CreateReseller create_reseller_child(reseller_child=reseller_child)
 
 Creates a reseller child
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateModel**](CreateModel.md)
+[**CreateReseller**](CreateReseller.md)
 
 ### Authorization
 
@@ -175,9 +175,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_reseller_child**
-> delete_reseller_child(child_id)
+> delete_reseller_child(child_auth_key)
 
-Deletes a single reseller child based on the childId supplied
+Deletes a single reseller child based on the childAuthKey supplied
 
 ### Example
 ```python
@@ -195,11 +195,11 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
-child_id = 789 # int | id of reseller's child
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 
 try:
-    # Deletes a single reseller child based on the childId supplied
-    api_instance.delete_reseller_child(child_id)
+    # Deletes a single reseller child based on the childAuthKey supplied
+    api_instance.delete_reseller_child(child_auth_key)
 except ApiException as e:
     print("Exception when calling ResellerApi->delete_reseller_child: %s\n" % e)
 ```
@@ -208,7 +208,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child | 
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
 
 ### Return type
 
@@ -226,7 +226,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dissociate_ip_from_child**
-> dissociate_ip_from_child(child_id, ip_id)
+> dissociate_ip_from_child(child_auth_key, ip)
 
 Dissociate a dedicated IP to the child
 
@@ -246,12 +246,12 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
-child_id = 789 # int | id of reseller's child
-ip_id = sib_api_v3_sdk.ManageIp() # ManageIp | IP's id
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
+ip = sib_api_v3_sdk.ManageIp() # ManageIp | IP to dissociate
 
 try:
     # Dissociate a dedicated IP to the child
-    api_instance.dissociate_ip_from_child(child_id, ip_id)
+    api_instance.dissociate_ip_from_child(child_auth_key, ip)
 except ApiException as e:
     print("Exception when calling ResellerApi->dissociate_ip_from_child: %s\n" % e)
 ```
@@ -260,8 +260,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child | 
- **ip_id** | [**ManageIp**](ManageIp.md)| IP&#39;s id | 
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
+ **ip** | [**ManageIp**](ManageIp.md)| IP to dissociate | 
 
 ### Return type
 
@@ -279,7 +279,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_child_info**
-> GetChildInfo get_child_info(child_id)
+> GetChildInfo get_child_info(child_auth_key)
 
 Gets the info about a specific child account
 
@@ -299,11 +299,11 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
-child_id = 789 # int | id of reseller's child
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 
 try:
     # Gets the info about a specific child account
-    api_response = api_instance.get_child_info(child_id)
+    api_response = api_instance.get_child_info(child_auth_key)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ResellerApi->get_child_info: %s\n" % e)
@@ -313,7 +313,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child | 
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
 
 ### Return type
 
@@ -379,7 +379,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_credits**
-> RemainingCreditModel remove_credits(child_id, remove_credits)
+> RemainingCreditModel remove_credits(child_auth_key, remove_credits)
 
 Remove Email and/or SMS credits from a specific child account
 
@@ -399,12 +399,12 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
-child_id = 789 # int | id of reseller's child
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 remove_credits = sib_api_v3_sdk.RemoveCredits() # RemoveCredits | Values to post to remove email or SMS credits from a specific child account
 
 try:
     # Remove Email and/or SMS credits from a specific child account
-    api_response = api_instance.remove_credits(child_id, remove_credits)
+    api_response = api_instance.remove_credits(child_auth_key, remove_credits)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ResellerApi->remove_credits: %s\n" % e)
@@ -414,7 +414,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child | 
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
  **remove_credits** | [**RemoveCredits**](RemoveCredits.md)| Values to post to remove email or SMS credits from a specific child account | 
 
 ### Return type
@@ -433,9 +433,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_reseller_child**
-> update_reseller_child(child_id, reseller_child)
+> update_reseller_child(child_auth_key, reseller_child)
 
-Updates infos of reseller's child based on the childId supplied
+Updates infos of reseller's child based on the childAuthKey supplied
 
 ### Example
 ```python
@@ -453,12 +453,12 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
-child_id = 789 # int | id of reseller's child
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 reseller_child = sib_api_v3_sdk.UpdateChild() # UpdateChild | values to update in child profile
 
 try:
-    # Updates infos of reseller's child based on the childId supplied
-    api_instance.update_reseller_child(child_id, reseller_child)
+    # Updates infos of reseller's child based on the childAuthKey supplied
+    api_instance.update_reseller_child(child_auth_key, reseller_child)
 except ApiException as e:
     print("Exception when calling ResellerApi->update_reseller_child: %s\n" % e)
 ```
@@ -467,7 +467,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **child_id** | **int**| id of reseller&#39;s child | 
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
  **reseller_child** | [**UpdateChild**](UpdateChild.md)| values to update in child profile | 
 
 ### Return type

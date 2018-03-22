@@ -18,7 +18,6 @@ import six
 
 from sib_api_v3_sdk.models.get_child_info_api_keys import GetChildInfoApiKeys  # noqa: F401,E501
 from sib_api_v3_sdk.models.get_child_info_credits import GetChildInfoCredits  # noqa: F401,E501
-from sib_api_v3_sdk.models.get_child_info_ips import GetChildInfoIps  # noqa: F401,E501
 from sib_api_v3_sdk.models.get_child_info_statistics import GetChildInfoStatistics  # noqa: F401,E501
 from sib_api_v3_sdk.models.get_client import GetClient  # noqa: F401,E501
 
@@ -44,8 +43,8 @@ class GetChildInfo(object):
         'credits': 'GetChildInfoCredits',
         'statistics': 'GetChildInfoStatistics',
         'password': 'str',
-        'ips': 'list[GetChildInfoIps]',
-        'api_keys': 'list[GetChildInfoApiKeys]'
+        'ips': 'list[str]',
+        'api_keys': 'GetChildInfoApiKeys'
     }
 
     attribute_map = {
@@ -262,7 +261,7 @@ class GetChildInfo(object):
         IP(s) associated to a child account user  # noqa: E501
 
         :return: The ips of this GetChildInfo.  # noqa: E501
-        :rtype: list[GetChildInfoIps]
+        :rtype: list[str]
         """
         return self._ips
 
@@ -273,7 +272,7 @@ class GetChildInfo(object):
         IP(s) associated to a child account user  # noqa: E501
 
         :param ips: The ips of this GetChildInfo.  # noqa: E501
-        :type: list[GetChildInfoIps]
+        :type: list[str]
         """
 
         self._ips = ips
@@ -282,10 +281,9 @@ class GetChildInfo(object):
     def api_keys(self):
         """Gets the api_keys of this GetChildInfo.  # noqa: E501
 
-        API Keys associated to child account  # noqa: E501
 
         :return: The api_keys of this GetChildInfo.  # noqa: E501
-        :rtype: list[GetChildInfoApiKeys]
+        :rtype: GetChildInfoApiKeys
         """
         return self._api_keys
 
@@ -293,10 +291,9 @@ class GetChildInfo(object):
     def api_keys(self, api_keys):
         """Sets the api_keys of this GetChildInfo.
 
-        API Keys associated to child account  # noqa: E501
 
         :param api_keys: The api_keys of this GetChildInfo.  # noqa: E501
-        :type: list[GetChildInfoApiKeys]
+        :type: GetChildInfoApiKeys
         """
 
         self._api_keys = api_keys

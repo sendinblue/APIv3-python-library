@@ -53,7 +53,7 @@ class TestResellerApi(unittest.TestCase):
     def test_delete_reseller_child(self):
         """Test case for delete_reseller_child
 
-        Deletes a single reseller child based on the childId supplied  # noqa: E501
+        Deletes a single reseller child based on the childAuthKey supplied  # noqa: E501
         """
         pass
 
@@ -88,7 +88,7 @@ class TestResellerApi(unittest.TestCase):
     def test_update_reseller_child(self):
         """Test case for update_reseller_child
 
-        Updates infos of reseller's child based on the childId supplied  # noqa: E501
+        Updates infos of reseller's child based on the childAuthKey supplied  # noqa: E501
         """
         pass
 

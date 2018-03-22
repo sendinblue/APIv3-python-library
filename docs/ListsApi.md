@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**get_folder_lists**](ListsApi.md#get_folder_lists) | **GET** /contacts/folders/{folderId}/lists | Get the lists in a folder
 [**get_list**](ListsApi.md#get_list) | **GET** /contacts/lists/{listId} | Get the details of a list
 [**get_lists**](ListsApi.md#get_lists) | **GET** /contacts/lists | Get all the lists
-[**remove_contact_to_list**](ListsApi.md#remove_contact_to_list) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+[**remove_contact_from_list**](ListsApi.md#remove_contact_from_list) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
 [**update_list**](ListsApi.md#update_list) | **PUT** /contacts/lists/{listId} | Update a list
 
 
@@ -37,7 +37,7 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 list_id = 789 # int | Id of the list
-contact_emails = sib_api_v3_sdk.AddRemoveContactToList() # AddRemoveContactToList | Emails addresses of the contacts
+contact_emails = sib_api_v3_sdk.AddContactToList() # AddContactToList | Emails addresses of the contacts
 
 try:
     # Add existing contacts to a list
@@ -52,7 +52,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**| Id of the list | 
- **contact_emails** | [**AddRemoveContactToList**](AddRemoveContactToList.md)| Emails addresses of the contacts | 
+ **contact_emails** | [**AddContactToList**](AddContactToList.md)| Emails addresses of the contacts | 
 
 ### Return type
 
@@ -392,8 +392,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_contact_to_list**
-> PostContactInfo remove_contact_to_list(list_id, contact_emails)
+# **remove_contact_from_list**
+> PostContactInfo remove_contact_from_list(list_id, contact_emails)
 
 Remove existing contacts from a list
 
@@ -414,14 +414,14 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 list_id = 789 # int | Id of the list
-contact_emails = sib_api_v3_sdk.AddRemoveContactToList() # AddRemoveContactToList | Emails adresses of the contact
+contact_emails = sib_api_v3_sdk.RemoveContactFromList() # RemoveContactFromList | Emails adresses of the contact
 
 try:
     # Remove existing contacts from a list
-    api_response = api_instance.remove_contact_to_list(list_id, contact_emails)
+    api_response = api_instance.remove_contact_from_list(list_id, contact_emails)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ListsApi->remove_contact_to_list: %s\n" % e)
+    print("Exception when calling ListsApi->remove_contact_from_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -429,7 +429,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_id** | **int**| Id of the list | 
- **contact_emails** | [**AddRemoveContactToList**](AddRemoveContactToList.md)| Emails adresses of the contact | 
+ **contact_emails** | [**RemoveContactFromList**](RemoveContactFromList.md)| Emails adresses of the contact | 
 
 ### Return type
 

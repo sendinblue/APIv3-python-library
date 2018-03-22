@@ -56,7 +56,7 @@ class RemoveCredits(object):
     def sms(self):
         """Gets the sms of this RemoveCredits.  # noqa: E501
 
-        SMS credits to be removed from the child account  # noqa: E501
+        Required if email credits are empty. SMS credits to be removed from the child account  # noqa: E501
 
         :return: The sms of this RemoveCredits.  # noqa: E501
         :rtype: int
@@ -67,7 +67,7 @@ class RemoveCredits(object):
     def sms(self, sms):
         """Sets the sms of this RemoveCredits.
 
-        SMS credits to be removed from the child account  # noqa: E501
+        Required if email credits are empty. SMS credits to be removed from the child account  # noqa: E501
 
         :param sms: The sms of this RemoveCredits.  # noqa: E501
         :type: int
@@ -79,7 +79,7 @@ class RemoveCredits(object):
     def email(self):
         """Gets the email of this RemoveCredits.  # noqa: E501
 
-        Email credits to be removed from the child account  # noqa: E501
+        Required if sms credits are empty. Email credits to be removed from the child account  # noqa: E501
 
         :return: The email of this RemoveCredits.  # noqa: E501
         :rtype: int
@@ -90,7 +90,7 @@ class RemoveCredits(object):
     def email(self, email):
         """Sets the email of this RemoveCredits.
 
-        Email credits to be removed from the child account  # noqa: E501
+        Required if sms credits are empty. Email credits to be removed from the child account  # noqa: E501
 
         :param email: The email of this RemoveCredits.  # noqa: E501
         :type: int
