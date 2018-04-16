@@ -35,7 +35,8 @@ class GetAccountPlan(object):
         'credits_type': 'str',
         'credits': 'float',
         'start_date': 'date',
-        'end_date': 'date'
+        'end_date': 'date',
+        'user_limit': 'int'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class GetAccountPlan(object):
         'credits_type': 'creditsType',
         'credits': 'credits',
         'start_date': 'startDate',
-        'end_date': 'endDate'
+        'end_date': 'endDate',
+        'user_limit': 'userLimit'
     }
 
-    def __init__(self, type=None, credits_type=None, credits=None, start_date=None, end_date=None):  # noqa: E501
+    def __init__(self, type=None, credits_type=None, credits=None, start_date=None, end_date=None, user_limit=None):  # noqa: E501
         """GetAccountPlan - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
@@ -54,6 +56,7 @@ class GetAccountPlan(object):
         self._credits = None
         self._start_date = None
         self._end_date = None
+        self._user_limit = None
         self.discriminator = None
 
         self.type = type
@@ -63,6 +66,8 @@ class GetAccountPlan(object):
             self.start_date = start_date
         if end_date is not None:
             self.end_date = end_date
+        if user_limit is not None:
+            self.user_limit = user_limit
 
     @property
     def type(self):
@@ -86,7 +91,7 @@ class GetAccountPlan(object):
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["payAsYouGo", "unlimited", "free", "subscription", "sms", "reseller"]  # noqa: E501
+        allowed_values = ["payAsYouGo", "free", "subscription", "sms", "reseller"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
@@ -99,7 +104,7 @@ class GetAccountPlan(object):
     def credits_type(self):
         """Gets the credits_type of this GetAccountPlan.  # noqa: E501
 
-        This is the type of the credit, \"User Limit\" or \"Send Limit\" are two possible types of credit of a user. \"User Limit\" implies the total number of subscribers you can add to your account, and \"Send Limit\" implies the total number of emails you can send to the subscribers in your account.  # noqa: E501
+        This is the type of the credit, \"Send Limit\" is one of the possible types of credit of a user. \"Send Limit\" implies the total number of emails you can send to the subscribers in your account.  # noqa: E501
 
         :return: The credits_type of this GetAccountPlan.  # noqa: E501
         :rtype: str
@@ -110,14 +115,14 @@ class GetAccountPlan(object):
     def credits_type(self, credits_type):
         """Sets the credits_type of this GetAccountPlan.
 
-        This is the type of the credit, \"User Limit\" or \"Send Limit\" are two possible types of credit of a user. \"User Limit\" implies the total number of subscribers you can add to your account, and \"Send Limit\" implies the total number of emails you can send to the subscribers in your account.  # noqa: E501
+        This is the type of the credit, \"Send Limit\" is one of the possible types of credit of a user. \"Send Limit\" implies the total number of emails you can send to the subscribers in your account.  # noqa: E501
 
         :param credits_type: The credits_type of this GetAccountPlan.  # noqa: E501
         :type: str
         """
         if credits_type is None:
             raise ValueError("Invalid value for `credits_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["userLimit", "sendLimit"]  # noqa: E501
+        allowed_values = ["sendLimit"]  # noqa: E501
         if credits_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `credits_type` ({0}), must be one of {1}"  # noqa: E501
@@ -130,7 +135,7 @@ class GetAccountPlan(object):
     def credits(self):
         """Gets the credits of this GetAccountPlan.  # noqa: E501
 
-        Remaining credits of the user. This can either be \"User Limit\" or \"Send Limit\" depending on the plan.  # noqa: E501
+        Remaining credits of the user  # noqa: E501
 
         :return: The credits of this GetAccountPlan.  # noqa: E501
         :rtype: float
@@ -141,7 +146,7 @@ class GetAccountPlan(object):
     def credits(self, credits):
         """Sets the credits of this GetAccountPlan.
 
-        Remaining credits of the user. This can either be \"User Limit\" or \"Send Limit\" depending on the plan.  # noqa: E501
+        Remaining credits of the user  # noqa: E501
 
         :param credits: The credits of this GetAccountPlan.  # noqa: E501
         :type: float
@@ -155,7 +160,7 @@ class GetAccountPlan(object):
     def start_date(self):
         """Gets the start_date of this GetAccountPlan.  # noqa: E501
 
-        Date of the period from which the plan will start (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)  # noqa: E501
+        Date of the period from which the plan will start (only available for \"subscription\" and \"reseller\" plan type)  # noqa: E501
 
         :return: The start_date of this GetAccountPlan.  # noqa: E501
         :rtype: date
@@ -166,7 +171,7 @@ class GetAccountPlan(object):
     def start_date(self, start_date):
         """Sets the start_date of this GetAccountPlan.
 
-        Date of the period from which the plan will start (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)  # noqa: E501
+        Date of the period from which the plan will start (only available for \"subscription\" and \"reseller\" plan type)  # noqa: E501
 
         :param start_date: The start_date of this GetAccountPlan.  # noqa: E501
         :type: date
@@ -178,7 +183,7 @@ class GetAccountPlan(object):
     def end_date(self):
         """Gets the end_date of this GetAccountPlan.  # noqa: E501
 
-        Date of the period from which the plan will end (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)  # noqa: E501
+        Date of the period from which the plan will end (only available for \"subscription\" and \"reseller\" plan type)  # noqa: E501
 
         :return: The end_date of this GetAccountPlan.  # noqa: E501
         :rtype: date
@@ -189,13 +194,36 @@ class GetAccountPlan(object):
     def end_date(self, end_date):
         """Sets the end_date of this GetAccountPlan.
 
-        Date of the period from which the plan will end (only available for \"subscription\", \"unlimited\" and \"reseller\" plan type)  # noqa: E501
+        Date of the period from which the plan will end (only available for \"subscription\" and \"reseller\" plan type)  # noqa: E501
 
         :param end_date: The end_date of this GetAccountPlan.  # noqa: E501
         :type: date
         """
 
         self._end_date = end_date
+
+    @property
+    def user_limit(self):
+        """Gets the user_limit of this GetAccountPlan.  # noqa: E501
+
+        Only in case of reseller account. It implies the total number of child accounts you can add to your account.  # noqa: E501
+
+        :return: The user_limit of this GetAccountPlan.  # noqa: E501
+        :rtype: int
+        """
+        return self._user_limit
+
+    @user_limit.setter
+    def user_limit(self, user_limit):
+        """Sets the user_limit of this GetAccountPlan.
+
+        Only in case of reseller account. It implies the total number of child accounts you can add to your account.  # noqa: E501
+
+        :param user_limit: The user_limit of this GetAccountPlan.  # noqa: E501
+        :type: int
+        """
+
+        self._user_limit = user_limit
 
     def to_dict(self):
         """Returns the model properties as a dict"""
