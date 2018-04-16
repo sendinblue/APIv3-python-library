@@ -71,6 +71,13 @@ class TestContactsApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_contact(self):
+        """Test case for delete_contact
+
+        Deletes a contact  # noqa: E501
+        """
+        pass
+
     def test_delete_folder(self):
         """Test case for delete_folder
 
