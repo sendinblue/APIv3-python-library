@@ -109,7 +109,7 @@ class SendSmtpEmailAttachment(object):
     def name(self):
         """Gets the name of this SendSmtpEmailAttachment.  # noqa: E501
 
-        Required for content. Name of the attachment  # noqa: E501
+        Required if content is passed. Name of the attachment  # noqa: E501
 
         :return: The name of this SendSmtpEmailAttachment.  # noqa: E501
         :rtype: str
@@ -120,7 +120,7 @@ class SendSmtpEmailAttachment(object):
     def name(self, name):
         """Sets the name of this SendSmtpEmailAttachment.
 
-        Required for content. Name of the attachment  # noqa: E501
+        Required if content is passed. Name of the attachment  # noqa: E501
 
         :param name: The name of this SendSmtpEmailAttachment.  # noqa: E501
         :type: str

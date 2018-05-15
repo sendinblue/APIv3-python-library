@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **modified_at** | **datetime** | Last modification UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **list_ids** | **list[int]** |  | 
 **list_unsubscribed** | **list[int]** |  | [optional] 
-**attributes** | **dict(str, str)** |  | 
+**attributes** | **object** | Set of attributes of the contact | 
 **statistics** | [**GetExtendedContactDetailsStatistics**](GetExtendedContactDetailsStatistics.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

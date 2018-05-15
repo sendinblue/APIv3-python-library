@@ -39,8 +39,9 @@ class SendEmail(object):
         'reply_to': 'str',
         'attachment_url': 'str',
         'attachment': 'list[SendEmailAttachment]',
-        'headers': 'dict(str, str)',
-        'attributes': 'dict(str, str)'
+        'headers': 'object',
+        'attributes': 'object',
+        'tags': 'list[str]'
     }
 
     attribute_map = {
@@ -51,10 +52,11 @@ class SendEmail(object):
         'attachment_url': 'attachmentUrl',
         'attachment': 'attachment',
         'headers': 'headers',
-        'attributes': 'attributes'
+        'attributes': 'attributes',
+        'tags': 'tags'
     }
 
-    def __init__(self, email_to=None, email_bcc=None, email_cc=None, reply_to=None, attachment_url=None, attachment=None, headers=None, attributes=None):  # noqa: E501
+    def __init__(self, email_to=None, email_bcc=None, email_cc=None, reply_to=None, attachment_url=None, attachment=None, headers=None, attributes=None, tags=None):  # noqa: E501
         """SendEmail - a model defined in Swagger"""  # noqa: E501
 
         self._email_to = None
@@ -65,6 +67,7 @@ class SendEmail(object):
         self._attachment = None
         self._headers = None
         self._attributes = None
+        self._tags = None
         self.discriminator = None
 
         self.email_to = email_to
@@ -82,12 +85,14 @@ class SendEmail(object):
             self.headers = headers
         if attributes is not None:
             self.attributes = attributes
+        if tags is not None:
+            self.tags = tags
 
     @property
     def email_to(self):
         """Gets the email_to of this SendEmail.  # noqa: E501
 
-        Email addresses of the recipients  # noqa: E501
+        List of the email addresses of the recipients. For example, ['abc@example.com', 'asd@example.com'].  # noqa: E501
 
         :return: The email_to of this SendEmail.  # noqa: E501
         :rtype: list[str]
@@ -98,7 +103,7 @@ class SendEmail(object):
     def email_to(self, email_to):
         """Sets the email_to of this SendEmail.
 
-        Email addresses of the recipients  # noqa: E501
+        List of the email addresses of the recipients. For example, ['abc@example.com', 'asd@example.com'].  # noqa: E501
 
         :param email_to: The email_to of this SendEmail.  # noqa: E501
         :type: list[str]
@@ -112,7 +117,7 @@ class SendEmail(object):
     def email_bcc(self):
         """Gets the email_bcc of this SendEmail.  # noqa: E501
 
-        Email addresses of the recipients in bcc  # noqa: E501
+        List of the email addresses of the recipients in bcc  # noqa: E501
 
         :return: The email_bcc of this SendEmail.  # noqa: E501
         :rtype: list[str]
@@ -123,7 +128,7 @@ class SendEmail(object):
     def email_bcc(self, email_bcc):
         """Sets the email_bcc of this SendEmail.
 
-        Email addresses of the recipients in bcc  # noqa: E501
+        List of the email addresses of the recipients in bcc  # noqa: E501
 
         :param email_bcc: The email_bcc of this SendEmail.  # noqa: E501
         :type: list[str]
@@ -135,7 +140,7 @@ class SendEmail(object):
     def email_cc(self):
         """Gets the email_cc of this SendEmail.  # noqa: E501
 
-        Email addresses of the recipients in cc  # noqa: E501
+        List of the email addresses of the recipients in cc  # noqa: E501
 
         :return: The email_cc of this SendEmail.  # noqa: E501
         :rtype: list[str]
@@ -146,7 +151,7 @@ class SendEmail(object):
     def email_cc(self, email_cc):
         """Sets the email_cc of this SendEmail.
 
-        Email addresses of the recipients in cc  # noqa: E501
+        List of the email addresses of the recipients in cc  # noqa: E501
 
         :param email_cc: The email_cc of this SendEmail.  # noqa: E501
         :type: list[str]
@@ -158,7 +163,7 @@ class SendEmail(object):
     def reply_to(self):
         """Gets the reply_to of this SendEmail.  # noqa: E501
 
-        Email on which campaign recipients will be able to reply to  # noqa: E501
+        Email address which shall be used by campaign recipients to reply back  # noqa: E501
 
         :return: The reply_to of this SendEmail.  # noqa: E501
         :rtype: str
@@ -169,7 +174,7 @@ class SendEmail(object):
     def reply_to(self, reply_to):
         """Sets the reply_to of this SendEmail.
 
-        Email on which campaign recipients will be able to reply to  # noqa: E501
+        Email address which shall be used by campaign recipients to reply back  # noqa: E501
 
         :param reply_to: The reply_to of this SendEmail.  # noqa: E501
         :type: str
@@ -204,7 +209,7 @@ class SendEmail(object):
     def attachment(self):
         """Gets the attachment of this SendEmail.  # noqa: E501
 
-        Pass the base64 content of the attachment. Extension allowed: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub and eps  # noqa: E501
+        Pass the list of content (base64 encoded) and name of the attachment. For example, [{'content':'base64 encoded content 1', 'name':'attcahment1'}, {'content':'base64 encoded content 2', 'name':'attcahment2'}].  # noqa: E501
 
         :return: The attachment of this SendEmail.  # noqa: E501
         :rtype: list[SendEmailAttachment]
@@ -215,7 +220,7 @@ class SendEmail(object):
     def attachment(self, attachment):
         """Sets the attachment of this SendEmail.
 
-        Pass the base64 content of the attachment. Extension allowed: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub and eps  # noqa: E501
+        Pass the list of content (base64 encoded) and name of the attachment. For example, [{'content':'base64 encoded content 1', 'name':'attcahment1'}, {'content':'base64 encoded content 2', 'name':'attcahment2'}].  # noqa: E501
 
         :param attachment: The attachment of this SendEmail.  # noqa: E501
         :type: list[SendEmailAttachment]
@@ -227,9 +232,10 @@ class SendEmail(object):
     def headers(self):
         """Gets the headers of this SendEmail.  # noqa: E501
 
+        Pass the set of headers that shall be sent along the mail headers in the original email. 'X-Mailin-IP' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, {'Content-Type':'text/html', 'charset':'iso-8859-1', 'X-Mailin-IP':'1.2.3.4'}  # noqa: E501
 
         :return: The headers of this SendEmail.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: object
         """
         return self._headers
 
@@ -237,9 +243,10 @@ class SendEmail(object):
     def headers(self, headers):
         """Sets the headers of this SendEmail.
 
+        Pass the set of headers that shall be sent along the mail headers in the original email. 'X-Mailin-IP' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, {'Content-Type':'text/html', 'charset':'iso-8859-1', 'X-Mailin-IP':'1.2.3.4'}  # noqa: E501
 
         :param headers: The headers of this SendEmail.  # noqa: E501
-        :type: dict(str, str)
+        :type: object
         """
 
         self._headers = headers
@@ -248,9 +255,10 @@ class SendEmail(object):
     def attributes(self):
         """Gets the attributes of this SendEmail.  # noqa: E501
 
+        Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}  # noqa: E501
 
         :return: The attributes of this SendEmail.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: object
         """
         return self._attributes
 
@@ -258,12 +266,36 @@ class SendEmail(object):
     def attributes(self, attributes):
         """Sets the attributes of this SendEmail.
 
+        Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}  # noqa: E501
 
         :param attributes: The attributes of this SendEmail.  # noqa: E501
-        :type: dict(str, str)
+        :type: object
         """
 
         self._attributes = attributes
+
+    @property
+    def tags(self):
+        """Gets the tags of this SendEmail.  # noqa: E501
+
+        Tag your emails to find them more easily  # noqa: E501
+
+        :return: The tags of this SendEmail.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this SendEmail.
+
+        Tag your emails to find them more easily  # noqa: E501
+
+        :param tags: The tags of this SendEmail.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

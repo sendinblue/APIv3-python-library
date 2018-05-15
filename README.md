@@ -72,6 +72,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->get_account: %s\n" % e)
+
 ```
 
 ## Documentation for API Endpoints
@@ -244,7 +245,6 @@ Class | Method | HTTP request | Description
  - [GetEmailEventReportEvents](docs/GetEmailEventReportEvents.md)
  - [GetExtendedCampaignOverviewSender](docs/GetExtendedCampaignOverviewSender.md)
  - [GetExtendedCampaignStats](docs/GetExtendedCampaignStats.md)
- - [GetExtendedCampaignStatsLinksStats](docs/GetExtendedCampaignStatsLinksStats.md)
  - [GetExtendedClientAddress](docs/GetExtendedClientAddress.md)
  - [GetExtendedContactDetailsStatistics](docs/GetExtendedContactDetailsStatistics.md)
  - [GetExtendedContactDetailsStatisticsClicked](docs/GetExtendedContactDetailsStatisticsClicked.md)

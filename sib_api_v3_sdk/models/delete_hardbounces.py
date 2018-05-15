@@ -61,7 +61,7 @@ class DeleteHardbounces(object):
     def start_date(self):
         """Gets the start_date of this DeleteHardbounces.  # noqa: E501
 
-        Starting date (YYYY-MM-DD) of the period from which the hardbounces will be deleted. Must be lower than equal to endDate  # noqa: E501
+        Starting date (YYYY-MM-DD) of the time period for deletion. The hardbounces occurred after this date will be deleted. Must be less than or equal to the endDate  # noqa: E501
 
         :return: The start_date of this DeleteHardbounces.  # noqa: E501
         :rtype: date
@@ -72,7 +72,7 @@ class DeleteHardbounces(object):
     def start_date(self, start_date):
         """Sets the start_date of this DeleteHardbounces.
 
-        Starting date (YYYY-MM-DD) of the period from which the hardbounces will be deleted. Must be lower than equal to endDate  # noqa: E501
+        Starting date (YYYY-MM-DD) of the time period for deletion. The hardbounces occurred after this date will be deleted. Must be less than or equal to the endDate  # noqa: E501
 
         :param start_date: The start_date of this DeleteHardbounces.  # noqa: E501
         :type: date
@@ -84,7 +84,7 @@ class DeleteHardbounces(object):
     def end_date(self):
         """Gets the end_date of this DeleteHardbounces.  # noqa: E501
 
-        Ending date (YYYY-MM-DD) of the period from which the hardbounces will be deleted. Must be greater than equal to startDate  # noqa: E501
+        Ending date (YYYY-MM-DD) of the time period for deletion. The hardbounces until this date will be deleted. Must be greater than or equal to the startDate  # noqa: E501
 
         :return: The end_date of this DeleteHardbounces.  # noqa: E501
         :rtype: date
@@ -95,7 +95,7 @@ class DeleteHardbounces(object):
     def end_date(self, end_date):
         """Sets the end_date of this DeleteHardbounces.
 
-        Ending date (YYYY-MM-DD) of the period from which the hardbounces will be deleted. Must be greater than equal to startDate  # noqa: E501
+        Ending date (YYYY-MM-DD) of the time period for deletion. The hardbounces until this date will be deleted. Must be greater than or equal to the startDate  # noqa: E501
 
         :param end_date: The end_date of this DeleteHardbounces.  # noqa: E501
         :type: date

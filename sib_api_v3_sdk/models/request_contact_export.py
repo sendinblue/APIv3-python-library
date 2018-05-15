@@ -60,7 +60,7 @@ class RequestContactExport(object):
     def export_attributes(self):
         """Gets the export_attributes of this RequestContactExport.  # noqa: E501
 
-        Name of attributes to export. These attributes must be in your contact database  # noqa: E501
+        List of all the attributes that you want to export. These attributes must be present in your contact database. For example, ['fname', 'lname', 'email'].  # noqa: E501
 
         :return: The export_attributes of this RequestContactExport.  # noqa: E501
         :rtype: list[str]
@@ -71,7 +71,7 @@ class RequestContactExport(object):
     def export_attributes(self, export_attributes):
         """Sets the export_attributes of this RequestContactExport.
 
-        Name of attributes to export. These attributes must be in your contact database  # noqa: E501
+        List of all the attributes that you want to export. These attributes must be present in your contact database. For example, ['fname', 'lname', 'email'].  # noqa: E501
 
         :param export_attributes: The export_attributes of this RequestContactExport.  # noqa: E501
         :type: list[str]
@@ -83,7 +83,7 @@ class RequestContactExport(object):
     def contact_filter(self):
         """Gets the contact_filter of this RequestContactExport.  # noqa: E501
 
-        Filter to apply to the export  # noqa: E501
+        Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.  # noqa: E501
 
         :return: The contact_filter of this RequestContactExport.  # noqa: E501
         :rtype: object
@@ -94,7 +94,7 @@ class RequestContactExport(object):
     def contact_filter(self, contact_filter):
         """Sets the contact_filter of this RequestContactExport.
 
-        Filter to apply to the export  # noqa: E501
+        Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.  # noqa: E501
 
         :param contact_filter: The contact_filter of this RequestContactExport.  # noqa: E501
         :type: object

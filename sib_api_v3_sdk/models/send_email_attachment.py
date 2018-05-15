@@ -47,10 +47,8 @@ class SendEmailAttachment(object):
         self._name = None
         self.discriminator = None
 
-        if content is not None:
-            self.content = content
-        if name is not None:
-            self.name = name
+        self.content = content
+        self.name = name
 
     @property
     def content(self):
@@ -72,6 +70,8 @@ class SendEmailAttachment(object):
         :param content: The content of this SendEmailAttachment.  # noqa: E501
         :type: str
         """
+        if content is None:
+            raise ValueError("Invalid value for `content`, must not be `None`")  # noqa: E501
         if content is not None and not re.search('^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$', content):  # noqa: E501
             raise ValueError("Invalid value for `content`, must be a follow pattern or equal to `/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/`")  # noqa: E501
 
@@ -97,6 +97,8 @@ class SendEmailAttachment(object):
         :param name: The name of this SendEmailAttachment.  # noqa: E501
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 

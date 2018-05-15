@@ -81,7 +81,7 @@ class CreateContact(object):
     def email(self):
         """Gets the email of this CreateContact.  # noqa: E501
 
-        Email address of the user. Mandatory if `attributes.sms` is not passed  # noqa: E501
+        Email address of the user. Mandatory if \"sms\" field is not passed in \"attributes\" parameter'  # noqa: E501
 
         :return: The email of this CreateContact.  # noqa: E501
         :rtype: str
@@ -92,7 +92,7 @@ class CreateContact(object):
     def email(self, email):
         """Sets the email of this CreateContact.
 
-        Email address of the user. Mandatory if `attributes.sms` is not passed  # noqa: E501
+        Email address of the user. Mandatory if \"sms\" field is not passed in \"attributes\" parameter'  # noqa: E501
 
         :param email: The email of this CreateContact.  # noqa: E501
         :type: str
@@ -104,7 +104,7 @@ class CreateContact(object):
     def attributes(self):
         """Gets the attributes of this CreateContact.  # noqa: E501
 
-        Values of the attributes to fill. The attributes must exist in you contact database  # noqa: E501
+        Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {'FNAME':'Elly', 'LNAME':'Roger'}  # noqa: E501
 
         :return: The attributes of this CreateContact.  # noqa: E501
         :rtype: object
@@ -115,7 +115,7 @@ class CreateContact(object):
     def attributes(self, attributes):
         """Sets the attributes of this CreateContact.
 
-        Values of the attributes to fill. The attributes must exist in you contact database  # noqa: E501
+        Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {'FNAME':'Elly', 'LNAME':'Roger'}  # noqa: E501
 
         :param attributes: The attributes of this CreateContact.  # noqa: E501
         :type: object
@@ -127,7 +127,7 @@ class CreateContact(object):
     def email_blacklisted(self):
         """Gets the email_blacklisted of this CreateContact.  # noqa: E501
 
-        Blacklist the contact for emails (emailBlacklisted = true)  # noqa: E501
+        Set this field to blacklist the contact for emails (emailBlacklisted = true)  # noqa: E501
 
         :return: The email_blacklisted of this CreateContact.  # noqa: E501
         :rtype: bool
@@ -138,7 +138,7 @@ class CreateContact(object):
     def email_blacklisted(self, email_blacklisted):
         """Sets the email_blacklisted of this CreateContact.
 
-        Blacklist the contact for emails (emailBlacklisted = true)  # noqa: E501
+        Set this field to blacklist the contact for emails (emailBlacklisted = true)  # noqa: E501
 
         :param email_blacklisted: The email_blacklisted of this CreateContact.  # noqa: E501
         :type: bool
@@ -150,7 +150,7 @@ class CreateContact(object):
     def sms_blacklisted(self):
         """Gets the sms_blacklisted of this CreateContact.  # noqa: E501
 
-        Blacklist the contact for SMS (smsBlacklisted = true)  # noqa: E501
+        Set this field to blacklist the contact for SMS (smsBlacklisted = true)  # noqa: E501
 
         :return: The sms_blacklisted of this CreateContact.  # noqa: E501
         :rtype: bool
@@ -161,7 +161,7 @@ class CreateContact(object):
     def sms_blacklisted(self, sms_blacklisted):
         """Sets the sms_blacklisted of this CreateContact.
 
-        Blacklist the contact for SMS (smsBlacklisted = true)  # noqa: E501
+        Set this field to blacklist the contact for SMS (smsBlacklisted = true)  # noqa: E501
 
         :param sms_blacklisted: The sms_blacklisted of this CreateContact.  # noqa: E501
         :type: bool
@@ -196,7 +196,7 @@ class CreateContact(object):
     def update_enabled(self):
         """Gets the update_enabled of this CreateContact.  # noqa: E501
 
-        Facilitate to update existing contact in same request (updateEnabled = true)  # noqa: E501
+        Facilitate to update the existing contact in the same request (updateEnabled = true)  # noqa: E501
 
         :return: The update_enabled of this CreateContact.  # noqa: E501
         :rtype: bool
@@ -207,7 +207,7 @@ class CreateContact(object):
     def update_enabled(self, update_enabled):
         """Sets the update_enabled of this CreateContact.
 
-        Facilitate to update existing contact in same request (updateEnabled = true)  # noqa: E501
+        Facilitate to update the existing contact in the same request (updateEnabled = true)  # noqa: E501
 
         :param update_enabled: The update_enabled of this CreateContact.  # noqa: E501
         :type: bool

@@ -89,13 +89,14 @@ class GetCampaignStats(object):
         self.unique_views = unique_views
         self.unsubscriptions = unsubscriptions
         self.viewed = viewed
-        self.deferred = deferred
+        if deferred is not None:
+            self.deferred = deferred
 
     @property
     def list_id(self):
         """Gets the list_id of this GetCampaignStats.  # noqa: E501
 
-        List Id of email campaign (only in case of get email campaign(s))  # noqa: E501
+        List Id of email campaign (only in case of get email campaign(s)(not for global stats))  # noqa: E501
 
         :return: The list_id of this GetCampaignStats.  # noqa: E501
         :rtype: int
@@ -106,7 +107,7 @@ class GetCampaignStats(object):
     def list_id(self, list_id):
         """Sets the list_id of this GetCampaignStats.
 
-        List Id of email campaign (only in case of get email campaign(s))  # noqa: E501
+        List Id of email campaign (only in case of get email campaign(s)(not for global stats))  # noqa: E501
 
         :param list_id: The list_id of this GetCampaignStats.  # noqa: E501
         :type: int
@@ -143,7 +144,7 @@ class GetCampaignStats(object):
     def clickers(self):
         """Gets the clickers of this GetCampaignStats.  # noqa: E501
 
-        Number of clicks for the campaign  # noqa: E501
+        Number of total clicks for the campaign  # noqa: E501
 
         :return: The clickers of this GetCampaignStats.  # noqa: E501
         :rtype: int
@@ -154,7 +155,7 @@ class GetCampaignStats(object):
     def clickers(self, clickers):
         """Sets the clickers of this GetCampaignStats.
 
-        Number of clicks for the campaign  # noqa: E501
+        Number of total clicks for the campaign  # noqa: E501
 
         :param clickers: The clickers of this GetCampaignStats.  # noqa: E501
         :type: int
@@ -384,8 +385,6 @@ class GetCampaignStats(object):
         :param deferred: The deferred of this GetCampaignStats.  # noqa: E501
         :type: int
         """
-        if deferred is None:
-            raise ValueError("Invalid value for `deferred`, must not be `None`")  # noqa: E501
 
         self._deferred = deferred
 
