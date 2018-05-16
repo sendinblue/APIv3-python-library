@@ -79,7 +79,7 @@ class CreateList(object):
     def folder_id(self):
         """Gets the folder_id of this CreateList.  # noqa: E501
 
-        Id of the folder in which to create the list  # noqa: E501
+        Id of the parent folder in which this list is to be created  # noqa: E501
 
         :return: The folder_id of this CreateList.  # noqa: E501
         :rtype: int
@@ -90,7 +90,7 @@ class CreateList(object):
     def folder_id(self, folder_id):
         """Sets the folder_id of this CreateList.
 
-        Id of the folder in which to create the list  # noqa: E501
+        Id of the parent folder in which this list is to be created  # noqa: E501
 
         :param folder_id: The folder_id of this CreateList.  # noqa: E501
         :type: int

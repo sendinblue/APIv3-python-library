@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from sib_api_v3_sdk.models.get_extended_campaign_stats_links_stats import GetExtendedCampaignStatsLinksStats  # noqa: F401,E501
 from sib_api_v3_sdk.models.get_stats_by_domain import GetStatsByDomain  # noqa: F401,E501
 
 
@@ -34,14 +33,16 @@ class GetExtendedCampaignStats(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'global_stats': 'object',
         'campaign_stats': 'list[object]',
         'mirror_click': 'int',
         'remaining': 'int',
-        'links_stats': 'dict(str, GetExtendedCampaignStatsLinksStats)',
+        'links_stats': 'object',
         'stats_by_domain': 'GetStatsByDomain'
     }
 
     attribute_map = {
+        'global_stats': 'globalStats',
         'campaign_stats': 'campaignStats',
         'mirror_click': 'mirrorClick',
         'remaining': 'remaining',
@@ -49,9 +50,10 @@ class GetExtendedCampaignStats(object):
         'stats_by_domain': 'statsByDomain'
     }
 
-    def __init__(self, campaign_stats=None, mirror_click=None, remaining=None, links_stats=None, stats_by_domain=None):  # noqa: E501
+    def __init__(self, global_stats=None, campaign_stats=None, mirror_click=None, remaining=None, links_stats=None, stats_by_domain=None):  # noqa: E501
         """GetExtendedCampaignStats - a model defined in Swagger"""  # noqa: E501
 
+        self._global_stats = None
         self._campaign_stats = None
         self._mirror_click = None
         self._remaining = None
@@ -59,6 +61,7 @@ class GetExtendedCampaignStats(object):
         self._stats_by_domain = None
         self.discriminator = None
 
+        self.global_stats = global_stats
         self.campaign_stats = campaign_stats
         self.mirror_click = mirror_click
         self.remaining = remaining
@@ -66,9 +69,35 @@ class GetExtendedCampaignStats(object):
         self.stats_by_domain = stats_by_domain
 
     @property
+    def global_stats(self):
+        """Gets the global_stats of this GetExtendedCampaignStats.  # noqa: E501
+
+        Overall statistics of the campaign  # noqa: E501
+
+        :return: The global_stats of this GetExtendedCampaignStats.  # noqa: E501
+        :rtype: object
+        """
+        return self._global_stats
+
+    @global_stats.setter
+    def global_stats(self, global_stats):
+        """Sets the global_stats of this GetExtendedCampaignStats.
+
+        Overall statistics of the campaign  # noqa: E501
+
+        :param global_stats: The global_stats of this GetExtendedCampaignStats.  # noqa: E501
+        :type: object
+        """
+        if global_stats is None:
+            raise ValueError("Invalid value for `global_stats`, must not be `None`")  # noqa: E501
+
+        self._global_stats = global_stats
+
+    @property
     def campaign_stats(self):
         """Gets the campaign_stats of this GetExtendedCampaignStats.  # noqa: E501
 
+        List-wise statistics of the campaign.  # noqa: E501
 
         :return: The campaign_stats of this GetExtendedCampaignStats.  # noqa: E501
         :rtype: list[object]
@@ -79,6 +108,7 @@ class GetExtendedCampaignStats(object):
     def campaign_stats(self, campaign_stats):
         """Sets the campaign_stats of this GetExtendedCampaignStats.
 
+        List-wise statistics of the campaign.  # noqa: E501
 
         :param campaign_stats: The campaign_stats of this GetExtendedCampaignStats.  # noqa: E501
         :type: list[object]
@@ -142,9 +172,10 @@ class GetExtendedCampaignStats(object):
     def links_stats(self):
         """Gets the links_stats of this GetExtendedCampaignStats.  # noqa: E501
 
+        Statistics about the number of clicks for the links  # noqa: E501
 
         :return: The links_stats of this GetExtendedCampaignStats.  # noqa: E501
-        :rtype: dict(str, GetExtendedCampaignStatsLinksStats)
+        :rtype: object
         """
         return self._links_stats
 
@@ -152,9 +183,10 @@ class GetExtendedCampaignStats(object):
     def links_stats(self, links_stats):
         """Sets the links_stats of this GetExtendedCampaignStats.
 
+        Statistics about the number of clicks for the links  # noqa: E501
 
         :param links_stats: The links_stats of this GetExtendedCampaignStats.  # noqa: E501
-        :type: dict(str, GetExtendedCampaignStatsLinksStats)
+        :type: object
         """
         if links_stats is None:
             raise ValueError("Invalid value for `links_stats`, must not be `None`")  # noqa: E501

@@ -79,7 +79,7 @@ class RequestContactImportNewList(object):
     def folder_id(self):
         """Gets the folder_id of this RequestContactImportNewList.  # noqa: E501
 
-        Folder id will be used with listName to make newly created list’s desired parent (Mandatory if listName is not empty).  # noqa: E501
+        Id of the folder where this new list shall be created (Mandatory if listName is not empty).  # noqa: E501
 
         :return: The folder_id of this RequestContactImportNewList.  # noqa: E501
         :rtype: int
@@ -90,7 +90,7 @@ class RequestContactImportNewList(object):
     def folder_id(self, folder_id):
         """Sets the folder_id of this RequestContactImportNewList.
 
-        Folder id will be used with listName to make newly created list’s desired parent (Mandatory if listName is not empty).  # noqa: E501
+        Id of the folder where this new list shall be created (Mandatory if listName is not empty).  # noqa: E501
 
         :param folder_id: The folder_id of this RequestContactImportNewList.  # noqa: E501
         :type: int

@@ -37,7 +37,10 @@ class RequestContactImport(object):
         'file_body': 'str',
         'list_ids': 'list[int]',
         'notify_url': 'str',
-        'new_list': 'RequestContactImportNewList'
+        'new_list': 'RequestContactImportNewList',
+        'email_blacklist': 'bool',
+        'sms_blacklist': 'bool',
+        'update_existing_contacts': 'bool'
     }
 
     attribute_map = {
@@ -45,10 +48,13 @@ class RequestContactImport(object):
         'file_body': 'fileBody',
         'list_ids': 'listIds',
         'notify_url': 'notifyUrl',
-        'new_list': 'newList'
+        'new_list': 'newList',
+        'email_blacklist': 'emailBlacklist',
+        'sms_blacklist': 'smsBlacklist',
+        'update_existing_contacts': 'updateExistingContacts'
     }
 
-    def __init__(self, file_url=None, file_body=None, list_ids=None, notify_url=None, new_list=None):  # noqa: E501
+    def __init__(self, file_url=None, file_body=None, list_ids=None, notify_url=None, new_list=None, email_blacklist=False, sms_blacklist=False, update_existing_contacts=True):  # noqa: E501
         """RequestContactImport - a model defined in Swagger"""  # noqa: E501
 
         self._file_url = None
@@ -56,6 +62,9 @@ class RequestContactImport(object):
         self._list_ids = None
         self._notify_url = None
         self._new_list = None
+        self._email_blacklist = None
+        self._sms_blacklist = None
+        self._update_existing_contacts = None
         self.discriminator = None
 
         if file_url is not None:
@@ -68,12 +77,18 @@ class RequestContactImport(object):
             self.notify_url = notify_url
         if new_list is not None:
             self.new_list = new_list
+        if email_blacklist is not None:
+            self.email_blacklist = email_blacklist
+        if sms_blacklist is not None:
+            self.sms_blacklist = sms_blacklist
+        if update_existing_contacts is not None:
+            self.update_existing_contacts = update_existing_contacts
 
     @property
     def file_url(self):
         """Gets the file_url of this RequestContactImport.  # noqa: E501
 
-        Mandatory if fileBody not defined. URL of the file to be imported (no local file). Possible file types: .txt, .csv  # noqa: E501
+        Mandatory if fileBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv  # noqa: E501
 
         :return: The file_url of this RequestContactImport.  # noqa: E501
         :rtype: str
@@ -84,7 +99,7 @@ class RequestContactImport(object):
     def file_url(self, file_url):
         """Sets the file_url of this RequestContactImport.
 
-        Mandatory if fileBody not defined. URL of the file to be imported (no local file). Possible file types: .txt, .csv  # noqa: E501
+        Mandatory if fileBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv  # noqa: E501
 
         :param file_url: The file_url of this RequestContactImport.  # noqa: E501
         :type: str
@@ -119,7 +134,7 @@ class RequestContactImport(object):
     def list_ids(self):
         """Gets the list_ids of this RequestContactImport.  # noqa: E501
 
-        Manadatory if newList is not defined. Ids of the lists in which to add the contacts  # noqa: E501
+        Mandatory if newList is not defined. Ids of the lists in which the contacts shall be imported. For example, [2, 4, 7].  # noqa: E501
 
         :return: The list_ids of this RequestContactImport.  # noqa: E501
         :rtype: list[int]
@@ -130,7 +145,7 @@ class RequestContactImport(object):
     def list_ids(self, list_ids):
         """Sets the list_ids of this RequestContactImport.
 
-        Manadatory if newList is not defined. Ids of the lists in which to add the contacts  # noqa: E501
+        Mandatory if newList is not defined. Ids of the lists in which the contacts shall be imported. For example, [2, 4, 7].  # noqa: E501
 
         :param list_ids: The list_ids of this RequestContactImport.  # noqa: E501
         :type: list[int]
@@ -181,6 +196,75 @@ class RequestContactImport(object):
         """
 
         self._new_list = new_list
+
+    @property
+    def email_blacklist(self):
+        """Gets the email_blacklist of this RequestContactImport.  # noqa: E501
+
+        To blacklist all the contacts for email  # noqa: E501
+
+        :return: The email_blacklist of this RequestContactImport.  # noqa: E501
+        :rtype: bool
+        """
+        return self._email_blacklist
+
+    @email_blacklist.setter
+    def email_blacklist(self, email_blacklist):
+        """Sets the email_blacklist of this RequestContactImport.
+
+        To blacklist all the contacts for email  # noqa: E501
+
+        :param email_blacklist: The email_blacklist of this RequestContactImport.  # noqa: E501
+        :type: bool
+        """
+
+        self._email_blacklist = email_blacklist
+
+    @property
+    def sms_blacklist(self):
+        """Gets the sms_blacklist of this RequestContactImport.  # noqa: E501
+
+        To blacklist all the contacts for sms  # noqa: E501
+
+        :return: The sms_blacklist of this RequestContactImport.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sms_blacklist
+
+    @sms_blacklist.setter
+    def sms_blacklist(self, sms_blacklist):
+        """Sets the sms_blacklist of this RequestContactImport.
+
+        To blacklist all the contacts for sms  # noqa: E501
+
+        :param sms_blacklist: The sms_blacklist of this RequestContactImport.  # noqa: E501
+        :type: bool
+        """
+
+        self._sms_blacklist = sms_blacklist
+
+    @property
+    def update_existing_contacts(self):
+        """Gets the update_existing_contacts of this RequestContactImport.  # noqa: E501
+
+        To facilitate the choice to update the existing contacts  # noqa: E501
+
+        :return: The update_existing_contacts of this RequestContactImport.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_existing_contacts
+
+    @update_existing_contacts.setter
+    def update_existing_contacts(self, update_existing_contacts):
+        """Sets the update_existing_contacts of this RequestContactImport.
+
+        To facilitate the choice to update the existing contacts  # noqa: E501
+
+        :param update_existing_contacts: The update_existing_contacts of this RequestContactImport.  # noqa: E501
+        :type: bool
+        """
+
+        self._update_existing_contacts = update_existing_contacts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

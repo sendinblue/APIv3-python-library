@@ -56,7 +56,7 @@ class UpdateList(object):
     def name(self):
         """Gets the name of this UpdateList.  # noqa: E501
 
-        Name of the list. Only one parameter can be update at once  # noqa: E501
+        Name of the list. Either of the two parameters (name, folderId) can be updated at a time.  # noqa: E501
 
         :return: The name of this UpdateList.  # noqa: E501
         :rtype: str
@@ -67,7 +67,7 @@ class UpdateList(object):
     def name(self, name):
         """Sets the name of this UpdateList.
 
-        Name of the list. Only one parameter can be update at once  # noqa: E501
+        Name of the list. Either of the two parameters (name, folderId) can be updated at a time.  # noqa: E501
 
         :param name: The name of this UpdateList.  # noqa: E501
         :type: str
@@ -79,7 +79,7 @@ class UpdateList(object):
     def folder_id(self):
         """Gets the folder_id of this UpdateList.  # noqa: E501
 
-        Id of the folder in which to move the list. Only one parameter can updated at once  # noqa: E501
+        Id of the folder in which the list is to be moved. Either of the two parameters (name, folderId) can be updated at a time.  # noqa: E501
 
         :return: The folder_id of this UpdateList.  # noqa: E501
         :rtype: int
@@ -90,7 +90,7 @@ class UpdateList(object):
     def folder_id(self, folder_id):
         """Sets the folder_id of this UpdateList.
 
-        Id of the folder in which to move the list. Only one parameter can updated at once  # noqa: E501
+        Id of the folder in which the list is to be moved. Either of the two parameters (name, folderId) can be updated at a time.  # noqa: E501
 
         :param folder_id: The folder_id of this UpdateList.  # noqa: E501
         :type: int

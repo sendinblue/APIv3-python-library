@@ -55,7 +55,7 @@ class SendSmtpEmailSender(object):
     def name(self):
         """Gets the name of this SendSmtpEmailSender.  # noqa: E501
 
-        Sender Name from which the emails are sent  # noqa: E501
+        Name of the sender from which the emails will be sent  # noqa: E501
 
         :return: The name of this SendSmtpEmailSender.  # noqa: E501
         :rtype: str
@@ -66,7 +66,7 @@ class SendSmtpEmailSender(object):
     def name(self, name):
         """Sets the name of this SendSmtpEmailSender.
 
-        Sender Name from which the emails are sent  # noqa: E501
+        Name of the sender from which the emails will be sent  # noqa: E501
 
         :param name: The name of this SendSmtpEmailSender.  # noqa: E501
         :type: str
@@ -78,7 +78,7 @@ class SendSmtpEmailSender(object):
     def email(self):
         """Gets the email of this SendSmtpEmailSender.  # noqa: E501
 
-        Sender Email from which the emails are sent  # noqa: E501
+        Email of the sender from which the emails will be sent  # noqa: E501
 
         :return: The email of this SendSmtpEmailSender.  # noqa: E501
         :rtype: str
@@ -89,7 +89,7 @@ class SendSmtpEmailSender(object):
     def email(self, email):
         """Sets the email of this SendSmtpEmailSender.
 
-        Sender Email from which the emails are sent  # noqa: E501
+        Email of the sender from which the emails will be sent  # noqa: E501
 
         :param email: The email of this SendSmtpEmailSender.  # noqa: E501
         :type: str

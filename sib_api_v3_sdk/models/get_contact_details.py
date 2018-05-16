@@ -38,7 +38,7 @@ class GetContactDetails(object):
         'modified_at': 'datetime',
         'list_ids': 'list[int]',
         'list_unsubscribed': 'list[int]',
-        'attributes': 'dict(str, str)'
+        'attributes': 'object'
     }
 
     attribute_map = {
@@ -248,9 +248,10 @@ class GetContactDetails(object):
     def attributes(self):
         """Gets the attributes of this GetContactDetails.  # noqa: E501
 
+        Set of attributes of the contact  # noqa: E501
 
         :return: The attributes of this GetContactDetails.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: object
         """
         return self._attributes
 
@@ -258,9 +259,10 @@ class GetContactDetails(object):
     def attributes(self, attributes):
         """Sets the attributes of this GetContactDetails.
 
+        Set of attributes of the contact  # noqa: E501
 
         :param attributes: The attributes of this GetContactDetails.  # noqa: E501
-        :type: dict(str, str)
+        :type: object
         """
         if attributes is None:
             raise ValueError("Invalid value for `attributes`, must not be `None`")  # noqa: E501

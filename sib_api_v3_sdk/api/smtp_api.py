@@ -876,6 +876,7 @@ class SMTPApi(object):
     def send_template(self, template_id, send_email, **kwargs):  # noqa: E501
         """Send a template  # noqa: E501
 
+        This endpoint is deprecated. Prefer v3/smtp/email instead.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.send_template(template_id, send_email, async=True)
@@ -898,6 +899,7 @@ class SMTPApi(object):
     def send_template_with_http_info(self, template_id, send_email, **kwargs):  # noqa: E501
         """Send a template  # noqa: E501
 
+        This endpoint is deprecated. Prefer v3/smtp/email instead.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.send_template_with_http_info(template_id, send_email, async=True)

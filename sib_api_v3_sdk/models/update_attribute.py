@@ -58,7 +58,7 @@ class UpdateAttribute(object):
     def value(self):
         """Gets the value of this UpdateAttribute.  # noqa: E501
 
-        Value of the attribute. Use only if the attribute's category is calculated or global  # noqa: E501
+        Value of the attribute to update. Use only if the attribute's category is 'calculated' or 'global'  # noqa: E501
 
         :return: The value of this UpdateAttribute.  # noqa: E501
         :rtype: str
@@ -69,7 +69,7 @@ class UpdateAttribute(object):
     def value(self, value):
         """Sets the value of this UpdateAttribute.
 
-        Value of the attribute. Use only if the attribute's category is calculated or global  # noqa: E501
+        Value of the attribute to update. Use only if the attribute's category is 'calculated' or 'global'  # noqa: E501
 
         :param value: The value of this UpdateAttribute.  # noqa: E501
         :type: str
@@ -81,7 +81,7 @@ class UpdateAttribute(object):
     def enumeration(self):
         """Gets the enumeration of this UpdateAttribute.  # noqa: E501
 
-        Values that the attribute can take. Use only if the attribute's category is category  # noqa: E501
+        List of the values and labels that the attribute can take. Use only if the attribute's category is \"category\". For example, [{'value':1, 'label':'male'}, {'value':2, 'label':'female'}]  # noqa: E501
 
         :return: The enumeration of this UpdateAttribute.  # noqa: E501
         :rtype: list[UpdateAttributeEnumeration]
@@ -92,7 +92,7 @@ class UpdateAttribute(object):
     def enumeration(self, enumeration):
         """Sets the enumeration of this UpdateAttribute.
 
-        Values that the attribute can take. Use only if the attribute's category is category  # noqa: E501
+        List of the values and labels that the attribute can take. Use only if the attribute's category is \"category\". For example, [{'value':1, 'label':'male'}, {'value':2, 'label':'female'}]  # noqa: E501
 
         :param enumeration: The enumeration of this UpdateAttribute.  # noqa: E501
         :type: list[UpdateAttributeEnumeration]

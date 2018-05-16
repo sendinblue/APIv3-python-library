@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "sib-api-v3-sdk"
-VERSION = "3.0.1"
+VERSION = "4.0.0"
 # To install the library, run the following
 #
 # python setup.py install
