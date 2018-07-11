@@ -125,7 +125,7 @@ class SendTransacSms(object):
     def content(self):
         """Gets the content of this SendTransacSms.  # noqa: E501
 
-        Content of the message. If more than 160 characters long, multiple text messages will be sent  # noqa: E501
+        Content of the message. If more than 160 characters long, will be sent as multiple text messages  # noqa: E501
 
         :return: The content of this SendTransacSms.  # noqa: E501
         :rtype: str
@@ -136,15 +136,13 @@ class SendTransacSms(object):
     def content(self, content):
         """Sets the content of this SendTransacSms.
 
-        Content of the message. If more than 160 characters long, multiple text messages will be sent  # noqa: E501
+        Content of the message. If more than 160 characters long, will be sent as multiple text messages  # noqa: E501
 
         :param content: The content of this SendTransacSms.  # noqa: E501
         :type: str
         """
         if content is None:
             raise ValueError("Invalid value for `content`, must not be `None`")  # noqa: E501
-        if content is not None and len(content) > 160:
-            raise ValueError("Invalid value for `content`, length must be less than or equal to `160`")  # noqa: E501
 
         self._content = content
 

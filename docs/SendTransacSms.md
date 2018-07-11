@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sender** | **str** | Name of the sender. Only alphanumeric characters. No more than 11 characters | 
 **recipient** | **str** | Mobile number to send SMS with the country code | 
-**content** | **str** | Content of the message. If more than 160 characters long, multiple text messages will be sent | 
+**content** | **str** | Content of the message. If more than 160 characters long, will be sent as multiple text messages | 
 **type** | **str** | Type of the SMS | [optional] [default to 'transactional']
 **tag** | **str** | Tag of the message | [optional] 
 **web_url** | **str** | Webhook to call for each event triggered by the message (delivered etc.) | [optional] 
