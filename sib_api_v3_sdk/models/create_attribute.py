@@ -109,7 +109,7 @@ class CreateAttribute(object):
     def type(self):
         """Gets the type of this CreateAttribute.  # noqa: E501
 
-        Type of the attribute. Use only if the attribute's category is 'normal', 'category' or 'transactional' ( type 'id' is only available if the category is 'transactional' attribute & type 'category' is only available if the category is 'category' attribute )  # noqa: E501
+        Type of the attribute. Use only if the attribute's category is 'normal', 'category' or 'transactional' ( type 'boolean' is only available if the category is 'normal' attribute, type 'id' is only available if the category is 'transactional' attribute & type 'category' is only available if the category is 'category' attribute )  # noqa: E501
 
         :return: The type of this CreateAttribute.  # noqa: E501
         :rtype: str
@@ -120,12 +120,12 @@ class CreateAttribute(object):
     def type(self, type):
         """Sets the type of this CreateAttribute.
 
-        Type of the attribute. Use only if the attribute's category is 'normal', 'category' or 'transactional' ( type 'id' is only available if the category is 'transactional' attribute & type 'category' is only available if the category is 'category' attribute )  # noqa: E501
+        Type of the attribute. Use only if the attribute's category is 'normal', 'category' or 'transactional' ( type 'boolean' is only available if the category is 'normal' attribute, type 'id' is only available if the category is 'transactional' attribute & type 'category' is only available if the category is 'category' attribute )  # noqa: E501
 
         :param type: The type of this CreateAttribute.  # noqa: E501
         :type: str
         """
-        allowed_values = ["text", "date", "float", "id", "category"]  # noqa: E501
+        allowed_values = ["text", "date", "float", "boolean", "id", "category"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
