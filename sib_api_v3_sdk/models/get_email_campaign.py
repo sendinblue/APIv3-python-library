@@ -54,6 +54,7 @@ class GetEmailCampaign(object):
         'inline_image_activation': 'bool',
         'mirror_active': 'bool',
         'recurring': 'bool',
+        'sent_date': 'datetime',
         'recipients': 'object',
         'statistics': 'object'
     }
@@ -79,11 +80,12 @@ class GetEmailCampaign(object):
         'inline_image_activation': 'inlineImageActivation',
         'mirror_active': 'mirrorActive',
         'recurring': 'recurring',
+        'sent_date': 'sentDate',
         'recipients': 'recipients',
         'statistics': 'statistics'
     }
 
-    def __init__(self, id=None, name=None, subject=None, type=None, status=None, scheduled_at=None, test_sent=None, header=None, footer=None, sender=None, reply_to=None, to_field=None, html_content=None, share_link=None, tag=None, created_at=None, modified_at=None, inline_image_activation=None, mirror_active=None, recurring=None, recipients=None, statistics=None):  # noqa: E501
+    def __init__(self, id=None, name=None, subject=None, type=None, status=None, scheduled_at=None, test_sent=None, header=None, footer=None, sender=None, reply_to=None, to_field=None, html_content=None, share_link=None, tag=None, created_at=None, modified_at=None, inline_image_activation=None, mirror_active=None, recurring=None, sent_date=None, recipients=None, statistics=None):  # noqa: E501
         """GetEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -106,6 +108,7 @@ class GetEmailCampaign(object):
         self._inline_image_activation = None
         self._mirror_active = None
         self._recurring = None
+        self._sent_date = None
         self._recipients = None
         self._statistics = None
         self.discriminator = None
@@ -135,6 +138,8 @@ class GetEmailCampaign(object):
             self.mirror_active = mirror_active
         if recurring is not None:
             self.recurring = recurring
+        if sent_date is not None:
+            self.sent_date = sent_date
         self.recipients = recipients
         self.statistics = statistics
 
@@ -637,6 +642,29 @@ class GetEmailCampaign(object):
         """
 
         self._recurring = recurring
+
+    @property
+    def sent_date(self):
+        """Gets the sent_date of this GetEmailCampaign.  # noqa: E501
+
+        Sent UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ). Only available if 'status' of the campaign is 'sent'  # noqa: E501
+
+        :return: The sent_date of this GetEmailCampaign.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._sent_date
+
+    @sent_date.setter
+    def sent_date(self, sent_date):
+        """Sets the sent_date of this GetEmailCampaign.
+
+        Sent UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ). Only available if 'status' of the campaign is 'sent'  # noqa: E501
+
+        :param sent_date: The sent_date of this GetEmailCampaign.  # noqa: E501
+        :type: datetime
+        """
+
+        self._sent_date = sent_date
 
     @property
     def recipients(self):

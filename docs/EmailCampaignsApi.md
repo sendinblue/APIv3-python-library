@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_email_campaigns**
-> GetEmailCampaigns get_email_campaigns(type=type, status=status, limit=limit, offset=offset)
+> GetEmailCampaigns get_email_campaigns(type=type, status=status, start_date=start_date, end_date=end_date, limit=limit, offset=offset)
 
 Return all your created campaigns
 
@@ -248,12 +248,14 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 type = 'type_example' # str | Filter on the type of the campaigns (optional)
 status = 'status_example' # str | Filter on the status of the campaign (optional)
+start_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
+end_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
 limit = 500 # int | Number of documents per page (optional) (default to 500)
 offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 
 try:
     # Return all your created campaigns
-    api_response = api_instance.get_email_campaigns(type=type, status=status, limit=limit, offset=offset)
+    api_response = api_instance.get_email_campaigns(type=type, status=status, start_date=start_date, end_date=end_date, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->get_email_campaigns: %s\n" % e)
@@ -265,6 +267,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **str**| Filter on the type of the campaigns | [optional] 
  **status** | **str**| Filter on the status of the campaign | [optional] 
+ **start_date** | **datetime**| Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
+ **end_date** | **datetime**| Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
  **limit** | **int**| Number of documents per page | [optional] [default to 500]
  **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
 

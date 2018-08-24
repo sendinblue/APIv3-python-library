@@ -436,6 +436,8 @@ class EmailCampaignsApi(object):
         :param async bool
         :param str type: Filter on the type of the campaigns
         :param str status: Filter on the status of the campaign
+        :param datetime start_date: Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
+        :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number of documents per page
         :param int offset: Index of the first document in the page
         :return: GetEmailCampaigns
@@ -460,6 +462,8 @@ class EmailCampaignsApi(object):
         :param async bool
         :param str type: Filter on the type of the campaigns
         :param str status: Filter on the status of the campaign
+        :param datetime start_date: Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
+        :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number of documents per page
         :param int offset: Index of the first document in the page
         :return: GetEmailCampaigns
@@ -467,7 +471,7 @@ class EmailCampaignsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type', 'status', 'limit', 'offset']  # noqa: E501
+        all_params = ['type', 'status', 'start_date', 'end_date', 'limit', 'offset']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -494,6 +498,10 @@ class EmailCampaignsApi(object):
             query_params.append(('type', params['type']))  # noqa: E501
         if 'status' in params:
             query_params.append(('status', params['status']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('startDate', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('endDate', params['end_date']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'offset' in params:
