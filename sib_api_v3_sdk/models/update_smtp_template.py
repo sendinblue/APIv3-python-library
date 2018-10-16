@@ -257,7 +257,7 @@ class UpdateSmtpTemplate(object):
     def to_field(self):
         """Gets the to_field of this UpdateSmtpTemplate.  # noqa: E501
 
-        To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These attributes must already exist in contacts database  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
 
         :return: The to_field of this UpdateSmtpTemplate.  # noqa: E501
         :rtype: str
@@ -268,7 +268,7 @@ class UpdateSmtpTemplate(object):
     def to_field(self, to_field):
         """Sets the to_field of this UpdateSmtpTemplate.
 
-        To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These attributes must already exist in contacts database  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
 
         :param to_field: The to_field of this UpdateSmtpTemplate.  # noqa: E501
         :type: str

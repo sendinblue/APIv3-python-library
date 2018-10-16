@@ -50,7 +50,8 @@ class UpdateEmailCampaign(object):
         'recurring': 'bool',
         'footer': 'str',
         'header': 'str',
-        'utm_campaign': 'str'
+        'utm_campaign': 'str',
+        'params': 'object'
     }
 
     attribute_map = {
@@ -70,10 +71,11 @@ class UpdateEmailCampaign(object):
         'recurring': 'recurring',
         'footer': 'footer',
         'header': 'header',
-        'utm_campaign': 'utmCampaign'
+        'utm_campaign': 'utmCampaign',
+        'params': 'params'
     }
 
-    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, footer=None, header=None, utm_campaign=None):  # noqa: E501
+    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, footer=None, header=None, utm_campaign=None, params=None):  # noqa: E501
         """UpdateEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._tag = None
@@ -93,6 +95,7 @@ class UpdateEmailCampaign(object):
         self._footer = None
         self._header = None
         self._utm_campaign = None
+        self._params = None
         self.discriminator = None
 
         if tag is not None:
@@ -129,6 +132,8 @@ class UpdateEmailCampaign(object):
             self.header = header
         if utm_campaign is not None:
             self.utm_campaign = utm_campaign
+        if params is not None:
+            self.params = params
 
     @property
     def tag(self):
@@ -316,7 +321,7 @@ class UpdateEmailCampaign(object):
     def to_field(self):
         """Gets the to_field of this UpdateEmailCampaign.  # noqa: E501
 
-        This is to personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. To use the contact attributes here, these must already exist in SendinBlue account  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
 
         :return: The to_field of this UpdateEmailCampaign.  # noqa: E501
         :rtype: str
@@ -327,7 +332,7 @@ class UpdateEmailCampaign(object):
     def to_field(self, to_field):
         """Sets the to_field of this UpdateEmailCampaign.
 
-        This is to personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. To use the contact attributes here, these must already exist in SendinBlue account  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
 
         :param to_field: The to_field of this UpdateEmailCampaign.  # noqa: E501
         :type: str
@@ -516,6 +521,29 @@ class UpdateEmailCampaign(object):
         """
 
         self._utm_campaign = utm_campaign
+
+    @property
+    def params(self):
+        """Gets the params of this UpdateEmailCampaign.  # noqa: E501
+
+        Pass the set of attributes to customize the type 'classic' campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}.  # noqa: E501
+
+        :return: The params of this UpdateEmailCampaign.  # noqa: E501
+        :rtype: object
+        """
+        return self._params
+
+    @params.setter
+    def params(self, params):
+        """Sets the params of this UpdateEmailCampaign.
+
+        Pass the set of attributes to customize the type 'classic' campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}.  # noqa: E501
+
+        :param params: The params of this UpdateEmailCampaign.  # noqa: E501
+        :type: object
+        """
+
+        self._params = params
 
     def to_dict(self):
         """Returns the model properties as a dict"""
