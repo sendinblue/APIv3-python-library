@@ -39,6 +39,7 @@ class CreateEmailCampaign(object):
         'name': 'str',
         'html_content': 'str',
         'html_url': 'str',
+        'template_id': 'int',
         'scheduled_at': 'datetime',
         'subject': 'str',
         'reply_to': 'str',
@@ -51,7 +52,8 @@ class CreateEmailCampaign(object):
         'type': 'str',
         'footer': 'str',
         'header': 'str',
-        'utm_campaign': 'str'
+        'utm_campaign': 'str',
+        'params': 'object'
     }
 
     attribute_map = {
@@ -60,6 +62,7 @@ class CreateEmailCampaign(object):
         'name': 'name',
         'html_content': 'htmlContent',
         'html_url': 'htmlUrl',
+        'template_id': 'templateId',
         'scheduled_at': 'scheduledAt',
         'subject': 'subject',
         'reply_to': 'replyTo',
@@ -72,10 +75,11 @@ class CreateEmailCampaign(object):
         'type': 'type',
         'footer': 'footer',
         'header': 'header',
-        'utm_campaign': 'utmCampaign'
+        'utm_campaign': 'utmCampaign',
+        'params': 'params'
     }
 
-    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, type=None, footer=None, header=None, utm_campaign=None):  # noqa: E501
+    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, template_id=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, type=None, footer=None, header=None, utm_campaign=None, params=None):  # noqa: E501
         """CreateEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._tag = None
@@ -83,6 +87,7 @@ class CreateEmailCampaign(object):
         self._name = None
         self._html_content = None
         self._html_url = None
+        self._template_id = None
         self._scheduled_at = None
         self._subject = None
         self._reply_to = None
@@ -96,6 +101,7 @@ class CreateEmailCampaign(object):
         self._footer = None
         self._header = None
         self._utm_campaign = None
+        self._params = None
         self.discriminator = None
 
         if tag is not None:
@@ -106,6 +112,8 @@ class CreateEmailCampaign(object):
             self.html_content = html_content
         if html_url is not None:
             self.html_url = html_url
+        if template_id is not None:
+            self.template_id = template_id
         if scheduled_at is not None:
             self.scheduled_at = scheduled_at
         self.subject = subject
@@ -130,6 +138,8 @@ class CreateEmailCampaign(object):
             self.header = header
         if utm_campaign is not None:
             self.utm_campaign = utm_campaign
+        if params is not None:
+            self.params = params
 
     @property
     def tag(self):
@@ -206,7 +216,7 @@ class CreateEmailCampaign(object):
     def html_content(self):
         """Gets the html_content of this CreateEmailCampaign.  # noqa: E501
 
-        Mandatory if htmlUrl is empty. Body of the message (HTML)  # noqa: E501
+        Mandatory if htmlUrl and templateId are empty. Body of the message (HTML)  # noqa: E501
 
         :return: The html_content of this CreateEmailCampaign.  # noqa: E501
         :rtype: str
@@ -217,7 +227,7 @@ class CreateEmailCampaign(object):
     def html_content(self, html_content):
         """Sets the html_content of this CreateEmailCampaign.
 
-        Mandatory if htmlUrl is empty. Body of the message (HTML)  # noqa: E501
+        Mandatory if htmlUrl and templateId are empty. Body of the message (HTML)  # noqa: E501
 
         :param html_content: The html_content of this CreateEmailCampaign.  # noqa: E501
         :type: str
@@ -229,7 +239,7 @@ class CreateEmailCampaign(object):
     def html_url(self):
         """Gets the html_url of this CreateEmailCampaign.  # noqa: E501
 
-        Mandatory if htmlContent is empty. Url to the message (HTML)  # noqa: E501
+        Mandatory if htmlContent and templateId are empty. Url to the message (HTML)  # noqa: E501
 
         :return: The html_url of this CreateEmailCampaign.  # noqa: E501
         :rtype: str
@@ -240,13 +250,36 @@ class CreateEmailCampaign(object):
     def html_url(self, html_url):
         """Sets the html_url of this CreateEmailCampaign.
 
-        Mandatory if htmlContent is empty. Url to the message (HTML)  # noqa: E501
+        Mandatory if htmlContent and templateId are empty. Url to the message (HTML)  # noqa: E501
 
         :param html_url: The html_url of this CreateEmailCampaign.  # noqa: E501
         :type: str
         """
 
         self._html_url = html_url
+
+    @property
+    def template_id(self):
+        """Gets the template_id of this CreateEmailCampaign.  # noqa: E501
+
+        Mandatory if htmlContent and htmlUrl are empty. Id of the SMTP template with status 'active'. Used to copy only its content fetched from htmlContent/htmlUrl to an email campaign for RSS feature.  # noqa: E501
+
+        :return: The template_id of this CreateEmailCampaign.  # noqa: E501
+        :rtype: int
+        """
+        return self._template_id
+
+    @template_id.setter
+    def template_id(self, template_id):
+        """Sets the template_id of this CreateEmailCampaign.
+
+        Mandatory if htmlContent and htmlUrl are empty. Id of the SMTP template with status 'active'. Used to copy only its content fetched from htmlContent/htmlUrl to an email campaign for RSS feature.  # noqa: E501
+
+        :param template_id: The template_id of this CreateEmailCampaign.  # noqa: E501
+        :type: int
+        """
+
+        self._template_id = template_id
 
     @property
     def scheduled_at(self):
@@ -323,7 +356,7 @@ class CreateEmailCampaign(object):
     def to_field(self):
         """Gets the to_field of this CreateEmailCampaign.  # noqa: E501
 
-        To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, use {FNAME} {LNAME}. These attributes must already exist in your contact database  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
 
         :return: The to_field of this CreateEmailCampaign.  # noqa: E501
         :rtype: str
@@ -334,7 +367,7 @@ class CreateEmailCampaign(object):
     def to_field(self, to_field):
         """Sets the to_field of this CreateEmailCampaign.
 
-        To personalize the «To» Field, e.g. if you want to include the first name and last name of your recipient, use {FNAME} {LNAME}. These attributes must already exist in your contact database  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
 
         :param to_field: The to_field of this CreateEmailCampaign.  # noqa: E501
         :type: str
@@ -554,6 +587,29 @@ class CreateEmailCampaign(object):
         """
 
         self._utm_campaign = utm_campaign
+
+    @property
+    def params(self):
+        """Gets the params of this CreateEmailCampaign.  # noqa: E501
+
+        Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'  # noqa: E501
+
+        :return: The params of this CreateEmailCampaign.  # noqa: E501
+        :rtype: object
+        """
+        return self._params
+
+    @params.setter
+    def params(self, params):
+        """Sets the params of this CreateEmailCampaign.
+
+        Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'  # noqa: E501
+
+        :param params: The params of this CreateEmailCampaign.  # noqa: E501
+        :type: object
+        """
+
+        self._params = params
 
     def to_dict(self):
         """Returns the model properties as a dict"""
