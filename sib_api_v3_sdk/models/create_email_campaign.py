@@ -592,7 +592,7 @@ class CreateEmailCampaign(object):
     def params(self):
         """Gets the params of this CreateEmailCampaign.  # noqa: E501
 
-        Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'  # noqa: E501
+        Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
 
         :return: The params of this CreateEmailCampaign.  # noqa: E501
         :rtype: object
@@ -603,7 +603,7 @@ class CreateEmailCampaign(object):
     def params(self, params):
         """Sets the params of this CreateEmailCampaign.
 
-        Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'  # noqa: E501
+        Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
 
         :param params: The params of this CreateEmailCampaign.  # noqa: E501
         :type: object

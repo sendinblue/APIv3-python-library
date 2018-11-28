@@ -36,7 +36,6 @@ class GetSmsCampaignOverview(object):
         'status': 'str',
         'content': 'str',
         'scheduled_at': 'datetime',
-        'test_sent': 'bool',
         'sender': 'str',
         'created_at': 'datetime',
         'modified_at': 'datetime'
@@ -48,13 +47,12 @@ class GetSmsCampaignOverview(object):
         'status': 'status',
         'content': 'content',
         'scheduled_at': 'scheduledAt',
-        'test_sent': 'testSent',
         'sender': 'sender',
         'created_at': 'createdAt',
         'modified_at': 'modifiedAt'
     }
 
-    def __init__(self, id=None, name=None, status=None, content=None, scheduled_at=None, test_sent=None, sender=None, created_at=None, modified_at=None):  # noqa: E501
+    def __init__(self, id=None, name=None, status=None, content=None, scheduled_at=None, sender=None, created_at=None, modified_at=None):  # noqa: E501
         """GetSmsCampaignOverview - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -62,7 +60,6 @@ class GetSmsCampaignOverview(object):
         self._status = None
         self._content = None
         self._scheduled_at = None
-        self._test_sent = None
         self._sender = None
         self._created_at = None
         self._modified_at = None
@@ -73,7 +70,6 @@ class GetSmsCampaignOverview(object):
         self.status = status
         self.content = content
         self.scheduled_at = scheduled_at
-        self.test_sent = test_sent
         self.sender = sender
         self.created_at = created_at
         self.modified_at = modified_at
@@ -150,7 +146,7 @@ class GetSmsCampaignOverview(object):
         """
         if status is None:
             raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
-        allowed_values = ["draft", "sent", "archive", "queued", "suspended", "in_process"]  # noqa: E501
+        allowed_values = ["draft", "sent", "archive", "queued", "suspended", "inProcess"]  # noqa: E501
         if status not in allowed_values:
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
@@ -208,31 +204,6 @@ class GetSmsCampaignOverview(object):
             raise ValueError("Invalid value for `scheduled_at`, must not be `None`")  # noqa: E501
 
         self._scheduled_at = scheduled_at
-
-    @property
-    def test_sent(self):
-        """Gets the test_sent of this GetSmsCampaignOverview.  # noqa: E501
-
-        Retrieved the status of test SMS sending. (true=Test SMS has been sent  false=Test SMS has not been sent)  # noqa: E501
-
-        :return: The test_sent of this GetSmsCampaignOverview.  # noqa: E501
-        :rtype: bool
-        """
-        return self._test_sent
-
-    @test_sent.setter
-    def test_sent(self, test_sent):
-        """Sets the test_sent of this GetSmsCampaignOverview.
-
-        Retrieved the status of test SMS sending. (true=Test SMS has been sent  false=Test SMS has not been sent)  # noqa: E501
-
-        :param test_sent: The test_sent of this GetSmsCampaignOverview.  # noqa: E501
-        :type: bool
-        """
-        if test_sent is None:
-            raise ValueError("Invalid value for `test_sent`, must not be `None`")  # noqa: E501
-
-        self._test_sent = test_sent
 
     @property
     def sender(self):

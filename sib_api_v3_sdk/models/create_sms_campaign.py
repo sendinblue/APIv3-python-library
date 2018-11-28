@@ -60,8 +60,7 @@ class CreateSmsCampaign(object):
 
         self.name = name
         self.sender = sender
-        if content is not None:
-            self.content = content
+        self.content = content
         if recipients is not None:
             self.recipients = recipients
         if scheduled_at is not None:
@@ -139,6 +138,8 @@ class CreateSmsCampaign(object):
         :param content: The content of this CreateSmsCampaign.  # noqa: E501
         :type: str
         """
+        if content is None:
+            raise ValueError("Invalid value for `content`, must not be `None`")  # noqa: E501
 
         self._content = content
 

@@ -48,7 +48,8 @@ class CreateSmsCampaignRecipients(object):
         self.discriminator = None
 
         self.list_ids = list_ids
-        self.exclusion_list_ids = exclusion_list_ids
+        if exclusion_list_ids is not None:
+            self.exclusion_list_ids = exclusion_list_ids
 
     @property
     def list_ids(self):
@@ -95,8 +96,6 @@ class CreateSmsCampaignRecipients(object):
         :param exclusion_list_ids: The exclusion_list_ids of this CreateSmsCampaignRecipients.  # noqa: E501
         :type: list[int]
         """
-        if exclusion_list_ids is None:
-            raise ValueError("Invalid value for `exclusion_list_ids`, must not be `None`")  # noqa: E501
 
         self._exclusion_list_ids = exclusion_list_ids
 

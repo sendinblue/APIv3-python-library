@@ -342,6 +342,8 @@ class SMSCampaignsApi(object):
 
         :param async bool
         :param str status: Status of campaign.
+        :param datetime start_date: Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
+        :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
         :return: GetSmsCampaigns
@@ -365,6 +367,8 @@ class SMSCampaignsApi(object):
 
         :param async bool
         :param str status: Status of campaign.
+        :param datetime start_date: Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
+        :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
         :return: GetSmsCampaigns
@@ -372,7 +376,7 @@ class SMSCampaignsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['status', 'limit', 'offset']  # noqa: E501
+        all_params = ['status', 'start_date', 'end_date', 'limit', 'offset']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -397,6 +401,10 @@ class SMSCampaignsApi(object):
         query_params = []
         if 'status' in params:
             query_params.append(('status', params['status']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('startDate', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('endDate', params['end_date']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'offset' in params:
