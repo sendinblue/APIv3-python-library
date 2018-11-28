@@ -208,7 +208,7 @@ class GetEmailEventReportEvents(object):
         """
         if event is None:
             raise ValueError("Invalid value for `event`, must not be `None`")  # noqa: E501
-        allowed_values = ["bounces", "hardBounces", "softBounces", "delivered", "spam", "requests", "opened", "clicks", "invalid", "deferred", "blocked"]  # noqa: E501
+        allowed_values = ["bounces", "hardBounces", "softBounces", "delivered", "spam", "requests", "opened", "clicks", "invalid", "deferred", "blocked", "unsubscribed"]  # noqa: E501
         if event not in allowed_values:
             raise ValueError(
                 "Invalid value for `event` ({0}), must be one of {1}"  # noqa: E501

@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sms_campaigns**
-> GetSmsCampaigns get_sms_campaigns(status=status, limit=limit, offset=offset)
+> GetSmsCampaigns get_sms_campaigns(status=status, start_date=start_date, end_date=end_date, limit=limit, offset=offset)
 
 Returns the informations for all your created SMS campaigns
 
@@ -195,12 +195,14 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 status = 'status_example' # str | Status of campaign. (optional)
+start_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
+end_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
 limit = 500 # int | Number limitation for the result returned (optional) (default to 500)
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
 
 try:
     # Returns the informations for all your created SMS campaigns
-    api_response = api_instance.get_sms_campaigns(status=status, limit=limit, offset=offset)
+    api_response = api_instance.get_sms_campaigns(status=status, start_date=start_date, end_date=end_date, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SMSCampaignsApi->get_sms_campaigns: %s\n" % e)
@@ -211,6 +213,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **status** | **str**| Status of campaign. | [optional] 
+ **start_date** | **datetime**| Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
+ **end_date** | **datetime**| Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
  **limit** | **int**| Number limitation for the result returned | [optional] [default to 500]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
 

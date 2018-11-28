@@ -42,7 +42,8 @@ class GetReportsReports(object):
         'unique_opens': 'int',
         'spam_reports': 'int',
         'blocked': 'int',
-        'invalid': 'int'
+        'invalid': 'int',
+        'unsubscribed': 'int'
     }
 
     attribute_map = {
@@ -57,10 +58,11 @@ class GetReportsReports(object):
         'unique_opens': 'uniqueOpens',
         'spam_reports': 'spamReports',
         'blocked': 'blocked',
-        'invalid': 'invalid'
+        'invalid': 'invalid',
+        'unsubscribed': 'unsubscribed'
     }
 
-    def __init__(self, date=None, requests=None, delivered=None, hard_bounces=None, soft_bounces=None, clicks=None, unique_clicks=None, opens=None, unique_opens=None, spam_reports=None, blocked=None, invalid=None):  # noqa: E501
+    def __init__(self, date=None, requests=None, delivered=None, hard_bounces=None, soft_bounces=None, clicks=None, unique_clicks=None, opens=None, unique_opens=None, spam_reports=None, blocked=None, invalid=None, unsubscribed=None):  # noqa: E501
         """GetReportsReports - a model defined in Swagger"""  # noqa: E501
 
         self._date = None
@@ -75,6 +77,7 @@ class GetReportsReports(object):
         self._spam_reports = None
         self._blocked = None
         self._invalid = None
+        self._unsubscribed = None
         self.discriminator = None
 
         self.date = date
@@ -89,6 +92,7 @@ class GetReportsReports(object):
         self.spam_reports = spam_reports
         self.blocked = blocked
         self.invalid = invalid
+        self.unsubscribed = unsubscribed
 
     @property
     def date(self):
@@ -389,6 +393,31 @@ class GetReportsReports(object):
             raise ValueError("Invalid value for `invalid`, must not be `None`")  # noqa: E501
 
         self._invalid = invalid
+
+    @property
+    def unsubscribed(self):
+        """Gets the unsubscribed of this GetReportsReports.  # noqa: E501
+
+        Number of unsubscribed emails for the date  # noqa: E501
+
+        :return: The unsubscribed of this GetReportsReports.  # noqa: E501
+        :rtype: int
+        """
+        return self._unsubscribed
+
+    @unsubscribed.setter
+    def unsubscribed(self, unsubscribed):
+        """Sets the unsubscribed of this GetReportsReports.
+
+        Number of unsubscribed emails for the date  # noqa: E501
+
+        :param unsubscribed: The unsubscribed of this GetReportsReports.  # noqa: E501
+        :type: int
+        """
+        if unsubscribed is None:
+            raise ValueError("Invalid value for `unsubscribed`, must not be `None`")  # noqa: E501
+
+        self._unsubscribed = unsubscribed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -150,7 +150,7 @@ class SendTransacSms(object):
     def type(self):
         """Gets the type of this SendTransacSms.  # noqa: E501
 
-        Type of the SMS  # noqa: E501
+        Type of the SMS. Marketing SMS messages are those sent typically with marketing content. Transactional SMS messages are sent to individuals and are triggered in response to some action, such as a sign-up, purchase, etc.  # noqa: E501
 
         :return: The type of this SendTransacSms.  # noqa: E501
         :rtype: str
@@ -161,7 +161,7 @@ class SendTransacSms(object):
     def type(self, type):
         """Sets the type of this SendTransacSms.
 
-        Type of the SMS  # noqa: E501
+        Type of the SMS. Marketing SMS messages are those sent typically with marketing content. Transactional SMS messages are sent to individuals and are triggered in response to some action, such as a sign-up, purchase, etc.  # noqa: E501
 
         :param type: The type of this SendTransacSms.  # noqa: E501
         :type: str
