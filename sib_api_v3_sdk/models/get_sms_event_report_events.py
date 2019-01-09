@@ -32,7 +32,7 @@ class GetSmsEventReportEvents(object):
     """
     swagger_types = {
         'phone_number': 'str',
-        'date': 'date',
+        'date': 'datetime',
         'message_id': 'str',
         'event': 'str',
         'reason': 'str',
@@ -102,10 +102,10 @@ class GetSmsEventReportEvents(object):
     def date(self):
         """Gets the date of this GetSmsEventReportEvents.  # noqa: E501
 
-        Date on which the event has been generated  # noqa: E501
+        UTC date-time on which the event has been generated  # noqa: E501
 
         :return: The date of this GetSmsEventReportEvents.  # noqa: E501
-        :rtype: date
+        :rtype: datetime
         """
         return self._date
 
@@ -113,10 +113,10 @@ class GetSmsEventReportEvents(object):
     def date(self, date):
         """Sets the date of this GetSmsEventReportEvents.
 
-        Date on which the event has been generated  # noqa: E501
+        UTC date-time on which the event has been generated  # noqa: E501
 
         :param date: The date of this GetSmsEventReportEvents.  # noqa: E501
-        :type: date
+        :type: datetime
         """
         if date is None:
             raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501

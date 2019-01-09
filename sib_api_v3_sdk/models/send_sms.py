@@ -32,23 +32,38 @@ class SendSms(object):
     """
     swagger_types = {
         'reference': 'str',
-        'message_id': 'int'
+        'message_id': 'int',
+        'sms_count': 'int',
+        'used_credits': 'float',
+        'remaining_credits': 'float'
     }
 
     attribute_map = {
         'reference': 'reference',
-        'message_id': 'messageId'
+        'message_id': 'messageId',
+        'sms_count': 'smsCount',
+        'used_credits': 'usedCredits',
+        'remaining_credits': 'remainingCredits'
     }
 
-    def __init__(self, reference=None, message_id=None):  # noqa: E501
+    def __init__(self, reference=None, message_id=None, sms_count=None, used_credits=None, remaining_credits=None):  # noqa: E501
         """SendSms - a model defined in Swagger"""  # noqa: E501
 
         self._reference = None
         self._message_id = None
+        self._sms_count = None
+        self._used_credits = None
+        self._remaining_credits = None
         self.discriminator = None
 
         self.reference = reference
         self.message_id = message_id
+        if sms_count is not None:
+            self.sms_count = sms_count
+        if used_credits is not None:
+            self.used_credits = used_credits
+        if remaining_credits is not None:
+            self.remaining_credits = remaining_credits
 
     @property
     def reference(self):
@@ -95,6 +110,75 @@ class SendSms(object):
             raise ValueError("Invalid value for `message_id`, must not be `None`")  # noqa: E501
 
         self._message_id = message_id
+
+    @property
+    def sms_count(self):
+        """Gets the sms_count of this SendSms.  # noqa: E501
+
+        Count of SMS's to send multiple text messages  # noqa: E501
+
+        :return: The sms_count of this SendSms.  # noqa: E501
+        :rtype: int
+        """
+        return self._sms_count
+
+    @sms_count.setter
+    def sms_count(self, sms_count):
+        """Sets the sms_count of this SendSms.
+
+        Count of SMS's to send multiple text messages  # noqa: E501
+
+        :param sms_count: The sms_count of this SendSms.  # noqa: E501
+        :type: int
+        """
+
+        self._sms_count = sms_count
+
+    @property
+    def used_credits(self):
+        """Gets the used_credits of this SendSms.  # noqa: E501
+
+        SMS credits used per text message  # noqa: E501
+
+        :return: The used_credits of this SendSms.  # noqa: E501
+        :rtype: float
+        """
+        return self._used_credits
+
+    @used_credits.setter
+    def used_credits(self, used_credits):
+        """Sets the used_credits of this SendSms.
+
+        SMS credits used per text message  # noqa: E501
+
+        :param used_credits: The used_credits of this SendSms.  # noqa: E501
+        :type: float
+        """
+
+        self._used_credits = used_credits
+
+    @property
+    def remaining_credits(self):
+        """Gets the remaining_credits of this SendSms.  # noqa: E501
+
+        Remaining SMS credits of the user  # noqa: E501
+
+        :return: The remaining_credits of this SendSms.  # noqa: E501
+        :rtype: float
+        """
+        return self._remaining_credits
+
+    @remaining_credits.setter
+    def remaining_credits(self, remaining_credits):
+        """Sets the remaining_credits of this SendSms.
+
+        Remaining SMS credits of the user  # noqa: E501
+
+        :param remaining_credits: The remaining_credits of this SendSms.  # noqa: E501
+        :type: float
+        """
+
+        self._remaining_credits = remaining_credits
 
     def to_dict(self):
         """Returns the model properties as a dict"""

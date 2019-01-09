@@ -56,8 +56,7 @@ class CreateWebhook(object):
         self.url = url
         if description is not None:
             self.description = description
-        if events is not None:
-            self.events = events
+        self.events = events
         if type is not None:
             self.type = type
 
@@ -129,6 +128,8 @@ class CreateWebhook(object):
         :param events: The events of this CreateWebhook.  # noqa: E501
         :type: list[str]
         """
+        if events is None:
+            raise ValueError("Invalid value for `events`, must not be `None`")  # noqa: E501
         allowed_values = ["hardBounce", "softBounce", "blocked", "spam", "delivered", "request", "click", "invalid", "deferred", "opened", "uniqueOpened", "unsubscribed", "listAddition"]  # noqa: E501
         if not set(events).issubset(set(allowed_values)):
             raise ValueError(

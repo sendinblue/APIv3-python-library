@@ -750,45 +750,45 @@ class SMSCampaignsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def send_test_sms(self, campaign_id, send_test_sms, **kwargs):  # noqa: E501
+    def send_test_sms(self, campaign_id, phone_number, **kwargs):  # noqa: E501
         """Send an SMS  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_test_sms(campaign_id, send_test_sms, async=True)
+        >>> thread = api.send_test_sms(campaign_id, phone_number, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param int campaign_id: Id of the SMS campaign (required)
-        :param SendTestSms send_test_sms: Mobile number to which send the test (required)
+        :param SendTestSms phone_number: Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.send_test_sms_with_http_info(campaign_id, send_test_sms, **kwargs)  # noqa: E501
+            return self.send_test_sms_with_http_info(campaign_id, phone_number, **kwargs)  # noqa: E501
         else:
-            (data) = self.send_test_sms_with_http_info(campaign_id, send_test_sms, **kwargs)  # noqa: E501
+            (data) = self.send_test_sms_with_http_info(campaign_id, phone_number, **kwargs)  # noqa: E501
             return data
 
-    def send_test_sms_with_http_info(self, campaign_id, send_test_sms, **kwargs):  # noqa: E501
+    def send_test_sms_with_http_info(self, campaign_id, phone_number, **kwargs):  # noqa: E501
         """Send an SMS  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_test_sms_with_http_info(campaign_id, send_test_sms, async=True)
+        >>> thread = api.send_test_sms_with_http_info(campaign_id, phone_number, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param int campaign_id: Id of the SMS campaign (required)
-        :param SendTestSms send_test_sms: Mobile number to which send the test (required)
+        :param SendTestSms phone_number: Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['campaign_id', 'send_test_sms']  # noqa: E501
+        all_params = ['campaign_id', 'phone_number']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -807,10 +807,10 @@ class SMSCampaignsApi(object):
         if ('campaign_id' not in params or
                 params['campaign_id'] is None):
             raise ValueError("Missing the required parameter `campaign_id` when calling `send_test_sms`")  # noqa: E501
-        # verify the required parameter 'send_test_sms' is set
-        if ('send_test_sms' not in params or
-                params['send_test_sms'] is None):
-            raise ValueError("Missing the required parameter `send_test_sms` when calling `send_test_sms`")  # noqa: E501
+        # verify the required parameter 'phone_number' is set
+        if ('phone_number' not in params or
+                params['phone_number'] is None):
+            raise ValueError("Missing the required parameter `phone_number` when calling `send_test_sms`")  # noqa: E501
 
         collection_formats = {}
 
@@ -826,8 +826,8 @@ class SMSCampaignsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'send_test_sms' in params:
-            body_params = params['send_test_sms']
+        if 'phone_number' in params:
+            body_params = params['phone_number']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
