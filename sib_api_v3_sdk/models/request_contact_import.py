@@ -40,7 +40,8 @@ class RequestContactImport(object):
         'new_list': 'RequestContactImportNewList',
         'email_blacklist': 'bool',
         'sms_blacklist': 'bool',
-        'update_existing_contacts': 'bool'
+        'update_existing_contacts': 'bool',
+        'empty_contacts_attributes': 'bool'
     }
 
     attribute_map = {
@@ -51,10 +52,11 @@ class RequestContactImport(object):
         'new_list': 'newList',
         'email_blacklist': 'emailBlacklist',
         'sms_blacklist': 'smsBlacklist',
-        'update_existing_contacts': 'updateExistingContacts'
+        'update_existing_contacts': 'updateExistingContacts',
+        'empty_contacts_attributes': 'emptyContactsAttributes'
     }
 
-    def __init__(self, file_url=None, file_body=None, list_ids=None, notify_url=None, new_list=None, email_blacklist=False, sms_blacklist=False, update_existing_contacts=True):  # noqa: E501
+    def __init__(self, file_url=None, file_body=None, list_ids=None, notify_url=None, new_list=None, email_blacklist=False, sms_blacklist=False, update_existing_contacts=True, empty_contacts_attributes=False):  # noqa: E501
         """RequestContactImport - a model defined in Swagger"""  # noqa: E501
 
         self._file_url = None
@@ -65,6 +67,7 @@ class RequestContactImport(object):
         self._email_blacklist = None
         self._sms_blacklist = None
         self._update_existing_contacts = None
+        self._empty_contacts_attributes = None
         self.discriminator = None
 
         if file_url is not None:
@@ -83,6 +86,8 @@ class RequestContactImport(object):
             self.sms_blacklist = sms_blacklist
         if update_existing_contacts is not None:
             self.update_existing_contacts = update_existing_contacts
+        if empty_contacts_attributes is not None:
+            self.empty_contacts_attributes = empty_contacts_attributes
 
     @property
     def file_url(self):
@@ -265,6 +270,29 @@ class RequestContactImport(object):
         """
 
         self._update_existing_contacts = update_existing_contacts
+
+    @property
+    def empty_contacts_attributes(self):
+        """Gets the empty_contacts_attributes of this RequestContactImport.  # noqa: E501
+
+        To facilitate the choice to erase any attribute of the existing contacts with empty value. emptyContactsAttributes = true means the empty fields in your import will erase any attribute that currently contain data in SendinBlue, & emptyContactsAttributes = false means the empty fields will not affect your existing data ( only available if `updateExistingContacts` set to true )  # noqa: E501
+
+        :return: The empty_contacts_attributes of this RequestContactImport.  # noqa: E501
+        :rtype: bool
+        """
+        return self._empty_contacts_attributes
+
+    @empty_contacts_attributes.setter
+    def empty_contacts_attributes(self, empty_contacts_attributes):
+        """Sets the empty_contacts_attributes of this RequestContactImport.
+
+        To facilitate the choice to erase any attribute of the existing contacts with empty value. emptyContactsAttributes = true means the empty fields in your import will erase any attribute that currently contain data in SendinBlue, & emptyContactsAttributes = false means the empty fields will not affect your existing data ( only available if `updateExistingContacts` set to true )  # noqa: E501
+
+        :param empty_contacts_attributes: The empty_contacts_attributes of this RequestContactImport.  # noqa: E501
+        :type: bool
+        """
+
+        self._empty_contacts_attributes = empty_contacts_attributes
 
     def to_dict(self):
         """Returns the model properties as a dict"""

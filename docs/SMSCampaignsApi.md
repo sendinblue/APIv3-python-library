@@ -396,7 +396,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_test_sms**
-> send_test_sms(campaign_id, send_test_sms)
+> send_test_sms(campaign_id, phone_number)
 
 Send an SMS
 
@@ -417,11 +417,11 @@ configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the SMS campaign
-send_test_sms = sib_api_v3_sdk.SendTestSms() # SendTestSms | Mobile number to which send the test
+phone_number = sib_api_v3_sdk.SendTestSms() # SendTestSms | Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted
 
 try:
     # Send an SMS
-    api_instance.send_test_sms(campaign_id, send_test_sms)
+    api_instance.send_test_sms(campaign_id, phone_number)
 except ApiException as e:
     print("Exception when calling SMSCampaignsApi->send_test_sms: %s\n" % e)
 ```
@@ -431,7 +431,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| Id of the SMS campaign | 
- **send_test_sms** | [**SendTestSms**](SendTestSms.md)| Mobile number to which send the test | 
+ **phone_number** | [**SendTestSms**](SendTestSms.md)| Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted | 
 
 ### Return type
 

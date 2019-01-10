@@ -48,7 +48,7 @@ class SendReportEmail(object):
         'body': 'body'
     }
 
-    def __init__(self, subject=None, to=None, content_type=None, bcc=None, cc=None, body=None):  # noqa: E501
+    def __init__(self, subject=None, to=None, content_type='html', bcc=None, cc=None, body=None):  # noqa: E501
         """SendReportEmail - a model defined in Swagger"""  # noqa: E501
 
         self._subject = None
@@ -59,18 +59,15 @@ class SendReportEmail(object):
         self._body = None
         self.discriminator = None
 
-        if subject is not None:
-            self.subject = subject
-        if to is not None:
-            self.to = to
+        self.subject = subject
+        self.to = to
         if content_type is not None:
             self.content_type = content_type
         if bcc is not None:
             self.bcc = bcc
         if cc is not None:
             self.cc = cc
-        if body is not None:
-            self.body = body
+        self.body = body
 
     @property
     def subject(self):
@@ -92,6 +89,8 @@ class SendReportEmail(object):
         :param subject: The subject of this SendReportEmail.  # noqa: E501
         :type: str
         """
+        if subject is None:
+            raise ValueError("Invalid value for `subject`, must not be `None`")  # noqa: E501
 
         self._subject = subject
 
@@ -115,6 +114,8 @@ class SendReportEmail(object):
         :param to: The to of this SendReportEmail.  # noqa: E501
         :type: list[str]
         """
+        if to is None:
+            raise ValueError("Invalid value for `to`, must not be `None`")  # noqa: E501
 
         self._to = to
 
@@ -213,6 +214,8 @@ class SendReportEmail(object):
         :param body: The body of this SendReportEmail.  # noqa: E501
         :type: str
         """
+        if body is None:
+            raise ValueError("Invalid value for `body`, must not be `None`")  # noqa: E501
 
         self._body = body
 

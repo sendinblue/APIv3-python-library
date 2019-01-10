@@ -31,44 +31,44 @@ class SendTestSms(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'phone_numbers': 'list[str]'
+        'phone_number': 'str'
     }
 
     attribute_map = {
-        'phone_numbers': 'phoneNumbers'
+        'phone_number': 'phoneNumber'
     }
 
-    def __init__(self, phone_numbers=None):  # noqa: E501
+    def __init__(self, phone_number=None):  # noqa: E501
         """SendTestSms - a model defined in Swagger"""  # noqa: E501
 
-        self._phone_numbers = None
+        self._phone_number = None
         self.discriminator = None
 
-        if phone_numbers is not None:
-            self.phone_numbers = phone_numbers
+        if phone_number is not None:
+            self.phone_number = phone_number
 
     @property
-    def phone_numbers(self):
-        """Gets the phone_numbers of this SendTestSms.  # noqa: E501
+    def phone_number(self):
+        """Gets the phone_number of this SendTestSms.  # noqa: E501
 
-        Mobile number with the country code to send test SMS. The mobile number defined here must belong to one of your contacts in SendinBlue account and must not be blacklisted  # noqa: E501
+        Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted  # noqa: E501
 
-        :return: The phone_numbers of this SendTestSms.  # noqa: E501
-        :rtype: list[str]
+        :return: The phone_number of this SendTestSms.  # noqa: E501
+        :rtype: str
         """
-        return self._phone_numbers
+        return self._phone_number
 
-    @phone_numbers.setter
-    def phone_numbers(self, phone_numbers):
-        """Sets the phone_numbers of this SendTestSms.
+    @phone_number.setter
+    def phone_number(self, phone_number):
+        """Sets the phone_number of this SendTestSms.
 
-        Mobile number with the country code to send test SMS. The mobile number defined here must belong to one of your contacts in SendinBlue account and must not be blacklisted  # noqa: E501
+        Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted  # noqa: E501
 
-        :param phone_numbers: The phone_numbers of this SendTestSms.  # noqa: E501
-        :type: list[str]
+        :param phone_number: The phone_number of this SendTestSms.  # noqa: E501
+        :type: str
         """
 
-        self._phone_numbers = phone_numbers
+        self._phone_number = phone_number
 
     def to_dict(self):
         """Returns the model properties as a dict"""

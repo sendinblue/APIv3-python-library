@@ -40,7 +40,7 @@ class RequestSmsRecipientExport(object):
         'recipients_type': 'recipientsType'
     }
 
-    def __init__(self, notify_url=None, recipients_type='all'):  # noqa: E501
+    def __init__(self, notify_url=None, recipients_type=None):  # noqa: E501
         """RequestSmsRecipientExport - a model defined in Swagger"""  # noqa: E501
 
         self._notify_url = None
