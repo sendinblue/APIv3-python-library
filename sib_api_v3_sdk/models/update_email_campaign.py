@@ -51,7 +51,8 @@ class UpdateEmailCampaign(object):
         'footer': 'str',
         'header': 'str',
         'utm_campaign': 'str',
-        'params': 'object'
+        'params': 'object',
+        'send_at_best_time': 'bool'
     }
 
     attribute_map = {
@@ -72,10 +73,11 @@ class UpdateEmailCampaign(object):
         'footer': 'footer',
         'header': 'header',
         'utm_campaign': 'utmCampaign',
-        'params': 'params'
+        'params': 'params',
+        'send_at_best_time': 'sendAtBestTime'
     }
 
-    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, footer=None, header=None, utm_campaign=None, params=None):  # noqa: E501
+    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, footer=None, header=None, utm_campaign=None, params=None, send_at_best_time=None):  # noqa: E501
         """UpdateEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._tag = None
@@ -96,6 +98,7 @@ class UpdateEmailCampaign(object):
         self._header = None
         self._utm_campaign = None
         self._params = None
+        self._send_at_best_time = None
         self.discriminator = None
 
         if tag is not None:
@@ -134,6 +137,8 @@ class UpdateEmailCampaign(object):
             self.utm_campaign = utm_campaign
         if params is not None:
             self.params = params
+        if send_at_best_time is not None:
+            self.send_at_best_time = send_at_best_time
 
     @property
     def tag(self):
@@ -252,7 +257,7 @@ class UpdateEmailCampaign(object):
     def scheduled_at(self):
         """Gets the scheduled_at of this UpdateEmailCampaign.  # noqa: E501
 
-        UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.  # noqa: E501
+        UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).  # noqa: E501
 
         :return: The scheduled_at of this UpdateEmailCampaign.  # noqa: E501
         :rtype: datetime
@@ -263,7 +268,7 @@ class UpdateEmailCampaign(object):
     def scheduled_at(self, scheduled_at):
         """Sets the scheduled_at of this UpdateEmailCampaign.
 
-        UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.  # noqa: E501
+        UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).  # noqa: E501
 
         :param scheduled_at: The scheduled_at of this UpdateEmailCampaign.  # noqa: E501
         :type: datetime
@@ -544,6 +549,29 @@ class UpdateEmailCampaign(object):
         """
 
         self._params = params
+
+    @property
+    def send_at_best_time(self):
+        """Gets the send_at_best_time of this UpdateEmailCampaign.  # noqa: E501
+
+        Set this to true if you want to send your campaign at best time. Note:- if true, warmup ip will be disabled.  # noqa: E501
+
+        :return: The send_at_best_time of this UpdateEmailCampaign.  # noqa: E501
+        :rtype: bool
+        """
+        return self._send_at_best_time
+
+    @send_at_best_time.setter
+    def send_at_best_time(self, send_at_best_time):
+        """Sets the send_at_best_time of this UpdateEmailCampaign.
+
+        Set this to true if you want to send your campaign at best time. Note:- if true, warmup ip will be disabled.  # noqa: E501
+
+        :param send_at_best_time: The send_at_best_time of this UpdateEmailCampaign.  # noqa: E501
+        :type: bool
+        """
+
+        self._send_at_best_time = send_at_best_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""

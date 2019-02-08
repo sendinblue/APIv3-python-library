@@ -209,6 +209,7 @@ Class | Method | HTTP request | Description
  - [CreateSmtpEmail](docs/CreateSmtpEmail.md)
  - [CreateSmtpTemplate](docs/CreateSmtpTemplate.md)
  - [CreateSmtpTemplateSender](docs/CreateSmtpTemplateSender.md)
+ - [CreateUpdateContactModel](docs/CreateUpdateContactModel.md)
  - [CreateUpdateFolder](docs/CreateUpdateFolder.md)
  - [CreateWebhook](docs/CreateWebhook.md)
  - [CreatedProcessId](docs/CreatedProcessId.md)

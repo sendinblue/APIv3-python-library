@@ -35,6 +35,7 @@ from sib_api_v3_sdk.models.create_sms_campaign_recipients import CreateSmsCampai
 from sib_api_v3_sdk.models.create_smtp_email import CreateSmtpEmail
 from sib_api_v3_sdk.models.create_smtp_template import CreateSmtpTemplate
 from sib_api_v3_sdk.models.create_smtp_template_sender import CreateSmtpTemplateSender
+from sib_api_v3_sdk.models.create_update_contact_model import CreateUpdateContactModel
 from sib_api_v3_sdk.models.create_update_folder import CreateUpdateFolder
 from sib_api_v3_sdk.models.create_webhook import CreateWebhook
 from sib_api_v3_sdk.models.created_process_id import CreatedProcessId

@@ -48,12 +48,11 @@ class CreateEmailCampaign(object):
         'attachment_url': 'str',
         'inline_image_activation': 'bool',
         'mirror_active': 'bool',
-        'recurring': 'bool',
-        'type': 'str',
         'footer': 'str',
         'header': 'str',
         'utm_campaign': 'str',
-        'params': 'object'
+        'params': 'object',
+        'send_at_best_time': 'bool'
     }
 
     attribute_map = {
@@ -71,15 +70,14 @@ class CreateEmailCampaign(object):
         'attachment_url': 'attachmentUrl',
         'inline_image_activation': 'inlineImageActivation',
         'mirror_active': 'mirrorActive',
-        'recurring': 'recurring',
-        'type': 'type',
         'footer': 'footer',
         'header': 'header',
         'utm_campaign': 'utmCampaign',
-        'params': 'params'
+        'params': 'params',
+        'send_at_best_time': 'sendAtBestTime'
     }
 
-    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, template_id=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, type=None, footer=None, header=None, utm_campaign=None, params=None):  # noqa: E501
+    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, template_id=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, footer=None, header=None, utm_campaign=None, params=None, send_at_best_time=False):  # noqa: E501
         """CreateEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._tag = None
@@ -96,12 +94,11 @@ class CreateEmailCampaign(object):
         self._attachment_url = None
         self._inline_image_activation = None
         self._mirror_active = None
-        self._recurring = None
-        self._type = None
         self._footer = None
         self._header = None
         self._utm_campaign = None
         self._params = None
+        self._send_at_best_time = None
         self.discriminator = None
 
         if tag is not None:
@@ -129,9 +126,6 @@ class CreateEmailCampaign(object):
             self.inline_image_activation = inline_image_activation
         if mirror_active is not None:
             self.mirror_active = mirror_active
-        if recurring is not None:
-            self.recurring = recurring
-        self.type = type
         if footer is not None:
             self.footer = footer
         if header is not None:
@@ -140,6 +134,8 @@ class CreateEmailCampaign(object):
             self.utm_campaign = utm_campaign
         if params is not None:
             self.params = params
+        if send_at_best_time is not None:
+            self.send_at_best_time = send_at_best_time
 
     @property
     def tag(self):
@@ -285,7 +281,7 @@ class CreateEmailCampaign(object):
     def scheduled_at(self):
         """Gets the scheduled_at of this CreateEmailCampaign.  # noqa: E501
 
-        Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.  # noqa: E501
+        Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).  # noqa: E501
 
         :return: The scheduled_at of this CreateEmailCampaign.  # noqa: E501
         :rtype: datetime
@@ -296,7 +292,7 @@ class CreateEmailCampaign(object):
     def scheduled_at(self, scheduled_at):
         """Sets the scheduled_at of this CreateEmailCampaign.
 
-        Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.  # noqa: E501
+        Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).  # noqa: E501
 
         :param scheduled_at: The scheduled_at of this CreateEmailCampaign.  # noqa: E501
         :type: datetime
@@ -466,60 +462,6 @@ class CreateEmailCampaign(object):
         self._mirror_active = mirror_active
 
     @property
-    def recurring(self):
-        """Gets the recurring of this CreateEmailCampaign.  # noqa: E501
-
-        For trigger campagins use false to make sure a contact receives the same campaign only once  # noqa: E501
-
-        :return: The recurring of this CreateEmailCampaign.  # noqa: E501
-        :rtype: bool
-        """
-        return self._recurring
-
-    @recurring.setter
-    def recurring(self, recurring):
-        """Sets the recurring of this CreateEmailCampaign.
-
-        For trigger campagins use false to make sure a contact receives the same campaign only once  # noqa: E501
-
-        :param recurring: The recurring of this CreateEmailCampaign.  # noqa: E501
-        :type: bool
-        """
-
-        self._recurring = recurring
-
-    @property
-    def type(self):
-        """Gets the type of this CreateEmailCampaign.  # noqa: E501
-
-        Type of the campaign  # noqa: E501
-
-        :return: The type of this CreateEmailCampaign.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this CreateEmailCampaign.
-
-        Type of the campaign  # noqa: E501
-
-        :param type: The type of this CreateEmailCampaign.  # noqa: E501
-        :type: str
-        """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["classic", "trigger"]  # noqa: E501
-        if type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
-
-        self._type = type
-
-    @property
     def footer(self):
         """Gets the footer of this CreateEmailCampaign.  # noqa: E501
 
@@ -610,6 +552,29 @@ class CreateEmailCampaign(object):
         """
 
         self._params = params
+
+    @property
+    def send_at_best_time(self):
+        """Gets the send_at_best_time of this CreateEmailCampaign.  # noqa: E501
+
+        Set this to true if you want to send your campaign at best time.  # noqa: E501
+
+        :return: The send_at_best_time of this CreateEmailCampaign.  # noqa: E501
+        :rtype: bool
+        """
+        return self._send_at_best_time
+
+    @send_at_best_time.setter
+    def send_at_best_time(self, send_at_best_time):
+        """Sets the send_at_best_time of this CreateEmailCampaign.
+
+        Set this to true if you want to send your campaign at best time.  # noqa: E501
+
+        :param send_at_best_time: The send_at_best_time of this CreateEmailCampaign.  # noqa: E501
+        :type: bool
+        """
+
+        self._send_at_best_time = send_at_best_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""
