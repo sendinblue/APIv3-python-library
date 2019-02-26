@@ -209,7 +209,7 @@ class SendEmail(object):
     def attachment(self):
         """Gets the attachment of this SendEmail.  # noqa: E501
 
-        Pass the list of content (base64 encoded) and name of the attachment. For example, [{'content':'base64 encoded content 1', 'name':'attcahment1'}, {'content':'base64 encoded content 2', 'name':'attcahment2'}].  # noqa: E501
+        Pass the list of content (base64 encoded) and name of the attachment. For example, `[{\"content\":\"base64 encoded content 1\", \"name\":\"attcahment1\"}, {\"content\":\"base64 encoded content 2\", \"name\":\"attcahment2\"}]`  # noqa: E501
 
         :return: The attachment of this SendEmail.  # noqa: E501
         :rtype: list[SendEmailAttachment]
@@ -220,7 +220,7 @@ class SendEmail(object):
     def attachment(self, attachment):
         """Sets the attachment of this SendEmail.
 
-        Pass the list of content (base64 encoded) and name of the attachment. For example, [{'content':'base64 encoded content 1', 'name':'attcahment1'}, {'content':'base64 encoded content 2', 'name':'attcahment2'}].  # noqa: E501
+        Pass the list of content (base64 encoded) and name of the attachment. For example, `[{\"content\":\"base64 encoded content 1\", \"name\":\"attcahment1\"}, {\"content\":\"base64 encoded content 2\", \"name\":\"attcahment2\"}]`  # noqa: E501
 
         :param attachment: The attachment of this SendEmail.  # noqa: E501
         :type: list[SendEmailAttachment]
@@ -232,7 +232,7 @@ class SendEmail(object):
     def headers(self):
         """Gets the headers of this SendEmail.  # noqa: E501
 
-        Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, {'Content-Type':'text/html', 'charset':'iso-8859-1', 'sender.ip':'1.2.3.4'}  # noqa: E501
+        Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, `{\"Content-Type\":\"text/html\", \"charset\":\"iso-8859-1\", \"sender.ip\":\"1.2.3.4\"}`  # noqa: E501
 
         :return: The headers of this SendEmail.  # noqa: E501
         :rtype: object
@@ -243,7 +243,7 @@ class SendEmail(object):
     def headers(self, headers):
         """Sets the headers of this SendEmail.
 
-        Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, {'Content-Type':'text/html', 'charset':'iso-8859-1', 'sender.ip':'1.2.3.4'}  # noqa: E501
+        Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, `{\"Content-Type\":\"text/html\", \"charset\":\"iso-8859-1\", \"sender.ip\":\"1.2.3.4\"}`  # noqa: E501
 
         :param headers: The headers of this SendEmail.  # noqa: E501
         :type: object
@@ -255,7 +255,7 @@ class SendEmail(object):
     def attributes(self):
         """Gets the attributes of this SendEmail.  # noqa: E501
 
-        Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}  # noqa: E501
+        Pass the set of attributes to customize the template. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}  # noqa: E501
 
         :return: The attributes of this SendEmail.  # noqa: E501
         :rtype: object
@@ -266,7 +266,7 @@ class SendEmail(object):
     def attributes(self, attributes):
         """Sets the attributes of this SendEmail.
 
-        Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}  # noqa: E501
+        Pass the set of attributes to customize the template. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}  # noqa: E501
 
         :param attributes: The attributes of this SendEmail.  # noqa: E501
         :type: object

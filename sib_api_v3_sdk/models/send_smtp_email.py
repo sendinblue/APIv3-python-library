@@ -138,7 +138,7 @@ class SendSmtpEmail(object):
     def to(self):
         """Gets the to of this SendSmtpEmail.  # noqa: E501
 
-        List of email addresses and names (optional) of the recipients. For example, [{'name':'Jimmy', 'email':'jimmy98@example.com'}, {'name':'Joe', 'email':'joe@example.com'}]  # noqa: E501
+        List of email addresses and names (optional) of the recipients. For example, `[{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]`  # noqa: E501
 
         :return: The to of this SendSmtpEmail.  # noqa: E501
         :rtype: list[SendSmtpEmailTo]
@@ -149,7 +149,7 @@ class SendSmtpEmail(object):
     def to(self, to):
         """Sets the to of this SendSmtpEmail.
 
-        List of email addresses and names (optional) of the recipients. For example, [{'name':'Jimmy', 'email':'jimmy98@example.com'}, {'name':'Joe', 'email':'joe@example.com'}]  # noqa: E501
+        List of email addresses and names (optional) of the recipients. For example, `[{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]`  # noqa: E501
 
         :param to: The to of this SendSmtpEmail.  # noqa: E501
         :type: list[SendSmtpEmailTo]
@@ -299,7 +299,7 @@ class SendSmtpEmail(object):
     def attachment(self):
         """Gets the attachment of this SendSmtpEmail.  # noqa: E501
 
-        Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, [{'url':'https://attachment.domain.com/myAttachmentFromUrl.jpg', 'name':'My attachment 1'}, {'content':'base64 exmaple content', 'name':'My attachment 2'}]. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps and odt ( Ignored if 'templateId' is passed )  # noqa: E501
+        Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, `[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"My attachment 1\"}, {\"content\":\"base64 exmaple content\", \"name\":\"My attachment 2\"}]`. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps and odt ( If 'templateId' is passed and is in New Template Language format then only attachment url is accepted. If template is in Old template Language format, then 'attachment' is ignored )  # noqa: E501
 
         :return: The attachment of this SendSmtpEmail.  # noqa: E501
         :rtype: list[SendSmtpEmailAttachment]
@@ -310,7 +310,7 @@ class SendSmtpEmail(object):
     def attachment(self, attachment):
         """Sets the attachment of this SendSmtpEmail.
 
-        Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, [{'url':'https://attachment.domain.com/myAttachmentFromUrl.jpg', 'name':'My attachment 1'}, {'content':'base64 exmaple content', 'name':'My attachment 2'}]. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps and odt ( Ignored if 'templateId' is passed )  # noqa: E501
+        Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, `[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"My attachment 1\"}, {\"content\":\"base64 exmaple content\", \"name\":\"My attachment 2\"}]`. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps and odt ( If 'templateId' is passed and is in New Template Language format then only attachment url is accepted. If template is in Old template Language format, then 'attachment' is ignored )  # noqa: E501
 
         :param attachment: The attachment of this SendSmtpEmail.  # noqa: E501
         :type: list[SendSmtpEmailAttachment]
@@ -322,7 +322,7 @@ class SendSmtpEmail(object):
     def headers(self):
         """Gets the headers of this SendSmtpEmail.  # noqa: E501
 
-        Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, {'Content-Type':'text/html', 'charset':'iso-8859-1', 'sender.ip':'1.2.3.4'}  # noqa: E501
+        Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, `{\"Content-Type\":\"text/html\", \"charset\":\"iso-8859-1\", \"sender.ip\":\"1.2.3.4\"}`  # noqa: E501
 
         :return: The headers of this SendSmtpEmail.  # noqa: E501
         :rtype: object
@@ -333,7 +333,7 @@ class SendSmtpEmail(object):
     def headers(self, headers):
         """Sets the headers of this SendSmtpEmail.
 
-        Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, {'Content-Type':'text/html', 'charset':'iso-8859-1', 'sender.ip':'1.2.3.4'}  # noqa: E501
+        Pass the set of headers that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, `{\"Content-Type\":\"text/html\", \"charset\":\"iso-8859-1\", \"sender.ip\":\"1.2.3.4\"}`  # noqa: E501
 
         :param headers: The headers of this SendSmtpEmail.  # noqa: E501
         :type: object
@@ -368,7 +368,7 @@ class SendSmtpEmail(object):
     def params(self):
         """Gets the params of this SendSmtpEmail.  # noqa: E501
 
-        Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. It's considered only if template is in New Template Language format.  # noqa: E501
+        Pass the set of attributes to customize the template. For example, `{\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}`. It's considered only if template is in New Template Language format.  # noqa: E501
 
         :return: The params of this SendSmtpEmail.  # noqa: E501
         :rtype: object
@@ -379,7 +379,7 @@ class SendSmtpEmail(object):
     def params(self, params):
         """Sets the params of this SendSmtpEmail.
 
-        Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. It's considered only if template is in New Template Language format.  # noqa: E501
+        Pass the set of attributes to customize the template. For example, `{\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}`. It's considered only if template is in New Template Language format.  # noqa: E501
 
         :param params: The params of this SendSmtpEmail.  # noqa: E501
         :type: object

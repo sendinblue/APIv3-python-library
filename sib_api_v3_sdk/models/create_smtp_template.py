@@ -260,7 +260,7 @@ class CreateSmtpTemplate(object):
     def to_field(self):
         """Gets the to_field of this CreateSmtpTemplate.  # noqa: E501
 
-        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add `{FNAME} {LNAME}`. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use `{{contact.FNAME}} {{contact.LNAME}}` for personalization  # noqa: E501
 
         :return: The to_field of this CreateSmtpTemplate.  # noqa: E501
         :rtype: str
@@ -271,7 +271,7 @@ class CreateSmtpTemplate(object):
     def to_field(self, to_field):
         """Sets the to_field of this CreateSmtpTemplate.
 
-        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add `{FNAME} {LNAME}`. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use `{{contact.FNAME}} {{contact.LNAME}}` for personalization  # noqa: E501
 
         :param to_field: The to_field of this CreateSmtpTemplate.  # noqa: E501
         :type: str

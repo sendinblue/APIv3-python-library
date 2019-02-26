@@ -231,6 +231,13 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                     'key': 'api-key',
                     'value': self.get_api_key_with_prefix('api-key')
                 },
+            'partner-key':
+                {
+                    'type': 'api_key',
+                    'in': 'header',
+                    'key': 'partner-key',
+                    'value': self.get_api_key_with_prefix('partner-key')
+                },
 
         }
 

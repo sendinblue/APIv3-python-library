@@ -112,7 +112,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns', 'POST',
@@ -209,7 +209,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}', 'DELETE',
@@ -310,7 +310,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}/exportRecipients', 'POST',
@@ -407,7 +407,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}', 'GET',
@@ -522,7 +522,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns', 'GET',
@@ -619,7 +619,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}/sendNow', 'POST',
@@ -726,7 +726,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}/sendReport', 'POST',
@@ -831,7 +831,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}/sendTest', 'POST',
@@ -936,7 +936,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}/status', 'PUT',
@@ -1041,7 +1041,7 @@ class EmailCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}', 'PUT',
