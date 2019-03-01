@@ -120,7 +120,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children/{childAuthKey}/credits/add', 'POST',
@@ -225,7 +225,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children/{childAuthKey}/ips/associate', 'POST',
@@ -318,7 +318,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children', 'POST',
@@ -415,7 +415,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children/{childAuthKey}', 'DELETE',
@@ -520,7 +520,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children/{childAuthKey}/ips/dissociate', 'POST',
@@ -617,7 +617,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children/{childAuthKey}', 'GET',
@@ -706,7 +706,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children', 'GET',
@@ -811,7 +811,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children/{childAuthKey}/credits/remove', 'POST',
@@ -916,7 +916,7 @@ class ResellerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/reseller/children/{childAuthKey}', 'PUT',

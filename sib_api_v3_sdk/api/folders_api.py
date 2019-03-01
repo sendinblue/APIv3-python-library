@@ -112,7 +112,7 @@ class FoldersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/contacts/folders', 'POST',
@@ -209,7 +209,7 @@ class FoldersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/contacts/folders/{folderId}', 'DELETE',
@@ -306,7 +306,7 @@ class FoldersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/contacts/folders/{folderId}', 'GET',
@@ -413,7 +413,7 @@ class FoldersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/contacts/folders/{folderId}/lists', 'GET',
@@ -520,7 +520,7 @@ class FoldersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/contacts/folders', 'GET',
@@ -625,7 +625,7 @@ class FoldersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/contacts/folders/{folderId}', 'PUT',

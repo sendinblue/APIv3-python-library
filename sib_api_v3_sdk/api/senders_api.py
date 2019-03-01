@@ -108,7 +108,7 @@ class SendersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/senders', 'POST',
@@ -205,7 +205,7 @@ class SendersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/senders/{senderId}', 'DELETE',
@@ -294,7 +294,7 @@ class SendersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/senders/ips', 'GET',
@@ -391,7 +391,7 @@ class SendersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/senders/{senderId}/ips', 'GET',
@@ -488,7 +488,7 @@ class SendersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/senders', 'GET',
@@ -589,7 +589,7 @@ class SendersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/senders/{senderId}', 'PUT',

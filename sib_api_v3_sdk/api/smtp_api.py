@@ -112,7 +112,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/templates', 'POST',
@@ -207,7 +207,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/deleteHardbounces', 'POST',
@@ -304,7 +304,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/templates/{templateId}', 'DELETE',
@@ -409,7 +409,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/statistics/aggregatedReport', 'GET',
@@ -540,7 +540,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/statistics/events', 'GET',
@@ -655,7 +655,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/statistics/reports', 'GET',
@@ -752,7 +752,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/templates/{templateId}', 'GET',
@@ -855,7 +855,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/templates', 'GET',
@@ -962,7 +962,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/templates/{templateId}/send', 'POST',
@@ -1067,7 +1067,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/templates/{templateId}/sendTest', 'POST',
@@ -1164,7 +1164,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/email', 'POST',
@@ -1269,7 +1269,7 @@ class SMTPApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smtp/templates/{templateId}', 'PUT',

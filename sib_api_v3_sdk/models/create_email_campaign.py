@@ -52,7 +52,13 @@ class CreateEmailCampaign(object):
         'header': 'str',
         'utm_campaign': 'str',
         'params': 'object',
-        'send_at_best_time': 'bool'
+        'send_at_best_time': 'bool',
+        'ab_testing': 'bool',
+        'subject_a': 'str',
+        'subject_b': 'str',
+        'split_rule': 'int',
+        'winner_criteria': 'str',
+        'winner_delay': 'int'
     }
 
     attribute_map = {
@@ -74,10 +80,16 @@ class CreateEmailCampaign(object):
         'header': 'header',
         'utm_campaign': 'utmCampaign',
         'params': 'params',
-        'send_at_best_time': 'sendAtBestTime'
+        'send_at_best_time': 'sendAtBestTime',
+        'ab_testing': 'abTesting',
+        'subject_a': 'subjectA',
+        'subject_b': 'subjectB',
+        'split_rule': 'splitRule',
+        'winner_criteria': 'winnerCriteria',
+        'winner_delay': 'winnerDelay'
     }
 
-    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, template_id=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, footer=None, header=None, utm_campaign=None, params=None, send_at_best_time=False):  # noqa: E501
+    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, template_id=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, footer=None, header=None, utm_campaign=None, params=None, send_at_best_time=False, ab_testing=False, subject_a=None, subject_b=None, split_rule=None, winner_criteria=None, winner_delay=None):  # noqa: E501
         """CreateEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._tag = None
@@ -99,6 +111,12 @@ class CreateEmailCampaign(object):
         self._utm_campaign = None
         self._params = None
         self._send_at_best_time = None
+        self._ab_testing = None
+        self._subject_a = None
+        self._subject_b = None
+        self._split_rule = None
+        self._winner_criteria = None
+        self._winner_delay = None
         self.discriminator = None
 
         if tag is not None:
@@ -113,7 +131,8 @@ class CreateEmailCampaign(object):
             self.template_id = template_id
         if scheduled_at is not None:
             self.scheduled_at = scheduled_at
-        self.subject = subject
+        if subject is not None:
+            self.subject = subject
         if reply_to is not None:
             self.reply_to = reply_to
         if to_field is not None:
@@ -136,6 +155,18 @@ class CreateEmailCampaign(object):
             self.params = params
         if send_at_best_time is not None:
             self.send_at_best_time = send_at_best_time
+        if ab_testing is not None:
+            self.ab_testing = ab_testing
+        if subject_a is not None:
+            self.subject_a = subject_a
+        if subject_b is not None:
+            self.subject_b = subject_b
+        if split_rule is not None:
+            self.split_rule = split_rule
+        if winner_criteria is not None:
+            self.winner_criteria = winner_criteria
+        if winner_delay is not None:
+            self.winner_delay = winner_delay
 
     @property
     def tag(self):
@@ -304,7 +335,7 @@ class CreateEmailCampaign(object):
     def subject(self):
         """Gets the subject of this CreateEmailCampaign.  # noqa: E501
 
-        Subject of the campaign  # noqa: E501
+        Subject of the campaign. Mandatory if abTesting is false. Ignored if abTesting is true.  # noqa: E501
 
         :return: The subject of this CreateEmailCampaign.  # noqa: E501
         :rtype: str
@@ -315,13 +346,11 @@ class CreateEmailCampaign(object):
     def subject(self, subject):
         """Sets the subject of this CreateEmailCampaign.
 
-        Subject of the campaign  # noqa: E501
+        Subject of the campaign. Mandatory if abTesting is false. Ignored if abTesting is true.  # noqa: E501
 
         :param subject: The subject of this CreateEmailCampaign.  # noqa: E501
         :type: str
         """
-        if subject is None:
-            raise ValueError("Invalid value for `subject`, must not be `None`")  # noqa: E501
 
         self._subject = subject
 
@@ -352,7 +381,7 @@ class CreateEmailCampaign(object):
     def to_field(self):
         """Gets the to_field of this CreateEmailCampaign.  # noqa: E501
 
-        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add `{FNAME} {LNAME}`. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use `{{contact.FNAME}} {{contact.LNAME}}` for personalization  # noqa: E501
 
         :return: The to_field of this CreateEmailCampaign.  # noqa: E501
         :rtype: str
@@ -363,7 +392,7 @@ class CreateEmailCampaign(object):
     def to_field(self, to_field):
         """Sets the to_field of this CreateEmailCampaign.
 
-        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add {FNAME} {LNAME}. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use {{contact.FNAME}} {{contact.LNAME}} for personalization  # noqa: E501
+        To personalize the «To» Field. If you want to include the first name and last name of your recipient, add `{FNAME} {LNAME}`. These contact attributes must already exist in your SendinBlue account. If input parameter 'params' used please use `{{contact.FNAME}} {{contact.LNAME}}` for personalization  # noqa: E501
 
         :param to_field: The to_field of this CreateEmailCampaign.  # noqa: E501
         :type: str
@@ -534,7 +563,7 @@ class CreateEmailCampaign(object):
     def params(self):
         """Gets the params of this CreateEmailCampaign.  # noqa: E501
 
-        Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
+        Pass the set of attributes to customize the type classic campaign. For example, `{\"FNAME\":\"Joe\", \"LNAME:\"Doe\"}`. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
 
         :return: The params of this CreateEmailCampaign.  # noqa: E501
         :rtype: object
@@ -545,7 +574,7 @@ class CreateEmailCampaign(object):
     def params(self, params):
         """Sets the params of this CreateEmailCampaign.
 
-        Pass the set of attributes to customize the type classic campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
+        Pass the set of attributes to customize the type classic campaign. For example, `{\"FNAME\":\"Joe\", \"LNAME:\"Doe\"}`. Only available if 'type' is 'classic'. It's considered only if campaign is in New Template Language format. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
 
         :param params: The params of this CreateEmailCampaign.  # noqa: E501
         :type: object
@@ -575,6 +604,158 @@ class CreateEmailCampaign(object):
         """
 
         self._send_at_best_time = send_at_best_time
+
+    @property
+    def ab_testing(self):
+        """Gets the ab_testing of this CreateEmailCampaign.  # noqa: E501
+
+        Status of A/B Test. abTesting = false means it is disabled, & abTesting = true means it is enabled. 'subjectA', 'subjectB', 'splitRule', 'winnerCriteria' & 'winnerDelay' will be considered when abTesting is set to true. 'subjectA' & 'subjectB' are mandatory together & 'subject' if passed is ignored. Can be set to true only if 'sendAtBestTime' is 'false'. You will be able to set up two subject lines for your campaign and send them to a random sample of your total recipients. Half of the test group will receive version A, and the other half will receive version B  # noqa: E501
+
+        :return: The ab_testing of this CreateEmailCampaign.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ab_testing
+
+    @ab_testing.setter
+    def ab_testing(self, ab_testing):
+        """Sets the ab_testing of this CreateEmailCampaign.
+
+        Status of A/B Test. abTesting = false means it is disabled, & abTesting = true means it is enabled. 'subjectA', 'subjectB', 'splitRule', 'winnerCriteria' & 'winnerDelay' will be considered when abTesting is set to true. 'subjectA' & 'subjectB' are mandatory together & 'subject' if passed is ignored. Can be set to true only if 'sendAtBestTime' is 'false'. You will be able to set up two subject lines for your campaign and send them to a random sample of your total recipients. Half of the test group will receive version A, and the other half will receive version B  # noqa: E501
+
+        :param ab_testing: The ab_testing of this CreateEmailCampaign.  # noqa: E501
+        :type: bool
+        """
+
+        self._ab_testing = ab_testing
+
+    @property
+    def subject_a(self):
+        """Gets the subject_a of this CreateEmailCampaign.  # noqa: E501
+
+        Subject A of the campaign. Mandatory if abTesting = true. subjectA & subjectB should have unique value  # noqa: E501
+
+        :return: The subject_a of this CreateEmailCampaign.  # noqa: E501
+        :rtype: str
+        """
+        return self._subject_a
+
+    @subject_a.setter
+    def subject_a(self, subject_a):
+        """Sets the subject_a of this CreateEmailCampaign.
+
+        Subject A of the campaign. Mandatory if abTesting = true. subjectA & subjectB should have unique value  # noqa: E501
+
+        :param subject_a: The subject_a of this CreateEmailCampaign.  # noqa: E501
+        :type: str
+        """
+
+        self._subject_a = subject_a
+
+    @property
+    def subject_b(self):
+        """Gets the subject_b of this CreateEmailCampaign.  # noqa: E501
+
+        Subject B of the campaign. Mandatory if abTesting = true. subjectA & subjectB should have unique value  # noqa: E501
+
+        :return: The subject_b of this CreateEmailCampaign.  # noqa: E501
+        :rtype: str
+        """
+        return self._subject_b
+
+    @subject_b.setter
+    def subject_b(self, subject_b):
+        """Sets the subject_b of this CreateEmailCampaign.
+
+        Subject B of the campaign. Mandatory if abTesting = true. subjectA & subjectB should have unique value  # noqa: E501
+
+        :param subject_b: The subject_b of this CreateEmailCampaign.  # noqa: E501
+        :type: str
+        """
+
+        self._subject_b = subject_b
+
+    @property
+    def split_rule(self):
+        """Gets the split_rule of this CreateEmailCampaign.  # noqa: E501
+
+        Add the size of your test groups. Mandatory if abTesting = true & 'recipients' is passed. We'll send version A and B to a random sample of recipients, and then the winning version to everyone else  # noqa: E501
+
+        :return: The split_rule of this CreateEmailCampaign.  # noqa: E501
+        :rtype: int
+        """
+        return self._split_rule
+
+    @split_rule.setter
+    def split_rule(self, split_rule):
+        """Sets the split_rule of this CreateEmailCampaign.
+
+        Add the size of your test groups. Mandatory if abTesting = true & 'recipients' is passed. We'll send version A and B to a random sample of recipients, and then the winning version to everyone else  # noqa: E501
+
+        :param split_rule: The split_rule of this CreateEmailCampaign.  # noqa: E501
+        :type: int
+        """
+        if split_rule is not None and split_rule > 50:  # noqa: E501
+            raise ValueError("Invalid value for `split_rule`, must be a value less than or equal to `50`")  # noqa: E501
+        if split_rule is not None and split_rule < 1:  # noqa: E501
+            raise ValueError("Invalid value for `split_rule`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._split_rule = split_rule
+
+    @property
+    def winner_criteria(self):
+        """Gets the winner_criteria of this CreateEmailCampaign.  # noqa: E501
+
+        Choose the metrics that will determinate the winning version. Mandatory if 'splitRule' >= 1 and < 50. If splitRule = 50, 'winnerCriteria' is ignored if passed  # noqa: E501
+
+        :return: The winner_criteria of this CreateEmailCampaign.  # noqa: E501
+        :rtype: str
+        """
+        return self._winner_criteria
+
+    @winner_criteria.setter
+    def winner_criteria(self, winner_criteria):
+        """Sets the winner_criteria of this CreateEmailCampaign.
+
+        Choose the metrics that will determinate the winning version. Mandatory if 'splitRule' >= 1 and < 50. If splitRule = 50, 'winnerCriteria' is ignored if passed  # noqa: E501
+
+        :param winner_criteria: The winner_criteria of this CreateEmailCampaign.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["open", "click"]  # noqa: E501
+        if winner_criteria not in allowed_values:
+            raise ValueError(
+                "Invalid value for `winner_criteria` ({0}), must be one of {1}"  # noqa: E501
+                .format(winner_criteria, allowed_values)
+            )
+
+        self._winner_criteria = winner_criteria
+
+    @property
+    def winner_delay(self):
+        """Gets the winner_delay of this CreateEmailCampaign.  # noqa: E501
+
+        Choose the duration of the test in hours. Maximum is 7 days, pass 24*7 = 168 hours. The winning version will be sent at the end of the test. Mandatory if 'splitRule' >= 1 and < 50. If splitRule = 50, 'winnerDelay' is ignored if passed  # noqa: E501
+
+        :return: The winner_delay of this CreateEmailCampaign.  # noqa: E501
+        :rtype: int
+        """
+        return self._winner_delay
+
+    @winner_delay.setter
+    def winner_delay(self, winner_delay):
+        """Sets the winner_delay of this CreateEmailCampaign.
+
+        Choose the duration of the test in hours. Maximum is 7 days, pass 24*7 = 168 hours. The winning version will be sent at the end of the test. Mandatory if 'splitRule' >= 1 and < 50. If splitRule = 50, 'winnerDelay' is ignored if passed  # noqa: E501
+
+        :param winner_delay: The winner_delay of this CreateEmailCampaign.  # noqa: E501
+        :type: int
+        """
+        if winner_delay is not None and winner_delay > 168:  # noqa: E501
+            raise ValueError("Invalid value for `winner_delay`, must be a value less than or equal to `168`")  # noqa: E501
+        if winner_delay is not None and winner_delay < 1:  # noqa: E501
+            raise ValueError("Invalid value for `winner_delay`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._winner_delay = winner_delay
 
     def to_dict(self):
         """Returns the model properties as a dict"""

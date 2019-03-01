@@ -36,7 +36,14 @@ class GetCampaignOverview(object):
         'subject': 'str',
         'type': 'str',
         'status': 'str',
-        'scheduled_at': 'datetime'
+        'scheduled_at': 'datetime',
+        'ab_testing': 'bool',
+        'subject_a': 'str',
+        'subject_b': 'str',
+        'split_rule': 'int',
+        'winner_criteria': 'str',
+        'winner_delay': 'int',
+        'send_at_best_time': 'bool'
     }
 
     attribute_map = {
@@ -45,10 +52,17 @@ class GetCampaignOverview(object):
         'subject': 'subject',
         'type': 'type',
         'status': 'status',
-        'scheduled_at': 'scheduledAt'
+        'scheduled_at': 'scheduledAt',
+        'ab_testing': 'abTesting',
+        'subject_a': 'subjectA',
+        'subject_b': 'subjectB',
+        'split_rule': 'splitRule',
+        'winner_criteria': 'winnerCriteria',
+        'winner_delay': 'winnerDelay',
+        'send_at_best_time': 'sendAtBestTime'
     }
 
-    def __init__(self, id=None, name=None, subject=None, type=None, status=None, scheduled_at=None):  # noqa: E501
+    def __init__(self, id=None, name=None, subject=None, type=None, status=None, scheduled_at=None, ab_testing=None, subject_a=None, subject_b=None, split_rule=None, winner_criteria=None, winner_delay=None, send_at_best_time=None):  # noqa: E501
         """GetCampaignOverview - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -57,15 +71,37 @@ class GetCampaignOverview(object):
         self._type = None
         self._status = None
         self._scheduled_at = None
+        self._ab_testing = None
+        self._subject_a = None
+        self._subject_b = None
+        self._split_rule = None
+        self._winner_criteria = None
+        self._winner_delay = None
+        self._send_at_best_time = None
         self.discriminator = None
 
         self.id = id
         self.name = name
-        self.subject = subject
+        if subject is not None:
+            self.subject = subject
         self.type = type
         self.status = status
         if scheduled_at is not None:
             self.scheduled_at = scheduled_at
+        if ab_testing is not None:
+            self.ab_testing = ab_testing
+        if subject_a is not None:
+            self.subject_a = subject_a
+        if subject_b is not None:
+            self.subject_b = subject_b
+        if split_rule is not None:
+            self.split_rule = split_rule
+        if winner_criteria is not None:
+            self.winner_criteria = winner_criteria
+        if winner_delay is not None:
+            self.winner_delay = winner_delay
+        if send_at_best_time is not None:
+            self.send_at_best_time = send_at_best_time
 
     @property
     def id(self):
@@ -121,7 +157,7 @@ class GetCampaignOverview(object):
     def subject(self):
         """Gets the subject of this GetCampaignOverview.  # noqa: E501
 
-        Subject of the campaign  # noqa: E501
+        Subject of the campaign. Only available if `abTesting` flag of the campaign is `false`  # noqa: E501
 
         :return: The subject of this GetCampaignOverview.  # noqa: E501
         :rtype: str
@@ -132,13 +168,11 @@ class GetCampaignOverview(object):
     def subject(self, subject):
         """Sets the subject of this GetCampaignOverview.
 
-        Subject of the campaign  # noqa: E501
+        Subject of the campaign. Only available if `abTesting` flag of the campaign is `false`  # noqa: E501
 
         :param subject: The subject of this GetCampaignOverview.  # noqa: E501
         :type: str
         """
-        if subject is None:
-            raise ValueError("Invalid value for `subject`, must not be `None`")  # noqa: E501
 
         self._subject = subject
 
@@ -226,6 +260,167 @@ class GetCampaignOverview(object):
         """
 
         self._scheduled_at = scheduled_at
+
+    @property
+    def ab_testing(self):
+        """Gets the ab_testing of this GetCampaignOverview.  # noqa: E501
+
+        Status of A/B Test for the campaign. abTesting = false means it is disabled, & abTesting = true means it is enabled.  # noqa: E501
+
+        :return: The ab_testing of this GetCampaignOverview.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ab_testing
+
+    @ab_testing.setter
+    def ab_testing(self, ab_testing):
+        """Sets the ab_testing of this GetCampaignOverview.
+
+        Status of A/B Test for the campaign. abTesting = false means it is disabled, & abTesting = true means it is enabled.  # noqa: E501
+
+        :param ab_testing: The ab_testing of this GetCampaignOverview.  # noqa: E501
+        :type: bool
+        """
+
+        self._ab_testing = ab_testing
+
+    @property
+    def subject_a(self):
+        """Gets the subject_a of this GetCampaignOverview.  # noqa: E501
+
+        Subject A of the ab-test campaign. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :return: The subject_a of this GetCampaignOverview.  # noqa: E501
+        :rtype: str
+        """
+        return self._subject_a
+
+    @subject_a.setter
+    def subject_a(self, subject_a):
+        """Sets the subject_a of this GetCampaignOverview.
+
+        Subject A of the ab-test campaign. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :param subject_a: The subject_a of this GetCampaignOverview.  # noqa: E501
+        :type: str
+        """
+
+        self._subject_a = subject_a
+
+    @property
+    def subject_b(self):
+        """Gets the subject_b of this GetCampaignOverview.  # noqa: E501
+
+        Subject B of the ab-test campaign. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :return: The subject_b of this GetCampaignOverview.  # noqa: E501
+        :rtype: str
+        """
+        return self._subject_b
+
+    @subject_b.setter
+    def subject_b(self, subject_b):
+        """Sets the subject_b of this GetCampaignOverview.
+
+        Subject B of the ab-test campaign. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :param subject_b: The subject_b of this GetCampaignOverview.  # noqa: E501
+        :type: str
+        """
+
+        self._subject_b = subject_b
+
+    @property
+    def split_rule(self):
+        """Gets the split_rule of this GetCampaignOverview.  # noqa: E501
+
+        The size of your ab-test groups. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :return: The split_rule of this GetCampaignOverview.  # noqa: E501
+        :rtype: int
+        """
+        return self._split_rule
+
+    @split_rule.setter
+    def split_rule(self, split_rule):
+        """Sets the split_rule of this GetCampaignOverview.
+
+        The size of your ab-test groups. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :param split_rule: The split_rule of this GetCampaignOverview.  # noqa: E501
+        :type: int
+        """
+
+        self._split_rule = split_rule
+
+    @property
+    def winner_criteria(self):
+        """Gets the winner_criteria of this GetCampaignOverview.  # noqa: E501
+
+        Criteria for the winning version. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :return: The winner_criteria of this GetCampaignOverview.  # noqa: E501
+        :rtype: str
+        """
+        return self._winner_criteria
+
+    @winner_criteria.setter
+    def winner_criteria(self, winner_criteria):
+        """Sets the winner_criteria of this GetCampaignOverview.
+
+        Criteria for the winning version. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :param winner_criteria: The winner_criteria of this GetCampaignOverview.  # noqa: E501
+        :type: str
+        """
+
+        self._winner_criteria = winner_criteria
+
+    @property
+    def winner_delay(self):
+        """Gets the winner_delay of this GetCampaignOverview.  # noqa: E501
+
+        The duration of the test in hours at the end of which the winning version will be sent. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :return: The winner_delay of this GetCampaignOverview.  # noqa: E501
+        :rtype: int
+        """
+        return self._winner_delay
+
+    @winner_delay.setter
+    def winner_delay(self, winner_delay):
+        """Sets the winner_delay of this GetCampaignOverview.
+
+        The duration of the test in hours at the end of which the winning version will be sent. Only available if `abTesting` flag of the campaign is `true`  # noqa: E501
+
+        :param winner_delay: The winner_delay of this GetCampaignOverview.  # noqa: E501
+        :type: int
+        """
+
+        self._winner_delay = winner_delay
+
+    @property
+    def send_at_best_time(self):
+        """Gets the send_at_best_time of this GetCampaignOverview.  # noqa: E501
+
+        It is true if you have chosen to send your campaign at best time, otherwise it is false  # noqa: E501
+
+        :return: The send_at_best_time of this GetCampaignOverview.  # noqa: E501
+        :rtype: bool
+        """
+        return self._send_at_best_time
+
+    @send_at_best_time.setter
+    def send_at_best_time(self, send_at_best_time):
+        """Sets the send_at_best_time of this GetCampaignOverview.
+
+        It is true if you have chosen to send your campaign at best time, otherwise it is false  # noqa: E501
+
+        :param send_at_best_time: The send_at_best_time of this GetCampaignOverview.  # noqa: E501
+        :type: bool
+        """
+
+        self._send_at_best_time = send_at_best_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""

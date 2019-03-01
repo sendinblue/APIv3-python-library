@@ -138,7 +138,7 @@ class TransactionalSMSApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/transactionalSMS/statistics/events', 'GET',
@@ -243,7 +243,7 @@ class TransactionalSMSApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/transactionalSMS/statistics/aggregatedReport', 'GET',
@@ -348,7 +348,7 @@ class TransactionalSMSApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/transactionalSMS/statistics/reports', 'GET',
@@ -445,7 +445,7 @@ class TransactionalSMSApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/transactionalSMS/sms', 'POST',

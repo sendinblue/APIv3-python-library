@@ -112,7 +112,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns', 'POST',
@@ -209,7 +209,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns/{campaignId}', 'DELETE',
@@ -314,7 +314,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns/{campaignId}', 'GET',
@@ -425,7 +425,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns', 'GET',
@@ -528,7 +528,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns/{campaignId}/exportRecipients', 'POST',
@@ -625,7 +625,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns/{campaignId}/sendNow', 'POST',
@@ -732,7 +732,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns/{campaignId}/sendReport', 'POST',
@@ -837,7 +837,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns/{campaignId}/sendTest', 'POST',
@@ -942,7 +942,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns/{campaignId}', 'PUT',
@@ -1047,7 +1047,7 @@ class SMSCampaignsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['api-key']  # noqa: E501
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/smsCampaigns/{campaignId}/status', 'PUT',

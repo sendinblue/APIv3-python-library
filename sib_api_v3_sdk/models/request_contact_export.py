@@ -83,7 +83,7 @@ class RequestContactExport(object):
     def contact_filter(self):
         """Gets the contact_filter of this RequestContactExport.  # noqa: E501
 
-        Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.  # noqa: E501
+        Set the filter for the contacts to be exported. For example, `{\"blacklisted\":true}` will export all the blacklisted contacts.  # noqa: E501
 
         :return: The contact_filter of this RequestContactExport.  # noqa: E501
         :rtype: object
@@ -94,7 +94,7 @@ class RequestContactExport(object):
     def contact_filter(self, contact_filter):
         """Sets the contact_filter of this RequestContactExport.
 
-        Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.  # noqa: E501
+        Set the filter for the contacts to be exported. For example, `{\"blacklisted\":true}` will export all the blacklisted contacts.  # noqa: E501
 
         :param contact_filter: The contact_filter of this RequestContactExport.  # noqa: E501
         :type: object

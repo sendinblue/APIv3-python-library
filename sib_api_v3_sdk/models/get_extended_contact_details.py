@@ -38,6 +38,7 @@ class GetExtendedContactDetails(object):
         'id': 'int',
         'email_blacklisted': 'bool',
         'sms_blacklisted': 'bool',
+        'created_at': 'datetime',
         'modified_at': 'datetime',
         'list_ids': 'list[int]',
         'list_unsubscribed': 'list[int]',
@@ -50,6 +51,7 @@ class GetExtendedContactDetails(object):
         'id': 'id',
         'email_blacklisted': 'emailBlacklisted',
         'sms_blacklisted': 'smsBlacklisted',
+        'created_at': 'createdAt',
         'modified_at': 'modifiedAt',
         'list_ids': 'listIds',
         'list_unsubscribed': 'listUnsubscribed',
@@ -57,13 +59,14 @@ class GetExtendedContactDetails(object):
         'statistics': 'statistics'
     }
 
-    def __init__(self, email=None, id=None, email_blacklisted=None, sms_blacklisted=None, modified_at=None, list_ids=None, list_unsubscribed=None, attributes=None, statistics=None):  # noqa: E501
+    def __init__(self, email=None, id=None, email_blacklisted=None, sms_blacklisted=None, created_at=None, modified_at=None, list_ids=None, list_unsubscribed=None, attributes=None, statistics=None):  # noqa: E501
         """GetExtendedContactDetails - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
         self._id = None
         self._email_blacklisted = None
         self._sms_blacklisted = None
+        self._created_at = None
         self._modified_at = None
         self._list_ids = None
         self._list_unsubscribed = None
@@ -75,6 +78,7 @@ class GetExtendedContactDetails(object):
         self.id = id
         self.email_blacklisted = email_blacklisted
         self.sms_blacklisted = sms_blacklisted
+        self.created_at = created_at
         self.modified_at = modified_at
         self.list_ids = list_ids
         if list_unsubscribed is not None:
@@ -181,6 +185,31 @@ class GetExtendedContactDetails(object):
             raise ValueError("Invalid value for `sms_blacklisted`, must not be `None`")  # noqa: E501
 
         self._sms_blacklisted = sms_blacklisted
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this GetExtendedContactDetails.  # noqa: E501
+
+        Creation UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
+
+        :return: The created_at of this GetExtendedContactDetails.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this GetExtendedContactDetails.
+
+        Creation UTC date-time of the contact (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
+
+        :param created_at: The created_at of this GetExtendedContactDetails.  # noqa: E501
+        :type: datetime
+        """
+        if created_at is None:
+            raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
+
+        self._created_at = created_at
 
     @property
     def modified_at(self):

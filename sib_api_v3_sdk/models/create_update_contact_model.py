@@ -51,7 +51,7 @@ class CreateUpdateContactModel(object):
     def id(self):
         """Gets the id of this CreateUpdateContactModel.  # noqa: E501
 
-        ID of the object created  # noqa: E501
+        ID of the contact when a new contact is created  # noqa: E501
 
         :return: The id of this CreateUpdateContactModel.  # noqa: E501
         :rtype: int
@@ -62,7 +62,7 @@ class CreateUpdateContactModel(object):
     def id(self, id):
         """Sets the id of this CreateUpdateContactModel.
 
-        ID of the object created  # noqa: E501
+        ID of the contact when a new contact is created  # noqa: E501
 
         :param id: The id of this CreateUpdateContactModel.  # noqa: E501
         :type: int

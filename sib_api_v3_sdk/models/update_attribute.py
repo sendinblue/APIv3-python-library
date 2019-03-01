@@ -81,7 +81,7 @@ class UpdateAttribute(object):
     def enumeration(self):
         """Gets the enumeration of this UpdateAttribute.  # noqa: E501
 
-        List of the values and labels that the attribute can take. Use only if the attribute's category is \"category\". For example, [{'value':1, 'label':'male'}, {'value':2, 'label':'female'}]  # noqa: E501
+        List of the values and labels that the attribute can take. Use only if the attribute's category is \"category\". For example, `[{\"value\":1, \"label\":\"male\"}, {\"value\":2, \"label\":\"female\"}]`  # noqa: E501
 
         :return: The enumeration of this UpdateAttribute.  # noqa: E501
         :rtype: list[UpdateAttributeEnumeration]
@@ -92,7 +92,7 @@ class UpdateAttribute(object):
     def enumeration(self, enumeration):
         """Sets the enumeration of this UpdateAttribute.
 
-        List of the values and labels that the attribute can take. Use only if the attribute's category is \"category\". For example, [{'value':1, 'label':'male'}, {'value':2, 'label':'female'}]  # noqa: E501
+        List of the values and labels that the attribute can take. Use only if the attribute's category is \"category\". For example, `[{\"value\":1, \"label\":\"male\"}, {\"value\":2, \"label\":\"female\"}]`  # noqa: E501
 
         :param enumeration: The enumeration of this UpdateAttribute.  # noqa: E501
         :type: list[UpdateAttributeEnumeration]
