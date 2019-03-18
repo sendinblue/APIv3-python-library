@@ -130,7 +130,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sms_campaign**
-> GetSmsCampaign get_sms_campaign(campaign_id, get_sms_campaign)
+> GetSmsCampaign get_sms_campaign(campaign_id)
 
 Get an SMS campaign
 
@@ -156,11 +156,10 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | id of the SMS campaign
-get_sms_campaign = sib_api_v3_sdk.GetSmsCampaign() # GetSmsCampaign | Values to update an SMS Campaign
 
 try:
     # Get an SMS campaign
-    api_response = api_instance.get_sms_campaign(campaign_id, get_sms_campaign)
+    api_response = api_instance.get_sms_campaign(campaign_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SMSCampaignsApi->get_sms_campaign: %s\n" % e)
@@ -171,7 +170,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| id of the SMS campaign | 
- **get_sms_campaign** | [**GetSmsCampaign**](GetSmsCampaign.md)| Values to update an SMS Campaign | 
 
 ### Return type
 

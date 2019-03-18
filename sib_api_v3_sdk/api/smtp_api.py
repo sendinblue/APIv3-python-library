@@ -331,8 +331,8 @@ class SMTPApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param date start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
-        :param date end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
+        :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
+        :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Tag of the emails
         :return: GetAggregatedReport
@@ -355,8 +355,8 @@ class SMTPApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param date start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
-        :param date end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
+        :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
+        :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Tag of the emails
         :return: GetAggregatedReport
@@ -438,8 +438,8 @@ class SMTPApi(object):
         :param async bool
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
-        :param date start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
-        :param date end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
+        :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
+        :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str email: Filter the report for a specific email addresses
         :param str event: Filter the report for a specific event type
@@ -468,8 +468,8 @@ class SMTPApi(object):
         :param async bool
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
-        :param date start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
-        :param date end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
+        :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
+        :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str email: Filter the report for a specific email addresses
         :param str event: Filter the report for a specific event type
@@ -569,8 +569,8 @@ class SMTPApi(object):
         :param async bool
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document on the page
-        :param date start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
-        :param date end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
+        :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
+        :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Tag of the emails
         :return: GetReports
@@ -595,8 +595,8 @@ class SMTPApi(object):
         :param async bool
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document on the page
-        :param date start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
-        :param date end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
+        :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
+        :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Tag of the emails
         :return: GetReports

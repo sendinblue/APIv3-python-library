@@ -215,8 +215,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 tag = 'tag_example' # str | Tag of the emails (optional)
 
@@ -232,8 +232,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | **date**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
- **end_date** | **date**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
+ **start_date** | **str**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
  **tag** | **str**| Tag of the emails | [optional] 
 
@@ -280,8 +280,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 50 # int | Number limitation for the result returned (optional) (default to 50)
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
-start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
-end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
+start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
+end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 email = 'email_example' # str | Filter the report for a specific email addresses (optional)
 event = 'event_example' # str | Filter the report for a specific event type (optional)
@@ -303,8 +303,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number limitation for the result returned | [optional] [default to 50]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
- **start_date** | **date**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
- **end_date** | **date**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
+ **start_date** | **str**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
  **email** | **str**| Filter the report for a specific email addresses | [optional] 
  **event** | **str**| Filter the report for a specific event type | [optional] 
@@ -355,8 +355,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 50 # int | Number of documents returned per page (optional) (default to 50)
 offset = 0 # int | Index of the first document on the page (optional) (default to 0)
-start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
-end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
+start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
+end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 tag = 'tag_example' # str | Tag of the emails (optional)
 
@@ -374,8 +374,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
- **start_date** | **date**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) | [optional] 
- **end_date** | **date**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional] 
+ **start_date** | **str**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional] 
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
  **tag** | **str**| Tag of the emails | [optional] 
 

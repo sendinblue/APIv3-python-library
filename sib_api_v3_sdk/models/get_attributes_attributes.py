@@ -143,7 +143,7 @@ class GetAttributesAttributes(object):
         :param type: The type of this GetAttributesAttributes.  # noqa: E501
         :type: str
         """
-        allowed_values = ["text", "date", "float", "id"]  # noqa: E501
+        allowed_values = ["text", "date", "float", "id", "boolean"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

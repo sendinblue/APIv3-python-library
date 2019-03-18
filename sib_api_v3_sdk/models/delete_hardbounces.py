@@ -31,8 +31,8 @@ class DeleteHardbounces(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'start_date': 'date',
-        'end_date': 'date',
+        'start_date': 'str',
+        'end_date': 'str',
         'contact_email': 'str'
     }
 
@@ -64,7 +64,7 @@ class DeleteHardbounces(object):
         Starting date (YYYY-MM-DD) of the time period for deletion. The hardbounces occurred after this date will be deleted. Must be less than or equal to the endDate  # noqa: E501
 
         :return: The start_date of this DeleteHardbounces.  # noqa: E501
-        :rtype: date
+        :rtype: str
         """
         return self._start_date
 
@@ -75,7 +75,7 @@ class DeleteHardbounces(object):
         Starting date (YYYY-MM-DD) of the time period for deletion. The hardbounces occurred after this date will be deleted. Must be less than or equal to the endDate  # noqa: E501
 
         :param start_date: The start_date of this DeleteHardbounces.  # noqa: E501
-        :type: date
+        :type: str
         """
 
         self._start_date = start_date
@@ -87,7 +87,7 @@ class DeleteHardbounces(object):
         Ending date (YYYY-MM-DD) of the time period for deletion. The hardbounces until this date will be deleted. Must be greater than or equal to the startDate  # noqa: E501
 
         :return: The end_date of this DeleteHardbounces.  # noqa: E501
-        :rtype: date
+        :rtype: str
         """
         return self._end_date
 
@@ -98,7 +98,7 @@ class DeleteHardbounces(object):
         Ending date (YYYY-MM-DD) of the time period for deletion. The hardbounces until this date will be deleted. Must be greater than or equal to the startDate  # noqa: E501
 
         :param end_date: The end_date of this DeleteHardbounces.  # noqa: E501
-        :type: date
+        :type: str
         """
 
         self._end_date = end_date

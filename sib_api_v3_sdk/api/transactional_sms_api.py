@@ -43,8 +43,8 @@ class TransactionalSMSApi(object):
 
         :param async bool
         :param int limit: Number of documents per page
-        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+        :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int offset: Index of the first document of the page
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str phone_number: Filter the report for a specific phone number
@@ -71,8 +71,8 @@ class TransactionalSMSApi(object):
 
         :param async bool
         :param int limit: Number of documents per page
-        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+        :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int offset: Index of the first document of the page
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str phone_number: Filter the report for a specific phone number
@@ -165,8 +165,8 @@ class TransactionalSMSApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+        :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with startDate and endDate
         :param str tag: Filter on a tag
         :return: GetTransacAggregatedSmsReport
@@ -189,8 +189,8 @@ class TransactionalSMSApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+        :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with startDate and endDate
         :param str tag: Filter on a tag
         :return: GetTransacAggregatedSmsReport
@@ -270,8 +270,8 @@ class TransactionalSMSApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+        :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Filter on a tag
         :return: GetTransacSmsReport
@@ -294,8 +294,8 @@ class TransactionalSMSApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
+        :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Filter on a tag
         :return: GetTransacSmsReport
