@@ -37,8 +37,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.TransactionalSMSApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 50 # int | Number of documents per page (optional) (default to 50)
-start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 phone_number = 'phone_number_example' # str | Filter the report for a specific phone number (optional)
@@ -58,8 +58,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
- **start_date** | **date**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional] 
- **end_date** | **date**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional] 
+ **start_date** | **str**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional] 
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
  **phone_number** | **str**| Filter the report for a specific phone number | [optional] 
@@ -107,8 +107,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.TransactionalSMSApi(sib_api_v3_sdk.ApiClient(configuration))
-start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
 tag = 'tag_example' # str | Filter on a tag (optional)
 
@@ -124,8 +124,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | **date**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional] 
- **end_date** | **date**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional] 
+ **start_date** | **str**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional] 
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with startDate and endDate | [optional] 
  **tag** | **str**| Filter on a tag | [optional] 
 
@@ -170,8 +170,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.TransactionalSMSApi(sib_api_v3_sdk.ApiClient(configuration))
-start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
-end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
+start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
+end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 tag = 'tag_example' # str | Filter on a tag (optional)
 
@@ -187,8 +187,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | **date**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional] 
- **end_date** | **date**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional] 
+ **start_date** | **str**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional] 
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
  **tag** | **str**| Filter on a tag | [optional] 
 
