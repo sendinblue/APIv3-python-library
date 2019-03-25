@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**get_process**](ProcessApi.md#get_process) | **GET** /processes/{processId} | Return the informations for a process
 [**get_processes**](ProcessApi.md#get_processes) | **GET** /processes | Return all the processes for your account
 
-
 # **get_process**
 > GetProcess get_process(process_id)
 
@@ -34,7 +33,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ProcessApi(sib_api_v3_sdk.ApiClient(configuration))
-process_id = 789 # int | Id of the process
+process_id = 56 # int | Id of the process
 
 try:
     # Return the informations for a process
@@ -48,7 +47,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **process_id** | **int**| Id of the process | 
+ **process_id** | [**int**](.md)| Id of the process | 
 
 ### Return type
 
@@ -60,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -91,8 +90,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ProcessApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 10 # int | Number limitation for the result returned (optional) (default to 10)
-offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
+limit = 56 # int | Number limitation for the result returned (optional)
+offset = 56 # int | Beginning point in the list to retrieve from. (optional)
 
 try:
     # Return all the processes for your account
@@ -106,8 +105,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number limitation for the result returned | [optional] [default to 10]
- **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
+ **limit** | [**int**](.md)| Number limitation for the result returned | [optional] 
+ **offset** | [**int**](.md)| Beginning point in the list to retrieve from. | [optional] 
 
 ### Return type
 
@@ -119,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
