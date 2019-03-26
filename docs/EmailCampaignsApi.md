@@ -15,9 +15,8 @@ Method | HTTP request | Description
 [**update_campaign_status**](EmailCampaignsApi.md#update_campaign_status) | **PUT** /emailCampaigns/{campaignId}/status | Update a campaign status
 [**update_email_campaign**](EmailCampaignsApi.md#update_email_campaign) | **PUT** /emailCampaigns/{campaignId} | Update a campaign
 
-
 # **create_email_campaign**
-> CreateModel create_email_campaign(email_campaigns)
+> CreateModel create_email_campaign(body)
 
 Create an email campaign
 
@@ -42,11 +41,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-email_campaigns = sib_api_v3_sdk.CreateEmailCampaign() # CreateEmailCampaign | Values to create a campaign
+body = sib_api_v3_sdk.CreateEmailCampaign() # CreateEmailCampaign | Values to create a campaign
 
 try:
     # Create an email campaign
-    api_response = api_instance.create_email_campaign(email_campaigns)
+    api_response = api_instance.create_email_campaign(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->create_email_campaign: %s\n" % e)
@@ -56,7 +55,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email_campaigns** | [**CreateEmailCampaign**](CreateEmailCampaign.md)| Values to create a campaign | 
+ **body** | [**CreateEmailCampaign**](CreateEmailCampaign.md)| Values to create a campaign | 
 
 ### Return type
 
@@ -99,7 +98,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-campaign_id = 789 # int | id of the campaign
+campaign_id = 56 # int | id of the campaign
 
 try:
     # Delete an email campaign
@@ -112,7 +111,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| id of the campaign | 
+ **campaign_id** | [**int**](.md)| id of the campaign | 
 
 ### Return type
 
@@ -124,13 +123,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **email_export_recipients**
-> CreatedProcessId email_export_recipients(campaign_id, recipient_export=recipient_export)
+> CreatedProcessId email_export_recipients(campaign_id, body=body)
 
 Export the recipients of a campaign
 
@@ -155,12 +154,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-campaign_id = 789 # int | Id of the campaign
-recipient_export = sib_api_v3_sdk.EmailExportRecipients() # EmailExportRecipients | Values to send for a recipient export request (optional)
+campaign_id = 56 # int | Id of the campaign
+body = sib_api_v3_sdk.EmailExportRecipients() # EmailExportRecipients | Values to send for a recipient export request (optional)
 
 try:
     # Export the recipients of a campaign
-    api_response = api_instance.email_export_recipients(campaign_id, recipient_export=recipient_export)
+    api_response = api_instance.email_export_recipients(campaign_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->email_export_recipients: %s\n" % e)
@@ -170,8 +169,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Id of the campaign | 
- **recipient_export** | [**EmailExportRecipients**](EmailExportRecipients.md)| Values to send for a recipient export request | [optional] 
+ **campaign_id** | [**int**](.md)| Id of the campaign | 
+ **body** | [**EmailExportRecipients**](EmailExportRecipients.md)| Values to send for a recipient export request | [optional] 
 
 ### Return type
 
@@ -214,7 +213,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-campaign_id = 789 # int | Id of the campaign
+campaign_id = 56 # int | Id of the campaign
 
 try:
     # Get campaign informations
@@ -228,7 +227,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Id of the campaign | 
+ **campaign_id** | [**int**](.md)| Id of the campaign | 
 
 ### Return type
 
@@ -240,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -273,10 +272,10 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 type = 'type_example' # str | Filter on the type of the campaigns (optional)
 status = 'status_example' # str | Filter on the status of the campaign (optional)
-start_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
-end_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
-limit = 500 # int | Number of documents per page (optional) (default to 500)
-offset = 0 # int | Index of the first document in the page (optional) (default to 0)
+start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
+end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
+limit = 56 # int | Number of documents per page (optional)
+offset = 56 # int | Index of the first document in the page (optional)
 
 try:
     # Return all your created campaigns
@@ -290,12 +289,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **str**| Filter on the type of the campaigns | [optional] 
- **status** | **str**| Filter on the status of the campaign | [optional] 
- **start_date** | **datetime**| Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
- **end_date** | **datetime**| Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
- **limit** | **int**| Number of documents per page | [optional] [default to 500]
- **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
+ **type** | [**str**](.md)| Filter on the type of the campaigns | [optional] 
+ **status** | [**str**](.md)| Filter on the status of the campaign | [optional] 
+ **start_date** | [**str**](.md)| Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#x27;status&#x27; not passed and if passed is set to &#x27;sent&#x27; ) | [optional] 
+ **end_date** | [**str**](.md)| Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#x27;status&#x27; not passed and if passed is set to &#x27;sent&#x27; ) | [optional] 
+ **limit** | [**int**](.md)| Number of documents per page | [optional] 
+ **offset** | [**int**](.md)| Index of the first document in the page | [optional] 
 
 ### Return type
 
@@ -307,8 +306,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, applications/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -338,7 +337,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-campaign_id = 789 # int | Id of the campaign
+campaign_id = 56 # int | Id of the campaign
 
 try:
     # Send an email campaign id of the campaign immediately
@@ -351,7 +350,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Id of the campaign | 
+ **campaign_id** | [**int**](.md)| Id of the campaign | 
 
 ### Return type
 
@@ -363,13 +362,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_report**
-> send_report(campaign_id, send_report)
+> send_report(body, campaign_id)
 
 Send the report of a campaigns
 
@@ -396,12 +395,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-campaign_id = 789 # int | Id of the campaign
-send_report = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
+body = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
+campaign_id = 56 # int | Id of the campaign
 
 try:
     # Send the report of a campaigns
-    api_instance.send_report(campaign_id, send_report)
+    api_instance.send_report(body, campaign_id)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->send_report: %s\n" % e)
 ```
@@ -410,8 +409,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Id of the campaign | 
- **send_report** | [**SendReport**](SendReport.md)| Values for send a report | 
+ **body** | [**SendReport**](SendReport.md)| Values for send a report | 
+ **campaign_id** | [**int**](.md)| Id of the campaign | 
 
 ### Return type
 
@@ -429,7 +428,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_test_email**
-> send_test_email(campaign_id, email_to)
+> send_test_email(body, campaign_id)
 
 Send an email campaign to your test list
 
@@ -454,12 +453,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-campaign_id = 789 # int | Id of the campaign
-email_to = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
+body = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
+campaign_id = 56 # int | Id of the campaign
 
 try:
     # Send an email campaign to your test list
-    api_instance.send_test_email(campaign_id, email_to)
+    api_instance.send_test_email(body, campaign_id)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->send_test_email: %s\n" % e)
 ```
@@ -468,8 +467,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Id of the campaign | 
- **email_to** | [**SendTestEmail**](SendTestEmail.md)|  | 
+ **body** | [**SendTestEmail**](SendTestEmail.md)|  | 
+ **campaign_id** | [**int**](.md)| Id of the campaign | 
 
 ### Return type
 
@@ -487,7 +486,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_campaign_status**
-> update_campaign_status(campaign_id, status)
+> update_campaign_status(body, campaign_id)
 
 Update a campaign status
 
@@ -512,12 +511,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-campaign_id = 789 # int | Id of the campaign
-status = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign
+body = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign
+campaign_id = 56 # int | Id of the campaign
 
 try:
     # Update a campaign status
-    api_instance.update_campaign_status(campaign_id, status)
+    api_instance.update_campaign_status(body, campaign_id)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->update_campaign_status: %s\n" % e)
 ```
@@ -526,8 +525,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Id of the campaign | 
- **status** | [**UpdateCampaignStatus**](UpdateCampaignStatus.md)| Status of the campaign | 
+ **body** | [**UpdateCampaignStatus**](UpdateCampaignStatus.md)| Status of the campaign | 
+ **campaign_id** | [**int**](.md)| Id of the campaign | 
 
 ### Return type
 
@@ -545,7 +544,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_email_campaign**
-> update_email_campaign(campaign_id, email_campaign)
+> update_email_campaign(body, campaign_id)
 
 Update a campaign
 
@@ -570,12 +569,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-campaign_id = 789 # int | Id of the campaign
-email_campaign = sib_api_v3_sdk.UpdateEmailCampaign() # UpdateEmailCampaign | Values to update a campaign
+body = sib_api_v3_sdk.UpdateEmailCampaign() # UpdateEmailCampaign | Values to update a campaign
+campaign_id = 56 # int | Id of the campaign
 
 try:
     # Update a campaign
-    api_instance.update_email_campaign(campaign_id, email_campaign)
+    api_instance.update_email_campaign(body, campaign_id)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->update_email_campaign: %s\n" % e)
 ```
@@ -584,8 +583,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Id of the campaign | 
- **email_campaign** | [**UpdateEmailCampaign**](UpdateEmailCampaign.md)| Values to update a campaign | 
+ **body** | [**UpdateEmailCampaign**](UpdateEmailCampaign.md)| Values to update a campaign | 
+ **campaign_id** | [**int**](.md)| Id of the campaign | 
 
 ### Return type
 
