@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from api.attributes_api import AttributesApi  # noqa: E501
+from sib_api_v3_sdk.api.attributes_api import AttributesApi  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestAttributesApi(unittest.TestCase):
     """AttributesApi unit test stubs"""
 
     def setUp(self):
-        self.api = api.attributes_api.AttributesApi()  # noqa: E501
+        self.api = sib_api_v3_sdk.api.attributes_api.AttributesApi()  # noqa: E501
 
     def tearDown(self):
         pass

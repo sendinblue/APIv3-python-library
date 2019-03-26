@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from models.get_smtp_template_overview import GetSmtpTemplateOverview  # noqa: E501
+from sib_api_v3_sdk.models.get_smtp_template_overview import GetSmtpTemplateOverview  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 

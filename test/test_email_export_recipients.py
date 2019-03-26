@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from models.email_export_recipients import EmailExportRecipients  # noqa: E501
+from sib_api_v3_sdk.models.email_export_recipients import EmailExportRecipients  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 

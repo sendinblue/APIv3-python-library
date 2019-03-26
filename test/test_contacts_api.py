@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from api.contacts_api import ContactsApi  # noqa: E501
+from sib_api_v3_sdk.api.contacts_api import ContactsApi  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestContactsApi(unittest.TestCase):
     """ContactsApi unit test stubs"""
 
     def setUp(self):
-        self.api = api.contacts_api.ContactsApi()  # noqa: E501
+        self.api = sib_api_v3_sdk.api.contacts_api.ContactsApi()  # noqa: E501
 
     def tearDown(self):
         pass

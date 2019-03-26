@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from api.senders_api import SendersApi  # noqa: E501
+from sib_api_v3_sdk.api.senders_api import SendersApi  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestSendersApi(unittest.TestCase):
     """SendersApi unit test stubs"""
 
     def setUp(self):
-        self.api = api.senders_api.SendersApi()  # noqa: E501
+        self.api = sib_api_v3_sdk.api.senders_api.SendersApi()  # noqa: E501
 
     def tearDown(self):
         pass

@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from models.remaining_credit_model import RemainingCreditModel  # noqa: E501
+from sib_api_v3_sdk.models.remaining_credit_model import RemainingCreditModel  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 

@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from api.email_campaigns_api import EmailCampaignsApi  # noqa: E501
+from sib_api_v3_sdk.api.email_campaigns_api import EmailCampaignsApi  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestEmailCampaignsApi(unittest.TestCase):
     """EmailCampaignsApi unit test stubs"""
 
     def setUp(self):
-        self.api = api.email_campaigns_api.EmailCampaignsApi()  # noqa: E501
+        self.api = sib_api_v3_sdk.api.email_campaigns_api.EmailCampaignsApi()  # noqa: E501
 
     def tearDown(self):
         pass

@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from api.reseller_api import ResellerApi  # noqa: E501
+from sib_api_v3_sdk.api.reseller_api import ResellerApi  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestResellerApi(unittest.TestCase):
     """ResellerApi unit test stubs"""
 
     def setUp(self):
-        self.api = api.reseller_api.ResellerApi()  # noqa: E501
+        self.api = sib_api_v3_sdk.api.reseller_api.ResellerApi()  # noqa: E501
 
     def tearDown(self):
         pass

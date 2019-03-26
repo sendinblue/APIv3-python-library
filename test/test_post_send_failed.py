@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from models.post_send_failed import PostSendFailed  # noqa: E501
+from sib_api_v3_sdk.models.post_send_failed import PostSendFailed  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
