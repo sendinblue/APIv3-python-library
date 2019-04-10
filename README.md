@@ -14,7 +14,7 @@ For more information, please visit [https://account.sendinblue.com/support](http
 
 ## Requirements.
 
-Python 2.7 and 3.4+
+Compatible from Python version 2.7 to 3.5
 
 ## Installation & Usage
 ### pip install
