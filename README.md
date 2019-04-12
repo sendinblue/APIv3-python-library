@@ -1,3 +1,5 @@
+**Latest stable version is: https://github.com/sendinblue/APIv3-python-library/tree/v4.2.2**
+
 # SendinBlue's API v3 Python Library
 
 SendinBlue's API exposes the entire SendinBlue features via a standardized programmatic interface. Please refer to the full [documentation](https://developers.sendinblue.com) to learn more.
