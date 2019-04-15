@@ -31,8 +31,9 @@ Method | HTTP request | Description
 [**update_folder**](ContactsApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a contact folder
 [**update_list**](ContactsApi.md#update_list) | **PUT** /contacts/lists/{listId} | Update a list
 
+
 # **add_contact_to_list**
-> PostContactInfo add_contact_to_list(body, list_id)
+> PostContactInfo add_contact_to_list(list_id, contact_emails)
 
 Add existing contacts to a list
 
@@ -57,12 +58,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.AddContactToList() # AddContactToList | Emails addresses of the contacts
-list_id = 56 # int | Id of the list
+list_id = 789 # int | Id of the list
+contact_emails = sib_api_v3_sdk.AddContactToList() # AddContactToList | Emails addresses of the contacts
 
 try:
     # Add existing contacts to a list
-    api_response = api_instance.add_contact_to_list(body, list_id)
+    api_response = api_instance.add_contact_to_list(list_id, contact_emails)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->add_contact_to_list: %s\n" % e)
@@ -72,8 +73,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddContactToList**](AddContactToList.md)| Emails addresses of the contacts | 
- **list_id** | [**int**](.md)| Id of the list | 
+ **list_id** | **int**| Id of the list | 
+ **contact_emails** | [**AddContactToList**](AddContactToList.md)| Emails addresses of the contacts | 
 
 ### Return type
 
@@ -91,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_attribute**
-> create_attribute(body, attribute_category, attribute_name)
+> create_attribute(attribute_category, attribute_name, create_attribute)
 
 Creates contact attribute
 
@@ -116,13 +117,13 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the attribute
+create_attribute = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 
 try:
     # Creates contact attribute
-    api_instance.create_attribute(body, attribute_category, attribute_name)
+    api_instance.create_attribute(attribute_category, attribute_name, create_attribute)
 except ApiException as e:
     print("Exception when calling ContactsApi->create_attribute: %s\n" % e)
 ```
@@ -131,9 +132,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAttribute**](CreateAttribute.md)| Values to create an attribute | 
- **attribute_category** | [**str**](.md)| Category of the attribute | 
- **attribute_name** | [**str**](.md)| Name of the attribute | 
+ **attribute_category** | **str**| Category of the attribute | 
+ **attribute_name** | **str**| Name of the attribute | 
+ **create_attribute** | [**CreateAttribute**](CreateAttribute.md)| Values to create an attribute | 
 
 ### Return type
 
@@ -151,7 +152,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_contact**
-> CreateUpdateContactModel create_contact(body)
+> CreateUpdateContactModel create_contact(create_contact)
 
 Create a contact
 
@@ -176,11 +177,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateContact() # CreateContact | Values to create a contact
+create_contact = sib_api_v3_sdk.CreateContact() # CreateContact | Values to create a contact
 
 try:
     # Create a contact
-    api_response = api_instance.create_contact(body)
+    api_response = api_instance.create_contact(create_contact)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->create_contact: %s\n" % e)
@@ -190,7 +191,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateContact**](CreateContact.md)| Values to create a contact | 
+ **create_contact** | [**CreateContact**](CreateContact.md)| Values to create a contact | 
 
 ### Return type
 
@@ -208,7 +209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_folder**
-> CreateModel create_folder(body)
+> CreateModel create_folder(create_folder)
 
 Create a folder
 
@@ -233,11 +234,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
+create_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try:
     # Create a folder
-    api_response = api_instance.create_folder(body)
+    api_response = api_instance.create_folder(create_folder)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->create_folder: %s\n" % e)
@@ -247,7 +248,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
+ **create_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
@@ -265,7 +266,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_list**
-> CreateModel create_list(body)
+> CreateModel create_list(create_list)
 
 Create a list
 
@@ -290,11 +291,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateList() # CreateList | Values to create a list
+create_list = sib_api_v3_sdk.CreateList() # CreateList | Values to create a list
 
 try:
     # Create a list
-    api_response = api_instance.create_list(body)
+    api_response = api_instance.create_list(create_list)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->create_list: %s\n" % e)
@@ -304,7 +305,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateList**](CreateList.md)| Values to create a list | 
+ **create_list** | [**CreateList**](CreateList.md)| Values to create a list | 
 
 ### Return type
 
@@ -361,8 +362,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attribute_category** | [**str**](.md)| Category of the attribute | 
- **attribute_name** | [**str**](.md)| Name of the existing attribute | 
+ **attribute_category** | **str**| Category of the attribute | 
+ **attribute_name** | **str**| Name of the existing attribute | 
 
 ### Return type
 
@@ -374,7 +375,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -418,7 +419,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | [**str**](.md)| Email (urlencoded) of the contact | 
+ **email** | **str**| Email (urlencoded) of the contact | 
 
 ### Return type
 
@@ -430,7 +431,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -461,7 +462,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-folder_id = 56 # int | Id of the folder
+folder_id = 789 # int | Id of the folder
 
 try:
     # Delete a folder (and all its lists)
@@ -474,7 +475,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | [**int**](.md)| Id of the folder | 
+ **folder_id** | **int**| Id of the folder | 
 
 ### Return type
 
@@ -486,7 +487,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -517,7 +518,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-list_id = 56 # int | Id of the list
+list_id = 789 # int | Id of the list
 
 try:
     # Delete a list
@@ -530,7 +531,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | [**int**](.md)| Id of the list | 
+ **list_id** | **int**| Id of the list | 
 
 ### Return type
 
@@ -542,7 +543,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -595,7 +596,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -640,7 +641,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | [**str**](.md)| Email (urlencoded) of the contact | 
+ **email** | **str**| Email (urlencoded) of the contact | 
 
 ### Return type
 
@@ -652,7 +653,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -697,7 +698,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | [**str**](.md)| Email address (urlencoded) of the contact | 
+ **email** | **str**| Email address (urlencoded) of the contact | 
 
 ### Return type
 
@@ -709,7 +710,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -740,9 +741,9 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 56 # int | Number of documents per page (optional)
-offset = 56 # int | Index of the first document of the page (optional)
-modified_since = 'modified_since_example' # str | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
+limit = 50 # int | Number of documents per page (optional) (default to 50)
+offset = 0 # int | Index of the first document of the page (optional) (default to 0)
+modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
 
 try:
     # Get all the contacts
@@ -756,9 +757,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**int**](.md)| Number of documents per page | [optional] 
- **offset** | [**int**](.md)| Index of the first document of the page | [optional] 
- **modified_since** | [**str**](.md)| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
+ **limit** | **int**| Number of documents per page | [optional] [default to 50]
+ **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
+ **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
 
 ### Return type
 
@@ -770,7 +771,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -801,10 +802,10 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-list_id = 56 # int | Id of the list
-modified_since = 'modified_since_example' # str | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
-limit = 56 # int | Number of documents per page (optional)
-offset = 56 # int | Index of the first document of the page (optional)
+list_id = 789 # int | Id of the list
+modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
+limit = 50 # int | Number of documents per page (optional) (default to 50)
+offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
 try:
     # Get the contacts in a list
@@ -818,10 +819,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | [**int**](.md)| Id of the list | 
- **modified_since** | [**str**](.md)| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
- **limit** | [**int**](.md)| Number of documents per page | [optional] 
- **offset** | [**int**](.md)| Index of the first document of the page | [optional] 
+ **list_id** | **int**| Id of the list | 
+ **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
+ **limit** | **int**| Number of documents per page | [optional] [default to 50]
+ **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
 ### Return type
 
@@ -833,7 +834,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -864,7 +865,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-folder_id = 56 # int | id of the folder
+folder_id = 789 # int | id of the folder
 
 try:
     # Returns folder details
@@ -878,7 +879,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | [**int**](.md)| id of the folder | 
+ **folder_id** | **int**| id of the folder | 
 
 ### Return type
 
@@ -890,7 +891,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -921,9 +922,9 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-folder_id = 56 # int | Id of the folder
-limit = 56 # int | Number of documents per page (optional)
-offset = 56 # int | Index of the first document of the page (optional)
+folder_id = 789 # int | Id of the folder
+limit = 10 # int | Number of documents per page (optional) (default to 10)
+offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
 try:
     # Get the lists in a folder
@@ -937,9 +938,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | [**int**](.md)| Id of the folder | 
- **limit** | [**int**](.md)| Number of documents per page | [optional] 
- **offset** | [**int**](.md)| Index of the first document of the page | [optional] 
+ **folder_id** | **int**| Id of the folder | 
+ **limit** | **int**| Number of documents per page | [optional] [default to 10]
+ **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
 ### Return type
 
@@ -951,7 +952,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -982,8 +983,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 56 # int | Number of documents per page
-offset = 56 # int | Index of the first document of the page
+limit = 10 # int | Number of documents per page (default to 10)
+offset = 0 # int | Index of the first document of the page (default to 0)
 
 try:
     # Get all the folders
@@ -997,8 +998,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**int**](.md)| Number of documents per page | 
- **offset** | [**int**](.md)| Index of the first document of the page | 
+ **limit** | **int**| Number of documents per page | [default to 10]
+ **offset** | **int**| Index of the first document of the page | [default to 0]
 
 ### Return type
 
@@ -1010,7 +1011,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1041,7 +1042,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-list_id = 56 # int | Id of the list
+list_id = 789 # int | Id of the list
 
 try:
     # Get the details of a list
@@ -1055,7 +1056,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **list_id** | [**int**](.md)| Id of the list | 
+ **list_id** | **int**| Id of the list | 
 
 ### Return type
 
@@ -1067,7 +1068,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1098,8 +1099,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 56 # int | Number of documents per page (optional)
-offset = 56 # int | Index of the first document of the page (optional)
+limit = 10 # int | Number of documents per page (optional) (default to 10)
+offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
 try:
     # Get all the lists
@@ -1113,8 +1114,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**int**](.md)| Number of documents per page | [optional] 
- **offset** | [**int**](.md)| Index of the first document of the page | [optional] 
+ **limit** | **int**| Number of documents per page | [optional] [default to 10]
+ **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
 ### Return type
 
@@ -1126,13 +1127,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **import_contacts**
-> CreatedProcessId import_contacts(body)
+> CreatedProcessId import_contacts(request_contact_import)
 
 Import contacts
 
@@ -1159,11 +1160,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.RequestContactImport() # RequestContactImport | Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
+request_contact_import = sib_api_v3_sdk.RequestContactImport() # RequestContactImport | Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
 
 try:
     # Import contacts
-    api_response = api_instance.import_contacts(body)
+    api_response = api_instance.import_contacts(request_contact_import)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->import_contacts: %s\n" % e)
@@ -1173,7 +1174,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RequestContactImport**](RequestContactImport.md)| Values to import contacts in Sendinblue. To know more about the expected format, please have a look at &#x60;&#x60;https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns&#x60;&#x60; | 
+ **request_contact_import** | [**RequestContactImport**](RequestContactImport.md)| Values to import contacts in Sendinblue. To know more about the expected format, please have a look at &#x60;&#x60;https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns&#x60;&#x60; | 
 
 ### Return type
 
@@ -1191,7 +1192,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_contact_from_list**
-> PostContactInfo remove_contact_from_list(body, list_id)
+> PostContactInfo remove_contact_from_list(list_id, contact_emails)
 
 Remove existing contacts from a list
 
@@ -1216,12 +1217,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.RemoveContactFromList() # RemoveContactFromList | Emails adresses of the contact
-list_id = 56 # int | Id of the list
+list_id = 789 # int | Id of the list
+contact_emails = sib_api_v3_sdk.RemoveContactFromList() # RemoveContactFromList | Emails adresses of the contact
 
 try:
     # Remove existing contacts from a list
-    api_response = api_instance.remove_contact_from_list(body, list_id)
+    api_response = api_instance.remove_contact_from_list(list_id, contact_emails)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->remove_contact_from_list: %s\n" % e)
@@ -1231,8 +1232,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RemoveContactFromList**](RemoveContactFromList.md)| Emails adresses of the contact | 
- **list_id** | [**int**](.md)| Id of the list | 
+ **list_id** | **int**| Id of the list | 
+ **contact_emails** | [**RemoveContactFromList**](RemoveContactFromList.md)| Emails adresses of the contact | 
 
 ### Return type
 
@@ -1250,7 +1251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **request_contact_export**
-> CreatedProcessId request_contact_export(body)
+> CreatedProcessId request_contact_export(request_contact_export)
 
 Export contacts
 
@@ -1277,11 +1278,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.RequestContactExport() # RequestContactExport | Values to request a contact export
+request_contact_export = sib_api_v3_sdk.RequestContactExport() # RequestContactExport | Values to request a contact export
 
 try:
     # Export contacts
-    api_response = api_instance.request_contact_export(body)
+    api_response = api_instance.request_contact_export(request_contact_export)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->request_contact_export: %s\n" % e)
@@ -1291,7 +1292,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RequestContactExport**](RequestContactExport.md)| Values to request a contact export | 
+ **request_contact_export** | [**RequestContactExport**](RequestContactExport.md)| Values to request a contact export | 
 
 ### Return type
 
@@ -1309,7 +1310,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_attribute**
-> update_attribute(body, attribute_category, attribute_name)
+> update_attribute(attribute_category, attribute_name, update_attribute)
 
 Updates contact attribute
 
@@ -1334,13 +1335,13 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the existing attribute
+update_attribute = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 
 try:
     # Updates contact attribute
-    api_instance.update_attribute(body, attribute_category, attribute_name)
+    api_instance.update_attribute(attribute_category, attribute_name, update_attribute)
 except ApiException as e:
     print("Exception when calling ContactsApi->update_attribute: %s\n" % e)
 ```
@@ -1349,9 +1350,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAttribute**](UpdateAttribute.md)| Values to update an attribute | 
- **attribute_category** | [**str**](.md)| Category of the attribute | 
- **attribute_name** | [**str**](.md)| Name of the existing attribute | 
+ **attribute_category** | **str**| Category of the attribute | 
+ **attribute_name** | **str**| Name of the existing attribute | 
+ **update_attribute** | [**UpdateAttribute**](UpdateAttribute.md)| Values to update an attribute | 
 
 ### Return type
 
@@ -1369,7 +1370,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_contact**
-> update_contact(body, email)
+> update_contact(email, update_contact)
 
 Updates a contact
 
@@ -1394,12 +1395,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.UpdateContact() # UpdateContact | Values to update a contact
 email = 'email_example' # str | Email (urlencoded) of the contact
+update_contact = sib_api_v3_sdk.UpdateContact() # UpdateContact | Values to update a contact
 
 try:
     # Updates a contact
-    api_instance.update_contact(body, email)
+    api_instance.update_contact(email, update_contact)
 except ApiException as e:
     print("Exception when calling ContactsApi->update_contact: %s\n" % e)
 ```
@@ -1408,8 +1409,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateContact**](UpdateContact.md)| Values to update a contact | 
- **email** | [**str**](.md)| Email (urlencoded) of the contact | 
+ **email** | **str**| Email (urlencoded) of the contact | 
+ **update_contact** | [**UpdateContact**](UpdateContact.md)| Values to update a contact | 
 
 ### Return type
 
@@ -1427,7 +1428,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_folder**
-> update_folder(body, folder_id)
+> update_folder(folder_id, update_folder)
 
 Update a contact folder
 
@@ -1452,12 +1453,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
-folder_id = 56 # int | Id of the folder
+folder_id = 789 # int | Id of the folder
+update_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try:
     # Update a contact folder
-    api_instance.update_folder(body, folder_id)
+    api_instance.update_folder(folder_id, update_folder)
 except ApiException as e:
     print("Exception when calling ContactsApi->update_folder: %s\n" % e)
 ```
@@ -1466,8 +1467,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
- **folder_id** | [**int**](.md)| Id of the folder | 
+ **folder_id** | **int**| Id of the folder | 
+ **update_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
@@ -1485,7 +1486,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_list**
-> update_list(body, list_id)
+> update_list(list_id, update_list)
 
 Update a list
 
@@ -1510,12 +1511,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.UpdateList() # UpdateList | Values to update a list
-list_id = 56 # int | Id of the list
+list_id = 789 # int | Id of the list
+update_list = sib_api_v3_sdk.UpdateList() # UpdateList | Values to update a list
 
 try:
     # Update a list
-    api_instance.update_list(body, list_id)
+    api_instance.update_list(list_id, update_list)
 except ApiException as e:
     print("Exception when calling ContactsApi->update_list: %s\n" % e)
 ```
@@ -1524,8 +1525,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateList**](UpdateList.md)| Values to update a list | 
- **list_id** | [**int**](.md)| Id of the list | 
+ **list_id** | **int**| Id of the list | 
+ **update_list** | [**UpdateList**](UpdateList.md)| Values to update a list | 
 
 ### Return type
 

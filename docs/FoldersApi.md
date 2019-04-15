@@ -11,8 +11,9 @@ Method | HTTP request | Description
 [**get_folders**](FoldersApi.md#get_folders) | **GET** /contacts/folders | Get all the folders
 [**update_folder**](FoldersApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a contact folder
 
+
 # **create_folder**
-> CreateModel create_folder(body)
+> CreateModel create_folder(create_folder)
 
 Create a folder
 
@@ -37,11 +38,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
+create_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try:
     # Create a folder
-    api_response = api_instance.create_folder(body)
+    api_response = api_instance.create_folder(create_folder)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FoldersApi->create_folder: %s\n" % e)
@@ -51,7 +52,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
+ **create_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
@@ -94,7 +95,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
-folder_id = 56 # int | Id of the folder
+folder_id = 789 # int | Id of the folder
 
 try:
     # Delete a folder (and all its lists)
@@ -107,7 +108,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | [**int**](.md)| Id of the folder | 
+ **folder_id** | **int**| Id of the folder | 
 
 ### Return type
 
@@ -119,7 +120,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -150,7 +151,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
-folder_id = 56 # int | id of the folder
+folder_id = 789 # int | id of the folder
 
 try:
     # Returns folder details
@@ -164,7 +165,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | [**int**](.md)| id of the folder | 
+ **folder_id** | **int**| id of the folder | 
 
 ### Return type
 
@@ -176,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -207,9 +208,9 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
-folder_id = 56 # int | Id of the folder
-limit = 56 # int | Number of documents per page (optional)
-offset = 56 # int | Index of the first document of the page (optional)
+folder_id = 789 # int | Id of the folder
+limit = 10 # int | Number of documents per page (optional) (default to 10)
+offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
 try:
     # Get the lists in a folder
@@ -223,9 +224,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | [**int**](.md)| Id of the folder | 
- **limit** | [**int**](.md)| Number of documents per page | [optional] 
- **offset** | [**int**](.md)| Index of the first document of the page | [optional] 
+ **folder_id** | **int**| Id of the folder | 
+ **limit** | **int**| Number of documents per page | [optional] [default to 10]
+ **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
 
 ### Return type
 
@@ -237,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -268,8 +269,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 56 # int | Number of documents per page
-offset = 56 # int | Index of the first document of the page
+limit = 10 # int | Number of documents per page (default to 10)
+offset = 0 # int | Index of the first document of the page (default to 0)
 
 try:
     # Get all the folders
@@ -283,8 +284,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**int**](.md)| Number of documents per page | 
- **offset** | [**int**](.md)| Index of the first document of the page | 
+ **limit** | **int**| Number of documents per page | [default to 10]
+ **offset** | **int**| Index of the first document of the page | [default to 0]
 
 ### Return type
 
@@ -296,13 +297,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_folder**
-> update_folder(body, folder_id)
+> update_folder(folder_id, update_folder)
 
 Update a contact folder
 
@@ -327,12 +328,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
-folder_id = 56 # int | Id of the folder
+folder_id = 789 # int | Id of the folder
+update_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try:
     # Update a contact folder
-    api_instance.update_folder(body, folder_id)
+    api_instance.update_folder(folder_id, update_folder)
 except ApiException as e:
     print("Exception when calling FoldersApi->update_folder: %s\n" % e)
 ```
@@ -341,8 +342,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
- **folder_id** | [**int**](.md)| Id of the folder | 
+ **folder_id** | **int**| Id of the folder | 
+ **update_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
