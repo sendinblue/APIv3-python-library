@@ -10,8 +10,9 @@ Method | HTTP request | Description
 [**get_webhooks**](WebhooksApi.md#get_webhooks) | **GET** /webhooks | Get all webhooks
 [**update_webhook**](WebhooksApi.md#update_webhook) | **PUT** /webhooks/{webhookId} | Update a webhook
 
+
 # **create_webhook**
-> CreateModel create_webhook(body)
+> CreateModel create_webhook(create_webhook)
 
 Create a webhook
 
@@ -36,11 +37,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateWebhook() # CreateWebhook | Values to create a webhook
+create_webhook = sib_api_v3_sdk.CreateWebhook() # CreateWebhook | Values to create a webhook
 
 try:
     # Create a webhook
-    api_response = api_instance.create_webhook(body)
+    api_response = api_instance.create_webhook(create_webhook)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WebhooksApi->create_webhook: %s\n" % e)
@@ -50,7 +51,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateWebhook**](CreateWebhook.md)| Values to create a webhook | 
+ **create_webhook** | [**CreateWebhook**](CreateWebhook.md)| Values to create a webhook | 
 
 ### Return type
 
@@ -93,7 +94,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
-webhook_id = 56 # int | Id of the webhook
+webhook_id = 789 # int | Id of the webhook
 
 try:
     # Delete a webhook
@@ -106,7 +107,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | [**int**](.md)| Id of the webhook | 
+ **webhook_id** | **int**| Id of the webhook | 
 
 ### Return type
 
@@ -118,7 +119,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -149,7 +150,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
-webhook_id = 56 # int | Id of the webhook
+webhook_id = 789 # int | Id of the webhook
 
 try:
     # Get a webhook details
@@ -163,7 +164,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | [**int**](.md)| Id of the webhook | 
+ **webhook_id** | **int**| Id of the webhook | 
 
 ### Return type
 
@@ -175,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -206,7 +207,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
-type = 'type_example' # str | Filter on webhook type (optional)
+type = 'transactional' # str | Filter on webhook type (optional) (default to transactional)
 
 try:
     # Get all webhooks
@@ -220,7 +221,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**str**](.md)| Filter on webhook type | [optional] 
+ **type** | **str**| Filter on webhook type | [optional] [default to transactional]
 
 ### Return type
 
@@ -232,13 +233,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_webhook**
-> update_webhook(body, webhook_id)
+> update_webhook(webhook_id, update_webhook)
 
 Update a webhook
 
@@ -263,12 +264,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.UpdateWebhook() # UpdateWebhook | Values to update a webhook
-webhook_id = 56 # int | Id of the webhook
+webhook_id = 789 # int | Id of the webhook
+update_webhook = sib_api_v3_sdk.UpdateWebhook() # UpdateWebhook | Values to update a webhook
 
 try:
     # Update a webhook
-    api_instance.update_webhook(body, webhook_id)
+    api_instance.update_webhook(webhook_id, update_webhook)
 except ApiException as e:
     print("Exception when calling WebhooksApi->update_webhook: %s\n" % e)
 ```
@@ -277,8 +278,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateWebhook**](UpdateWebhook.md)| Values to update a webhook | 
- **webhook_id** | [**int**](.md)| Id of the webhook | 
+ **webhook_id** | **int**| Id of the webhook | 
+ **update_webhook** | [**UpdateWebhook**](UpdateWebhook.md)| Values to update a webhook | 
 
 ### Return type
 

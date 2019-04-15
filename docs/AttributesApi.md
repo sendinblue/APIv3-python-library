@@ -9,8 +9,9 @@ Method | HTTP request | Description
 [**get_attributes**](AttributesApi.md#get_attributes) | **GET** /contacts/attributes | Lists all attributes
 [**update_attribute**](AttributesApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
 
+
 # **create_attribute**
-> create_attribute(body, attribute_category, attribute_name)
+> create_attribute(attribute_category, attribute_name, create_attribute)
 
 Creates contact attribute
 
@@ -35,13 +36,13 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the attribute
+create_attribute = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 
 try:
     # Creates contact attribute
-    api_instance.create_attribute(body, attribute_category, attribute_name)
+    api_instance.create_attribute(attribute_category, attribute_name, create_attribute)
 except ApiException as e:
     print("Exception when calling AttributesApi->create_attribute: %s\n" % e)
 ```
@@ -50,9 +51,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAttribute**](CreateAttribute.md)| Values to create an attribute | 
- **attribute_category** | [**str**](.md)| Category of the attribute | 
- **attribute_name** | [**str**](.md)| Name of the attribute | 
+ **attribute_category** | **str**| Category of the attribute | 
+ **attribute_name** | **str**| Name of the attribute | 
+ **create_attribute** | [**CreateAttribute**](CreateAttribute.md)| Values to create an attribute | 
 
 ### Return type
 
@@ -109,8 +110,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attribute_category** | [**str**](.md)| Category of the attribute | 
- **attribute_name** | [**str**](.md)| Name of the existing attribute | 
+ **attribute_category** | **str**| Category of the attribute | 
+ **attribute_name** | **str**| Name of the existing attribute | 
 
 ### Return type
 
@@ -122,7 +123,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -175,13 +176,13 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_attribute**
-> update_attribute(body, attribute_category, attribute_name)
+> update_attribute(attribute_category, attribute_name, update_attribute)
 
 Updates contact attribute
 
@@ -206,13 +207,13 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the existing attribute
+update_attribute = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 
 try:
     # Updates contact attribute
-    api_instance.update_attribute(body, attribute_category, attribute_name)
+    api_instance.update_attribute(attribute_category, attribute_name, update_attribute)
 except ApiException as e:
     print("Exception when calling AttributesApi->update_attribute: %s\n" % e)
 ```
@@ -221,9 +222,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateAttribute**](UpdateAttribute.md)| Values to update an attribute | 
- **attribute_category** | [**str**](.md)| Category of the attribute | 
- **attribute_name** | [**str**](.md)| Name of the existing attribute | 
+ **attribute_category** | **str**| Category of the attribute | 
+ **attribute_name** | **str**| Name of the existing attribute | 
+ **update_attribute** | [**UpdateAttribute**](UpdateAttribute.md)| Values to update an attribute | 
 
 ### Return type
 

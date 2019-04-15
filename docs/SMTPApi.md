@@ -17,8 +17,9 @@ Method | HTTP request | Description
 [**send_transac_email**](SMTPApi.md#send_transac_email) | **POST** /smtp/email | Send a transactional email
 [**update_smtp_template**](SMTPApi.md#update_smtp_template) | **PUT** /smtp/templates/{templateId} | Updates an smtp templates
 
+
 # **create_smtp_template**
-> CreateModel create_smtp_template(body)
+> CreateModel create_smtp_template(smtp_template)
 
 Create an smtp template
 
@@ -43,11 +44,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.CreateSmtpTemplate() # CreateSmtpTemplate | values to update in smtp template
+smtp_template = sib_api_v3_sdk.CreateSmtpTemplate() # CreateSmtpTemplate | values to update in smtp template
 
 try:
     # Create an smtp template
-    api_response = api_instance.create_smtp_template(body)
+    api_response = api_instance.create_smtp_template(smtp_template)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SMTPApi->create_smtp_template: %s\n" % e)
@@ -57,7 +58,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateSmtpTemplate**](CreateSmtpTemplate.md)| values to update in smtp template | 
+ **smtp_template** | [**CreateSmtpTemplate**](CreateSmtpTemplate.md)| values to update in smtp template | 
 
 ### Return type
 
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_hardbounces**
-> delete_hardbounces(body=body)
+> delete_hardbounces(delete_hardbounces=delete_hardbounces)
 
 Delete hardbounces
 
@@ -102,11 +103,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.DeleteHardbounces() # DeleteHardbounces | values to delete hardbounces (optional)
+delete_hardbounces = sib_api_v3_sdk.DeleteHardbounces() # DeleteHardbounces | values to delete hardbounces (optional)
 
 try:
     # Delete hardbounces
-    api_instance.delete_hardbounces(body=body)
+    api_instance.delete_hardbounces(delete_hardbounces=delete_hardbounces)
 except ApiException as e:
     print("Exception when calling SMTPApi->delete_hardbounces: %s\n" % e)
 ```
@@ -115,7 +116,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteHardbounces**](DeleteHardbounces.md)| values to delete hardbounces | [optional] 
+ **delete_hardbounces** | [**DeleteHardbounces**](DeleteHardbounces.md)| values to delete hardbounces | [optional] 
 
 ### Return type
 
@@ -158,7 +159,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-template_id = 56 # int | id of the template
+template_id = 789 # int | id of the template
 
 try:
     # Delete an inactive smtp template
@@ -171,7 +172,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_id** | [**int**](.md)| id of the template | 
+ **template_id** | **int**| id of the template | 
 
 ### Return type
 
@@ -183,7 +184,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -231,10 +232,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date** | [**str**](.md)| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
- **end_date** | [**str**](.md)| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
- **days** | [**int**](.md)| Number of days in the past including today (positive integer). Not compatible with &#x27;startDate&#x27; and &#x27;endDate&#x27; | [optional] 
- **tag** | [**str**](.md)| Tag of the emails | [optional] 
+ **start_date** | **str**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
+ **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
+ **tag** | **str**| Tag of the emails | [optional] 
 
 ### Return type
 
@@ -246,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -277,8 +278,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 56 # int | Number limitation for the result returned (optional)
-offset = 56 # int | Beginning point in the list to retrieve from. (optional)
+limit = 50 # int | Number limitation for the result returned (optional) (default to 50)
+offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
@@ -286,7 +287,7 @@ email = 'email_example' # str | Filter the report for a specific email addresses
 event = 'event_example' # str | Filter the report for a specific event type (optional)
 tags = 'tags_example' # str | Filter the report for tags (serialized and urlencoded array) (optional)
 message_id = 'message_id_example' # str | Filter on a specific message id (optional)
-template_id = 56 # int | Filter on a specific template id (optional)
+template_id = 789 # int | Filter on a specific template id (optional)
 
 try:
     # Get all your SMTP activity (unaggregated events)
@@ -300,16 +301,16 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**int**](.md)| Number limitation for the result returned | [optional] 
- **offset** | [**int**](.md)| Beginning point in the list to retrieve from. | [optional] 
- **start_date** | [**str**](.md)| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
- **end_date** | [**str**](.md)| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
- **days** | [**int**](.md)| Number of days in the past including today (positive integer). Not compatible with &#x27;startDate&#x27; and &#x27;endDate&#x27; | [optional] 
- **email** | [**str**](.md)| Filter the report for a specific email addresses | [optional] 
- **event** | [**str**](.md)| Filter the report for a specific event type | [optional] 
- **tags** | [**str**](.md)| Filter the report for tags (serialized and urlencoded array) | [optional] 
- **message_id** | [**str**](.md)| Filter on a specific message id | [optional] 
- **template_id** | [**int**](.md)| Filter on a specific template id | [optional] 
+ **limit** | **int**| Number limitation for the result returned | [optional] [default to 50]
+ **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
+ **start_date** | **str**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 
+ **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
+ **email** | **str**| Filter the report for a specific email addresses | [optional] 
+ **event** | **str**| Filter the report for a specific event type | [optional] 
+ **tags** | **str**| Filter the report for tags (serialized and urlencoded array) | [optional] 
+ **message_id** | **str**| Filter on a specific message id | [optional] 
+ **template_id** | **int**| Filter on a specific template id | [optional] 
 
 ### Return type
 
@@ -321,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -352,8 +353,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 56 # int | Number of documents returned per page (optional)
-offset = 56 # int | Index of the first document on the page (optional)
+limit = 50 # int | Number of documents returned per page (optional) (default to 50)
+offset = 0 # int | Index of the first document on the page (optional) (default to 0)
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
@@ -371,12 +372,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | [**int**](.md)| Number of documents returned per page | [optional] 
- **offset** | [**int**](.md)| Index of the first document on the page | [optional] 
- **start_date** | [**str**](.md)| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) | [optional] 
- **end_date** | [**str**](.md)| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional] 
- **days** | [**int**](.md)| Number of days in the past including today (positive integer). Not compatible with &#x27;startDate&#x27; and &#x27;endDate&#x27; | [optional] 
- **tag** | [**str**](.md)| Tag of the emails | [optional] 
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
+ **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
+ **start_date** | **str**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional] 
+ **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
+ **tag** | **str**| Tag of the emails | [optional] 
 
 ### Return type
 
@@ -388,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -419,7 +420,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-template_id = 56 # int | id of the template
+template_id = 789 # int | id of the template
 
 try:
     # Returns the template informations
@@ -433,7 +434,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_id** | [**int**](.md)| id of the template | 
+ **template_id** | **int**| id of the template | 
 
 ### Return type
 
@@ -445,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -476,9 +477,9 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-template_status = True # bool | Filter on the status of the template. Active = true, inactive = false (optional)
-limit = 56 # int | Number of documents returned per page (optional)
-offset = 56 # int | Index of the first document in the page (optional)
+template_status = true # bool | Filter on the status of the template. Active = true, inactive = false (optional)
+limit = 50 # int | Number of documents returned per page (optional) (default to 50)
+offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 
 try:
     # Get the list of SMTP templates
@@ -492,9 +493,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_status** | [**bool**](.md)| Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false | [optional] 
- **limit** | [**int**](.md)| Number of documents returned per page | [optional] 
- **offset** | [**int**](.md)| Index of the first document in the page | [optional] 
+ **template_status** | **bool**| Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false | [optional] 
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
+ **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
 
 ### Return type
 
@@ -506,13 +507,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_template**
-> SendTemplateEmail send_template(body, template_id)
+> SendTemplateEmail send_template(template_id, send_email)
 
 Send a template
 
@@ -539,12 +540,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.SendEmail() # SendEmail | 
-template_id = 56 # int | Id of the template
+template_id = 789 # int | Id of the template
+send_email = sib_api_v3_sdk.SendEmail() # SendEmail | 
 
 try:
     # Send a template
-    api_response = api_instance.send_template(body, template_id)
+    api_response = api_instance.send_template(template_id, send_email)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SMTPApi->send_template: %s\n" % e)
@@ -554,8 +555,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendEmail**](SendEmail.md)|  | 
- **template_id** | [**int**](.md)| Id of the template | 
+ **template_id** | **int**| Id of the template | 
+ **send_email** | [**SendEmail**](SendEmail.md)|  | 
 
 ### Return type
 
@@ -573,7 +574,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_test_template**
-> send_test_template(body, template_id)
+> send_test_template(template_id, send_test_email)
 
 Send a template to your test list
 
@@ -598,12 +599,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
-template_id = 56 # int | Id of the template
+template_id = 789 # int | Id of the template
+send_test_email = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
 
 try:
     # Send a template to your test list
-    api_instance.send_test_template(body, template_id)
+    api_instance.send_test_template(template_id, send_test_email)
 except ApiException as e:
     print("Exception when calling SMTPApi->send_test_template: %s\n" % e)
 ```
@@ -612,8 +613,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendTestEmail**](SendTestEmail.md)|  | 
- **template_id** | [**int**](.md)| Id of the template | 
+ **template_id** | **int**| Id of the template | 
+ **send_test_email** | [**SendTestEmail**](SendTestEmail.md)|  | 
 
 ### Return type
 
@@ -631,7 +632,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_transac_email**
-> CreateSmtpEmail send_transac_email(body)
+> CreateSmtpEmail send_transac_email(send_smtp_email)
 
 Send a transactional email
 
@@ -656,11 +657,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.SendSmtpEmail() # SendSmtpEmail | Values to send a transactional email
+send_smtp_email = sib_api_v3_sdk.SendSmtpEmail() # SendSmtpEmail | Values to send a transactional email
 
 try:
     # Send a transactional email
-    api_response = api_instance.send_transac_email(body)
+    api_response = api_instance.send_transac_email(send_smtp_email)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SMTPApi->send_transac_email: %s\n" % e)
@@ -670,7 +671,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendSmtpEmail**](SendSmtpEmail.md)| Values to send a transactional email | 
+ **send_smtp_email** | [**SendSmtpEmail**](SendSmtpEmail.md)| Values to send a transactional email | 
 
 ### Return type
 
@@ -688,7 +689,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_smtp_template**
-> update_smtp_template(body, template_id)
+> update_smtp_template(template_id, smtp_template)
 
 Updates an smtp templates
 
@@ -713,12 +714,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-body = sib_api_v3_sdk.UpdateSmtpTemplate() # UpdateSmtpTemplate | values to update in smtp template
-template_id = 56 # int | id of the template
+template_id = 789 # int | id of the template
+smtp_template = sib_api_v3_sdk.UpdateSmtpTemplate() # UpdateSmtpTemplate | values to update in smtp template
 
 try:
     # Updates an smtp templates
-    api_instance.update_smtp_template(body, template_id)
+    api_instance.update_smtp_template(template_id, smtp_template)
 except ApiException as e:
     print("Exception when calling SMTPApi->update_smtp_template: %s\n" % e)
 ```
@@ -727,8 +728,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateSmtpTemplate**](UpdateSmtpTemplate.md)| values to update in smtp template | 
- **template_id** | [**int**](.md)| id of the template | 
+ **template_id** | **int**| id of the template | 
+ **smtp_template** | [**UpdateSmtpTemplate**](UpdateSmtpTemplate.md)| values to update in smtp template | 
 
 ### Return type
 
