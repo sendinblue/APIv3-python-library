@@ -37,11 +37,11 @@ class ContactsApi(object):
         """Add existing contacts to a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_contact_to_list(list_id, contact_emails, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.add_contact_to_list(list_id, contact_emails, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :param AddContactToList contact_emails: Emails addresses of the contacts (required)
         :return: PostContactInfo
@@ -49,7 +49,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.add_contact_to_list_with_http_info(list_id, contact_emails, **kwargs)  # noqa: E501
         else:
             (data) = self.add_contact_to_list_with_http_info(list_id, contact_emails, **kwargs)  # noqa: E501
@@ -59,11 +59,11 @@ class ContactsApi(object):
         """Add existing contacts to a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_contact_to_list_with_http_info(list_id, contact_emails, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.add_contact_to_list_with_http_info(list_id, contact_emails, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :param AddContactToList contact_emails: Emails addresses of the contacts (required)
         :return: PostContactInfo
@@ -72,7 +72,7 @@ class ContactsApi(object):
         """
 
         all_params = ['list_id', 'contact_emails']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -132,7 +132,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='PostContactInfo',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -142,11 +142,11 @@ class ContactsApi(object):
         """Creates contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_attribute(attribute_category, attribute_name, create_attribute, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_attribute(attribute_category, attribute_name, create_attribute, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the attribute (required)
         :param CreateAttribute create_attribute: Values to create an attribute (required)
@@ -155,7 +155,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, **kwargs)  # noqa: E501
         else:
             (data) = self.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, **kwargs)  # noqa: E501
@@ -165,11 +165,11 @@ class ContactsApi(object):
         """Creates contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the attribute (required)
         :param CreateAttribute create_attribute: Values to create an attribute (required)
@@ -179,7 +179,7 @@ class ContactsApi(object):
         """
 
         all_params = ['attribute_category', 'attribute_name', 'create_attribute']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -245,7 +245,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -255,18 +255,18 @@ class ContactsApi(object):
         """Create a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_contact(create_contact, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_contact(create_contact, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateContact create_contact: Values to create a contact (required)
         :return: CreateUpdateContactModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.create_contact_with_http_info(create_contact, **kwargs)  # noqa: E501
         else:
             (data) = self.create_contact_with_http_info(create_contact, **kwargs)  # noqa: E501
@@ -276,11 +276,11 @@ class ContactsApi(object):
         """Create a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_contact_with_http_info(create_contact, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_contact_with_http_info(create_contact, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateContact create_contact: Values to create a contact (required)
         :return: CreateUpdateContactModel
                  If the method is called asynchronously,
@@ -288,7 +288,7 @@ class ContactsApi(object):
         """
 
         all_params = ['create_contact']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -342,7 +342,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='CreateUpdateContactModel',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -352,18 +352,18 @@ class ContactsApi(object):
         """Create a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_folder(create_folder, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_folder(create_folder, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateUpdateFolder create_folder: Name of the folder (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.create_folder_with_http_info(create_folder, **kwargs)  # noqa: E501
         else:
             (data) = self.create_folder_with_http_info(create_folder, **kwargs)  # noqa: E501
@@ -373,11 +373,11 @@ class ContactsApi(object):
         """Create a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_folder_with_http_info(create_folder, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_folder_with_http_info(create_folder, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateUpdateFolder create_folder: Name of the folder (required)
         :return: CreateModel
                  If the method is called asynchronously,
@@ -385,7 +385,7 @@ class ContactsApi(object):
         """
 
         all_params = ['create_folder']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -439,7 +439,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='CreateModel',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -449,18 +449,18 @@ class ContactsApi(object):
         """Create a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_list(create_list, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_list(create_list, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateList create_list: Values to create a list (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.create_list_with_http_info(create_list, **kwargs)  # noqa: E501
         else:
             (data) = self.create_list_with_http_info(create_list, **kwargs)  # noqa: E501
@@ -470,11 +470,11 @@ class ContactsApi(object):
         """Create a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_list_with_http_info(create_list, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_list_with_http_info(create_list, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateList create_list: Values to create a list (required)
         :return: CreateModel
                  If the method is called asynchronously,
@@ -482,7 +482,7 @@ class ContactsApi(object):
         """
 
         all_params = ['create_list']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -536,7 +536,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='CreateModel',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -546,11 +546,11 @@ class ContactsApi(object):
         """Deletes an attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_attribute(attribute_category, attribute_name, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_attribute(attribute_category, attribute_name, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the existing attribute (required)
         :return: None
@@ -558,7 +558,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_attribute_with_http_info(attribute_category, attribute_name, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_attribute_with_http_info(attribute_category, attribute_name, **kwargs)  # noqa: E501
@@ -568,11 +568,11 @@ class ContactsApi(object):
         """Deletes an attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_attribute_with_http_info(attribute_category, attribute_name, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_attribute_with_http_info(attribute_category, attribute_name, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the existing attribute (required)
         :return: None
@@ -581,7 +581,7 @@ class ContactsApi(object):
         """
 
         all_params = ['attribute_category', 'attribute_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -641,7 +641,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -651,18 +651,18 @@ class ContactsApi(object):
         """Deletes a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_contact(email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_contact(email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str email: Email (urlencoded) of the contact (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_contact_with_http_info(email, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_contact_with_http_info(email, **kwargs)  # noqa: E501
@@ -672,11 +672,11 @@ class ContactsApi(object):
         """Deletes a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_contact_with_http_info(email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_contact_with_http_info(email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str email: Email (urlencoded) of the contact (required)
         :return: None
                  If the method is called asynchronously,
@@ -684,7 +684,7 @@ class ContactsApi(object):
         """
 
         all_params = ['email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -738,7 +738,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -748,18 +748,18 @@ class ContactsApi(object):
         """Delete a folder (and all its lists)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_folder(folder_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_folder(folder_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int folder_id: Id of the folder (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_folder_with_http_info(folder_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_folder_with_http_info(folder_id, **kwargs)  # noqa: E501
@@ -769,11 +769,11 @@ class ContactsApi(object):
         """Delete a folder (and all its lists)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_folder_with_http_info(folder_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_folder_with_http_info(folder_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int folder_id: Id of the folder (required)
         :return: None
                  If the method is called asynchronously,
@@ -781,7 +781,7 @@ class ContactsApi(object):
         """
 
         all_params = ['folder_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -835,7 +835,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -845,18 +845,18 @@ class ContactsApi(object):
         """Delete a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_list(list_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_list(list_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_list_with_http_info(list_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_list_with_http_info(list_id, **kwargs)  # noqa: E501
@@ -866,11 +866,11 @@ class ContactsApi(object):
         """Delete a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_list_with_http_info(list_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_list_with_http_info(list_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :return: None
                  If the method is called asynchronously,
@@ -878,7 +878,7 @@ class ContactsApi(object):
         """
 
         all_params = ['list_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -932,7 +932,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -942,17 +942,17 @@ class ContactsApi(object):
         """Lists all attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_attributes(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_attributes(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :return: GetAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_attributes_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_attributes_with_http_info(**kwargs)  # noqa: E501
@@ -962,18 +962,18 @@ class ContactsApi(object):
         """Lists all attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_attributes_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_attributes_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :return: GetAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1021,7 +1021,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetAttributes',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1031,18 +1031,18 @@ class ContactsApi(object):
         """Retrieves contact informations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_contact_info(email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_contact_info(email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str email: Email (urlencoded) of the contact (required)
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_contact_info_with_http_info(email, **kwargs)  # noqa: E501
         else:
             (data) = self.get_contact_info_with_http_info(email, **kwargs)  # noqa: E501
@@ -1052,11 +1052,11 @@ class ContactsApi(object):
         """Retrieves contact informations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_contact_info_with_http_info(email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_contact_info_with_http_info(email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str email: Email (urlencoded) of the contact (required)
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
@@ -1064,7 +1064,7 @@ class ContactsApi(object):
         """
 
         all_params = ['email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1118,7 +1118,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetExtendedContactDetails',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1128,18 +1128,18 @@ class ContactsApi(object):
         """Get the campaigns statistics for a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_contact_stats(email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_contact_stats(email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str email: Email address (urlencoded) of the contact (required)
         :return: GetContactCampaignStats
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_contact_stats_with_http_info(email, **kwargs)  # noqa: E501
         else:
             (data) = self.get_contact_stats_with_http_info(email, **kwargs)  # noqa: E501
@@ -1149,11 +1149,11 @@ class ContactsApi(object):
         """Get the campaigns statistics for a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_contact_stats_with_http_info(email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_contact_stats_with_http_info(email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str email: Email address (urlencoded) of the contact (required)
         :return: GetContactCampaignStats
                  If the method is called asynchronously,
@@ -1161,7 +1161,7 @@ class ContactsApi(object):
         """
 
         all_params = ['email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1215,7 +1215,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetContactCampaignStats',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1225,11 +1225,11 @@ class ContactsApi(object):
         """Get all the contacts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_contacts(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_contacts(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
@@ -1238,7 +1238,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_contacts_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_contacts_with_http_info(**kwargs)  # noqa: E501
@@ -1248,11 +1248,11 @@ class ContactsApi(object):
         """Get all the contacts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_contacts_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_contacts_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
@@ -1262,7 +1262,7 @@ class ContactsApi(object):
         """
 
         all_params = ['limit', 'offset', 'modified_since']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1318,7 +1318,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetContacts',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1328,11 +1328,11 @@ class ContactsApi(object):
         """Get the contacts in a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_contacts_from_list(list_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_contacts_from_list(list_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param int limit: Number of documents per page
@@ -1342,7 +1342,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_contacts_from_list_with_http_info(list_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_contacts_from_list_with_http_info(list_id, **kwargs)  # noqa: E501
@@ -1352,11 +1352,11 @@ class ContactsApi(object):
         """Get the contacts in a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_contacts_from_list_with_http_info(list_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_contacts_from_list_with_http_info(list_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param int limit: Number of documents per page
@@ -1367,7 +1367,7 @@ class ContactsApi(object):
         """
 
         all_params = ['list_id', 'modified_since', 'limit', 'offset']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1429,7 +1429,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetContacts',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1439,18 +1439,18 @@ class ContactsApi(object):
         """Returns folder details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_folder(folder_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_folder(folder_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int folder_id: id of the folder (required)
         :return: GetFolder
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_folder_with_http_info(folder_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_folder_with_http_info(folder_id, **kwargs)  # noqa: E501
@@ -1460,11 +1460,11 @@ class ContactsApi(object):
         """Returns folder details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_folder_with_http_info(folder_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_folder_with_http_info(folder_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int folder_id: id of the folder (required)
         :return: GetFolder
                  If the method is called asynchronously,
@@ -1472,7 +1472,7 @@ class ContactsApi(object):
         """
 
         all_params = ['folder_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1526,7 +1526,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetFolder',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1536,11 +1536,11 @@ class ContactsApi(object):
         """Get the lists in a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_folder_lists(folder_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_folder_lists(folder_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
@@ -1549,7 +1549,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_folder_lists_with_http_info(folder_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_folder_lists_with_http_info(folder_id, **kwargs)  # noqa: E501
@@ -1559,11 +1559,11 @@ class ContactsApi(object):
         """Get the lists in a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_folder_lists_with_http_info(folder_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_folder_lists_with_http_info(folder_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
@@ -1573,7 +1573,7 @@ class ContactsApi(object):
         """
 
         all_params = ['folder_id', 'limit', 'offset']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1633,7 +1633,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetFolderLists',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1643,11 +1643,11 @@ class ContactsApi(object):
         """Get all the folders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_folders(limit, offset, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_folders(limit, offset, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents per page (required)
         :param int offset: Index of the first document of the page (required)
         :return: GetFolders
@@ -1655,7 +1655,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_folders_with_http_info(limit, offset, **kwargs)  # noqa: E501
         else:
             (data) = self.get_folders_with_http_info(limit, offset, **kwargs)  # noqa: E501
@@ -1665,11 +1665,11 @@ class ContactsApi(object):
         """Get all the folders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_folders_with_http_info(limit, offset, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_folders_with_http_info(limit, offset, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents per page (required)
         :param int offset: Index of the first document of the page (required)
         :return: GetFolders
@@ -1678,7 +1678,7 @@ class ContactsApi(object):
         """
 
         all_params = ['limit', 'offset']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1740,7 +1740,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetFolders',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1750,18 +1750,18 @@ class ContactsApi(object):
         """Get the details of a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_list(list_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_list(list_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :return: GetExtendedList
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_list_with_http_info(list_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_list_with_http_info(list_id, **kwargs)  # noqa: E501
@@ -1771,11 +1771,11 @@ class ContactsApi(object):
         """Get the details of a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_list_with_http_info(list_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_list_with_http_info(list_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :return: GetExtendedList
                  If the method is called asynchronously,
@@ -1783,7 +1783,7 @@ class ContactsApi(object):
         """
 
         all_params = ['list_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1837,7 +1837,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetExtendedList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1847,11 +1847,11 @@ class ContactsApi(object):
         """Get all the lists  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_lists(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_lists(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetLists
@@ -1859,7 +1859,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_lists_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_lists_with_http_info(**kwargs)  # noqa: E501
@@ -1869,11 +1869,11 @@ class ContactsApi(object):
         """Get all the lists  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_lists_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_lists_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :return: GetLists
@@ -1882,7 +1882,7 @@ class ContactsApi(object):
         """
 
         all_params = ['limit', 'offset']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1936,7 +1936,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='GetLists',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1947,18 +1947,18 @@ class ContactsApi(object):
 
         It returns the background process ID which on completion calls the notify URL that you have set in the input.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.import_contacts(request_contact_import, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.import_contacts(request_contact_import, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param RequestContactImport request_contact_import: Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns`` (required)
         :return: CreatedProcessId
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.import_contacts_with_http_info(request_contact_import, **kwargs)  # noqa: E501
         else:
             (data) = self.import_contacts_with_http_info(request_contact_import, **kwargs)  # noqa: E501
@@ -1969,11 +1969,11 @@ class ContactsApi(object):
 
         It returns the background process ID which on completion calls the notify URL that you have set in the input.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.import_contacts_with_http_info(request_contact_import, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.import_contacts_with_http_info(request_contact_import, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param RequestContactImport request_contact_import: Values to import contacts in Sendinblue. To know more about the expected format, please have a look at ``https://help.sendinblue.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns`` (required)
         :return: CreatedProcessId
                  If the method is called asynchronously,
@@ -1981,7 +1981,7 @@ class ContactsApi(object):
         """
 
         all_params = ['request_contact_import']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2035,7 +2035,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='CreatedProcessId',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2045,11 +2045,11 @@ class ContactsApi(object):
         """Remove existing contacts from a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.remove_contact_from_list(list_id, contact_emails, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.remove_contact_from_list(list_id, contact_emails, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :param RemoveContactFromList contact_emails: Emails adresses of the contact (required)
         :return: PostContactInfo
@@ -2057,7 +2057,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.remove_contact_from_list_with_http_info(list_id, contact_emails, **kwargs)  # noqa: E501
         else:
             (data) = self.remove_contact_from_list_with_http_info(list_id, contact_emails, **kwargs)  # noqa: E501
@@ -2067,11 +2067,11 @@ class ContactsApi(object):
         """Remove existing contacts from a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.remove_contact_from_list_with_http_info(list_id, contact_emails, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.remove_contact_from_list_with_http_info(list_id, contact_emails, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :param RemoveContactFromList contact_emails: Emails adresses of the contact (required)
         :return: PostContactInfo
@@ -2080,7 +2080,7 @@ class ContactsApi(object):
         """
 
         all_params = ['list_id', 'contact_emails']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2140,7 +2140,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='PostContactInfo',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2151,18 +2151,18 @@ class ContactsApi(object):
 
         It returns the background process ID which on completion calls the notify URL that you have set in the input. File will be available in csv.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.request_contact_export(request_contact_export, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.request_contact_export(request_contact_export, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param RequestContactExport request_contact_export: Values to request a contact export (required)
         :return: CreatedProcessId
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.request_contact_export_with_http_info(request_contact_export, **kwargs)  # noqa: E501
         else:
             (data) = self.request_contact_export_with_http_info(request_contact_export, **kwargs)  # noqa: E501
@@ -2173,11 +2173,11 @@ class ContactsApi(object):
 
         It returns the background process ID which on completion calls the notify URL that you have set in the input. File will be available in csv.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.request_contact_export_with_http_info(request_contact_export, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.request_contact_export_with_http_info(request_contact_export, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param RequestContactExport request_contact_export: Values to request a contact export (required)
         :return: CreatedProcessId
                  If the method is called asynchronously,
@@ -2185,7 +2185,7 @@ class ContactsApi(object):
         """
 
         all_params = ['request_contact_export']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2239,7 +2239,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type='CreatedProcessId',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2249,11 +2249,11 @@ class ContactsApi(object):
         """Updates contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_attribute(attribute_category, attribute_name, update_attribute, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_attribute(attribute_category, attribute_name, update_attribute, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the existing attribute (required)
         :param UpdateAttribute update_attribute: Values to update an attribute (required)
@@ -2262,7 +2262,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, **kwargs)  # noqa: E501
         else:
             (data) = self.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, **kwargs)  # noqa: E501
@@ -2272,11 +2272,11 @@ class ContactsApi(object):
         """Updates contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the existing attribute (required)
         :param UpdateAttribute update_attribute: Values to update an attribute (required)
@@ -2286,7 +2286,7 @@ class ContactsApi(object):
         """
 
         all_params = ['attribute_category', 'attribute_name', 'update_attribute']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2352,7 +2352,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2362,11 +2362,11 @@ class ContactsApi(object):
         """Updates a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_contact(email, update_contact, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_contact(email, update_contact, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str email: Email (urlencoded) of the contact (required)
         :param UpdateContact update_contact: Values to update a contact (required)
         :return: None
@@ -2374,7 +2374,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_contact_with_http_info(email, update_contact, **kwargs)  # noqa: E501
         else:
             (data) = self.update_contact_with_http_info(email, update_contact, **kwargs)  # noqa: E501
@@ -2384,11 +2384,11 @@ class ContactsApi(object):
         """Updates a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_contact_with_http_info(email, update_contact, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_contact_with_http_info(email, update_contact, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str email: Email (urlencoded) of the contact (required)
         :param UpdateContact update_contact: Values to update a contact (required)
         :return: None
@@ -2397,7 +2397,7 @@ class ContactsApi(object):
         """
 
         all_params = ['email', 'update_contact']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2457,7 +2457,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2467,11 +2467,11 @@ class ContactsApi(object):
         """Update a contact folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_folder(folder_id, update_folder, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_folder(folder_id, update_folder, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int folder_id: Id of the folder (required)
         :param CreateUpdateFolder update_folder: Name of the folder (required)
         :return: None
@@ -2479,7 +2479,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_folder_with_http_info(folder_id, update_folder, **kwargs)  # noqa: E501
         else:
             (data) = self.update_folder_with_http_info(folder_id, update_folder, **kwargs)  # noqa: E501
@@ -2489,11 +2489,11 @@ class ContactsApi(object):
         """Update a contact folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_folder_with_http_info(folder_id, update_folder, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_folder_with_http_info(folder_id, update_folder, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int folder_id: Id of the folder (required)
         :param CreateUpdateFolder update_folder: Name of the folder (required)
         :return: None
@@ -2502,7 +2502,7 @@ class ContactsApi(object):
         """
 
         all_params = ['folder_id', 'update_folder']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2562,7 +2562,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2572,11 +2572,11 @@ class ContactsApi(object):
         """Update a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_list(list_id, update_list, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_list(list_id, update_list, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :param UpdateList update_list: Values to update a list (required)
         :return: None
@@ -2584,7 +2584,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_list_with_http_info(list_id, update_list, **kwargs)  # noqa: E501
         else:
             (data) = self.update_list_with_http_info(list_id, update_list, **kwargs)  # noqa: E501
@@ -2594,11 +2594,11 @@ class ContactsApi(object):
         """Update a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_list_with_http_info(list_id, update_list, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_list_with_http_info(list_id, update_list, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int list_id: Id of the list (required)
         :param UpdateList update_list: Values to update a list (required)
         :return: None
@@ -2607,7 +2607,7 @@ class ContactsApi(object):
         """
 
         all_params = ['list_id', 'update_list']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2667,7 +2667,7 @@ class ContactsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

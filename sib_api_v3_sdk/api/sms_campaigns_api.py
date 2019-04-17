@@ -37,18 +37,18 @@ class SMSCampaignsApi(object):
         """Creates an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_sms_campaign(create_sms_campaign, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_sms_campaign(create_sms_campaign, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateSmsCampaign create_sms_campaign: Values to create an SMS Campaign (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.create_sms_campaign_with_http_info(create_sms_campaign, **kwargs)  # noqa: E501
         else:
             (data) = self.create_sms_campaign_with_http_info(create_sms_campaign, **kwargs)  # noqa: E501
@@ -58,11 +58,11 @@ class SMSCampaignsApi(object):
         """Creates an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_sms_campaign_with_http_info(create_sms_campaign, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_sms_campaign_with_http_info(create_sms_campaign, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateSmsCampaign create_sms_campaign: Values to create an SMS Campaign (required)
         :return: CreateModel
                  If the method is called asynchronously,
@@ -70,7 +70,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['create_sms_campaign']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -124,7 +124,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type='CreateModel',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -134,18 +134,18 @@ class SMSCampaignsApi(object):
         """Delete the SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_sms_campaign(campaign_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_sms_campaign(campaign_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the SMS campaign (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_sms_campaign_with_http_info(campaign_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_sms_campaign_with_http_info(campaign_id, **kwargs)  # noqa: E501
@@ -155,11 +155,11 @@ class SMSCampaignsApi(object):
         """Delete the SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_sms_campaign_with_http_info(campaign_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_sms_campaign_with_http_info(campaign_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the SMS campaign (required)
         :return: None
                  If the method is called asynchronously,
@@ -167,7 +167,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['campaign_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -221,7 +221,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -231,18 +231,18 @@ class SMSCampaignsApi(object):
         """Get an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sms_campaign(campaign_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_sms_campaign(campaign_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the SMS campaign (required)
         :return: GetSmsCampaign
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_sms_campaign_with_http_info(campaign_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_sms_campaign_with_http_info(campaign_id, **kwargs)  # noqa: E501
@@ -252,11 +252,11 @@ class SMSCampaignsApi(object):
         """Get an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sms_campaign_with_http_info(campaign_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_sms_campaign_with_http_info(campaign_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the SMS campaign (required)
         :return: GetSmsCampaign
                  If the method is called asynchronously,
@@ -264,7 +264,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['campaign_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -318,7 +318,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type='GetSmsCampaign',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -328,11 +328,11 @@ class SMSCampaignsApi(object):
         """Returns the informations for all your created SMS campaigns  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sms_campaigns(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_sms_campaigns(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str status: Status of campaign.
         :param datetime start_date: Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
@@ -343,7 +343,7 @@ class SMSCampaignsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_sms_campaigns_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_sms_campaigns_with_http_info(**kwargs)  # noqa: E501
@@ -353,11 +353,11 @@ class SMSCampaignsApi(object):
         """Returns the informations for all your created SMS campaigns  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sms_campaigns_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_sms_campaigns_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str status: Status of campaign.
         :param datetime start_date: Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
@@ -369,7 +369,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['status', 'start_date', 'end_date', 'limit', 'offset']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -429,7 +429,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type='GetSmsCampaigns',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -440,11 +440,11 @@ class SMSCampaignsApi(object):
 
         It returns the background process ID which on completion calls the notify URL that you have set in the input.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.request_sms_recipient_export(campaign_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.request_sms_recipient_export(campaign_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the campaign (required)
         :param RequestSmsRecipientExport recipient_export: Values to send for a recipient export request
         :return: CreatedProcessId
@@ -452,7 +452,7 @@ class SMSCampaignsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.request_sms_recipient_export_with_http_info(campaign_id, **kwargs)  # noqa: E501
         else:
             (data) = self.request_sms_recipient_export_with_http_info(campaign_id, **kwargs)  # noqa: E501
@@ -463,11 +463,11 @@ class SMSCampaignsApi(object):
 
         It returns the background process ID which on completion calls the notify URL that you have set in the input.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.request_sms_recipient_export_with_http_info(campaign_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.request_sms_recipient_export_with_http_info(campaign_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the campaign (required)
         :param RequestSmsRecipientExport recipient_export: Values to send for a recipient export request
         :return: CreatedProcessId
@@ -476,7 +476,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['campaign_id', 'recipient_export']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -532,7 +532,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type='CreatedProcessId',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -542,18 +542,18 @@ class SMSCampaignsApi(object):
         """Send your SMS campaign immediately  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_sms_campaign_now(campaign_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_sms_campaign_now(campaign_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the campaign (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.send_sms_campaign_now_with_http_info(campaign_id, **kwargs)  # noqa: E501
         else:
             (data) = self.send_sms_campaign_now_with_http_info(campaign_id, **kwargs)  # noqa: E501
@@ -563,11 +563,11 @@ class SMSCampaignsApi(object):
         """Send your SMS campaign immediately  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_sms_campaign_now_with_http_info(campaign_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_sms_campaign_now_with_http_info(campaign_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the campaign (required)
         :return: None
                  If the method is called asynchronously,
@@ -575,7 +575,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['campaign_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -629,7 +629,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -640,11 +640,11 @@ class SMSCampaignsApi(object):
 
         Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_sms_report(campaign_id, send_report, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_sms_report(campaign_id, send_report, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the campaign (required)
         :param SendReport send_report: Values for send a report (required)
         :return: None
@@ -652,7 +652,7 @@ class SMSCampaignsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.send_sms_report_with_http_info(campaign_id, send_report, **kwargs)  # noqa: E501
         else:
             (data) = self.send_sms_report_with_http_info(campaign_id, send_report, **kwargs)  # noqa: E501
@@ -663,11 +663,11 @@ class SMSCampaignsApi(object):
 
         Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_sms_report_with_http_info(campaign_id, send_report, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_sms_report_with_http_info(campaign_id, send_report, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the campaign (required)
         :param SendReport send_report: Values for send a report (required)
         :return: None
@@ -676,7 +676,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['campaign_id', 'send_report']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -736,7 +736,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -746,11 +746,11 @@ class SMSCampaignsApi(object):
         """Send an SMS  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_test_sms(campaign_id, phone_number, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_test_sms(campaign_id, phone_number, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: Id of the SMS campaign (required)
         :param SendTestSms phone_number: Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
         :return: None
@@ -758,7 +758,7 @@ class SMSCampaignsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.send_test_sms_with_http_info(campaign_id, phone_number, **kwargs)  # noqa: E501
         else:
             (data) = self.send_test_sms_with_http_info(campaign_id, phone_number, **kwargs)  # noqa: E501
@@ -768,11 +768,11 @@ class SMSCampaignsApi(object):
         """Send an SMS  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_test_sms_with_http_info(campaign_id, phone_number, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_test_sms_with_http_info(campaign_id, phone_number, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: Id of the SMS campaign (required)
         :param SendTestSms phone_number: Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted (required)
         :return: None
@@ -781,7 +781,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['campaign_id', 'phone_number']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -841,7 +841,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -851,11 +851,11 @@ class SMSCampaignsApi(object):
         """Updates an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_sms_campaign(campaign_id, update_sms_campaign, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_sms_campaign(campaign_id, update_sms_campaign, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the SMS campaign (required)
         :param UpdateSmsCampaign update_sms_campaign: Values to update an SMS Campaign (required)
         :return: None
@@ -863,7 +863,7 @@ class SMSCampaignsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_sms_campaign_with_http_info(campaign_id, update_sms_campaign, **kwargs)  # noqa: E501
         else:
             (data) = self.update_sms_campaign_with_http_info(campaign_id, update_sms_campaign, **kwargs)  # noqa: E501
@@ -873,11 +873,11 @@ class SMSCampaignsApi(object):
         """Updates an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_sms_campaign_with_http_info(campaign_id, update_sms_campaign, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_sms_campaign_with_http_info(campaign_id, update_sms_campaign, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the SMS campaign (required)
         :param UpdateSmsCampaign update_sms_campaign: Values to update an SMS Campaign (required)
         :return: None
@@ -886,7 +886,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['campaign_id', 'update_sms_campaign']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -946,7 +946,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -956,11 +956,11 @@ class SMSCampaignsApi(object):
         """Update the campaign status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_sms_campaign_status(campaign_id, status, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_sms_campaign_status(campaign_id, status, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the campaign (required)
         :param UpdateCampaignStatus status: Status of the campaign. (required)
         :return: None
@@ -968,7 +968,7 @@ class SMSCampaignsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_sms_campaign_status_with_http_info(campaign_id, status, **kwargs)  # noqa: E501
         else:
             (data) = self.update_sms_campaign_status_with_http_info(campaign_id, status, **kwargs)  # noqa: E501
@@ -978,11 +978,11 @@ class SMSCampaignsApi(object):
         """Update the campaign status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_sms_campaign_status_with_http_info(campaign_id, status, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_sms_campaign_status_with_http_info(campaign_id, status, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int campaign_id: id of the campaign (required)
         :param UpdateCampaignStatus status: Status of the campaign. (required)
         :return: None
@@ -991,7 +991,7 @@ class SMSCampaignsApi(object):
         """
 
         all_params = ['campaign_id', 'status']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1051,7 +1051,7 @@ class SMSCampaignsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

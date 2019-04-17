@@ -37,18 +37,18 @@ class WebhooksApi(object):
         """Create a webhook  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_webhook(create_webhook, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_webhook(create_webhook, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateWebhook create_webhook: Values to create a webhook (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.create_webhook_with_http_info(create_webhook, **kwargs)  # noqa: E501
         else:
             (data) = self.create_webhook_with_http_info(create_webhook, **kwargs)  # noqa: E501
@@ -58,11 +58,11 @@ class WebhooksApi(object):
         """Create a webhook  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_webhook_with_http_info(create_webhook, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_webhook_with_http_info(create_webhook, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateWebhook create_webhook: Values to create a webhook (required)
         :return: CreateModel
                  If the method is called asynchronously,
@@ -70,7 +70,7 @@ class WebhooksApi(object):
         """
 
         all_params = ['create_webhook']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -124,7 +124,7 @@ class WebhooksApi(object):
             files=local_var_files,
             response_type='CreateModel',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -134,18 +134,18 @@ class WebhooksApi(object):
         """Delete a webhook  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_webhook(webhook_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_webhook(webhook_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int webhook_id: Id of the webhook (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_webhook_with_http_info(webhook_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_webhook_with_http_info(webhook_id, **kwargs)  # noqa: E501
@@ -155,11 +155,11 @@ class WebhooksApi(object):
         """Delete a webhook  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_webhook_with_http_info(webhook_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_webhook_with_http_info(webhook_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int webhook_id: Id of the webhook (required)
         :return: None
                  If the method is called asynchronously,
@@ -167,7 +167,7 @@ class WebhooksApi(object):
         """
 
         all_params = ['webhook_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -221,7 +221,7 @@ class WebhooksApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -231,18 +231,18 @@ class WebhooksApi(object):
         """Get a webhook details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_webhook(webhook_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_webhook(webhook_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int webhook_id: Id of the webhook (required)
         :return: GetWebhook
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_webhook_with_http_info(webhook_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_webhook_with_http_info(webhook_id, **kwargs)  # noqa: E501
@@ -252,11 +252,11 @@ class WebhooksApi(object):
         """Get a webhook details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_webhook_with_http_info(webhook_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_webhook_with_http_info(webhook_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int webhook_id: Id of the webhook (required)
         :return: GetWebhook
                  If the method is called asynchronously,
@@ -264,7 +264,7 @@ class WebhooksApi(object):
         """
 
         all_params = ['webhook_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -318,7 +318,7 @@ class WebhooksApi(object):
             files=local_var_files,
             response_type='GetWebhook',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -328,18 +328,18 @@ class WebhooksApi(object):
         """Get all webhooks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_webhooks(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_webhooks(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str type: Filter on webhook type
         :return: GetWebhooks
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_webhooks_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_webhooks_with_http_info(**kwargs)  # noqa: E501
@@ -349,11 +349,11 @@ class WebhooksApi(object):
         """Get all webhooks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_webhooks_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_webhooks_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str type: Filter on webhook type
         :return: GetWebhooks
                  If the method is called asynchronously,
@@ -361,7 +361,7 @@ class WebhooksApi(object):
         """
 
         all_params = ['type']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -411,7 +411,7 @@ class WebhooksApi(object):
             files=local_var_files,
             response_type='GetWebhooks',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -421,11 +421,11 @@ class WebhooksApi(object):
         """Update a webhook  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_webhook(webhook_id, update_webhook, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_webhook(webhook_id, update_webhook, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int webhook_id: Id of the webhook (required)
         :param UpdateWebhook update_webhook: Values to update a webhook (required)
         :return: None
@@ -433,7 +433,7 @@ class WebhooksApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_webhook_with_http_info(webhook_id, update_webhook, **kwargs)  # noqa: E501
         else:
             (data) = self.update_webhook_with_http_info(webhook_id, update_webhook, **kwargs)  # noqa: E501
@@ -443,11 +443,11 @@ class WebhooksApi(object):
         """Update a webhook  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_webhook_with_http_info(webhook_id, update_webhook, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_webhook_with_http_info(webhook_id, update_webhook, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int webhook_id: Id of the webhook (required)
         :param UpdateWebhook update_webhook: Values to update a webhook (required)
         :return: None
@@ -456,7 +456,7 @@ class WebhooksApi(object):
         """
 
         all_params = ['webhook_id', 'update_webhook']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -516,7 +516,7 @@ class WebhooksApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

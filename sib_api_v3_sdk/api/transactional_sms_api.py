@@ -37,11 +37,11 @@ class TransactionalSMSApi(object):
         """Get all the SMS activity (unaggregated events)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sms_events(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_sms_events(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents per page
         :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
@@ -55,7 +55,7 @@ class TransactionalSMSApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_sms_events_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_sms_events_with_http_info(**kwargs)  # noqa: E501
@@ -65,11 +65,11 @@ class TransactionalSMSApi(object):
         """Get all the SMS activity (unaggregated events)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_sms_events_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_sms_events_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents per page
         :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
@@ -84,7 +84,7 @@ class TransactionalSMSApi(object):
         """
 
         all_params = ['limit', 'start_date', 'end_date', 'offset', 'days', 'phone_number', 'event', 'tags']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -150,7 +150,7 @@ class TransactionalSMSApi(object):
             files=local_var_files,
             response_type='GetSmsEventReport',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -160,11 +160,11 @@ class TransactionalSMSApi(object):
         """Get your SMS activity aggregated over a period of time  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_transac_aggregated_sms_report(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_transac_aggregated_sms_report(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with startDate and endDate
@@ -174,7 +174,7 @@ class TransactionalSMSApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_transac_aggregated_sms_report_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_transac_aggregated_sms_report_with_http_info(**kwargs)  # noqa: E501
@@ -184,11 +184,11 @@ class TransactionalSMSApi(object):
         """Get your SMS activity aggregated over a period of time  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_transac_aggregated_sms_report_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_transac_aggregated_sms_report_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with startDate and endDate
@@ -199,7 +199,7 @@ class TransactionalSMSApi(object):
         """
 
         all_params = ['start_date', 'end_date', 'days', 'tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -255,7 +255,7 @@ class TransactionalSMSApi(object):
             files=local_var_files,
             response_type='GetTransacAggregatedSmsReport',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -265,11 +265,11 @@ class TransactionalSMSApi(object):
         """Get your SMS activity aggregated per day  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_transac_sms_report(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_transac_sms_report(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
@@ -279,7 +279,7 @@ class TransactionalSMSApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_transac_sms_report_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_transac_sms_report_with_http_info(**kwargs)  # noqa: E501
@@ -289,11 +289,11 @@ class TransactionalSMSApi(object):
         """Get your SMS activity aggregated per day  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_transac_sms_report_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_transac_sms_report_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
@@ -304,7 +304,7 @@ class TransactionalSMSApi(object):
         """
 
         all_params = ['start_date', 'end_date', 'days', 'tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -360,7 +360,7 @@ class TransactionalSMSApi(object):
             files=local_var_files,
             response_type='GetTransacSmsReport',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -370,18 +370,18 @@ class TransactionalSMSApi(object):
         """Send the SMS campaign to the specified mobile number  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_transac_sms(send_transac_sms, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_transac_sms(send_transac_sms, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param SendTransacSms send_transac_sms: Values to send a transactional SMS (required)
         :return: SendSms
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.send_transac_sms_with_http_info(send_transac_sms, **kwargs)  # noqa: E501
         else:
             (data) = self.send_transac_sms_with_http_info(send_transac_sms, **kwargs)  # noqa: E501
@@ -391,11 +391,11 @@ class TransactionalSMSApi(object):
         """Send the SMS campaign to the specified mobile number  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_transac_sms_with_http_info(send_transac_sms, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_transac_sms_with_http_info(send_transac_sms, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param SendTransacSms send_transac_sms: Values to send a transactional SMS (required)
         :return: SendSms
                  If the method is called asynchronously,
@@ -403,7 +403,7 @@ class TransactionalSMSApi(object):
         """
 
         all_params = ['send_transac_sms']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -457,7 +457,7 @@ class TransactionalSMSApi(object):
             files=local_var_files,
             response_type='SendSms',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

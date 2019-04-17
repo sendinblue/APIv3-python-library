@@ -37,18 +37,18 @@ class SMTPApi(object):
         """Create an smtp template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_smtp_template(smtp_template, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_smtp_template(smtp_template, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateSmtpTemplate smtp_template: values to update in smtp template (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.create_smtp_template_with_http_info(smtp_template, **kwargs)  # noqa: E501
         else:
             (data) = self.create_smtp_template_with_http_info(smtp_template, **kwargs)  # noqa: E501
@@ -58,11 +58,11 @@ class SMTPApi(object):
         """Create an smtp template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_smtp_template_with_http_info(smtp_template, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_smtp_template_with_http_info(smtp_template, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param CreateSmtpTemplate smtp_template: values to update in smtp template (required)
         :return: CreateModel
                  If the method is called asynchronously,
@@ -70,7 +70,7 @@ class SMTPApi(object):
         """
 
         all_params = ['smtp_template']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -124,7 +124,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type='CreateModel',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -135,18 +135,18 @@ class SMTPApi(object):
 
         Delete hardbounces. To use carefully (e.g. in case of temporary ISP failures)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_hardbounces(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_hardbounces(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param DeleteHardbounces delete_hardbounces: values to delete hardbounces
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_hardbounces_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.delete_hardbounces_with_http_info(**kwargs)  # noqa: E501
@@ -157,11 +157,11 @@ class SMTPApi(object):
 
         Delete hardbounces. To use carefully (e.g. in case of temporary ISP failures)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_hardbounces_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_hardbounces_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param DeleteHardbounces delete_hardbounces: values to delete hardbounces
         :return: None
                  If the method is called asynchronously,
@@ -169,7 +169,7 @@ class SMTPApi(object):
         """
 
         all_params = ['delete_hardbounces']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -219,7 +219,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -229,18 +229,18 @@ class SMTPApi(object):
         """Delete an inactive smtp template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_smtp_template(template_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_smtp_template(template_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: id of the template (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_smtp_template_with_http_info(template_id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_smtp_template_with_http_info(template_id, **kwargs)  # noqa: E501
@@ -250,11 +250,11 @@ class SMTPApi(object):
         """Delete an inactive smtp template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_smtp_template_with_http_info(template_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_smtp_template_with_http_info(template_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: id of the template (required)
         :return: None
                  If the method is called asynchronously,
@@ -262,7 +262,7 @@ class SMTPApi(object):
         """
 
         all_params = ['template_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -316,7 +316,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -326,11 +326,11 @@ class SMTPApi(object):
         """Get your SMTP activity aggregated over a period of time  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_aggregated_smtp_report(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_aggregated_smtp_report(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
         :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
@@ -340,7 +340,7 @@ class SMTPApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_aggregated_smtp_report_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_aggregated_smtp_report_with_http_info(**kwargs)  # noqa: E501
@@ -350,11 +350,11 @@ class SMTPApi(object):
         """Get your SMTP activity aggregated over a period of time  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_aggregated_smtp_report_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_aggregated_smtp_report_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
         :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
@@ -365,7 +365,7 @@ class SMTPApi(object):
         """
 
         all_params = ['start_date', 'end_date', 'days', 'tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -421,7 +421,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type='GetAggregatedReport',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -431,11 +431,11 @@ class SMTPApi(object):
         """Get all your SMTP activity (unaggregated events)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_email_event_report(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_email_event_report(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
         :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
@@ -451,7 +451,7 @@ class SMTPApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_email_event_report_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_email_event_report_with_http_info(**kwargs)  # noqa: E501
@@ -461,11 +461,11 @@ class SMTPApi(object):
         """Get all your SMTP activity (unaggregated events)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_email_event_report_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_email_event_report_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
         :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate
@@ -482,7 +482,7 @@ class SMTPApi(object):
         """
 
         all_params = ['limit', 'offset', 'start_date', 'end_date', 'days', 'email', 'event', 'tags', 'message_id', 'template_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -552,7 +552,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type='GetEmailEventReport',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -562,11 +562,11 @@ class SMTPApi(object):
         """Get your SMTP activity aggregated per day  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_smtp_report(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_smtp_report(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document on the page
         :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
@@ -578,7 +578,7 @@ class SMTPApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_smtp_report_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_smtp_report_with_http_info(**kwargs)  # noqa: E501
@@ -588,11 +588,11 @@ class SMTPApi(object):
         """Get your SMTP activity aggregated per day  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_smtp_report_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_smtp_report_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document on the page
         :param str start_date: Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD)
@@ -605,7 +605,7 @@ class SMTPApi(object):
         """
 
         all_params = ['limit', 'offset', 'start_date', 'end_date', 'days', 'tag']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -667,7 +667,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type='GetReports',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -677,18 +677,18 @@ class SMTPApi(object):
         """Returns the template informations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_smtp_template(template_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_smtp_template(template_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: id of the template (required)
         :return: GetSmtpTemplateOverview
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_smtp_template_with_http_info(template_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_smtp_template_with_http_info(template_id, **kwargs)  # noqa: E501
@@ -698,11 +698,11 @@ class SMTPApi(object):
         """Returns the template informations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_smtp_template_with_http_info(template_id, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_smtp_template_with_http_info(template_id, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: id of the template (required)
         :return: GetSmtpTemplateOverview
                  If the method is called asynchronously,
@@ -710,7 +710,7 @@ class SMTPApi(object):
         """
 
         all_params = ['template_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -764,7 +764,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type='GetSmtpTemplateOverview',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -774,11 +774,11 @@ class SMTPApi(object):
         """Get the list of SMTP templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_smtp_templates(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_smtp_templates(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param bool template_status: Filter on the status of the template. Active = true, inactive = false
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document in the page
@@ -787,7 +787,7 @@ class SMTPApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_smtp_templates_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_smtp_templates_with_http_info(**kwargs)  # noqa: E501
@@ -797,11 +797,11 @@ class SMTPApi(object):
         """Get the list of SMTP templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_smtp_templates_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_smtp_templates_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param bool template_status: Filter on the status of the template. Active = true, inactive = false
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document in the page
@@ -811,7 +811,7 @@ class SMTPApi(object):
         """
 
         all_params = ['template_status', 'limit', 'offset']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -867,7 +867,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type='GetSmtpTemplates',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -878,11 +878,11 @@ class SMTPApi(object):
 
         This endpoint is deprecated. Prefer v3/smtp/email instead.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_template(template_id, send_email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_template(template_id, send_email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: Id of the template (required)
         :param SendEmail send_email: (required)
         :return: SendTemplateEmail
@@ -890,7 +890,7 @@ class SMTPApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.send_template_with_http_info(template_id, send_email, **kwargs)  # noqa: E501
         else:
             (data) = self.send_template_with_http_info(template_id, send_email, **kwargs)  # noqa: E501
@@ -901,11 +901,11 @@ class SMTPApi(object):
 
         This endpoint is deprecated. Prefer v3/smtp/email instead.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_template_with_http_info(template_id, send_email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_template_with_http_info(template_id, send_email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: Id of the template (required)
         :param SendEmail send_email: (required)
         :return: SendTemplateEmail
@@ -914,7 +914,7 @@ class SMTPApi(object):
         """
 
         all_params = ['template_id', 'send_email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -974,7 +974,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type='SendTemplateEmail',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -984,11 +984,11 @@ class SMTPApi(object):
         """Send a template to your test list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_test_template(template_id, send_test_email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_test_template(template_id, send_test_email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: Id of the template (required)
         :param SendTestEmail send_test_email: (required)
         :return: None
@@ -996,7 +996,7 @@ class SMTPApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.send_test_template_with_http_info(template_id, send_test_email, **kwargs)  # noqa: E501
         else:
             (data) = self.send_test_template_with_http_info(template_id, send_test_email, **kwargs)  # noqa: E501
@@ -1006,11 +1006,11 @@ class SMTPApi(object):
         """Send a template to your test list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_test_template_with_http_info(template_id, send_test_email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_test_template_with_http_info(template_id, send_test_email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: Id of the template (required)
         :param SendTestEmail send_test_email: (required)
         :return: None
@@ -1019,7 +1019,7 @@ class SMTPApi(object):
         """
 
         all_params = ['template_id', 'send_test_email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1079,7 +1079,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1089,18 +1089,18 @@ class SMTPApi(object):
         """Send a transactional email  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_transac_email(send_smtp_email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_transac_email(send_smtp_email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param SendSmtpEmail send_smtp_email: Values to send a transactional email (required)
         :return: CreateSmtpEmail
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
         else:
             (data) = self.send_transac_email_with_http_info(send_smtp_email, **kwargs)  # noqa: E501
@@ -1110,11 +1110,11 @@ class SMTPApi(object):
         """Send a transactional email  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_transac_email_with_http_info(send_smtp_email, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.send_transac_email_with_http_info(send_smtp_email, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param SendSmtpEmail send_smtp_email: Values to send a transactional email (required)
         :return: CreateSmtpEmail
                  If the method is called asynchronously,
@@ -1122,7 +1122,7 @@ class SMTPApi(object):
         """
 
         all_params = ['send_smtp_email']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1176,7 +1176,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type='CreateSmtpEmail',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1186,11 +1186,11 @@ class SMTPApi(object):
         """Updates an smtp templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_smtp_template(template_id, smtp_template, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_smtp_template(template_id, smtp_template, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: id of the template (required)
         :param UpdateSmtpTemplate smtp_template: values to update in smtp template (required)
         :return: None
@@ -1198,7 +1198,7 @@ class SMTPApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_smtp_template_with_http_info(template_id, smtp_template, **kwargs)  # noqa: E501
         else:
             (data) = self.update_smtp_template_with_http_info(template_id, smtp_template, **kwargs)  # noqa: E501
@@ -1208,11 +1208,11 @@ class SMTPApi(object):
         """Updates an smtp templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_smtp_template_with_http_info(template_id, smtp_template, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_smtp_template_with_http_info(template_id, smtp_template, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param int template_id: id of the template (required)
         :param UpdateSmtpTemplate smtp_template: values to update in smtp template (required)
         :return: None
@@ -1221,7 +1221,7 @@ class SMTPApi(object):
         """
 
         all_params = ['template_id', 'smtp_template']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1281,7 +1281,7 @@ class SMTPApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

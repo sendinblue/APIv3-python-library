@@ -37,11 +37,11 @@ class AttributesApi(object):
         """Creates contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_attribute(attribute_category, attribute_name, create_attribute, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_attribute(attribute_category, attribute_name, create_attribute, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the attribute (required)
         :param CreateAttribute create_attribute: Values to create an attribute (required)
@@ -50,7 +50,7 @@ class AttributesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, **kwargs)  # noqa: E501
         else:
             (data) = self.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class AttributesApi(object):
         """Creates contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.create_attribute_with_http_info(attribute_category, attribute_name, create_attribute, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the attribute (required)
         :param CreateAttribute create_attribute: Values to create an attribute (required)
@@ -74,7 +74,7 @@ class AttributesApi(object):
         """
 
         all_params = ['attribute_category', 'attribute_name', 'create_attribute']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -140,7 +140,7 @@ class AttributesApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -150,11 +150,11 @@ class AttributesApi(object):
         """Deletes an attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_attribute(attribute_category, attribute_name, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_attribute(attribute_category, attribute_name, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the existing attribute (required)
         :return: None
@@ -162,7 +162,7 @@ class AttributesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.delete_attribute_with_http_info(attribute_category, attribute_name, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_attribute_with_http_info(attribute_category, attribute_name, **kwargs)  # noqa: E501
@@ -172,11 +172,11 @@ class AttributesApi(object):
         """Deletes an attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_attribute_with_http_info(attribute_category, attribute_name, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.delete_attribute_with_http_info(attribute_category, attribute_name, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the existing attribute (required)
         :return: None
@@ -185,7 +185,7 @@ class AttributesApi(object):
         """
 
         all_params = ['attribute_category', 'attribute_name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -245,7 +245,7 @@ class AttributesApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -255,17 +255,17 @@ class AttributesApi(object):
         """Lists all attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_attributes(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_attributes(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :return: GetAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.get_attributes_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_attributes_with_http_info(**kwargs)  # noqa: E501
@@ -275,18 +275,18 @@ class AttributesApi(object):
         """Lists all attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_attributes_with_http_info(async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.get_attributes_with_http_info(asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :return: GetAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -334,7 +334,7 @@ class AttributesApi(object):
             files=local_var_files,
             response_type='GetAttributes',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -344,11 +344,11 @@ class AttributesApi(object):
         """Updates contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_attribute(attribute_category, attribute_name, update_attribute, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_attribute(attribute_category, attribute_name, update_attribute, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the existing attribute (required)
         :param UpdateAttribute update_attribute: Values to update an attribute (required)
@@ -357,7 +357,7 @@ class AttributesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('asynchronous'):
             return self.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, **kwargs)  # noqa: E501
         else:
             (data) = self.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, **kwargs)  # noqa: E501
@@ -367,11 +367,11 @@ class AttributesApi(object):
         """Updates contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, async=True)
+        asynchronous HTTP request, please pass asynchronous=True
+        >>> thread = api.update_attribute_with_http_info(attribute_category, attribute_name, update_attribute, asynchronous=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param asynchronous bool
         :param str attribute_category: Category of the attribute (required)
         :param str attribute_name: Name of the existing attribute (required)
         :param UpdateAttribute update_attribute: Values to update an attribute (required)
@@ -381,7 +381,7 @@ class AttributesApi(object):
         """
 
         all_params = ['attribute_category', 'attribute_name', 'update_attribute']  # noqa: E501
-        all_params.append('async')
+        all_params.append('asynchronous')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -447,7 +447,7 @@ class AttributesApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            asynchronous=params.get('asynchronous'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
