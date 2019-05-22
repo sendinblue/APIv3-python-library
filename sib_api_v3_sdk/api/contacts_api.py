@@ -1036,7 +1036,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str email: Email (urlencoded) of the contact (required)
+        :param str email: Email (urlencoded) of the contact OR its SMS attribute value (required)
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1057,7 +1057,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str email: Email (urlencoded) of the contact (required)
+        :param str email: Email (urlencoded) of the contact OR its SMS attribute value (required)
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.

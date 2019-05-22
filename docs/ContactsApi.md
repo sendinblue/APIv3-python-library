@@ -627,7 +627,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-email = 'email_example' # str | Email (urlencoded) of the contact
+email = 'email_example' # str | Email (urlencoded) of the contact OR its SMS attribute value
 
 try:
     # Retrieves contact informations
@@ -641,7 +641,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **str**| Email (urlencoded) of the contact | 
+ **email** | **str**| Email (urlencoded) of the contact OR its SMS attribute value | 
 
 ### Return type
 

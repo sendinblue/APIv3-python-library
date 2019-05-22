@@ -169,6 +169,7 @@ from sib_api_v3_sdk.models.update_attribute import UpdateAttribute
 from sib_api_v3_sdk.models.update_attribute_enumeration import UpdateAttributeEnumeration
 from sib_api_v3_sdk.models.update_campaign_status import UpdateCampaignStatus
 from sib_api_v3_sdk.models.update_child import UpdateChild
+from sib_api_v3_sdk.models.update_child_account_status import UpdateChildAccountStatus
 from sib_api_v3_sdk.models.update_child_domain import UpdateChildDomain
 from sib_api_v3_sdk.models.update_contact import UpdateContact
 from sib_api_v3_sdk.models.update_email_campaign import UpdateEmailCampaign
