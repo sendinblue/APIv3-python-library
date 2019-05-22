@@ -14,8 +14,9 @@ Method | HTTP request | Description
 [**get_child_domains**](ResellerApi.md#get_child_domains) | **GET** /reseller/children/{childAuthKey}/domains | Gets all the sender domains of a specific child account
 [**get_child_info**](ResellerApi.md#get_child_info) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 [**get_reseller_childs**](ResellerApi.md#get_reseller_childs) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
-[**get_sso_token**](ResellerApi.md#get_sso_token) | **GET** /reseller/children/{childAuthKey}/auth | Generates a session token which will remain valid for a short period of time only.
+[**get_sso_token**](ResellerApi.md#get_sso_token) | **GET** /reseller/children/{childAuthKey}/auth | Get session token to access Sendinblue (SSO)
 [**remove_credits**](ResellerApi.md#remove_credits) | **POST** /reseller/children/{childAuthKey}/credits/remove | Remove Email and/or SMS credits from a specific child account
+[**update_child_account_status**](ResellerApi.md#update_child_account_status) | **PUT** /reseller/children/{childAuthKey}/accountStatus | Updates infos of reseller&#39;s child account status based on the childAuthKey supplied
 [**update_child_domain**](ResellerApi.md#update_child_domain) | **PUT** /reseller/children/{childAuthKey}/domains/{domainName} | Updates the sender domain of reseller&#39;s child based on the childAuthKey and domainName passed
 [**update_reseller_child**](ResellerApi.md#update_reseller_child) | **PUT** /reseller/children/{childAuthKey} | Updates infos of reseller&#39;s child based on the childAuthKey supplied
 
@@ -594,7 +595,9 @@ This endpoint does not need any parameter.
 # **get_sso_token**
 > GetSsoToken get_sso_token(child_auth_key)
 
-Generates a session token which will remain valid for a short period of time only.
+Get session token to access Sendinblue (SSO)
+
+It returns a session [token] which will remain valid for a short period of time. A child account will be able to access a white-labeled section by using the following url pattern => https:/email.mydomain.com/login/sso?token=[token]
 
 ### Example
 ```python
@@ -620,7 +623,7 @@ api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration
 child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 
 try:
-    # Generates a session token which will remain valid for a short period of time only.
+    # Get session token to access Sendinblue (SSO)
     api_response = api_instance.get_sso_token(child_auth_key)
     pprint(api_response)
 except ApiException as e:
@@ -695,6 +698,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RemainingCreditModel**](RemainingCreditModel.md)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_child_account_status**
+> update_child_account_status(child_auth_key, update_child_account_status)
+
+Updates infos of reseller's child account status based on the childAuthKey supplied
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
+update_child_account_status = sib_api_v3_sdk.UpdateChildAccountStatus() # UpdateChildAccountStatus | values to update in child account status
+
+try:
+    # Updates infos of reseller's child account status based on the childAuthKey supplied
+    api_instance.update_child_account_status(child_auth_key, update_child_account_status)
+except ApiException as e:
+    print("Exception when calling ResellerApi->update_child_account_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
+ **update_child_account_status** | [**UpdateChildAccountStatus**](UpdateChildAccountStatus.md)| values to update in child account status | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

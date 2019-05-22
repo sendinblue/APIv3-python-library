@@ -102,7 +102,7 @@ class TestResellerApi(unittest.TestCase):
     def test_get_sso_token(self):
         """Test case for get_sso_token
 
-        Generates a session token which will remain valid for a short period of time only.  # noqa: E501
+        Get session token to access Sendinblue (SSO)  # noqa: E501
         """
         pass
 
@@ -110,6 +110,13 @@ class TestResellerApi(unittest.TestCase):
         """Test case for remove_credits
 
         Remove Email and/or SMS credits from a specific child account  # noqa: E501
+        """
+        pass
+
+    def test_update_child_account_status(self):
+        """Test case for update_child_account_status
+
+        Updates infos of reseller's child account status based on the childAuthKey supplied  # noqa: E501
         """
         pass
 
