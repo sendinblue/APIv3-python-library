@@ -191,7 +191,7 @@ class UpdateContact(object):
     def smtp_blacklist_sender(self):
         """Gets the smtp_blacklist_sender of this UpdateContact.  # noqa: E501
 
-        SMTP forbidden sender for contact. Use only for email Contact  # noqa: E501
+        transactional email forbidden sender for contact. Use only for email Contact  # noqa: E501
 
         :return: The smtp_blacklist_sender of this UpdateContact.  # noqa: E501
         :rtype: list[str]
@@ -202,7 +202,7 @@ class UpdateContact(object):
     def smtp_blacklist_sender(self, smtp_blacklist_sender):
         """Sets the smtp_blacklist_sender of this UpdateContact.
 
-        SMTP forbidden sender for contact. Use only for email Contact  # noqa: E501
+        transactional email forbidden sender for contact. Use only for email Contact  # noqa: E501
 
         :param smtp_blacklist_sender: The smtp_blacklist_sender of this UpdateContact.  # noqa: E501
         :type: list[str]

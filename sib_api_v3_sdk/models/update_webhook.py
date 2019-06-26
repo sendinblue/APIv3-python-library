@@ -123,7 +123,7 @@ class UpdateWebhook(object):
         :param events: The events of this UpdateWebhook.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["hardBounce", "softBounce", "blocked", "spam", "delivered", "request", "click", "invalid", "deferred", "opened", "uniqueOpened", "unsubscribed", "listAddition"]  # noqa: E501
+        allowed_values = ["hardBounce", "softBounce", "blocked", "spam", "delivered", "request", "click", "invalid", "deferred", "opened", "uniqueOpened", "unsubscribed", "listAddition", "contactUpdated", "contactDeleted"]  # noqa: E501
         if not set(events).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `events` [{0}], must be a subset of [{1}]"  # noqa: E501

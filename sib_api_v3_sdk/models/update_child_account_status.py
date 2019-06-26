@@ -61,7 +61,7 @@ class UpdateChildAccountStatus(object):
     def transactional_email(self):
         """Gets the transactional_email of this UpdateChildAccountStatus.  # noqa: E501
 
-        Status of Transactional Email (SMTP) Platform activation for your account (true=enabled, false=disabled)  # noqa: E501
+        Status of Transactional Email Platform activation for your account (true=enabled, false=disabled)  # noqa: E501
 
         :return: The transactional_email of this UpdateChildAccountStatus.  # noqa: E501
         :rtype: bool
@@ -72,7 +72,7 @@ class UpdateChildAccountStatus(object):
     def transactional_email(self, transactional_email):
         """Sets the transactional_email of this UpdateChildAccountStatus.
 
-        Status of Transactional Email (SMTP) Platform activation for your account (true=enabled, false=disabled)  # noqa: E501
+        Status of Transactional Email Platform activation for your account (true=enabled, false=disabled)  # noqa: E501
 
         :param transactional_email: The transactional_email of this UpdateChildAccountStatus.  # noqa: E501
         :type: bool

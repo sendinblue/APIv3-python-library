@@ -32,7 +32,7 @@ class TestSMTPApi(unittest.TestCase):
     def test_create_smtp_template(self):
         """Test case for create_smtp_template
 
-        Create an smtp template  # noqa: E501
+        Create a transactional email template  # noqa: E501
         """
         pass
 
@@ -46,28 +46,28 @@ class TestSMTPApi(unittest.TestCase):
     def test_delete_smtp_template(self):
         """Test case for delete_smtp_template
 
-        Delete an inactive smtp template  # noqa: E501
+        Delete an inactive transactional email template  # noqa: E501
         """
         pass
 
     def test_get_aggregated_smtp_report(self):
         """Test case for get_aggregated_smtp_report
 
-        Get your SMTP activity aggregated over a period of time  # noqa: E501
+        Get your transactional email activity aggregated over a period of time  # noqa: E501
         """
         pass
 
     def test_get_email_event_report(self):
         """Test case for get_email_event_report
 
-        Get all your SMTP activity (unaggregated events)  # noqa: E501
+        Get all your transactional email activity (unaggregated events)  # noqa: E501
         """
         pass
 
     def test_get_smtp_report(self):
         """Test case for get_smtp_report
 
-        Get your SMTP activity aggregated per day  # noqa: E501
+        Get your transactional email activity aggregated per day  # noqa: E501
         """
         pass
 
@@ -81,7 +81,21 @@ class TestSMTPApi(unittest.TestCase):
     def test_get_smtp_templates(self):
         """Test case for get_smtp_templates
 
-        Get the list of SMTP templates  # noqa: E501
+        Get the list of transactional email templates  # noqa: E501
+        """
+        pass
+
+    def test_get_transac_email_content(self):
+        """Test case for get_transac_email_content
+
+        Get the personalized content of a sent transactional email  # noqa: E501
+        """
+        pass
+
+    def test_get_transac_emails_list(self):
+        """Test case for get_transac_emails_list
+
+        Get the list of transactional emails on the basis of allowed filters  # noqa: E501
         """
         pass
 
@@ -109,7 +123,7 @@ class TestSMTPApi(unittest.TestCase):
     def test_update_smtp_template(self):
         """Test case for update_smtp_template
 
-        Updates an smtp templates  # noqa: E501
+        Updates a transactional email templates  # noqa: E501
         """
         pass
 

@@ -56,7 +56,7 @@ class GetAccountRelay(object):
     def enabled(self):
         """Gets the enabled of this GetAccountRelay.  # noqa: E501
 
-        Status of your SMTP Account (true=Enabled, false=Disabled)  # noqa: E501
+        Status of your transactional email Account (true=Enabled, false=Disabled)  # noqa: E501
 
         :return: The enabled of this GetAccountRelay.  # noqa: E501
         :rtype: bool
@@ -67,7 +67,7 @@ class GetAccountRelay(object):
     def enabled(self, enabled):
         """Sets the enabled of this GetAccountRelay.
 
-        Status of your SMTP Account (true=Enabled, false=Disabled)  # noqa: E501
+        Status of your transactional email Account (true=Enabled, false=Disabled)  # noqa: E501
 
         :param enabled: The enabled of this GetAccountRelay.  # noqa: E501
         :type: bool
