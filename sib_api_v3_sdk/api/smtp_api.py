@@ -34,7 +34,7 @@ class SMTPApi(object):
         self.api_client = api_client
 
     def create_smtp_template(self, smtp_template, **kwargs):  # noqa: E501
-        """Create an smtp template  # noqa: E501
+        """Create a transactional email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -42,7 +42,7 @@ class SMTPApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param CreateSmtpTemplate smtp_template: values to update in smtp template (required)
+        :param CreateSmtpTemplate smtp_template: values to update in transactional email template (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
@@ -55,7 +55,7 @@ class SMTPApi(object):
             return data
 
     def create_smtp_template_with_http_info(self, smtp_template, **kwargs):  # noqa: E501
-        """Create an smtp template  # noqa: E501
+        """Create a transactional email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -63,7 +63,7 @@ class SMTPApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param CreateSmtpTemplate smtp_template: values to update in smtp template (required)
+        :param CreateSmtpTemplate smtp_template: values to update in transactional email template (required)
         :return: CreateModel
                  If the method is called asynchronously,
                  returns the request thread.
@@ -226,7 +226,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def delete_smtp_template(self, template_id, **kwargs):  # noqa: E501
-        """Delete an inactive smtp template  # noqa: E501
+        """Delete an inactive transactional email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -247,7 +247,7 @@ class SMTPApi(object):
             return data
 
     def delete_smtp_template_with_http_info(self, template_id, **kwargs):  # noqa: E501
-        """Delete an inactive smtp template  # noqa: E501
+        """Delete an inactive transactional email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -323,7 +323,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def get_aggregated_smtp_report(self, **kwargs):  # noqa: E501
-        """Get your SMTP activity aggregated over a period of time  # noqa: E501
+        """Get your transactional email activity aggregated over a period of time  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -347,7 +347,7 @@ class SMTPApi(object):
             return data
 
     def get_aggregated_smtp_report_with_http_info(self, **kwargs):  # noqa: E501
-        """Get your SMTP activity aggregated over a period of time  # noqa: E501
+        """Get your transactional email activity aggregated over a period of time  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -428,7 +428,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def get_email_event_report(self, **kwargs):  # noqa: E501
-        """Get all your SMTP activity (unaggregated events)  # noqa: E501
+        """Get all your transactional email activity (unaggregated events)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -458,7 +458,7 @@ class SMTPApi(object):
             return data
 
     def get_email_event_report_with_http_info(self, **kwargs):  # noqa: E501
-        """Get all your SMTP activity (unaggregated events)  # noqa: E501
+        """Get all your transactional email activity (unaggregated events)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -559,7 +559,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def get_smtp_report(self, **kwargs):  # noqa: E501
-        """Get your SMTP activity aggregated per day  # noqa: E501
+        """Get your transactional email activity aggregated per day  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -585,7 +585,7 @@ class SMTPApi(object):
             return data
 
     def get_smtp_report_with_http_info(self, **kwargs):  # noqa: E501
-        """Get your SMTP activity aggregated per day  # noqa: E501
+        """Get your transactional email activity aggregated per day  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -771,7 +771,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def get_smtp_templates(self, **kwargs):  # noqa: E501
-        """Get the list of SMTP templates  # noqa: E501
+        """Get the list of transactional email templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -794,7 +794,7 @@ class SMTPApi(object):
             return data
 
     def get_smtp_templates_with_http_info(self, **kwargs):  # noqa: E501
-        """Get the list of SMTP templates  # noqa: E501
+        """Get the list of transactional email templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -866,6 +866,214 @@ class SMTPApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='GetSmtpTemplates',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_transac_email_content(self, uuid, **kwargs):  # noqa: E501
+        """Get the personalized content of a sent transactional email  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_transac_email_content(uuid, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str uuid: Unique id of the transactional email that has been sent to a particular contact (required)
+        :return: GetTransacEmailContent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.get_transac_email_content_with_http_info(uuid, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_transac_email_content_with_http_info(uuid, **kwargs)  # noqa: E501
+            return data
+
+    def get_transac_email_content_with_http_info(self, uuid, **kwargs):  # noqa: E501
+        """Get the personalized content of a sent transactional email  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_transac_email_content_with_http_info(uuid, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str uuid: Unique id of the transactional email that has been sent to a particular contact (required)
+        :return: GetTransacEmailContent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uuid']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_transac_email_content" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uuid' is set
+        if ('uuid' not in params or
+                params['uuid'] is None):
+            raise ValueError("Missing the required parameter `uuid` when calling `get_transac_email_content`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'uuid' in params:
+            path_params['uuid'] = params['uuid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/smtp/emails/{uuid}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetTransacEmailContent',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_transac_emails_list(self, **kwargs):  # noqa: E501
+        """Get the list of transactional emails on the basis of allowed filters  # noqa: E501
+
+        This endpoint will show the list of emails for past 30 days by default. To retrieve emails before that time, please pass startDate and endDate in query filters.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_transac_emails_list(async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str email: Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
+        :param int template_id: Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
+        :param str message_id: Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :return: GetTransacEmailsList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.get_transac_emails_list_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_transac_emails_list_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_transac_emails_list_with_http_info(self, **kwargs):  # noqa: E501
+        """Get the list of transactional emails on the basis of allowed filters  # noqa: E501
+
+        This endpoint will show the list of emails for past 30 days by default. To retrieve emails before that time, please pass startDate and endDate in query filters.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_transac_emails_list_with_http_info(async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str email: Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
+        :param int template_id: Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
+        :param str message_id: Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :return: GetTransacEmailsList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['email', 'template_id', 'message_id', 'start_date', 'end_date']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_transac_emails_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'email' in params:
+            query_params.append(('email', params['email']))  # noqa: E501
+        if 'template_id' in params:
+            query_params.append(('templateId', params['template_id']))  # noqa: E501
+        if 'message_id' in params:
+            query_params.append(('messageId', params['message_id']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('startDate', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('endDate', params['end_date']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/smtp/emails', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetTransacEmailsList',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1183,7 +1391,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def update_smtp_template(self, template_id, smtp_template, **kwargs):  # noqa: E501
-        """Updates an smtp templates  # noqa: E501
+        """Updates a transactional email templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -1192,7 +1400,7 @@ class SMTPApi(object):
 
         :param async bool
         :param int template_id: id of the template (required)
-        :param UpdateSmtpTemplate smtp_template: values to update in smtp template (required)
+        :param UpdateSmtpTemplate smtp_template: values to update in transactional email template (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1205,7 +1413,7 @@ class SMTPApi(object):
             return data
 
     def update_smtp_template_with_http_info(self, template_id, smtp_template, **kwargs):  # noqa: E501
-        """Updates an smtp templates  # noqa: E501
+        """Updates a transactional email templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
@@ -1214,7 +1422,7 @@ class SMTPApi(object):
 
         :param async bool
         :param int template_id: id of the template (required)
-        :param UpdateSmtpTemplate smtp_template: values to update in smtp template (required)
+        :param UpdateSmtpTemplate smtp_template: values to update in transactional email template (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

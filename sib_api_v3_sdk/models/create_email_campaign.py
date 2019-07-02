@@ -289,7 +289,7 @@ class CreateEmailCampaign(object):
     def template_id(self):
         """Gets the template_id of this CreateEmailCampaign.  # noqa: E501
 
-        Mandatory if htmlContent and htmlUrl are empty. Id of the SMTP template with status 'active'. Used to copy only its content fetched from htmlContent/htmlUrl to an email campaign for RSS feature.  # noqa: E501
+        Mandatory if htmlContent and htmlUrl are empty. Id of the transactional email template with status 'active'. Used to copy only its content fetched from htmlContent/htmlUrl to an email campaign for RSS feature.  # noqa: E501
 
         :return: The template_id of this CreateEmailCampaign.  # noqa: E501
         :rtype: int
@@ -300,7 +300,7 @@ class CreateEmailCampaign(object):
     def template_id(self, template_id):
         """Sets the template_id of this CreateEmailCampaign.
 
-        Mandatory if htmlContent and htmlUrl are empty. Id of the SMTP template with status 'active'. Used to copy only its content fetched from htmlContent/htmlUrl to an email campaign for RSS feature.  # noqa: E501
+        Mandatory if htmlContent and htmlUrl are empty. Id of the transactional email template with status 'active'. Used to copy only its content fetched from htmlContent/htmlUrl to an email campaign for RSS feature.  # noqa: E501
 
         :param template_id: The template_id of this CreateEmailCampaign.  # noqa: E501
         :type: int

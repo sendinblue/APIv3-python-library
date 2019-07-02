@@ -58,7 +58,7 @@ class GetAccountRelayData(object):
     def user_name(self):
         """Gets the user_name of this GetAccountRelayData.  # noqa: E501
 
-        Email to use as login on SMTP  # noqa: E501
+        Email to use as login on transactional platform  # noqa: E501
 
         :return: The user_name of this GetAccountRelayData.  # noqa: E501
         :rtype: str
@@ -69,7 +69,7 @@ class GetAccountRelayData(object):
     def user_name(self, user_name):
         """Sets the user_name of this GetAccountRelayData.
 
-        Email to use as login on SMTP  # noqa: E501
+        Email to use as login on transactional platform  # noqa: E501
 
         :param user_name: The user_name of this GetAccountRelayData.  # noqa: E501
         :type: str

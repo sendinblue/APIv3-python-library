@@ -50,7 +50,7 @@ class CreateSmtpEmail(object):
     def message_id(self):
         """Gets the message_id of this CreateSmtpEmail.  # noqa: E501
 
-        Message ID of the SMTP Email sent  # noqa: E501
+        Message ID of the transactional email sent  # noqa: E501
 
         :return: The message_id of this CreateSmtpEmail.  # noqa: E501
         :rtype: str
@@ -61,7 +61,7 @@ class CreateSmtpEmail(object):
     def message_id(self, message_id):
         """Sets the message_id of this CreateSmtpEmail.
 
-        Message ID of the SMTP Email sent  # noqa: E501
+        Message ID of the transactional email sent  # noqa: E501
 
         :param message_id: The message_id of this CreateSmtpEmail.  # noqa: E501
         :type: str

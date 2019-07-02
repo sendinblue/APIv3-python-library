@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **sms_blacklisted** | **bool** | Set/unset this field to blacklist/allow the contact for SMS (smsBlacklisted &#x3D; true) | [optional] 
 **list_ids** | **list[int]** | Ids of the lists to add the contact to | [optional] 
 **unlink_list_ids** | **list[int]** | Ids of the lists to remove the contact from | [optional] 
-**smtp_blacklist_sender** | **list[str]** | SMTP forbidden sender for contact. Use only for email Contact | [optional] 
+**smtp_blacklist_sender** | **list[str]** | transactional email forbidden sender for contact. Use only for email Contact | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

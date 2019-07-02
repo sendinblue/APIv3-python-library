@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **sms_blacklisted** | **bool** | Set this field to blacklist the contact for SMS (smsBlacklisted &#x3D; true) | [optional] 
 **list_ids** | **list[int]** | Ids of the lists to add the contact to | [optional] 
 **update_enabled** | **bool** | Facilitate to update the existing contact in the same request (updateEnabled &#x3D; true) | [optional] [default to False]
-**smtp_blacklist_sender** | **list[str]** | SMTP forbidden sender for contact. Use only for email Contact ( only available if updateEnabled &#x3D; true ) | [optional] 
+**smtp_blacklist_sender** | **list[str]** | transactional email forbidden sender for contact. Use only for email Contact ( only available if updateEnabled &#x3D; true ) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
