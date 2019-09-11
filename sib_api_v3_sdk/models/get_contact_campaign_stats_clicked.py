@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from sib_api_v3_sdk.models.get_extended_contact_details_statistics_links import GetExtendedContactDetailsStatisticsLinks  # noqa: F401,E501
+from sib_api_v3_sdk.models.get_contact_campaign_stats_links import GetContactCampaignStatsLinks  # noqa: F401,E501
 
 
 class GetContactCampaignStatsClicked(object):
@@ -34,7 +34,7 @@ class GetContactCampaignStatsClicked(object):
     """
     swagger_types = {
         'campaign_id': 'int',
-        'links': 'list[GetExtendedContactDetailsStatisticsLinks]'
+        'links': 'list[GetContactCampaignStatsLinks]'
     }
 
     attribute_map = {
@@ -83,7 +83,7 @@ class GetContactCampaignStatsClicked(object):
 
 
         :return: The links of this GetContactCampaignStatsClicked.  # noqa: E501
-        :rtype: list[GetExtendedContactDetailsStatisticsLinks]
+        :rtype: list[GetContactCampaignStatsLinks]
         """
         return self._links
 
@@ -93,7 +93,7 @@ class GetContactCampaignStatsClicked(object):
 
 
         :param links: The links of this GetContactCampaignStatsClicked.  # noqa: E501
-        :type: list[GetExtendedContactDetailsStatisticsLinks]
+        :type: list[GetContactCampaignStatsLinks]
         """
         if links is None:
             raise ValueError("Invalid value for `links`, must not be `None`")  # noqa: E501

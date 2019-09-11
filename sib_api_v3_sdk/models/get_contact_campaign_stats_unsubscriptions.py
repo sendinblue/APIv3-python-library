@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from sib_api_v3_sdk.models.get_extended_contact_details_statistics_unsubscriptions_admin_unsubscription import GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription  # noqa: F401,E501
-from sib_api_v3_sdk.models.get_extended_contact_details_statistics_unsubscriptions_user_unsubscription import GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription  # noqa: F401,E501
+from sib_api_v3_sdk.models.get_contact_campaign_stats_unsubscriptions_admin_unsubscription import GetContactCampaignStatsUnsubscriptionsAdminUnsubscription  # noqa: F401,E501
+from sib_api_v3_sdk.models.get_contact_campaign_stats_unsubscriptions_user_unsubscription import GetContactCampaignStatsUnsubscriptionsUserUnsubscription  # noqa: F401,E501
 
 
 class GetContactCampaignStatsUnsubscriptions(object):
@@ -34,8 +34,8 @@ class GetContactCampaignStatsUnsubscriptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'user_unsubscription': 'list[GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription]',
-        'admin_unsubscription': 'list[GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription]'
+        'user_unsubscription': 'list[GetContactCampaignStatsUnsubscriptionsUserUnsubscription]',
+        'admin_unsubscription': 'list[GetContactCampaignStatsUnsubscriptionsAdminUnsubscription]'
     }
 
     attribute_map = {
@@ -60,7 +60,7 @@ class GetContactCampaignStatsUnsubscriptions(object):
         Contact has unsubscribed via the unsubscription link in the email  # noqa: E501
 
         :return: The user_unsubscription of this GetContactCampaignStatsUnsubscriptions.  # noqa: E501
-        :rtype: list[GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription]
+        :rtype: list[GetContactCampaignStatsUnsubscriptionsUserUnsubscription]
         """
         return self._user_unsubscription
 
@@ -71,7 +71,7 @@ class GetContactCampaignStatsUnsubscriptions(object):
         Contact has unsubscribed via the unsubscription link in the email  # noqa: E501
 
         :param user_unsubscription: The user_unsubscription of this GetContactCampaignStatsUnsubscriptions.  # noqa: E501
-        :type: list[GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription]
+        :type: list[GetContactCampaignStatsUnsubscriptionsUserUnsubscription]
         """
         if user_unsubscription is None:
             raise ValueError("Invalid value for `user_unsubscription`, must not be `None`")  # noqa: E501
@@ -85,7 +85,7 @@ class GetContactCampaignStatsUnsubscriptions(object):
         Contact has been unsubscribed from the administrator  # noqa: E501
 
         :return: The admin_unsubscription of this GetContactCampaignStatsUnsubscriptions.  # noqa: E501
-        :rtype: list[GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription]
+        :rtype: list[GetContactCampaignStatsUnsubscriptionsAdminUnsubscription]
         """
         return self._admin_unsubscription
 
@@ -96,7 +96,7 @@ class GetContactCampaignStatsUnsubscriptions(object):
         Contact has been unsubscribed from the administrator  # noqa: E501
 
         :param admin_unsubscription: The admin_unsubscription of this GetContactCampaignStatsUnsubscriptions.  # noqa: E501
-        :type: list[GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription]
+        :type: list[GetContactCampaignStatsUnsubscriptionsAdminUnsubscription]
         """
         if admin_unsubscription is None:
             raise ValueError("Invalid value for `admin_unsubscription`, must not be `None`")  # noqa: E501

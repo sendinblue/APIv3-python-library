@@ -52,7 +52,8 @@ class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription(objec
 
         self.campaign_id = campaign_id
         self.event_time = event_time
-        self.ip = ip
+        if ip is not None:
+            self.ip = ip
 
     @property
     def campaign_id(self):
@@ -124,8 +125,6 @@ class GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription(objec
         :param ip: The ip of this GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription.  # noqa: E501
         :type: str
         """
-        if ip is None:
-            raise ValueError("Invalid value for `ip`, must not be `None`")  # noqa: E501
 
         self._ip = ip
 
