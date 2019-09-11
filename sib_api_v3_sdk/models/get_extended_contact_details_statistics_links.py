@@ -55,7 +55,8 @@ class GetExtendedContactDetailsStatisticsLinks(object):
 
         self.count = count
         self.event_time = event_time
-        self.ip = ip
+        if ip is not None:
+            self.ip = ip
         self.url = url
 
     @property
@@ -128,8 +129,6 @@ class GetExtendedContactDetailsStatisticsLinks(object):
         :param ip: The ip of this GetExtendedContactDetailsStatisticsLinks.  # noqa: E501
         :type: str
         """
-        if ip is None:
-            raise ValueError("Invalid value for `ip`, must not be `None`")  # noqa: E501
 
         self._ip = ip
 
