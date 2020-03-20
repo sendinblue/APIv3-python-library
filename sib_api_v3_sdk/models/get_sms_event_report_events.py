@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -32,7 +32,7 @@ class GetSmsEventReportEvents(object):
     """
     swagger_types = {
         'phone_number': 'str',
-        'date': 'datetime',
+        '_date': 'datetime',
         'message_id': 'str',
         'event': 'str',
         'reason': 'str',
@@ -42,7 +42,7 @@ class GetSmsEventReportEvents(object):
 
     attribute_map = {
         'phone_number': 'phoneNumber',
-        'date': 'date',
+        '_date': 'date',
         'message_id': 'messageId',
         'event': 'event',
         'reason': 'reason',
@@ -50,11 +50,11 @@ class GetSmsEventReportEvents(object):
         'tag': 'tag'
     }
 
-    def __init__(self, phone_number=None, date=None, message_id=None, event=None, reason=None, reply=None, tag=None):  # noqa: E501
+    def __init__(self, phone_number=None, _date=None, message_id=None, event=None, reason=None, reply=None, tag=None):  # noqa: E501
         """GetSmsEventReportEvents - a model defined in Swagger"""  # noqa: E501
 
         self._phone_number = None
-        self._date = None
+        self.__date = None
         self._message_id = None
         self._event = None
         self._reason = None
@@ -63,7 +63,7 @@ class GetSmsEventReportEvents(object):
         self.discriminator = None
 
         self.phone_number = phone_number
-        self.date = date
+        self._date = _date
         self.message_id = message_id
         self.event = event
         if reason is not None:
@@ -99,29 +99,29 @@ class GetSmsEventReportEvents(object):
         self._phone_number = phone_number
 
     @property
-    def date(self):
-        """Gets the date of this GetSmsEventReportEvents.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this GetSmsEventReportEvents.  # noqa: E501
 
         UTC date-time on which the event has been generated  # noqa: E501
 
-        :return: The date of this GetSmsEventReportEvents.  # noqa: E501
+        :return: The _date of this GetSmsEventReportEvents.  # noqa: E501
         :rtype: datetime
         """
-        return self._date
+        return self.__date
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this GetSmsEventReportEvents.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this GetSmsEventReportEvents.
 
         UTC date-time on which the event has been generated  # noqa: E501
 
-        :param date: The date of this GetSmsEventReportEvents.  # noqa: E501
+        :param _date: The _date of this GetSmsEventReportEvents.  # noqa: E501
         :type: datetime
         """
-        if date is None:
-            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
+        if _date is None:
+            raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
 
-        self._date = date
+        self.__date = _date
 
     @property
     def message_id(self):
@@ -267,6 +267,9 @@ class GetSmsEventReportEvents(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetSmsEventReportEvents, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

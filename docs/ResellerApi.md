@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**delete_child_domain**](ResellerApi.md#delete_child_domain) | **DELETE** /reseller/children/{childAuthKey}/domains/{domainName} | Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
 [**delete_reseller_child**](ResellerApi.md#delete_reseller_child) | **DELETE** /reseller/children/{childAuthKey} | Deletes a single reseller child based on the childAuthKey supplied
 [**dissociate_ip_from_child**](ResellerApi.md#dissociate_ip_from_child) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
+[**get_child_account_creation_status**](ResellerApi.md#get_child_account_creation_status) | **GET** /reseller/children/{childAuthKey}/accountCreationStatus | Returns the status of reseller&#39;s child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
 [**get_child_domains**](ResellerApi.md#get_child_domains) | **GET** /reseller/children/{childAuthKey}/domains | Gets all the sender domains of a specific child account
 [**get_child_info**](ResellerApi.md#get_child_info) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 [**get_reseller_childs**](ResellerApi.md#get_reseller_childs) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
@@ -165,7 +166,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
 child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
-add_child_domain = sib_api_v3_sdk.AddChildDomain() # AddChildDomain | Sender domain to add for a specific child account
+add_child_domain = sib_api_v3_sdk.AddChildDomain() # AddChildDomain | Sender domain to add for a specific child account. This will not be displayed to the parent account.
 
 try:
     # Creates a domain for a child account
@@ -179,7 +180,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **child_auth_key** | **str**| auth key of reseller&#39;s child | 
- **add_child_domain** | [**AddChildDomain**](AddChildDomain.md)| Sender domain to add for a specific child account | 
+ **add_child_domain** | [**AddChildDomain**](AddChildDomain.md)| Sender domain to add for a specific child account. This will not be displayed to the parent account. | 
 
 ### Return type
 
@@ -425,6 +426,63 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_child_account_creation_status**
+> GetChildAccountCreationStatus get_child_account_creation_status(child_auth_key)
+
+Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
+child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
+
+try:
+    # Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+    api_response = api_instance.get_child_account_creation_status(child_auth_key)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResellerApi->get_child_account_creation_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **child_auth_key** | **str**| auth key of reseller&#39;s child | 
+
+### Return type
+
+[**GetChildAccountCreationStatus**](GetChildAccountCreationStatus.md)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_child_domains**
 > GetChildDomains get_child_domains(child_auth_key)
 
@@ -540,7 +598,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_reseller_childs**
-> GetChildrenList get_reseller_childs()
+> GetChildrenList get_reseller_childs(limit=limit, offset=offset)
 
 Gets the list of all reseller's children accounts
 
@@ -565,17 +623,23 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration))
+limit = 10 # int | Number of documents for child accounts information per page (optional) (default to 10)
+offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 
 try:
     # Gets the list of all reseller's children accounts
-    api_response = api_instance.get_reseller_childs()
+    api_response = api_instance.get_reseller_childs(limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ResellerApi->get_reseller_childs: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Number of documents for child accounts information per page | [optional] [default to 10]
+ **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
 
 ### Return type
 

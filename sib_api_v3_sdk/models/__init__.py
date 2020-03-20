@@ -4,7 +4,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 # import models into model package
+from sib_api_v3_sdk.models.ab_test_campaign_result import AbTestCampaignResult
 from sib_api_v3_sdk.models.add_child_domain import AddChildDomain
 from sib_api_v3_sdk.models.add_contact_to_list import AddContactToList
 from sib_api_v3_sdk.models.add_credits import AddCredits
@@ -54,6 +55,7 @@ from sib_api_v3_sdk.models.get_attributes_enumeration import GetAttributesEnumer
 from sib_api_v3_sdk.models.get_campaign_overview import GetCampaignOverview
 from sib_api_v3_sdk.models.get_campaign_recipients import GetCampaignRecipients
 from sib_api_v3_sdk.models.get_campaign_stats import GetCampaignStats
+from sib_api_v3_sdk.models.get_child_account_creation_status import GetChildAccountCreationStatus
 from sib_api_v3_sdk.models.get_child_domain import GetChildDomain
 from sib_api_v3_sdk.models.get_child_domains import GetChildDomains
 from sib_api_v3_sdk.models.get_child_info_api_keys import GetChildInfoApiKeys
@@ -65,14 +67,12 @@ from sib_api_v3_sdk.models.get_children_list import GetChildrenList
 from sib_api_v3_sdk.models.get_client import GetClient
 from sib_api_v3_sdk.models.get_contact_campaign_stats import GetContactCampaignStats
 from sib_api_v3_sdk.models.get_contact_campaign_stats_clicked import GetContactCampaignStatsClicked
-from sib_api_v3_sdk.models.get_contact_campaign_stats_links import GetContactCampaignStatsLinks
 from sib_api_v3_sdk.models.get_contact_campaign_stats_opened import GetContactCampaignStatsOpened
 from sib_api_v3_sdk.models.get_contact_campaign_stats_transac_attributes import GetContactCampaignStatsTransacAttributes
 from sib_api_v3_sdk.models.get_contact_campaign_stats_unsubscriptions import GetContactCampaignStatsUnsubscriptions
-from sib_api_v3_sdk.models.get_contact_campaign_stats_unsubscriptions_admin_unsubscription import GetContactCampaignStatsUnsubscriptionsAdminUnsubscription
-from sib_api_v3_sdk.models.get_contact_campaign_stats_unsubscriptions_user_unsubscription import GetContactCampaignStatsUnsubscriptionsUserUnsubscription
 from sib_api_v3_sdk.models.get_contact_details import GetContactDetails
 from sib_api_v3_sdk.models.get_contacts import GetContacts
+from sib_api_v3_sdk.models.get_device_browser_stats import GetDeviceBrowserStats
 from sib_api_v3_sdk.models.get_email_campaigns import GetEmailCampaigns
 from sib_api_v3_sdk.models.get_email_event_report import GetEmailEventReport
 from sib_api_v3_sdk.models.get_email_event_report_events import GetEmailEventReportEvents
@@ -104,6 +104,7 @@ from sib_api_v3_sdk.models.get_reports_reports import GetReportsReports
 from sib_api_v3_sdk.models.get_senders_list import GetSendersList
 from sib_api_v3_sdk.models.get_senders_list_ips import GetSendersListIps
 from sib_api_v3_sdk.models.get_senders_list_senders import GetSendersListSenders
+from sib_api_v3_sdk.models.get_shared_template_url import GetSharedTemplateUrl
 from sib_api_v3_sdk.models.get_sms_campaign_overview import GetSmsCampaignOverview
 from sib_api_v3_sdk.models.get_sms_campaign_stats import GetSmsCampaignStats
 from sib_api_v3_sdk.models.get_sms_campaigns import GetSmsCampaigns
@@ -113,8 +114,13 @@ from sib_api_v3_sdk.models.get_smtp_template_overview import GetSmtpTemplateOver
 from sib_api_v3_sdk.models.get_smtp_template_overview_sender import GetSmtpTemplateOverviewSender
 from sib_api_v3_sdk.models.get_smtp_templates import GetSmtpTemplates
 from sib_api_v3_sdk.models.get_sso_token import GetSsoToken
+from sib_api_v3_sdk.models.get_stats_by_browser import GetStatsByBrowser
+from sib_api_v3_sdk.models.get_stats_by_device import GetStatsByDevice
 from sib_api_v3_sdk.models.get_stats_by_domain import GetStatsByDomain
 from sib_api_v3_sdk.models.get_transac_aggregated_sms_report import GetTransacAggregatedSmsReport
+from sib_api_v3_sdk.models.get_transac_blocked_contacts import GetTransacBlockedContacts
+from sib_api_v3_sdk.models.get_transac_blocked_contacts_contacts import GetTransacBlockedContactsContacts
+from sib_api_v3_sdk.models.get_transac_blocked_contacts_reason import GetTransacBlockedContactsReason
 from sib_api_v3_sdk.models.get_transac_email_content import GetTransacEmailContent
 from sib_api_v3_sdk.models.get_transac_email_content_events import GetTransacEmailContentEvents
 from sib_api_v3_sdk.models.get_transac_emails_list import GetTransacEmailsList
@@ -134,6 +140,7 @@ from sib_api_v3_sdk.models.remaining_credit_model_reseller import RemainingCredi
 from sib_api_v3_sdk.models.remove_contact_from_list import RemoveContactFromList
 from sib_api_v3_sdk.models.remove_credits import RemoveCredits
 from sib_api_v3_sdk.models.request_contact_export import RequestContactExport
+from sib_api_v3_sdk.models.request_contact_export_custom_contact_filter import RequestContactExportCustomContactFilter
 from sib_api_v3_sdk.models.request_contact_import import RequestContactImport
 from sib_api_v3_sdk.models.request_contact_import_new_list import RequestContactImportNewList
 from sib_api_v3_sdk.models.request_sms_recipient_export import RequestSmsRecipientExport

@@ -1,4 +1,4 @@
-**Latest stable version is: https://github.com/sendinblue/APIv3-python-library/tree/v4.2.2**
+**Our library is now compatible with python 3.7 . Please use: https://github.com/sendinblue/APIv3-python-library/tree/v6.1.0**
 
 # SendinBlue's API v3 Python Library
 
@@ -16,7 +16,7 @@ For more information, please visit [https://account.sendinblue.com/support](http
 
 ## Requirements.
 
-Compatible from Python version 2.7 to 3.5
+Compatible from Python version 2.7 to 3.5+
 
 ## Installation & Usage
 ### pip install
@@ -78,6 +78,7 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->get_account: %s\n" % e)
+
 ```
 
 ## Documentation for API Endpoints
@@ -120,9 +121,11 @@ Class | Method | HTTP request | Description
 *EmailCampaignsApi* | [**create_email_campaign**](docs/EmailCampaignsApi.md#create_email_campaign) | **POST** /emailCampaigns | Create an email campaign
 *EmailCampaignsApi* | [**delete_email_campaign**](docs/EmailCampaignsApi.md#delete_email_campaign) | **DELETE** /emailCampaigns/{campaignId} | Delete an email campaign
 *EmailCampaignsApi* | [**email_export_recipients**](docs/EmailCampaignsApi.md#email_export_recipients) | **POST** /emailCampaigns/{campaignId}/exportRecipients | Export the recipients of a campaign
+*EmailCampaignsApi* | [**get_ab_test_campaign_result**](docs/EmailCampaignsApi.md#get_ab_test_campaign_result) | **GET** /emailCampaigns/{campaignId}/abTestCampaignResult | Get A/B test email campaign result
 *EmailCampaignsApi* | [**get_email_campaign**](docs/EmailCampaignsApi.md#get_email_campaign) | **GET** /emailCampaigns/{campaignId} | Get campaign informations
 *EmailCampaignsApi* | [**get_email_campaigns**](docs/EmailCampaignsApi.md#get_email_campaigns) | **GET** /emailCampaigns | Return all your created campaigns
-*EmailCampaignsApi* | [**send_email_campaign_now**](docs/EmailCampaignsApi.md#send_email_campaign_now) | **POST** /emailCampaigns/{campaignId}/sendNow | Send an email campaign id of the campaign immediately
+*EmailCampaignsApi* | [**get_shared_template_url**](docs/EmailCampaignsApi.md#get_shared_template_url) | **GET** /emailCampaigns/{campaignId}/sharedUrl | Get a shared template url
+*EmailCampaignsApi* | [**send_email_campaign_now**](docs/EmailCampaignsApi.md#send_email_campaign_now) | **POST** /emailCampaigns/{campaignId}/sendNow | Send an email campaign immediately, based on campaignId
 *EmailCampaignsApi* | [**send_report**](docs/EmailCampaignsApi.md#send_report) | **POST** /emailCampaigns/{campaignId}/sendReport | Send the report of a campaigns
 *EmailCampaignsApi* | [**send_test_email**](docs/EmailCampaignsApi.md#send_test_email) | **POST** /emailCampaigns/{campaignId}/sendTest | Send an email campaign to your test list
 *EmailCampaignsApi* | [**update_campaign_status**](docs/EmailCampaignsApi.md#update_campaign_status) | **PUT** /emailCampaigns/{campaignId}/status | Update a campaign status
@@ -151,6 +154,7 @@ Class | Method | HTTP request | Description
 *ResellerApi* | [**delete_child_domain**](docs/ResellerApi.md#delete_child_domain) | **DELETE** /reseller/children/{childAuthKey}/domains/{domainName} | Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
 *ResellerApi* | [**delete_reseller_child**](docs/ResellerApi.md#delete_reseller_child) | **DELETE** /reseller/children/{childAuthKey} | Deletes a single reseller child based on the childAuthKey supplied
 *ResellerApi* | [**dissociate_ip_from_child**](docs/ResellerApi.md#dissociate_ip_from_child) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
+*ResellerApi* | [**get_child_account_creation_status**](docs/ResellerApi.md#get_child_account_creation_status) | **GET** /reseller/children/{childAuthKey}/accountCreationStatus | Returns the status of reseller&#39;s child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
 *ResellerApi* | [**get_child_domains**](docs/ResellerApi.md#get_child_domains) | **GET** /reseller/children/{childAuthKey}/domains | Gets all the sender domains of a specific child account
 *ResellerApi* | [**get_child_info**](docs/ResellerApi.md#get_child_info) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
 *ResellerApi* | [**get_reseller_childs**](docs/ResellerApi.md#get_reseller_childs) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
@@ -177,11 +181,14 @@ Class | Method | HTTP request | Description
 *SMTPApi* | [**get_smtp_report**](docs/SMTPApi.md#get_smtp_report) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
 *SMTPApi* | [**get_smtp_template**](docs/SMTPApi.md#get_smtp_template) | **GET** /smtp/templates/{templateId} | Returns the template informations
 *SMTPApi* | [**get_smtp_templates**](docs/SMTPApi.md#get_smtp_templates) | **GET** /smtp/templates | Get the list of transactional email templates
+*SMTPApi* | [**get_transac_blocked_contacts**](docs/SMTPApi.md#get_transac_blocked_contacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
 *SMTPApi* | [**get_transac_email_content**](docs/SMTPApi.md#get_transac_email_content) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
 *SMTPApi* | [**get_transac_emails_list**](docs/SMTPApi.md#get_transac_emails_list) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
 *SMTPApi* | [**send_template**](docs/SMTPApi.md#send_template) | **POST** /smtp/templates/{templateId}/send | Send a template
 *SMTPApi* | [**send_test_template**](docs/SMTPApi.md#send_test_template) | **POST** /smtp/templates/{templateId}/sendTest | Send a template to your test list
 *SMTPApi* | [**send_transac_email**](docs/SMTPApi.md#send_transac_email) | **POST** /smtp/email | Send a transactional email
+*SMTPApi* | [**smtp_blocked_contacts_email_delete**](docs/SMTPApi.md#smtp_blocked_contacts_email_delete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
+*SMTPApi* | [**smtp_log_message_id_delete**](docs/SMTPApi.md#smtp_log_message_id_delete) | **DELETE** /smtp/log/{messageId} | Delete an SMTP transactional log
 *SMTPApi* | [**update_smtp_template**](docs/SMTPApi.md#update_smtp_template) | **PUT** /smtp/templates/{templateId} | Updates a transactional email templates
 *SendersApi* | [**create_sender**](docs/SendersApi.md#create_sender) | **POST** /senders | Create a new sender
 *SendersApi* | [**delete_sender**](docs/SendersApi.md#delete_sender) | **DELETE** /senders/{senderId} | Delete a sender
@@ -202,6 +209,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AbTestCampaignResult](docs/AbTestCampaignResult.md)
  - [AddChildDomain](docs/AddChildDomain.md)
  - [AddContactToList](docs/AddContactToList.md)
  - [AddCredits](docs/AddCredits.md)
@@ -241,6 +249,7 @@ Class | Method | HTTP request | Description
  - [GetCampaignOverview](docs/GetCampaignOverview.md)
  - [GetCampaignRecipients](docs/GetCampaignRecipients.md)
  - [GetCampaignStats](docs/GetCampaignStats.md)
+ - [GetChildAccountCreationStatus](docs/GetChildAccountCreationStatus.md)
  - [GetChildDomain](docs/GetChildDomain.md)
  - [GetChildDomains](docs/GetChildDomains.md)
  - [GetChildInfoApiKeys](docs/GetChildInfoApiKeys.md)
@@ -252,14 +261,12 @@ Class | Method | HTTP request | Description
  - [GetClient](docs/GetClient.md)
  - [GetContactCampaignStats](docs/GetContactCampaignStats.md)
  - [GetContactCampaignStatsClicked](docs/GetContactCampaignStatsClicked.md)
- - [GetContactCampaignStatsLinks](docs/GetContactCampaignStatsLinks.md)
  - [GetContactCampaignStatsOpened](docs/GetContactCampaignStatsOpened.md)
  - [GetContactCampaignStatsTransacAttributes](docs/GetContactCampaignStatsTransacAttributes.md)
  - [GetContactCampaignStatsUnsubscriptions](docs/GetContactCampaignStatsUnsubscriptions.md)
- - [GetContactCampaignStatsUnsubscriptionsAdminUnsubscription](docs/GetContactCampaignStatsUnsubscriptionsAdminUnsubscription.md)
- - [GetContactCampaignStatsUnsubscriptionsUserUnsubscription](docs/GetContactCampaignStatsUnsubscriptionsUserUnsubscription.md)
  - [GetContactDetails](docs/GetContactDetails.md)
  - [GetContacts](docs/GetContacts.md)
+ - [GetDeviceBrowserStats](docs/GetDeviceBrowserStats.md)
  - [GetEmailCampaigns](docs/GetEmailCampaigns.md)
  - [GetEmailEventReport](docs/GetEmailEventReport.md)
  - [GetEmailEventReportEvents](docs/GetEmailEventReportEvents.md)
@@ -291,6 +298,7 @@ Class | Method | HTTP request | Description
  - [GetSendersList](docs/GetSendersList.md)
  - [GetSendersListIps](docs/GetSendersListIps.md)
  - [GetSendersListSenders](docs/GetSendersListSenders.md)
+ - [GetSharedTemplateUrl](docs/GetSharedTemplateUrl.md)
  - [GetSmsCampaignOverview](docs/GetSmsCampaignOverview.md)
  - [GetSmsCampaignStats](docs/GetSmsCampaignStats.md)
  - [GetSmsCampaigns](docs/GetSmsCampaigns.md)
@@ -300,8 +308,13 @@ Class | Method | HTTP request | Description
  - [GetSmtpTemplateOverviewSender](docs/GetSmtpTemplateOverviewSender.md)
  - [GetSmtpTemplates](docs/GetSmtpTemplates.md)
  - [GetSsoToken](docs/GetSsoToken.md)
+ - [GetStatsByBrowser](docs/GetStatsByBrowser.md)
+ - [GetStatsByDevice](docs/GetStatsByDevice.md)
  - [GetStatsByDomain](docs/GetStatsByDomain.md)
  - [GetTransacAggregatedSmsReport](docs/GetTransacAggregatedSmsReport.md)
+ - [GetTransacBlockedContacts](docs/GetTransacBlockedContacts.md)
+ - [GetTransacBlockedContactsContacts](docs/GetTransacBlockedContactsContacts.md)
+ - [GetTransacBlockedContactsReason](docs/GetTransacBlockedContactsReason.md)
  - [GetTransacEmailContent](docs/GetTransacEmailContent.md)
  - [GetTransacEmailContentEvents](docs/GetTransacEmailContentEvents.md)
  - [GetTransacEmailsList](docs/GetTransacEmailsList.md)
@@ -321,6 +334,7 @@ Class | Method | HTTP request | Description
  - [RemoveContactFromList](docs/RemoveContactFromList.md)
  - [RemoveCredits](docs/RemoveCredits.md)
  - [RequestContactExport](docs/RequestContactExport.md)
+ - [RequestContactExportCustomContactFilter](docs/RequestContactExportCustomContactFilter.md)
  - [RequestContactImport](docs/RequestContactImport.md)
  - [RequestContactImportNewList](docs/RequestContactImportNewList.md)
  - [RequestSmsRecipientExport](docs/RequestSmsRecipientExport.md)

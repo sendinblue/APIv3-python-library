@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -15,8 +15,6 @@ import pprint
 import re  # noqa: F401
 
 import six
-
-from sib_api_v3_sdk.models.get_transac_email_content_events import GetTransacEmailContentEvents  # noqa: F401,E501
 
 
 class GetTransacEmailContent(object):
@@ -36,7 +34,7 @@ class GetTransacEmailContent(object):
         'email': 'str',
         'subject': 'str',
         'template_id': 'int',
-        'date': 'datetime',
+        '_date': 'datetime',
         'events': 'list[GetTransacEmailContentEvents]',
         'body': 'str',
         'attachment_count': 'int'
@@ -46,19 +44,19 @@ class GetTransacEmailContent(object):
         'email': 'email',
         'subject': 'subject',
         'template_id': 'templateId',
-        'date': 'date',
+        '_date': 'date',
         'events': 'events',
         'body': 'body',
         'attachment_count': 'attachmentCount'
     }
 
-    def __init__(self, email=None, subject=None, template_id=None, date=None, events=None, body=None, attachment_count=None):  # noqa: E501
+    def __init__(self, email=None, subject=None, template_id=None, _date=None, events=None, body=None, attachment_count=None):  # noqa: E501
         """GetTransacEmailContent - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
         self._subject = None
         self._template_id = None
-        self._date = None
+        self.__date = None
         self._events = None
         self._body = None
         self._attachment_count = None
@@ -68,7 +66,7 @@ class GetTransacEmailContent(object):
         self.subject = subject
         if template_id is not None:
             self.template_id = template_id
-        self.date = date
+        self._date = _date
         self.events = events
         self.body = body
         self.attachment_count = attachment_count
@@ -147,29 +145,29 @@ class GetTransacEmailContent(object):
         self._template_id = template_id
 
     @property
-    def date(self):
-        """Gets the date of this GetTransacEmailContent.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this GetTransacEmailContent.  # noqa: E501
 
         Date on which transactional email was sent  # noqa: E501
 
-        :return: The date of this GetTransacEmailContent.  # noqa: E501
+        :return: The _date of this GetTransacEmailContent.  # noqa: E501
         :rtype: datetime
         """
-        return self._date
+        return self.__date
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this GetTransacEmailContent.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this GetTransacEmailContent.
 
         Date on which transactional email was sent  # noqa: E501
 
-        :param date: The date of this GetTransacEmailContent.  # noqa: E501
+        :param _date: The _date of this GetTransacEmailContent.  # noqa: E501
         :type: datetime
         """
-        if date is None:
-            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
+        if _date is None:
+            raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
 
-        self._date = date
+        self.__date = _date
 
     @property
     def events(self):
@@ -267,6 +265,9 @@ class GetTransacEmailContent(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetTransacEmailContent, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

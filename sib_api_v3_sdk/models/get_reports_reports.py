@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -31,7 +31,7 @@ class GetReportsReports(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'date': 'date',
+        '_date': 'date',
         'requests': 'int',
         'delivered': 'int',
         'hard_bounces': 'int',
@@ -47,7 +47,7 @@ class GetReportsReports(object):
     }
 
     attribute_map = {
-        'date': 'date',
+        '_date': 'date',
         'requests': 'requests',
         'delivered': 'delivered',
         'hard_bounces': 'hardBounces',
@@ -62,10 +62,10 @@ class GetReportsReports(object):
         'unsubscribed': 'unsubscribed'
     }
 
-    def __init__(self, date=None, requests=None, delivered=None, hard_bounces=None, soft_bounces=None, clicks=None, unique_clicks=None, opens=None, unique_opens=None, spam_reports=None, blocked=None, invalid=None, unsubscribed=None):  # noqa: E501
+    def __init__(self, _date=None, requests=None, delivered=None, hard_bounces=None, soft_bounces=None, clicks=None, unique_clicks=None, opens=None, unique_opens=None, spam_reports=None, blocked=None, invalid=None, unsubscribed=None):  # noqa: E501
         """GetReportsReports - a model defined in Swagger"""  # noqa: E501
 
-        self._date = None
+        self.__date = None
         self._requests = None
         self._delivered = None
         self._hard_bounces = None
@@ -80,7 +80,7 @@ class GetReportsReports(object):
         self._unsubscribed = None
         self.discriminator = None
 
-        self.date = date
+        self._date = _date
         self.requests = requests
         self.delivered = delivered
         self.hard_bounces = hard_bounces
@@ -95,29 +95,29 @@ class GetReportsReports(object):
         self.unsubscribed = unsubscribed
 
     @property
-    def date(self):
-        """Gets the date of this GetReportsReports.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this GetReportsReports.  # noqa: E501
 
         Date of the statistics  # noqa: E501
 
-        :return: The date of this GetReportsReports.  # noqa: E501
+        :return: The _date of this GetReportsReports.  # noqa: E501
         :rtype: date
         """
-        return self._date
+        return self.__date
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this GetReportsReports.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this GetReportsReports.
 
         Date of the statistics  # noqa: E501
 
-        :param date: The date of this GetReportsReports.  # noqa: E501
+        :param _date: The _date of this GetReportsReports.  # noqa: E501
         :type: date
         """
-        if date is None:
-            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
+        if _date is None:
+            raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
 
-        self._date = date
+        self.__date = _date
 
     @property
     def requests(self):
@@ -440,6 +440,9 @@ class GetReportsReports(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetReportsReports, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

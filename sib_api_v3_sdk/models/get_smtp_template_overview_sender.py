@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -32,25 +32,30 @@ class GetSmtpTemplateOverviewSender(object):
     """
     swagger_types = {
         'name': 'str',
-        'email': 'str'
+        'email': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'email': 'email'
+        'email': 'email',
+        'id': 'id'
     }
 
-    def __init__(self, name=None, email=None):  # noqa: E501
+    def __init__(self, name=None, email=None, id=None):  # noqa: E501
         """GetSmtpTemplateOverviewSender - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._email = None
+        self._id = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
         if email is not None:
             self.email = email
+        if id is not None:
+            self.id = id
 
     @property
     def name(self):
@@ -98,6 +103,29 @@ class GetSmtpTemplateOverviewSender(object):
 
         self._email = email
 
+    @property
+    def id(self):
+        """Gets the id of this GetSmtpTemplateOverviewSender.  # noqa: E501
+
+        Sender id of the template  # noqa: E501
+
+        :return: The id of this GetSmtpTemplateOverviewSender.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this GetSmtpTemplateOverviewSender.
+
+        Sender id of the template  # noqa: E501
+
+        :param id: The id of this GetSmtpTemplateOverviewSender.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -119,6 +147,9 @@ class GetSmtpTemplateOverviewSender(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetSmtpTemplateOverviewSender, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

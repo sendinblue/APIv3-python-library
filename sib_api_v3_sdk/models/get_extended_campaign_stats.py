@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -15,8 +15,6 @@ import pprint
 import re  # noqa: F401
 
 import six
-
-from sib_api_v3_sdk.models.get_stats_by_domain import GetStatsByDomain  # noqa: F401,E501
 
 
 class GetExtendedCampaignStats(object):
@@ -38,7 +36,9 @@ class GetExtendedCampaignStats(object):
         'mirror_click': 'int',
         'remaining': 'int',
         'links_stats': 'object',
-        'stats_by_domain': 'GetStatsByDomain'
+        'stats_by_domain': 'GetStatsByDomain',
+        'stats_by_device': 'GetStatsByDevice',
+        'stats_by_browser': 'GetStatsByBrowser'
     }
 
     attribute_map = {
@@ -47,10 +47,12 @@ class GetExtendedCampaignStats(object):
         'mirror_click': 'mirrorClick',
         'remaining': 'remaining',
         'links_stats': 'linksStats',
-        'stats_by_domain': 'statsByDomain'
+        'stats_by_domain': 'statsByDomain',
+        'stats_by_device': 'statsByDevice',
+        'stats_by_browser': 'statsByBrowser'
     }
 
-    def __init__(self, global_stats=None, campaign_stats=None, mirror_click=None, remaining=None, links_stats=None, stats_by_domain=None):  # noqa: E501
+    def __init__(self, global_stats=None, campaign_stats=None, mirror_click=None, remaining=None, links_stats=None, stats_by_domain=None, stats_by_device=None, stats_by_browser=None):  # noqa: E501
         """GetExtendedCampaignStats - a model defined in Swagger"""  # noqa: E501
 
         self._global_stats = None
@@ -59,6 +61,8 @@ class GetExtendedCampaignStats(object):
         self._remaining = None
         self._links_stats = None
         self._stats_by_domain = None
+        self._stats_by_device = None
+        self._stats_by_browser = None
         self.discriminator = None
 
         self.global_stats = global_stats
@@ -67,6 +71,8 @@ class GetExtendedCampaignStats(object):
         self.remaining = remaining
         self.links_stats = links_stats
         self.stats_by_domain = stats_by_domain
+        self.stats_by_device = stats_by_device
+        self.stats_by_browser = stats_by_browser
 
     @property
     def global_stats(self):
@@ -216,6 +222,56 @@ class GetExtendedCampaignStats(object):
 
         self._stats_by_domain = stats_by_domain
 
+    @property
+    def stats_by_device(self):
+        """Gets the stats_by_device of this GetExtendedCampaignStats.  # noqa: E501
+
+        Statistics about the campaign on the basis of various devices  # noqa: E501
+
+        :return: The stats_by_device of this GetExtendedCampaignStats.  # noqa: E501
+        :rtype: GetStatsByDevice
+        """
+        return self._stats_by_device
+
+    @stats_by_device.setter
+    def stats_by_device(self, stats_by_device):
+        """Sets the stats_by_device of this GetExtendedCampaignStats.
+
+        Statistics about the campaign on the basis of various devices  # noqa: E501
+
+        :param stats_by_device: The stats_by_device of this GetExtendedCampaignStats.  # noqa: E501
+        :type: GetStatsByDevice
+        """
+        if stats_by_device is None:
+            raise ValueError("Invalid value for `stats_by_device`, must not be `None`")  # noqa: E501
+
+        self._stats_by_device = stats_by_device
+
+    @property
+    def stats_by_browser(self):
+        """Gets the stats_by_browser of this GetExtendedCampaignStats.  # noqa: E501
+
+        Statistics about the campaign on the basis of various browsers  # noqa: E501
+
+        :return: The stats_by_browser of this GetExtendedCampaignStats.  # noqa: E501
+        :rtype: GetStatsByBrowser
+        """
+        return self._stats_by_browser
+
+    @stats_by_browser.setter
+    def stats_by_browser(self, stats_by_browser):
+        """Sets the stats_by_browser of this GetExtendedCampaignStats.
+
+        Statistics about the campaign on the basis of various browsers  # noqa: E501
+
+        :param stats_by_browser: The stats_by_browser of this GetExtendedCampaignStats.  # noqa: E501
+        :type: GetStatsByBrowser
+        """
+        if stats_by_browser is None:
+            raise ValueError("Invalid value for `stats_by_browser`, must not be `None`")  # noqa: E501
+
+        self._stats_by_browser = stats_by_browser
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -237,6 +293,9 @@ class GetExtendedCampaignStats(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetExtendedCampaignStats, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

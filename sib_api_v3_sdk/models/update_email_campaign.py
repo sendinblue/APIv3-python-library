@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -15,9 +15,6 @@ import pprint
 import re  # noqa: F401
 
 import six
-
-from sib_api_v3_sdk.models.update_email_campaign_recipients import UpdateEmailCampaignRecipients  # noqa: F401,E501
-from sib_api_v3_sdk.models.update_email_campaign_sender import UpdateEmailCampaignSender  # noqa: F401,E501
 
 
 class UpdateEmailCampaign(object):
@@ -58,7 +55,10 @@ class UpdateEmailCampaign(object):
         'subject_b': 'str',
         'split_rule': 'int',
         'winner_criteria': 'str',
-        'winner_delay': 'int'
+        'winner_delay': 'int',
+        'ip_warmup_enable': 'bool',
+        'initial_quota': 'int',
+        'increase_rate': 'int'
     }
 
     attribute_map = {
@@ -86,10 +86,13 @@ class UpdateEmailCampaign(object):
         'subject_b': 'subjectB',
         'split_rule': 'splitRule',
         'winner_criteria': 'winnerCriteria',
-        'winner_delay': 'winnerDelay'
+        'winner_delay': 'winnerDelay',
+        'ip_warmup_enable': 'ipWarmupEnable',
+        'initial_quota': 'initialQuota',
+        'increase_rate': 'increaseRate'
     }
 
-    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, footer=None, header=None, utm_campaign=None, params=None, send_at_best_time=None, ab_testing=False, subject_a=None, subject_b=None, split_rule=None, winner_criteria=None, winner_delay=None):  # noqa: E501
+    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, recurring=False, footer=None, header=None, utm_campaign=None, params=None, send_at_best_time=None, ab_testing=False, subject_a=None, subject_b=None, split_rule=None, winner_criteria=None, winner_delay=None, ip_warmup_enable=False, initial_quota=None, increase_rate=None):  # noqa: E501
         """UpdateEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._tag = None
@@ -117,6 +120,9 @@ class UpdateEmailCampaign(object):
         self._split_rule = None
         self._winner_criteria = None
         self._winner_delay = None
+        self._ip_warmup_enable = None
+        self._initial_quota = None
+        self._increase_rate = None
         self.discriminator = None
 
         if tag is not None:
@@ -169,6 +175,12 @@ class UpdateEmailCampaign(object):
             self.winner_criteria = winner_criteria
         if winner_delay is not None:
             self.winner_delay = winner_delay
+        if ip_warmup_enable is not None:
+            self.ip_warmup_enable = ip_warmup_enable
+        if initial_quota is not None:
+            self.initial_quota = initial_quota
+        if increase_rate is not None:
+            self.increase_rate = increase_rate
 
     @property
     def tag(self):
@@ -755,6 +767,79 @@ class UpdateEmailCampaign(object):
 
         self._winner_delay = winner_delay
 
+    @property
+    def ip_warmup_enable(self):
+        """Gets the ip_warmup_enable of this UpdateEmailCampaign.  # noqa: E501
+
+        Available for dedicated ip clients. Set this to true if you wish to warm up your ip.  # noqa: E501
+
+        :return: The ip_warmup_enable of this UpdateEmailCampaign.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ip_warmup_enable
+
+    @ip_warmup_enable.setter
+    def ip_warmup_enable(self, ip_warmup_enable):
+        """Sets the ip_warmup_enable of this UpdateEmailCampaign.
+
+        Available for dedicated ip clients. Set this to true if you wish to warm up your ip.  # noqa: E501
+
+        :param ip_warmup_enable: The ip_warmup_enable of this UpdateEmailCampaign.  # noqa: E501
+        :type: bool
+        """
+
+        self._ip_warmup_enable = ip_warmup_enable
+
+    @property
+    def initial_quota(self):
+        """Gets the initial_quota of this UpdateEmailCampaign.  # noqa: E501
+
+        Set an initial quota greater than 1 for warming up your ip. We recommend you set a value of 3000.  # noqa: E501
+
+        :return: The initial_quota of this UpdateEmailCampaign.  # noqa: E501
+        :rtype: int
+        """
+        return self._initial_quota
+
+    @initial_quota.setter
+    def initial_quota(self, initial_quota):
+        """Sets the initial_quota of this UpdateEmailCampaign.
+
+        Set an initial quota greater than 1 for warming up your ip. We recommend you set a value of 3000.  # noqa: E501
+
+        :param initial_quota: The initial_quota of this UpdateEmailCampaign.  # noqa: E501
+        :type: int
+        """
+
+        self._initial_quota = initial_quota
+
+    @property
+    def increase_rate(self):
+        """Gets the increase_rate of this UpdateEmailCampaign.  # noqa: E501
+
+        Set a percentage increase rate for warming up your ip. We recommend you set the increase rate to 30% per day. If you want to send the same number of emails every day, set the daily increase value to 0%.  # noqa: E501
+
+        :return: The increase_rate of this UpdateEmailCampaign.  # noqa: E501
+        :rtype: int
+        """
+        return self._increase_rate
+
+    @increase_rate.setter
+    def increase_rate(self, increase_rate):
+        """Sets the increase_rate of this UpdateEmailCampaign.
+
+        Set a percentage increase rate for warming up your ip. We recommend you set the increase rate to 30% per day. If you want to send the same number of emails every day, set the daily increase value to 0%.  # noqa: E501
+
+        :param increase_rate: The increase_rate of this UpdateEmailCampaign.  # noqa: E501
+        :type: int
+        """
+        if increase_rate is not None and increase_rate > 100:  # noqa: E501
+            raise ValueError("Invalid value for `increase_rate`, must be a value less than or equal to `100`")  # noqa: E501
+        if increase_rate is not None and increase_rate < 0:  # noqa: E501
+            raise ValueError("Invalid value for `increase_rate`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._increase_rate = increase_rate
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -776,6 +861,9 @@ class UpdateEmailCampaign(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UpdateEmailCampaign, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
