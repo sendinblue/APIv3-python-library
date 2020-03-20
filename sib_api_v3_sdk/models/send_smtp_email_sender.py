@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -55,7 +55,7 @@ class SendSmtpEmailSender(object):
     def name(self):
         """Gets the name of this SendSmtpEmailSender.  # noqa: E501
 
-        Name of the sender from which the emails will be sent  # noqa: E501
+        Name of the sender from which the emails will be sent. Maximum allowed characters are 70.  # noqa: E501
 
         :return: The name of this SendSmtpEmailSender.  # noqa: E501
         :rtype: str
@@ -66,7 +66,7 @@ class SendSmtpEmailSender(object):
     def name(self, name):
         """Sets the name of this SendSmtpEmailSender.
 
-        Name of the sender from which the emails will be sent  # noqa: E501
+        Name of the sender from which the emails will be sent. Maximum allowed characters are 70.  # noqa: E501
 
         :param name: The name of this SendSmtpEmailSender.  # noqa: E501
         :type: str
@@ -120,6 +120,9 @@ class SendSmtpEmailSender(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SendSmtpEmailSender, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

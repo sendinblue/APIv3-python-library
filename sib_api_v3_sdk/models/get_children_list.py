@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -31,21 +31,25 @@ class GetChildrenList(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'children': 'list[object]'
+        'children': 'list[object]',
+        'count': 'int'
     }
 
     attribute_map = {
-        'children': 'children'
+        'children': 'children',
+        'count': 'count'
     }
 
-    def __init__(self, children=None):  # noqa: E501
+    def __init__(self, children=None, count=None):  # noqa: E501
         """GetChildrenList - a model defined in Swagger"""  # noqa: E501
 
         self._children = None
+        self._count = None
         self.discriminator = None
 
         if children is not None:
             self.children = children
+        self.count = count
 
     @property
     def children(self):
@@ -70,6 +74,31 @@ class GetChildrenList(object):
 
         self._children = children
 
+    @property
+    def count(self):
+        """Gets the count of this GetChildrenList.  # noqa: E501
+
+        Number of child accounts  # noqa: E501
+
+        :return: The count of this GetChildrenList.  # noqa: E501
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """Sets the count of this GetChildrenList.
+
+        Number of child accounts  # noqa: E501
+
+        :param count: The count of this GetChildrenList.  # noqa: E501
+        :type: int
+        """
+        if count is None:
+            raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501
+
+        self._count = count
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -91,6 +120,9 @@ class GetChildrenList(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetChildrenList, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

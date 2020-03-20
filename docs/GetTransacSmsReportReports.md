@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**date** | **date** | Date for which statistics are retrieved | 
+**_date** | **date** | Date for which statistics are retrieved | 
 **requests** | **int** | Number of requests for the date | 
 **delivered** | **int** | Number of delivered SMS for the date | 
 **hard_bounces** | **int** | Number of hardbounces for the date | 

@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -15,9 +15,6 @@ import pprint
 import re  # noqa: F401
 
 import six
-
-from sib_api_v3_sdk.models.get_contact_campaign_stats_unsubscriptions_admin_unsubscription import GetContactCampaignStatsUnsubscriptionsAdminUnsubscription  # noqa: F401,E501
-from sib_api_v3_sdk.models.get_contact_campaign_stats_unsubscriptions_user_unsubscription import GetContactCampaignStatsUnsubscriptionsUserUnsubscription  # noqa: F401,E501
 
 
 class GetContactCampaignStatsUnsubscriptions(object):
@@ -34,8 +31,8 @@ class GetContactCampaignStatsUnsubscriptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'user_unsubscription': 'list[GetContactCampaignStatsUnsubscriptionsUserUnsubscription]',
-        'admin_unsubscription': 'list[GetContactCampaignStatsUnsubscriptionsAdminUnsubscription]'
+        'user_unsubscription': 'list[GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription]',
+        'admin_unsubscription': 'list[GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription]'
     }
 
     attribute_map = {
@@ -60,7 +57,7 @@ class GetContactCampaignStatsUnsubscriptions(object):
         Contact has unsubscribed via the unsubscription link in the email  # noqa: E501
 
         :return: The user_unsubscription of this GetContactCampaignStatsUnsubscriptions.  # noqa: E501
-        :rtype: list[GetContactCampaignStatsUnsubscriptionsUserUnsubscription]
+        :rtype: list[GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription]
         """
         return self._user_unsubscription
 
@@ -71,7 +68,7 @@ class GetContactCampaignStatsUnsubscriptions(object):
         Contact has unsubscribed via the unsubscription link in the email  # noqa: E501
 
         :param user_unsubscription: The user_unsubscription of this GetContactCampaignStatsUnsubscriptions.  # noqa: E501
-        :type: list[GetContactCampaignStatsUnsubscriptionsUserUnsubscription]
+        :type: list[GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription]
         """
         if user_unsubscription is None:
             raise ValueError("Invalid value for `user_unsubscription`, must not be `None`")  # noqa: E501
@@ -85,7 +82,7 @@ class GetContactCampaignStatsUnsubscriptions(object):
         Contact has been unsubscribed from the administrator  # noqa: E501
 
         :return: The admin_unsubscription of this GetContactCampaignStatsUnsubscriptions.  # noqa: E501
-        :rtype: list[GetContactCampaignStatsUnsubscriptionsAdminUnsubscription]
+        :rtype: list[GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription]
         """
         return self._admin_unsubscription
 
@@ -96,7 +93,7 @@ class GetContactCampaignStatsUnsubscriptions(object):
         Contact has been unsubscribed from the administrator  # noqa: E501
 
         :param admin_unsubscription: The admin_unsubscription of this GetContactCampaignStatsUnsubscriptions.  # noqa: E501
-        :type: list[GetContactCampaignStatsUnsubscriptionsAdminUnsubscription]
+        :type: list[GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription]
         """
         if admin_unsubscription is None:
             raise ValueError("Invalid value for `admin_unsubscription`, must not be `None`")  # noqa: E501
@@ -124,6 +121,9 @@ class GetContactCampaignStatsUnsubscriptions(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetContactCampaignStatsUnsubscriptions, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

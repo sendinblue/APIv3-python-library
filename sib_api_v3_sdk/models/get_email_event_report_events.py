@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -32,7 +32,7 @@ class GetEmailEventReportEvents(object):
     """
     swagger_types = {
         'email': 'str',
-        'date': 'datetime',
+        '_date': 'datetime',
         'subject': 'str',
         'message_id': 'str',
         'event': 'str',
@@ -45,7 +45,7 @@ class GetEmailEventReportEvents(object):
 
     attribute_map = {
         'email': 'email',
-        'date': 'date',
+        '_date': 'date',
         'subject': 'subject',
         'message_id': 'messageId',
         'event': 'event',
@@ -56,11 +56,11 @@ class GetEmailEventReportEvents(object):
         '_from': 'from'
     }
 
-    def __init__(self, email=None, date=None, subject=None, message_id=None, event=None, reason=None, tag=None, ip=None, link=None, _from=None):  # noqa: E501
+    def __init__(self, email=None, _date=None, subject=None, message_id=None, event=None, reason=None, tag=None, ip=None, link=None, _from=None):  # noqa: E501
         """GetEmailEventReportEvents - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
-        self._date = None
+        self.__date = None
         self._subject = None
         self._message_id = None
         self._event = None
@@ -72,7 +72,7 @@ class GetEmailEventReportEvents(object):
         self.discriminator = None
 
         self.email = email
-        self.date = date
+        self._date = _date
         if subject is not None:
             self.subject = subject
         self.message_id = message_id
@@ -114,29 +114,29 @@ class GetEmailEventReportEvents(object):
         self._email = email
 
     @property
-    def date(self):
-        """Gets the date of this GetEmailEventReportEvents.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this GetEmailEventReportEvents.  # noqa: E501
 
         UTC date-time on which the event has been generated  # noqa: E501
 
-        :return: The date of this GetEmailEventReportEvents.  # noqa: E501
+        :return: The _date of this GetEmailEventReportEvents.  # noqa: E501
         :rtype: datetime
         """
-        return self._date
+        return self.__date
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this GetEmailEventReportEvents.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this GetEmailEventReportEvents.
 
         UTC date-time on which the event has been generated  # noqa: E501
 
-        :param date: The date of this GetEmailEventReportEvents.  # noqa: E501
+        :param _date: The _date of this GetEmailEventReportEvents.  # noqa: E501
         :type: datetime
         """
-        if date is None:
-            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
+        if _date is None:
+            raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
 
-        self._date = date
+        self.__date = _date
 
     @property
     def subject(self):
@@ -353,6 +353,9 @@ class GetEmailEventReportEvents(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GetEmailEventReportEvents, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -12,11 +12,14 @@ Method | HTTP request | Description
 [**get_smtp_report**](SMTPApi.md#get_smtp_report) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
 [**get_smtp_template**](SMTPApi.md#get_smtp_template) | **GET** /smtp/templates/{templateId} | Returns the template informations
 [**get_smtp_templates**](SMTPApi.md#get_smtp_templates) | **GET** /smtp/templates | Get the list of transactional email templates
+[**get_transac_blocked_contacts**](SMTPApi.md#get_transac_blocked_contacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
 [**get_transac_email_content**](SMTPApi.md#get_transac_email_content) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
 [**get_transac_emails_list**](SMTPApi.md#get_transac_emails_list) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
 [**send_template**](SMTPApi.md#send_template) | **POST** /smtp/templates/{templateId}/send | Send a template
 [**send_test_template**](SMTPApi.md#send_test_template) | **POST** /smtp/templates/{templateId}/sendTest | Send a template to your test list
 [**send_transac_email**](SMTPApi.md#send_transac_email) | **POST** /smtp/email | Send a transactional email
+[**smtp_blocked_contacts_email_delete**](SMTPApi.md#smtp_blocked_contacts_email_delete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
+[**smtp_log_message_id_delete**](SMTPApi.md#smtp_log_message_id_delete) | **DELETE** /smtp/log/{messageId} | Delete an SMTP transactional log
 [**update_smtp_template**](SMTPApi.md#update_smtp_template) | **PUT** /smtp/templates/{templateId} | Updates a transactional email templates
 
 
@@ -355,7 +358,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 50 # int | Number of documents returned per page (optional) (default to 50)
+limit = 10 # int | Number of documents returned per page (optional) (default to 10)
 offset = 0 # int | Index of the first document on the page (optional) (default to 0)
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
@@ -374,7 +377,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
  **start_date** | **str**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) | [optional] 
  **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional] 
@@ -502,6 +505,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetSmtpTemplates**](GetSmtpTemplates.md)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transac_blocked_contacts**
+> GetTransacBlockedContacts get_transac_blocked_contacts(start_date=start_date, end_date=end_date, limit=limit, offset=offset, senders=senders)
+
+Get the list of blocked or unsubscribed transactional contacts
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
+start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the blocked or unsubscribed contacts (optional)
+end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the blocked or unsubscribed contacts (optional)
+limit = 50 # int | Number of documents returned per page (optional) (default to 50)
+offset = 0 # int | Index of the first document on the page (optional) (default to 0)
+senders = ['senders_example'] # list[str] | Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
+
+try:
+    # Get the list of blocked or unsubscribed transactional contacts
+    api_response = api_instance.get_transac_blocked_contacts(start_date=start_date, end_date=end_date, limit=limit, offset=offset, senders=senders)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SMTPApi->get_transac_blocked_contacts: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **str**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the blocked or unsubscribed contacts | [optional] 
+ **end_date** | **str**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the blocked or unsubscribed contacts | [optional] 
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
+ **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
+ **senders** | [**list[str]**](str.md)| Comma separated list of emails of the senders from which contacts are blocked or unsubscribed | [optional] 
+
+### Return type
+
+[**GetTransacBlockedContacts**](GetTransacBlockedContacts.md)
 
 ### Authorization
 
@@ -802,6 +870,118 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateSmtpEmail**](CreateSmtpEmail.md)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **smtp_blocked_contacts_email_delete**
+> smtp_blocked_contacts_email_delete(email)
+
+Unblock or resubscribe a transactional contact
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
+email = 'email_example' # str | contact email (urlencoded) to unblock.
+
+try:
+    # Unblock or resubscribe a transactional contact
+    api_instance.smtp_blocked_contacts_email_delete(email)
+except ApiException as e:
+    print("Exception when calling SMTPApi->smtp_blocked_contacts_email_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **str**| contact email (urlencoded) to unblock. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **smtp_log_message_id_delete**
+> smtp_log_message_id_delete(message_id)
+
+Delete an SMTP transactional log
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
+message_id = 'message_id_example' # str | MessageId of the transactional log to delete
+
+try:
+    # Delete an SMTP transactional log
+    api_instance.smtp_log_message_id_delete(message_id)
+except ApiException as e:
+    print("Exception when calling SMTPApi->smtp_log_message_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **message_id** | **str**| MessageId of the transactional log to delete | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

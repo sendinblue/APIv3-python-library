@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -33,26 +33,32 @@ class RequestContactExport(object):
     swagger_types = {
         'export_attributes': 'list[str]',
         'contact_filter': 'object',
+        'custom_contact_filter': 'RequestContactExportCustomContactFilter',
         'notify_url': 'str'
     }
 
     attribute_map = {
         'export_attributes': 'exportAttributes',
         'contact_filter': 'contactFilter',
+        'custom_contact_filter': 'customContactFilter',
         'notify_url': 'notifyUrl'
     }
 
-    def __init__(self, export_attributes=None, contact_filter=None, notify_url=None):  # noqa: E501
+    def __init__(self, export_attributes=None, contact_filter=None, custom_contact_filter=None, notify_url=None):  # noqa: E501
         """RequestContactExport - a model defined in Swagger"""  # noqa: E501
 
         self._export_attributes = None
         self._contact_filter = None
+        self._custom_contact_filter = None
         self._notify_url = None
         self.discriminator = None
 
         if export_attributes is not None:
             self.export_attributes = export_attributes
-        self.contact_filter = contact_filter
+        if contact_filter is not None:
+            self.contact_filter = contact_filter
+        if custom_contact_filter is not None:
+            self.custom_contact_filter = custom_contact_filter
         if notify_url is not None:
             self.notify_url = notify_url
 
@@ -83,7 +89,7 @@ class RequestContactExport(object):
     def contact_filter(self):
         """Gets the contact_filter of this RequestContactExport.  # noqa: E501
 
-        Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.  # noqa: E501
+        This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.   # noqa: E501
 
         :return: The contact_filter of this RequestContactExport.  # noqa: E501
         :rtype: object
@@ -94,15 +100,34 @@ class RequestContactExport(object):
     def contact_filter(self, contact_filter):
         """Sets the contact_filter of this RequestContactExport.
 
-        Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.  # noqa: E501
+        This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.   # noqa: E501
 
         :param contact_filter: The contact_filter of this RequestContactExport.  # noqa: E501
         :type: object
         """
-        if contact_filter is None:
-            raise ValueError("Invalid value for `contact_filter`, must not be `None`")  # noqa: E501
 
         self._contact_filter = contact_filter
+
+    @property
+    def custom_contact_filter(self):
+        """Gets the custom_contact_filter of this RequestContactExport.  # noqa: E501
+
+
+        :return: The custom_contact_filter of this RequestContactExport.  # noqa: E501
+        :rtype: RequestContactExportCustomContactFilter
+        """
+        return self._custom_contact_filter
+
+    @custom_contact_filter.setter
+    def custom_contact_filter(self, custom_contact_filter):
+        """Sets the custom_contact_filter of this RequestContactExport.
+
+
+        :param custom_contact_filter: The custom_contact_filter of this RequestContactExport.  # noqa: E501
+        :type: RequestContactExportCustomContactFilter
+        """
+
+        self._custom_contact_filter = custom_contact_filter
 
     @property
     def notify_url(self):
@@ -148,6 +173,9 @@ class RequestContactExport(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(RequestContactExport, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

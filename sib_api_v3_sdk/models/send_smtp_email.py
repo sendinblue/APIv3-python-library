@@ -3,7 +3,7 @@
 """
     SendinBlue API
 
-    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   # noqa: E501
+    SendinBlue provide a RESTFul API that can be used with any languages. With this API, you will be able to :   - Manage your campaigns and get the statistics   - Manage your contacts   - Send transactional Emails and SMS   - and much more...  You can download our wrappers at https://github.com/orgs/sendinblue  **Possible responses**   | Code | Message |   | :-------------: | ------------- |   | 200  | OK. Successful Request  |   | 201  | OK. Successful Creation |   | 202  | OK. Request accepted |   | 204  | OK. Successful Update/Deletion  |   | 400  | Error. Bad Request  |   | 401  | Error. Authentication Needed  |   | 402  | Error. Not enough credit, plan upgrade needed  |   | 403  | Error. Permission denied  |   | 404  | Error. Object does not exist |   | 405  | Error. Method not allowed  |   | 406  | Error. Not Acceptable  |   # noqa: E501
 
     OpenAPI spec version: 3.0.0
     Contact: contact@sendinblue.com
@@ -15,13 +15,6 @@ import pprint
 import re  # noqa: F401
 
 import six
-
-from sib_api_v3_sdk.models.send_smtp_email_attachment import SendSmtpEmailAttachment  # noqa: F401,E501
-from sib_api_v3_sdk.models.send_smtp_email_bcc import SendSmtpEmailBcc  # noqa: F401,E501
-from sib_api_v3_sdk.models.send_smtp_email_cc import SendSmtpEmailCc  # noqa: F401,E501
-from sib_api_v3_sdk.models.send_smtp_email_reply_to import SendSmtpEmailReplyTo  # noqa: F401,E501
-from sib_api_v3_sdk.models.send_smtp_email_sender import SendSmtpEmailSender  # noqa: F401,E501
-from sib_api_v3_sdk.models.send_smtp_email_to import SendSmtpEmailTo  # noqa: F401,E501
 
 
 class SendSmtpEmail(object):
@@ -299,7 +292,7 @@ class SendSmtpEmail(object):
     def attachment(self):
         """Gets the attachment of this SendSmtpEmail.  # noqa: E501
 
-        Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, `[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"My attachment 1\"}, {\"content\":\"base64 exmaple content\", \"name\":\"My attachment 2\"}]`. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps, odt, mp3, m4a, m4v, wma, ogg, flac, wav, aif, aifc, aiff, mp4, mov, avi, mkv, mpeg, mpg and wmv ( If 'templateId' is passed and is in New Template Language format then only attachment url is accepted. If template is in Old template Language format, then 'attachment' is ignored )  # noqa: E501
+        Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, `[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"My attachment 1\"}, {\"content\":\"base64 exmaple content\", \"name\":\"My attachment 2\"}]`. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps, odt, mp3, m4a, m4v, wma, ogg, flac, wav, aif, aifc, aiff, mp4, mov, avi, mkv, mpeg, mpg and wmv ( If 'templateId' is passed and is in New Template Language format then both attachment url and content are accepted. If template is in Old template Language format, then 'attachment' is ignored )  # noqa: E501
 
         :return: The attachment of this SendSmtpEmail.  # noqa: E501
         :rtype: list[SendSmtpEmailAttachment]
@@ -310,7 +303,7 @@ class SendSmtpEmail(object):
     def attachment(self, attachment):
         """Sets the attachment of this SendSmtpEmail.
 
-        Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, `[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"My attachment 1\"}, {\"content\":\"base64 exmaple content\", \"name\":\"My attachment 2\"}]`. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps, odt, mp3, m4a, m4v, wma, ogg, flac, wav, aif, aifc, aiff, mp4, mov, avi, mkv, mpeg, mpg and wmv ( If 'templateId' is passed and is in New Template Language format then only attachment url is accepted. If template is in Old template Language format, then 'attachment' is ignored )  # noqa: E501
+        Pass the absolute URL (no local file) or the base64 content of the attachment along with the attachment name (Mandatory if attachment content is passed). For example, `[{\"url\":\"https://attachment.domain.com/myAttachmentFromUrl.jpg\", \"name\":\"My attachment 1\"}, {\"content\":\"base64 exmaple content\", \"name\":\"My attachment 2\"}]`. Allowed extensions for attachment file: xlsx, xls, ods, docx, docm, doc, csv, pdf, txt, gif, jpg, jpeg, png, tif, tiff, rtf, bmp, cgm, css, shtml, html, htm, zip, xml, ppt, pptx, tar, ez, ics, mobi, msg, pub, eps, odt, mp3, m4a, m4v, wma, ogg, flac, wav, aif, aifc, aiff, mp4, mov, avi, mkv, mpeg, mpg and wmv ( If 'templateId' is passed and is in New Template Language format then both attachment url and content are accepted. If template is in Old template Language format, then 'attachment' is ignored )  # noqa: E501
 
         :param attachment: The attachment of this SendSmtpEmail.  # noqa: E501
         :type: list[SendSmtpEmailAttachment]
@@ -431,6 +424,9 @@ class SendSmtpEmail(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SendSmtpEmail, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

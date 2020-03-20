@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_number** | **str** | Phone number which has generated the event | 
-**date** | **datetime** | UTC date-time on which the event has been generated | 
+**_date** | **datetime** | UTC date-time on which the event has been generated | 
 **message_id** | **str** | Message ID which generated the event | 
 **event** | **str** | Event which occurred | 
 **reason** | **str** | Reason of bounce (only available if the event is hardbounce or softbounce) | [optional] 
