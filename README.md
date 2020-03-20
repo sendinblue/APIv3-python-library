@@ -1,4 +1,4 @@
-**Latest stable version is: https://github.com/sendinblue/APIv3-python-library/tree/v4.2.2**
+**Our library is now compatible with python 3.7 . Please use: https://github.com/sendinblue/APIv3-python-library/tree/v6.1.0**
 
 # SendinBlue's API v3 Python Library
 
@@ -16,7 +16,7 @@ For more information, please visit [https://account.sendinblue.com/support](http
 
 ## Requirements.
 
-Compatible from Python version 2.7 to 3.5
+Compatible from Python version 2.7 to 3.5+
 
 ## Installation & Usage
 ### pip install
