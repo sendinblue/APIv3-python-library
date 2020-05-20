@@ -16,59 +16,23 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from sib_api_v3_sdk.api.senders_api import SendersApi  # noqa: E501
+from sib_api_v3_sdk.models.upload_image_to_gallery import UploadImageToGallery  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
-class TestSendersApi(unittest.TestCase):
-    """SendersApi unit test stubs"""
+class TestUploadImageToGallery(unittest.TestCase):
+    """UploadImageToGallery unit test stubs"""
 
     def setUp(self):
-        self.api = sib_api_v3_sdk.api.senders_api.SendersApi()  # noqa: E501
+        pass
 
     def tearDown(self):
         pass
 
-    def test_create_sender(self):
-        """Test case for create_sender
-
-        Create a new sender  # noqa: E501
-        """
-        pass
-
-    def test_delete_sender(self):
-        """Test case for delete_sender
-
-        Delete a sender  # noqa: E501
-        """
-        pass
-
-    def test_get_ips(self):
-        """Test case for get_ips
-
-        Get all the dedicated IPs for your account  # noqa: E501
-        """
-        pass
-
-    def test_get_ips_from_sender(self):
-        """Test case for get_ips_from_sender
-
-        Get all the dedicated IPs for a sender  # noqa: E501
-        """
-        pass
-
-    def test_get_senders(self):
-        """Test case for get_senders
-
-        Get the list of all your senders  # noqa: E501
-        """
-        pass
-
-    def test_update_sender(self):
-        """Test case for update_sender
-
-        Update a sender  # noqa: E501
-        """
+    def testUploadImageToGallery(self):
+        """Test UploadImageToGallery"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = sib_api_v3_sdk.models.upload_image_to_gallery.UploadImageToGallery()  # noqa: E501
         pass
 
 

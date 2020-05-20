@@ -6,20 +6,20 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_credits**](ResellerApi.md#add_credits) | **POST** /reseller/children/{childAuthKey}/credits/add | Add Email and/or SMS credits to a specific child account
 [**associate_ip_to_child**](ResellerApi.md#associate_ip_to_child) | **POST** /reseller/children/{childAuthKey}/ips/associate | Associate a dedicated IP to the child
-[**create_child_domain**](ResellerApi.md#create_child_domain) | **POST** /reseller/children/{childAuthKey}/domains | Creates a domain for a child account
+[**create_child_domain**](ResellerApi.md#create_child_domain) | **POST** /reseller/children/{childAuthKey}/domains | Create a domain for a child account
 [**create_reseller_child**](ResellerApi.md#create_reseller_child) | **POST** /reseller/children | Creates a reseller child
-[**delete_child_domain**](ResellerApi.md#delete_child_domain) | **DELETE** /reseller/children/{childAuthKey}/domains/{domainName} | Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
-[**delete_reseller_child**](ResellerApi.md#delete_reseller_child) | **DELETE** /reseller/children/{childAuthKey} | Deletes a single reseller child based on the childAuthKey supplied
+[**delete_child_domain**](ResellerApi.md#delete_child_domain) | **DELETE** /reseller/children/{childAuthKey}/domains/{domainName} | Delete the sender domain of the reseller child based on the childAuthKey and domainName passed
+[**delete_reseller_child**](ResellerApi.md#delete_reseller_child) | **DELETE** /reseller/children/{childAuthKey} | Delete a single reseller child based on the childAuthKey supplied
 [**dissociate_ip_from_child**](ResellerApi.md#dissociate_ip_from_child) | **POST** /reseller/children/{childAuthKey}/ips/dissociate | Dissociate a dedicated IP to the child
-[**get_child_account_creation_status**](ResellerApi.md#get_child_account_creation_status) | **GET** /reseller/children/{childAuthKey}/accountCreationStatus | Returns the status of reseller&#39;s child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
-[**get_child_domains**](ResellerApi.md#get_child_domains) | **GET** /reseller/children/{childAuthKey}/domains | Gets all the sender domains of a specific child account
-[**get_child_info**](ResellerApi.md#get_child_info) | **GET** /reseller/children/{childAuthKey} | Gets the info about a specific child account
-[**get_reseller_childs**](ResellerApi.md#get_reseller_childs) | **GET** /reseller/children | Gets the list of all reseller&#39;s children accounts
+[**get_child_account_creation_status**](ResellerApi.md#get_child_account_creation_status) | **GET** /reseller/children/{childAuthKey}/accountCreationStatus | Get the status of a reseller&#39;s child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+[**get_child_domains**](ResellerApi.md#get_child_domains) | **GET** /reseller/children/{childAuthKey}/domains | Get all sender domains for a specific child account
+[**get_child_info**](ResellerApi.md#get_child_info) | **GET** /reseller/children/{childAuthKey} | Get a child account&#39;s details
+[**get_reseller_childs**](ResellerApi.md#get_reseller_childs) | **GET** /reseller/children | Get the list of all children accounts
 [**get_sso_token**](ResellerApi.md#get_sso_token) | **GET** /reseller/children/{childAuthKey}/auth | Get session token to access Sendinblue (SSO)
 [**remove_credits**](ResellerApi.md#remove_credits) | **POST** /reseller/children/{childAuthKey}/credits/remove | Remove Email and/or SMS credits from a specific child account
-[**update_child_account_status**](ResellerApi.md#update_child_account_status) | **PUT** /reseller/children/{childAuthKey}/accountStatus | Updates infos of reseller&#39;s child account status based on the childAuthKey supplied
-[**update_child_domain**](ResellerApi.md#update_child_domain) | **PUT** /reseller/children/{childAuthKey}/domains/{domainName} | Updates the sender domain of reseller&#39;s child based on the childAuthKey and domainName passed
-[**update_reseller_child**](ResellerApi.md#update_reseller_child) | **PUT** /reseller/children/{childAuthKey} | Updates infos of reseller&#39;s child based on the childAuthKey supplied
+[**update_child_account_status**](ResellerApi.md#update_child_account_status) | **PUT** /reseller/children/{childAuthKey}/accountStatus | Update info of reseller&#39;s child account status based on the childAuthKey supplied
+[**update_child_domain**](ResellerApi.md#update_child_domain) | **PUT** /reseller/children/{childAuthKey}/domains/{domainName} | Update the sender domain of reseller&#39;s child based on the childAuthKey and domainName passed
+[**update_reseller_child**](ResellerApi.md#update_reseller_child) | **PUT** /reseller/children/{childAuthKey} | Update info of reseller&#39;s child based on the childAuthKey supplied
 
 
 # **add_credits**
@@ -142,7 +142,7 @@ void (empty response body)
 # **create_child_domain**
 > create_child_domain(child_auth_key, add_child_domain)
 
-Creates a domain for a child account
+Create a domain for a child account
 
 ### Example
 ```python
@@ -169,7 +169,7 @@ child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 add_child_domain = sib_api_v3_sdk.AddChildDomain() # AddChildDomain | Sender domain to add for a specific child account. This will not be displayed to the parent account.
 
 try:
-    # Creates a domain for a child account
+    # Create a domain for a child account
     api_instance.create_child_domain(child_auth_key, add_child_domain)
 except ApiException as e:
     print("Exception when calling ResellerApi->create_child_domain: %s\n" % e)
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 # **delete_child_domain**
 > delete_child_domain(child_auth_key, domain_name)
 
-Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+Delete the sender domain of the reseller child based on the childAuthKey and domainName passed
 
 ### Example
 ```python
@@ -284,7 +284,7 @@ child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 domain_name = 'domain_name_example' # str | Pass the existing domain that needs to be deleted
 
 try:
-    # Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed
+    # Delete the sender domain of the reseller child based on the childAuthKey and domainName passed
     api_instance.delete_child_domain(child_auth_key, domain_name)
 except ApiException as e:
     print("Exception when calling ResellerApi->delete_child_domain: %s\n" % e)
@@ -315,7 +315,7 @@ void (empty response body)
 # **delete_reseller_child**
 > delete_reseller_child(child_auth_key)
 
-Deletes a single reseller child based on the childAuthKey supplied
+Delete a single reseller child based on the childAuthKey supplied
 
 ### Example
 ```python
@@ -341,7 +341,7 @@ api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration
 child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 
 try:
-    # Deletes a single reseller child based on the childAuthKey supplied
+    # Delete a single reseller child based on the childAuthKey supplied
     api_instance.delete_reseller_child(child_auth_key)
 except ApiException as e:
     print("Exception when calling ResellerApi->delete_reseller_child: %s\n" % e)
@@ -429,7 +429,7 @@ void (empty response body)
 # **get_child_account_creation_status**
 > GetChildAccountCreationStatus get_child_account_creation_status(child_auth_key)
 
-Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
 
 ### Example
 ```python
@@ -455,7 +455,7 @@ api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration
 child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 
 try:
-    # Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
+    # Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied
     api_response = api_instance.get_child_account_creation_status(child_auth_key)
     pprint(api_response)
 except ApiException as e:
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 # **get_child_domains**
 > GetChildDomains get_child_domains(child_auth_key)
 
-Gets all the sender domains of a specific child account
+Get all sender domains for a specific child account
 
 ### Example
 ```python
@@ -512,7 +512,7 @@ api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration
 child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 
 try:
-    # Gets all the sender domains of a specific child account
+    # Get all sender domains for a specific child account
     api_response = api_instance.get_child_domains(child_auth_key)
     pprint(api_response)
 except ApiException as e:
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 # **get_child_info**
 > GetChildInfo get_child_info(child_auth_key)
 
-Gets the info about a specific child account
+Get a child account's details
 
 ### Example
 ```python
@@ -569,7 +569,7 @@ api_instance = sib_api_v3_sdk.ResellerApi(sib_api_v3_sdk.ApiClient(configuration
 child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 
 try:
-    # Gets the info about a specific child account
+    # Get a child account's details
     api_response = api_instance.get_child_info(child_auth_key)
     pprint(api_response)
 except ApiException as e:
@@ -600,7 +600,7 @@ Name | Type | Description  | Notes
 # **get_reseller_childs**
 > GetChildrenList get_reseller_childs(limit=limit, offset=offset)
 
-Gets the list of all reseller's children accounts
+Get the list of all children accounts
 
 ### Example
 ```python
@@ -627,7 +627,7 @@ limit = 10 # int | Number of documents for child accounts information per page (
 offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 
 try:
-    # Gets the list of all reseller's children accounts
+    # Get the list of all children accounts
     api_response = api_instance.get_reseller_childs(limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
@@ -777,7 +777,7 @@ Name | Type | Description  | Notes
 # **update_child_account_status**
 > update_child_account_status(child_auth_key, update_child_account_status)
 
-Updates infos of reseller's child account status based on the childAuthKey supplied
+Update info of reseller's child account status based on the childAuthKey supplied
 
 ### Example
 ```python
@@ -804,7 +804,7 @@ child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 update_child_account_status = sib_api_v3_sdk.UpdateChildAccountStatus() # UpdateChildAccountStatus | values to update in child account status
 
 try:
-    # Updates infos of reseller's child account status based on the childAuthKey supplied
+    # Update info of reseller's child account status based on the childAuthKey supplied
     api_instance.update_child_account_status(child_auth_key, update_child_account_status)
 except ApiException as e:
     print("Exception when calling ResellerApi->update_child_account_status: %s\n" % e)
@@ -835,7 +835,7 @@ void (empty response body)
 # **update_child_domain**
 > update_child_domain(child_auth_key, domain_name, update_child_domain)
 
-Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+Update the sender domain of reseller's child based on the childAuthKey and domainName passed
 
 ### Example
 ```python
@@ -863,7 +863,7 @@ domain_name = 'domain_name_example' # str | Pass the existing domain that needs 
 update_child_domain = sib_api_v3_sdk.UpdateChildDomain() # UpdateChildDomain | value to update for sender domain
 
 try:
-    # Updates the sender domain of reseller's child based on the childAuthKey and domainName passed
+    # Update the sender domain of reseller's child based on the childAuthKey and domainName passed
     api_instance.update_child_domain(child_auth_key, domain_name, update_child_domain)
 except ApiException as e:
     print("Exception when calling ResellerApi->update_child_domain: %s\n" % e)
@@ -895,7 +895,7 @@ void (empty response body)
 # **update_reseller_child**
 > update_reseller_child(child_auth_key, reseller_child)
 
-Updates infos of reseller's child based on the childAuthKey supplied
+Update info of reseller's child based on the childAuthKey supplied
 
 ### Example
 ```python
@@ -922,7 +922,7 @@ child_auth_key = 'child_auth_key_example' # str | auth key of reseller's child
 reseller_child = sib_api_v3_sdk.UpdateChild() # UpdateChild | values to update in child profile
 
 try:
-    # Updates infos of reseller's child based on the childAuthKey supplied
+    # Update info of reseller's child based on the childAuthKey supplied
     api_instance.update_reseller_child(child_auth_key, reseller_child)
 except ApiException as e:
     print("Exception when calling ResellerApi->update_reseller_child: %s\n" % e)

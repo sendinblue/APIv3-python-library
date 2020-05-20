@@ -228,7 +228,7 @@ class FoldersApi(object):
             collection_formats=collection_formats)
 
     def get_folder(self, folder_id, **kwargs):  # noqa: E501
-        """Returns folder details  # noqa: E501
+        """Returns a folder's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -249,7 +249,7 @@ class FoldersApi(object):
             return data
 
     def get_folder_with_http_info(self, folder_id, **kwargs):  # noqa: E501
-        """Returns folder details  # noqa: E501
+        """Returns a folder's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -325,7 +325,7 @@ class FoldersApi(object):
             collection_formats=collection_formats)
 
     def get_folder_lists(self, folder_id, **kwargs):  # noqa: E501
-        """Get the lists in a folder  # noqa: E501
+        """Get lists in a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -348,7 +348,7 @@ class FoldersApi(object):
             return data
 
     def get_folder_lists_with_http_info(self, folder_id, **kwargs):  # noqa: E501
-        """Get the lists in a folder  # noqa: E501
+        """Get lists in a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -432,7 +432,7 @@ class FoldersApi(object):
             collection_formats=collection_formats)
 
     def get_folders(self, limit, offset, **kwargs):  # noqa: E501
-        """Get all the folders  # noqa: E501
+        """Get all folders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -454,7 +454,7 @@ class FoldersApi(object):
             return data
 
     def get_folders_with_http_info(self, limit, offset, **kwargs):  # noqa: E501
-        """Get all the folders  # noqa: E501
+        """Get all folders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -539,7 +539,7 @@ class FoldersApi(object):
             collection_formats=collection_formats)
 
     def update_folder(self, folder_id, update_folder, **kwargs):  # noqa: E501
-        """Update a contact folder  # noqa: E501
+        """Update a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -561,7 +561,7 @@ class FoldersApi(object):
             return data
 
     def update_folder_with_http_info(self, folder_id, update_folder, **kwargs):  # noqa: E501
-        """Update a contact folder  # noqa: E501
+        """Update a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

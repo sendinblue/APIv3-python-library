@@ -23,6 +23,7 @@ from sib_api_v3_sdk.models.create_attribute import CreateAttribute
 from sib_api_v3_sdk.models.create_attribute_enumeration import CreateAttributeEnumeration
 from sib_api_v3_sdk.models.create_child import CreateChild
 from sib_api_v3_sdk.models.create_contact import CreateContact
+from sib_api_v3_sdk.models.create_doi_contact import CreateDoiContact
 from sib_api_v3_sdk.models.create_email_campaign import CreateEmailCampaign
 from sib_api_v3_sdk.models.create_email_campaign_recipients import CreateEmailCampaignRecipients
 from sib_api_v3_sdk.models.create_email_campaign_sender import CreateEmailCampaignSender
@@ -176,6 +177,7 @@ from sib_api_v3_sdk.models.update_sms_campaign import UpdateSmsCampaign
 from sib_api_v3_sdk.models.update_smtp_template import UpdateSmtpTemplate
 from sib_api_v3_sdk.models.update_smtp_template_sender import UpdateSmtpTemplateSender
 from sib_api_v3_sdk.models.update_webhook import UpdateWebhook
+from sib_api_v3_sdk.models.upload_image_to_gallery import UploadImageToGallery
 from sib_api_v3_sdk.models.get_child_info import GetChildInfo
 from sib_api_v3_sdk.models.get_extended_campaign_overview import GetExtendedCampaignOverview
 from sib_api_v3_sdk.models.get_extended_client import GetExtendedClient

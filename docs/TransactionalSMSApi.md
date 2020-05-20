@@ -4,16 +4,16 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_sms_events**](TransactionalSMSApi.md#get_sms_events) | **GET** /transactionalSMS/statistics/events | Get all the SMS activity (unaggregated events)
+[**get_sms_events**](TransactionalSMSApi.md#get_sms_events) | **GET** /transactionalSMS/statistics/events | Get all your SMS activity (unaggregated events)
 [**get_transac_aggregated_sms_report**](TransactionalSMSApi.md#get_transac_aggregated_sms_report) | **GET** /transactionalSMS/statistics/aggregatedReport | Get your SMS activity aggregated over a period of time
 [**get_transac_sms_report**](TransactionalSMSApi.md#get_transac_sms_report) | **GET** /transactionalSMS/statistics/reports | Get your SMS activity aggregated per day
-[**send_transac_sms**](TransactionalSMSApi.md#send_transac_sms) | **POST** /transactionalSMS/sms | Send the SMS campaign to the specified mobile number
+[**send_transac_sms**](TransactionalSMSApi.md#send_transac_sms) | **POST** /transactionalSMS/sms | Send the SMS campaign to a mobile number
 
 
 # **get_sms_events**
 > GetSmsEventReport get_sms_events(limit=limit, start_date=start_date, end_date=end_date, offset=offset, days=days, phone_number=phone_number, event=event, tags=tags)
 
-Get all the SMS activity (unaggregated events)
+Get all your SMS activity (unaggregated events)
 
 ### Example
 ```python
@@ -46,7 +46,7 @@ event = 'event_example' # str | Filter the report for specific events (optional)
 tags = 'tags_example' # str | Filter the report for specific tags passed as a serialized urlencoded array (optional)
 
 try:
-    # Get all the SMS activity (unaggregated events)
+    # Get all your SMS activity (unaggregated events)
     api_response = api_instance.get_sms_events(limit=limit, start_date=start_date, end_date=end_date, offset=offset, days=days, phone_number=phone_number, event=event, tags=tags)
     pprint(api_response)
 except ApiException as e:
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 # **send_transac_sms**
 > SendSms send_transac_sms(send_transac_sms)
 
-Send the SMS campaign to the specified mobile number
+Send the SMS campaign to a mobile number
 
 ### Example
 ```python
@@ -236,7 +236,7 @@ api_instance = sib_api_v3_sdk.TransactionalSMSApi(sib_api_v3_sdk.ApiClient(confi
 send_transac_sms = sib_api_v3_sdk.SendTransacSms() # SendTransacSms | Values to send a transactional SMS
 
 try:
-    # Send the SMS campaign to the specified mobile number
+    # Send the SMS campaign to a mobile number
     api_response = api_instance.send_transac_sms(send_transac_sms)
     pprint(api_response)
 except ApiException as e:

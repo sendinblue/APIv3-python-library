@@ -81,7 +81,7 @@ class CreateContact(object):
     def email(self):
         """Gets the email of this CreateContact.  # noqa: E501
 
-        Email address of the user. Mandatory if \"SMS\" field is not passed in \"attributes\" parameter. Mobile Number in \"SMS\" field should be passed with proper country code. For example {'SMS':'+91xxxxxxxxxx'} or {'SMS':'0091xxxxxxxxxx'}  # noqa: E501
+        Email address of the user. Mandatory if \"SMS\" field is not passed in \"attributes\" parameter. Mobile Number in \"SMS\" field should be passed with proper country code. For example {\"SMS\":\"+91xxxxxxxxxx\"} or {\"SMS\":\"0091xxxxxxxxxx\"}  # noqa: E501
 
         :return: The email of this CreateContact.  # noqa: E501
         :rtype: str
@@ -92,7 +92,7 @@ class CreateContact(object):
     def email(self, email):
         """Sets the email of this CreateContact.
 
-        Email address of the user. Mandatory if \"SMS\" field is not passed in \"attributes\" parameter. Mobile Number in \"SMS\" field should be passed with proper country code. For example {'SMS':'+91xxxxxxxxxx'} or {'SMS':'0091xxxxxxxxxx'}  # noqa: E501
+        Email address of the user. Mandatory if \"SMS\" field is not passed in \"attributes\" parameter. Mobile Number in \"SMS\" field should be passed with proper country code. For example {\"SMS\":\"+91xxxxxxxxxx\"} or {\"SMS\":\"0091xxxxxxxxxx\"}  # noqa: E501
 
         :param email: The email of this CreateContact.  # noqa: E501
         :type: str
@@ -104,7 +104,7 @@ class CreateContact(object):
     def attributes(self):
         """Gets the attributes of this CreateContact.  # noqa: E501
 
-        Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {'FNAME':'Elly', 'LNAME':'Roger'}  # noqa: E501
+        Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {\"FNAME\":\"Elly\", \"LNAME\":\"Roger\"}  # noqa: E501
 
         :return: The attributes of this CreateContact.  # noqa: E501
         :rtype: object
@@ -115,7 +115,7 @@ class CreateContact(object):
     def attributes(self, attributes):
         """Sets the attributes of this CreateContact.
 
-        Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {'FNAME':'Elly', 'LNAME':'Roger'}  # noqa: E501
+        Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {\"FNAME\":\"Elly\", \"LNAME\":\"Roger\"}  # noqa: E501
 
         :param attributes: The attributes of this CreateContact.  # noqa: E501
         :type: object

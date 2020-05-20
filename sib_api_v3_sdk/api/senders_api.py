@@ -224,7 +224,7 @@ class SendersApi(object):
             collection_formats=collection_formats)
 
     def get_ips(self, **kwargs):  # noqa: E501
-        """Return all the dedicated IPs for your account  # noqa: E501
+        """Get all the dedicated IPs for your account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -244,7 +244,7 @@ class SendersApi(object):
             return data
 
     def get_ips_with_http_info(self, **kwargs):  # noqa: E501
-        """Return all the dedicated IPs for your account  # noqa: E501
+        """Get all the dedicated IPs for your account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -313,7 +313,7 @@ class SendersApi(object):
             collection_formats=collection_formats)
 
     def get_ips_from_sender(self, sender_id, **kwargs):  # noqa: E501
-        """Return all the dedicated IPs for a sender  # noqa: E501
+        """Get all the dedicated IPs for a sender  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -334,7 +334,7 @@ class SendersApi(object):
             return data
 
     def get_ips_from_sender_with_http_info(self, sender_id, **kwargs):  # noqa: E501
-        """Return all the dedicated IPs for a sender  # noqa: E501
+        """Get all the dedicated IPs for a sender  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

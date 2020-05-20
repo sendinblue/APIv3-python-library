@@ -32,7 +32,7 @@ class TestAccountApi(unittest.TestCase):
     def test_get_account(self):
         """Test case for get_account
 
-        Get your account informations, plans and credits details  # noqa: E501
+        Get your account information, plan and credits details  # noqa: E501
         """
         pass
 

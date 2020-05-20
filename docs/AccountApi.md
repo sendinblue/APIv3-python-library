@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_account**](AccountApi.md#get_account) | **GET** /account | Get your account informations, plans and credits details
+[**get_account**](AccountApi.md#get_account) | **GET** /account | Get your account information, plan and credits details
 
 
 # **get_account**
 > GetAccount get_account()
 
-Get your account informations, plans and credits details
+Get your account information, plan and credits details
 
 ### Example
 ```python
@@ -35,7 +35,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.AccountApi(sib_api_v3_sdk.ApiClient(configuration))
 
 try:
-    # Get your account informations, plans and credits details
+    # Get your account information, plan and credits details
     api_response = api_instance.get_account()
     pprint(api_response)
 except ApiException as e:

@@ -5,30 +5,31 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_contact_to_list**](ContactsApi.md#add_contact_to_list) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
-[**create_attribute**](ContactsApi.md#create_attribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Creates contact attribute
+[**create_attribute**](ContactsApi.md#create_attribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 [**create_contact**](ContactsApi.md#create_contact) | **POST** /contacts | Create a contact
+[**create_doi_contact**](ContactsApi.md#create_doi_contact) | **POST** /contacts/doubleOptinConfirmation | Create a contact to trigger the DOI workflow from a Landing Page form
 [**create_folder**](ContactsApi.md#create_folder) | **POST** /contacts/folders | Create a folder
 [**create_list**](ContactsApi.md#create_list) | **POST** /contacts/lists | Create a list
-[**delete_attribute**](ContactsApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Deletes an attribute
-[**delete_contact**](ContactsApi.md#delete_contact) | **DELETE** /contacts/{email} | Deletes a contact
+[**delete_attribute**](ContactsApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
+[**delete_contact**](ContactsApi.md#delete_contact) | **DELETE** /contacts/{email} | Delete a contact
 [**delete_folder**](ContactsApi.md#delete_folder) | **DELETE** /contacts/folders/{folderId} | Delete a folder (and all its lists)
 [**delete_list**](ContactsApi.md#delete_list) | **DELETE** /contacts/lists/{listId} | Delete a list
-[**get_attributes**](ContactsApi.md#get_attributes) | **GET** /contacts/attributes | Lists all attributes
-[**get_contact_info**](ContactsApi.md#get_contact_info) | **GET** /contacts/{email} | Retrieves contact informations
-[**get_contact_stats**](ContactsApi.md#get_contact_stats) | **GET** /contacts/{email}/campaignStats | Get the campaigns statistics for a contact
+[**get_attributes**](ContactsApi.md#get_attributes) | **GET** /contacts/attributes | List all attributes
+[**get_contact_info**](ContactsApi.md#get_contact_info) | **GET** /contacts/{email} | Get a contact&#39;s details
+[**get_contact_stats**](ContactsApi.md#get_contact_stats) | **GET** /contacts/{email}/campaignStats | Get email campaigns&#39; statistics for a contact
 [**get_contacts**](ContactsApi.md#get_contacts) | **GET** /contacts | Get all the contacts
-[**get_contacts_from_list**](ContactsApi.md#get_contacts_from_list) | **GET** /contacts/lists/{listId}/contacts | Get the contacts in a list
-[**get_folder**](ContactsApi.md#get_folder) | **GET** /contacts/folders/{folderId} | Returns folder details
-[**get_folder_lists**](ContactsApi.md#get_folder_lists) | **GET** /contacts/folders/{folderId}/lists | Get the lists in a folder
-[**get_folders**](ContactsApi.md#get_folders) | **GET** /contacts/folders | Get all the folders
-[**get_list**](ContactsApi.md#get_list) | **GET** /contacts/lists/{listId} | Get the details of a list
+[**get_contacts_from_list**](ContactsApi.md#get_contacts_from_list) | **GET** /contacts/lists/{listId}/contacts | Get contacts in a list
+[**get_folder**](ContactsApi.md#get_folder) | **GET** /contacts/folders/{folderId} | Returns a folder&#39;s details
+[**get_folder_lists**](ContactsApi.md#get_folder_lists) | **GET** /contacts/folders/{folderId}/lists | Get lists in a folder
+[**get_folders**](ContactsApi.md#get_folders) | **GET** /contacts/folders | Get all folders
+[**get_list**](ContactsApi.md#get_list) | **GET** /contacts/lists/{listId} | Get a list&#39;s details
 [**get_lists**](ContactsApi.md#get_lists) | **GET** /contacts/lists | Get all the lists
 [**import_contacts**](ContactsApi.md#import_contacts) | **POST** /contacts/import | Import contacts
-[**remove_contact_from_list**](ContactsApi.md#remove_contact_from_list) | **POST** /contacts/lists/{listId}/contacts/remove | Remove existing contacts from a list
+[**remove_contact_from_list**](ContactsApi.md#remove_contact_from_list) | **POST** /contacts/lists/{listId}/contacts/remove | Delete a contact from a list
 [**request_contact_export**](ContactsApi.md#request_contact_export) | **POST** /contacts/export | Export contacts
-[**update_attribute**](ContactsApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
-[**update_contact**](ContactsApi.md#update_contact) | **PUT** /contacts/{email} | Updates a contact
-[**update_folder**](ContactsApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a contact folder
+[**update_attribute**](ContactsApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
+[**update_contact**](ContactsApi.md#update_contact) | **PUT** /contacts/{email} | Update a contact
+[**update_folder**](ContactsApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a folder
 [**update_list**](ContactsApi.md#update_list) | **PUT** /contacts/lists/{listId} | Update a list
 
 
@@ -94,7 +95,7 @@ Name | Type | Description  | Notes
 # **create_attribute**
 > create_attribute(attribute_category, attribute_name, create_attribute)
 
-Creates contact attribute
+Create contact attribute
 
 ### Example
 ```python
@@ -122,7 +123,7 @@ attribute_name = 'attribute_name_example' # str | Name of the attribute
 create_attribute = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 
 try:
-    # Creates contact attribute
+    # Create contact attribute
     api_instance.create_attribute(attribute_category, attribute_name, create_attribute)
 except ApiException as e:
     print("Exception when calling ContactsApi->create_attribute: %s\n" % e)
@@ -196,6 +197,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateUpdateContactModel**](CreateUpdateContactModel.md)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_doi_contact**
+> create_doi_contact(create_doi_contact)
+
+Create a contact to trigger the DOI workflow from a Landing Page form
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
+create_doi_contact = sib_api_v3_sdk.CreateDoiContact() # CreateDoiContact | Values to create the DOI contact
+
+try:
+    # Create a contact to trigger the DOI workflow from a Landing Page form
+    api_instance.create_doi_contact(create_doi_contact)
+except ApiException as e:
+    print("Exception when calling ContactsApi->create_doi_contact: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_doi_contact** | [**CreateDoiContact**](CreateDoiContact.md)| Values to create the DOI contact | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -325,7 +382,7 @@ Name | Type | Description  | Notes
 # **delete_attribute**
 > delete_attribute(attribute_category, attribute_name)
 
-Deletes an attribute
+Delete an attribute
 
 ### Example
 ```python
@@ -352,7 +409,7 @@ attribute_category = 'attribute_category_example' # str | Category of the attrib
 attribute_name = 'attribute_name_example' # str | Name of the existing attribute
 
 try:
-    # Deletes an attribute
+    # Delete an attribute
     api_instance.delete_attribute(attribute_category, attribute_name)
 except ApiException as e:
     print("Exception when calling ContactsApi->delete_attribute: %s\n" % e)
@@ -383,7 +440,7 @@ void (empty response body)
 # **delete_contact**
 > delete_contact(email)
 
-Deletes a contact
+Delete a contact
 
 ### Example
 ```python
@@ -409,7 +466,7 @@ api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration
 email = 'email_example' # str | Email (urlencoded) of the contact
 
 try:
-    # Deletes a contact
+    # Delete a contact
     api_instance.delete_contact(email)
 except ApiException as e:
     print("Exception when calling ContactsApi->delete_contact: %s\n" % e)
@@ -551,7 +608,7 @@ void (empty response body)
 # **get_attributes**
 > GetAttributes get_attributes()
 
-Lists all attributes
+List all attributes
 
 ### Example
 ```python
@@ -576,7 +633,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
 
 try:
-    # Lists all attributes
+    # List all attributes
     api_response = api_instance.get_attributes()
     pprint(api_response)
 except ApiException as e:
@@ -604,7 +661,7 @@ This endpoint does not need any parameter.
 # **get_contact_info**
 > GetExtendedContactDetails get_contact_info(email)
 
-Retrieves contact informations
+Get a contact's details
 
 ### Example
 ```python
@@ -630,7 +687,7 @@ api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration
 email = 'email_example' # str | Email (urlencoded) of the contact OR its SMS attribute value
 
 try:
-    # Retrieves contact informations
+    # Get a contact's details
     api_response = api_instance.get_contact_info(email)
     pprint(api_response)
 except ApiException as e:
@@ -659,9 +716,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contact_stats**
-> GetContactCampaignStats get_contact_stats(email)
+> GetContactCampaignStats get_contact_stats(email, start_date=start_date, end_date=end_date)
 
-Get the campaigns statistics for a contact
+Get email campaigns' statistics for a contact
 
 ### Example
 ```python
@@ -685,10 +742,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
 email = 'email_example' # str | Email address (urlencoded) of the contact
+start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate (optional)
+end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate (optional)
 
 try:
-    # Get the campaigns statistics for a contact
-    api_response = api_instance.get_contact_stats(email)
+    # Get email campaigns' statistics for a contact
+    api_response = api_instance.get_contact_stats(email, start_date=start_date, end_date=end_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->get_contact_stats: %s\n" % e)
@@ -699,6 +758,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email** | **str**| Email address (urlencoded) of the contact | 
+ **start_date** | **date**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate | [optional] 
+ **end_date** | **date**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate | [optional] 
 
 ### Return type
 
@@ -779,7 +840,7 @@ Name | Type | Description  | Notes
 # **get_contacts_from_list**
 > GetContacts get_contacts_from_list(list_id, modified_since=modified_since, limit=limit, offset=offset)
 
-Get the contacts in a list
+Get contacts in a list
 
 ### Example
 ```python
@@ -808,7 +869,7 @@ limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
 try:
-    # Get the contacts in a list
+    # Get contacts in a list
     api_response = api_instance.get_contacts_from_list(list_id, modified_since=modified_since, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
@@ -842,7 +903,7 @@ Name | Type | Description  | Notes
 # **get_folder**
 > GetFolder get_folder(folder_id)
 
-Returns folder details
+Returns a folder's details
 
 ### Example
 ```python
@@ -868,7 +929,7 @@ api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration
 folder_id = 789 # int | id of the folder
 
 try:
-    # Returns folder details
+    # Returns a folder's details
     api_response = api_instance.get_folder(folder_id)
     pprint(api_response)
 except ApiException as e:
@@ -899,7 +960,7 @@ Name | Type | Description  | Notes
 # **get_folder_lists**
 > GetFolderLists get_folder_lists(folder_id, limit=limit, offset=offset)
 
-Get the lists in a folder
+Get lists in a folder
 
 ### Example
 ```python
@@ -927,7 +988,7 @@ limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
 try:
-    # Get the lists in a folder
+    # Get lists in a folder
     api_response = api_instance.get_folder_lists(folder_id, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
@@ -960,7 +1021,7 @@ Name | Type | Description  | Notes
 # **get_folders**
 > GetFolders get_folders(limit, offset)
 
-Get all the folders
+Get all folders
 
 ### Example
 ```python
@@ -987,7 +1048,7 @@ limit = 10 # int | Number of documents per page (default to 10)
 offset = 0 # int | Index of the first document of the page (default to 0)
 
 try:
-    # Get all the folders
+    # Get all folders
     api_response = api_instance.get_folders(limit, offset)
     pprint(api_response)
 except ApiException as e:
@@ -1019,7 +1080,7 @@ Name | Type | Description  | Notes
 # **get_list**
 > GetExtendedList get_list(list_id)
 
-Get the details of a list
+Get a list's details
 
 ### Example
 ```python
@@ -1045,7 +1106,7 @@ api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration
 list_id = 789 # int | Id of the list
 
 try:
-    # Get the details of a list
+    # Get a list's details
     api_response = api_instance.get_list(list_id)
     pprint(api_response)
 except ApiException as e:
@@ -1194,7 +1255,7 @@ Name | Type | Description  | Notes
 # **remove_contact_from_list**
 > PostContactInfo remove_contact_from_list(list_id, contact_emails)
 
-Remove existing contacts from a list
+Delete a contact from a list
 
 ### Example
 ```python
@@ -1221,7 +1282,7 @@ list_id = 789 # int | Id of the list
 contact_emails = sib_api_v3_sdk.RemoveContactFromList() # RemoveContactFromList | Emails adresses of the contact
 
 try:
-    # Remove existing contacts from a list
+    # Delete a contact from a list
     api_response = api_instance.remove_contact_from_list(list_id, contact_emails)
     pprint(api_response)
 except ApiException as e:
@@ -1312,7 +1373,7 @@ Name | Type | Description  | Notes
 # **update_attribute**
 > update_attribute(attribute_category, attribute_name, update_attribute)
 
-Updates contact attribute
+Update contact attribute
 
 ### Example
 ```python
@@ -1340,7 +1401,7 @@ attribute_name = 'attribute_name_example' # str | Name of the existing attribute
 update_attribute = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 
 try:
-    # Updates contact attribute
+    # Update contact attribute
     api_instance.update_attribute(attribute_category, attribute_name, update_attribute)
 except ApiException as e:
     print("Exception when calling ContactsApi->update_attribute: %s\n" % e)
@@ -1372,7 +1433,7 @@ void (empty response body)
 # **update_contact**
 > update_contact(email, update_contact)
 
-Updates a contact
+Update a contact
 
 ### Example
 ```python
@@ -1399,7 +1460,7 @@ email = 'email_example' # str | Email (urlencoded) of the contact
 update_contact = sib_api_v3_sdk.UpdateContact() # UpdateContact | Values to update a contact
 
 try:
-    # Updates a contact
+    # Update a contact
     api_instance.update_contact(email, update_contact)
 except ApiException as e:
     print("Exception when calling ContactsApi->update_contact: %s\n" % e)
@@ -1430,7 +1491,7 @@ void (empty response body)
 # **update_folder**
 > update_folder(folder_id, update_folder)
 
-Update a contact folder
+Update a folder
 
 ### Example
 ```python
@@ -1457,7 +1518,7 @@ folder_id = 789 # int | Id of the folder
 update_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try:
-    # Update a contact folder
+    # Update a folder
     api_instance.update_folder(folder_id, update_folder)
 except ApiException as e:
     print("Exception when calling ContactsApi->update_folder: %s\n" % e)

@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_sender**](SendersApi.md#create_sender) | **POST** /senders | Create a new sender
 [**delete_sender**](SendersApi.md#delete_sender) | **DELETE** /senders/{senderId} | Delete a sender
-[**get_ips**](SendersApi.md#get_ips) | **GET** /senders/ips | Return all the dedicated IPs for your account
-[**get_ips_from_sender**](SendersApi.md#get_ips_from_sender) | **GET** /senders/{senderId}/ips | Return all the dedicated IPs for a sender
+[**get_ips**](SendersApi.md#get_ips) | **GET** /senders/ips | Get all the dedicated IPs for your account
+[**get_ips_from_sender**](SendersApi.md#get_ips_from_sender) | **GET** /senders/{senderId}/ips | Get all the dedicated IPs for a sender
 [**get_senders**](SendersApi.md#get_senders) | **GET** /senders | Get the list of all your senders
 [**update_sender**](SendersApi.md#update_sender) | **PUT** /senders/{senderId} | Update a sender
 
@@ -128,7 +128,7 @@ void (empty response body)
 # **get_ips**
 > GetIps get_ips()
 
-Return all the dedicated IPs for your account
+Get all the dedicated IPs for your account
 
 ### Example
 ```python
@@ -153,7 +153,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
 
 try:
-    # Return all the dedicated IPs for your account
+    # Get all the dedicated IPs for your account
     api_response = api_instance.get_ips()
     pprint(api_response)
 except ApiException as e:
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 # **get_ips_from_sender**
 > GetIpsFromSender get_ips_from_sender(sender_id)
 
-Return all the dedicated IPs for a sender
+Get all the dedicated IPs for a sender
 
 ### Example
 ```python
@@ -207,7 +207,7 @@ api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration)
 sender_id = 789 # int | Id of the sender
 
 try:
-    # Return all the dedicated IPs for a sender
+    # Get all the dedicated IPs for a sender
     api_response = api_instance.get_ips_from_sender(sender_id)
     pprint(api_response)
 except ApiException as e:

@@ -6,10 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_folder**](FoldersApi.md#create_folder) | **POST** /contacts/folders | Create a folder
 [**delete_folder**](FoldersApi.md#delete_folder) | **DELETE** /contacts/folders/{folderId} | Delete a folder (and all its lists)
-[**get_folder**](FoldersApi.md#get_folder) | **GET** /contacts/folders/{folderId} | Returns folder details
-[**get_folder_lists**](FoldersApi.md#get_folder_lists) | **GET** /contacts/folders/{folderId}/lists | Get the lists in a folder
-[**get_folders**](FoldersApi.md#get_folders) | **GET** /contacts/folders | Get all the folders
-[**update_folder**](FoldersApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a contact folder
+[**get_folder**](FoldersApi.md#get_folder) | **GET** /contacts/folders/{folderId} | Returns a folder&#39;s details
+[**get_folder_lists**](FoldersApi.md#get_folder_lists) | **GET** /contacts/folders/{folderId}/lists | Get lists in a folder
+[**get_folders**](FoldersApi.md#get_folders) | **GET** /contacts/folders | Get all folders
+[**update_folder**](FoldersApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a folder
 
 
 # **create_folder**
@@ -128,7 +128,7 @@ void (empty response body)
 # **get_folder**
 > GetFolder get_folder(folder_id)
 
-Returns folder details
+Returns a folder's details
 
 ### Example
 ```python
@@ -154,7 +154,7 @@ api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration)
 folder_id = 789 # int | id of the folder
 
 try:
-    # Returns folder details
+    # Returns a folder's details
     api_response = api_instance.get_folder(folder_id)
     pprint(api_response)
 except ApiException as e:
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 # **get_folder_lists**
 > GetFolderLists get_folder_lists(folder_id, limit=limit, offset=offset)
 
-Get the lists in a folder
+Get lists in a folder
 
 ### Example
 ```python
@@ -213,7 +213,7 @@ limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 
 try:
-    # Get the lists in a folder
+    # Get lists in a folder
     api_response = api_instance.get_folder_lists(folder_id, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 # **get_folders**
 > GetFolders get_folders(limit, offset)
 
-Get all the folders
+Get all folders
 
 ### Example
 ```python
@@ -273,7 +273,7 @@ limit = 10 # int | Number of documents per page (default to 10)
 offset = 0 # int | Index of the first document of the page (default to 0)
 
 try:
-    # Get all the folders
+    # Get all folders
     api_response = api_instance.get_folders(limit, offset)
     pprint(api_response)
 except ApiException as e:
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 # **update_folder**
 > update_folder(folder_id, update_folder)
 
-Update a contact folder
+Update a folder
 
 ### Example
 ```python
@@ -332,7 +332,7 @@ folder_id = 789 # int | Id of the folder
 update_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try:
-    # Update a contact folder
+    # Update a folder
     api_instance.update_folder(folder_id, update_folder)
 except ApiException as e:
     print("Exception when calling FoldersApi->update_folder: %s\n" % e)

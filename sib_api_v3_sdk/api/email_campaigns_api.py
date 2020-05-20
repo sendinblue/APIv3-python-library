@@ -228,7 +228,7 @@ class EmailCampaignsApi(object):
             collection_formats=collection_formats)
 
     def email_export_recipients(self, campaign_id, **kwargs):  # noqa: E501
-        """Export the recipients of a campaign  # noqa: E501
+        """Export the recipients of an email campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -250,7 +250,7 @@ class EmailCampaignsApi(object):
             return data
 
     def email_export_recipients_with_http_info(self, campaign_id, **kwargs):  # noqa: E501
-        """Export the recipients of a campaign  # noqa: E501
+        """Export the recipients of an email campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -329,7 +329,7 @@ class EmailCampaignsApi(object):
             collection_formats=collection_formats)
 
     def get_ab_test_campaign_result(self, campaign_id, **kwargs):  # noqa: E501
-        """Get A/B test email campaign result  # noqa: E501
+        """Get an A/B test email campaign results  # noqa: E501
 
         Obtain winning version of an A/B test email campaign  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -351,7 +351,7 @@ class EmailCampaignsApi(object):
             return data
 
     def get_ab_test_campaign_result_with_http_info(self, campaign_id, **kwargs):  # noqa: E501
-        """Get A/B test email campaign result  # noqa: E501
+        """Get an A/B test email campaign results  # noqa: E501
 
         Obtain winning version of an A/B test email campaign  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -428,7 +428,7 @@ class EmailCampaignsApi(object):
             collection_formats=collection_formats)
 
     def get_email_campaign(self, campaign_id, **kwargs):  # noqa: E501
-        """Get campaign informations  # noqa: E501
+        """Get an email campaign report  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -449,7 +449,7 @@ class EmailCampaignsApi(object):
             return data
 
     def get_email_campaign_with_http_info(self, campaign_id, **kwargs):  # noqa: E501
-        """Get campaign informations  # noqa: E501
+        """Get an email campaign report  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -525,7 +525,7 @@ class EmailCampaignsApi(object):
             collection_formats=collection_formats)
 
     def get_email_campaigns(self, **kwargs):  # noqa: E501
-        """Return all your created campaigns  # noqa: E501
+        """Return all your created email campaigns  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -551,7 +551,7 @@ class EmailCampaignsApi(object):
             return data
 
     def get_email_campaigns_with_http_info(self, **kwargs):  # noqa: E501
-        """Return all your created campaigns  # noqa: E501
+        """Return all your created email campaigns  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -836,7 +836,7 @@ class EmailCampaignsApi(object):
             collection_formats=collection_formats)
 
     def send_report(self, campaign_id, send_report, **kwargs):  # noqa: E501
-        """Send the report of a campaigns  # noqa: E501
+        """Send the report of a campaign  # noqa: E501
 
         A PDF will be sent to the specified email addresses  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -859,7 +859,7 @@ class EmailCampaignsApi(object):
             return data
 
     def send_report_with_http_info(self, campaign_id, send_report, **kwargs):  # noqa: E501
-        """Send the report of a campaigns  # noqa: E501
+        """Send the report of a campaign  # noqa: E501
 
         A PDF will be sent to the specified email addresses  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1048,7 +1048,7 @@ class EmailCampaignsApi(object):
             collection_formats=collection_formats)
 
     def update_campaign_status(self, campaign_id, status, **kwargs):  # noqa: E501
-        """Update a campaign status  # noqa: E501
+        """Update an email campaign status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1070,7 +1070,7 @@ class EmailCampaignsApi(object):
             return data
 
     def update_campaign_status_with_http_info(self, campaign_id, status, **kwargs):  # noqa: E501
-        """Update a campaign status  # noqa: E501
+        """Update an email campaign status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1153,7 +1153,7 @@ class EmailCampaignsApi(object):
             collection_formats=collection_formats)
 
     def update_email_campaign(self, campaign_id, email_campaign, **kwargs):  # noqa: E501
-        """Update a campaign  # noqa: E501
+        """Update an email campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1175,7 +1175,7 @@ class EmailCampaignsApi(object):
             return data
 
     def update_email_campaign_with_http_info(self, campaign_id, email_campaign, **kwargs):  # noqa: E501
-        """Update a campaign  # noqa: E501
+        """Update an email campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1243,6 +1243,103 @@ class EmailCampaignsApi(object):
 
         return self.api_client.call_api(
             '/emailCampaigns/{campaignId}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def upload_image_to_gallery(self, upload_image, **kwargs):  # noqa: E501
+        """Upload an image to your account's image gallery  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upload_image_to_gallery(upload_image, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UploadImageToGallery upload_image: Parameters to upload an image (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.upload_image_to_gallery_with_http_info(upload_image, **kwargs)  # noqa: E501
+        else:
+            (data) = self.upload_image_to_gallery_with_http_info(upload_image, **kwargs)  # noqa: E501
+            return data
+
+    def upload_image_to_gallery_with_http_info(self, upload_image, **kwargs):  # noqa: E501
+        """Upload an image to your account's image gallery  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.upload_image_to_gallery_with_http_info(upload_image, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param UploadImageToGallery upload_image: Parameters to upload an image (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['upload_image']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method upload_image_to_gallery" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'upload_image' is set
+        if ('upload_image' not in params or
+                params['upload_image'] is None):
+            raise ValueError("Missing the required parameter `upload_image` when calling `upload_image_to_gallery`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'upload_image' in params:
+            body_params = params['upload_image']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/emailCampaigns/images', 'POST',
             path_params,
             query_params,
             header_params,

@@ -46,28 +46,28 @@ class TestEmailCampaignsApi(unittest.TestCase):
     def test_email_export_recipients(self):
         """Test case for email_export_recipients
 
-        Export the recipients of a campaign  # noqa: E501
+        Export the recipients of an email campaign  # noqa: E501
         """
         pass
 
     def test_get_ab_test_campaign_result(self):
         """Test case for get_ab_test_campaign_result
 
-        Get A/B test email campaign result  # noqa: E501
+        Get an A/B test email campaign results  # noqa: E501
         """
         pass
 
     def test_get_email_campaign(self):
         """Test case for get_email_campaign
 
-        Get campaign informations  # noqa: E501
+        Get an email campaign report  # noqa: E501
         """
         pass
 
     def test_get_email_campaigns(self):
         """Test case for get_email_campaigns
 
-        Return all your created campaigns  # noqa: E501
+        Return all your created email campaigns  # noqa: E501
         """
         pass
 
@@ -88,7 +88,7 @@ class TestEmailCampaignsApi(unittest.TestCase):
     def test_send_report(self):
         """Test case for send_report
 
-        Send the report of a campaigns  # noqa: E501
+        Send the report of a campaign  # noqa: E501
         """
         pass
 
@@ -102,14 +102,21 @@ class TestEmailCampaignsApi(unittest.TestCase):
     def test_update_campaign_status(self):
         """Test case for update_campaign_status
 
-        Update a campaign status  # noqa: E501
+        Update an email campaign status  # noqa: E501
         """
         pass
 
     def test_update_email_campaign(self):
         """Test case for update_email_campaign
 
-        Update a campaign  # noqa: E501
+        Update an email campaign  # noqa: E501
+        """
+        pass
+
+    def test_upload_image_to_gallery(self):
+        """Test case for upload_image_to_gallery
+
+        Upload an image to your account's image gallery  # noqa: E501
         """
         pass
 

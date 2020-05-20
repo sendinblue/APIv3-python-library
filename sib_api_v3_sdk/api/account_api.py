@@ -34,7 +34,7 @@ class AccountApi(object):
         self.api_client = api_client
 
     def get_account(self, **kwargs):  # noqa: E501
-        """Get your account informations, plans and credits details  # noqa: E501
+        """Get your account information, plan and credits details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -54,7 +54,7 @@ class AccountApi(object):
             return data
 
     def get_account_with_http_info(self, **kwargs):  # noqa: E501
-        """Get your account informations, plans and credits details  # noqa: E501
+        """Get your account information, plan and credits details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

@@ -51,7 +51,7 @@ class AddContactToList(object):
     def emails(self):
         """Gets the emails of this AddContactToList.  # noqa: E501
 
-        Emails to add to a list  # noqa: E501
+        Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.  # noqa: E501
 
         :return: The emails of this AddContactToList.  # noqa: E501
         :rtype: list[str]
@@ -62,7 +62,7 @@ class AddContactToList(object):
     def emails(self, emails):
         """Sets the emails of this AddContactToList.
 
-        Emails to add to a list  # noqa: E501
+        Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.  # noqa: E501
 
         :param emails: The emails of this AddContactToList.  # noqa: E501
         :type: list[str]

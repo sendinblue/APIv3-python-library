@@ -32,7 +32,7 @@ class TestSMTPApi(unittest.TestCase):
     def test_create_smtp_template(self):
         """Test case for create_smtp_template
 
-        Create a transactional email template  # noqa: E501
+        Create an email template  # noqa: E501
         """
         pass
 
@@ -46,7 +46,7 @@ class TestSMTPApi(unittest.TestCase):
     def test_delete_smtp_template(self):
         """Test case for delete_smtp_template
 
-        Delete an inactive transactional email template  # noqa: E501
+        Delete an inactive email template  # noqa: E501
         """
         pass
 
@@ -74,14 +74,14 @@ class TestSMTPApi(unittest.TestCase):
     def test_get_smtp_template(self):
         """Test case for get_smtp_template
 
-        Returns the template informations  # noqa: E501
+        Returns the template information  # noqa: E501
         """
         pass
 
     def test_get_smtp_templates(self):
         """Test case for get_smtp_templates
 
-        Get the list of transactional email templates  # noqa: E501
+        Get the list of email templates  # noqa: E501
         """
         pass
 
@@ -144,7 +144,7 @@ class TestSMTPApi(unittest.TestCase):
     def test_update_smtp_template(self):
         """Test case for update_smtp_template
 
-        Updates a transactional email templates  # noqa: E501
+        Update an email template  # noqa: E501
         """
         pass
 

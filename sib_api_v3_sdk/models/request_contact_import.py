@@ -114,7 +114,7 @@ class RequestContactImport(object):
     def file_body(self):
         """Gets the file_body of this RequestContactImport.  # noqa: E501
 
-        Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes  # noqa: E501
+        Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.  # noqa: E501
 
         :return: The file_body of this RequestContactImport.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class RequestContactImport(object):
     def file_body(self, file_body):
         """Sets the file_body of this RequestContactImport.
 
-        Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes  # noqa: E501
+        Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.  # noqa: E501
 
         :param file_body: The file_body of this RequestContactImport.  # noqa: E501
         :type: str
