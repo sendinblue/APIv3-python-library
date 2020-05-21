@@ -39,7 +39,7 @@ class TestContactsApi(unittest.TestCase):
     def test_create_attribute(self):
         """Test case for create_attribute
 
-        Creates contact attribute  # noqa: E501
+        Create contact attribute  # noqa: E501
         """
         pass
 
@@ -47,6 +47,13 @@ class TestContactsApi(unittest.TestCase):
         """Test case for create_contact
 
         Create a contact  # noqa: E501
+        """
+        pass
+
+    def test_create_doi_contact(self):
+        """Test case for create_doi_contact
+
+        Create a contact to trigger the DOI workflow from a Landing Page form  # noqa: E501
         """
         pass
 
@@ -67,14 +74,14 @@ class TestContactsApi(unittest.TestCase):
     def test_delete_attribute(self):
         """Test case for delete_attribute
 
-        Deletes an attribute  # noqa: E501
+        Delete an attribute  # noqa: E501
         """
         pass
 
     def test_delete_contact(self):
         """Test case for delete_contact
 
-        Deletes a contact  # noqa: E501
+        Delete a contact  # noqa: E501
         """
         pass
 
@@ -95,21 +102,21 @@ class TestContactsApi(unittest.TestCase):
     def test_get_attributes(self):
         """Test case for get_attributes
 
-        Lists all attributes  # noqa: E501
+        List all attributes  # noqa: E501
         """
         pass
 
     def test_get_contact_info(self):
         """Test case for get_contact_info
 
-        Retrieves contact informations  # noqa: E501
+        Get a contact's details  # noqa: E501
         """
         pass
 
     def test_get_contact_stats(self):
         """Test case for get_contact_stats
 
-        Get the campaigns statistics for a contact  # noqa: E501
+        Get email campaigns' statistics for a contact  # noqa: E501
         """
         pass
 
@@ -123,35 +130,35 @@ class TestContactsApi(unittest.TestCase):
     def test_get_contacts_from_list(self):
         """Test case for get_contacts_from_list
 
-        Get the contacts in a list  # noqa: E501
+        Get contacts in a list  # noqa: E501
         """
         pass
 
     def test_get_folder(self):
         """Test case for get_folder
 
-        Returns folder details  # noqa: E501
+        Returns a folder's details  # noqa: E501
         """
         pass
 
     def test_get_folder_lists(self):
         """Test case for get_folder_lists
 
-        Get the lists in a folder  # noqa: E501
+        Get lists in a folder  # noqa: E501
         """
         pass
 
     def test_get_folders(self):
         """Test case for get_folders
 
-        Get all the folders  # noqa: E501
+        Get all folders  # noqa: E501
         """
         pass
 
     def test_get_list(self):
         """Test case for get_list
 
-        Get the details of a list  # noqa: E501
+        Get a list's details  # noqa: E501
         """
         pass
 
@@ -172,7 +179,7 @@ class TestContactsApi(unittest.TestCase):
     def test_remove_contact_from_list(self):
         """Test case for remove_contact_from_list
 
-        Remove existing contacts from a list  # noqa: E501
+        Delete a contact from a list  # noqa: E501
         """
         pass
 
@@ -186,21 +193,21 @@ class TestContactsApi(unittest.TestCase):
     def test_update_attribute(self):
         """Test case for update_attribute
 
-        Updates contact attribute  # noqa: E501
+        Update contact attribute  # noqa: E501
         """
         pass
 
     def test_update_contact(self):
         """Test case for update_contact
 
-        Updates a contact  # noqa: E501
+        Update a contact  # noqa: E501
         """
         pass
 
     def test_update_folder(self):
         """Test case for update_folder
 
-        Update a contact folder  # noqa: E501
+        Update a folder  # noqa: E501
         """
         pass
 

@@ -89,7 +89,7 @@ class RequestContactExport(object):
     def contact_filter(self):
         """Gets the contact_filter of this RequestContactExport.  # noqa: E501
 
-        This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.   # noqa: E501
+        This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {\"blacklisted\":true} will export all the blacklisted contacts.   # noqa: E501
 
         :return: The contact_filter of this RequestContactExport.  # noqa: E501
         :rtype: object
@@ -100,7 +100,7 @@ class RequestContactExport(object):
     def contact_filter(self, contact_filter):
         """Sets the contact_filter of this RequestContactExport.
 
-        This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {'blacklisted':true} will export all the blacklisted contacts.   # noqa: E501
+        This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {\"blacklisted\":true} will export all the blacklisted contacts.   # noqa: E501
 
         :param contact_filter: The contact_filter of this RequestContactExport.  # noqa: E501
         :type: object

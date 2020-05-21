@@ -573,7 +573,7 @@ class UpdateEmailCampaign(object):
     def params(self):
         """Gets the params of this UpdateEmailCampaign.  # noqa: E501
 
-        Pass the set of attributes to customize the type 'classic' campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. The 'params' field will get updated, only if the campaign is in New Template Language, else ignored. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
+        Pass the set of attributes to customize the type 'classic' campaign. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}. The 'params' field will get updated, only if the campaign is in New Template Language, else ignored. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
 
         :return: The params of this UpdateEmailCampaign.  # noqa: E501
         :rtype: object
@@ -584,7 +584,7 @@ class UpdateEmailCampaign(object):
     def params(self, params):
         """Sets the params of this UpdateEmailCampaign.
 
-        Pass the set of attributes to customize the type 'classic' campaign. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. The 'params' field will get updated, only if the campaign is in New Template Language, else ignored. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
+        Pass the set of attributes to customize the type 'classic' campaign. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}. The 'params' field will get updated, only if the campaign is in New Template Language, else ignored. The New Template Language is dependent on the values of 'subject', 'htmlContent/htmlUrl', 'sender.name' & 'toField'  # noqa: E501
 
         :param params: The params of this UpdateEmailCampaign.  # noqa: E501
         :type: object

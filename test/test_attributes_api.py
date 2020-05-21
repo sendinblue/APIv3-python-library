@@ -32,28 +32,28 @@ class TestAttributesApi(unittest.TestCase):
     def test_create_attribute(self):
         """Test case for create_attribute
 
-        Creates contact attribute  # noqa: E501
+        Create contact attribute  # noqa: E501
         """
         pass
 
     def test_delete_attribute(self):
         """Test case for delete_attribute
 
-        Deletes an attribute  # noqa: E501
+        Delete an attribute  # noqa: E501
         """
         pass
 
     def test_get_attributes(self):
         """Test case for get_attributes
 
-        Lists all attributes  # noqa: E501
+        List all attributes  # noqa: E501
         """
         pass
 
     def test_update_attribute(self):
         """Test case for update_attribute
 
-        Updates contact attribute  # noqa: E501
+        Update contact attribute  # noqa: E501
         """
         pass
 

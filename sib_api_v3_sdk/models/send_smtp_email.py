@@ -131,7 +131,7 @@ class SendSmtpEmail(object):
     def to(self):
         """Gets the to of this SendSmtpEmail.  # noqa: E501
 
-        List of email addresses and names (optional) of the recipients. For example, [{'name':'Jimmy', 'email':'jimmy98@example.com'}, {'name':'Joe', 'email':'joe@example.com'}]  # noqa: E501
+        List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]  # noqa: E501
 
         :return: The to of this SendSmtpEmail.  # noqa: E501
         :rtype: list[SendSmtpEmailTo]
@@ -142,7 +142,7 @@ class SendSmtpEmail(object):
     def to(self, to):
         """Sets the to of this SendSmtpEmail.
 
-        List of email addresses and names (optional) of the recipients. For example, [{'name':'Jimmy', 'email':'jimmy98@example.com'}, {'name':'Joe', 'email':'joe@example.com'}]  # noqa: E501
+        List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]  # noqa: E501
 
         :param to: The to of this SendSmtpEmail.  # noqa: E501
         :type: list[SendSmtpEmailTo]
@@ -315,7 +315,7 @@ class SendSmtpEmail(object):
     def headers(self):
         """Gets the headers of this SendSmtpEmail.  # noqa: E501
 
-        Pass the set of custom headers (not the standard headers) that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, `{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\"}`.  # noqa: E501
+        Pass the set of custom headers (not the standard headers) that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. Headers are allowed in `This-Case-Only` (i.e. words separated by hyphen with first letter of each word in capital letter), they will be converted to such case styling if not in this format in the request payload. For example, `{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\"}`.  # noqa: E501
 
         :return: The headers of this SendSmtpEmail.  # noqa: E501
         :rtype: object
@@ -326,7 +326,7 @@ class SendSmtpEmail(object):
     def headers(self, headers):
         """Sets the headers of this SendSmtpEmail.
 
-        Pass the set of custom headers (not the standard headers) that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. For example, `{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\"}`.  # noqa: E501
+        Pass the set of custom headers (not the standard headers) that shall be sent along the mail headers in the original email. 'sender.ip' header can be set (only for dedicated ip users) to mention the IP to be used for sending transactional emails. Headers are allowed in `This-Case-Only` (i.e. words separated by hyphen with first letter of each word in capital letter), they will be converted to such case styling if not in this format in the request payload. For example, `{\"sender.ip\":\"1.2.3.4\", \"X-Mailin-custom\":\"some_custom_header\"}`.  # noqa: E501
 
         :param headers: The headers of this SendSmtpEmail.  # noqa: E501
         :type: object
@@ -361,7 +361,7 @@ class SendSmtpEmail(object):
     def params(self):
         """Gets the params of this SendSmtpEmail.  # noqa: E501
 
-        Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. It's considered only if template is in New Template Language format.  # noqa: E501
+        Pass the set of attributes to customize the template. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}. It's considered only if template is in New Template Language format.  # noqa: E501
 
         :return: The params of this SendSmtpEmail.  # noqa: E501
         :rtype: object
@@ -372,7 +372,7 @@ class SendSmtpEmail(object):
     def params(self, params):
         """Sets the params of this SendSmtpEmail.
 
-        Pass the set of attributes to customize the template. For example, {'FNAME':'Joe', 'LNAME':'Doe'}. It's considered only if template is in New Template Language format.  # noqa: E501
+        Pass the set of attributes to customize the template. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}. It's considered only if template is in New Template Language format.  # noqa: E501
 
         :param params: The params of this SendSmtpEmail.  # noqa: E501
         :type: object

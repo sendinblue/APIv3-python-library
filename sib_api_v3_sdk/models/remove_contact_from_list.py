@@ -56,7 +56,7 @@ class RemoveContactFromList(object):
     def emails(self):
         """Gets the emails of this RemoveContactFromList.  # noqa: E501
 
-        Required if 'all' is false. Emails to remove from a list  # noqa: E501
+        Required if 'all' is false. Emails to remove from a list. You can pass a maximum of 150 emails for removal in one request.  # noqa: E501
 
         :return: The emails of this RemoveContactFromList.  # noqa: E501
         :rtype: list[str]
@@ -67,7 +67,7 @@ class RemoveContactFromList(object):
     def emails(self, emails):
         """Sets the emails of this RemoveContactFromList.
 
-        Required if 'all' is false. Emails to remove from a list  # noqa: E501
+        Required if 'all' is false. Emails to remove from a list. You can pass a maximum of 150 emails for removal in one request.  # noqa: E501
 
         :param emails: The emails of this RemoveContactFromList.  # noqa: E501
         :type: list[str]

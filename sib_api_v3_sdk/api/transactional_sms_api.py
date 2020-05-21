@@ -34,7 +34,7 @@ class TransactionalSMSApi(object):
         self.api_client = api_client
 
     def get_sms_events(self, **kwargs):  # noqa: E501
-        """Get all the SMS activity (unaggregated events)  # noqa: E501
+        """Get all your SMS activity (unaggregated events)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -62,7 +62,7 @@ class TransactionalSMSApi(object):
             return data
 
     def get_sms_events_with_http_info(self, **kwargs):  # noqa: E501
-        """Get all the SMS activity (unaggregated events)  # noqa: E501
+        """Get all your SMS activity (unaggregated events)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -367,7 +367,7 @@ class TransactionalSMSApi(object):
             collection_formats=collection_formats)
 
     def send_transac_sms(self, send_transac_sms, **kwargs):  # noqa: E501
-        """Send the SMS campaign to the specified mobile number  # noqa: E501
+        """Send the SMS campaign to a mobile number  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -388,7 +388,7 @@ class TransactionalSMSApi(object):
             return data
 
     def send_transac_sms_with_http_info(self, send_transac_sms, **kwargs):  # noqa: E501
-        """Send the SMS campaign to the specified mobile number  # noqa: E501
+        """Send the SMS campaign to a mobile number  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

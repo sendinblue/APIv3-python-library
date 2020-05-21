@@ -34,7 +34,7 @@ class SMTPApi(object):
         self.api_client = api_client
 
     def create_smtp_template(self, smtp_template, **kwargs):  # noqa: E501
-        """Create a transactional email template  # noqa: E501
+        """Create an email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -55,7 +55,7 @@ class SMTPApi(object):
             return data
 
     def create_smtp_template_with_http_info(self, smtp_template, **kwargs):  # noqa: E501
-        """Create a transactional email template  # noqa: E501
+        """Create an email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -226,7 +226,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def delete_smtp_template(self, template_id, **kwargs):  # noqa: E501
-        """Delete an inactive transactional email template  # noqa: E501
+        """Delete an inactive email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -247,7 +247,7 @@ class SMTPApi(object):
             return data
 
     def delete_smtp_template_with_http_info(self, template_id, **kwargs):  # noqa: E501
-        """Delete an inactive transactional email template  # noqa: E501
+        """Delete an inactive email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -674,7 +674,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def get_smtp_template(self, template_id, **kwargs):  # noqa: E501
-        """Returns the template informations  # noqa: E501
+        """Returns the template information  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -695,7 +695,7 @@ class SMTPApi(object):
             return data
 
     def get_smtp_template_with_http_info(self, template_id, **kwargs):  # noqa: E501
-        """Returns the template informations  # noqa: E501
+        """Returns the template information  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -771,7 +771,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def get_smtp_templates(self, **kwargs):  # noqa: E501
-        """Get the list of transactional email templates  # noqa: E501
+        """Get the list of email templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -794,7 +794,7 @@ class SMTPApi(object):
             return data
 
     def get_smtp_templates_with_http_info(self, **kwargs):  # noqa: E501
-        """Get the list of transactional email templates  # noqa: E501
+        """Get the list of email templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1095,7 +1095,7 @@ class SMTPApi(object):
         :param str email: Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
         :param int template_id: Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
         :param str message_id: Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
-        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
         :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
         :return: GetTransacEmailsList
                  If the method is called asynchronously,
@@ -1121,7 +1121,7 @@ class SMTPApi(object):
         :param str email: Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
         :param int template_id: Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
         :param str message_id: Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
-        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
         :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
         :return: GetTransacEmailsList
                  If the method is called asynchronously,
@@ -1697,7 +1697,7 @@ class SMTPApi(object):
             collection_formats=collection_formats)
 
     def update_smtp_template(self, template_id, smtp_template, **kwargs):  # noqa: E501
-        """Updates a transactional email templates  # noqa: E501
+        """Update an email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1719,7 +1719,7 @@ class SMTPApi(object):
             return data
 
     def update_smtp_template_with_http_info(self, template_id, smtp_template, **kwargs):  # noqa: E501
-        """Updates a transactional email templates  # noqa: E501
+        """Update an email template  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

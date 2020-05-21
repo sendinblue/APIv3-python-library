@@ -46,7 +46,7 @@ class TestResellerApi(unittest.TestCase):
     def test_create_child_domain(self):
         """Test case for create_child_domain
 
-        Creates a domain for a child account  # noqa: E501
+        Create a domain for a child account  # noqa: E501
         """
         pass
 
@@ -60,14 +60,14 @@ class TestResellerApi(unittest.TestCase):
     def test_delete_child_domain(self):
         """Test case for delete_child_domain
 
-        Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
+        Delete the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
         """
         pass
 
     def test_delete_reseller_child(self):
         """Test case for delete_reseller_child
 
-        Deletes a single reseller child based on the childAuthKey supplied  # noqa: E501
+        Delete a single reseller child based on the childAuthKey supplied  # noqa: E501
         """
         pass
 
@@ -81,28 +81,28 @@ class TestResellerApi(unittest.TestCase):
     def test_get_child_account_creation_status(self):
         """Test case for get_child_account_creation_status
 
-        Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
+        Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
         """
         pass
 
     def test_get_child_domains(self):
         """Test case for get_child_domains
 
-        Gets all the sender domains of a specific child account  # noqa: E501
+        Get all sender domains for a specific child account  # noqa: E501
         """
         pass
 
     def test_get_child_info(self):
         """Test case for get_child_info
 
-        Gets the info about a specific child account  # noqa: E501
+        Get a child account's details  # noqa: E501
         """
         pass
 
     def test_get_reseller_childs(self):
         """Test case for get_reseller_childs
 
-        Gets the list of all reseller's children accounts  # noqa: E501
+        Get the list of all children accounts  # noqa: E501
         """
         pass
 
@@ -123,21 +123,21 @@ class TestResellerApi(unittest.TestCase):
     def test_update_child_account_status(self):
         """Test case for update_child_account_status
 
-        Updates infos of reseller's child account status based on the childAuthKey supplied  # noqa: E501
+        Update info of reseller's child account status based on the childAuthKey supplied  # noqa: E501
         """
         pass
 
     def test_update_child_domain(self):
         """Test case for update_child_domain
 
-        Updates the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
+        Update the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
         """
         pass
 
     def test_update_reseller_child(self):
         """Test case for update_reseller_child
 
-        Updates infos of reseller's child based on the childAuthKey supplied  # noqa: E501
+        Update info of reseller's child based on the childAuthKey supplied  # noqa: E501
         """
         pass
 

@@ -244,7 +244,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def create_child_domain(self, child_auth_key, add_child_domain, **kwargs):  # noqa: E501
-        """Creates a domain for a child account  # noqa: E501
+        """Create a domain for a child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -266,7 +266,7 @@ class ResellerApi(object):
             return data
 
     def create_child_domain_with_http_info(self, child_auth_key, add_child_domain, **kwargs):  # noqa: E501
-        """Creates a domain for a child account  # noqa: E501
+        """Create a domain for a child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -442,7 +442,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def delete_child_domain(self, child_auth_key, domain_name, **kwargs):  # noqa: E501
-        """Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
+        """Delete the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -464,7 +464,7 @@ class ResellerApi(object):
             return data
 
     def delete_child_domain_with_http_info(self, child_auth_key, domain_name, **kwargs):  # noqa: E501
-        """Deletes the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
+        """Delete the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -547,7 +547,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def delete_reseller_child(self, child_auth_key, **kwargs):  # noqa: E501
-        """Deletes a single reseller child based on the childAuthKey supplied  # noqa: E501
+        """Delete a single reseller child based on the childAuthKey supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -568,7 +568,7 @@ class ResellerApi(object):
             return data
 
     def delete_reseller_child_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
-        """Deletes a single reseller child based on the childAuthKey supplied  # noqa: E501
+        """Delete a single reseller child based on the childAuthKey supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -749,7 +749,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def get_child_account_creation_status(self, child_auth_key, **kwargs):  # noqa: E501
-        """Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
+        """Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -770,7 +770,7 @@ class ResellerApi(object):
             return data
 
     def get_child_account_creation_status_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
-        """Returns the status of reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
+        """Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -846,7 +846,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def get_child_domains(self, child_auth_key, **kwargs):  # noqa: E501
-        """Gets all the sender domains of a specific child account  # noqa: E501
+        """Get all sender domains for a specific child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -867,7 +867,7 @@ class ResellerApi(object):
             return data
 
     def get_child_domains_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
-        """Gets all the sender domains of a specific child account  # noqa: E501
+        """Get all sender domains for a specific child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -943,7 +943,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def get_child_info(self, child_auth_key, **kwargs):  # noqa: E501
-        """Gets the info about a specific child account  # noqa: E501
+        """Get a child account's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -964,7 +964,7 @@ class ResellerApi(object):
             return data
 
     def get_child_info_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
-        """Gets the info about a specific child account  # noqa: E501
+        """Get a child account's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1040,7 +1040,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def get_reseller_childs(self, **kwargs):  # noqa: E501
-        """Gets the list of all reseller's children accounts  # noqa: E501
+        """Get the list of all children accounts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1062,7 +1062,7 @@ class ResellerApi(object):
             return data
 
     def get_reseller_childs_with_http_info(self, **kwargs):  # noqa: E501
-        """Gets the list of all reseller's children accounts  # noqa: E501
+        """Get the list of all children accounts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1343,7 +1343,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def update_child_account_status(self, child_auth_key, update_child_account_status, **kwargs):  # noqa: E501
-        """Updates infos of reseller's child account status based on the childAuthKey supplied  # noqa: E501
+        """Update info of reseller's child account status based on the childAuthKey supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1365,7 +1365,7 @@ class ResellerApi(object):
             return data
 
     def update_child_account_status_with_http_info(self, child_auth_key, update_child_account_status, **kwargs):  # noqa: E501
-        """Updates infos of reseller's child account status based on the childAuthKey supplied  # noqa: E501
+        """Update info of reseller's child account status based on the childAuthKey supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1448,7 +1448,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def update_child_domain(self, child_auth_key, domain_name, update_child_domain, **kwargs):  # noqa: E501
-        """Updates the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
+        """Update the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1471,7 +1471,7 @@ class ResellerApi(object):
             return data
 
     def update_child_domain_with_http_info(self, child_auth_key, domain_name, update_child_domain, **kwargs):  # noqa: E501
-        """Updates the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
+        """Update the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1561,7 +1561,7 @@ class ResellerApi(object):
             collection_formats=collection_formats)
 
     def update_reseller_child(self, child_auth_key, reseller_child, **kwargs):  # noqa: E501
-        """Updates infos of reseller's child based on the childAuthKey supplied  # noqa: E501
+        """Update info of reseller's child based on the childAuthKey supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1583,7 +1583,7 @@ class ResellerApi(object):
             return data
 
     def update_reseller_child_with_http_info(self, child_auth_key, reseller_child, **kwargs):  # noqa: E501
-        """Updates infos of reseller's child based on the childAuthKey supplied  # noqa: E501
+        """Update info of reseller's child based on the childAuthKey supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

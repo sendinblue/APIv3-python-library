@@ -46,28 +46,28 @@ class TestFoldersApi(unittest.TestCase):
     def test_get_folder(self):
         """Test case for get_folder
 
-        Returns folder details  # noqa: E501
+        Returns a folder's details  # noqa: E501
         """
         pass
 
     def test_get_folder_lists(self):
         """Test case for get_folder_lists
 
-        Get the lists in a folder  # noqa: E501
+        Get lists in a folder  # noqa: E501
         """
         pass
 
     def test_get_folders(self):
         """Test case for get_folders
 
-        Get all the folders  # noqa: E501
+        Get all folders  # noqa: E501
         """
         pass
 
     def test_update_folder(self):
         """Test case for update_folder
 
-        Update a contact folder  # noqa: E501
+        Update a folder  # noqa: E501
         """
         pass
 

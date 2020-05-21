@@ -32,7 +32,7 @@ class TestTransactionalSMSApi(unittest.TestCase):
     def test_get_sms_events(self):
         """Test case for get_sms_events
 
-        Get all the SMS activity (unaggregated events)  # noqa: E501
+        Get all your SMS activity (unaggregated events)  # noqa: E501
         """
         pass
 
@@ -53,7 +53,7 @@ class TestTransactionalSMSApi(unittest.TestCase):
     def test_send_transac_sms(self):
         """Test case for send_transac_sms
 
-        Send the SMS campaign to the specified mobile number  # noqa: E501
+        Send the SMS campaign to a mobile number  # noqa: E501
         """
         pass
 

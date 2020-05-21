@@ -4,14 +4,14 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_smtp_template**](SMTPApi.md#create_smtp_template) | **POST** /smtp/templates | Create a transactional email template
+[**create_smtp_template**](SMTPApi.md#create_smtp_template) | **POST** /smtp/templates | Create an email template
 [**delete_hardbounces**](SMTPApi.md#delete_hardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
-[**delete_smtp_template**](SMTPApi.md#delete_smtp_template) | **DELETE** /smtp/templates/{templateId} | Delete an inactive transactional email template
+[**delete_smtp_template**](SMTPApi.md#delete_smtp_template) | **DELETE** /smtp/templates/{templateId} | Delete an inactive email template
 [**get_aggregated_smtp_report**](SMTPApi.md#get_aggregated_smtp_report) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
 [**get_email_event_report**](SMTPApi.md#get_email_event_report) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
 [**get_smtp_report**](SMTPApi.md#get_smtp_report) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
-[**get_smtp_template**](SMTPApi.md#get_smtp_template) | **GET** /smtp/templates/{templateId} | Returns the template informations
-[**get_smtp_templates**](SMTPApi.md#get_smtp_templates) | **GET** /smtp/templates | Get the list of transactional email templates
+[**get_smtp_template**](SMTPApi.md#get_smtp_template) | **GET** /smtp/templates/{templateId} | Returns the template information
+[**get_smtp_templates**](SMTPApi.md#get_smtp_templates) | **GET** /smtp/templates | Get the list of email templates
 [**get_transac_blocked_contacts**](SMTPApi.md#get_transac_blocked_contacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
 [**get_transac_email_content**](SMTPApi.md#get_transac_email_content) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
 [**get_transac_emails_list**](SMTPApi.md#get_transac_emails_list) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
@@ -20,13 +20,13 @@ Method | HTTP request | Description
 [**send_transac_email**](SMTPApi.md#send_transac_email) | **POST** /smtp/email | Send a transactional email
 [**smtp_blocked_contacts_email_delete**](SMTPApi.md#smtp_blocked_contacts_email_delete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
 [**smtp_log_message_id_delete**](SMTPApi.md#smtp_log_message_id_delete) | **DELETE** /smtp/log/{messageId} | Delete an SMTP transactional log
-[**update_smtp_template**](SMTPApi.md#update_smtp_template) | **PUT** /smtp/templates/{templateId} | Updates a transactional email templates
+[**update_smtp_template**](SMTPApi.md#update_smtp_template) | **PUT** /smtp/templates/{templateId} | Update an email template
 
 
 # **create_smtp_template**
 > CreateModel create_smtp_template(smtp_template)
 
-Create a transactional email template
+Create an email template
 
 ### Example
 ```python
@@ -52,7 +52,7 @@ api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
 smtp_template = sib_api_v3_sdk.CreateSmtpTemplate() # CreateSmtpTemplate | values to update in transactional email template
 
 try:
-    # Create a transactional email template
+    # Create an email template
     api_response = api_instance.create_smtp_template(smtp_template)
     pprint(api_response)
 except ApiException as e:
@@ -141,7 +141,7 @@ void (empty response body)
 # **delete_smtp_template**
 > delete_smtp_template(template_id)
 
-Delete an inactive transactional email template
+Delete an inactive email template
 
 ### Example
 ```python
@@ -167,7 +167,7 @@ api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
 template_id = 789 # int | id of the template
 
 try:
-    # Delete an inactive transactional email template
+    # Delete an inactive email template
     api_instance.delete_smtp_template(template_id)
 except ApiException as e:
     print("Exception when calling SMTPApi->delete_smtp_template: %s\n" % e)
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 # **get_smtp_template**
 > GetSmtpTemplateOverview get_smtp_template(template_id)
 
-Returns the template informations
+Returns the template information
 
 ### Example
 ```python
@@ -428,7 +428,7 @@ api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
 template_id = 789 # int | id of the template
 
 try:
-    # Returns the template informations
+    # Returns the template information
     api_response = api_instance.get_smtp_template(template_id)
     pprint(api_response)
 except ApiException as e:
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 # **get_smtp_templates**
 > GetSmtpTemplates get_smtp_templates(template_status=template_status, limit=limit, offset=offset)
 
-Get the list of transactional email templates
+Get the list of email templates
 
 ### Example
 ```python
@@ -487,7 +487,7 @@ limit = 50 # int | Number of documents returned per page (optional) (default to 
 offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 
 try:
-    # Get the list of transactional email templates
+    # Get the list of email templates
     api_response = api_instance.get_smtp_templates(template_status=template_status, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
@@ -670,7 +670,7 @@ api_instance = sib_api_v3_sdk.SMTPApi(sib_api_v3_sdk.ApiClient(configuration))
 email = 'email_example' # str | Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. (optional)
 template_id = 789 # int | Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. (optional)
 message_id = 'message_id_example' # str | Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
-start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
 end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
 
 try:
@@ -688,7 +688,7 @@ Name | Type | Description  | Notes
  **email** | **str**| Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent. | [optional] 
  **template_id** | **int**| Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email. | [optional] 
  **message_id** | **str**| Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. | [optional] 
- **start_date** | **str**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
+ **start_date** | **date**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
  **end_date** | **date**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
 
 ### Return type
@@ -997,7 +997,7 @@ void (empty response body)
 # **update_smtp_template**
 > update_smtp_template(template_id, smtp_template)
 
-Updates a transactional email templates
+Update an email template
 
 ### Example
 ```python
@@ -1024,7 +1024,7 @@ template_id = 789 # int | id of the template
 smtp_template = sib_api_v3_sdk.UpdateSmtpTemplate() # UpdateSmtpTemplate | values to update in transactional email template
 
 try:
-    # Updates a transactional email templates
+    # Update an email template
     api_instance.update_smtp_template(template_id, smtp_template)
 except ApiException as e:
     print("Exception when calling SMTPApi->update_smtp_template: %s\n" % e)

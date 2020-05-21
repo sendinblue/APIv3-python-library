@@ -31,8 +31,8 @@ class RemainingCreditModelChild(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'sms': 'int',
-        'email': 'int'
+        'sms': 'float',
+        'email': 'float'
     }
 
     attribute_map = {
@@ -57,7 +57,7 @@ class RemainingCreditModelChild(object):
         SMS Credits remaining for child account  # noqa: E501
 
         :return: The sms of this RemainingCreditModelChild.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._sms
 
@@ -68,7 +68,7 @@ class RemainingCreditModelChild(object):
         SMS Credits remaining for child account  # noqa: E501
 
         :param sms: The sms of this RemainingCreditModelChild.  # noqa: E501
-        :type: int
+        :type: float
         """
         if sms is None:
             raise ValueError("Invalid value for `sms`, must not be `None`")  # noqa: E501
@@ -82,7 +82,7 @@ class RemainingCreditModelChild(object):
         Email Credits remaining for child account  # noqa: E501
 
         :return: The email of this RemainingCreditModelChild.  # noqa: E501
-        :rtype: int
+        :rtype: float
         """
         return self._email
 
@@ -93,7 +93,7 @@ class RemainingCreditModelChild(object):
         Email Credits remaining for child account  # noqa: E501
 
         :param email: The email of this RemainingCreditModelChild.  # noqa: E501
-        :type: int
+        :type: float
         """
         if email is None:
             raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501

@@ -5,15 +5,15 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_sms_campaign**](SMSCampaignsApi.md#create_sms_campaign) | **POST** /smsCampaigns | Creates an SMS campaign
-[**delete_sms_campaign**](SMSCampaignsApi.md#delete_sms_campaign) | **DELETE** /smsCampaigns/{campaignId} | Delete the SMS campaign
+[**delete_sms_campaign**](SMSCampaignsApi.md#delete_sms_campaign) | **DELETE** /smsCampaigns/{campaignId} | Delete an SMS campaign
 [**get_sms_campaign**](SMSCampaignsApi.md#get_sms_campaign) | **GET** /smsCampaigns/{campaignId} | Get an SMS campaign
-[**get_sms_campaigns**](SMSCampaignsApi.md#get_sms_campaigns) | **GET** /smsCampaigns | Returns the informations for all your created SMS campaigns
-[**request_sms_recipient_export**](SMSCampaignsApi.md#request_sms_recipient_export) | **POST** /smsCampaigns/{campaignId}/exportRecipients | Exports the recipients of the specified campaign.
+[**get_sms_campaigns**](SMSCampaignsApi.md#get_sms_campaigns) | **GET** /smsCampaigns | Returns the information for all your created SMS campaigns
+[**request_sms_recipient_export**](SMSCampaignsApi.md#request_sms_recipient_export) | **POST** /smsCampaigns/{campaignId}/exportRecipients | Export an SMS campaign&#39;s recipients
 [**send_sms_campaign_now**](SMSCampaignsApi.md#send_sms_campaign_now) | **POST** /smsCampaigns/{campaignId}/sendNow | Send your SMS campaign immediately
-[**send_sms_report**](SMSCampaignsApi.md#send_sms_report) | **POST** /smsCampaigns/{campaignId}/sendReport | Send report of SMS campaigns
-[**send_test_sms**](SMSCampaignsApi.md#send_test_sms) | **POST** /smsCampaigns/{campaignId}/sendTest | Send an SMS
-[**update_sms_campaign**](SMSCampaignsApi.md#update_sms_campaign) | **PUT** /smsCampaigns/{campaignId} | Updates an SMS campaign
-[**update_sms_campaign_status**](SMSCampaignsApi.md#update_sms_campaign_status) | **PUT** /smsCampaigns/{campaignId}/status | Update the campaign status
+[**send_sms_report**](SMSCampaignsApi.md#send_sms_report) | **POST** /smsCampaigns/{campaignId}/sendReport | Send an SMS campaign&#39;s report
+[**send_test_sms**](SMSCampaignsApi.md#send_test_sms) | **POST** /smsCampaigns/{campaignId}/sendTest | Send a test SMS campaign
+[**update_sms_campaign**](SMSCampaignsApi.md#update_sms_campaign) | **PUT** /smsCampaigns/{campaignId} | Update an SMS campaign
+[**update_sms_campaign_status**](SMSCampaignsApi.md#update_sms_campaign_status) | **PUT** /smsCampaigns/{campaignId}/status | Update a campaign&#39;s status
 
 
 # **create_sms_campaign**
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 # **delete_sms_campaign**
 > delete_sms_campaign(campaign_id)
 
-Delete the SMS campaign
+Delete an SMS campaign
 
 ### Example
 ```python
@@ -102,7 +102,7 @@ api_instance = sib_api_v3_sdk.SMSCampaignsApi(sib_api_v3_sdk.ApiClient(configura
 campaign_id = 789 # int | id of the SMS campaign
 
 try:
-    # Delete the SMS campaign
+    # Delete an SMS campaign
     api_instance.delete_sms_campaign(campaign_id)
 except ApiException as e:
     print("Exception when calling SMSCampaignsApi->delete_sms_campaign: %s\n" % e)
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 # **get_sms_campaigns**
 > GetSmsCampaigns get_sms_campaigns(status=status, start_date=start_date, end_date=end_date, limit=limit, offset=offset)
 
-Returns the informations for all your created SMS campaigns
+Returns the information for all your created SMS campaigns
 
 ### Example
 ```python
@@ -219,7 +219,7 @@ limit = 500 # int | Number limitation for the result returned (optional) (defaul
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
 
 try:
-    # Returns the informations for all your created SMS campaigns
+    # Returns the information for all your created SMS campaigns
     api_response = api_instance.get_sms_campaigns(status=status, start_date=start_date, end_date=end_date, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 # **request_sms_recipient_export**
 > CreatedProcessId request_sms_recipient_export(campaign_id, recipient_export=recipient_export)
 
-Exports the recipients of the specified campaign.
+Export an SMS campaign's recipients
 
 It returns the background process ID which on completion calls the notify URL that you have set in the input.
 
@@ -283,7 +283,7 @@ campaign_id = 789 # int | id of the campaign
 recipient_export = sib_api_v3_sdk.RequestSmsRecipientExport() # RequestSmsRecipientExport | Values to send for a recipient export request (optional)
 
 try:
-    # Exports the recipients of the specified campaign.
+    # Export an SMS campaign's recipients
     api_response = api_instance.request_sms_recipient_export(campaign_id, recipient_export=recipient_export)
     pprint(api_response)
 except ApiException as e:
@@ -371,7 +371,7 @@ void (empty response body)
 # **send_sms_report**
 > send_sms_report(campaign_id, send_report)
 
-Send report of SMS campaigns
+Send an SMS campaign's report
 
 Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.
 
@@ -400,7 +400,7 @@ campaign_id = 789 # int | id of the campaign
 send_report = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
 
 try:
-    # Send report of SMS campaigns
+    # Send an SMS campaign's report
     api_instance.send_sms_report(campaign_id, send_report)
 except ApiException as e:
     print("Exception when calling SMSCampaignsApi->send_sms_report: %s\n" % e)
@@ -431,7 +431,7 @@ void (empty response body)
 # **send_test_sms**
 > send_test_sms(campaign_id, phone_number)
 
-Send an SMS
+Send a test SMS campaign
 
 ### Example
 ```python
@@ -458,7 +458,7 @@ campaign_id = 789 # int | Id of the SMS campaign
 phone_number = sib_api_v3_sdk.SendTestSms() # SendTestSms | Mobile number of the recipient with the country code. This number must belong to one of your contacts in SendinBlue account and must not be blacklisted
 
 try:
-    # Send an SMS
+    # Send a test SMS campaign
     api_instance.send_test_sms(campaign_id, phone_number)
 except ApiException as e:
     print("Exception when calling SMSCampaignsApi->send_test_sms: %s\n" % e)
@@ -489,7 +489,7 @@ void (empty response body)
 # **update_sms_campaign**
 > update_sms_campaign(campaign_id, update_sms_campaign)
 
-Updates an SMS campaign
+Update an SMS campaign
 
 ### Example
 ```python
@@ -516,7 +516,7 @@ campaign_id = 789 # int | id of the SMS campaign
 update_sms_campaign = sib_api_v3_sdk.UpdateSmsCampaign() # UpdateSmsCampaign | Values to update an SMS Campaign
 
 try:
-    # Updates an SMS campaign
+    # Update an SMS campaign
     api_instance.update_sms_campaign(campaign_id, update_sms_campaign)
 except ApiException as e:
     print("Exception when calling SMSCampaignsApi->update_sms_campaign: %s\n" % e)
@@ -547,7 +547,7 @@ void (empty response body)
 # **update_sms_campaign_status**
 > update_sms_campaign_status(campaign_id, status)
 
-Update the campaign status
+Update a campaign's status
 
 ### Example
 ```python
@@ -574,7 +574,7 @@ campaign_id = 789 # int | id of the campaign
 status = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign.
 
 try:
-    # Update the campaign status
+    # Update a campaign's status
     api_instance.update_sms_campaign_status(campaign_id, status)
 except ApiException as e:
     print("Exception when calling SMSCampaignsApi->update_sms_campaign_status: %s\n" % e)

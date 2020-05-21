@@ -36,7 +36,9 @@ class GetTransacEmailsListTransactionalEmails(object):
         'template_id': 'int',
         'message_id': 'str',
         'uuid': 'str',
-        '_date': 'datetime'
+        '_date': 'datetime',
+        '_from': 'str',
+        'tags': 'list[str]'
     }
 
     attribute_map = {
@@ -45,10 +47,12 @@ class GetTransacEmailsListTransactionalEmails(object):
         'template_id': 'templateId',
         'message_id': 'messageId',
         'uuid': 'uuid',
-        '_date': 'date'
+        '_date': 'date',
+        '_from': 'from',
+        'tags': 'tags'
     }
 
-    def __init__(self, email=None, subject=None, template_id=None, message_id=None, uuid=None, _date=None):  # noqa: E501
+    def __init__(self, email=None, subject=None, template_id=None, message_id=None, uuid=None, _date=None, _from=None, tags=None):  # noqa: E501
         """GetTransacEmailsListTransactionalEmails - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
@@ -57,6 +61,8 @@ class GetTransacEmailsListTransactionalEmails(object):
         self._message_id = None
         self._uuid = None
         self.__date = None
+        self.__from = None
+        self._tags = None
         self.discriminator = None
 
         self.email = email
@@ -66,6 +72,10 @@ class GetTransacEmailsListTransactionalEmails(object):
         self.message_id = message_id
         self.uuid = uuid
         self._date = _date
+        if _from is not None:
+            self._from = _from
+        if tags is not None:
+            self.tags = tags
 
     @property
     def email(self):
@@ -214,6 +224,52 @@ class GetTransacEmailsListTransactionalEmails(object):
             raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
 
         self.__date = _date
+
+    @property
+    def _from(self):
+        """Gets the _from of this GetTransacEmailsListTransactionalEmails.  # noqa: E501
+
+        Email address of the sender from which the email was sent  # noqa: E501
+
+        :return: The _from of this GetTransacEmailsListTransactionalEmails.  # noqa: E501
+        :rtype: str
+        """
+        return self.__from
+
+    @_from.setter
+    def _from(self, _from):
+        """Sets the _from of this GetTransacEmailsListTransactionalEmails.
+
+        Email address of the sender from which the email was sent  # noqa: E501
+
+        :param _from: The _from of this GetTransacEmailsListTransactionalEmails.  # noqa: E501
+        :type: str
+        """
+
+        self.__from = _from
+
+    @property
+    def tags(self):
+        """Gets the tags of this GetTransacEmailsListTransactionalEmails.  # noqa: E501
+
+        Tags used for your email  # noqa: E501
+
+        :return: The tags of this GetTransacEmailsListTransactionalEmails.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this GetTransacEmailsListTransactionalEmails.
+
+        Tags used for your email  # noqa: E501
+
+        :param tags: The tags of this GetTransacEmailsListTransactionalEmails.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -139,7 +139,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def create_attribute(self, attribute_category, attribute_name, create_attribute, **kwargs):  # noqa: E501
-        """Creates contact attribute  # noqa: E501
+        """Create contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -162,7 +162,7 @@ class ContactsApi(object):
             return data
 
     def create_attribute_with_http_info(self, attribute_category, attribute_name, create_attribute, **kwargs):  # noqa: E501
-        """Creates contact attribute  # noqa: E501
+        """Create contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -341,6 +341,103 @@ class ContactsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='CreateUpdateContactModel',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_doi_contact(self, create_doi_contact, **kwargs):  # noqa: E501
+        """Create a contact to trigger the DOI workflow from a Landing Page form  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_doi_contact(create_doi_contact, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CreateDoiContact create_doi_contact: Values to create the DOI contact (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_doi_contact_with_http_info(create_doi_contact, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_doi_contact_with_http_info(create_doi_contact, **kwargs)  # noqa: E501
+            return data
+
+    def create_doi_contact_with_http_info(self, create_doi_contact, **kwargs):  # noqa: E501
+        """Create a contact to trigger the DOI workflow from a Landing Page form  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_doi_contact_with_http_info(create_doi_contact, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CreateDoiContact create_doi_contact: Values to create the DOI contact (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['create_doi_contact']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_doi_contact" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'create_doi_contact' is set
+        if ('create_doi_contact' not in params or
+                params['create_doi_contact'] is None):
+            raise ValueError("Missing the required parameter `create_doi_contact` when calling `create_doi_contact`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_doi_contact' in params:
+            body_params = params['create_doi_contact']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/contacts/doubleOptinConfirmation', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -543,7 +640,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def delete_attribute(self, attribute_category, attribute_name, **kwargs):  # noqa: E501
-        """Deletes an attribute  # noqa: E501
+        """Delete an attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -565,7 +662,7 @@ class ContactsApi(object):
             return data
 
     def delete_attribute_with_http_info(self, attribute_category, attribute_name, **kwargs):  # noqa: E501
-        """Deletes an attribute  # noqa: E501
+        """Delete an attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -648,7 +745,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def delete_contact(self, email, **kwargs):  # noqa: E501
-        """Deletes a contact  # noqa: E501
+        """Delete a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -669,7 +766,7 @@ class ContactsApi(object):
             return data
 
     def delete_contact_with_http_info(self, email, **kwargs):  # noqa: E501
-        """Deletes a contact  # noqa: E501
+        """Delete a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -939,7 +1036,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def get_attributes(self, **kwargs):  # noqa: E501
-        """Lists all attributes  # noqa: E501
+        """List all attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -959,7 +1056,7 @@ class ContactsApi(object):
             return data
 
     def get_attributes_with_http_info(self, **kwargs):  # noqa: E501
-        """Lists all attributes  # noqa: E501
+        """List all attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1028,7 +1125,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def get_contact_info(self, email, **kwargs):  # noqa: E501
-        """Retrieves contact informations  # noqa: E501
+        """Get a contact's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1049,7 +1146,7 @@ class ContactsApi(object):
             return data
 
     def get_contact_info_with_http_info(self, email, **kwargs):  # noqa: E501
-        """Retrieves contact informations  # noqa: E501
+        """Get a contact's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1125,7 +1222,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def get_contact_stats(self, email, **kwargs):  # noqa: E501
-        """Get the campaigns statistics for a contact  # noqa: E501
+        """Get email campaigns' statistics for a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1134,6 +1231,8 @@ class ContactsApi(object):
 
         :param async_req bool
         :param str email: Email address (urlencoded) of the contact (required)
+        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate
+        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate
         :return: GetContactCampaignStats
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1146,7 +1245,7 @@ class ContactsApi(object):
             return data
 
     def get_contact_stats_with_http_info(self, email, **kwargs):  # noqa: E501
-        """Get the campaigns statistics for a contact  # noqa: E501
+        """Get email campaigns' statistics for a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1155,12 +1254,14 @@ class ContactsApi(object):
 
         :param async_req bool
         :param str email: Email address (urlencoded) of the contact (required)
+        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate
+        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate
         :return: GetContactCampaignStats
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email']  # noqa: E501
+        all_params = ['email', 'start_date', 'end_date']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1187,6 +1288,10 @@ class ContactsApi(object):
             path_params['email'] = params['email']  # noqa: E501
 
         query_params = []
+        if 'start_date' in params:
+            query_params.append(('startDate', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('endDate', params['end_date']))  # noqa: E501
 
         header_params = {}
 
@@ -1325,7 +1430,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def get_contacts_from_list(self, list_id, **kwargs):  # noqa: E501
-        """Get the contacts in a list  # noqa: E501
+        """Get contacts in a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1349,7 +1454,7 @@ class ContactsApi(object):
             return data
 
     def get_contacts_from_list_with_http_info(self, list_id, **kwargs):  # noqa: E501
-        """Get the contacts in a list  # noqa: E501
+        """Get contacts in a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1436,7 +1541,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def get_folder(self, folder_id, **kwargs):  # noqa: E501
-        """Returns folder details  # noqa: E501
+        """Returns a folder's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1457,7 +1562,7 @@ class ContactsApi(object):
             return data
 
     def get_folder_with_http_info(self, folder_id, **kwargs):  # noqa: E501
-        """Returns folder details  # noqa: E501
+        """Returns a folder's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1533,7 +1638,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def get_folder_lists(self, folder_id, **kwargs):  # noqa: E501
-        """Get the lists in a folder  # noqa: E501
+        """Get lists in a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1556,7 +1661,7 @@ class ContactsApi(object):
             return data
 
     def get_folder_lists_with_http_info(self, folder_id, **kwargs):  # noqa: E501
-        """Get the lists in a folder  # noqa: E501
+        """Get lists in a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1640,7 +1745,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def get_folders(self, limit, offset, **kwargs):  # noqa: E501
-        """Get all the folders  # noqa: E501
+        """Get all folders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1662,7 +1767,7 @@ class ContactsApi(object):
             return data
 
     def get_folders_with_http_info(self, limit, offset, **kwargs):  # noqa: E501
-        """Get all the folders  # noqa: E501
+        """Get all folders  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1747,7 +1852,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def get_list(self, list_id, **kwargs):  # noqa: E501
-        """Get the details of a list  # noqa: E501
+        """Get a list's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1768,7 +1873,7 @@ class ContactsApi(object):
             return data
 
     def get_list_with_http_info(self, list_id, **kwargs):  # noqa: E501
-        """Get the details of a list  # noqa: E501
+        """Get a list's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2042,7 +2147,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def remove_contact_from_list(self, list_id, contact_emails, **kwargs):  # noqa: E501
-        """Remove existing contacts from a list  # noqa: E501
+        """Delete a contact from a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2064,7 +2169,7 @@ class ContactsApi(object):
             return data
 
     def remove_contact_from_list_with_http_info(self, list_id, contact_emails, **kwargs):  # noqa: E501
-        """Remove existing contacts from a list  # noqa: E501
+        """Delete a contact from a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2246,7 +2351,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def update_attribute(self, attribute_category, attribute_name, update_attribute, **kwargs):  # noqa: E501
-        """Updates contact attribute  # noqa: E501
+        """Update contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2269,7 +2374,7 @@ class ContactsApi(object):
             return data
 
     def update_attribute_with_http_info(self, attribute_category, attribute_name, update_attribute, **kwargs):  # noqa: E501
-        """Updates contact attribute  # noqa: E501
+        """Update contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2359,7 +2464,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def update_contact(self, email, update_contact, **kwargs):  # noqa: E501
-        """Updates a contact  # noqa: E501
+        """Update a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2381,7 +2486,7 @@ class ContactsApi(object):
             return data
 
     def update_contact_with_http_info(self, email, update_contact, **kwargs):  # noqa: E501
-        """Updates a contact  # noqa: E501
+        """Update a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2464,7 +2569,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def update_folder(self, folder_id, update_folder, **kwargs):  # noqa: E501
-        """Update a contact folder  # noqa: E501
+        """Update a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -2486,7 +2591,7 @@ class ContactsApi(object):
             return data
 
     def update_folder_with_http_info(self, folder_id, update_folder, **kwargs):  # noqa: E501
-        """Update a contact folder  # noqa: E501
+        """Update a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

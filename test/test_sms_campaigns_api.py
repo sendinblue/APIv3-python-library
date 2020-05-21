@@ -39,7 +39,7 @@ class TestSMSCampaignsApi(unittest.TestCase):
     def test_delete_sms_campaign(self):
         """Test case for delete_sms_campaign
 
-        Delete the SMS campaign  # noqa: E501
+        Delete an SMS campaign  # noqa: E501
         """
         pass
 
@@ -53,14 +53,14 @@ class TestSMSCampaignsApi(unittest.TestCase):
     def test_get_sms_campaigns(self):
         """Test case for get_sms_campaigns
 
-        Returns the informations for all your created SMS campaigns  # noqa: E501
+        Returns the information for all your created SMS campaigns  # noqa: E501
         """
         pass
 
     def test_request_sms_recipient_export(self):
         """Test case for request_sms_recipient_export
 
-        Exports the recipients of the specified campaign.  # noqa: E501
+        Export an SMS campaign's recipients  # noqa: E501
         """
         pass
 
@@ -74,28 +74,28 @@ class TestSMSCampaignsApi(unittest.TestCase):
     def test_send_sms_report(self):
         """Test case for send_sms_report
 
-        Send report of SMS campaigns  # noqa: E501
+        Send an SMS campaign's report  # noqa: E501
         """
         pass
 
     def test_send_test_sms(self):
         """Test case for send_test_sms
 
-        Send an SMS  # noqa: E501
+        Send a test SMS campaign  # noqa: E501
         """
         pass
 
     def test_update_sms_campaign(self):
         """Test case for update_sms_campaign
 
-        Updates an SMS campaign  # noqa: E501
+        Update an SMS campaign  # noqa: E501
         """
         pass
 
     def test_update_sms_campaign_status(self):
         """Test case for update_sms_campaign_status
 
-        Update the campaign status  # noqa: E501
+        Update a campaign's status  # noqa: E501
         """
         pass
 

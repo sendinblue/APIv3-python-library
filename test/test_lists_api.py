@@ -53,21 +53,21 @@ class TestListsApi(unittest.TestCase):
     def test_get_contacts_from_list(self):
         """Test case for get_contacts_from_list
 
-        Get the contacts in a list  # noqa: E501
+        Get contacts in a list  # noqa: E501
         """
         pass
 
     def test_get_folder_lists(self):
         """Test case for get_folder_lists
 
-        Get the lists in a folder  # noqa: E501
+        Get lists in a folder  # noqa: E501
         """
         pass
 
     def test_get_list(self):
         """Test case for get_list
 
-        Get the details of a list  # noqa: E501
+        Get a list's details  # noqa: E501
         """
         pass
 
@@ -81,7 +81,7 @@ class TestListsApi(unittest.TestCase):
     def test_remove_contact_from_list(self):
         """Test case for remove_contact_from_list
 
-        Remove existing contacts from a list  # noqa: E501
+        Delete a contact from a list  # noqa: E501
         """
         pass
 

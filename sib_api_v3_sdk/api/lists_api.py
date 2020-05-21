@@ -333,7 +333,7 @@ class ListsApi(object):
             collection_formats=collection_formats)
 
     def get_contacts_from_list(self, list_id, **kwargs):  # noqa: E501
-        """Get the contacts in a list  # noqa: E501
+        """Get contacts in a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -357,7 +357,7 @@ class ListsApi(object):
             return data
 
     def get_contacts_from_list_with_http_info(self, list_id, **kwargs):  # noqa: E501
-        """Get the contacts in a list  # noqa: E501
+        """Get contacts in a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -444,7 +444,7 @@ class ListsApi(object):
             collection_formats=collection_formats)
 
     def get_folder_lists(self, folder_id, **kwargs):  # noqa: E501
-        """Get the lists in a folder  # noqa: E501
+        """Get lists in a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -467,7 +467,7 @@ class ListsApi(object):
             return data
 
     def get_folder_lists_with_http_info(self, folder_id, **kwargs):  # noqa: E501
-        """Get the lists in a folder  # noqa: E501
+        """Get lists in a folder  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -551,7 +551,7 @@ class ListsApi(object):
             collection_formats=collection_formats)
 
     def get_list(self, list_id, **kwargs):  # noqa: E501
-        """Get the details of a list  # noqa: E501
+        """Get a list's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -572,7 +572,7 @@ class ListsApi(object):
             return data
 
     def get_list_with_http_info(self, list_id, **kwargs):  # noqa: E501
-        """Get the details of a list  # noqa: E501
+        """Get a list's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -747,7 +747,7 @@ class ListsApi(object):
             collection_formats=collection_formats)
 
     def remove_contact_from_list(self, list_id, contact_emails, **kwargs):  # noqa: E501
-        """Remove existing contacts from a list  # noqa: E501
+        """Delete a contact from a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -769,7 +769,7 @@ class ListsApi(object):
             return data
 
     def remove_contact_from_list_with_http_info(self, list_id, contact_emails, **kwargs):  # noqa: E501
-        """Remove existing contacts from a list  # noqa: E501
+        """Delete a contact from a list  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

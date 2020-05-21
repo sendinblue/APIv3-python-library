@@ -131,7 +131,7 @@ class SMSCampaignsApi(object):
             collection_formats=collection_formats)
 
     def delete_sms_campaign(self, campaign_id, **kwargs):  # noqa: E501
-        """Delete the SMS campaign  # noqa: E501
+        """Delete an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -152,7 +152,7 @@ class SMSCampaignsApi(object):
             return data
 
     def delete_sms_campaign_with_http_info(self, campaign_id, **kwargs):  # noqa: E501
-        """Delete the SMS campaign  # noqa: E501
+        """Delete an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -325,7 +325,7 @@ class SMSCampaignsApi(object):
             collection_formats=collection_formats)
 
     def get_sms_campaigns(self, **kwargs):  # noqa: E501
-        """Returns the informations for all your created SMS campaigns  # noqa: E501
+        """Returns the information for all your created SMS campaigns  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -350,7 +350,7 @@ class SMSCampaignsApi(object):
             return data
 
     def get_sms_campaigns_with_http_info(self, **kwargs):  # noqa: E501
-        """Returns the informations for all your created SMS campaigns  # noqa: E501
+        """Returns the information for all your created SMS campaigns  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -436,7 +436,7 @@ class SMSCampaignsApi(object):
             collection_formats=collection_formats)
 
     def request_sms_recipient_export(self, campaign_id, **kwargs):  # noqa: E501
-        """Exports the recipients of the specified campaign.  # noqa: E501
+        """Export an SMS campaign's recipients  # noqa: E501
 
         It returns the background process ID which on completion calls the notify URL that you have set in the input.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -459,7 +459,7 @@ class SMSCampaignsApi(object):
             return data
 
     def request_sms_recipient_export_with_http_info(self, campaign_id, **kwargs):  # noqa: E501
-        """Exports the recipients of the specified campaign.  # noqa: E501
+        """Export an SMS campaign's recipients  # noqa: E501
 
         It returns the background process ID which on completion calls the notify URL that you have set in the input.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -636,7 +636,7 @@ class SMSCampaignsApi(object):
             collection_formats=collection_formats)
 
     def send_sms_report(self, campaign_id, send_report, **kwargs):  # noqa: E501
-        """Send report of SMS campaigns  # noqa: E501
+        """Send an SMS campaign's report  # noqa: E501
 
         Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -659,7 +659,7 @@ class SMSCampaignsApi(object):
             return data
 
     def send_sms_report_with_http_info(self, campaign_id, send_report, **kwargs):  # noqa: E501
-        """Send report of SMS campaigns  # noqa: E501
+        """Send an SMS campaign's report  # noqa: E501
 
         Send report of Sent and Archived campaign, to the specified email addresses, with respective data and a pdf attachment in detail.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -743,7 +743,7 @@ class SMSCampaignsApi(object):
             collection_formats=collection_formats)
 
     def send_test_sms(self, campaign_id, phone_number, **kwargs):  # noqa: E501
-        """Send an SMS  # noqa: E501
+        """Send a test SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -765,7 +765,7 @@ class SMSCampaignsApi(object):
             return data
 
     def send_test_sms_with_http_info(self, campaign_id, phone_number, **kwargs):  # noqa: E501
-        """Send an SMS  # noqa: E501
+        """Send a test SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -848,7 +848,7 @@ class SMSCampaignsApi(object):
             collection_formats=collection_formats)
 
     def update_sms_campaign(self, campaign_id, update_sms_campaign, **kwargs):  # noqa: E501
-        """Updates an SMS campaign  # noqa: E501
+        """Update an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -870,7 +870,7 @@ class SMSCampaignsApi(object):
             return data
 
     def update_sms_campaign_with_http_info(self, campaign_id, update_sms_campaign, **kwargs):  # noqa: E501
-        """Updates an SMS campaign  # noqa: E501
+        """Update an SMS campaign  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -953,7 +953,7 @@ class SMSCampaignsApi(object):
             collection_formats=collection_formats)
 
     def update_sms_campaign_status(self, campaign_id, status, **kwargs):  # noqa: E501
-        """Update the campaign status  # noqa: E501
+        """Update a campaign's status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -975,7 +975,7 @@ class SMSCampaignsApi(object):
             return data
 
     def update_sms_campaign_status_with_http_info(self, campaign_id, status, **kwargs):  # noqa: E501
-        """Update the campaign status  # noqa: E501
+        """Update a campaign's status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

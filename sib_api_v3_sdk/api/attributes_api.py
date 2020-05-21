@@ -34,7 +34,7 @@ class AttributesApi(object):
         self.api_client = api_client
 
     def create_attribute(self, attribute_category, attribute_name, create_attribute, **kwargs):  # noqa: E501
-        """Creates contact attribute  # noqa: E501
+        """Create contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -57,7 +57,7 @@ class AttributesApi(object):
             return data
 
     def create_attribute_with_http_info(self, attribute_category, attribute_name, create_attribute, **kwargs):  # noqa: E501
-        """Creates contact attribute  # noqa: E501
+        """Create contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -147,7 +147,7 @@ class AttributesApi(object):
             collection_formats=collection_formats)
 
     def delete_attribute(self, attribute_category, attribute_name, **kwargs):  # noqa: E501
-        """Deletes an attribute  # noqa: E501
+        """Delete an attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -169,7 +169,7 @@ class AttributesApi(object):
             return data
 
     def delete_attribute_with_http_info(self, attribute_category, attribute_name, **kwargs):  # noqa: E501
-        """Deletes an attribute  # noqa: E501
+        """Delete an attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -252,7 +252,7 @@ class AttributesApi(object):
             collection_formats=collection_formats)
 
     def get_attributes(self, **kwargs):  # noqa: E501
-        """Lists all attributes  # noqa: E501
+        """List all attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -272,7 +272,7 @@ class AttributesApi(object):
             return data
 
     def get_attributes_with_http_info(self, **kwargs):  # noqa: E501
-        """Lists all attributes  # noqa: E501
+        """List all attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -341,7 +341,7 @@ class AttributesApi(object):
             collection_formats=collection_formats)
 
     def update_attribute(self, attribute_category, attribute_name, update_attribute, **kwargs):  # noqa: E501
-        """Updates contact attribute  # noqa: E501
+        """Update contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -364,7 +364,7 @@ class AttributesApi(object):
             return data
 
     def update_attribute_with_http_info(self, attribute_category, attribute_name, update_attribute, **kwargs):  # noqa: E501
-        """Updates contact attribute  # noqa: E501
+        """Update contact attribute  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

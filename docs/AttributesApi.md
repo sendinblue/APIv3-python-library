@@ -4,16 +4,16 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_attribute**](AttributesApi.md#create_attribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Creates contact attribute
-[**delete_attribute**](AttributesApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Deletes an attribute
-[**get_attributes**](AttributesApi.md#get_attributes) | **GET** /contacts/attributes | Lists all attributes
-[**update_attribute**](AttributesApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Updates contact attribute
+[**create_attribute**](AttributesApi.md#create_attribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
+[**delete_attribute**](AttributesApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
+[**get_attributes**](AttributesApi.md#get_attributes) | **GET** /contacts/attributes | List all attributes
+[**update_attribute**](AttributesApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
 
 
 # **create_attribute**
 > create_attribute(attribute_category, attribute_name, create_attribute)
 
-Creates contact attribute
+Create contact attribute
 
 ### Example
 ```python
@@ -41,7 +41,7 @@ attribute_name = 'attribute_name_example' # str | Name of the attribute
 create_attribute = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 
 try:
-    # Creates contact attribute
+    # Create contact attribute
     api_instance.create_attribute(attribute_category, attribute_name, create_attribute)
 except ApiException as e:
     print("Exception when calling AttributesApi->create_attribute: %s\n" % e)
@@ -73,7 +73,7 @@ void (empty response body)
 # **delete_attribute**
 > delete_attribute(attribute_category, attribute_name)
 
-Deletes an attribute
+Delete an attribute
 
 ### Example
 ```python
@@ -100,7 +100,7 @@ attribute_category = 'attribute_category_example' # str | Category of the attrib
 attribute_name = 'attribute_name_example' # str | Name of the existing attribute
 
 try:
-    # Deletes an attribute
+    # Delete an attribute
     api_instance.delete_attribute(attribute_category, attribute_name)
 except ApiException as e:
     print("Exception when calling AttributesApi->delete_attribute: %s\n" % e)
@@ -131,7 +131,7 @@ void (empty response body)
 # **get_attributes**
 > GetAttributes get_attributes()
 
-Lists all attributes
+List all attributes
 
 ### Example
 ```python
@@ -156,7 +156,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
 
 try:
-    # Lists all attributes
+    # List all attributes
     api_response = api_instance.get_attributes()
     pprint(api_response)
 except ApiException as e:
@@ -184,7 +184,7 @@ This endpoint does not need any parameter.
 # **update_attribute**
 > update_attribute(attribute_category, attribute_name, update_attribute)
 
-Updates contact attribute
+Update contact attribute
 
 ### Example
 ```python
@@ -212,7 +212,7 @@ attribute_name = 'attribute_name_example' # str | Name of the existing attribute
 update_attribute = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 
 try:
-    # Updates contact attribute
+    # Update contact attribute
     api_instance.update_attribute(attribute_category, attribute_name, update_attribute)
 except ApiException as e:
     print("Exception when calling AttributesApi->update_attribute: %s\n" % e)
