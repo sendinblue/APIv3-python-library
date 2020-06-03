@@ -82,7 +82,8 @@ class SendSmtpEmail(object):
 
         if sender is not None:
             self.sender = sender
-        self.to = to
+        if to is not None:
+            self.to = to
         if bcc is not None:
             self.bcc = bcc
         if cc is not None:
