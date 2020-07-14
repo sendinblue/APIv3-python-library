@@ -79,7 +79,7 @@ class RemoveContactFromList(object):
     def all(self):
         """Gets the all of this RemoveContactFromList.  # noqa: E501
 
-        Required if 'emails' is empty. Remove all existing contacts from a list  # noqa: E501
+        Required if 'emails' is empty. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress  # noqa: E501
 
         :return: The all of this RemoveContactFromList.  # noqa: E501
         :rtype: bool
@@ -90,7 +90,7 @@ class RemoveContactFromList(object):
     def all(self, all):
         """Sets the all of this RemoveContactFromList.
 
-        Required if 'emails' is empty. Remove all existing contacts from a list  # noqa: E501
+        Required if 'emails' is empty. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress  # noqa: E501
 
         :param all: The all of this RemoveContactFromList.  # noqa: E501
         :type: bool

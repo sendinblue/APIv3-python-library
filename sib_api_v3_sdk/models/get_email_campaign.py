@@ -59,6 +59,7 @@ class GetEmailCampaign(object):
         'mirror_active': 'bool',
         'recurring': 'bool',
         'sent_date': 'datetime',
+        'return_bounce': 'int',
         'recipients': 'object',
         'statistics': 'object'
     }
@@ -92,11 +93,12 @@ class GetEmailCampaign(object):
         'mirror_active': 'mirrorActive',
         'recurring': 'recurring',
         'sent_date': 'sentDate',
+        'return_bounce': 'returnBounce',
         'recipients': 'recipients',
         'statistics': 'statistics'
     }
 
-    def __init__(self, id=None, name=None, subject=None, type=None, status=None, scheduled_at=None, ab_testing=None, subject_a=None, subject_b=None, split_rule=None, winner_criteria=None, winner_delay=None, send_at_best_time=None, test_sent=None, header=None, footer=None, sender=None, reply_to=None, to_field=None, html_content=None, share_link=None, tag=None, created_at=None, modified_at=None, inline_image_activation=None, mirror_active=None, recurring=None, sent_date=None, recipients=None, statistics=None):  # noqa: E501
+    def __init__(self, id=None, name=None, subject=None, type=None, status=None, scheduled_at=None, ab_testing=None, subject_a=None, subject_b=None, split_rule=None, winner_criteria=None, winner_delay=None, send_at_best_time=None, test_sent=None, header=None, footer=None, sender=None, reply_to=None, to_field=None, html_content=None, share_link=None, tag=None, created_at=None, modified_at=None, inline_image_activation=None, mirror_active=None, recurring=None, sent_date=None, return_bounce=None, recipients=None, statistics=None):  # noqa: E501
         """GetEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -127,6 +129,7 @@ class GetEmailCampaign(object):
         self._mirror_active = None
         self._recurring = None
         self._sent_date = None
+        self._return_bounce = None
         self._recipients = None
         self._statistics = None
         self.discriminator = None
@@ -173,6 +176,8 @@ class GetEmailCampaign(object):
             self.recurring = recurring
         if sent_date is not None:
             self.sent_date = sent_date
+        if return_bounce is not None:
+            self.return_bounce = return_bounce
         self.recipients = recipients
         self.statistics = statistics
 
@@ -857,6 +862,29 @@ class GetEmailCampaign(object):
         """
 
         self._sent_date = sent_date
+
+    @property
+    def return_bounce(self):
+        """Gets the return_bounce of this GetEmailCampaign.  # noqa: E501
+
+        Total number of non-delivered campaigns for a particular campaign id.  # noqa: E501
+
+        :return: The return_bounce of this GetEmailCampaign.  # noqa: E501
+        :rtype: int
+        """
+        return self._return_bounce
+
+    @return_bounce.setter
+    def return_bounce(self, return_bounce):
+        """Sets the return_bounce of this GetEmailCampaign.
+
+        Total number of non-delivered campaigns for a particular campaign id.  # noqa: E501
+
+        :param return_bounce: The return_bounce of this GetEmailCampaign.  # noqa: E501
+        :type: int
+        """
+
+        self._return_bounce = return_bounce
 
     @property
     def recipients(self):

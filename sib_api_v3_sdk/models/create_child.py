@@ -35,7 +35,8 @@ class CreateChild(object):
         'first_name': 'str',
         'last_name': 'str',
         'company_name': 'str',
-        'password': 'str'
+        'password': 'str',
+        'language': 'str'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class CreateChild(object):
         'first_name': 'firstName',
         'last_name': 'lastName',
         'company_name': 'companyName',
-        'password': 'password'
+        'password': 'password',
+        'language': 'language'
     }
 
-    def __init__(self, email=None, first_name=None, last_name=None, company_name=None, password=None):  # noqa: E501
+    def __init__(self, email=None, first_name=None, last_name=None, company_name=None, password=None, language=None):  # noqa: E501
         """CreateChild - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
@@ -54,6 +56,7 @@ class CreateChild(object):
         self._last_name = None
         self._company_name = None
         self._password = None
+        self._language = None
         self.discriminator = None
 
         self.email = email
@@ -61,6 +64,8 @@ class CreateChild(object):
         self.last_name = last_name
         self.company_name = company_name
         self.password = password
+        if language is not None:
+            self.language = language
 
     @property
     def email(self):
@@ -186,6 +191,35 @@ class CreateChild(object):
             raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
 
         self._password = password
+
+    @property
+    def language(self):
+        """Gets the language of this CreateChild.  # noqa: E501
+
+        Language of the child account  # noqa: E501
+
+        :return: The language of this CreateChild.  # noqa: E501
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """Sets the language of this CreateChild.
+
+        Language of the child account  # noqa: E501
+
+        :param language: The language of this CreateChild.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["fr", "es", "pt", "it", "de", "en"]  # noqa: E501
+        if language not in allowed_values:
+            raise ValueError(
+                "Invalid value for `language` ({0}), must be one of {1}"  # noqa: E501
+                .format(language, allowed_values)
+            )
+
+        self._language = language
 
     def to_dict(self):
         """Returns the model properties as a dict"""

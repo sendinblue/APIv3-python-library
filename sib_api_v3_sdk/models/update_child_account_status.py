@@ -33,21 +33,24 @@ class UpdateChildAccountStatus(object):
     swagger_types = {
         'transactional_email': 'bool',
         'transactional_sms': 'bool',
-        'marketing_automation': 'bool'
+        'marketing_automation': 'bool',
+        'sms_campaign': 'bool'
     }
 
     attribute_map = {
         'transactional_email': 'transactionalEmail',
         'transactional_sms': 'transactionalSms',
-        'marketing_automation': 'marketingAutomation'
+        'marketing_automation': 'marketingAutomation',
+        'sms_campaign': 'smsCampaign'
     }
 
-    def __init__(self, transactional_email=None, transactional_sms=None, marketing_automation=None):  # noqa: E501
+    def __init__(self, transactional_email=None, transactional_sms=None, marketing_automation=None, sms_campaign=None):  # noqa: E501
         """UpdateChildAccountStatus - a model defined in Swagger"""  # noqa: E501
 
         self._transactional_email = None
         self._transactional_sms = None
         self._marketing_automation = None
+        self._sms_campaign = None
         self.discriminator = None
 
         if transactional_email is not None:
@@ -56,6 +59,8 @@ class UpdateChildAccountStatus(object):
             self.transactional_sms = transactional_sms
         if marketing_automation is not None:
             self.marketing_automation = marketing_automation
+        if sms_campaign is not None:
+            self.sms_campaign = sms_campaign
 
     @property
     def transactional_email(self):
@@ -125,6 +130,29 @@ class UpdateChildAccountStatus(object):
         """
 
         self._marketing_automation = marketing_automation
+
+    @property
+    def sms_campaign(self):
+        """Gets the sms_campaign of this UpdateChildAccountStatus.  # noqa: E501
+
+        Status of SMS Campaign Platform activation for your account (true=enabled, false=disabled)  # noqa: E501
+
+        :return: The sms_campaign of this UpdateChildAccountStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sms_campaign
+
+    @sms_campaign.setter
+    def sms_campaign(self, sms_campaign):
+        """Sets the sms_campaign of this UpdateChildAccountStatus.
+
+        Status of SMS Campaign Platform activation for your account (true=enabled, false=disabled)  # noqa: E501
+
+        :param sms_campaign: The sms_campaign of this UpdateChildAccountStatus.  # noqa: E501
+        :type: bool
+        """
+
+        self._sms_campaign = sms_campaign
 
     def to_dict(self):
         """Returns the model properties as a dict"""

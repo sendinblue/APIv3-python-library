@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**add_contact_to_list**](ContactsApi.md#add_contact_to_list) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
 [**create_attribute**](ContactsApi.md#create_attribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 [**create_contact**](ContactsApi.md#create_contact) | **POST** /contacts | Create a contact
-[**create_doi_contact**](ContactsApi.md#create_doi_contact) | **POST** /contacts/doubleOptinConfirmation | Create a contact to trigger the DOI workflow from a Landing Page form
+[**create_doi_contact**](ContactsApi.md#create_doi_contact) | **POST** /contacts/doubleOptinConfirmation | Create Contact via DOI (Double-Opt-In) Flow
 [**create_folder**](ContactsApi.md#create_folder) | **POST** /contacts/folders | Create a folder
 [**create_list**](ContactsApi.md#create_list) | **POST** /contacts/lists | Create a list
 [**delete_attribute**](ContactsApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 # **create_doi_contact**
 > create_doi_contact(create_doi_contact)
 
-Create a contact to trigger the DOI workflow from a Landing Page form
+Create Contact via DOI (Double-Opt-In) Flow
 
 ### Example
 ```python
@@ -235,10 +235,10 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
-create_doi_contact = sib_api_v3_sdk.CreateDoiContact() # CreateDoiContact | Values to create the DOI contact
+create_doi_contact = sib_api_v3_sdk.CreateDoiContact() # CreateDoiContact | Values to create the Double opt-in (DOI) contact
 
 try:
-    # Create a contact to trigger the DOI workflow from a Landing Page form
+    # Create Contact via DOI (Double-Opt-In) Flow
     api_instance.create_doi_contact(create_doi_contact)
 except ApiException as e:
     print("Exception when calling ContactsApi->create_doi_contact: %s\n" % e)
@@ -248,7 +248,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_doi_contact** | [**CreateDoiContact**](CreateDoiContact.md)| Values to create the DOI contact | 
+ **create_doi_contact** | [**CreateDoiContact**](CreateDoiContact.md)| Values to create the Double opt-in (DOI) contact | 
 
 ### Return type
 

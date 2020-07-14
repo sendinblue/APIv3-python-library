@@ -42,7 +42,8 @@ class GetSmtpTemplateOverview(object):
         'tag': 'str',
         'html_content': 'str',
         'created_at': 'datetime',
-        'modified_at': 'datetime'
+        'modified_at': 'datetime',
+        'doi_template': 'bool'
     }
 
     attribute_map = {
@@ -57,10 +58,11 @@ class GetSmtpTemplateOverview(object):
         'tag': 'tag',
         'html_content': 'htmlContent',
         'created_at': 'createdAt',
-        'modified_at': 'modifiedAt'
+        'modified_at': 'modifiedAt',
+        'doi_template': 'doiTemplate'
     }
 
-    def __init__(self, id=None, name=None, subject=None, is_active=None, test_sent=None, sender=None, reply_to=None, to_field=None, tag=None, html_content=None, created_at=None, modified_at=None):  # noqa: E501
+    def __init__(self, id=None, name=None, subject=None, is_active=None, test_sent=None, sender=None, reply_to=None, to_field=None, tag=None, html_content=None, created_at=None, modified_at=None, doi_template=None):  # noqa: E501
         """GetSmtpTemplateOverview - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -75,6 +77,7 @@ class GetSmtpTemplateOverview(object):
         self._html_content = None
         self._created_at = None
         self._modified_at = None
+        self._doi_template = None
         self.discriminator = None
 
         self.id = id
@@ -89,6 +92,8 @@ class GetSmtpTemplateOverview(object):
         self.html_content = html_content
         self.created_at = created_at
         self.modified_at = modified_at
+        if doi_template is not None:
+            self.doi_template = doi_template
 
     @property
     def id(self):
@@ -387,6 +392,29 @@ class GetSmtpTemplateOverview(object):
             raise ValueError("Invalid value for `modified_at`, must not be `None`")  # noqa: E501
 
         self._modified_at = modified_at
+
+    @property
+    def doi_template(self):
+        """Gets the doi_template of this GetSmtpTemplateOverview.  # noqa: E501
+
+        It is true if template is a valid Double opt-in (DOI) template, otherwise it is false. This field will be available only in case of single template detail call.  # noqa: E501
+
+        :return: The doi_template of this GetSmtpTemplateOverview.  # noqa: E501
+        :rtype: bool
+        """
+        return self._doi_template
+
+    @doi_template.setter
+    def doi_template(self, doi_template):
+        """Sets the doi_template of this GetSmtpTemplateOverview.
+
+        It is true if template is a valid Double opt-in (DOI) template, otherwise it is false. This field will be available only in case of single template detail call.  # noqa: E501
+
+        :param doi_template: The doi_template of this GetSmtpTemplateOverview.  # noqa: E501
+        :type: bool
+        """
+
+        self._doi_template = doi_template
 
     def to_dict(self):
         """Returns the model properties as a dict"""

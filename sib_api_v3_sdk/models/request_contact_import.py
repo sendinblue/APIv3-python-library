@@ -160,7 +160,7 @@ class RequestContactImport(object):
     def notify_url(self):
         """Gets the notify_url of this RequestContactImport.  # noqa: E501
 
-        URL that will be called once the export process is finished  # noqa: E501
+        URL that will be called once the import process is finished. For reference, https://help.sendinblue.com/hc/en-us/articles/360007666479  # noqa: E501
 
         :return: The notify_url of this RequestContactImport.  # noqa: E501
         :rtype: str
@@ -171,7 +171,7 @@ class RequestContactImport(object):
     def notify_url(self, notify_url):
         """Sets the notify_url of this RequestContactImport.
 
-        URL that will be called once the export process is finished  # noqa: E501
+        URL that will be called once the import process is finished. For reference, https://help.sendinblue.com/hc/en-us/articles/360007666479  # noqa: E501
 
         :param notify_url: The notify_url of this RequestContactImport.  # noqa: E501
         :type: str

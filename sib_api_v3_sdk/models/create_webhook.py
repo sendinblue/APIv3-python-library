@@ -112,7 +112,7 @@ class CreateWebhook(object):
     def events(self):
         """Gets the events of this CreateWebhook.  # noqa: E501
 
-        Events triggering the webhook. Possible values for Transactional type webhook – request, delivered, hardBounce, softBounce, blocked, spam, invalid, deferred, click, opened, uniqueOpened and unsubscribed and possible values for Marketing type webhook – spam, opened, click, hardBounce, softBounce, unsubscribed, listAddition & delivered  # noqa: E501
+        Events triggering the webhook. Possible values for Transactional type webhook – sent, request, delivered, hardBounce, softBounce, blocked, spam, invalid, deferred, click, opened, uniqueOpened and unsubscribed and possible values for Marketing type webhook – spam, opened, click, hardBounce, softBounce, unsubscribed, listAddition & delivered  # noqa: E501
 
         :return: The events of this CreateWebhook.  # noqa: E501
         :rtype: list[str]
@@ -123,14 +123,14 @@ class CreateWebhook(object):
     def events(self, events):
         """Sets the events of this CreateWebhook.
 
-        Events triggering the webhook. Possible values for Transactional type webhook – request, delivered, hardBounce, softBounce, blocked, spam, invalid, deferred, click, opened, uniqueOpened and unsubscribed and possible values for Marketing type webhook – spam, opened, click, hardBounce, softBounce, unsubscribed, listAddition & delivered  # noqa: E501
+        Events triggering the webhook. Possible values for Transactional type webhook – sent, request, delivered, hardBounce, softBounce, blocked, spam, invalid, deferred, click, opened, uniqueOpened and unsubscribed and possible values for Marketing type webhook – spam, opened, click, hardBounce, softBounce, unsubscribed, listAddition & delivered  # noqa: E501
 
         :param events: The events of this CreateWebhook.  # noqa: E501
         :type: list[str]
         """
         if events is None:
             raise ValueError("Invalid value for `events`, must not be `None`")  # noqa: E501
-        allowed_values = ["hardBounce", "softBounce", "blocked", "spam", "delivered", "request", "click", "invalid", "deferred", "opened", "uniqueOpened", "unsubscribed", "listAddition", "contactUpdated", "contactDeleted"]  # noqa: E501
+        allowed_values = ["sent", "hardBounce", "softBounce", "blocked", "spam", "delivered", "request", "click", "invalid", "deferred", "opened", "uniqueOpened", "unsubscribed", "listAddition", "contactUpdated", "contactDeleted"]  # noqa: E501
         if not set(events).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `events` [{0}], must be a subset of [{1}]"  # noqa: E501

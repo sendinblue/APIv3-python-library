@@ -367,7 +367,7 @@ class TransactionalSMSApi(object):
             collection_formats=collection_formats)
 
     def send_transac_sms(self, send_transac_sms, **kwargs):  # noqa: E501
-        """Send the SMS campaign to a mobile number  # noqa: E501
+        """Send SMS message to a mobile number  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -388,7 +388,7 @@ class TransactionalSMSApi(object):
             return data
 
     def send_transac_sms_with_http_info(self, send_transac_sms, **kwargs):  # noqa: E501
-        """Send the SMS campaign to a mobile number  # noqa: E501
+        """Send SMS message to a mobile number  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

@@ -53,7 +53,7 @@ class TestTransactionalSMSApi(unittest.TestCase):
     def test_send_transac_sms(self):
         """Test case for send_transac_sms
 
-        Send the SMS campaign to a mobile number  # noqa: E501
+        Send SMS message to a mobile number  # noqa: E501
         """
         pass
 

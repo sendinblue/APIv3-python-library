@@ -53,7 +53,7 @@ class TestContactsApi(unittest.TestCase):
     def test_create_doi_contact(self):
         """Test case for create_doi_contact
 
-        Create a contact to trigger the DOI workflow from a Landing Page form  # noqa: E501
+        Create Contact via DOI (Double-Opt-In) Flow  # noqa: E501
         """
         pass
 
