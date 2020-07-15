@@ -33,21 +33,24 @@ class PostContactInfoContacts(object):
     swagger_types = {
         'success': 'list[str]',
         'failure': 'list[str]',
-        'total': 'int'
+        'total': 'int',
+        'process_id': 'int'
     }
 
     attribute_map = {
         'success': 'success',
         'failure': 'failure',
-        'total': 'total'
+        'total': 'total',
+        'process_id': 'processId'
     }
 
-    def __init__(self, success=None, failure=None, total=None):  # noqa: E501
+    def __init__(self, success=None, failure=None, total=None, process_id=None):  # noqa: E501
         """PostContactInfoContacts - a model defined in Swagger"""  # noqa: E501
 
         self._success = None
         self._failure = None
         self._total = None
+        self._process_id = None
         self.discriminator = None
 
         if success is not None:
@@ -56,6 +59,8 @@ class PostContactInfoContacts(object):
             self.failure = failure
         if total is not None:
             self.total = total
+        if process_id is not None:
+            self.process_id = process_id
 
     @property
     def success(self):
@@ -121,6 +126,29 @@ class PostContactInfoContacts(object):
         """
 
         self._total = total
+
+    @property
+    def process_id(self):
+        """Gets the process_id of this PostContactInfoContacts.  # noqa: E501
+
+        Id of the process created to remove contacts from list when user opts for \"all\" option.  # noqa: E501
+
+        :return: The process_id of this PostContactInfoContacts.  # noqa: E501
+        :rtype: int
+        """
+        return self._process_id
+
+    @process_id.setter
+    def process_id(self, process_id):
+        """Sets the process_id of this PostContactInfoContacts.
+
+        Id of the process created to remove contacts from list when user opts for \"all\" option.  # noqa: E501
+
+        :param process_id: The process_id of this PostContactInfoContacts.  # noqa: E501
+        :type: int
+        """
+
+        self._process_id = process_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

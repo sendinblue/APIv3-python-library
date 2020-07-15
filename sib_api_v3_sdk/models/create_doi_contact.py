@@ -169,7 +169,7 @@ class CreateDoiContact(object):
     def template_id(self):
         """Gets the template_id of this CreateDoiContact.  # noqa: E501
 
-        Id of the DOI template  # noqa: E501
+        Id of the Double opt-in (DOI) template  # noqa: E501
 
         :return: The template_id of this CreateDoiContact.  # noqa: E501
         :rtype: int
@@ -180,7 +180,7 @@ class CreateDoiContact(object):
     def template_id(self, template_id):
         """Sets the template_id of this CreateDoiContact.
 
-        Id of the DOI template  # noqa: E501
+        Id of the Double opt-in (DOI) template  # noqa: E501
 
         :param template_id: The template_id of this CreateDoiContact.  # noqa: E501
         :type: int
@@ -194,7 +194,7 @@ class CreateDoiContact(object):
     def redirection_url(self):
         """Gets the redirection_url of this CreateDoiContact.  # noqa: E501
 
-        URL of the web page that user will be redirected to after clicking on the double opt in URL.  # noqa: E501
+        URL of the web page that user will be redirected to after clicking on the double opt in URL. When editing your DOI template you can reference this URL by using the tag {{ params.DOIurl }}.  # noqa: E501
 
         :return: The redirection_url of this CreateDoiContact.  # noqa: E501
         :rtype: str
@@ -205,7 +205,7 @@ class CreateDoiContact(object):
     def redirection_url(self, redirection_url):
         """Sets the redirection_url of this CreateDoiContact.
 
-        URL of the web page that user will be redirected to after clicking on the double opt in URL.  # noqa: E501
+        URL of the web page that user will be redirected to after clicking on the double opt in URL. When editing your DOI template you can reference this URL by using the tag {{ params.DOIurl }}.  # noqa: E501
 
         :param redirection_url: The redirection_url of this CreateDoiContact.  # noqa: E501
         :type: str

@@ -84,7 +84,7 @@ class CreateSender(object):
     def email(self):
         """Gets the email of this CreateSender.  # noqa: E501
 
-        From Email to use for the sender  # noqa: E501
+        From email to use for the sender. A verification email will be sent to this address.  # noqa: E501
 
         :return: The email of this CreateSender.  # noqa: E501
         :rtype: str
@@ -95,7 +95,7 @@ class CreateSender(object):
     def email(self, email):
         """Sets the email of this CreateSender.
 
-        From Email to use for the sender  # noqa: E501
+        From email to use for the sender. A verification email will be sent to this address.  # noqa: E501
 
         :param email: The email of this CreateSender.  # noqa: E501
         :type: str

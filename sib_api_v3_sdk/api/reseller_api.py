@@ -33,16 +33,16 @@ class ResellerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_credits(self, child_auth_key, add_credits, **kwargs):  # noqa: E501
+    def add_credits(self, child_identifier, add_credits, **kwargs):  # noqa: E501
         """Add Email and/or SMS credits to a specific child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_credits(child_auth_key, add_credits, async_req=True)
+        >>> thread = api.add_credits(child_identifier, add_credits, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param AddCredits add_credits: Values to post to add credit to a specific child account (required)
         :return: RemainingCreditModel
                  If the method is called asynchronously,
@@ -50,28 +50,28 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_credits_with_http_info(child_auth_key, add_credits, **kwargs)  # noqa: E501
+            return self.add_credits_with_http_info(child_identifier, add_credits, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_credits_with_http_info(child_auth_key, add_credits, **kwargs)  # noqa: E501
+            (data) = self.add_credits_with_http_info(child_identifier, add_credits, **kwargs)  # noqa: E501
             return data
 
-    def add_credits_with_http_info(self, child_auth_key, add_credits, **kwargs):  # noqa: E501
+    def add_credits_with_http_info(self, child_identifier, add_credits, **kwargs):  # noqa: E501
         """Add Email and/or SMS credits to a specific child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_credits_with_http_info(child_auth_key, add_credits, async_req=True)
+        >>> thread = api.add_credits_with_http_info(child_identifier, add_credits, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param AddCredits add_credits: Values to post to add credit to a specific child account (required)
         :return: RemainingCreditModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'add_credits']  # noqa: E501
+        all_params = ['child_identifier', 'add_credits']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -86,10 +86,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `add_credits`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `add_credits`")  # noqa: E501
         # verify the required parameter 'add_credits' is set
         if ('add_credits' not in params or
                 params['add_credits'] is None):
@@ -98,8 +98,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -123,7 +123,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/credits/add', 'POST',
+            '/reseller/children/{childIdentifier}/credits/add', 'POST',
             path_params,
             query_params,
             header_params,
@@ -138,16 +138,16 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def associate_ip_to_child(self, child_auth_key, ip, **kwargs):  # noqa: E501
+    def associate_ip_to_child(self, child_identifier, ip, **kwargs):  # noqa: E501
         """Associate a dedicated IP to the child  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.associate_ip_to_child(child_auth_key, ip, async_req=True)
+        >>> thread = api.associate_ip_to_child(child_identifier, ip, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param ManageIp ip: IP to associate (required)
         :return: None
                  If the method is called asynchronously,
@@ -155,28 +155,28 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.associate_ip_to_child_with_http_info(child_auth_key, ip, **kwargs)  # noqa: E501
+            return self.associate_ip_to_child_with_http_info(child_identifier, ip, **kwargs)  # noqa: E501
         else:
-            (data) = self.associate_ip_to_child_with_http_info(child_auth_key, ip, **kwargs)  # noqa: E501
+            (data) = self.associate_ip_to_child_with_http_info(child_identifier, ip, **kwargs)  # noqa: E501
             return data
 
-    def associate_ip_to_child_with_http_info(self, child_auth_key, ip, **kwargs):  # noqa: E501
+    def associate_ip_to_child_with_http_info(self, child_identifier, ip, **kwargs):  # noqa: E501
         """Associate a dedicated IP to the child  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.associate_ip_to_child_with_http_info(child_auth_key, ip, async_req=True)
+        >>> thread = api.associate_ip_to_child_with_http_info(child_identifier, ip, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param ManageIp ip: IP to associate (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'ip']  # noqa: E501
+        all_params = ['child_identifier', 'ip']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -191,10 +191,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `associate_ip_to_child`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `associate_ip_to_child`")  # noqa: E501
         # verify the required parameter 'ip' is set
         if ('ip' not in params or
                 params['ip'] is None):
@@ -203,8 +203,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -228,7 +228,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/ips/associate', 'POST',
+            '/reseller/children/{childIdentifier}/ips/associate', 'POST',
             path_params,
             query_params,
             header_params,
@@ -243,16 +243,16 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_child_domain(self, child_auth_key, add_child_domain, **kwargs):  # noqa: E501
+    def create_child_domain(self, child_identifier, add_child_domain, **kwargs):  # noqa: E501
         """Create a domain for a child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_child_domain(child_auth_key, add_child_domain, async_req=True)
+        >>> thread = api.create_child_domain(child_identifier, add_child_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param AddChildDomain add_child_domain: Sender domain to add for a specific child account. This will not be displayed to the parent account. (required)
         :return: None
                  If the method is called asynchronously,
@@ -260,28 +260,28 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_child_domain_with_http_info(child_auth_key, add_child_domain, **kwargs)  # noqa: E501
+            return self.create_child_domain_with_http_info(child_identifier, add_child_domain, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_child_domain_with_http_info(child_auth_key, add_child_domain, **kwargs)  # noqa: E501
+            (data) = self.create_child_domain_with_http_info(child_identifier, add_child_domain, **kwargs)  # noqa: E501
             return data
 
-    def create_child_domain_with_http_info(self, child_auth_key, add_child_domain, **kwargs):  # noqa: E501
+    def create_child_domain_with_http_info(self, child_identifier, add_child_domain, **kwargs):  # noqa: E501
         """Create a domain for a child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_child_domain_with_http_info(child_auth_key, add_child_domain, async_req=True)
+        >>> thread = api.create_child_domain_with_http_info(child_identifier, add_child_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param AddChildDomain add_child_domain: Sender domain to add for a specific child account. This will not be displayed to the parent account. (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'add_child_domain']  # noqa: E501
+        all_params = ['child_identifier', 'add_child_domain']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -296,10 +296,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `create_child_domain`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `create_child_domain`")  # noqa: E501
         # verify the required parameter 'add_child_domain' is set
         if ('add_child_domain' not in params or
                 params['add_child_domain'] is None):
@@ -308,8 +308,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -333,7 +333,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/domains', 'POST',
+            '/reseller/children/{childIdentifier}/domains', 'POST',
             path_params,
             query_params,
             header_params,
@@ -441,16 +441,16 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_child_domain(self, child_auth_key, domain_name, **kwargs):  # noqa: E501
-        """Delete the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
+    def delete_child_domain(self, child_identifier, domain_name, **kwargs):  # noqa: E501
+        """Delete the sender domain of the reseller child based on the childIdentifier and domainName passed  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_child_domain(child_auth_key, domain_name, async_req=True)
+        >>> thread = api.delete_child_domain(child_identifier, domain_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param str domain_name: Pass the existing domain that needs to be deleted (required)
         :return: None
                  If the method is called asynchronously,
@@ -458,28 +458,28 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_child_domain_with_http_info(child_auth_key, domain_name, **kwargs)  # noqa: E501
+            return self.delete_child_domain_with_http_info(child_identifier, domain_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_child_domain_with_http_info(child_auth_key, domain_name, **kwargs)  # noqa: E501
+            (data) = self.delete_child_domain_with_http_info(child_identifier, domain_name, **kwargs)  # noqa: E501
             return data
 
-    def delete_child_domain_with_http_info(self, child_auth_key, domain_name, **kwargs):  # noqa: E501
-        """Delete the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
+    def delete_child_domain_with_http_info(self, child_identifier, domain_name, **kwargs):  # noqa: E501
+        """Delete the sender domain of the reseller child based on the childIdentifier and domainName passed  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_child_domain_with_http_info(child_auth_key, domain_name, async_req=True)
+        >>> thread = api.delete_child_domain_with_http_info(child_identifier, domain_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param str domain_name: Pass the existing domain that needs to be deleted (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'domain_name']  # noqa: E501
+        all_params = ['child_identifier', 'domain_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -494,10 +494,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `delete_child_domain`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `delete_child_domain`")  # noqa: E501
         # verify the required parameter 'domain_name' is set
         if ('domain_name' not in params or
                 params['domain_name'] is None):
@@ -506,8 +506,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
         if 'domain_name' in params:
             path_params['domainName'] = params['domain_name']  # noqa: E501
 
@@ -531,7 +531,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/domains/{domainName}', 'DELETE',
+            '/reseller/children/{childIdentifier}/domains/{domainName}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -546,43 +546,43 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_reseller_child(self, child_auth_key, **kwargs):  # noqa: E501
-        """Delete a single reseller child based on the childAuthKey supplied  # noqa: E501
+    def delete_reseller_child(self, child_identifier, **kwargs):  # noqa: E501
+        """Delete a single reseller child based on the child identifier supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_reseller_child(child_auth_key, async_req=True)
+        >>> thread = api.delete_reseller_child(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or child id of reseller's child (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_reseller_child_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            return self.delete_reseller_child_with_http_info(child_identifier, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_reseller_child_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            (data) = self.delete_reseller_child_with_http_info(child_identifier, **kwargs)  # noqa: E501
             return data
 
-    def delete_reseller_child_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
-        """Delete a single reseller child based on the childAuthKey supplied  # noqa: E501
+    def delete_reseller_child_with_http_info(self, child_identifier, **kwargs):  # noqa: E501
+        """Delete a single reseller child based on the child identifier supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_reseller_child_with_http_info(child_auth_key, async_req=True)
+        >>> thread = api.delete_reseller_child_with_http_info(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or child id of reseller's child (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key']  # noqa: E501
+        all_params = ['child_identifier']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -597,16 +597,16 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `delete_reseller_child`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `delete_reseller_child`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -628,7 +628,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}', 'DELETE',
+            '/reseller/children/{childIdentifier}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -643,16 +643,16 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def dissociate_ip_from_child(self, child_auth_key, ip, **kwargs):  # noqa: E501
+    def dissociate_ip_from_child(self, child_identifier, ip, **kwargs):  # noqa: E501
         """Dissociate a dedicated IP to the child  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dissociate_ip_from_child(child_auth_key, ip, async_req=True)
+        >>> thread = api.dissociate_ip_from_child(child_identifier, ip, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param ManageIp ip: IP to dissociate (required)
         :return: None
                  If the method is called asynchronously,
@@ -660,28 +660,28 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.dissociate_ip_from_child_with_http_info(child_auth_key, ip, **kwargs)  # noqa: E501
+            return self.dissociate_ip_from_child_with_http_info(child_identifier, ip, **kwargs)  # noqa: E501
         else:
-            (data) = self.dissociate_ip_from_child_with_http_info(child_auth_key, ip, **kwargs)  # noqa: E501
+            (data) = self.dissociate_ip_from_child_with_http_info(child_identifier, ip, **kwargs)  # noqa: E501
             return data
 
-    def dissociate_ip_from_child_with_http_info(self, child_auth_key, ip, **kwargs):  # noqa: E501
+    def dissociate_ip_from_child_with_http_info(self, child_identifier, ip, **kwargs):  # noqa: E501
         """Dissociate a dedicated IP to the child  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dissociate_ip_from_child_with_http_info(child_auth_key, ip, async_req=True)
+        >>> thread = api.dissociate_ip_from_child_with_http_info(child_identifier, ip, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param ManageIp ip: IP to dissociate (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'ip']  # noqa: E501
+        all_params = ['child_identifier', 'ip']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -696,10 +696,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `dissociate_ip_from_child`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `dissociate_ip_from_child`")  # noqa: E501
         # verify the required parameter 'ip' is set
         if ('ip' not in params or
                 params['ip'] is None):
@@ -708,8 +708,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -733,7 +733,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/ips/dissociate', 'POST',
+            '/reseller/children/{childIdentifier}/ips/dissociate', 'POST',
             path_params,
             query_params,
             header_params,
@@ -748,43 +748,43 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_child_account_creation_status(self, child_auth_key, **kwargs):  # noqa: E501
-        """Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
+    def get_child_account_creation_status(self, child_identifier, **kwargs):  # noqa: E501
+        """Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the identifier supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_child_account_creation_status(child_auth_key, async_req=True)
+        >>> thread = api.get_child_account_creation_status(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :return: GetChildAccountCreationStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_child_account_creation_status_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            return self.get_child_account_creation_status_with_http_info(child_identifier, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_child_account_creation_status_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            (data) = self.get_child_account_creation_status_with_http_info(child_identifier, **kwargs)  # noqa: E501
             return data
 
-    def get_child_account_creation_status_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
-        """Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
+    def get_child_account_creation_status_with_http_info(self, child_identifier, **kwargs):  # noqa: E501
+        """Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the identifier supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_child_account_creation_status_with_http_info(child_auth_key, async_req=True)
+        >>> thread = api.get_child_account_creation_status_with_http_info(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :return: GetChildAccountCreationStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key']  # noqa: E501
+        all_params = ['child_identifier']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -799,16 +799,16 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `get_child_account_creation_status`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `get_child_account_creation_status`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -830,7 +830,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/accountCreationStatus', 'GET',
+            '/reseller/children/{childIdentifier}/accountCreationStatus', 'GET',
             path_params,
             query_params,
             header_params,
@@ -845,43 +845,43 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_child_domains(self, child_auth_key, **kwargs):  # noqa: E501
+    def get_child_domains(self, child_identifier, **kwargs):  # noqa: E501
         """Get all sender domains for a specific child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_child_domains(child_auth_key, async_req=True)
+        >>> thread = api.get_child_domains(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :return: GetChildDomains
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_child_domains_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            return self.get_child_domains_with_http_info(child_identifier, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_child_domains_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            (data) = self.get_child_domains_with_http_info(child_identifier, **kwargs)  # noqa: E501
             return data
 
-    def get_child_domains_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
+    def get_child_domains_with_http_info(self, child_identifier, **kwargs):  # noqa: E501
         """Get all sender domains for a specific child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_child_domains_with_http_info(child_auth_key, async_req=True)
+        >>> thread = api.get_child_domains_with_http_info(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :return: GetChildDomains
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key']  # noqa: E501
+        all_params = ['child_identifier']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -896,16 +896,16 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `get_child_domains`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `get_child_domains`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -927,7 +927,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/domains', 'GET',
+            '/reseller/children/{childIdentifier}/domains', 'GET',
             path_params,
             query_params,
             header_params,
@@ -942,43 +942,43 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_child_info(self, child_auth_key, **kwargs):  # noqa: E501
+    def get_child_info(self, child_identifier, **kwargs):  # noqa: E501
         """Get a child account's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_child_info(child_auth_key, async_req=True)
+        >>> thread = api.get_child_info(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :return: GetChildInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_child_info_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            return self.get_child_info_with_http_info(child_identifier, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_child_info_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            (data) = self.get_child_info_with_http_info(child_identifier, **kwargs)  # noqa: E501
             return data
 
-    def get_child_info_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
+    def get_child_info_with_http_info(self, child_identifier, **kwargs):  # noqa: E501
         """Get a child account's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_child_info_with_http_info(child_auth_key, async_req=True)
+        >>> thread = api.get_child_info_with_http_info(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :return: GetChildInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key']  # noqa: E501
+        all_params = ['child_identifier']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -993,16 +993,16 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `get_child_info`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `get_child_info`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -1024,7 +1024,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}', 'GET',
+            '/reseller/children/{childIdentifier}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1138,45 +1138,45 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_sso_token(self, child_auth_key, **kwargs):  # noqa: E501
+    def get_sso_token(self, child_identifier, **kwargs):  # noqa: E501
         """Get session token to access Sendinblue (SSO)  # noqa: E501
 
         It returns a session [token] which will remain valid for a short period of time. A child account will be able to access a white-labeled section by using the following url pattern => https:/email.mydomain.com/login/sso?token=[token]  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_sso_token(child_auth_key, async_req=True)
+        >>> thread = api.get_sso_token(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :return: GetSsoToken
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_sso_token_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            return self.get_sso_token_with_http_info(child_identifier, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_sso_token_with_http_info(child_auth_key, **kwargs)  # noqa: E501
+            (data) = self.get_sso_token_with_http_info(child_identifier, **kwargs)  # noqa: E501
             return data
 
-    def get_sso_token_with_http_info(self, child_auth_key, **kwargs):  # noqa: E501
+    def get_sso_token_with_http_info(self, child_identifier, **kwargs):  # noqa: E501
         """Get session token to access Sendinblue (SSO)  # noqa: E501
 
         It returns a session [token] which will remain valid for a short period of time. A child account will be able to access a white-labeled section by using the following url pattern => https:/email.mydomain.com/login/sso?token=[token]  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_sso_token_with_http_info(child_auth_key, async_req=True)
+        >>> thread = api.get_sso_token_with_http_info(child_identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :return: GetSsoToken
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key']  # noqa: E501
+        all_params = ['child_identifier']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1191,16 +1191,16 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `get_sso_token`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `get_sso_token`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -1222,7 +1222,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/auth', 'GET',
+            '/reseller/children/{childIdentifier}/auth', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1237,16 +1237,16 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def remove_credits(self, child_auth_key, remove_credits, **kwargs):  # noqa: E501
+    def remove_credits(self, child_identifier, remove_credits, **kwargs):  # noqa: E501
         """Remove Email and/or SMS credits from a specific child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_credits(child_auth_key, remove_credits, async_req=True)
+        >>> thread = api.remove_credits(child_identifier, remove_credits, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param RemoveCredits remove_credits: Values to post to remove email or SMS credits from a specific child account (required)
         :return: RemainingCreditModel
                  If the method is called asynchronously,
@@ -1254,28 +1254,28 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.remove_credits_with_http_info(child_auth_key, remove_credits, **kwargs)  # noqa: E501
+            return self.remove_credits_with_http_info(child_identifier, remove_credits, **kwargs)  # noqa: E501
         else:
-            (data) = self.remove_credits_with_http_info(child_auth_key, remove_credits, **kwargs)  # noqa: E501
+            (data) = self.remove_credits_with_http_info(child_identifier, remove_credits, **kwargs)  # noqa: E501
             return data
 
-    def remove_credits_with_http_info(self, child_auth_key, remove_credits, **kwargs):  # noqa: E501
+    def remove_credits_with_http_info(self, child_identifier, remove_credits, **kwargs):  # noqa: E501
         """Remove Email and/or SMS credits from a specific child account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_credits_with_http_info(child_auth_key, remove_credits, async_req=True)
+        >>> thread = api.remove_credits_with_http_info(child_identifier, remove_credits, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param RemoveCredits remove_credits: Values to post to remove email or SMS credits from a specific child account (required)
         :return: RemainingCreditModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'remove_credits']  # noqa: E501
+        all_params = ['child_identifier', 'remove_credits']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1290,10 +1290,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `remove_credits`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `remove_credits`")  # noqa: E501
         # verify the required parameter 'remove_credits' is set
         if ('remove_credits' not in params or
                 params['remove_credits'] is None):
@@ -1302,8 +1302,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -1327,7 +1327,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/credits/remove', 'POST',
+            '/reseller/children/{childIdentifier}/credits/remove', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1342,16 +1342,16 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_child_account_status(self, child_auth_key, update_child_account_status, **kwargs):  # noqa: E501
-        """Update info of reseller's child account status based on the childAuthKey supplied  # noqa: E501
+    def update_child_account_status(self, child_identifier, update_child_account_status, **kwargs):  # noqa: E501
+        """Update info of reseller's child account status based on the childIdentifier supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_child_account_status(child_auth_key, update_child_account_status, async_req=True)
+        >>> thread = api.update_child_account_status(child_identifier, update_child_account_status, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param UpdateChildAccountStatus update_child_account_status: values to update in child account status (required)
         :return: None
                  If the method is called asynchronously,
@@ -1359,28 +1359,28 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_child_account_status_with_http_info(child_auth_key, update_child_account_status, **kwargs)  # noqa: E501
+            return self.update_child_account_status_with_http_info(child_identifier, update_child_account_status, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_child_account_status_with_http_info(child_auth_key, update_child_account_status, **kwargs)  # noqa: E501
+            (data) = self.update_child_account_status_with_http_info(child_identifier, update_child_account_status, **kwargs)  # noqa: E501
             return data
 
-    def update_child_account_status_with_http_info(self, child_auth_key, update_child_account_status, **kwargs):  # noqa: E501
-        """Update info of reseller's child account status based on the childAuthKey supplied  # noqa: E501
+    def update_child_account_status_with_http_info(self, child_identifier, update_child_account_status, **kwargs):  # noqa: E501
+        """Update info of reseller's child account status based on the childIdentifier supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_child_account_status_with_http_info(child_auth_key, update_child_account_status, async_req=True)
+        >>> thread = api.update_child_account_status_with_http_info(child_identifier, update_child_account_status, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param UpdateChildAccountStatus update_child_account_status: values to update in child account status (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'update_child_account_status']  # noqa: E501
+        all_params = ['child_identifier', 'update_child_account_status']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1395,10 +1395,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `update_child_account_status`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `update_child_account_status`")  # noqa: E501
         # verify the required parameter 'update_child_account_status' is set
         if ('update_child_account_status' not in params or
                 params['update_child_account_status'] is None):
@@ -1407,8 +1407,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -1432,7 +1432,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/accountStatus', 'PUT',
+            '/reseller/children/{childIdentifier}/accountStatus', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -1447,16 +1447,16 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_child_domain(self, child_auth_key, domain_name, update_child_domain, **kwargs):  # noqa: E501
-        """Update the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
+    def update_child_domain(self, child_identifier, domain_name, update_child_domain, **kwargs):  # noqa: E501
+        """Update the sender domain of reseller's child based on the childIdentifier and domainName passed  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_child_domain(child_auth_key, domain_name, update_child_domain, async_req=True)
+        >>> thread = api.update_child_domain(child_identifier, domain_name, update_child_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param str domain_name: Pass the existing domain that needs to be updated (required)
         :param UpdateChildDomain update_child_domain: value to update for sender domain (required)
         :return: None
@@ -1465,21 +1465,21 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_child_domain_with_http_info(child_auth_key, domain_name, update_child_domain, **kwargs)  # noqa: E501
+            return self.update_child_domain_with_http_info(child_identifier, domain_name, update_child_domain, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_child_domain_with_http_info(child_auth_key, domain_name, update_child_domain, **kwargs)  # noqa: E501
+            (data) = self.update_child_domain_with_http_info(child_identifier, domain_name, update_child_domain, **kwargs)  # noqa: E501
             return data
 
-    def update_child_domain_with_http_info(self, child_auth_key, domain_name, update_child_domain, **kwargs):  # noqa: E501
-        """Update the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
+    def update_child_domain_with_http_info(self, child_identifier, domain_name, update_child_domain, **kwargs):  # noqa: E501
+        """Update the sender domain of reseller's child based on the childIdentifier and domainName passed  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_child_domain_with_http_info(child_auth_key, domain_name, update_child_domain, async_req=True)
+        >>> thread = api.update_child_domain_with_http_info(child_identifier, domain_name, update_child_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param str domain_name: Pass the existing domain that needs to be updated (required)
         :param UpdateChildDomain update_child_domain: value to update for sender domain (required)
         :return: None
@@ -1487,7 +1487,7 @@ class ResellerApi(object):
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'domain_name', 'update_child_domain']  # noqa: E501
+        all_params = ['child_identifier', 'domain_name', 'update_child_domain']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1502,10 +1502,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `update_child_domain`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `update_child_domain`")  # noqa: E501
         # verify the required parameter 'domain_name' is set
         if ('domain_name' not in params or
                 params['domain_name'] is None):
@@ -1518,8 +1518,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
         if 'domain_name' in params:
             path_params['domainName'] = params['domain_name']  # noqa: E501
 
@@ -1545,7 +1545,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}/domains/{domainName}', 'PUT',
+            '/reseller/children/{childIdentifier}/domains/{domainName}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -1560,16 +1560,16 @@ class ResellerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_reseller_child(self, child_auth_key, reseller_child, **kwargs):  # noqa: E501
-        """Update info of reseller's child based on the childAuthKey supplied  # noqa: E501
+    def update_reseller_child(self, child_identifier, reseller_child, **kwargs):  # noqa: E501
+        """Update info of reseller's child based on the child identifier supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_reseller_child(child_auth_key, reseller_child, async_req=True)
+        >>> thread = api.update_reseller_child(child_identifier, reseller_child, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param UpdateChild reseller_child: values to update in child profile (required)
         :return: None
                  If the method is called asynchronously,
@@ -1577,28 +1577,28 @@ class ResellerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_reseller_child_with_http_info(child_auth_key, reseller_child, **kwargs)  # noqa: E501
+            return self.update_reseller_child_with_http_info(child_identifier, reseller_child, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_reseller_child_with_http_info(child_auth_key, reseller_child, **kwargs)  # noqa: E501
+            (data) = self.update_reseller_child_with_http_info(child_identifier, reseller_child, **kwargs)  # noqa: E501
             return data
 
-    def update_reseller_child_with_http_info(self, child_auth_key, reseller_child, **kwargs):  # noqa: E501
-        """Update info of reseller's child based on the childAuthKey supplied  # noqa: E501
+    def update_reseller_child_with_http_info(self, child_identifier, reseller_child, **kwargs):  # noqa: E501
+        """Update info of reseller's child based on the child identifier supplied  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_reseller_child_with_http_info(child_auth_key, reseller_child, async_req=True)
+        >>> thread = api.update_reseller_child_with_http_info(child_identifier, reseller_child, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str child_auth_key: auth key of reseller's child (required)
+        :param str child_identifier: Either auth key or id of reseller's child (required)
         :param UpdateChild reseller_child: values to update in child profile (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['child_auth_key', 'reseller_child']  # noqa: E501
+        all_params = ['child_identifier', 'reseller_child']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1613,10 +1613,10 @@ class ResellerApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'child_auth_key' is set
-        if ('child_auth_key' not in params or
-                params['child_auth_key'] is None):
-            raise ValueError("Missing the required parameter `child_auth_key` when calling `update_reseller_child`")  # noqa: E501
+        # verify the required parameter 'child_identifier' is set
+        if ('child_identifier' not in params or
+                params['child_identifier'] is None):
+            raise ValueError("Missing the required parameter `child_identifier` when calling `update_reseller_child`")  # noqa: E501
         # verify the required parameter 'reseller_child' is set
         if ('reseller_child' not in params or
                 params['reseller_child'] is None):
@@ -1625,8 +1625,8 @@ class ResellerApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'child_auth_key' in params:
-            path_params['childAuthKey'] = params['child_auth_key']  # noqa: E501
+        if 'child_identifier' in params:
+            path_params['childIdentifier'] = params['child_identifier']  # noqa: E501
 
         query_params = []
 
@@ -1650,7 +1650,7 @@ class ResellerApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/reseller/children/{childAuthKey}', 'PUT',
+            '/reseller/children/{childIdentifier}', 'PUT',
             path_params,
             query_params,
             header_params,

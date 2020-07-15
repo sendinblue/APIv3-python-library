@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **html_content** | **str** | HTML content of the template | 
 **created_at** | **datetime** | Creation UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **modified_at** | **datetime** | Last modification UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
+**doi_template** | **bool** | It is true if template is a valid Double opt-in (DOI) template, otherwise it is false. This field will be available only in case of single template detail call. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

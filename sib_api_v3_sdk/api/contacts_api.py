@@ -349,7 +349,7 @@ class ContactsApi(object):
             collection_formats=collection_formats)
 
     def create_doi_contact(self, create_doi_contact, **kwargs):  # noqa: E501
-        """Create a contact to trigger the DOI workflow from a Landing Page form  # noqa: E501
+        """Create Contact via DOI (Double-Opt-In) Flow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -357,7 +357,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateDoiContact create_doi_contact: Values to create the DOI contact (required)
+        :param CreateDoiContact create_doi_contact: Values to create the Double opt-in (DOI) contact (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -370,7 +370,7 @@ class ContactsApi(object):
             return data
 
     def create_doi_contact_with_http_info(self, create_doi_contact, **kwargs):  # noqa: E501
-        """Create a contact to trigger the DOI workflow from a Landing Page form  # noqa: E501
+        """Create Contact via DOI (Double-Opt-In) Flow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -378,7 +378,7 @@ class ContactsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateDoiContact create_doi_contact: Values to create the DOI contact (required)
+        :param CreateDoiContact create_doi_contact: Values to create the Double opt-in (DOI) contact (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

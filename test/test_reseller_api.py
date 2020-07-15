@@ -60,14 +60,14 @@ class TestResellerApi(unittest.TestCase):
     def test_delete_child_domain(self):
         """Test case for delete_child_domain
 
-        Delete the sender domain of the reseller child based on the childAuthKey and domainName passed  # noqa: E501
+        Delete the sender domain of the reseller child based on the childIdentifier and domainName passed  # noqa: E501
         """
         pass
 
     def test_delete_reseller_child(self):
         """Test case for delete_reseller_child
 
-        Delete a single reseller child based on the childAuthKey supplied  # noqa: E501
+        Delete a single reseller child based on the child identifier supplied  # noqa: E501
         """
         pass
 
@@ -81,7 +81,7 @@ class TestResellerApi(unittest.TestCase):
     def test_get_child_account_creation_status(self):
         """Test case for get_child_account_creation_status
 
-        Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childAuthKey supplied  # noqa: E501
+        Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the identifier supplied  # noqa: E501
         """
         pass
 
@@ -123,21 +123,21 @@ class TestResellerApi(unittest.TestCase):
     def test_update_child_account_status(self):
         """Test case for update_child_account_status
 
-        Update info of reseller's child account status based on the childAuthKey supplied  # noqa: E501
+        Update info of reseller's child account status based on the childIdentifier supplied  # noqa: E501
         """
         pass
 
     def test_update_child_domain(self):
         """Test case for update_child_domain
 
-        Update the sender domain of reseller's child based on the childAuthKey and domainName passed  # noqa: E501
+        Update the sender domain of reseller's child based on the childIdentifier and domainName passed  # noqa: E501
         """
         pass
 
     def test_update_reseller_child(self):
         """Test case for update_reseller_child
 
-        Update info of reseller's child based on the childAuthKey supplied  # noqa: E501
+        Update info of reseller's child based on the child identifier supplied  # noqa: E501
         """
         pass
 
