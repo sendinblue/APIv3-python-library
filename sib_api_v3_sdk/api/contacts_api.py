@@ -43,7 +43,7 @@ class ContactsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param AddContactToList contact_emails: Emails addresses of the contacts (required)
+        :param AddContactToList contact_emails: Emails addresses OR IDs of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class ContactsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param AddContactToList contact_emails: Emails addresses of the contacts (required)
+        :param AddContactToList contact_emails: Emails addresses OR IDs of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -744,43 +744,43 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_contact(self, email, **kwargs):  # noqa: E501
+    def delete_contact(self, identifier, **kwargs):  # noqa: E501
         """Delete a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_contact(email, async_req=True)
+        >>> thread = api.delete_contact(identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str email: Email (urlencoded) of the contact (required)
+        :param str identifier: Email (urlencoded) OR ID of the contact (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_contact_with_http_info(email, **kwargs)  # noqa: E501
+            return self.delete_contact_with_http_info(identifier, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_contact_with_http_info(email, **kwargs)  # noqa: E501
+            (data) = self.delete_contact_with_http_info(identifier, **kwargs)  # noqa: E501
             return data
 
-    def delete_contact_with_http_info(self, email, **kwargs):  # noqa: E501
+    def delete_contact_with_http_info(self, identifier, **kwargs):  # noqa: E501
         """Delete a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_contact_with_http_info(email, async_req=True)
+        >>> thread = api.delete_contact_with_http_info(identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str email: Email (urlencoded) of the contact (required)
+        :param str identifier: Email (urlencoded) OR ID of the contact (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email']  # noqa: E501
+        all_params = ['identifier']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -795,16 +795,16 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'email' is set
-        if ('email' not in params or
-                params['email'] is None):
-            raise ValueError("Missing the required parameter `email` when calling `delete_contact`")  # noqa: E501
+        # verify the required parameter 'identifier' is set
+        if ('identifier' not in params or
+                params['identifier'] is None):
+            raise ValueError("Missing the required parameter `identifier` when calling `delete_contact`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'email' in params:
-            path_params['email'] = params['email']  # noqa: E501
+        if 'identifier' in params:
+            path_params['identifier'] = params['identifier']  # noqa: E501
 
         query_params = []
 
@@ -826,7 +826,7 @@ class ContactsApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/contacts/{email}', 'DELETE',
+            '/contacts/{identifier}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1124,43 +1124,43 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_contact_info(self, email, **kwargs):  # noqa: E501
+    def get_contact_info(self, identifier, **kwargs):  # noqa: E501
         """Get a contact's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_contact_info(email, async_req=True)
+        >>> thread = api.get_contact_info(identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str email: Email (urlencoded) of the contact OR its SMS attribute value (required)
+        :param str identifier: Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_contact_info_with_http_info(email, **kwargs)  # noqa: E501
+            return self.get_contact_info_with_http_info(identifier, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_contact_info_with_http_info(email, **kwargs)  # noqa: E501
+            (data) = self.get_contact_info_with_http_info(identifier, **kwargs)  # noqa: E501
             return data
 
-    def get_contact_info_with_http_info(self, email, **kwargs):  # noqa: E501
+    def get_contact_info_with_http_info(self, identifier, **kwargs):  # noqa: E501
         """Get a contact's details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_contact_info_with_http_info(email, async_req=True)
+        >>> thread = api.get_contact_info_with_http_info(identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str email: Email (urlencoded) of the contact OR its SMS attribute value (required)
+        :param str identifier: Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email']  # noqa: E501
+        all_params = ['identifier']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1175,16 +1175,16 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'email' is set
-        if ('email' not in params or
-                params['email'] is None):
-            raise ValueError("Missing the required parameter `email` when calling `get_contact_info`")  # noqa: E501
+        # verify the required parameter 'identifier' is set
+        if ('identifier' not in params or
+                params['identifier'] is None):
+            raise ValueError("Missing the required parameter `identifier` when calling `get_contact_info`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'email' in params:
-            path_params['email'] = params['email']  # noqa: E501
+        if 'identifier' in params:
+            path_params['identifier'] = params['identifier']  # noqa: E501
 
         query_params = []
 
@@ -1206,7 +1206,7 @@ class ContactsApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/contacts/{email}', 'GET',
+            '/contacts/{identifier}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1221,16 +1221,16 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_contact_stats(self, email, **kwargs):  # noqa: E501
+    def get_contact_stats(self, identifier, **kwargs):  # noqa: E501
         """Get email campaigns' statistics for a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_contact_stats(email, async_req=True)
+        >>> thread = api.get_contact_stats(identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str email: Email address (urlencoded) of the contact (required)
+        :param str identifier: Email (urlencoded) OR ID of the contact (required)
         :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate
         :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate
         :return: GetContactCampaignStats
@@ -1239,21 +1239,21 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_contact_stats_with_http_info(email, **kwargs)  # noqa: E501
+            return self.get_contact_stats_with_http_info(identifier, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_contact_stats_with_http_info(email, **kwargs)  # noqa: E501
+            (data) = self.get_contact_stats_with_http_info(identifier, **kwargs)  # noqa: E501
             return data
 
-    def get_contact_stats_with_http_info(self, email, **kwargs):  # noqa: E501
+    def get_contact_stats_with_http_info(self, identifier, **kwargs):  # noqa: E501
         """Get email campaigns' statistics for a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_contact_stats_with_http_info(email, async_req=True)
+        >>> thread = api.get_contact_stats_with_http_info(identifier, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str email: Email address (urlencoded) of the contact (required)
+        :param str identifier: Email (urlencoded) OR ID of the contact (required)
         :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate
         :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate
         :return: GetContactCampaignStats
@@ -1261,7 +1261,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['email', 'start_date', 'end_date']  # noqa: E501
+        all_params = ['identifier', 'start_date', 'end_date']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1276,16 +1276,16 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'email' is set
-        if ('email' not in params or
-                params['email'] is None):
-            raise ValueError("Missing the required parameter `email` when calling `get_contact_stats`")  # noqa: E501
+        # verify the required parameter 'identifier' is set
+        if ('identifier' not in params or
+                params['identifier'] is None):
+            raise ValueError("Missing the required parameter `identifier` when calling `get_contact_stats`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'email' in params:
-            path_params['email'] = params['email']  # noqa: E501
+        if 'identifier' in params:
+            path_params['identifier'] = params['identifier']  # noqa: E501
 
         query_params = []
         if 'start_date' in params:
@@ -1311,7 +1311,7 @@ class ContactsApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/contacts/{email}/campaignStats', 'GET',
+            '/contacts/{identifier}/campaignStats', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2156,7 +2156,7 @@ class ContactsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param RemoveContactFromList contact_emails: Emails adresses of the contact (required)
+        :param RemoveContactFromList contact_emails: Emails addresses OR IDs of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2178,7 +2178,7 @@ class ContactsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param RemoveContactFromList contact_emails: Emails adresses of the contact (required)
+        :param RemoveContactFromList contact_emails: Emails addresses OR IDs of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2463,16 +2463,16 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_contact(self, email, update_contact, **kwargs):  # noqa: E501
+    def update_contact(self, identifier, update_contact, **kwargs):  # noqa: E501
         """Update a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_contact(email, update_contact, async_req=True)
+        >>> thread = api.update_contact(identifier, update_contact, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str email: Email (urlencoded) of the contact (required)
+        :param str identifier: Email (urlencoded) OR ID of the contact (required)
         :param UpdateContact update_contact: Values to update a contact (required)
         :return: None
                  If the method is called asynchronously,
@@ -2480,28 +2480,28 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_contact_with_http_info(email, update_contact, **kwargs)  # noqa: E501
+            return self.update_contact_with_http_info(identifier, update_contact, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_contact_with_http_info(email, update_contact, **kwargs)  # noqa: E501
+            (data) = self.update_contact_with_http_info(identifier, update_contact, **kwargs)  # noqa: E501
             return data
 
-    def update_contact_with_http_info(self, email, update_contact, **kwargs):  # noqa: E501
+    def update_contact_with_http_info(self, identifier, update_contact, **kwargs):  # noqa: E501
         """Update a contact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_contact_with_http_info(email, update_contact, async_req=True)
+        >>> thread = api.update_contact_with_http_info(identifier, update_contact, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str email: Email (urlencoded) of the contact (required)
+        :param str identifier: Email (urlencoded) OR ID of the contact (required)
         :param UpdateContact update_contact: Values to update a contact (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email', 'update_contact']  # noqa: E501
+        all_params = ['identifier', 'update_contact']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2516,10 +2516,10 @@ class ContactsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'email' is set
-        if ('email' not in params or
-                params['email'] is None):
-            raise ValueError("Missing the required parameter `email` when calling `update_contact`")  # noqa: E501
+        # verify the required parameter 'identifier' is set
+        if ('identifier' not in params or
+                params['identifier'] is None):
+            raise ValueError("Missing the required parameter `identifier` when calling `update_contact`")  # noqa: E501
         # verify the required parameter 'update_contact' is set
         if ('update_contact' not in params or
                 params['update_contact'] is None):
@@ -2528,8 +2528,8 @@ class ContactsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'email' in params:
-            path_params['email'] = params['email']  # noqa: E501
+        if 'identifier' in params:
+            path_params['identifier'] = params['identifier']  # noqa: E501
 
         query_params = []
 
@@ -2553,7 +2553,7 @@ class ContactsApi(object):
         auth_settings = ['api-key', 'partner-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/contacts/{email}', 'PUT',
+            '/contacts/{identifier}', 'PUT',
             path_params,
             query_params,
             header_params,

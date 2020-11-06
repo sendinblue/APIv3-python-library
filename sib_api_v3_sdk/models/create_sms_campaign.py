@@ -93,7 +93,7 @@ class CreateSmsCampaign(object):
     def sender(self):
         """Gets the sender of this CreateSmsCampaign.  # noqa: E501
 
-        Name of the sender. The number of characters is limited to 11  # noqa: E501
+        Name of the sender. **The number of characters is limited to 11 for alphanumeric characters and 15 for numeric characters**  # noqa: E501
 
         :return: The sender of this CreateSmsCampaign.  # noqa: E501
         :rtype: str
@@ -104,15 +104,15 @@ class CreateSmsCampaign(object):
     def sender(self, sender):
         """Sets the sender of this CreateSmsCampaign.
 
-        Name of the sender. The number of characters is limited to 11  # noqa: E501
+        Name of the sender. **The number of characters is limited to 11 for alphanumeric characters and 15 for numeric characters**  # noqa: E501
 
         :param sender: The sender of this CreateSmsCampaign.  # noqa: E501
         :type: str
         """
         if sender is None:
             raise ValueError("Invalid value for `sender`, must not be `None`")  # noqa: E501
-        if sender is not None and len(sender) > 11:
-            raise ValueError("Invalid value for `sender`, length must be less than or equal to `11`")  # noqa: E501
+        if sender is not None and len(sender) > 15:
+            raise ValueError("Invalid value for `sender`, length must be less than or equal to `15`")  # noqa: E501
 
         self._sender = sender
 

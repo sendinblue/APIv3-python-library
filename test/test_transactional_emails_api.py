@@ -16,15 +16,15 @@ from __future__ import absolute_import
 import unittest
 
 import sib_api_v3_sdk
-from sib_api_v3_sdk.api.smtp_api import SMTPApi  # noqa: E501
+from sib_api_v3_sdk.api.transactional_emails_api import TransactionalEmailsApi  # noqa: E501
 from sib_api_v3_sdk.rest import ApiException
 
 
-class TestSMTPApi(unittest.TestCase):
-    """SMTPApi unit test stubs"""
+class TestTransactionalEmailsApi(unittest.TestCase):
+    """TransactionalEmailsApi unit test stubs"""
 
     def setUp(self):
-        self.api = sib_api_v3_sdk.api.smtp_api.SMTPApi()  # noqa: E501
+        self.api = sib_api_v3_sdk.api.transactional_emails_api.TransactionalEmailsApi()  # noqa: E501
 
     def tearDown(self):
         pass

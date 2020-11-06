@@ -66,8 +66,7 @@ class CreateDoiContact(object):
         if exclude_list_ids is not None:
             self.exclude_list_ids = exclude_list_ids
         self.template_id = template_id
-        if redirection_url is not None:
-            self.redirection_url = redirection_url
+        self.redirection_url = redirection_url
 
     @property
     def email(self):
@@ -210,6 +209,8 @@ class CreateDoiContact(object):
         :param redirection_url: The redirection_url of this CreateDoiContact.  # noqa: E501
         :type: str
         """
+        if redirection_url is None:
+            raise ValueError("Invalid value for `redirection_url`, must not be `None`")  # noqa: E501
 
         self._redirection_url = redirection_url
 

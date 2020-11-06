@@ -43,7 +43,7 @@ class ListsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param AddContactToList contact_emails: Emails addresses of the contacts (required)
+        :param AddContactToList contact_emails: Emails addresses OR IDs of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class ListsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param AddContactToList contact_emails: Emails addresses of the contacts (required)
+        :param AddContactToList contact_emails: Emails addresses OR IDs of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -756,7 +756,7 @@ class ListsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param RemoveContactFromList contact_emails: Emails adresses of the contact (required)
+        :param RemoveContactFromList contact_emails: Emails addresses OR IDs of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -778,7 +778,7 @@ class ListsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param RemoveContactFromList contact_emails: Emails adresses of the contact (required)
+        :param RemoveContactFromList contact_emails: Emails addresses OR IDs of the contacts (required)
         :return: PostContactInfo
                  If the method is called asynchronously,
                  returns the request thread.

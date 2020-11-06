@@ -80,19 +80,32 @@ class GetAggregatedReport(object):
         self._unsubscribed = None
         self.discriminator = None
 
-        self.range = range
-        self.requests = requests
-        self.delivered = delivered
-        self.hard_bounces = hard_bounces
-        self.soft_bounces = soft_bounces
-        self.clicks = clicks
-        self.unique_clicks = unique_clicks
-        self.opens = opens
-        self.unique_opens = unique_opens
-        self.spam_reports = spam_reports
-        self.blocked = blocked
-        self.invalid = invalid
-        self.unsubscribed = unsubscribed
+        if range is not None:
+            self.range = range
+        if requests is not None:
+            self.requests = requests
+        if delivered is not None:
+            self.delivered = delivered
+        if hard_bounces is not None:
+            self.hard_bounces = hard_bounces
+        if soft_bounces is not None:
+            self.soft_bounces = soft_bounces
+        if clicks is not None:
+            self.clicks = clicks
+        if unique_clicks is not None:
+            self.unique_clicks = unique_clicks
+        if opens is not None:
+            self.opens = opens
+        if unique_opens is not None:
+            self.unique_opens = unique_opens
+        if spam_reports is not None:
+            self.spam_reports = spam_reports
+        if blocked is not None:
+            self.blocked = blocked
+        if invalid is not None:
+            self.invalid = invalid
+        if unsubscribed is not None:
+            self.unsubscribed = unsubscribed
 
     @property
     def range(self):
@@ -114,8 +127,6 @@ class GetAggregatedReport(object):
         :param range: The range of this GetAggregatedReport.  # noqa: E501
         :type: str
         """
-        if range is None:
-            raise ValueError("Invalid value for `range`, must not be `None`")  # noqa: E501
 
         self._range = range
 
@@ -139,8 +150,6 @@ class GetAggregatedReport(object):
         :param requests: The requests of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if requests is None:
-            raise ValueError("Invalid value for `requests`, must not be `None`")  # noqa: E501
 
         self._requests = requests
 
@@ -164,8 +173,6 @@ class GetAggregatedReport(object):
         :param delivered: The delivered of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if delivered is None:
-            raise ValueError("Invalid value for `delivered`, must not be `None`")  # noqa: E501
 
         self._delivered = delivered
 
@@ -189,8 +196,6 @@ class GetAggregatedReport(object):
         :param hard_bounces: The hard_bounces of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if hard_bounces is None:
-            raise ValueError("Invalid value for `hard_bounces`, must not be `None`")  # noqa: E501
 
         self._hard_bounces = hard_bounces
 
@@ -214,8 +219,6 @@ class GetAggregatedReport(object):
         :param soft_bounces: The soft_bounces of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if soft_bounces is None:
-            raise ValueError("Invalid value for `soft_bounces`, must not be `None`")  # noqa: E501
 
         self._soft_bounces = soft_bounces
 
@@ -239,8 +242,6 @@ class GetAggregatedReport(object):
         :param clicks: The clicks of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if clicks is None:
-            raise ValueError("Invalid value for `clicks`, must not be `None`")  # noqa: E501
 
         self._clicks = clicks
 
@@ -264,8 +265,6 @@ class GetAggregatedReport(object):
         :param unique_clicks: The unique_clicks of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if unique_clicks is None:
-            raise ValueError("Invalid value for `unique_clicks`, must not be `None`")  # noqa: E501
 
         self._unique_clicks = unique_clicks
 
@@ -289,8 +288,6 @@ class GetAggregatedReport(object):
         :param opens: The opens of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if opens is None:
-            raise ValueError("Invalid value for `opens`, must not be `None`")  # noqa: E501
 
         self._opens = opens
 
@@ -314,8 +311,6 @@ class GetAggregatedReport(object):
         :param unique_opens: The unique_opens of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if unique_opens is None:
-            raise ValueError("Invalid value for `unique_opens`, must not be `None`")  # noqa: E501
 
         self._unique_opens = unique_opens
 
@@ -339,8 +334,6 @@ class GetAggregatedReport(object):
         :param spam_reports: The spam_reports of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if spam_reports is None:
-            raise ValueError("Invalid value for `spam_reports`, must not be `None`")  # noqa: E501
 
         self._spam_reports = spam_reports
 
@@ -364,8 +357,6 @@ class GetAggregatedReport(object):
         :param blocked: The blocked of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if blocked is None:
-            raise ValueError("Invalid value for `blocked`, must not be `None`")  # noqa: E501
 
         self._blocked = blocked
 
@@ -389,8 +380,6 @@ class GetAggregatedReport(object):
         :param invalid: The invalid of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if invalid is None:
-            raise ValueError("Invalid value for `invalid`, must not be `None`")  # noqa: E501
 
         self._invalid = invalid
 
@@ -414,8 +403,6 @@ class GetAggregatedReport(object):
         :param unsubscribed: The unsubscribed of this GetAggregatedReport.  # noqa: E501
         :type: int
         """
-        if unsubscribed is None:
-            raise ValueError("Invalid value for `unsubscribed`, must not be `None`")  # noqa: E501
 
         self._unsubscribed = unsubscribed
 
