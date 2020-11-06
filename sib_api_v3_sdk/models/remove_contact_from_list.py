@@ -32,23 +32,28 @@ class RemoveContactFromList(object):
     """
     swagger_types = {
         'emails': 'list[str]',
+        'ids': 'list[int]',
         'all': 'bool'
     }
 
     attribute_map = {
         'emails': 'emails',
+        'ids': 'ids',
         'all': 'all'
     }
 
-    def __init__(self, emails=None, all=None):  # noqa: E501
+    def __init__(self, emails=None, ids=None, all=None):  # noqa: E501
         """RemoveContactFromList - a model defined in Swagger"""  # noqa: E501
 
         self._emails = None
+        self._ids = None
         self._all = None
         self.discriminator = None
 
         if emails is not None:
             self.emails = emails
+        if ids is not None:
+            self.ids = ids
         if all is not None:
             self.all = all
 
@@ -76,10 +81,33 @@ class RemoveContactFromList(object):
         self._emails = emails
 
     @property
+    def ids(self):
+        """Gets the ids of this RemoveContactFromList.  # noqa: E501
+
+        Mandatory if Emails are not passed, ignored otherwise. Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.  # noqa: E501
+
+        :return: The ids of this RemoveContactFromList.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._ids
+
+    @ids.setter
+    def ids(self, ids):
+        """Sets the ids of this RemoveContactFromList.
+
+        Mandatory if Emails are not passed, ignored otherwise. Emails to add to a list. You can pass a maximum of 150 emails for addition in one request. If you need to add the emails in bulk, please prefer /contacts/import api.  # noqa: E501
+
+        :param ids: The ids of this RemoveContactFromList.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._ids = ids
+
+    @property
     def all(self):
         """Gets the all of this RemoveContactFromList.  # noqa: E501
 
-        Required if 'emails' is empty. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress  # noqa: E501
+        Required if none of 'emails' or 'ids' are passed. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress  # noqa: E501
 
         :return: The all of this RemoveContactFromList.  # noqa: E501
         :rtype: bool
@@ -90,7 +118,7 @@ class RemoveContactFromList(object):
     def all(self, all):
         """Sets the all of this RemoveContactFromList.
 
-        Required if 'emails' is empty. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress  # noqa: E501
+        Required if none of 'emails' or 'ids' are passed. Remove all existing contacts from a list.  A process will be created in this scenario. You can fetch the process details to know about the progress  # noqa: E501
 
         :param all: The all of this RemoveContactFromList.  # noqa: E501
         :type: bool

@@ -32,24 +32,29 @@ class SendSmtpEmailSender(object):
     """
     swagger_types = {
         'name': 'str',
-        'email': 'str'
+        'email': 'str',
+        'id': 'int'
     }
 
     attribute_map = {
         'name': 'name',
-        'email': 'email'
+        'email': 'email',
+        'id': 'id'
     }
 
-    def __init__(self, name=None, email=None):  # noqa: E501
+    def __init__(self, name=None, email=None, id=None):  # noqa: E501
         """SendSmtpEmailSender - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._email = None
+        self._id = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
         self.email = email
+        if id is not None:
+            self.id = id
 
     @property
     def name(self):
@@ -98,6 +103,29 @@ class SendSmtpEmailSender(object):
             raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
 
         self._email = email
+
+    @property
+    def id(self):
+        """Gets the id of this SendSmtpEmailSender.  # noqa: E501
+
+        Id of the sender from which the emails will be sent  # noqa: E501
+
+        :return: The id of this SendSmtpEmailSender.  # noqa: E501
+        :rtype: int
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this SendSmtpEmailSender.
+
+        Id of the sender from which the emails will be sent  # noqa: E501
+
+        :param id: The id of this SendSmtpEmailSender.  # noqa: E501
+        :type: int
+        """
+
+        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

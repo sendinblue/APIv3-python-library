@@ -42,7 +42,8 @@ class GetCampaignStats(object):
         'unique_views': 'int',
         'unsubscriptions': 'int',
         'viewed': 'int',
-        'deferred': 'int'
+        'deferred': 'int',
+        'return_bounce': 'int'
     }
 
     attribute_map = {
@@ -57,10 +58,11 @@ class GetCampaignStats(object):
         'unique_views': 'uniqueViews',
         'unsubscriptions': 'unsubscriptions',
         'viewed': 'viewed',
-        'deferred': 'deferred'
+        'deferred': 'deferred',
+        'return_bounce': 'returnBounce'
     }
 
-    def __init__(self, list_id=None, unique_clicks=None, clickers=None, complaints=None, delivered=None, sent=None, soft_bounces=None, hard_bounces=None, unique_views=None, unsubscriptions=None, viewed=None, deferred=None):  # noqa: E501
+    def __init__(self, list_id=None, unique_clicks=None, clickers=None, complaints=None, delivered=None, sent=None, soft_bounces=None, hard_bounces=None, unique_views=None, unsubscriptions=None, viewed=None, deferred=None, return_bounce=None):  # noqa: E501
         """GetCampaignStats - a model defined in Swagger"""  # noqa: E501
 
         self._list_id = None
@@ -75,6 +77,7 @@ class GetCampaignStats(object):
         self._unsubscriptions = None
         self._viewed = None
         self._deferred = None
+        self._return_bounce = None
         self.discriminator = None
 
         if list_id is not None:
@@ -91,6 +94,8 @@ class GetCampaignStats(object):
         self.viewed = viewed
         if deferred is not None:
             self.deferred = deferred
+        if return_bounce is not None:
+            self.return_bounce = return_bounce
 
     @property
     def list_id(self):
@@ -387,6 +392,29 @@ class GetCampaignStats(object):
         """
 
         self._deferred = deferred
+
+    @property
+    def return_bounce(self):
+        """Gets the return_bounce of this GetCampaignStats.  # noqa: E501
+
+        Total number of non-delivered campaigns for a particular campaign id.  # noqa: E501
+
+        :return: The return_bounce of this GetCampaignStats.  # noqa: E501
+        :rtype: int
+        """
+        return self._return_bounce
+
+    @return_bounce.setter
+    def return_bounce(self, return_bounce):
+        """Sets the return_bounce of this GetCampaignStats.
+
+        Total number of non-delivered campaigns for a particular campaign id.  # noqa: E501
+
+        :param return_bounce: The return_bounce of this GetCampaignStats.  # noqa: E501
+        :type: int
+        """
+
+        self._return_bounce = return_bounce
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -16,6 +16,11 @@ from __future__ import absolute_import
 
 # import models into model package
 from sib_api_v3_sdk.models.ab_test_campaign_result import AbTestCampaignResult
+from sib_api_v3_sdk.models.ab_test_campaign_result_clicked_links import AbTestCampaignResultClickedLinks
+from sib_api_v3_sdk.models.ab_test_campaign_result_statistics import AbTestCampaignResultStatistics
+from sib_api_v3_sdk.models.ab_test_version_clicks import AbTestVersionClicks
+from sib_api_v3_sdk.models.ab_test_version_clicks_inner import AbTestVersionClicksInner
+from sib_api_v3_sdk.models.ab_test_version_stats import AbTestVersionStats
 from sib_api_v3_sdk.models.add_child_domain import AddChildDomain
 from sib_api_v3_sdk.models.add_contact_to_list import AddContactToList
 from sib_api_v3_sdk.models.add_credits import AddCredits

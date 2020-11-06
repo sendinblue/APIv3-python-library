@@ -1,10 +1,10 @@
-# SendReportEmail
+# AbTestCampaignResultClickedLinks
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**to** | **list[str]** | Email addresses of the recipients | 
-**body** | **str** | Custom text message to be presented in the report email. | 
+**version_a** | [**AbTestVersionClicks**](AbTestVersionClicks.md) |  | 
+**version_b** | [**AbTestVersionClicks**](AbTestVersionClicks.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -36,7 +36,9 @@ class AbTestCampaignResult(object):
         'winning_subject_line': 'str',
         'open_rate': 'str',
         'click_rate': 'str',
-        'winning_version_rate': 'str'
+        'winning_version_rate': 'str',
+        'statistics': 'AbTestCampaignResultStatistics',
+        'clicked_links': 'AbTestCampaignResultClickedLinks'
     }
 
     attribute_map = {
@@ -45,10 +47,12 @@ class AbTestCampaignResult(object):
         'winning_subject_line': 'winningSubjectLine',
         'open_rate': 'openRate',
         'click_rate': 'clickRate',
-        'winning_version_rate': 'winningVersionRate'
+        'winning_version_rate': 'winningVersionRate',
+        'statistics': 'statistics',
+        'clicked_links': 'clickedLinks'
     }
 
-    def __init__(self, winning_version=None, winning_criteria=None, winning_subject_line=None, open_rate=None, click_rate=None, winning_version_rate=None):  # noqa: E501
+    def __init__(self, winning_version=None, winning_criteria=None, winning_subject_line=None, open_rate=None, click_rate=None, winning_version_rate=None, statistics=None, clicked_links=None):  # noqa: E501
         """AbTestCampaignResult - a model defined in Swagger"""  # noqa: E501
 
         self._winning_version = None
@@ -57,6 +61,8 @@ class AbTestCampaignResult(object):
         self._open_rate = None
         self._click_rate = None
         self._winning_version_rate = None
+        self._statistics = None
+        self._clicked_links = None
         self.discriminator = None
 
         if winning_version is not None:
@@ -71,6 +77,10 @@ class AbTestCampaignResult(object):
             self.click_rate = click_rate
         if winning_version_rate is not None:
             self.winning_version_rate = winning_version_rate
+        if statistics is not None:
+            self.statistics = statistics
+        if clicked_links is not None:
+            self.clicked_links = clicked_links
 
     @property
     def winning_version(self):
@@ -221,6 +231,48 @@ class AbTestCampaignResult(object):
         """
 
         self._winning_version_rate = winning_version_rate
+
+    @property
+    def statistics(self):
+        """Gets the statistics of this AbTestCampaignResult.  # noqa: E501
+
+
+        :return: The statistics of this AbTestCampaignResult.  # noqa: E501
+        :rtype: AbTestCampaignResultStatistics
+        """
+        return self._statistics
+
+    @statistics.setter
+    def statistics(self, statistics):
+        """Sets the statistics of this AbTestCampaignResult.
+
+
+        :param statistics: The statistics of this AbTestCampaignResult.  # noqa: E501
+        :type: AbTestCampaignResultStatistics
+        """
+
+        self._statistics = statistics
+
+    @property
+    def clicked_links(self):
+        """Gets the clicked_links of this AbTestCampaignResult.  # noqa: E501
+
+
+        :return: The clicked_links of this AbTestCampaignResult.  # noqa: E501
+        :rtype: AbTestCampaignResultClickedLinks
+        """
+        return self._clicked_links
+
+    @clicked_links.setter
+    def clicked_links(self, clicked_links):
+        """Sets the clicked_links of this AbTestCampaignResult.
+
+
+        :param clicked_links: The clicked_links of this AbTestCampaignResult.  # noqa: E501
+        :type: AbTestCampaignResultClickedLinks
+        """
+
+        self._clicked_links = clicked_links
 
     def to_dict(self):
         """Returns the model properties as a dict"""
