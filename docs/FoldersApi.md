@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_folder_lists**
-> GetFolderLists get_folder_lists(folder_id, limit=limit, offset=offset)
+> GetFolderLists get_folder_lists(folder_id, limit=limit, offset=offset, sort=sort)
 
 Get lists in a folder
 
@@ -211,10 +211,11 @@ api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration)
 folder_id = 789 # int | Id of the folder
 limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
 
 try:
     # Get lists in a folder
-    api_response = api_instance.get_folder_lists(folder_id, limit=limit, offset=offset)
+    api_response = api_instance.get_folder_lists(folder_id, limit=limit, offset=offset, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FoldersApi->get_folder_lists: %s\n" % e)
@@ -227,6 +228,7 @@ Name | Type | Description  | Notes
  **folder_id** | **int**| Id of the folder | 
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 
@@ -244,7 +246,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_folders**
-> GetFolders get_folders(limit, offset)
+> GetFolders get_folders(limit, offset, sort=sort)
 
 Get all folders
 
@@ -271,10 +273,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 10 # int | Number of documents per page (default to 10)
 offset = 0 # int | Index of the first document of the page (default to 0)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
 
 try:
     # Get all folders
-    api_response = api_instance.get_folders(limit, offset)
+    api_response = api_instance.get_folders(limit, offset, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FoldersApi->get_folders: %s\n" % e)
@@ -286,6 +289,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [default to 10]
  **offset** | **int**| Index of the first document of the page | [default to 0]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 

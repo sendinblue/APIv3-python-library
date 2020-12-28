@@ -70,11 +70,15 @@ class ApiClient(object):
         self._pool = None
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
-        if header_name is not None:
+        if header_name is not None and header_name == "User-Agent" and "sendinblue_" in header_value.lower():
             self.default_headers[header_name] = header_value
+        elif header_name is not None and header_name != "User-Agent":
+            self.default_headers[header_name] = header_value
+        else:
+            self.user_agent = 'sendinblue_clientAPI/v7.1.0/python'
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'sendinblue_clientAPI/v7.0.0/python'
+        # self.user_agent = 'sendinblue_clientAPI/v7.0.0/python'
 
     def __del__(self):
         if self._pool is not None:

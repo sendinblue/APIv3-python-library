@@ -49,7 +49,8 @@ class GetChildrenList(object):
 
         if children is not None:
             self.children = children
-        self.count = count
+        if count is not None:
+            self.count = count
 
     @property
     def children(self):
@@ -94,8 +95,6 @@ class GetChildrenList(object):
         :param count: The count of this GetChildrenList.  # noqa: E501
         :type: int
         """
-        if count is None:
-            raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501
 
         self._count = count
 

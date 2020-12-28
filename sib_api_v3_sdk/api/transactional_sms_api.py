@@ -50,6 +50,7 @@ class TransactionalSMSApi(object):
         :param str phone_number: Filter the report for a specific phone number
         :param str event: Filter the report for specific events
         :param str tags: Filter the report for specific tags passed as a serialized urlencoded array
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetSmsEventReport
                  If the method is called asynchronously,
                  returns the request thread.
@@ -78,12 +79,13 @@ class TransactionalSMSApi(object):
         :param str phone_number: Filter the report for a specific phone number
         :param str event: Filter the report for specific events
         :param str tags: Filter the report for specific tags passed as a serialized urlencoded array
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetSmsEventReport
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'start_date', 'end_date', 'offset', 'days', 'phone_number', 'event', 'tags']  # noqa: E501
+        all_params = ['limit', 'start_date', 'end_date', 'offset', 'days', 'phone_number', 'event', 'tags', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -122,6 +124,8 @@ class TransactionalSMSApi(object):
             query_params.append(('event', params['event']))  # noqa: E501
         if 'tags' in params:
             query_params.append(('tags', params['tags']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
@@ -274,6 +278,7 @@ class TransactionalSMSApi(object):
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Filter on a tag
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetTransacSmsReport
                  If the method is called asynchronously,
                  returns the request thread.
@@ -298,12 +303,13 @@ class TransactionalSMSApi(object):
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Filter on a tag
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetTransacSmsReport
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['start_date', 'end_date', 'days', 'tag']  # noqa: E501
+        all_params = ['start_date', 'end_date', 'days', 'tag', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -332,6 +338,8 @@ class TransactionalSMSApi(object):
             query_params.append(('days', params['days']))  # noqa: E501
         if 'tag' in params:
             query_params.append(('tag', params['tag']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 

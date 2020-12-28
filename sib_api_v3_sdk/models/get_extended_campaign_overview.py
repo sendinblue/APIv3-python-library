@@ -155,11 +155,13 @@ class GetExtendedCampaignOverview(object):
         self.footer = footer
         self.sender = sender
         self.reply_to = reply_to
-        self.to_field = to_field
+        if to_field is not None:
+            self.to_field = to_field
         self.html_content = html_content
         if share_link is not None:
             self.share_link = share_link
-        self.tag = tag
+        if tag is not None:
+            self.tag = tag
         self.created_at = created_at
         self.modified_at = modified_at
         if inline_image_activation is not None:
@@ -635,8 +637,6 @@ class GetExtendedCampaignOverview(object):
         :param to_field: The to_field of this GetExtendedCampaignOverview.  # noqa: E501
         :type: str
         """
-        if to_field is None:
-            raise ValueError("Invalid value for `to_field`, must not be `None`")  # noqa: E501
 
         self._to_field = to_field
 
@@ -708,8 +708,6 @@ class GetExtendedCampaignOverview(object):
         :param tag: The tag of this GetExtendedCampaignOverview.  # noqa: E501
         :type: str
         """
-        if tag is None:
-            raise ValueError("Invalid value for `tag`, must not be `None`")  # noqa: E501
 
         self._tag = tag
 

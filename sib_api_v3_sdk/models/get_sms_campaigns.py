@@ -49,7 +49,8 @@ class GetSmsCampaigns(object):
 
         if campaigns is not None:
             self.campaigns = campaigns
-        self.count = count
+        if count is not None:
+            self.count = count
 
     @property
     def campaigns(self):
@@ -92,8 +93,6 @@ class GetSmsCampaigns(object):
         :param count: The count of this GetSmsCampaigns.  # noqa: E501
         :type: int
         """
-        if count is None:
-            raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501
 
         self._count = count
 

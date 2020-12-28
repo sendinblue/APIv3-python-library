@@ -57,6 +57,13 @@ class TestTransactionalEmailsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_blocked_domains(self):
+        """Test case for get_blocked_domains
+
+        Get the list of blocked domains  # noqa: E501
+        """
+        pass
+
     def test_get_email_event_report(self):
         """Test case for get_email_event_report
 

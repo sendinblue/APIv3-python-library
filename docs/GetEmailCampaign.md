@@ -21,10 +21,10 @@ Name | Type | Description | Notes
 **footer** | **str** | Footer of the campaign | 
 **sender** | [**GetExtendedCampaignOverviewSender**](GetExtendedCampaignOverviewSender.md) |  | 
 **reply_to** | **str** | Email defined as the \&quot;Reply to\&quot; of the campaign | 
-**to_field** | **str** | Customisation of the \&quot;to\&quot; field of the campaign | 
+**to_field** | **str** | Customisation of the \&quot;to\&quot; field of the campaign | [optional] 
 **html_content** | **str** | HTML content of the campaign | 
 **share_link** | **str** | Link to share the campaign on social medias | [optional] 
-**tag** | **str** | Tag of the campaign | 
+**tag** | **str** | Tag of the campaign | [optional] 
 **created_at** | **datetime** | Creation UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **modified_at** | **datetime** | UTC date-time of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **inline_image_activation** | **bool** | Status of inline image. inlineImageActivation &#x3D; false means image can’t be embedded, &amp; inlineImageActivation &#x3D; true means image can be embedded, in the email. | [optional] 

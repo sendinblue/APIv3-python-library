@@ -345,6 +345,7 @@ class ListsApi(object):
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -369,12 +370,13 @@ class ListsApi(object):
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['list_id', 'modified_since', 'limit', 'offset']  # noqa: E501
+        all_params = ['list_id', 'modified_since', 'limit', 'offset', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -409,6 +411,8 @@ class ListsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'offset' in params:
             query_params.append(('offset', params['offset']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
@@ -455,6 +459,7 @@ class ListsApi(object):
         :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetFolderLists
                  If the method is called asynchronously,
                  returns the request thread.
@@ -478,12 +483,13 @@ class ListsApi(object):
         :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetFolderLists
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['folder_id', 'limit', 'offset']  # noqa: E501
+        all_params = ['folder_id', 'limit', 'offset', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -516,6 +522,8 @@ class ListsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'offset' in params:
             query_params.append(('offset', params['offset']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
@@ -658,6 +666,7 @@ class ListsApi(object):
         :param async_req bool
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetLists
                  If the method is called asynchronously,
                  returns the request thread.
@@ -680,12 +689,13 @@ class ListsApi(object):
         :param async_req bool
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetLists
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'offset']  # noqa: E501
+        all_params = ['limit', 'offset', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -712,6 +722,8 @@ class ListsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'offset' in params:
             query_params.append(('offset', params['offset']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 

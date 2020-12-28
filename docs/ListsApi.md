@@ -188,7 +188,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contacts_from_list**
-> GetContacts get_contacts_from_list(list_id, modified_since=modified_since, limit=limit, offset=offset)
+> GetContacts get_contacts_from_list(list_id, modified_since=modified_since, limit=limit, offset=offset, sort=sort)
 
 Get contacts in a list
 
@@ -217,10 +217,11 @@ list_id = 789 # int | Id of the list
 modified_since = '2013-10-20T19:20:30+01:00' # datetime | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
 limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
 
 try:
     # Get contacts in a list
-    api_response = api_instance.get_contacts_from_list(list_id, modified_since=modified_since, limit=limit, offset=offset)
+    api_response = api_instance.get_contacts_from_list(list_id, modified_since=modified_since, limit=limit, offset=offset, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ListsApi->get_contacts_from_list: %s\n" % e)
@@ -234,6 +235,7 @@ Name | Type | Description  | Notes
  **modified_since** | **datetime**| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 
@@ -251,7 +253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_folder_lists**
-> GetFolderLists get_folder_lists(folder_id, limit=limit, offset=offset)
+> GetFolderLists get_folder_lists(folder_id, limit=limit, offset=offset, sort=sort)
 
 Get lists in a folder
 
@@ -279,10 +281,11 @@ api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 folder_id = 789 # int | Id of the folder
 limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
 
 try:
     # Get lists in a folder
-    api_response = api_instance.get_folder_lists(folder_id, limit=limit, offset=offset)
+    api_response = api_instance.get_folder_lists(folder_id, limit=limit, offset=offset, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ListsApi->get_folder_lists: %s\n" % e)
@@ -295,6 +298,7 @@ Name | Type | Description  | Notes
  **folder_id** | **int**| Id of the folder | 
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 
@@ -369,7 +373,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_lists**
-> GetLists get_lists(limit=limit, offset=offset)
+> GetLists get_lists(limit=limit, offset=offset, sort=sort)
 
 Get all the lists
 
@@ -396,10 +400,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.ListsApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 10 # int | Number of documents per page (optional) (default to 10)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
 
 try:
     # Get all the lists
-    api_response = api_instance.get_lists(limit=limit, offset=offset)
+    api_response = api_instance.get_lists(limit=limit, offset=offset, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ListsApi->get_lists: %s\n" % e)
@@ -411,6 +416,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number of documents per page | [optional] [default to 10]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 

@@ -49,7 +49,8 @@ class GetProcesses(object):
 
         if processes is not None:
             self.processes = processes
-        self.count = count
+        if count is not None:
+            self.count = count
 
     @property
     def processes(self):
@@ -94,8 +95,6 @@ class GetProcesses(object):
         :param count: The count of this GetProcesses.  # noqa: E501
         :type: int
         """
-        if count is None:
-            raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501
 
         self._count = count
 

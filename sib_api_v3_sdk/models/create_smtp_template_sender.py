@@ -52,7 +52,8 @@ class CreateSmtpTemplateSender(object):
 
         if name is not None:
             self.name = name
-        self.email = email
+        if email is not None:
+            self.email = email
         if id is not None:
             self.id = id
 
@@ -99,8 +100,6 @@ class CreateSmtpTemplateSender(object):
         :param email: The email of this CreateSmtpTemplateSender.  # noqa: E501
         :type: str
         """
-        if email is None:
-            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
 
         self._email = email
 

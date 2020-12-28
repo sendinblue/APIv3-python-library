@@ -71,16 +71,26 @@ class GetTransacSmsReportReports(object):
         self._rejected = None
         self.discriminator = None
 
-        self._date = _date
-        self.requests = requests
-        self.delivered = delivered
-        self.hard_bounces = hard_bounces
-        self.soft_bounces = soft_bounces
-        self.blocked = blocked
-        self.unsubscribed = unsubscribed
-        self.replied = replied
-        self.accepted = accepted
-        self.rejected = rejected
+        if _date is not None:
+            self._date = _date
+        if requests is not None:
+            self.requests = requests
+        if delivered is not None:
+            self.delivered = delivered
+        if hard_bounces is not None:
+            self.hard_bounces = hard_bounces
+        if soft_bounces is not None:
+            self.soft_bounces = soft_bounces
+        if blocked is not None:
+            self.blocked = blocked
+        if unsubscribed is not None:
+            self.unsubscribed = unsubscribed
+        if replied is not None:
+            self.replied = replied
+        if accepted is not None:
+            self.accepted = accepted
+        if rejected is not None:
+            self.rejected = rejected
 
     @property
     def _date(self):
@@ -102,8 +112,6 @@ class GetTransacSmsReportReports(object):
         :param _date: The _date of this GetTransacSmsReportReports.  # noqa: E501
         :type: date
         """
-        if _date is None:
-            raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
 
         self.__date = _date
 
@@ -127,8 +135,6 @@ class GetTransacSmsReportReports(object):
         :param requests: The requests of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if requests is None:
-            raise ValueError("Invalid value for `requests`, must not be `None`")  # noqa: E501
 
         self._requests = requests
 
@@ -152,8 +158,6 @@ class GetTransacSmsReportReports(object):
         :param delivered: The delivered of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if delivered is None:
-            raise ValueError("Invalid value for `delivered`, must not be `None`")  # noqa: E501
 
         self._delivered = delivered
 
@@ -177,8 +181,6 @@ class GetTransacSmsReportReports(object):
         :param hard_bounces: The hard_bounces of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if hard_bounces is None:
-            raise ValueError("Invalid value for `hard_bounces`, must not be `None`")  # noqa: E501
 
         self._hard_bounces = hard_bounces
 
@@ -202,8 +204,6 @@ class GetTransacSmsReportReports(object):
         :param soft_bounces: The soft_bounces of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if soft_bounces is None:
-            raise ValueError("Invalid value for `soft_bounces`, must not be `None`")  # noqa: E501
 
         self._soft_bounces = soft_bounces
 
@@ -227,8 +227,6 @@ class GetTransacSmsReportReports(object):
         :param blocked: The blocked of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if blocked is None:
-            raise ValueError("Invalid value for `blocked`, must not be `None`")  # noqa: E501
 
         self._blocked = blocked
 
@@ -252,8 +250,6 @@ class GetTransacSmsReportReports(object):
         :param unsubscribed: The unsubscribed of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if unsubscribed is None:
-            raise ValueError("Invalid value for `unsubscribed`, must not be `None`")  # noqa: E501
 
         self._unsubscribed = unsubscribed
 
@@ -277,8 +273,6 @@ class GetTransacSmsReportReports(object):
         :param replied: The replied of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if replied is None:
-            raise ValueError("Invalid value for `replied`, must not be `None`")  # noqa: E501
 
         self._replied = replied
 
@@ -302,8 +296,6 @@ class GetTransacSmsReportReports(object):
         :param accepted: The accepted of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if accepted is None:
-            raise ValueError("Invalid value for `accepted`, must not be `None`")  # noqa: E501
 
         self._accepted = accepted
 
@@ -327,8 +319,6 @@ class GetTransacSmsReportReports(object):
         :param rejected: The rejected of this GetTransacSmsReportReports.  # noqa: E501
         :type: int
         """
-        if rejected is None:
-            raise ValueError("Invalid value for `rejected`, must not be `None`")  # noqa: E501
 
         self._rejected = rejected
 

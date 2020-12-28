@@ -539,6 +539,7 @@ class EmailCampaignsApi(object):
         :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number of documents per page
         :param int offset: Index of the first document in the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetEmailCampaigns
                  If the method is called asynchronously,
                  returns the request thread.
@@ -565,12 +566,13 @@ class EmailCampaignsApi(object):
         :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number of documents per page
         :param int offset: Index of the first document in the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetEmailCampaigns
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['type', 'status', 'start_date', 'end_date', 'limit', 'offset']  # noqa: E501
+        all_params = ['type', 'status', 'start_date', 'end_date', 'limit', 'offset', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -605,6 +607,8 @@ class EmailCampaignsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'offset' in params:
             query_params.append(('offset', params['offset']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
