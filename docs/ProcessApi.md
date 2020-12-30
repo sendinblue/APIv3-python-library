@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_processes**
-> GetProcesses get_processes(limit=limit, offset=offset)
+> GetProcesses get_processes(limit=limit, offset=offset, sort=sort)
 
 Return all the processes for your account
 
@@ -93,10 +93,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.ProcessApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 10 # int | Number limitation for the result returned (optional) (default to 10)
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
 
 try:
     # Return all the processes for your account
-    api_response = api_instance.get_processes(limit=limit, offset=offset)
+    api_response = api_instance.get_processes(limit=limit, offset=offset, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProcessApi->get_processes: %s\n" % e)
@@ -108,6 +109,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number limitation for the result returned | [optional] [default to 10]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
 
 ### Return type
 

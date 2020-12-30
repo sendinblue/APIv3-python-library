@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lists** | **list[object]** |  | 
-**count** | **int** | Number of lists in the folder | 
+**lists** | **list[object]** |  | [optional] 
+**count** | **int** | Number of lists in the folder | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

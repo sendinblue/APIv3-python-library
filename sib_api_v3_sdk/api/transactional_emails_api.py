@@ -427,6 +427,97 @@ class TransactionalEmailsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_blocked_domains(self, **kwargs):  # noqa: E501
+        """Get the list of blocked domains  # noqa: E501
+
+        Get the list of blocked domains  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_blocked_domains(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: GetBlockedDomains
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_blocked_domains_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_blocked_domains_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_blocked_domains_with_http_info(self, **kwargs):  # noqa: E501
+        """Get the list of blocked domains  # noqa: E501
+
+        Get the list of blocked domains  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_blocked_domains_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: GetBlockedDomains
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_blocked_domains" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/smtp/blockedDomains', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetBlockedDomains',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_email_event_report(self, **kwargs):  # noqa: E501
         """Get all your transactional email activity (unaggregated events)  # noqa: E501
 
@@ -446,6 +537,7 @@ class TransactionalEmailsApi(object):
         :param str tags: Filter the report for tags (serialized and urlencoded array)
         :param str message_id: Filter on a specific message id
         :param int template_id: Filter on a specific template id
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetEmailEventReport
                  If the method is called asynchronously,
                  returns the request thread.
@@ -476,12 +568,13 @@ class TransactionalEmailsApi(object):
         :param str tags: Filter the report for tags (serialized and urlencoded array)
         :param str message_id: Filter on a specific message id
         :param int template_id: Filter on a specific template id
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetEmailEventReport
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'offset', 'start_date', 'end_date', 'days', 'email', 'event', 'tags', 'message_id', 'template_id']  # noqa: E501
+        all_params = ['limit', 'offset', 'start_date', 'end_date', 'days', 'email', 'event', 'tags', 'message_id', 'template_id', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -524,6 +617,8 @@ class TransactionalEmailsApi(object):
             query_params.append(('messageId', params['message_id']))  # noqa: E501
         if 'template_id' in params:
             query_params.append(('templateId', params['template_id']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
@@ -573,6 +668,7 @@ class TransactionalEmailsApi(object):
         :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Tag of the emails
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetReports
                  If the method is called asynchronously,
                  returns the request thread.
@@ -599,12 +695,13 @@ class TransactionalEmailsApi(object):
         :param str end_date: Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD)
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Tag of the emails
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetReports
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'offset', 'start_date', 'end_date', 'days', 'tag']  # noqa: E501
+        all_params = ['limit', 'offset', 'start_date', 'end_date', 'days', 'tag', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -639,6 +736,8 @@ class TransactionalEmailsApi(object):
             query_params.append(('days', params['days']))  # noqa: E501
         if 'tag' in params:
             query_params.append(('tag', params['tag']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
@@ -782,6 +881,7 @@ class TransactionalEmailsApi(object):
         :param bool template_status: Filter on the status of the template. Active = true, inactive = false
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document in the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetSmtpTemplates
                  If the method is called asynchronously,
                  returns the request thread.
@@ -805,12 +905,13 @@ class TransactionalEmailsApi(object):
         :param bool template_status: Filter on the status of the template. Active = true, inactive = false
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document in the page
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetSmtpTemplates
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['template_status', 'limit', 'offset']  # noqa: E501
+        all_params = ['template_status', 'limit', 'offset', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -839,6 +940,8 @@ class TransactionalEmailsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'offset' in params:
             query_params.append(('offset', params['offset']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
@@ -887,6 +990,7 @@ class TransactionalEmailsApi(object):
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document on the page
         :param list[str] senders: Comma separated list of emails of the senders from which contacts are blocked or unsubscribed
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetTransacBlockedContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -912,12 +1016,13 @@ class TransactionalEmailsApi(object):
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document on the page
         :param list[str] senders: Comma separated list of emails of the senders from which contacts are blocked or unsubscribed
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetTransacBlockedContacts
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['start_date', 'end_date', 'limit', 'offset', 'senders']  # noqa: E501
+        all_params = ['start_date', 'end_date', 'limit', 'offset', 'senders', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -951,6 +1056,8 @@ class TransactionalEmailsApi(object):
         if 'senders' in params:
             query_params.append(('senders', params['senders']))  # noqa: E501
             collection_formats['senders'] = 'csv'  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
@@ -1097,6 +1204,7 @@ class TransactionalEmailsApi(object):
         :param str message_id: Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
         :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
         :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetTransacEmailsList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1123,12 +1231,13 @@ class TransactionalEmailsApi(object):
         :param str message_id: Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
         :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
         :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param str sort: Sort the results in the ascending/descending order of record creation
         :return: GetTransacEmailsList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['email', 'template_id', 'message_id', 'start_date', 'end_date']  # noqa: E501
+        all_params = ['email', 'template_id', 'message_id', 'start_date', 'end_date', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1159,6 +1268,8 @@ class TransactionalEmailsApi(object):
             query_params.append(('startDate', params['start_date']))  # noqa: E501
         if 'end_date' in params:
             query_params.append(('endDate', params['end_date']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 

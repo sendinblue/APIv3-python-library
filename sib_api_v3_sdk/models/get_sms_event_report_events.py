@@ -62,10 +62,14 @@ class GetSmsEventReportEvents(object):
         self._tag = None
         self.discriminator = None
 
-        self.phone_number = phone_number
-        self._date = _date
-        self.message_id = message_id
-        self.event = event
+        if phone_number is not None:
+            self.phone_number = phone_number
+        if _date is not None:
+            self._date = _date
+        if message_id is not None:
+            self.message_id = message_id
+        if event is not None:
+            self.event = event
         if reason is not None:
             self.reason = reason
         if reply is not None:
@@ -93,8 +97,6 @@ class GetSmsEventReportEvents(object):
         :param phone_number: The phone_number of this GetSmsEventReportEvents.  # noqa: E501
         :type: str
         """
-        if phone_number is None:
-            raise ValueError("Invalid value for `phone_number`, must not be `None`")  # noqa: E501
 
         self._phone_number = phone_number
 
@@ -118,8 +120,6 @@ class GetSmsEventReportEvents(object):
         :param _date: The _date of this GetSmsEventReportEvents.  # noqa: E501
         :type: datetime
         """
-        if _date is None:
-            raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
 
         self.__date = _date
 
@@ -143,8 +143,6 @@ class GetSmsEventReportEvents(object):
         :param message_id: The message_id of this GetSmsEventReportEvents.  # noqa: E501
         :type: str
         """
-        if message_id is None:
-            raise ValueError("Invalid value for `message_id`, must not be `None`")  # noqa: E501
 
         self._message_id = message_id
 
@@ -168,8 +166,6 @@ class GetSmsEventReportEvents(object):
         :param event: The event of this GetSmsEventReportEvents.  # noqa: E501
         :type: str
         """
-        if event is None:
-            raise ValueError("Invalid value for `event`, must not be `None`")  # noqa: E501
         allowed_values = ["bounces", "hardBounces", "softBounces", "delivered", "sent", "accepted", "unsubscription", "replies", "blocked"]  # noqa: E501
         if event not in allowed_values:
             raise ValueError(

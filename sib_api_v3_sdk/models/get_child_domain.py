@@ -47,8 +47,10 @@ class GetChildDomain(object):
         self._active = None
         self.discriminator = None
 
-        self.domain = domain
-        self.active = active
+        if domain is not None:
+            self.domain = domain
+        if active is not None:
+            self.active = active
 
     @property
     def domain(self):
@@ -70,8 +72,6 @@ class GetChildDomain(object):
         :param domain: The domain of this GetChildDomain.  # noqa: E501
         :type: str
         """
-        if domain is None:
-            raise ValueError("Invalid value for `domain`, must not be `None`")  # noqa: E501
 
         self._domain = domain
 
@@ -95,8 +95,6 @@ class GetChildDomain(object):
         :param active: The active of this GetChildDomain.  # noqa: E501
         :type: bool
         """
-        if active is None:
-            raise ValueError("Invalid value for `active`, must not be `None`")  # noqa: E501
 
         self._active = active
 

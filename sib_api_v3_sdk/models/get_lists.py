@@ -47,8 +47,10 @@ class GetLists(object):
         self._count = None
         self.discriminator = None
 
-        self.lists = lists
-        self.count = count
+        if lists is not None:
+            self.lists = lists
+        if count is not None:
+            self.count = count
 
     @property
     def lists(self):
@@ -70,8 +72,6 @@ class GetLists(object):
         :param lists: The lists of this GetLists.  # noqa: E501
         :type: list[object]
         """
-        if lists is None:
-            raise ValueError("Invalid value for `lists`, must not be `None`")  # noqa: E501
 
         self._lists = lists
 
@@ -95,8 +95,6 @@ class GetLists(object):
         :param count: The count of this GetLists.  # noqa: E501
         :type: int
         """
-        if count is None:
-            raise ValueError("Invalid value for `count`, must not be `None`")  # noqa: E501
 
         self._count = count
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ip** | **str** | IP from which the user has opened the email or clicked on the link (only available if the event is opened or clicks) | [optional] 
 **link** | **str** | The link which is sent to the user (only available if the event is requests or opened or clicks) | [optional] 
 **_from** | **str** | Sender email from which the emails are sent | [optional] 
+**template_id** | **int** | ID of the template (only available if the email is template based) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

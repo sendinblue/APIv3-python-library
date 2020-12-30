@@ -40,7 +40,8 @@ class GetEmailEventReportEvents(object):
         'tag': 'str',
         'ip': 'str',
         'link': 'str',
-        '_from': 'str'
+        '_from': 'str',
+        'template_id': 'int'
     }
 
     attribute_map = {
@@ -53,10 +54,11 @@ class GetEmailEventReportEvents(object):
         'tag': 'tag',
         'ip': 'ip',
         'link': 'link',
-        '_from': 'from'
+        '_from': 'from',
+        'template_id': 'templateId'
     }
 
-    def __init__(self, email=None, _date=None, subject=None, message_id=None, event=None, reason=None, tag=None, ip=None, link=None, _from=None):  # noqa: E501
+    def __init__(self, email=None, _date=None, subject=None, message_id=None, event=None, reason=None, tag=None, ip=None, link=None, _from=None, template_id=None):  # noqa: E501
         """GetEmailEventReportEvents - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
@@ -69,6 +71,7 @@ class GetEmailEventReportEvents(object):
         self._ip = None
         self._link = None
         self.__from = None
+        self._template_id = None
         self.discriminator = None
 
         self.email = email
@@ -87,6 +90,8 @@ class GetEmailEventReportEvents(object):
             self.link = link
         if _from is not None:
             self._from = _from
+        if template_id is not None:
+            self.template_id = template_id
 
     @property
     def email(self):
@@ -331,6 +336,29 @@ class GetEmailEventReportEvents(object):
         """
 
         self.__from = _from
+
+    @property
+    def template_id(self):
+        """Gets the template_id of this GetEmailEventReportEvents.  # noqa: E501
+
+        ID of the template (only available if the email is template based)  # noqa: E501
+
+        :return: The template_id of this GetEmailEventReportEvents.  # noqa: E501
+        :rtype: int
+        """
+        return self._template_id
+
+    @template_id.setter
+    def template_id(self, template_id):
+        """Sets the template_id of this GetEmailEventReportEvents.
+
+        ID of the template (only available if the email is template based)  # noqa: E501
+
+        :param template_id: The template_id of this GetEmailEventReportEvents.  # noqa: E501
+        :type: int
+        """
+
+        self._template_id = template_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

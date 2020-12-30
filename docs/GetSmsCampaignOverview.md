@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the SMS Campaign | 
 **status** | **str** | Status of the SMS Campaign | 
 **content** | **str** | Content of the SMS Campaign | 
-**scheduled_at** | **datetime** | UTC date-time on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format | 
+**scheduled_at** | **datetime** | UTC date-time on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format | [optional] 
 **sender** | **str** | Sender of the SMS Campaign | 
 **created_at** | **datetime** | Creation UTC date-time of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **modified_at** | **datetime** | UTC date-time of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ) | 

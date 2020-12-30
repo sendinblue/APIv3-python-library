@@ -75,7 +75,8 @@ class GetSmsCampaign(object):
         self.name = name
         self.status = status
         self.content = content
-        self.scheduled_at = scheduled_at
+        if scheduled_at is not None:
+            self.scheduled_at = scheduled_at
         self.sender = sender
         self.created_at = created_at
         self.modified_at = modified_at
@@ -208,8 +209,6 @@ class GetSmsCampaign(object):
         :param scheduled_at: The scheduled_at of this GetSmsCampaign.  # noqa: E501
         :type: datetime
         """
-        if scheduled_at is None:
-            raise ValueError("Invalid value for `scheduled_at`, must not be `None`")  # noqa: E501
 
         self._scheduled_at = scheduled_at
 

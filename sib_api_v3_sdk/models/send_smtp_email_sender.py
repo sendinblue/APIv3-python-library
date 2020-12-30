@@ -52,7 +52,8 @@ class SendSmtpEmailSender(object):
 
         if name is not None:
             self.name = name
-        self.email = email
+        if email is not None:
+            self.email = email
         if id is not None:
             self.id = id
 
@@ -60,7 +61,7 @@ class SendSmtpEmailSender(object):
     def name(self):
         """Gets the name of this SendSmtpEmailSender.  # noqa: E501
 
-        Name of the sender from which the emails will be sent. Maximum allowed characters are 70.  # noqa: E501
+        Name of the sender from which the emails will be sent. Maximum allowed characters are 70. Applicable only when email is passed.  # noqa: E501
 
         :return: The name of this SendSmtpEmailSender.  # noqa: E501
         :rtype: str
@@ -71,7 +72,7 @@ class SendSmtpEmailSender(object):
     def name(self, name):
         """Sets the name of this SendSmtpEmailSender.
 
-        Name of the sender from which the emails will be sent. Maximum allowed characters are 70.  # noqa: E501
+        Name of the sender from which the emails will be sent. Maximum allowed characters are 70. Applicable only when email is passed.  # noqa: E501
 
         :param name: The name of this SendSmtpEmailSender.  # noqa: E501
         :type: str
@@ -83,7 +84,7 @@ class SendSmtpEmailSender(object):
     def email(self):
         """Gets the email of this SendSmtpEmailSender.  # noqa: E501
 
-        Email of the sender from which the emails will be sent  # noqa: E501
+        Email of the sender from which the emails will be sent. Mandatory if sender id is not passed.  # noqa: E501
 
         :return: The email of this SendSmtpEmailSender.  # noqa: E501
         :rtype: str
@@ -94,13 +95,11 @@ class SendSmtpEmailSender(object):
     def email(self, email):
         """Sets the email of this SendSmtpEmailSender.
 
-        Email of the sender from which the emails will be sent  # noqa: E501
+        Email of the sender from which the emails will be sent. Mandatory if sender id is not passed.  # noqa: E501
 
         :param email: The email of this SendSmtpEmailSender.  # noqa: E501
         :type: str
         """
-        if email is None:
-            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
 
         self._email = email
 
@@ -108,7 +107,7 @@ class SendSmtpEmailSender(object):
     def id(self):
         """Gets the id of this SendSmtpEmailSender.  # noqa: E501
 
-        Id of the sender from which the emails will be sent  # noqa: E501
+        Id of the sender from which the emails will be sent. In order to select a sender with specific pool of IP’s, dedicated ip users shall pass id (instead of email). Mandatory if email is not passed.  # noqa: E501
 
         :return: The id of this SendSmtpEmailSender.  # noqa: E501
         :rtype: int
@@ -119,7 +118,7 @@ class SendSmtpEmailSender(object):
     def id(self, id):
         """Sets the id of this SendSmtpEmailSender.
 
-        Id of the sender from which the emails will be sent  # noqa: E501
+        Id of the sender from which the emails will be sent. In order to select a sender with specific pool of IP’s, dedicated ip users shall pass id (instead of email). Mandatory if email is not passed.  # noqa: E501
 
         :param id: The id of this SendSmtpEmailSender.  # noqa: E501
         :type: int
