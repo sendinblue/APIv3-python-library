@@ -43,6 +43,7 @@ class SendSmtpEmail(object):
         'headers': 'object',
         'template_id': 'int',
         'params': 'object',
+        'message_versions': 'list[SendSmtpEmailMessageVersions]',
         'tags': 'list[str]'
     }
 
@@ -59,10 +60,11 @@ class SendSmtpEmail(object):
         'headers': 'headers',
         'template_id': 'templateId',
         'params': 'params',
+        'message_versions': 'messageVersions',
         'tags': 'tags'
     }
 
-    def __init__(self, sender=None, to=None, bcc=None, cc=None, html_content=None, text_content=None, subject=None, reply_to=None, attachment=None, headers=None, template_id=None, params=None, tags=None):  # noqa: E501
+    def __init__(self, sender=None, to=None, bcc=None, cc=None, html_content=None, text_content=None, subject=None, reply_to=None, attachment=None, headers=None, template_id=None, params=None, message_versions=None, tags=None):  # noqa: E501
         """SendSmtpEmail - a model defined in Swagger"""  # noqa: E501
 
         self._sender = None
@@ -77,12 +79,14 @@ class SendSmtpEmail(object):
         self._headers = None
         self._template_id = None
         self._params = None
+        self._message_versions = None
         self._tags = None
         self.discriminator = None
 
         if sender is not None:
             self.sender = sender
-        self.to = to
+        if to is not None:
+            self.to = to
         if bcc is not None:
             self.bcc = bcc
         if cc is not None:
@@ -103,6 +107,8 @@ class SendSmtpEmail(object):
             self.template_id = template_id
         if params is not None:
             self.params = params
+        if message_versions is not None:
+            self.message_versions = message_versions
         if tags is not None:
             self.tags = tags
 
@@ -131,7 +137,7 @@ class SendSmtpEmail(object):
     def to(self):
         """Gets the to of this SendSmtpEmail.  # noqa: E501
 
-        List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]  # noqa: E501
+        Mandatory if messageVersions are not passed, ignored if messageVersions are passed. List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]  # noqa: E501
 
         :return: The to of this SendSmtpEmail.  # noqa: E501
         :rtype: list[SendSmtpEmailTo]
@@ -142,13 +148,11 @@ class SendSmtpEmail(object):
     def to(self, to):
         """Sets the to of this SendSmtpEmail.
 
-        List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]  # noqa: E501
+        Mandatory if messageVersions are not passed, ignored if messageVersions are passed. List of email addresses and names (optional) of the recipients. For example, [{\"name\":\"Jimmy\", \"email\":\"jimmy98@example.com\"}, {\"name\":\"Joe\", \"email\":\"joe@example.com\"}]  # noqa: E501
 
         :param to: The to of this SendSmtpEmail.  # noqa: E501
         :type: list[SendSmtpEmailTo]
         """
-        if to is None:
-            raise ValueError("Invalid value for `to`, must not be `None`")  # noqa: E501
 
         self._to = to
 
@@ -338,7 +342,7 @@ class SendSmtpEmail(object):
     def template_id(self):
         """Gets the template_id of this SendSmtpEmail.  # noqa: E501
 
-        Id of the template  # noqa: E501
+        Id of the template. Mandatory if messageVersions are passed  # noqa: E501
 
         :return: The template_id of this SendSmtpEmail.  # noqa: E501
         :rtype: int
@@ -349,7 +353,7 @@ class SendSmtpEmail(object):
     def template_id(self, template_id):
         """Sets the template_id of this SendSmtpEmail.
 
-        Id of the template  # noqa: E501
+        Id of the template. Mandatory if messageVersions are passed  # noqa: E501
 
         :param template_id: The template_id of this SendSmtpEmail.  # noqa: E501
         :type: int
@@ -379,6 +383,29 @@ class SendSmtpEmail(object):
         """
 
         self._params = params
+
+    @property
+    def message_versions(self):
+        """Gets the message_versions of this SendSmtpEmail.  # noqa: E501
+
+        You can customize and send out multiple versions of a templateId. Some global parameters such as **to(mandatory), bcc, cc, replyTo, subject** can also be customized specific to each version. The size of individual params in all the messageVersions shall not exceed 100 KB limit and that of cumulative params shall not exceed 1000 KB. This feature is currently in its beta version. You can follow this **step-by-step guide** on how to use **messageVersions** to batch send emails - https://developers.sendinblue.com/docs/batch-send-transactional-emails  # noqa: E501
+
+        :return: The message_versions of this SendSmtpEmail.  # noqa: E501
+        :rtype: list[SendSmtpEmailMessageVersions]
+        """
+        return self._message_versions
+
+    @message_versions.setter
+    def message_versions(self, message_versions):
+        """Sets the message_versions of this SendSmtpEmail.
+
+        You can customize and send out multiple versions of a templateId. Some global parameters such as **to(mandatory), bcc, cc, replyTo, subject** can also be customized specific to each version. The size of individual params in all the messageVersions shall not exceed 100 KB limit and that of cumulative params shall not exceed 1000 KB. This feature is currently in its beta version. You can follow this **step-by-step guide** on how to use **messageVersions** to batch send emails - https://developers.sendinblue.com/docs/batch-send-transactional-emails  # noqa: E501
+
+        :param message_versions: The message_versions of this SendSmtpEmail.  # noqa: E501
+        :type: list[SendSmtpEmailMessageVersions]
+        """
+
+        self._message_versions = message_versions
 
     @property
     def tags(self):

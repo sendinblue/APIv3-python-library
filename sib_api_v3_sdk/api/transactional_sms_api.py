@@ -50,7 +50,7 @@ class TransactionalSMSApi(object):
         :param str phone_number: Filter the report for a specific phone number
         :param str event: Filter the report for specific events
         :param str tags: Filter the report for specific tags passed as a serialized urlencoded array
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetSmsEventReport
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,7 +79,7 @@ class TransactionalSMSApi(object):
         :param str phone_number: Filter the report for a specific phone number
         :param str event: Filter the report for specific events
         :param str tags: Filter the report for specific tags passed as a serialized urlencoded array
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetSmsEventReport
                  If the method is called asynchronously,
                  returns the request thread.
@@ -278,7 +278,7 @@ class TransactionalSMSApi(object):
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Filter on a tag
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetTransacSmsReport
                  If the method is called asynchronously,
                  returns the request thread.
@@ -303,7 +303,7 @@ class TransactionalSMSApi(object):
         :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report
         :param int days: Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate'
         :param str tag: Filter on a tag
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetTransacSmsReport
                  If the method is called asynchronously,
                  returns the request thread.

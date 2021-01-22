@@ -1338,7 +1338,7 @@ class ContactsApi(object):
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1362,7 +1362,7 @@ class ContactsApi(object):
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1446,7 +1446,7 @@ class ContactsApi(object):
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1471,7 +1471,7 @@ class ContactsApi(object):
         :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1657,7 +1657,7 @@ class ContactsApi(object):
         :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetFolderLists
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1681,7 +1681,7 @@ class ContactsApi(object):
         :param int folder_id: Id of the folder (required)
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetFolderLists
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1767,7 +1767,7 @@ class ContactsApi(object):
         :param async_req bool
         :param int limit: Number of documents per page (required)
         :param int offset: Index of the first document of the page (required)
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetFolders
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1790,7 +1790,7 @@ class ContactsApi(object):
         :param async_req bool
         :param int limit: Number of documents per page (required)
         :param int offset: Index of the first document of the page (required)
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetFolders
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1975,7 +1975,7 @@ class ContactsApi(object):
         :param async_req bool
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetLists
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1998,7 +1998,7 @@ class ContactsApi(object):
         :param async_req bool
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetLists
                  If the method is called asynchronously,
                  returns the request thread.

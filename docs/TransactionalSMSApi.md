@@ -44,7 +44,7 @@ days = 56 # int | Number of days in the past including today (positive integer).
 phone_number = 'phone_number_example' # str | Filter the report for a specific phone number (optional)
 event = 'event_example' # str | Filter the report for specific events (optional)
 tags = 'tags_example' # str | Filter the report for specific tags passed as a serialized urlencoded array (optional)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Get all your SMS activity (unaggregated events)
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
  **phone_number** | **str**| Filter the report for a specific phone number | [optional] 
  **event** | **str**| Filter the report for specific events | [optional] 
  **tags** | **str**| Filter the report for specific tags passed as a serialized urlencoded array | [optional] 
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -176,7 +176,7 @@ start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 tag = 'tag_example' # str | Filter on a tag (optional)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Get your SMS activity aggregated per day
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
  **end_date** | **str**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report | [optional] 
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
  **tag** | **str**| Filter on a tag | [optional] 
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 

@@ -93,7 +93,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.ProcessApi(sib_api_v3_sdk.ApiClient(configuration))
 limit = 10 # int | Number limitation for the result returned (optional) (default to 10)
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Return all the processes for your account
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Number limitation for the result returned | [optional] [default to 10]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 

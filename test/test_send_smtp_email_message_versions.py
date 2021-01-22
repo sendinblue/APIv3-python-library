@@ -11,33 +11,30 @@
 """
 
 
-from setuptools import setup, find_packages  # noqa: H301
+from __future__ import absolute_import
 
-NAME = "sib-api-v3-sdk"
-VERSION = "7.2.0"
-# To install the library, run the following
-#
-# python setup.py install
-#
-# prerequisite: setuptools
-# http://pypi.python.org/pypi/setuptools
+import unittest
 
-REQUIRES = [
-    "certifi>=2017.4.17",
-    "python-dateutil>=2.1",
-    "six>=1.10",
-    "urllib3>=1.23"
-]
-    
+import sib_api_v3_sdk
+from sib_api_v3_sdk.models.send_smtp_email_message_versions import SendSmtpEmailMessageVersions  # noqa: E501
+from sib_api_v3_sdk.rest import ApiException
 
-setup(
-    name=NAME,
-    version=VERSION,
-    description="SendinBlue API",
-    author_email="contact@sendinblue.com",
-    url="",
-    keywords=["Swagger", "SendinBlue API"],
-    install_requires=REQUIRES,
-    packages=find_packages(),
-    include_package_data=True
-)
+
+class TestSendSmtpEmailMessageVersions(unittest.TestCase):
+    """SendSmtpEmailMessageVersions unit test stubs"""
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def testSendSmtpEmailMessageVersions(self):
+        """Test SendSmtpEmailMessageVersions"""
+        # FIXME: construct object with mandatory attributes with example values
+        # model = sib_api_v3_sdk.models.send_smtp_email_message_versions.SendSmtpEmailMessageVersions()  # noqa: E501
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()
