@@ -338,7 +338,7 @@ class SMSCampaignsApi(object):
         :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetSmsCampaigns
                  If the method is called asynchronously,
                  returns the request thread.
@@ -364,7 +364,7 @@ class SMSCampaignsApi(object):
         :param datetime end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent sms campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetSmsCampaigns
                  If the method is called asynchronously,
                  returns the request thread.

@@ -4,7 +4,9 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**block_new_domain**](TransactionalEmailsApi.md#block_new_domain) | **POST** /smtp/blockedDomains | Add a new domain to the list of blocked domains
 [**create_smtp_template**](TransactionalEmailsApi.md#create_smtp_template) | **POST** /smtp/templates | Create an email template
+[**delete_blocked_domain**](TransactionalEmailsApi.md#delete_blocked_domain) | **DELETE** /smtp/blockedDomains/{domain} | Unblock an existing domain from the list of blocked domains
 [**delete_hardbounces**](TransactionalEmailsApi.md#delete_hardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
 [**delete_smtp_template**](TransactionalEmailsApi.md#delete_smtp_template) | **DELETE** /smtp/templates/{templateId} | Delete an inactive email template
 [**get_aggregated_smtp_report**](TransactionalEmailsApi.md#get_aggregated_smtp_report) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
@@ -23,6 +25,64 @@ Method | HTTP request | Description
 [**smtp_log_message_id_delete**](TransactionalEmailsApi.md#smtp_log_message_id_delete) | **DELETE** /smtp/log/{messageId} | Delete an SMTP transactional log
 [**update_smtp_template**](TransactionalEmailsApi.md#update_smtp_template) | **PUT** /smtp/templates/{templateId} | Update an email template
 
+
+# **block_new_domain**
+> block_new_domain(block_domain)
+
+Add a new domain to the list of blocked domains
+
+Blocks a new domain in order to avoid messages being sent to the same
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
+block_domain = sib_api_v3_sdk.BlockDomain() # BlockDomain | 
+
+try:
+    # Add a new domain to the list of blocked domains
+    api_instance.block_new_domain(block_domain)
+except ApiException as e:
+    print("Exception when calling TransactionalEmailsApi->block_new_domain: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **block_domain** | [**BlockDomain**](BlockDomain.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_smtp_template**
 > CreateModel create_smtp_template(smtp_template)
@@ -69,6 +129,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CreateModel**](CreateModel.md)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_blocked_domain**
+> delete_blocked_domain(domain)
+
+Unblock an existing domain from the list of blocked domains
+
+Unblocks an existing domain from the list of blocked domains
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
+domain = 'domain_example' # str | The name of the domain to be deleted
+
+try:
+    # Unblock an existing domain from the list of blocked domains
+    api_instance.delete_blocked_domain(domain)
+except ApiException as e:
+    print("Exception when calling TransactionalEmailsApi->delete_blocked_domain: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain** | **str**| The name of the domain to be deleted | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -349,7 +467,7 @@ event = 'event_example' # str | Filter the report for a specific event type (opt
 tags = 'tags_example' # str | Filter the report for tags (serialized and urlencoded array) (optional)
 message_id = 'message_id_example' # str | Filter on a specific message id (optional)
 template_id = 789 # int | Filter on a specific template id (optional)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Get all your transactional email activity (unaggregated events)
@@ -373,7 +491,7 @@ Name | Type | Description  | Notes
  **tags** | **str**| Filter the report for tags (serialized and urlencoded array) | [optional] 
  **message_id** | **str**| Filter on a specific message id | [optional] 
  **template_id** | **int**| Filter on a specific template id | [optional] 
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -422,7 +540,7 @@ start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
 days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 tag = 'tag_example' # str | Tag of the emails (optional)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Get your transactional email activity aggregated per day
@@ -442,7 +560,7 @@ Name | Type | Description  | Notes
  **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) | [optional] 
  **days** | **int**| Number of days in the past including today (positive integer). Not compatible with &#39;startDate&#39; and &#39;endDate&#39; | [optional] 
  **tag** | **str**| Tag of the emails | [optional] 
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -545,7 +663,7 @@ api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(co
 template_status = true # bool | Filter on the status of the template. Active = true, inactive = false (optional)
 limit = 50 # int | Number of documents returned per page (optional) (default to 50)
 offset = 0 # int | Index of the first document in the page (optional) (default to 0)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Get the list of email templates
@@ -562,7 +680,7 @@ Name | Type | Description  | Notes
  **template_status** | **bool**| Filter on the status of the template. Active &#x3D; true, inactive &#x3D; false | [optional] 
  **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -610,7 +728,7 @@ end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending dat
 limit = 50 # int | Number of documents returned per page (optional) (default to 50)
 offset = 0 # int | Index of the first document on the page (optional) (default to 0)
 senders = ['senders_example'] # list[str] | Comma separated list of emails of the senders from which contacts are blocked or unsubscribed (optional)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Get the list of blocked or unsubscribed transactional contacts
@@ -629,7 +747,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Number of documents returned per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
  **senders** | [**list[str]**](str.md)| Comma separated list of emails of the senders from which contacts are blocked or unsubscribed | [optional] 
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 
@@ -736,7 +854,7 @@ template_id = 789 # int | Mandatory if email and messageId are not passed in que
 message_id = 'message_id_example' # str | Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. (optional)
 start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
 end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Get the list of transactional emails on the basis of allowed filters
@@ -755,7 +873,7 @@ Name | Type | Description  | Notes
  **message_id** | **str**| Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent. | [optional] 
  **start_date** | **date**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
  **end_date** | **date**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 

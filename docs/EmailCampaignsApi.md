@@ -339,7 +339,7 @@ start_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if endDate is us
 end_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
 limit = 500 # int | Number of documents per page (optional) (default to 500)
 offset = 0 # int | Index of the first document in the page (optional) (default to 0)
-sort = 'desc' # str | Sort the results in the ascending/descending order of record creation (optional) (default to desc)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Return all your created email campaigns
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
  **end_date** | **datetime**| Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
  **limit** | **int**| Number of documents per page | [optional] [default to 500]
  **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
- **sort** | **str**| Sort the results in the ascending/descending order of record creation | [optional] [default to desc]
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type
 

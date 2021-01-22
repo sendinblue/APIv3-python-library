@@ -43,6 +43,7 @@ from sib_api_v3_sdk.models.ab_test_version_stats import AbTestVersionStats
 from sib_api_v3_sdk.models.add_child_domain import AddChildDomain
 from sib_api_v3_sdk.models.add_contact_to_list import AddContactToList
 from sib_api_v3_sdk.models.add_credits import AddCredits
+from sib_api_v3_sdk.models.block_domain import BlockDomain
 from sib_api_v3_sdk.models.create_attribute import CreateAttribute
 from sib_api_v3_sdk.models.create_attribute_enumeration import CreateAttributeEnumeration
 from sib_api_v3_sdk.models.create_child import CreateChild
@@ -77,6 +78,7 @@ from sib_api_v3_sdk.models.get_aggregated_report import GetAggregatedReport
 from sib_api_v3_sdk.models.get_attributes import GetAttributes
 from sib_api_v3_sdk.models.get_attributes_attributes import GetAttributesAttributes
 from sib_api_v3_sdk.models.get_attributes_enumeration import GetAttributesEnumeration
+from sib_api_v3_sdk.models.get_blocked_domains import GetBlockedDomains
 from sib_api_v3_sdk.models.get_campaign_overview import GetCampaignOverview
 from sib_api_v3_sdk.models.get_campaign_recipients import GetCampaignRecipients
 from sib_api_v3_sdk.models.get_campaign_stats import GetCampaignStats
@@ -178,9 +180,12 @@ from sib_api_v3_sdk.models.send_smtp_email import SendSmtpEmail
 from sib_api_v3_sdk.models.send_smtp_email_attachment import SendSmtpEmailAttachment
 from sib_api_v3_sdk.models.send_smtp_email_bcc import SendSmtpEmailBcc
 from sib_api_v3_sdk.models.send_smtp_email_cc import SendSmtpEmailCc
+from sib_api_v3_sdk.models.send_smtp_email_message_versions import SendSmtpEmailMessageVersions
 from sib_api_v3_sdk.models.send_smtp_email_reply_to import SendSmtpEmailReplyTo
+from sib_api_v3_sdk.models.send_smtp_email_reply_to1 import SendSmtpEmailReplyTo1
 from sib_api_v3_sdk.models.send_smtp_email_sender import SendSmtpEmailSender
 from sib_api_v3_sdk.models.send_smtp_email_to import SendSmtpEmailTo
+from sib_api_v3_sdk.models.send_smtp_email_to1 import SendSmtpEmailTo1
 from sib_api_v3_sdk.models.send_template_email import SendTemplateEmail
 from sib_api_v3_sdk.models.send_test_email import SendTestEmail
 from sib_api_v3_sdk.models.send_test_sms import SendTestSms

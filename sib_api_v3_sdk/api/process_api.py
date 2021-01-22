@@ -141,7 +141,7 @@ class ProcessApi(object):
         :param async_req bool
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetProcesses
                  If the method is called asynchronously,
                  returns the request thread.
@@ -164,7 +164,7 @@ class ProcessApi(object):
         :param async_req bool
         :param int limit: Number limitation for the result returned
         :param int offset: Beginning point in the list to retrieve from.
-        :param str sort: Sort the results in the ascending/descending order of record creation
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetProcesses
                  If the method is called asynchronously,
                  returns the request thread.

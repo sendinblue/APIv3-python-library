@@ -29,10 +29,24 @@ class TestTransactionalEmailsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_block_new_domain(self):
+        """Test case for block_new_domain
+
+        Add a new domain to the list of blocked domains  # noqa: E501
+        """
+        pass
+
     def test_create_smtp_template(self):
         """Test case for create_smtp_template
 
         Create an email template  # noqa: E501
+        """
+        pass
+
+    def test_delete_blocked_domain(self):
+        """Test case for delete_blocked_domain
+
+        Unblock an existing domain from the list of blocked domains  # noqa: E501
         """
         pass
 
