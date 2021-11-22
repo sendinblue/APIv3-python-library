@@ -40,7 +40,7 @@ limit = 50 # int | Number of documents per page (optional) (default to 50)
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
-days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
+days = 789 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 phone_number = 'phone_number_example' # str | Filter the report for a specific phone number (optional)
 event = 'event_example' # str | Filter the report for specific events (optional)
 tags = 'tags_example' # str | Filter the report for specific tags passed as a serialized urlencoded array (optional)
@@ -111,7 +111,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.TransactionalSMSApi(sib_api_v3_sdk.ApiClient(configuration))
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
-days = 56 # int | Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
+days = 789 # int | Number of days in the past including today (positive integer). Not compatible with startDate and endDate (optional)
 tag = 'tag_example' # str | Filter on a tag (optional)
 
 try:
@@ -174,7 +174,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.TransactionalSMSApi(sib_api_v3_sdk.ApiClient(configuration))
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the report (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the report (optional)
-days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
+days = 789 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 tag = 'tag_example' # str | Filter on a tag (optional)
 sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 

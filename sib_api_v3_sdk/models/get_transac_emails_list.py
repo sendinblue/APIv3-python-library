@@ -31,21 +31,49 @@ class GetTransacEmailsList(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'count': 'int',
         'transactional_emails': 'list[GetTransacEmailsListTransactionalEmails]'
     }
 
     attribute_map = {
+        'count': 'count',
         'transactional_emails': 'transactionalEmails'
     }
 
-    def __init__(self, transactional_emails=None):  # noqa: E501
+    def __init__(self, count=None, transactional_emails=None):  # noqa: E501
         """GetTransacEmailsList - a model defined in Swagger"""  # noqa: E501
 
+        self._count = None
         self._transactional_emails = None
         self.discriminator = None
 
+        if count is not None:
+            self.count = count
         if transactional_emails is not None:
             self.transactional_emails = transactional_emails
+
+    @property
+    def count(self):
+        """Gets the count of this GetTransacEmailsList.  # noqa: E501
+
+        Total number of transactional emails available on your account according to the passed filter  # noqa: E501
+
+        :return: The count of this GetTransacEmailsList.  # noqa: E501
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """Sets the count of this GetTransacEmailsList.
+
+        Total number of transactional emails available on your account according to the passed filter  # noqa: E501
+
+        :param count: The count of this GetTransacEmailsList.  # noqa: E501
+        :type: int
+        """
+
+        self._count = count
 
     @property
     def transactional_emails(self):

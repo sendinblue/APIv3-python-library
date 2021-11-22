@@ -1127,6 +1127,7 @@ class ContactsApi(object):
     def get_contact_info(self, identifier, **kwargs):  # noqa: E501
         """Get a contact's details  # noqa: E501
 
+        Along with the contact details, this endpoint will show the statistics of contact for the recent 90 days by default. To fetch the earlier statistics, please use Get contact campaign stats (https://developers.sendinblue.com/reference/contacts-7#getcontactstats) endpoint with the appropriate date ranges.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_contact_info(identifier, async_req=True)
@@ -1148,6 +1149,7 @@ class ContactsApi(object):
     def get_contact_info_with_http_info(self, identifier, **kwargs):  # noqa: E501
         """Get a contact's details  # noqa: E501
 
+        Along with the contact details, this endpoint will show the statistics of contact for the recent 90 days by default. To fetch the earlier statistics, please use Get contact campaign stats (https://developers.sendinblue.com/reference/contacts-7#getcontactstats) endpoint with the appropriate date ranges.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_contact_info_with_http_info(identifier, async_req=True)
@@ -1232,7 +1234,7 @@ class ContactsApi(object):
         :param async_req bool
         :param str identifier: Email (urlencoded) OR ID of the contact (required)
         :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate
+        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. Maximum difference between startDate and endDate should not be greater than 90 days
         :return: GetContactCampaignStats
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1255,7 +1257,7 @@ class ContactsApi(object):
         :param async_req bool
         :param str identifier: Email (urlencoded) OR ID of the contact (required)
         :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate
+        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. Maximum difference between startDate and endDate should not be greater than 90 days
         :return: GetContactCampaignStats
                  If the method is called asynchronously,
                  returns the request thread.

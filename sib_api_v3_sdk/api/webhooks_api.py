@@ -334,6 +334,7 @@ class WebhooksApi(object):
 
         :param async_req bool
         :param str type: Filter on webhook type
+        :param str sort: Sort the results in the ascending/descending order of webhook creation
         :return: GetWebhooks
                  If the method is called asynchronously,
                  returns the request thread.
@@ -355,12 +356,13 @@ class WebhooksApi(object):
 
         :param async_req bool
         :param str type: Filter on webhook type
+        :param str sort: Sort the results in the ascending/descending order of webhook creation
         :return: GetWebhooks
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['type']  # noqa: E501
+        all_params = ['type', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -383,6 +385,8 @@ class WebhooksApi(object):
         query_params = []
         if 'type' in params:
             query_params.append(('type', params['type']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
