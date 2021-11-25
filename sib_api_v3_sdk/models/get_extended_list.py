@@ -35,6 +35,7 @@ class GetExtendedList(object):
         'name': 'str',
         'total_blacklisted': 'int',
         'total_subscribers': 'int',
+        'unique_subscribers': 'int',
         'folder_id': 'int',
         'created_at': 'datetime',
         'campaign_stats': 'list[GetExtendedListCampaignStats]',
@@ -46,19 +47,21 @@ class GetExtendedList(object):
         'name': 'name',
         'total_blacklisted': 'totalBlacklisted',
         'total_subscribers': 'totalSubscribers',
+        'unique_subscribers': 'uniqueSubscribers',
         'folder_id': 'folderId',
         'created_at': 'createdAt',
         'campaign_stats': 'campaignStats',
         'dynamic_list': 'dynamicList'
     }
 
-    def __init__(self, id=None, name=None, total_blacklisted=None, total_subscribers=None, folder_id=None, created_at=None, campaign_stats=None, dynamic_list=None):  # noqa: E501
+    def __init__(self, id=None, name=None, total_blacklisted=None, total_subscribers=None, unique_subscribers=None, folder_id=None, created_at=None, campaign_stats=None, dynamic_list=None):  # noqa: E501
         """GetExtendedList - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._total_blacklisted = None
         self._total_subscribers = None
+        self._unique_subscribers = None
         self._folder_id = None
         self._created_at = None
         self._campaign_stats = None
@@ -69,6 +72,7 @@ class GetExtendedList(object):
         self.name = name
         self.total_blacklisted = total_blacklisted
         self.total_subscribers = total_subscribers
+        self.unique_subscribers = unique_subscribers
         self.folder_id = folder_id
         self.created_at = created_at
         if campaign_stats is not None:
@@ -175,6 +179,31 @@ class GetExtendedList(object):
             raise ValueError("Invalid value for `total_subscribers`, must not be `None`")  # noqa: E501
 
         self._total_subscribers = total_subscribers
+
+    @property
+    def unique_subscribers(self):
+        """Gets the unique_subscribers of this GetExtendedList.  # noqa: E501
+
+        Number of unique contacts in the list  # noqa: E501
+
+        :return: The unique_subscribers of this GetExtendedList.  # noqa: E501
+        :rtype: int
+        """
+        return self._unique_subscribers
+
+    @unique_subscribers.setter
+    def unique_subscribers(self, unique_subscribers):
+        """Sets the unique_subscribers of this GetExtendedList.
+
+        Number of unique contacts in the list  # noqa: E501
+
+        :param unique_subscribers: The unique_subscribers of this GetExtendedList.  # noqa: E501
+        :type: int
+        """
+        if unique_subscribers is None:
+            raise ValueError("Invalid value for `unique_subscribers`, must not be `None`")  # noqa: E501
+
+        self._unique_subscribers = unique_subscribers
 
     @property
     def folder_id(self):

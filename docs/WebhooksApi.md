@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_webhooks**
-> GetWebhooks get_webhooks(type=type)
+> GetWebhooks get_webhooks(type=type, sort=sort)
 
 Get all webhooks
 
@@ -208,10 +208,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.WebhooksApi(sib_api_v3_sdk.ApiClient(configuration))
 type = 'transactional' # str | Filter on webhook type (optional) (default to transactional)
+sort = 'desc' # str | Sort the results in the ascending/descending order of webhook creation (optional) (default to desc)
 
 try:
     # Get all webhooks
-    api_response = api_instance.get_webhooks(type=type)
+    api_response = api_instance.get_webhooks(type=type, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WebhooksApi->get_webhooks: %s\n" % e)
@@ -222,6 +223,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **str**| Filter on webhook type | [optional] [default to transactional]
+ **sort** | **str**| Sort the results in the ascending/descending order of webhook creation | [optional] [default to desc]
 
 ### Return type
 

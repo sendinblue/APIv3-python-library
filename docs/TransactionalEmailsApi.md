@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**get_transac_blocked_contacts**](TransactionalEmailsApi.md#get_transac_blocked_contacts) | **GET** /smtp/blockedContacts | Get the list of blocked or unsubscribed transactional contacts
 [**get_transac_email_content**](TransactionalEmailsApi.md#get_transac_email_content) | **GET** /smtp/emails/{uuid} | Get the personalized content of a sent transactional email
 [**get_transac_emails_list**](TransactionalEmailsApi.md#get_transac_emails_list) | **GET** /smtp/emails | Get the list of transactional emails on the basis of allowed filters
-[**send_template**](TransactionalEmailsApi.md#send_template) | **POST** /smtp/templates/{templateId}/send | Send a template
 [**send_test_template**](TransactionalEmailsApi.md#send_test_template) | **POST** /smtp/templates/{templateId}/sendTest | Send a template to your test list
 [**send_transac_email**](TransactionalEmailsApi.md#send_transac_email) | **POST** /smtp/email | Send a transactional email
 [**smtp_blocked_contacts_email_delete**](TransactionalEmailsApi.md#smtp_blocked_contacts_email_delete) | **DELETE** /smtp/blockedContacts/{email} | Unblock or resubscribe a transactional contact
@@ -318,6 +317,8 @@ void (empty response body)
 
 Get your transactional email activity aggregated over a period of time
 
+This endpoint will show the aggregated stats for past 90 days by default if `startDate` and `endDate` OR `days` is not passed. The date range can not exceed 90 days
+
 ### Example
 ```python
 from __future__ import print_function
@@ -341,7 +342,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
-days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
+days = 789 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 tag = 'tag_example' # str | Tag of the emails (optional)
 
 try:
@@ -436,6 +437,8 @@ This endpoint does not need any parameter.
 
 Get all your transactional email activity (unaggregated events)
 
+This endpoint will show the aggregated stats for past 30 days by default if `startDate` and `endDate` OR `days` is not passed. The date range can not exceed 90 days
+
 ### Example
 ```python
 from __future__ import print_function
@@ -461,7 +464,7 @@ limit = 50 # int | Number limitation for the result returned (optional) (default
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
-days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
+days = 789 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 email = 'email_example' # str | Filter the report for a specific email addresses (optional)
 event = 'event_example' # str | Filter the report for a specific event type (optional)
 tags = 'tags_example' # str | Filter the report for tags (serialized and urlencoded array) (optional)
@@ -538,7 +541,7 @@ limit = 10 # int | Number of documents returned per page (optional) (default to 
 offset = 0 # int | Index of the first document on the page (optional) (default to 0)
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD) (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD) (optional)
-days = 56 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
+days = 789 # int | Number of days in the past including today (positive integer). Not compatible with 'startDate' and 'endDate' (optional)
 tag = 'tag_example' # str | Tag of the emails (optional)
 sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
@@ -822,7 +825,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transac_emails_list**
-> GetTransacEmailsList get_transac_emails_list(email=email, template_id=template_id, message_id=message_id, start_date=start_date, end_date=end_date, sort=sort)
+> GetTransacEmailsList get_transac_emails_list(email=email, template_id=template_id, message_id=message_id, start_date=start_date, end_date=end_date, sort=sort, limit=limit, offset=offset)
 
 Get the list of transactional emails on the basis of allowed filters
 
@@ -855,10 +858,12 @@ message_id = 'message_id_example' # str | Mandatory if templateId and email are 
 start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
 end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
 sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
+limit = 500 # int | Number of documents returned per page (optional) (default to 500)
+offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 
 try:
     # Get the list of transactional emails on the basis of allowed filters
-    api_response = api_instance.get_transac_emails_list(email=email, template_id=template_id, message_id=message_id, start_date=start_date, end_date=end_date, sort=sort)
+    api_response = api_instance.get_transac_emails_list(email=email, template_id=template_id, message_id=message_id, start_date=start_date, end_date=end_date, sort=sort, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionalEmailsApi->get_transac_emails_list: %s\n" % e)
@@ -874,71 +879,12 @@ Name | Type | Description  | Notes
  **start_date** | **date**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
  **end_date** | **date**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
  **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 500]
+ **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
 
 ### Return type
 
 [**GetTransacEmailsList**](GetTransacEmailsList.md)
-
-### Authorization
-
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **send_template**
-> SendTemplateEmail send_template(template_id, send_email)
-
-Send a template
-
-This endpoint is deprecated. Prefer v3/smtp/email instead.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import sib_api_v3_sdk
-from sib_api_v3_sdk.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: api-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['api-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
-template_id = 789 # int | Id of the template
-send_email = sib_api_v3_sdk.SendEmail() # SendEmail | 
-
-try:
-    # Send a template
-    api_response = api_instance.send_template(template_id, send_email)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionalEmailsApi->send_template: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **template_id** | **int**| Id of the template | 
- **send_email** | [**SendEmail**](SendEmail.md)|  | 
-
-### Return type
-
-[**SendTemplateEmail**](SendTemplateEmail.md)
 
 ### Authorization
 

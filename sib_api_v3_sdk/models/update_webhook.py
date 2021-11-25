@@ -33,21 +33,24 @@ class UpdateWebhook(object):
     swagger_types = {
         'url': 'str',
         'description': 'str',
-        'events': 'list[str]'
+        'events': 'list[str]',
+        'domain': 'str'
     }
 
     attribute_map = {
         'url': 'url',
         'description': 'description',
-        'events': 'events'
+        'events': 'events',
+        'domain': 'domain'
     }
 
-    def __init__(self, url=None, description=None, events=None):  # noqa: E501
+    def __init__(self, url=None, description=None, events=None, domain=None):  # noqa: E501
         """UpdateWebhook - a model defined in Swagger"""  # noqa: E501
 
         self._url = None
         self._description = None
         self._events = None
+        self._domain = None
         self.discriminator = None
 
         if url is not None:
@@ -56,6 +59,8 @@ class UpdateWebhook(object):
             self.description = description
         if events is not None:
             self.events = events
+        if domain is not None:
+            self.domain = domain
 
     @property
     def url(self):
@@ -107,7 +112,7 @@ class UpdateWebhook(object):
     def events(self):
         """Gets the events of this UpdateWebhook.  # noqa: E501
 
-        Events triggering the webhook. Possible values for Transactional type webhook – `sent` OR `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened` and `unsubscribed` and possible values for Marketing type webhook – `spam`, `opened`, `click`, `hardBounce`, `softBounce`, `unsubscribed`, `listAddition` and `delivered`  # noqa: E501
+        - Events triggering the webhook. Possible values for **Transactional** type webhook: #### `sent` OR `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened` and `unsubscribed` - Possible values for **Marketing** type webhook: #### `spam`, `opened`, `click`, `hardBounce`, `softBounce`, `unsubscribed`, `listAddition` & `delivered` - Possible values for **Inbound** type webhook: #### `inboundEmailProcessed`   # noqa: E501
 
         :return: The events of this UpdateWebhook.  # noqa: E501
         :rtype: list[str]
@@ -118,12 +123,12 @@ class UpdateWebhook(object):
     def events(self, events):
         """Sets the events of this UpdateWebhook.
 
-        Events triggering the webhook. Possible values for Transactional type webhook – `sent` OR `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened` and `unsubscribed` and possible values for Marketing type webhook – `spam`, `opened`, `click`, `hardBounce`, `softBounce`, `unsubscribed`, `listAddition` and `delivered`  # noqa: E501
+        - Events triggering the webhook. Possible values for **Transactional** type webhook: #### `sent` OR `request`, `delivered`, `hardBounce`, `softBounce`, `blocked`, `spam`, `invalid`, `deferred`, `click`, `opened`, `uniqueOpened` and `unsubscribed` - Possible values for **Marketing** type webhook: #### `spam`, `opened`, `click`, `hardBounce`, `softBounce`, `unsubscribed`, `listAddition` & `delivered` - Possible values for **Inbound** type webhook: #### `inboundEmailProcessed`   # noqa: E501
 
         :param events: The events of this UpdateWebhook.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["hardBounce", "softBounce", "blocked", "spam", "delivered", "request", "click", "invalid", "deferred", "opened", "uniqueOpened", "unsubscribed", "listAddition", "contactUpdated", "contactDeleted"]  # noqa: E501
+        allowed_values = ["sent", "hardBounce", "softBounce", "blocked", "spam", "delivered", "request", "click", "invalid", "deferred", "opened", "uniqueOpened", "unsubscribed", "listAddition", "contactUpdated", "contactDeleted", "inboundEmailProcessed"]  # noqa: E501
         if not set(events).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `events` [{0}], must be a subset of [{1}]"  # noqa: E501
@@ -132,6 +137,29 @@ class UpdateWebhook(object):
             )
 
         self._events = events
+
+    @property
+    def domain(self):
+        """Gets the domain of this UpdateWebhook.  # noqa: E501
+
+        Inbound domain of webhook, used in case of event type `inbound`  # noqa: E501
+
+        :return: The domain of this UpdateWebhook.  # noqa: E501
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """Sets the domain of this UpdateWebhook.
+
+        Inbound domain of webhook, used in case of event type `inbound`  # noqa: E501
+
+        :param domain: The domain of this UpdateWebhook.  # noqa: E501
+        :type: str
+        """
+
+        self._domain = domain
 
     def to_dict(self):
         """Returns the model properties as a dict"""

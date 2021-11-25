@@ -51,7 +51,7 @@ class SendTestEmail(object):
     def email_to(self):
         """Gets the email_to of this SendTestEmail.  # noqa: E501
 
-        List of the email addresses of the recipients whom you wish to send the test mail. If left empty, the test mail will be sent to your entire test list.  # noqa: E501
+        List of the email addresses of the recipients whom you wish to send the test mail. If left empty, the test mail will be sent to your entire test list. You can not send more than 50 test emails per day.  # noqa: E501
 
         :return: The email_to of this SendTestEmail.  # noqa: E501
         :rtype: list[str]
@@ -62,7 +62,7 @@ class SendTestEmail(object):
     def email_to(self, email_to):
         """Sets the email_to of this SendTestEmail.
 
-        List of the email addresses of the recipients whom you wish to send the test mail. If left empty, the test mail will be sent to your entire test list.  # noqa: E501
+        List of the email addresses of the recipients whom you wish to send the test mail. If left empty, the test mail will be sent to your entire test list. You can not send more than 50 test emails per day.  # noqa: E501
 
         :param email_to: The email_to of this SendTestEmail.  # noqa: E501
         :type: list[str]

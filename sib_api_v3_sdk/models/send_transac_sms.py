@@ -36,7 +36,8 @@ class SendTransacSms(object):
         'content': 'str',
         'type': 'str',
         'tag': 'str',
-        'web_url': 'str'
+        'web_url': 'str',
+        'unicode_enabled': 'bool'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class SendTransacSms(object):
         'content': 'content',
         'type': 'type',
         'tag': 'tag',
-        'web_url': 'webUrl'
+        'web_url': 'webUrl',
+        'unicode_enabled': 'unicodeEnabled'
     }
 
-    def __init__(self, sender=None, recipient=None, content=None, type='transactional', tag=None, web_url=None):  # noqa: E501
+    def __init__(self, sender=None, recipient=None, content=None, type='transactional', tag=None, web_url=None, unicode_enabled=None):  # noqa: E501
         """SendTransacSms - a model defined in Swagger"""  # noqa: E501
 
         self._sender = None
@@ -57,6 +59,7 @@ class SendTransacSms(object):
         self._type = None
         self._tag = None
         self._web_url = None
+        self._unicode_enabled = None
         self.discriminator = None
 
         self.sender = sender
@@ -68,6 +71,8 @@ class SendTransacSms(object):
             self.tag = tag
         if web_url is not None:
             self.web_url = web_url
+        if unicode_enabled is not None:
+            self.unicode_enabled = unicode_enabled
 
     @property
     def sender(self):
@@ -220,6 +225,29 @@ class SendTransacSms(object):
         """
 
         self._web_url = web_url
+
+    @property
+    def unicode_enabled(self):
+        """Gets the unicode_enabled of this SendTransacSms.  # noqa: E501
+
+        Format of the message. It indicates whether the content should be treated as unicode or not.  # noqa: E501
+
+        :return: The unicode_enabled of this SendTransacSms.  # noqa: E501
+        :rtype: bool
+        """
+        return self._unicode_enabled
+
+    @unicode_enabled.setter
+    def unicode_enabled(self, unicode_enabled):
+        """Sets the unicode_enabled of this SendTransacSms.
+
+        Format of the message. It indicates whether the content should be treated as unicode or not.  # noqa: E501
+
+        :param unicode_enabled: The unicode_enabled of this SendTransacSms.  # noqa: E501
+        :type: bool
+        """
+
+        self._unicode_enabled = unicode_enabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -34,29 +34,33 @@ class GetList(object):
         'id': 'int',
         'name': 'str',
         'total_blacklisted': 'int',
-        'total_subscribers': 'int'
+        'total_subscribers': 'int',
+        'unique_subscribers': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
         'total_blacklisted': 'totalBlacklisted',
-        'total_subscribers': 'totalSubscribers'
+        'total_subscribers': 'totalSubscribers',
+        'unique_subscribers': 'uniqueSubscribers'
     }
 
-    def __init__(self, id=None, name=None, total_blacklisted=None, total_subscribers=None):  # noqa: E501
+    def __init__(self, id=None, name=None, total_blacklisted=None, total_subscribers=None, unique_subscribers=None):  # noqa: E501
         """GetList - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._total_blacklisted = None
         self._total_subscribers = None
+        self._unique_subscribers = None
         self.discriminator = None
 
         self.id = id
         self.name = name
         self.total_blacklisted = total_blacklisted
         self.total_subscribers = total_subscribers
+        self.unique_subscribers = unique_subscribers
 
     @property
     def id(self):
@@ -157,6 +161,31 @@ class GetList(object):
             raise ValueError("Invalid value for `total_subscribers`, must not be `None`")  # noqa: E501
 
         self._total_subscribers = total_subscribers
+
+    @property
+    def unique_subscribers(self):
+        """Gets the unique_subscribers of this GetList.  # noqa: E501
+
+        Number of unique contacts in the list  # noqa: E501
+
+        :return: The unique_subscribers of this GetList.  # noqa: E501
+        :rtype: int
+        """
+        return self._unique_subscribers
+
+    @unique_subscribers.setter
+    def unique_subscribers(self, unique_subscribers):
+        """Sets the unique_subscribers of this GetList.
+
+        Number of unique contacts in the list  # noqa: E501
+
+        :param unique_subscribers: The unique_subscribers of this GetList.  # noqa: E501
+        :type: int
+        """
+        if unique_subscribers is None:
+            raise ValueError("Invalid value for `unique_subscribers`, must not be `None`")  # noqa: E501
+
+        self._unique_subscribers = unique_subscribers
 
     def to_dict(self):
         """Returns the model properties as a dict"""

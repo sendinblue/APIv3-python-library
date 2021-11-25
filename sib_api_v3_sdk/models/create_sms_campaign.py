@@ -35,7 +35,8 @@ class CreateSmsCampaign(object):
         'sender': 'str',
         'content': 'str',
         'recipients': 'CreateSmsCampaignRecipients',
-        'scheduled_at': 'datetime'
+        'scheduled_at': 'datetime',
+        'unicode_enabled': 'bool'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class CreateSmsCampaign(object):
         'sender': 'sender',
         'content': 'content',
         'recipients': 'recipients',
-        'scheduled_at': 'scheduledAt'
+        'scheduled_at': 'scheduledAt',
+        'unicode_enabled': 'unicodeEnabled'
     }
 
-    def __init__(self, name=None, sender=None, content=None, recipients=None, scheduled_at=None):  # noqa: E501
+    def __init__(self, name=None, sender=None, content=None, recipients=None, scheduled_at=None, unicode_enabled=None):  # noqa: E501
         """CreateSmsCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
@@ -54,6 +56,7 @@ class CreateSmsCampaign(object):
         self._content = None
         self._recipients = None
         self._scheduled_at = None
+        self._unicode_enabled = None
         self.discriminator = None
 
         self.name = name
@@ -63,6 +66,8 @@ class CreateSmsCampaign(object):
             self.recipients = recipients
         if scheduled_at is not None:
             self.scheduled_at = scheduled_at
+        if unicode_enabled is not None:
+            self.unicode_enabled = unicode_enabled
 
     @property
     def name(self):
@@ -184,6 +189,29 @@ class CreateSmsCampaign(object):
         """
 
         self._scheduled_at = scheduled_at
+
+    @property
+    def unicode_enabled(self):
+        """Gets the unicode_enabled of this CreateSmsCampaign.  # noqa: E501
+
+        Format of the message. It indicates whether the content should be treated as unicode or not.  # noqa: E501
+
+        :return: The unicode_enabled of this CreateSmsCampaign.  # noqa: E501
+        :rtype: bool
+        """
+        return self._unicode_enabled
+
+    @unicode_enabled.setter
+    def unicode_enabled(self, unicode_enabled):
+        """Sets the unicode_enabled of this CreateSmsCampaign.
+
+        Format of the message. It indicates whether the content should be treated as unicode or not.  # noqa: E501
+
+        :param unicode_enabled: The unicode_enabled of this CreateSmsCampaign.  # noqa: E501
+        :type: bool
+        """
+
+        self._unicode_enabled = unicode_enabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""
