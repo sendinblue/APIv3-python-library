@@ -342,7 +342,7 @@ class ListsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
+        :param str modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
@@ -367,7 +367,7 @@ class ListsApi(object):
 
         :param async_req bool
         :param int list_id: Id of the list (required)
-        :param datetime modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
+        :param str modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed

@@ -35,10 +35,10 @@ class GetSmsCampaign(object):
         'name': 'str',
         'status': 'str',
         'content': 'str',
-        'scheduled_at': 'datetime',
+        'scheduled_at': 'str',
         'sender': 'str',
-        'created_at': 'datetime',
-        'modified_at': 'datetime',
+        'created_at': 'str',
+        'modified_at': 'str',
         'recipients': 'object',
         'statistics': 'object'
     }
@@ -196,7 +196,7 @@ class GetSmsCampaign(object):
         UTC date-time on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format  # noqa: E501
 
         :return: The scheduled_at of this GetSmsCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._scheduled_at
 
@@ -207,7 +207,7 @@ class GetSmsCampaign(object):
         UTC date-time on which SMS campaign is scheduled. Should be in YYYY-MM-DDTHH:mm:ss.SSSZ format  # noqa: E501
 
         :param scheduled_at: The scheduled_at of this GetSmsCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
 
         self._scheduled_at = scheduled_at
@@ -244,7 +244,7 @@ class GetSmsCampaign(object):
         Creation UTC date-time of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The created_at of this GetSmsCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._created_at
 
@@ -255,7 +255,7 @@ class GetSmsCampaign(object):
         Creation UTC date-time of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param created_at: The created_at of this GetSmsCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
@@ -269,7 +269,7 @@ class GetSmsCampaign(object):
         UTC date-time of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The modified_at of this GetSmsCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._modified_at
 
@@ -280,7 +280,7 @@ class GetSmsCampaign(object):
         UTC date-time of last modification of the SMS campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param modified_at: The modified_at of this GetSmsCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if modified_at is None:
             raise ValueError("Invalid value for `modified_at`, must not be `None`")  # noqa: E501

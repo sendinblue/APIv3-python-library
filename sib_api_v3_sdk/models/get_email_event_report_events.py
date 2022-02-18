@@ -32,7 +32,7 @@ class GetEmailEventReportEvents(object):
     """
     swagger_types = {
         'email': 'str',
-        '_date': 'datetime',
+        '_date': 'str',
         'subject': 'str',
         'message_id': 'str',
         'event': 'str',
@@ -125,7 +125,7 @@ class GetEmailEventReportEvents(object):
         UTC date-time on which the event has been generated  # noqa: E501
 
         :return: The _date of this GetEmailEventReportEvents.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self.__date
 
@@ -136,7 +136,7 @@ class GetEmailEventReportEvents(object):
         UTC date-time on which the event has been generated  # noqa: E501
 
         :param _date: The _date of this GetEmailEventReportEvents.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if _date is None:
             raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
@@ -213,7 +213,7 @@ class GetEmailEventReportEvents(object):
         """
         if event is None:
             raise ValueError("Invalid value for `event`, must not be `None`")  # noqa: E501
-        allowed_values = ["bounces", "hardBounces", "softBounces", "delivered", "spam", "requests", "opened", "clicks", "invalid", "deferred", "blocked", "unsubscribed", "error"]  # noqa: E501
+        allowed_values = ["bounces", "hardBounces", "softBounces", "delivered", "spam", "requests", "opened", "clicks", "invalid", "deferred", "blocked", "unsubscribed", "error", "loadedByProxy"]  # noqa: E501
         if event not in allowed_values:
             raise ValueError(
                 "Invalid value for `event` ({0}), must be one of {1}"  # noqa: E501

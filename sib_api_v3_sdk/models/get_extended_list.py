@@ -37,7 +37,7 @@ class GetExtendedList(object):
         'total_subscribers': 'int',
         'unique_subscribers': 'int',
         'folder_id': 'int',
-        'created_at': 'datetime',
+        'created_at': 'str',
         'campaign_stats': 'list[GetExtendedListCampaignStats]',
         'dynamic_list': 'bool'
     }
@@ -237,7 +237,7 @@ class GetExtendedList(object):
         Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The created_at of this GetExtendedList.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._created_at
 
@@ -248,7 +248,7 @@ class GetExtendedList(object):
         Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param created_at: The created_at of this GetExtendedList.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501

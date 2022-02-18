@@ -5,6 +5,7 @@ from __future__ import absolute_import
 # import apis into api package
 from sib_api_v3_sdk.api.account_api import AccountApi
 from sib_api_v3_sdk.api.attributes_api import AttributesApi
+from sib_api_v3_sdk.api.crm_api import CRMApi
 from sib_api_v3_sdk.api.contacts_api import ContactsApi
 from sib_api_v3_sdk.api.email_campaigns_api import EmailCampaignsApi
 from sib_api_v3_sdk.api.folders_api import FoldersApi

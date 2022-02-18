@@ -38,7 +38,8 @@ class GetContactCampaignStats(object):
         'unsubscriptions': 'GetContactCampaignStatsUnsubscriptions',
         'opened': 'list[GetContactCampaignStatsOpened]',
         'clicked': 'list[GetContactCampaignStatsClicked]',
-        'transac_attributes': 'list[GetContactCampaignStatsTransacAttributes]'
+        'transac_attributes': 'list[GetContactCampaignStatsTransacAttributes]',
+        'delivered': 'list[GetExtendedContactDetailsStatisticsMessagesSent]'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class GetContactCampaignStats(object):
         'unsubscriptions': 'unsubscriptions',
         'opened': 'opened',
         'clicked': 'clicked',
-        'transac_attributes': 'transacAttributes'
+        'transac_attributes': 'transacAttributes',
+        'delivered': 'delivered'
     }
 
-    def __init__(self, messages_sent=None, hard_bounces=None, soft_bounces=None, complaints=None, unsubscriptions=None, opened=None, clicked=None, transac_attributes=None):  # noqa: E501
+    def __init__(self, messages_sent=None, hard_bounces=None, soft_bounces=None, complaints=None, unsubscriptions=None, opened=None, clicked=None, transac_attributes=None, delivered=None):  # noqa: E501
         """GetContactCampaignStats - a model defined in Swagger"""  # noqa: E501
 
         self._messages_sent = None
@@ -63,6 +65,7 @@ class GetContactCampaignStats(object):
         self._opened = None
         self._clicked = None
         self._transac_attributes = None
+        self._delivered = None
         self.discriminator = None
 
         if messages_sent is not None:
@@ -81,6 +84,8 @@ class GetContactCampaignStats(object):
             self.clicked = clicked
         if transac_attributes is not None:
             self.transac_attributes = transac_attributes
+        if delivered is not None:
+            self.delivered = delivered
 
     @property
     def messages_sent(self):
@@ -249,6 +254,27 @@ class GetContactCampaignStats(object):
         """
 
         self._transac_attributes = transac_attributes
+
+    @property
+    def delivered(self):
+        """Gets the delivered of this GetContactCampaignStats.  # noqa: E501
+
+
+        :return: The delivered of this GetContactCampaignStats.  # noqa: E501
+        :rtype: list[GetExtendedContactDetailsStatisticsMessagesSent]
+        """
+        return self._delivered
+
+    @delivered.setter
+    def delivered(self, delivered):
+        """Sets the delivered of this GetContactCampaignStats.
+
+
+        :param delivered: The delivered of this GetContactCampaignStats.  # noqa: E501
+        :type: list[GetExtendedContactDetailsStatisticsMessagesSent]
+        """
+
+        self._delivered = delivered
 
     def to_dict(self):
         """Returns the model properties as a dict"""

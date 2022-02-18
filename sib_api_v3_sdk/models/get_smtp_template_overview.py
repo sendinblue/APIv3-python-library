@@ -41,8 +41,8 @@ class GetSmtpTemplateOverview(object):
         'to_field': 'str',
         'tag': 'str',
         'html_content': 'str',
-        'created_at': 'datetime',
-        'modified_at': 'datetime',
+        'created_at': 'str',
+        'modified_at': 'str',
         'doi_template': 'bool'
     }
 
@@ -350,7 +350,7 @@ class GetSmtpTemplateOverview(object):
         Creation UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The created_at of this GetSmtpTemplateOverview.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._created_at
 
@@ -361,7 +361,7 @@ class GetSmtpTemplateOverview(object):
         Creation UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param created_at: The created_at of this GetSmtpTemplateOverview.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
@@ -375,7 +375,7 @@ class GetSmtpTemplateOverview(object):
         Last modification UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The modified_at of this GetSmtpTemplateOverview.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._modified_at
 
@@ -386,7 +386,7 @@ class GetSmtpTemplateOverview(object):
         Last modification UTC date-time of the template (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param modified_at: The modified_at of this GetSmtpTemplateOverview.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if modified_at is None:
             raise ValueError("Invalid value for `modified_at`, must not be `None`")  # noqa: E501

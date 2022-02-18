@@ -36,7 +36,7 @@ class GetEmailCampaign(object):
         'subject': 'str',
         'type': 'str',
         'status': 'str',
-        'scheduled_at': 'datetime',
+        'scheduled_at': 'str',
         'ab_testing': 'bool',
         'subject_a': 'str',
         'subject_b': 'str',
@@ -53,12 +53,12 @@ class GetEmailCampaign(object):
         'html_content': 'str',
         'share_link': 'str',
         'tag': 'str',
-        'created_at': 'datetime',
-        'modified_at': 'datetime',
+        'created_at': 'str',
+        'modified_at': 'str',
         'inline_image_activation': 'bool',
         'mirror_active': 'bool',
         'recurring': 'bool',
-        'sent_date': 'datetime',
+        'sent_date': 'str',
         'return_bounce': 'int',
         'recipients': 'object',
         'statistics': 'object'
@@ -325,7 +325,7 @@ class GetEmailCampaign(object):
         UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The scheduled_at of this GetEmailCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._scheduled_at
 
@@ -336,7 +336,7 @@ class GetEmailCampaign(object):
         UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param scheduled_at: The scheduled_at of this GetEmailCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
 
         self._scheduled_at = scheduled_at
@@ -726,7 +726,7 @@ class GetEmailCampaign(object):
         Creation UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The created_at of this GetEmailCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._created_at
 
@@ -737,7 +737,7 @@ class GetEmailCampaign(object):
         Creation UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param created_at: The created_at of this GetEmailCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
@@ -751,7 +751,7 @@ class GetEmailCampaign(object):
         UTC date-time of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The modified_at of this GetEmailCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._modified_at
 
@@ -762,7 +762,7 @@ class GetEmailCampaign(object):
         UTC date-time of last modification of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param modified_at: The modified_at of this GetEmailCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if modified_at is None:
             raise ValueError("Invalid value for `modified_at`, must not be `None`")  # noqa: E501
@@ -845,7 +845,7 @@ class GetEmailCampaign(object):
         Sent UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ). Only available if 'status' of the campaign is 'sent'  # noqa: E501
 
         :return: The sent_date of this GetEmailCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._sent_date
 
@@ -856,7 +856,7 @@ class GetEmailCampaign(object):
         Sent UTC date-time of the campaign (YYYY-MM-DDTHH:mm:ss.SSSZ). Only available if 'status' of the campaign is 'sent'  # noqa: E501
 
         :param sent_date: The sent_date of this GetEmailCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
 
         self._sent_date = sent_date

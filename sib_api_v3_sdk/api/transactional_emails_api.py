@@ -1404,8 +1404,8 @@ class TransactionalEmailsApi(object):
         :param str email: Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
         :param int template_id: Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
         :param str message_id: Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
-        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
         :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document in the page
@@ -1433,8 +1433,8 @@ class TransactionalEmailsApi(object):
         :param str email: Mandatory if templateId and messageId are not passed in query filters. Email address to which transactional email has been sent.
         :param int template_id: Mandatory if email and messageId are not passed in query filters. Id of the template that was used to compose transactional email.
         :param str message_id: Mandatory if templateId and email are not passed in query filters. Message ID of the transactional email sent.
-        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
-        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param str start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param str end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
         :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :param int limit: Number of documents returned per page
         :param int offset: Index of the first document in the page

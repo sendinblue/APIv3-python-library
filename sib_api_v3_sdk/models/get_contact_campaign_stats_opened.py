@@ -33,7 +33,7 @@ class GetContactCampaignStatsOpened(object):
     swagger_types = {
         'campaign_id': 'int',
         'count': 'int',
-        'event_time': 'datetime',
+        'event_time': 'str',
         'ip': 'str'
     }
 
@@ -115,7 +115,7 @@ class GetContactCampaignStatsOpened(object):
         UTC date-time of the event  # noqa: E501
 
         :return: The event_time of this GetContactCampaignStatsOpened.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._event_time
 
@@ -126,7 +126,7 @@ class GetContactCampaignStatsOpened(object):
         UTC date-time of the event  # noqa: E501
 
         :param event_time: The event_time of this GetContactCampaignStatsOpened.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if event_time is None:
             raise ValueError("Invalid value for `event_time`, must not be `None`")  # noqa: E501

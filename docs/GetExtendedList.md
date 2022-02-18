@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **total_subscribers** | **int** | Number of contacts in the list | 
 **unique_subscribers** | **int** | Number of unique contacts in the list | 
 **folder_id** | **int** | ID of the folder | 
-**created_at** | **datetime** | Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
+**created_at** | **str** | Creation UTC date-time of the list (YYYY-MM-DDTHH:mm:ss.SSSZ) | 
 **campaign_stats** | [**list[GetExtendedListCampaignStats]**](GetExtendedListCampaignStats.md) |  | [optional] 
 **dynamic_list** | **bool** | Status telling if the list is dynamic or not (true&#x3D;dynamic, false&#x3D;not dynamic) | [optional] 
 

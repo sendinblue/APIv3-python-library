@@ -32,7 +32,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent(object):
     """
     swagger_types = {
         'campaign_id': 'int',
-        'event_time': 'datetime'
+        'event_time': 'str'
     }
 
     attribute_map = {
@@ -82,7 +82,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent(object):
         UTC date-time of the event  # noqa: E501
 
         :return: The event_time of this GetExtendedContactDetailsStatisticsMessagesSent.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._event_time
 
@@ -93,7 +93,7 @@ class GetExtendedContactDetailsStatisticsMessagesSent(object):
         UTC date-time of the event  # noqa: E501
 
         :param event_time: The event_time of this GetExtendedContactDetailsStatisticsMessagesSent.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if event_time is None:
             raise ValueError("Invalid value for `event_time`, must not be `None`")  # noqa: E501

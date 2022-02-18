@@ -40,6 +40,7 @@ class GetCampaignStats(object):
         'soft_bounces': 'int',
         'hard_bounces': 'int',
         'unique_views': 'int',
+        'trackable_views': 'int',
         'unsubscriptions': 'int',
         'viewed': 'int',
         'deferred': 'int',
@@ -56,13 +57,14 @@ class GetCampaignStats(object):
         'soft_bounces': 'softBounces',
         'hard_bounces': 'hardBounces',
         'unique_views': 'uniqueViews',
+        'trackable_views': 'trackableViews',
         'unsubscriptions': 'unsubscriptions',
         'viewed': 'viewed',
         'deferred': 'deferred',
         'return_bounce': 'returnBounce'
     }
 
-    def __init__(self, list_id=None, unique_clicks=None, clickers=None, complaints=None, delivered=None, sent=None, soft_bounces=None, hard_bounces=None, unique_views=None, unsubscriptions=None, viewed=None, deferred=None, return_bounce=None):  # noqa: E501
+    def __init__(self, list_id=None, unique_clicks=None, clickers=None, complaints=None, delivered=None, sent=None, soft_bounces=None, hard_bounces=None, unique_views=None, trackable_views=None, unsubscriptions=None, viewed=None, deferred=None, return_bounce=None):  # noqa: E501
         """GetCampaignStats - a model defined in Swagger"""  # noqa: E501
 
         self._list_id = None
@@ -74,6 +76,7 @@ class GetCampaignStats(object):
         self._soft_bounces = None
         self._hard_bounces = None
         self._unique_views = None
+        self._trackable_views = None
         self._unsubscriptions = None
         self._viewed = None
         self._deferred = None
@@ -90,6 +93,7 @@ class GetCampaignStats(object):
         self.soft_bounces = soft_bounces
         self.hard_bounces = hard_bounces
         self.unique_views = unique_views
+        self.trackable_views = trackable_views
         self.unsubscriptions = unsubscriptions
         self.viewed = viewed
         if deferred is not None:
@@ -319,6 +323,31 @@ class GetCampaignStats(object):
             raise ValueError("Invalid value for `unique_views`, must not be `None`")  # noqa: E501
 
         self._unique_views = unique_views
+
+    @property
+    def trackable_views(self):
+        """Gets the trackable_views of this GetCampaignStats.  # noqa: E501
+
+        Recipients without any privacy protection option enabled in their email client  # noqa: E501
+
+        :return: The trackable_views of this GetCampaignStats.  # noqa: E501
+        :rtype: int
+        """
+        return self._trackable_views
+
+    @trackable_views.setter
+    def trackable_views(self, trackable_views):
+        """Sets the trackable_views of this GetCampaignStats.
+
+        Recipients without any privacy protection option enabled in their email client  # noqa: E501
+
+        :param trackable_views: The trackable_views of this GetCampaignStats.  # noqa: E501
+        :type: int
+        """
+        if trackable_views is None:
+            raise ValueError("Invalid value for `trackable_views`, must not be `None`")  # noqa: E501
+
+        self._trackable_views = trackable_views
 
     @property
     def unsubscriptions(self):
