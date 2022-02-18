@@ -32,7 +32,7 @@ class GetExtendedContactDetailsStatisticsLinks(object):
     """
     swagger_types = {
         'count': 'int',
-        'event_time': 'datetime',
+        'event_time': 'str',
         'ip': 'str',
         'url': 'str'
     }
@@ -90,7 +90,7 @@ class GetExtendedContactDetailsStatisticsLinks(object):
         UTC date-time of the event  # noqa: E501
 
         :return: The event_time of this GetExtendedContactDetailsStatisticsLinks.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._event_time
 
@@ -101,7 +101,7 @@ class GetExtendedContactDetailsStatisticsLinks(object):
         UTC date-time of the event  # noqa: E501
 
         :param event_time: The event_time of this GetExtendedContactDetailsStatisticsLinks.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if event_time is None:
             raise ValueError("Invalid value for `event_time`, must not be `None`")  # noqa: E501

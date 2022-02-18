@@ -32,7 +32,7 @@ class GetSmsEventReportEvents(object):
     """
     swagger_types = {
         'phone_number': 'str',
-        '_date': 'datetime',
+        '_date': 'str',
         'message_id': 'str',
         'event': 'str',
         'reason': 'str',
@@ -107,7 +107,7 @@ class GetSmsEventReportEvents(object):
         UTC date-time on which the event has been generated  # noqa: E501
 
         :return: The _date of this GetSmsEventReportEvents.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self.__date
 
@@ -118,7 +118,7 @@ class GetSmsEventReportEvents(object):
         UTC date-time on which the event has been generated  # noqa: E501
 
         :param _date: The _date of this GetSmsEventReportEvents.  # noqa: E501
-        :type: datetime
+        :type: str
         """
 
         self.__date = _date

@@ -34,7 +34,7 @@ class GetTransacEmailContent(object):
         'email': 'str',
         'subject': 'str',
         'template_id': 'int',
-        '_date': 'datetime',
+        '_date': 'str',
         'events': 'list[GetTransacEmailContentEvents]',
         'body': 'str',
         'attachment_count': 'int'
@@ -151,7 +151,7 @@ class GetTransacEmailContent(object):
         Date on which transactional email was sent  # noqa: E501
 
         :return: The _date of this GetTransacEmailContent.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self.__date
 
@@ -162,7 +162,7 @@ class GetTransacEmailContent(object):
         Date on which transactional email was sent  # noqa: E501
 
         :param _date: The _date of this GetTransacEmailContent.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if _date is None:
             raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501

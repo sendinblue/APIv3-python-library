@@ -36,8 +36,8 @@ class GetWebhook(object):
         'description': 'str',
         'events': 'list[str]',
         'type': 'str',
-        'created_at': 'datetime',
-        'modified_at': 'datetime'
+        'created_at': 'str',
+        'modified_at': 'str'
     }
 
     attribute_map = {
@@ -206,7 +206,7 @@ class GetWebhook(object):
         Creation UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The created_at of this GetWebhook.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._created_at
 
@@ -217,7 +217,7 @@ class GetWebhook(object):
         Creation UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param created_at: The created_at of this GetWebhook.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if created_at is None:
             raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
@@ -231,7 +231,7 @@ class GetWebhook(object):
         Last modification UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The modified_at of this GetWebhook.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._modified_at
 
@@ -242,7 +242,7 @@ class GetWebhook(object):
         Last modification UTC date-time of the webhook (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param modified_at: The modified_at of this GetWebhook.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if modified_at is None:
             raise ValueError("Invalid value for `modified_at`, must not be `None`")  # noqa: E501

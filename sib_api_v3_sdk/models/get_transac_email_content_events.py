@@ -32,7 +32,7 @@ class GetTransacEmailContentEvents(object):
     """
     swagger_types = {
         'name': 'str',
-        'time': 'datetime'
+        'time': 'str'
     }
 
     attribute_map = {
@@ -82,7 +82,7 @@ class GetTransacEmailContentEvents(object):
         Time at which the event occurred  # noqa: E501
 
         :return: The time of this GetTransacEmailContentEvents.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._time
 
@@ -93,7 +93,7 @@ class GetTransacEmailContentEvents(object):
         Time at which the event occurred  # noqa: E501
 
         :param time: The time of this GetTransacEmailContentEvents.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if time is None:
             raise ValueError("Invalid value for `time`, must not be `None`")  # noqa: E501

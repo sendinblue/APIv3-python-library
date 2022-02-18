@@ -35,7 +35,7 @@ class CreateSmsCampaign(object):
         'sender': 'str',
         'content': 'str',
         'recipients': 'CreateSmsCampaignRecipients',
-        'scheduled_at': 'datetime',
+        'scheduled_at': 'str',
         'unicode_enabled': 'bool'
     }
 
@@ -48,7 +48,7 @@ class CreateSmsCampaign(object):
         'unicode_enabled': 'unicodeEnabled'
     }
 
-    def __init__(self, name=None, sender=None, content=None, recipients=None, scheduled_at=None, unicode_enabled=None):  # noqa: E501
+    def __init__(self, name=None, sender=None, content=None, recipients=None, scheduled_at=None, unicode_enabled=False):  # noqa: E501
         """CreateSmsCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
@@ -174,7 +174,7 @@ class CreateSmsCampaign(object):
         UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.  # noqa: E501
 
         :return: The scheduled_at of this CreateSmsCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._scheduled_at
 
@@ -185,7 +185,7 @@ class CreateSmsCampaign(object):
         UTC date-time on which the campaign has to run (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.  # noqa: E501
 
         :param scheduled_at: The scheduled_at of this CreateSmsCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
 
         self._scheduled_at = scheduled_at

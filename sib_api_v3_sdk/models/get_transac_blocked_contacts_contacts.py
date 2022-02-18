@@ -34,7 +34,7 @@ class GetTransacBlockedContactsContacts(object):
         'email': 'str',
         'sender_email': 'str',
         'reason': 'GetTransacBlockedContactsReason',
-        'blocked_at': 'datetime'
+        'blocked_at': 'str'
     }
 
     attribute_map = {
@@ -138,7 +138,7 @@ class GetTransacBlockedContactsContacts(object):
         Date when the contact was blocked or unsubscribed on  # noqa: E501
 
         :return: The blocked_at of this GetTransacBlockedContactsContacts.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._blocked_at
 
@@ -149,7 +149,7 @@ class GetTransacBlockedContactsContacts(object):
         Date when the contact was blocked or unsubscribed on  # noqa: E501
 
         :param blocked_at: The blocked_at of this GetTransacBlockedContactsContacts.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if blocked_at is None:
             raise ValueError("Invalid value for `blocked_at`, must not be `None`")  # noqa: E501

@@ -36,7 +36,7 @@ class GetCampaignOverview(object):
         'subject': 'str',
         'type': 'str',
         'status': 'str',
-        'scheduled_at': 'datetime',
+        'scheduled_at': 'str',
         'ab_testing': 'bool',
         'subject_a': 'str',
         'subject_b': 'str',
@@ -245,7 +245,7 @@ class GetCampaignOverview(object):
         UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :return: The scheduled_at of this GetCampaignOverview.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._scheduled_at
 
@@ -256,7 +256,7 @@ class GetCampaignOverview(object):
         UTC date-time on which campaign is scheduled (YYYY-MM-DDTHH:mm:ss.SSSZ)  # noqa: E501
 
         :param scheduled_at: The scheduled_at of this GetCampaignOverview.  # noqa: E501
-        :type: datetime
+        :type: str
         """
 
         self._scheduled_at = scheduled_at

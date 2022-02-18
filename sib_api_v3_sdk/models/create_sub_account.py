@@ -32,25 +32,29 @@ class CreateSubAccount(object):
     """
     swagger_types = {
         'company_name': 'str',
+        'email': 'str',
         'language': 'str',
         'timezone': 'str'
     }
 
     attribute_map = {
         'company_name': 'companyName',
+        'email': 'email',
         'language': 'language',
         'timezone': 'timezone'
     }
 
-    def __init__(self, company_name=None, language=None, timezone=None):  # noqa: E501
+    def __init__(self, company_name=None, email=None, language=None, timezone=None):  # noqa: E501
         """CreateSubAccount - a model defined in Swagger"""  # noqa: E501
 
         self._company_name = None
+        self._email = None
         self._language = None
         self._timezone = None
         self.discriminator = None
 
         self.company_name = company_name
+        self.email = email
         if language is not None:
             self.language = language
         if timezone is not None:
@@ -80,6 +84,31 @@ class CreateSubAccount(object):
             raise ValueError("Invalid value for `company_name`, must not be `None`")  # noqa: E501
 
         self._company_name = company_name
+
+    @property
+    def email(self):
+        """Gets the email of this CreateSubAccount.  # noqa: E501
+
+        Email address for the organization  # noqa: E501
+
+        :return: The email of this CreateSubAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """Sets the email of this CreateSubAccount.
+
+        Email address for the organization  # noqa: E501
+
+        :param email: The email of this CreateSubAccount.  # noqa: E501
+        :type: str
+        """
+        if email is None:
+            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
+
+        self._email = email
 
     @property
     def language(self):

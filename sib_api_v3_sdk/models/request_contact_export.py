@@ -32,33 +32,27 @@ class RequestContactExport(object):
     """
     swagger_types = {
         'export_attributes': 'list[str]',
-        'contact_filter': 'object',
         'custom_contact_filter': 'RequestContactExportCustomContactFilter',
         'notify_url': 'str'
     }
 
     attribute_map = {
         'export_attributes': 'exportAttributes',
-        'contact_filter': 'contactFilter',
         'custom_contact_filter': 'customContactFilter',
         'notify_url': 'notifyUrl'
     }
 
-    def __init__(self, export_attributes=None, contact_filter=None, custom_contact_filter=None, notify_url=None):  # noqa: E501
+    def __init__(self, export_attributes=None, custom_contact_filter=None, notify_url=None):  # noqa: E501
         """RequestContactExport - a model defined in Swagger"""  # noqa: E501
 
         self._export_attributes = None
-        self._contact_filter = None
         self._custom_contact_filter = None
         self._notify_url = None
         self.discriminator = None
 
         if export_attributes is not None:
             self.export_attributes = export_attributes
-        if contact_filter is not None:
-            self.contact_filter = contact_filter
-        if custom_contact_filter is not None:
-            self.custom_contact_filter = custom_contact_filter
+        self.custom_contact_filter = custom_contact_filter
         if notify_url is not None:
             self.notify_url = notify_url
 
@@ -86,29 +80,6 @@ class RequestContactExport(object):
         self._export_attributes = export_attributes
 
     @property
-    def contact_filter(self):
-        """Gets the contact_filter of this RequestContactExport.  # noqa: E501
-
-        This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {\"blacklisted\":true} will export all the blacklisted contacts.   # noqa: E501
-
-        :return: The contact_filter of this RequestContactExport.  # noqa: E501
-        :rtype: object
-        """
-        return self._contact_filter
-
-    @contact_filter.setter
-    def contact_filter(self, contact_filter):
-        """Sets the contact_filter of this RequestContactExport.
-
-        This attribute has been deprecated and will be removed by January 1st, 2021. Only one of the two filter options (contactFilter or customContactFilter) can be passed in the request. Set the filter for the contacts to be exported. For example, {\"blacklisted\":true} will export all the blacklisted contacts.   # noqa: E501
-
-        :param contact_filter: The contact_filter of this RequestContactExport.  # noqa: E501
-        :type: object
-        """
-
-        self._contact_filter = contact_filter
-
-    @property
     def custom_contact_filter(self):
         """Gets the custom_contact_filter of this RequestContactExport.  # noqa: E501
 
@@ -126,6 +97,8 @@ class RequestContactExport(object):
         :param custom_contact_filter: The custom_contact_filter of this RequestContactExport.  # noqa: E501
         :type: RequestContactExportCustomContactFilter
         """
+        if custom_contact_filter is None:
+            raise ValueError("Invalid value for `custom_contact_filter`, must not be `None`")  # noqa: E501
 
         self._custom_contact_filter = custom_contact_filter
 

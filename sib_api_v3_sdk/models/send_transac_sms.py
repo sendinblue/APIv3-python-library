@@ -50,7 +50,7 @@ class SendTransacSms(object):
         'unicode_enabled': 'unicodeEnabled'
     }
 
-    def __init__(self, sender=None, recipient=None, content=None, type='transactional', tag=None, web_url=None, unicode_enabled=None):  # noqa: E501
+    def __init__(self, sender=None, recipient=None, content=None, type='transactional', tag=None, web_url=None, unicode_enabled=False):  # noqa: E501
         """SendTransacSms - a model defined in Swagger"""  # noqa: E501
 
         self._sender = None

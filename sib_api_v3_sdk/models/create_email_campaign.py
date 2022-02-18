@@ -37,7 +37,7 @@ class CreateEmailCampaign(object):
         'html_content': 'str',
         'html_url': 'str',
         'template_id': 'int',
-        'scheduled_at': 'datetime',
+        'scheduled_at': 'str',
         'subject': 'str',
         'reply_to': 'str',
         'to_field': 'str',
@@ -327,7 +327,7 @@ class CreateEmailCampaign(object):
         Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).  # noqa: E501
 
         :return: The scheduled_at of this CreateEmailCampaign.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self._scheduled_at
 
@@ -338,7 +338,7 @@ class CreateEmailCampaign(object):
         Sending UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. If sendAtBestTime is set to true, your campaign will be sent according to the date passed (ignoring the time part).  # noqa: E501
 
         :param scheduled_at: The scheduled_at of this CreateEmailCampaign.  # noqa: E501
-        :type: datetime
+        :type: str
         """
 
         self._scheduled_at = scheduled_at

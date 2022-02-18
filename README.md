@@ -92,6 +92,19 @@ Class | Method | HTTP request | Description
 *AttributesApi* | [**delete_attribute**](docs/AttributesApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
 *AttributesApi* | [**get_attributes**](docs/AttributesApi.md#get_attributes) | **GET** /contacts/attributes | List all attributes
 *AttributesApi* | [**update_attribute**](docs/AttributesApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
+*CRMApi* | [**crm_files_id_data_get**](docs/CRMApi.md#crm_files_id_data_get) | **GET** /crm/files/{id}/data | Get file details
+*CRMApi* | [**crm_files_id_delete**](docs/CRMApi.md#crm_files_id_delete) | **DELETE** /crm/files/{id} | Delete a file
+*CRMApi* | [**crm_files_id_get**](docs/CRMApi.md#crm_files_id_get) | **GET** /crm/files/{id} | Download a file
+*CRMApi* | [**crm_files_post**](docs/CRMApi.md#crm_files_post) | **POST** /crm/files | Upload a file
+*CRMApi* | [**crm_notes_id_delete**](docs/CRMApi.md#crm_notes_id_delete) | **DELETE** /crm/notes/{id} | Delete a note
+*CRMApi* | [**crm_notes_id_get**](docs/CRMApi.md#crm_notes_id_get) | **GET** /crm/notes/{id} | Get a note
+*CRMApi* | [**crm_notes_id_patch**](docs/CRMApi.md#crm_notes_id_patch) | **PATCH** /crm/notes/{id} | Update a note
+*CRMApi* | [**crm_notes_post**](docs/CRMApi.md#crm_notes_post) | **POST** /crm/notes | Create a note
+*CRMApi* | [**crm_tasks_id_delete**](docs/CRMApi.md#crm_tasks_id_delete) | **DELETE** /crm/tasks/{id} | Delete a task
+*CRMApi* | [**crm_tasks_id_get**](docs/CRMApi.md#crm_tasks_id_get) | **GET** /crm/tasks/{id} | Get a task
+*CRMApi* | [**crm_tasks_id_patch**](docs/CRMApi.md#crm_tasks_id_patch) | **PATCH** /crm/tasks/{id} | Update a task
+*CRMApi* | [**crm_tasks_post**](docs/CRMApi.md#crm_tasks_post) | **POST** /crm/tasks | Create a task
+*CRMApi* | [**crm_tasktypes_get**](docs/CRMApi.md#crm_tasktypes_get) | **GET** /crm/tasktypes | Get all task types
 *ContactsApi* | [**add_contact_to_list**](docs/ContactsApi.md#add_contact_to_list) | **POST** /contacts/lists/{listId}/contacts/add | Add existing contacts to a list
 *ContactsApi* | [**create_attribute**](docs/ContactsApi.md#create_attribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Create contact attribute
 *ContactsApi* | [**create_contact**](docs/ContactsApi.md#create_contact) | **POST** /contacts | Create a contact
@@ -116,6 +129,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**remove_contact_from_list**](docs/ContactsApi.md#remove_contact_from_list) | **POST** /contacts/lists/{listId}/contacts/remove | Delete a contact from a list
 *ContactsApi* | [**request_contact_export**](docs/ContactsApi.md#request_contact_export) | **POST** /contacts/export | Export contacts
 *ContactsApi* | [**update_attribute**](docs/ContactsApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
+*ContactsApi* | [**update_batch_contacts**](docs/ContactsApi.md#update_batch_contacts) | **POST** /contacts/batch | Update multiple contacts
 *ContactsApi* | [**update_contact**](docs/ContactsApi.md#update_contact) | **PUT** /contacts/{identifier} | Update a contact
 *ContactsApi* | [**update_folder**](docs/ContactsApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a folder
 *ContactsApi* | [**update_list**](docs/ContactsApi.md#update_list) | **PUT** /contacts/lists/{listId} | Update a list
@@ -151,8 +165,11 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**update_list**](docs/ListsApi.md#update_list) | **PUT** /contacts/lists/{listId} | Update a list
 *MasterAccountApi* | [**corporate_master_account_get**](docs/MasterAccountApi.md#corporate_master_account_get) | **GET** /corporate/masterAccount | Get the details of requested master account
 *MasterAccountApi* | [**corporate_sub_account_get**](docs/MasterAccountApi.md#corporate_sub_account_get) | **GET** /corporate/subAccount | Get the list of all the sub-accounts of the master account.
+*MasterAccountApi* | [**corporate_sub_account_id_delete**](docs/MasterAccountApi.md#corporate_sub_account_id_delete) | **DELETE** /corporate/subAccount/{id} | Delete a sub-account
 *MasterAccountApi* | [**corporate_sub_account_id_get**](docs/MasterAccountApi.md#corporate_sub_account_id_get) | **GET** /corporate/subAccount/{id} | Get sub-account details
+*MasterAccountApi* | [**corporate_sub_account_id_plan_put**](docs/MasterAccountApi.md#corporate_sub_account_id_plan_put) | **PUT** /corporate/subAccount/{id}/plan | Update sub-account plan
 *MasterAccountApi* | [**corporate_sub_account_post**](docs/MasterAccountApi.md#corporate_sub_account_post) | **POST** /corporate/subAccount | Create a new sub-account under a master account.
+*MasterAccountApi* | [**corporate_sub_account_sso_token_post**](docs/MasterAccountApi.md#corporate_sub_account_sso_token_post) | **POST** /corporate/subAccount/ssoToken | Generate SSO token to access Sendinblue
 *ProcessApi* | [**get_process**](docs/ProcessApi.md#get_process) | **GET** /processes/{processId} | Return the informations for a process
 *ProcessApi* | [**get_processes**](docs/ProcessApi.md#get_processes) | **GET** /processes | Return all the processes for your account
 *ResellerApi* | [**add_credits**](docs/ResellerApi.md#add_credits) | **POST** /reseller/children/{childIdentifier}/credits/add | Add Email and/or SMS credits to a specific child account
@@ -229,6 +246,9 @@ Class | Method | HTTP request | Description
  - [AddContactToList](docs/AddContactToList.md)
  - [AddCredits](docs/AddCredits.md)
  - [BlockDomain](docs/BlockDomain.md)
+ - [Body](docs/Body.md)
+ - [Body1](docs/Body1.md)
+ - [Contact](docs/Contact.md)
  - [CreateAttribute](docs/CreateAttribute.md)
  - [CreateAttributeEnumeration](docs/CreateAttributeEnumeration.md)
  - [CreateChild](docs/CreateChild.md)
@@ -256,6 +276,7 @@ Class | Method | HTTP request | Description
  - [DeleteHardbounces](docs/DeleteHardbounces.md)
  - [EmailExportRecipients](docs/EmailExportRecipients.md)
  - [ErrorModel](docs/ErrorModel.md)
+ - [FileData](docs/FileData.md)
  - [GetAccountMarketingAutomation](docs/GetAccountMarketingAutomation.md)
  - [GetAccountPlan](docs/GetAccountPlan.md)
  - [GetAccountRelay](docs/GetAccountRelay.md)
@@ -294,6 +315,7 @@ Class | Method | HTTP request | Description
  - [GetExtendedClientAddress](docs/GetExtendedClientAddress.md)
  - [GetExtendedContactDetailsStatistics](docs/GetExtendedContactDetailsStatistics.md)
  - [GetExtendedContactDetailsStatisticsClicked](docs/GetExtendedContactDetailsStatisticsClicked.md)
+ - [GetExtendedContactDetailsStatisticsDelivered](docs/GetExtendedContactDetailsStatisticsDelivered.md)
  - [GetExtendedContactDetailsStatisticsLinks](docs/GetExtendedContactDetailsStatisticsLinks.md)
  - [GetExtendedContactDetailsStatisticsMessagesSent](docs/GetExtendedContactDetailsStatisticsMessagesSent.md)
  - [GetExtendedContactDetailsStatisticsOpened](docs/GetExtendedContactDetailsStatisticsOpened.md)
@@ -354,6 +376,8 @@ Class | Method | HTTP request | Description
  - [MasterDetailsResponseBillingInfoName](docs/MasterDetailsResponseBillingInfoName.md)
  - [MasterDetailsResponsePlanInfo](docs/MasterDetailsResponsePlanInfo.md)
  - [MasterDetailsResponsePlanInfoFeatures](docs/MasterDetailsResponsePlanInfoFeatures.md)
+ - [Note](docs/Note.md)
+ - [NoteData](docs/NoteData.md)
  - [PostContactInfo](docs/PostContactInfo.md)
  - [PostContactInfoContacts](docs/PostContactInfoContacts.md)
  - [PostSendFailed](docs/PostSendFailed.md)
@@ -384,6 +408,7 @@ Class | Method | HTTP request | Description
  - [SendTestEmail](docs/SendTestEmail.md)
  - [SendTestSms](docs/SendTestSms.md)
  - [SendTransacSms](docs/SendTransacSms.md)
+ - [SsoTokenRequest](docs/SsoTokenRequest.md)
  - [SubAccountDetailsResponse](docs/SubAccountDetailsResponse.md)
  - [SubAccountDetailsResponsePlanInfo](docs/SubAccountDetailsResponsePlanInfo.md)
  - [SubAccountDetailsResponsePlanInfoCredits](docs/SubAccountDetailsResponsePlanInfoCredits.md)
@@ -392,10 +417,19 @@ Class | Method | HTTP request | Description
  - [SubAccountDetailsResponsePlanInfoFeaturesInbox](docs/SubAccountDetailsResponsePlanInfoFeaturesInbox.md)
  - [SubAccountDetailsResponsePlanInfoFeaturesLandingPage](docs/SubAccountDetailsResponsePlanInfoFeaturesLandingPage.md)
  - [SubAccountDetailsResponsePlanInfoFeaturesUsers](docs/SubAccountDetailsResponsePlanInfoFeaturesUsers.md)
+ - [SubAccountUpdatePlanRequest](docs/SubAccountUpdatePlanRequest.md)
+ - [SubAccountUpdatePlanRequestCredits](docs/SubAccountUpdatePlanRequestCredits.md)
+ - [SubAccountUpdatePlanRequestFeatures](docs/SubAccountUpdatePlanRequestFeatures.md)
  - [SubAccountsResponse](docs/SubAccountsResponse.md)
  - [SubAccountsResponseSubAccounts](docs/SubAccountsResponseSubAccounts.md)
+ - [Task](docs/Task.md)
+ - [TaskReminder](docs/TaskReminder.md)
+ - [TaskTypes](docs/TaskTypes.md)
  - [UpdateAttribute](docs/UpdateAttribute.md)
  - [UpdateAttributeEnumeration](docs/UpdateAttributeEnumeration.md)
+ - [UpdateBatchContacts](docs/UpdateBatchContacts.md)
+ - [UpdateBatchContactsContacts](docs/UpdateBatchContactsContacts.md)
+ - [UpdateBatchContactsModel](docs/UpdateBatchContactsModel.md)
  - [UpdateCampaignStatus](docs/UpdateCampaignStatus.md)
  - [UpdateChild](docs/UpdateChild.md)
  - [UpdateChildAccountStatus](docs/UpdateChildAccountStatus.md)

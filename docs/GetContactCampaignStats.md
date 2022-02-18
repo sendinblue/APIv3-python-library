@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **opened** | [**list[GetContactCampaignStatsOpened]**](GetContactCampaignStatsOpened.md) |  | [optional] 
 **clicked** | [**list[GetContactCampaignStatsClicked]**](GetContactCampaignStatsClicked.md) |  | [optional] 
 **transac_attributes** | [**list[GetContactCampaignStatsTransacAttributes]**](GetContactCampaignStatsTransacAttributes.md) |  | [optional] 
+**delivered** | [**list[GetExtendedContactDetailsStatisticsMessagesSent]**](GetExtendedContactDetailsStatisticsMessagesSent.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -36,7 +36,7 @@ class GetTransacEmailsListTransactionalEmails(object):
         'template_id': 'int',
         'message_id': 'str',
         'uuid': 'str',
-        '_date': 'datetime',
+        '_date': 'str',
         '_from': 'str',
         'tags': 'list[str]'
     }
@@ -207,7 +207,7 @@ class GetTransacEmailsListTransactionalEmails(object):
         Date on which transactional email was sent  # noqa: E501
 
         :return: The _date of this GetTransacEmailsListTransactionalEmails.  # noqa: E501
-        :rtype: datetime
+        :rtype: str
         """
         return self.__date
 
@@ -218,7 +218,7 @@ class GetTransacEmailsListTransactionalEmails(object):
         Date on which transactional email was sent  # noqa: E501
 
         :param _date: The _date of this GetTransacEmailsListTransactionalEmails.  # noqa: E501
-        :type: datetime
+        :type: str
         """
         if _date is None:
             raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501

@@ -75,10 +75,10 @@ class ApiClient(object):
         elif header_name is not None and header_name != "User-Agent":
             self.default_headers[header_name] = header_value
         else:
-            self.user_agent = 'sendinblue_clientAPI/v7.3.0/python'
+            self.user_agent = 'sendinblue_clientAPI/v7.4.0/python'
         self.cookie = cookie
         # Set default User-Agent.
-        # self.user_agent = 'Swagger-Codegen/7.3.0/python'
+        # self.user_agent = 'Swagger-Codegen/7.4.0/python'
 
     def __del__(self):
         if self._pool is not None:
