@@ -114,7 +114,7 @@ class TaskReminder(object):
     def types(self):
         """Gets the types of this TaskReminder.  # noqa: E501
 
-        Type of task reminder  # noqa: E501
+        Type of task reminder e.g email, push  # noqa: E501
 
         :return: The types of this TaskReminder.  # noqa: E501
         :rtype: list[str]
@@ -125,7 +125,7 @@ class TaskReminder(object):
     def types(self, types):
         """Sets the types of this TaskReminder.
 
-        Type of task reminder  # noqa: E501
+        Type of task reminder e.g email, push  # noqa: E501
 
         :param types: The types of this TaskReminder.  # noqa: E501
         :type: list[str]

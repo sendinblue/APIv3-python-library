@@ -64,7 +64,7 @@ class CreateSubAccount(object):
     def company_name(self):
         """Gets the company_name of this CreateSubAccount.  # noqa: E501
 
-        Name of the organization  # noqa: E501
+        Set the name of the sub-account company  # noqa: E501
 
         :return: The company_name of this CreateSubAccount.  # noqa: E501
         :rtype: str
@@ -75,7 +75,7 @@ class CreateSubAccount(object):
     def company_name(self, company_name):
         """Sets the company_name of this CreateSubAccount.
 
-        Name of the organization  # noqa: E501
+        Set the name of the sub-account company  # noqa: E501
 
         :param company_name: The company_name of this CreateSubAccount.  # noqa: E501
         :type: str
@@ -114,7 +114,7 @@ class CreateSubAccount(object):
     def language(self):
         """Gets the language of this CreateSubAccount.  # noqa: E501
 
-        Language for identifying localization information  # noqa: E501
+        Set the language of the sub-account  # noqa: E501
 
         :return: The language of this CreateSubAccount.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class CreateSubAccount(object):
     def language(self, language):
         """Sets the language of this CreateSubAccount.
 
-        Language for identifying localization information  # noqa: E501
+        Set the language of the sub-account  # noqa: E501
 
         :param language: The language of this CreateSubAccount.  # noqa: E501
         :type: str
@@ -143,7 +143,7 @@ class CreateSubAccount(object):
     def timezone(self):
         """Gets the timezone of this CreateSubAccount.  # noqa: E501
 
-        Request timezone of the client  # noqa: E501
+        Set the timezone of the sub-account  # noqa: E501
 
         :return: The timezone of this CreateSubAccount.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class CreateSubAccount(object):
     def timezone(self, timezone):
         """Sets the timezone of this CreateSubAccount.
 
-        Request timezone of the client  # noqa: E501
+        Set the timezone of the sub-account  # noqa: E501
 
         :param timezone: The timezone of this CreateSubAccount.  # noqa: E501
         :type: str

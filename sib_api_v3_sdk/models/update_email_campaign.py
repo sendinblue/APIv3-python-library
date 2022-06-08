@@ -253,7 +253,7 @@ class UpdateEmailCampaign(object):
     def html_content(self):
         """Gets the html_content of this UpdateEmailCampaign.  # noqa: E501
 
-        Body of the message (HTML version). REQUIRED if htmlUrl is empty  # noqa: E501
+        Body of the message (HTML version). If the campaign is designed using Drag & Drop editor via HTML content, then the design page will not have Drag & Drop editor access for that campaign. REQUIRED if htmlUrl is empty  # noqa: E501
 
         :return: The html_content of this UpdateEmailCampaign.  # noqa: E501
         :rtype: str
@@ -264,7 +264,7 @@ class UpdateEmailCampaign(object):
     def html_content(self, html_content):
         """Sets the html_content of this UpdateEmailCampaign.
 
-        Body of the message (HTML version). REQUIRED if htmlUrl is empty  # noqa: E501
+        Body of the message (HTML version). If the campaign is designed using Drag & Drop editor via HTML content, then the design page will not have Drag & Drop editor access for that campaign. REQUIRED if htmlUrl is empty  # noqa: E501
 
         :param html_content: The html_content of this UpdateEmailCampaign.  # noqa: E501
         :type: str

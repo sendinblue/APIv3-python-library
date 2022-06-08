@@ -31,119 +31,44 @@ class Task(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'first_contact': 'Contact',
         'id': 'str',
         'task_type_id': 'str',
         'name': 'str',
         'contacts_ids': 'list[int]',
-        'contacts': 'list[Contact]',
         'deals_ids': 'list[str]',
-        'companies_ids': 'list[str]',
-        'assign_to_id': 'str',
-        '_date': 'datetime',
-        'duration': 'int',
-        'notes': 'str',
-        'done': 'bool',
-        'reminder': 'TaskReminder',
-        'created_at': 'datetime',
-        'updated_at': 'datetime',
-        'refs': 'object'
+        'companies_ids': 'list[str]'
     }
 
     attribute_map = {
-        'first_contact': 'firstContact',
         'id': 'id',
         'task_type_id': 'taskTypeId',
         'name': 'name',
         'contacts_ids': 'contactsIds',
-        'contacts': 'contacts',
         'deals_ids': 'dealsIds',
-        'companies_ids': 'companiesIds',
-        'assign_to_id': 'assignToId',
-        '_date': 'date',
-        'duration': 'duration',
-        'notes': 'notes',
-        'done': 'done',
-        'reminder': 'reminder',
-        'created_at': 'createdAt',
-        'updated_at': 'updatedAt',
-        'refs': 'refs'
+        'companies_ids': 'companiesIds'
     }
 
-    def __init__(self, first_contact=None, id=None, task_type_id=None, name=None, contacts_ids=None, contacts=None, deals_ids=None, companies_ids=None, assign_to_id=None, _date=None, duration=None, notes=None, done=None, reminder=None, created_at=None, updated_at=None, refs=None):  # noqa: E501
+    def __init__(self, id=None, task_type_id=None, name=None, contacts_ids=None, deals_ids=None, companies_ids=None):  # noqa: E501
         """Task - a model defined in Swagger"""  # noqa: E501
 
-        self._first_contact = None
         self._id = None
         self._task_type_id = None
         self._name = None
         self._contacts_ids = None
-        self._contacts = None
         self._deals_ids = None
         self._companies_ids = None
-        self._assign_to_id = None
-        self.__date = None
-        self._duration = None
-        self._notes = None
-        self._done = None
-        self._reminder = None
-        self._created_at = None
-        self._updated_at = None
-        self._refs = None
         self.discriminator = None
 
-        if first_contact is not None:
-            self.first_contact = first_contact
         if id is not None:
             self.id = id
         self.task_type_id = task_type_id
         self.name = name
         if contacts_ids is not None:
             self.contacts_ids = contacts_ids
-        if contacts is not None:
-            self.contacts = contacts
         if deals_ids is not None:
             self.deals_ids = deals_ids
         if companies_ids is not None:
             self.companies_ids = companies_ids
-        if assign_to_id is not None:
-            self.assign_to_id = assign_to_id
-        self._date = _date
-        if duration is not None:
-            self.duration = duration
-        if notes is not None:
-            self.notes = notes
-        if done is not None:
-            self.done = done
-        if reminder is not None:
-            self.reminder = reminder
-        if created_at is not None:
-            self.created_at = created_at
-        if updated_at is not None:
-            self.updated_at = updated_at
-        if refs is not None:
-            self.refs = refs
-
-    @property
-    def first_contact(self):
-        """Gets the first_contact of this Task.  # noqa: E501
-
-
-        :return: The first_contact of this Task.  # noqa: E501
-        :rtype: Contact
-        """
-        return self._first_contact
-
-    @first_contact.setter
-    def first_contact(self, first_contact):
-        """Sets the first_contact of this Task.
-
-
-        :param first_contact: The first_contact of this Task.  # noqa: E501
-        :type: Contact
-        """
-
-        self._first_contact = first_contact
 
     @property
     def id(self):
@@ -242,29 +167,6 @@ class Task(object):
         self._contacts_ids = contacts_ids
 
     @property
-    def contacts(self):
-        """Gets the contacts of this Task.  # noqa: E501
-
-        Contact details for contacts linked to this task  # noqa: E501
-
-        :return: The contacts of this Task.  # noqa: E501
-        :rtype: list[Contact]
-        """
-        return self._contacts
-
-    @contacts.setter
-    def contacts(self, contacts):
-        """Sets the contacts of this Task.
-
-        Contact details for contacts linked to this task  # noqa: E501
-
-        :param contacts: The contacts of this Task.  # noqa: E501
-        :type: list[Contact]
-        """
-
-        self._contacts = contacts
-
-    @property
     def deals_ids(self):
         """Gets the deals_ids of this Task.  # noqa: E501
 
@@ -309,213 +211,6 @@ class Task(object):
         """
 
         self._companies_ids = companies_ids
-
-    @property
-    def assign_to_id(self):
-        """Gets the assign_to_id of this Task.  # noqa: E501
-
-        User id to whom task is assigned  # noqa: E501
-
-        :return: The assign_to_id of this Task.  # noqa: E501
-        :rtype: str
-        """
-        return self._assign_to_id
-
-    @assign_to_id.setter
-    def assign_to_id(self, assign_to_id):
-        """Sets the assign_to_id of this Task.
-
-        User id to whom task is assigned  # noqa: E501
-
-        :param assign_to_id: The assign_to_id of this Task.  # noqa: E501
-        :type: str
-        """
-
-        self._assign_to_id = assign_to_id
-
-    @property
-    def _date(self):
-        """Gets the _date of this Task.  # noqa: E501
-
-        Task date/time  # noqa: E501
-
-        :return: The _date of this Task.  # noqa: E501
-        :rtype: datetime
-        """
-        return self.__date
-
-    @_date.setter
-    def _date(self, _date):
-        """Sets the _date of this Task.
-
-        Task date/time  # noqa: E501
-
-        :param _date: The _date of this Task.  # noqa: E501
-        :type: datetime
-        """
-        if _date is None:
-            raise ValueError("Invalid value for `_date`, must not be `None`")  # noqa: E501
-
-        self.__date = _date
-
-    @property
-    def duration(self):
-        """Gets the duration of this Task.  # noqa: E501
-
-        Duration of task  # noqa: E501
-
-        :return: The duration of this Task.  # noqa: E501
-        :rtype: int
-        """
-        return self._duration
-
-    @duration.setter
-    def duration(self, duration):
-        """Sets the duration of this Task.
-
-        Duration of task  # noqa: E501
-
-        :param duration: The duration of this Task.  # noqa: E501
-        :type: int
-        """
-
-        self._duration = duration
-
-    @property
-    def notes(self):
-        """Gets the notes of this Task.  # noqa: E501
-
-        Notes added to a task  # noqa: E501
-
-        :return: The notes of this Task.  # noqa: E501
-        :rtype: str
-        """
-        return self._notes
-
-    @notes.setter
-    def notes(self, notes):
-        """Sets the notes of this Task.
-
-        Notes added to a task  # noqa: E501
-
-        :param notes: The notes of this Task.  # noqa: E501
-        :type: str
-        """
-
-        self._notes = notes
-
-    @property
-    def done(self):
-        """Gets the done of this Task.  # noqa: E501
-
-        Task marked as done  # noqa: E501
-
-        :return: The done of this Task.  # noqa: E501
-        :rtype: bool
-        """
-        return self._done
-
-    @done.setter
-    def done(self, done):
-        """Sets the done of this Task.
-
-        Task marked as done  # noqa: E501
-
-        :param done: The done of this Task.  # noqa: E501
-        :type: bool
-        """
-
-        self._done = done
-
-    @property
-    def reminder(self):
-        """Gets the reminder of this Task.  # noqa: E501
-
-        Task reminder date/time for a task  # noqa: E501
-
-        :return: The reminder of this Task.  # noqa: E501
-        :rtype: TaskReminder
-        """
-        return self._reminder
-
-    @reminder.setter
-    def reminder(self, reminder):
-        """Sets the reminder of this Task.
-
-        Task reminder date/time for a task  # noqa: E501
-
-        :param reminder: The reminder of this Task.  # noqa: E501
-        :type: TaskReminder
-        """
-
-        self._reminder = reminder
-
-    @property
-    def created_at(self):
-        """Gets the created_at of this Task.  # noqa: E501
-
-        Task created date/time  # noqa: E501
-
-        :return: The created_at of this Task.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._created_at
-
-    @created_at.setter
-    def created_at(self, created_at):
-        """Sets the created_at of this Task.
-
-        Task created date/time  # noqa: E501
-
-        :param created_at: The created_at of this Task.  # noqa: E501
-        :type: datetime
-        """
-
-        self._created_at = created_at
-
-    @property
-    def updated_at(self):
-        """Gets the updated_at of this Task.  # noqa: E501
-
-        Task update date/time  # noqa: E501
-
-        :return: The updated_at of this Task.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._updated_at
-
-    @updated_at.setter
-    def updated_at(self, updated_at):
-        """Sets the updated_at of this Task.
-
-        Task update date/time  # noqa: E501
-
-        :param updated_at: The updated_at of this Task.  # noqa: E501
-        :type: datetime
-        """
-
-        self._updated_at = updated_at
-
-    @property
-    def refs(self):
-        """Gets the refs of this Task.  # noqa: E501
-
-
-        :return: The refs of this Task.  # noqa: E501
-        :rtype: object
-        """
-        return self._refs
-
-    @refs.setter
-    def refs(self, refs):
-        """Sets the refs of this Task.
-
-
-        :param refs: The refs of this Task.  # noqa: E501
-        :type: object
-        """
-
-        self._refs = refs
 
     def to_dict(self):
         """Returns the model properties as a dict"""

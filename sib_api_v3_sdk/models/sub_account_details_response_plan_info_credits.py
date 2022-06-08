@@ -56,7 +56,7 @@ class SubAccountDetailsResponsePlanInfoCredits(object):
     def sms(self):
         """Gets the sms of this SubAccountDetailsResponsePlanInfoCredits.  # noqa: E501
 
-        Sms quota of the sub-account  # noqa: E501
+        SMS credits remaining on the sub-account  # noqa: E501
 
         :return: The sms of this SubAccountDetailsResponsePlanInfoCredits.  # noqa: E501
         :rtype: int
@@ -67,7 +67,7 @@ class SubAccountDetailsResponsePlanInfoCredits(object):
     def sms(self, sms):
         """Sets the sms of this SubAccountDetailsResponsePlanInfoCredits.
 
-        Sms quota of the sub-account  # noqa: E501
+        SMS credits remaining on the sub-account  # noqa: E501
 
         :param sms: The sms of this SubAccountDetailsResponsePlanInfoCredits.  # noqa: E501
         :type: int

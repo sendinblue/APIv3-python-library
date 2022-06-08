@@ -27,7 +27,6 @@ from sib_api_v3_sdk.models.add_credits import AddCredits
 from sib_api_v3_sdk.models.block_domain import BlockDomain
 from sib_api_v3_sdk.models.body import Body
 from sib_api_v3_sdk.models.body1 import Body1
-from sib_api_v3_sdk.models.contact import Contact
 from sib_api_v3_sdk.models.create_attribute import CreateAttribute
 from sib_api_v3_sdk.models.create_attribute_enumeration import CreateAttributeEnumeration
 from sib_api_v3_sdk.models.create_child import CreateChild
@@ -48,6 +47,7 @@ from sib_api_v3_sdk.models.create_smtp_email import CreateSmtpEmail
 from sib_api_v3_sdk.models.create_smtp_template import CreateSmtpTemplate
 from sib_api_v3_sdk.models.create_smtp_template_sender import CreateSmtpTemplateSender
 from sib_api_v3_sdk.models.create_sub_account import CreateSubAccount
+from sib_api_v3_sdk.models.create_sub_account_response import CreateSubAccountResponse
 from sib_api_v3_sdk.models.create_update_contact_model import CreateUpdateContactModel
 from sib_api_v3_sdk.models.create_update_folder import CreateUpdateFolder
 from sib_api_v3_sdk.models.create_webhook import CreateWebhook
@@ -55,7 +55,6 @@ from sib_api_v3_sdk.models.created_process_id import CreatedProcessId
 from sib_api_v3_sdk.models.delete_hardbounces import DeleteHardbounces
 from sib_api_v3_sdk.models.email_export_recipients import EmailExportRecipients
 from sib_api_v3_sdk.models.error_model import ErrorModel
-from sib_api_v3_sdk.models.file_data import FileData
 from sib_api_v3_sdk.models.get_account_marketing_automation import GetAccountMarketingAutomation
 from sib_api_v3_sdk.models.get_account_plan import GetAccountPlan
 from sib_api_v3_sdk.models.get_account_relay import GetAccountRelay
@@ -120,6 +119,9 @@ from sib_api_v3_sdk.models.get_process import GetProcess
 from sib_api_v3_sdk.models.get_processes import GetProcesses
 from sib_api_v3_sdk.models.get_reports import GetReports
 from sib_api_v3_sdk.models.get_reports_reports import GetReportsReports
+from sib_api_v3_sdk.models.get_scheduled_email_by_batch_id import GetScheduledEmailByBatchId
+from sib_api_v3_sdk.models.get_scheduled_email_by_batch_id_batches import GetScheduledEmailByBatchIdBatches
+from sib_api_v3_sdk.models.get_scheduled_email_by_message_id import GetScheduledEmailByMessageId
 from sib_api_v3_sdk.models.get_senders_list import GetSendersList
 from sib_api_v3_sdk.models.get_senders_list_ips import GetSendersListIps
 from sib_api_v3_sdk.models.get_senders_list_senders import GetSendersListSenders
@@ -148,6 +150,7 @@ from sib_api_v3_sdk.models.get_transac_sms_report import GetTransacSmsReport
 from sib_api_v3_sdk.models.get_transac_sms_report_reports import GetTransacSmsReportReports
 from sib_api_v3_sdk.models.get_webhook import GetWebhook
 from sib_api_v3_sdk.models.get_webhooks import GetWebhooks
+from sib_api_v3_sdk.models.inline_response201 import InlineResponse201
 from sib_api_v3_sdk.models.manage_ip import ManageIp
 from sib_api_v3_sdk.models.master_details_response import MasterDetailsResponse
 from sib_api_v3_sdk.models.master_details_response_billing_info import MasterDetailsResponseBillingInfo
@@ -157,6 +160,8 @@ from sib_api_v3_sdk.models.master_details_response_plan_info import MasterDetail
 from sib_api_v3_sdk.models.master_details_response_plan_info_features import MasterDetailsResponsePlanInfoFeatures
 from sib_api_v3_sdk.models.note import Note
 from sib_api_v3_sdk.models.note_data import NoteData
+from sib_api_v3_sdk.models.note_id import NoteId
+from sib_api_v3_sdk.models.note_list import NoteList
 from sib_api_v3_sdk.models.post_contact_info import PostContactInfo
 from sib_api_v3_sdk.models.post_contact_info_contacts import PostContactInfoContacts
 from sib_api_v3_sdk.models.post_send_failed import PostSendFailed
@@ -171,6 +176,7 @@ from sib_api_v3_sdk.models.request_contact_export_custom_contact_filter import R
 from sib_api_v3_sdk.models.request_contact_import import RequestContactImport
 from sib_api_v3_sdk.models.request_contact_import_new_list import RequestContactImportNewList
 from sib_api_v3_sdk.models.request_sms_recipient_export import RequestSmsRecipientExport
+from sib_api_v3_sdk.models.schedule_smtp_email import ScheduleSmtpEmail
 from sib_api_v3_sdk.models.send_report import SendReport
 from sib_api_v3_sdk.models.send_report_email import SendReportEmail
 from sib_api_v3_sdk.models.send_sms import SendSms
@@ -202,6 +208,7 @@ from sib_api_v3_sdk.models.sub_account_update_plan_request_features import SubAc
 from sib_api_v3_sdk.models.sub_accounts_response import SubAccountsResponse
 from sib_api_v3_sdk.models.sub_accounts_response_sub_accounts import SubAccountsResponseSubAccounts
 from sib_api_v3_sdk.models.task import Task
+from sib_api_v3_sdk.models.task_list import TaskList
 from sib_api_v3_sdk.models.task_reminder import TaskReminder
 from sib_api_v3_sdk.models.task_types import TaskTypes
 from sib_api_v3_sdk.models.update_attribute import UpdateAttribute

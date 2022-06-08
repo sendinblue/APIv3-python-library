@@ -123,7 +123,7 @@ class Body1(object):
     def duration(self):
         """Gets the duration of this Body1.  # noqa: E501
 
-        Duration of task  # noqa: E501
+        Duration of task in milliseconds [1 minute = 60000 ms]  # noqa: E501
 
         :return: The duration of this Body1.  # noqa: E501
         :rtype: int
@@ -134,7 +134,7 @@ class Body1(object):
     def duration(self, duration):
         """Sets the duration of this Body1.
 
-        Duration of task  # noqa: E501
+        Duration of task in milliseconds [1 minute = 60000 ms]  # noqa: E501
 
         :param duration: The duration of this Body1.  # noqa: E501
         :type: int

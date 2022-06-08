@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **tag** | **str** | Tag of the template | [optional] 
 **sender** | [**UpdateSmtpTemplateSender**](UpdateSmtpTemplateSender.md) |  | [optional] 
 **template_name** | **str** | Name of the template | [optional] 
-**html_content** | **str** | Required if htmlUrl is empty. Body of the message (HTML must have more than 10 characters) | [optional] 
+**html_content** | **str** | Required if htmlUrl is empty. If the template is designed using Drag &amp; Drop editor via HTML content, then the design page will not have Drag &amp; Drop editor access for that template. Body of the message (HTML must have more than 10 characters) | [optional] 
 **html_url** | **str** | Required if htmlContent is empty. URL to the body of the email (HTML) | [optional] 
 **subject** | **str** | Subject of the email | [optional] 
 **reply_to** | **str** | Email on which campaign recipients will be able to reply to | [optional] 

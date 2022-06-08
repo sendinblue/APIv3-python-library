@@ -588,8 +588,8 @@ class EmailCampaignsApi(object):
             params[key] = val
         del params['kwargs']
 
-        if 'limit' in params and params['limit'] > 1000:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `get_email_campaigns`, must be a value less than or equal to `1000`")  # noqa: E501
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_email_campaigns`, must be a value less than or equal to `100`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

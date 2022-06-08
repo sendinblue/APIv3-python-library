@@ -1135,6 +1135,8 @@ class ContactsApi(object):
 
         :param async_req bool
         :param str identifier: Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
+        :param object start_date: **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate 
+        :param object end_date: **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. 
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1157,12 +1159,14 @@ class ContactsApi(object):
 
         :param async_req bool
         :param str identifier: Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
+        :param object start_date: **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate 
+        :param object end_date: **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. 
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['identifier']  # noqa: E501
+        all_params = ['identifier', 'start_date', 'end_date']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1189,6 +1193,10 @@ class ContactsApi(object):
             path_params['identifier'] = params['identifier']  # noqa: E501
 
         query_params = []
+        if 'start_date' in params:
+            query_params.append(('startDate', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('endDate', params['end_date']))  # noqa: E501
 
         header_params = {}
 

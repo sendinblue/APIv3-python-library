@@ -41,6 +41,8 @@ class GetCampaignStats(object):
         'hard_bounces': 'int',
         'unique_views': 'int',
         'trackable_views': 'int',
+        'trackable_views_rate': 'float',
+        'estimated_views': 'int',
         'unsubscriptions': 'int',
         'viewed': 'int',
         'deferred': 'int',
@@ -58,13 +60,15 @@ class GetCampaignStats(object):
         'hard_bounces': 'hardBounces',
         'unique_views': 'uniqueViews',
         'trackable_views': 'trackableViews',
+        'trackable_views_rate': 'trackableViewsRate',
+        'estimated_views': 'estimatedViews',
         'unsubscriptions': 'unsubscriptions',
         'viewed': 'viewed',
         'deferred': 'deferred',
         'return_bounce': 'returnBounce'
     }
 
-    def __init__(self, list_id=None, unique_clicks=None, clickers=None, complaints=None, delivered=None, sent=None, soft_bounces=None, hard_bounces=None, unique_views=None, trackable_views=None, unsubscriptions=None, viewed=None, deferred=None, return_bounce=None):  # noqa: E501
+    def __init__(self, list_id=None, unique_clicks=None, clickers=None, complaints=None, delivered=None, sent=None, soft_bounces=None, hard_bounces=None, unique_views=None, trackable_views=None, trackable_views_rate=None, estimated_views=None, unsubscriptions=None, viewed=None, deferred=None, return_bounce=None):  # noqa: E501
         """GetCampaignStats - a model defined in Swagger"""  # noqa: E501
 
         self._list_id = None
@@ -77,6 +81,8 @@ class GetCampaignStats(object):
         self._hard_bounces = None
         self._unique_views = None
         self._trackable_views = None
+        self._trackable_views_rate = None
+        self._estimated_views = None
         self._unsubscriptions = None
         self._viewed = None
         self._deferred = None
@@ -94,6 +100,10 @@ class GetCampaignStats(object):
         self.hard_bounces = hard_bounces
         self.unique_views = unique_views
         self.trackable_views = trackable_views
+        if trackable_views_rate is not None:
+            self.trackable_views_rate = trackable_views_rate
+        if estimated_views is not None:
+            self.estimated_views = estimated_views
         self.unsubscriptions = unsubscriptions
         self.viewed = viewed
         if deferred is not None:
@@ -348,6 +358,52 @@ class GetCampaignStats(object):
             raise ValueError("Invalid value for `trackable_views`, must not be `None`")  # noqa: E501
 
         self._trackable_views = trackable_views
+
+    @property
+    def trackable_views_rate(self):
+        """Gets the trackable_views_rate of this GetCampaignStats.  # noqa: E501
+
+        Rate of recipients without any privacy protection option enabled in their email client  # noqa: E501
+
+        :return: The trackable_views_rate of this GetCampaignStats.  # noqa: E501
+        :rtype: float
+        """
+        return self._trackable_views_rate
+
+    @trackable_views_rate.setter
+    def trackable_views_rate(self, trackable_views_rate):
+        """Sets the trackable_views_rate of this GetCampaignStats.
+
+        Rate of recipients without any privacy protection option enabled in their email client  # noqa: E501
+
+        :param trackable_views_rate: The trackable_views_rate of this GetCampaignStats.  # noqa: E501
+        :type: float
+        """
+
+        self._trackable_views_rate = trackable_views_rate
+
+    @property
+    def estimated_views(self):
+        """Gets the estimated_views of this GetCampaignStats.  # noqa: E501
+
+        Rate of recipients without any privacy protection option enabled in their email client, applied to all delivered emails  # noqa: E501
+
+        :return: The estimated_views of this GetCampaignStats.  # noqa: E501
+        :rtype: int
+        """
+        return self._estimated_views
+
+    @estimated_views.setter
+    def estimated_views(self, estimated_views):
+        """Sets the estimated_views of this GetCampaignStats.
+
+        Rate of recipients without any privacy protection option enabled in their email client, applied to all delivered emails  # noqa: E501
+
+        :param estimated_views: The estimated_views of this GetCampaignStats.  # noqa: E501
+        :type: int
+        """
+
+        self._estimated_views = estimated_views
 
     @property
     def unsubscriptions(self):
