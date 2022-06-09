@@ -50,7 +50,7 @@ class GetSsoToken(object):
     def token(self):
         """Gets the token of this GetSsoToken.  # noqa: E501
 
-        Session token. It will remain valid for a short period of time only.  # noqa: E501
+        Session token, it will remain valid for 15 days.  # noqa: E501
 
         :return: The token of this GetSsoToken.  # noqa: E501
         :rtype: str
@@ -61,7 +61,7 @@ class GetSsoToken(object):
     def token(self, token):
         """Sets the token of this GetSsoToken.
 
-        Session token. It will remain valid for a short period of time only.  # noqa: E501
+        Session token, it will remain valid for 15 days.  # noqa: E501
 
         :param token: The token of this GetSsoToken.  # noqa: E501
         :type: str

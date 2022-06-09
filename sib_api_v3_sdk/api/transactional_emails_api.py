@@ -423,6 +423,105 @@ class TransactionalEmailsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def delete_scheduled_email_by_id(self, identifier, **kwargs):  # noqa: E501
+        """Delete scheduled emails by batchId or messageId  # noqa: E501
+
+        Delete scheduled batch of emails by batchId or single scheduled email by messageId  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_scheduled_email_by_id(identifier, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str identifier: The `batchId` of scheduled emails batch (Should be a valid UUIDv4) or the `messageId` of scheduled email. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_scheduled_email_by_id_with_http_info(identifier, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_scheduled_email_by_id_with_http_info(identifier, **kwargs)  # noqa: E501
+            return data
+
+    def delete_scheduled_email_by_id_with_http_info(self, identifier, **kwargs):  # noqa: E501
+        """Delete scheduled emails by batchId or messageId  # noqa: E501
+
+        Delete scheduled batch of emails by batchId or single scheduled email by messageId  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_scheduled_email_by_id_with_http_info(identifier, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str identifier: The `batchId` of scheduled emails batch (Should be a valid UUIDv4) or the `messageId` of scheduled email. (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['identifier']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_scheduled_email_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'identifier' is set
+        if ('identifier' not in params or
+                params['identifier'] is None):
+            raise ValueError("Missing the required parameter `identifier` when calling `delete_scheduled_email_by_id`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'identifier' in params:
+            path_params['identifier'] = params['identifier']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/smtp/email/{identifier}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_smtp_template(self, template_id, **kwargs):  # noqa: E501
         """Delete an inactive email template  # noqa: E501
 
@@ -848,6 +947,238 @@ class TransactionalEmailsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='GetEmailEventReport',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_scheduled_email_by_batch_id(self, batch_id, **kwargs):  # noqa: E501
+        """Fetch scheduled emails by batchId  # noqa: E501
+
+        Fetch scheduled batch of emails by batchId (Can retrieve data upto 30 days old)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_scheduled_email_by_batch_id(batch_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str batch_id: The batchId of scheduled emails batch (Should be a valid UUIDv4) (required)
+        :param date start_date: Mandatory if `endDate` is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date.
+        :param date end_date: Mandatory if `startDate` is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
+        :param str status: Filter the records by `status` of the scheduled email batch or message.
+        :param int limit: Number of documents returned per page
+        :param int offset: Index of the first document on the page
+        :return: GetScheduledEmailByBatchId
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_scheduled_email_by_batch_id_with_http_info(batch_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_scheduled_email_by_batch_id_with_http_info(batch_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_scheduled_email_by_batch_id_with_http_info(self, batch_id, **kwargs):  # noqa: E501
+        """Fetch scheduled emails by batchId  # noqa: E501
+
+        Fetch scheduled batch of emails by batchId (Can retrieve data upto 30 days old)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_scheduled_email_by_batch_id_with_http_info(batch_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str batch_id: The batchId of scheduled emails batch (Should be a valid UUIDv4) (required)
+        :param date start_date: Mandatory if `endDate` is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date.
+        :param date end_date: Mandatory if `startDate` is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
+        :param str status: Filter the records by `status` of the scheduled email batch or message.
+        :param int limit: Number of documents returned per page
+        :param int offset: Index of the first document on the page
+        :return: GetScheduledEmailByBatchId
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['batch_id', 'start_date', 'end_date', 'sort', 'status', 'limit', 'offset']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scheduled_email_by_batch_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'batch_id' is set
+        if ('batch_id' not in params or
+                params['batch_id'] is None):
+            raise ValueError("Missing the required parameter `batch_id` when calling `get_scheduled_email_by_batch_id`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 500:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_scheduled_email_by_batch_id`, must be a value less than or equal to `500`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'batch_id' in params:
+            path_params['batchId'] = params['batch_id']  # noqa: E501
+
+        query_params = []
+        if 'start_date' in params:
+            query_params.append(('startDate', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('endDate', params['end_date']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'status' in params:
+            query_params.append(('status', params['status']))  # noqa: E501
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/smtp/emailStatus/{batchId}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetScheduledEmailByBatchId',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_scheduled_email_by_message_id(self, message_id, **kwargs):  # noqa: E501
+        """Fetch scheduled email by messageId  # noqa: E501
+
+        Fetch scheduled email by messageId (Can retrieve data upto 30 days old)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_scheduled_email_by_message_id(message_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str message_id: The messageId of scheduled email (required)
+        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date.
+        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :return: GetScheduledEmailByMessageId
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_scheduled_email_by_message_id_with_http_info(message_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_scheduled_email_by_message_id_with_http_info(message_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_scheduled_email_by_message_id_with_http_info(self, message_id, **kwargs):  # noqa: E501
+        """Fetch scheduled email by messageId  # noqa: E501
+
+        Fetch scheduled email by messageId (Can retrieve data upto 30 days old)  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_scheduled_email_by_message_id_with_http_info(message_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str message_id: The messageId of scheduled email (required)
+        :param date start_date: Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date.
+        :param date end_date: Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month.
+        :return: GetScheduledEmailByMessageId
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['message_id', 'start_date', 'end_date']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_scheduled_email_by_message_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params or
+                params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `get_scheduled_email_by_message_id`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']  # noqa: E501
+
+        query_params = []
+        if 'start_date' in params:
+            query_params.append(('startDate', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('endDate', params['end_date']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/smtp/emailStatus/{messageId}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetScheduledEmailByMessageId',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

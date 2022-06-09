@@ -660,7 +660,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contact_info**
-> GetExtendedContactDetails get_contact_info(identifier)
+> GetExtendedContactDetails get_contact_info(identifier, start_date=start_date, end_date=end_date)
 
 Get a contact's details
 
@@ -688,10 +688,12 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
 identifier = 'identifier_example' # str | Email (urlencoded) OR ID of the contact OR its SMS attribute value
+start_date = NULL # object | **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate  (optional)
+end_date = NULL # object | **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate.  (optional)
 
 try:
     # Get a contact's details
-    api_response = api_instance.get_contact_info(identifier)
+    api_response = api_instance.get_contact_info(identifier, start_date=start_date, end_date=end_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->get_contact_info: %s\n" % e)
@@ -702,6 +704,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| Email (urlencoded) OR ID of the contact OR its SMS attribute value | 
+ **start_date** | [**object**](.md)| **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate  | [optional] 
+ **end_date** | [**object**](.md)| **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate.  | [optional] 
 
 ### Return type
 

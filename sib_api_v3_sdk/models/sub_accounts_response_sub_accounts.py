@@ -62,7 +62,7 @@ class SubAccountsResponseSubAccounts(object):
     def id(self):
         """Gets the id of this SubAccountsResponseSubAccounts.  # noqa: E501
 
-        client id of sub-account organization  # noqa: E501
+        id of the sub-account  # noqa: E501
 
         :return: The id of this SubAccountsResponseSubAccounts.  # noqa: E501
         :rtype: int
@@ -73,7 +73,7 @@ class SubAccountsResponseSubAccounts(object):
     def id(self, id):
         """Sets the id of this SubAccountsResponseSubAccounts.
 
-        client id of sub-account organization  # noqa: E501
+        id of the sub-account  # noqa: E501
 
         :param id: The id of this SubAccountsResponseSubAccounts.  # noqa: E501
         :type: int
@@ -87,7 +87,7 @@ class SubAccountsResponseSubAccounts(object):
     def company_name(self):
         """Gets the company_name of this SubAccountsResponseSubAccounts.  # noqa: E501
 
-        Name of sub-account organization  # noqa: E501
+        Name of the sub-account company  # noqa: E501
 
         :return: The company_name of this SubAccountsResponseSubAccounts.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class SubAccountsResponseSubAccounts(object):
     def company_name(self, company_name):
         """Sets the company_name of this SubAccountsResponseSubAccounts.
 
-        Name of sub-account organization  # noqa: E501
+        Name of the sub-account company  # noqa: E501
 
         :param company_name: The company_name of this SubAccountsResponseSubAccounts.  # noqa: E501
         :type: str
@@ -112,7 +112,7 @@ class SubAccountsResponseSubAccounts(object):
     def active(self):
         """Gets the active of this SubAccountsResponseSubAccounts.  # noqa: E501
 
-        Whether organization is active or not  # noqa: E501
+        Whether the sub-account is active or not  # noqa: E501
 
         :return: The active of this SubAccountsResponseSubAccounts.  # noqa: E501
         :rtype: bool
@@ -123,7 +123,7 @@ class SubAccountsResponseSubAccounts(object):
     def active(self, active):
         """Sets the active of this SubAccountsResponseSubAccounts.
 
-        Whether organization is active or not  # noqa: E501
+        Whether the sub-account is active or not  # noqa: E501
 
         :param active: The active of this SubAccountsResponseSubAccounts.  # noqa: E501
         :type: bool
@@ -137,7 +137,7 @@ class SubAccountsResponseSubAccounts(object):
     def created_at(self):
         """Gets the created_at of this SubAccountsResponseSubAccounts.  # noqa: E501
 
-        timestamp when the organization was created  # noqa: E501
+        Timestamp when the sub-account was created  # noqa: E501
 
         :return: The created_at of this SubAccountsResponseSubAccounts.  # noqa: E501
         :rtype: int
@@ -148,7 +148,7 @@ class SubAccountsResponseSubAccounts(object):
     def created_at(self, created_at):
         """Sets the created_at of this SubAccountsResponseSubAccounts.
 
-        timestamp when the organization was created  # noqa: E501
+        Timestamp when the sub-account was created  # noqa: E501
 
         :param created_at: The created_at of this SubAccountsResponseSubAccounts.  # noqa: E501
         :type: int

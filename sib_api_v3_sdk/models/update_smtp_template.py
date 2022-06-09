@@ -163,7 +163,7 @@ class UpdateSmtpTemplate(object):
     def html_content(self):
         """Gets the html_content of this UpdateSmtpTemplate.  # noqa: E501
 
-        Required if htmlUrl is empty. Body of the message (HTML must have more than 10 characters)  # noqa: E501
+        Required if htmlUrl is empty. If the template is designed using Drag & Drop editor via HTML content, then the design page will not have Drag & Drop editor access for that template. Body of the message (HTML must have more than 10 characters)  # noqa: E501
 
         :return: The html_content of this UpdateSmtpTemplate.  # noqa: E501
         :rtype: str
@@ -174,7 +174,7 @@ class UpdateSmtpTemplate(object):
     def html_content(self, html_content):
         """Sets the html_content of this UpdateSmtpTemplate.
 
-        Required if htmlUrl is empty. Body of the message (HTML must have more than 10 characters)  # noqa: E501
+        Required if htmlUrl is empty. If the template is designed using Drag & Drop editor via HTML content, then the design page will not have Drag & Drop editor access for that template. Body of the message (HTML must have more than 10 characters)  # noqa: E501
 
         :param html_content: The html_content of this UpdateSmtpTemplate.  # noqa: E501
         :type: str

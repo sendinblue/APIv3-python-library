@@ -123,7 +123,7 @@ class Body(object):
     def duration(self):
         """Gets the duration of this Body.  # noqa: E501
 
-        Duration of task  # noqa: E501
+        Duration of task in milliseconds [1 minute = 60000 ms]  # noqa: E501
 
         :return: The duration of this Body.  # noqa: E501
         :rtype: int
@@ -134,11 +134,13 @@ class Body(object):
     def duration(self, duration):
         """Sets the duration of this Body.
 
-        Duration of task  # noqa: E501
+        Duration of task in milliseconds [1 minute = 60000 ms]  # noqa: E501
 
         :param duration: The duration of this Body.  # noqa: E501
         :type: int
         """
+        if duration is not None and duration < 0:  # noqa: E501
+            raise ValueError("Invalid value for `duration`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._duration = duration
 
@@ -171,7 +173,7 @@ class Body(object):
     def _date(self):
         """Gets the _date of this Body.  # noqa: E501
 
-        Task date/time  # noqa: E501
+        Task due date and time  # noqa: E501
 
         :return: The _date of this Body.  # noqa: E501
         :rtype: datetime
@@ -182,7 +184,7 @@ class Body(object):
     def _date(self, _date):
         """Sets the _date of this Body.
 
-        Task date/time  # noqa: E501
+        Task due date and time  # noqa: E501
 
         :param _date: The _date of this Body.  # noqa: E501
         :type: datetime

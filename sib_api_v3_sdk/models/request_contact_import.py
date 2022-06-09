@@ -33,6 +33,7 @@ class RequestContactImport(object):
     swagger_types = {
         'file_url': 'str',
         'file_body': 'str',
+        'json_body': 'list[dict(str, object)]',
         'list_ids': 'list[int]',
         'notify_url': 'str',
         'new_list': 'RequestContactImportNewList',
@@ -45,6 +46,7 @@ class RequestContactImport(object):
     attribute_map = {
         'file_url': 'fileUrl',
         'file_body': 'fileBody',
+        'json_body': 'jsonBody',
         'list_ids': 'listIds',
         'notify_url': 'notifyUrl',
         'new_list': 'newList',
@@ -54,11 +56,12 @@ class RequestContactImport(object):
         'empty_contacts_attributes': 'emptyContactsAttributes'
     }
 
-    def __init__(self, file_url=None, file_body=None, list_ids=None, notify_url=None, new_list=None, email_blacklist=False, sms_blacklist=False, update_existing_contacts=True, empty_contacts_attributes=False):  # noqa: E501
+    def __init__(self, file_url=None, file_body=None, json_body=None, list_ids=None, notify_url=None, new_list=None, email_blacklist=False, sms_blacklist=False, update_existing_contacts=True, empty_contacts_attributes=False):  # noqa: E501
         """RequestContactImport - a model defined in Swagger"""  # noqa: E501
 
         self._file_url = None
         self._file_body = None
+        self._json_body = None
         self._list_ids = None
         self._notify_url = None
         self._new_list = None
@@ -72,6 +75,8 @@ class RequestContactImport(object):
             self.file_url = file_url
         if file_body is not None:
             self.file_body = file_body
+        if json_body is not None:
+            self.json_body = json_body
         if list_ids is not None:
             self.list_ids = list_ids
         if notify_url is not None:
@@ -91,7 +96,7 @@ class RequestContactImport(object):
     def file_url(self):
         """Gets the file_url of this RequestContactImport.  # noqa: E501
 
-        Mandatory if fileBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv  # noqa: E501
+        Mandatory if fileBody or jsonBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv, .json  # noqa: E501
 
         :return: The file_url of this RequestContactImport.  # noqa: E501
         :rtype: str
@@ -102,7 +107,7 @@ class RequestContactImport(object):
     def file_url(self, file_url):
         """Sets the file_url of this RequestContactImport.
 
-        Mandatory if fileBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv  # noqa: E501
+        Mandatory if fileBody or jsonBody is not defined. URL of the file to be imported (no local file). Possible file formats: .txt, .csv, .json  # noqa: E501
 
         :param file_url: The file_url of this RequestContactImport.  # noqa: E501
         :type: str
@@ -114,7 +119,7 @@ class RequestContactImport(object):
     def file_body(self):
         """Gets the file_body of this RequestContactImport.  # noqa: E501
 
-        Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.  # noqa: E501
+        Mandatory if fileUrl and jsonBody is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.  # noqa: E501
 
         :return: The file_body of this RequestContactImport.  # noqa: E501
         :rtype: str
@@ -125,13 +130,36 @@ class RequestContactImport(object):
     def file_body(self, file_body):
         """Sets the file_body of this RequestContactImport.
 
-        Mandatory if fileUrl is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.  # noqa: E501
+        Mandatory if fileUrl and jsonBody is not defined. CSV content to be imported. Use semicolon to separate multiple attributes. Maximum allowed file body size is 10MB . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of file body size while parsing. Please use fileUrl instead to import bigger files.  # noqa: E501
 
         :param file_body: The file_body of this RequestContactImport.  # noqa: E501
         :type: str
         """
 
         self._file_body = file_body
+
+    @property
+    def json_body(self):
+        """Gets the json_body of this RequestContactImport.  # noqa: E501
+
+        **Mandatory if fileUrl and fileBody is not defined.** JSON content to be imported. **Maximum allowed json body size is 10MB** . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of json body size while parsing. Please use fileUrl instead to import bigger files.   # noqa: E501
+
+        :return: The json_body of this RequestContactImport.  # noqa: E501
+        :rtype: list[dict(str, object)]
+        """
+        return self._json_body
+
+    @json_body.setter
+    def json_body(self, json_body):
+        """Sets the json_body of this RequestContactImport.
+
+        **Mandatory if fileUrl and fileBody is not defined.** JSON content to be imported. **Maximum allowed json body size is 10MB** . However we recommend a safe limit of around 8 MB to avoid the issues caused due to increase of json body size while parsing. Please use fileUrl instead to import bigger files.   # noqa: E501
+
+        :param json_body: The json_body of this RequestContactImport.  # noqa: E501
+        :type: list[dict(str, object)]
+        """
+
+        self._json_body = json_body
 
     @property
     def list_ids(self):

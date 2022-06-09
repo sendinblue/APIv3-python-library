@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Name of task | 
-**duration** | **int** | Duration of task | [optional] 
+**duration** | **int** | Duration of task in milliseconds [1 minute &#x3D; 60000 ms] | [optional] 
 **task_type_id** | **str** | Id for type of task e.g Call / Email / Meeting etc. | 
-**_date** | **datetime** | Task date/time | 
+**_date** | **datetime** | Task due date and time | 
 **notes** | **str** | Notes added to a task | [optional] 
 **done** | **bool** | Task marked as done | [optional] 
 **assign_to_id** | **str** | User id to whom task is assigned | [optional] 

@@ -8,10 +8,13 @@ Method | HTTP request | Description
 [**create_smtp_template**](TransactionalEmailsApi.md#create_smtp_template) | **POST** /smtp/templates | Create an email template
 [**delete_blocked_domain**](TransactionalEmailsApi.md#delete_blocked_domain) | **DELETE** /smtp/blockedDomains/{domain} | Unblock an existing domain from the list of blocked domains
 [**delete_hardbounces**](TransactionalEmailsApi.md#delete_hardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
+[**delete_scheduled_email_by_id**](TransactionalEmailsApi.md#delete_scheduled_email_by_id) | **DELETE** /smtp/email/{identifier} | Delete scheduled emails by batchId or messageId
 [**delete_smtp_template**](TransactionalEmailsApi.md#delete_smtp_template) | **DELETE** /smtp/templates/{templateId} | Delete an inactive email template
 [**get_aggregated_smtp_report**](TransactionalEmailsApi.md#get_aggregated_smtp_report) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
 [**get_blocked_domains**](TransactionalEmailsApi.md#get_blocked_domains) | **GET** /smtp/blockedDomains | Get the list of blocked domains
 [**get_email_event_report**](TransactionalEmailsApi.md#get_email_event_report) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
+[**get_scheduled_email_by_batch_id**](TransactionalEmailsApi.md#get_scheduled_email_by_batch_id) | **GET** /smtp/emailStatus/{batchId} | Fetch scheduled emails by batchId
+[**get_scheduled_email_by_message_id**](TransactionalEmailsApi.md#get_scheduled_email_by_message_id) | **GET** /smtp/emailStatus/{messageId} | Fetch scheduled email by messageId
 [**get_smtp_report**](TransactionalEmailsApi.md#get_smtp_report) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
 [**get_smtp_template**](TransactionalEmailsApi.md#get_smtp_template) | **GET** /smtp/templates/{templateId} | Returns the template information
 [**get_smtp_templates**](TransactionalEmailsApi.md#get_smtp_templates) | **GET** /smtp/templates | Get the list of email templates
@@ -240,6 +243,64 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delete_hardbounces** | [**DeleteHardbounces**](DeleteHardbounces.md)| values to delete hardbounces | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_scheduled_email_by_id**
+> delete_scheduled_email_by_id(identifier)
+
+Delete scheduled emails by batchId or messageId
+
+Delete scheduled batch of emails by batchId or single scheduled email by messageId
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
+identifier = 'identifier_example' # str | The `batchId` of scheduled emails batch (Should be a valid UUIDv4) or the `messageId` of scheduled email.
+
+try:
+    # Delete scheduled emails by batchId or messageId
+    api_instance.delete_scheduled_email_by_id(identifier)
+except ApiException as e:
+    print("Exception when calling TransactionalEmailsApi->delete_scheduled_email_by_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | **str**| The &#x60;batchId&#x60; of scheduled emails batch (Should be a valid UUIDv4) or the &#x60;messageId&#x60; of scheduled email. | 
 
 ### Return type
 
@@ -499,6 +560,140 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetEmailEventReport**](GetEmailEventReport.md)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_scheduled_email_by_batch_id**
+> GetScheduledEmailByBatchId get_scheduled_email_by_batch_id(batch_id, start_date=start_date, end_date=end_date, sort=sort, status=status, limit=limit, offset=offset)
+
+Fetch scheduled emails by batchId
+
+Fetch scheduled batch of emails by batchId (Can retrieve data upto 30 days old)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
+batch_id = 'batch_id_example' # str | The batchId of scheduled emails batch (Should be a valid UUIDv4)
+start_date = '2013-10-20' # date | Mandatory if `endDate` is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+end_date = '2013-10-20' # date | Mandatory if `startDate` is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
+status = 'status_example' # str | Filter the records by `status` of the scheduled email batch or message. (optional)
+limit = 100 # int | Number of documents returned per page (optional) (default to 100)
+offset = 0 # int | Index of the first document on the page (optional) (default to 0)
+
+try:
+    # Fetch scheduled emails by batchId
+    api_response = api_instance.get_scheduled_email_by_batch_id(batch_id, start_date=start_date, end_date=end_date, sort=sort, status=status, limit=limit, offset=offset)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TransactionalEmailsApi->get_scheduled_email_by_batch_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **batch_id** | **str**| The batchId of scheduled emails batch (Should be a valid UUIDv4) | 
+ **start_date** | **date**| Mandatory if &#x60;endDate&#x60; is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. | [optional] 
+ **end_date** | **date**| Mandatory if &#x60;startDate&#x60; is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
+ **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
+ **status** | **str**| Filter the records by &#x60;status&#x60; of the scheduled email batch or message. | [optional] 
+ **limit** | **int**| Number of documents returned per page | [optional] [default to 100]
+ **offset** | **int**| Index of the first document on the page | [optional] [default to 0]
+
+### Return type
+
+[**GetScheduledEmailByBatchId**](GetScheduledEmailByBatchId.md)
+
+### Authorization
+
+[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_scheduled_email_by_message_id**
+> GetScheduledEmailByMessageId get_scheduled_email_by_message_id(message_id, start_date=start_date, end_date=end_date)
+
+Fetch scheduled email by messageId
+
+Fetch scheduled email by messageId (Can retrieve data upto 30 days old)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: api-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+# Configure API key authorization: partner-key
+configuration = sib_api_v3_sdk.Configuration()
+configuration.api_key['partner-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['partner-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
+message_id = 'message_id_example' # str | The messageId of scheduled email
+start_date = '2013-10-20' # date | Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. (optional)
+end_date = '2013-10-20' # date | Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. (optional)
+
+try:
+    # Fetch scheduled email by messageId
+    api_response = api_instance.get_scheduled_email_by_message_id(message_id, start_date=start_date, end_date=end_date)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TransactionalEmailsApi->get_scheduled_email_by_message_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **message_id** | **str**| The messageId of scheduled email | 
+ **start_date** | **date**| Mandatory if endDate is used. Starting date (YYYY-MM-DD) from which you want to fetch the list. Can be maximum 30 days older tha current date. | [optional] 
+ **end_date** | **date**| Mandatory if startDate is used. Ending date (YYYY-MM-DD) till which you want to fetch the list. Maximum time period that can be selected is one month. | [optional] 
+
+### Return type
+
+[**GetScheduledEmailByMessageId**](GetScheduledEmailByMessageId.md)
 
 ### Authorization
 

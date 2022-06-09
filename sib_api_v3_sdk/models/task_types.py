@@ -32,28 +32,23 @@ class TaskTypes(object):
     """
     swagger_types = {
         'id': 'str',
-        'icon': 'str',
         'title': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'icon': 'icon',
         'title': 'title'
     }
 
-    def __init__(self, id=None, icon=None, title=None):  # noqa: E501
+    def __init__(self, id=None, title=None):  # noqa: E501
         """TaskTypes - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._icon = None
         self._title = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if icon is not None:
-            self.icon = icon
         if title is not None:
             self.title = title
 
@@ -79,29 +74,6 @@ class TaskTypes(object):
         """
 
         self._id = id
-
-    @property
-    def icon(self):
-        """Gets the icon of this TaskTypes.  # noqa: E501
-
-        Icon of task type  # noqa: E501
-
-        :return: The icon of this TaskTypes.  # noqa: E501
-        :rtype: str
-        """
-        return self._icon
-
-    @icon.setter
-    def icon(self, icon):
-        """Sets the icon of this TaskTypes.
-
-        Icon of task type  # noqa: E501
-
-        :param icon: The icon of this TaskTypes.  # noqa: E501
-        :type: str
-        """
-
-        self._icon = icon
 
     @property
     def title(self):

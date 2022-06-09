@@ -92,14 +92,12 @@ Class | Method | HTTP request | Description
 *AttributesApi* | [**delete_attribute**](docs/AttributesApi.md#delete_attribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Delete an attribute
 *AttributesApi* | [**get_attributes**](docs/AttributesApi.md#get_attributes) | **GET** /contacts/attributes | List all attributes
 *AttributesApi* | [**update_attribute**](docs/AttributesApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
-*CRMApi* | [**crm_files_id_data_get**](docs/CRMApi.md#crm_files_id_data_get) | **GET** /crm/files/{id}/data | Get file details
-*CRMApi* | [**crm_files_id_delete**](docs/CRMApi.md#crm_files_id_delete) | **DELETE** /crm/files/{id} | Delete a file
-*CRMApi* | [**crm_files_id_get**](docs/CRMApi.md#crm_files_id_get) | **GET** /crm/files/{id} | Download a file
-*CRMApi* | [**crm_files_post**](docs/CRMApi.md#crm_files_post) | **POST** /crm/files | Upload a file
+*CRMApi* | [**crm_notes_get**](docs/CRMApi.md#crm_notes_get) | **GET** /crm/notes | Get all notes
 *CRMApi* | [**crm_notes_id_delete**](docs/CRMApi.md#crm_notes_id_delete) | **DELETE** /crm/notes/{id} | Delete a note
 *CRMApi* | [**crm_notes_id_get**](docs/CRMApi.md#crm_notes_id_get) | **GET** /crm/notes/{id} | Get a note
 *CRMApi* | [**crm_notes_id_patch**](docs/CRMApi.md#crm_notes_id_patch) | **PATCH** /crm/notes/{id} | Update a note
 *CRMApi* | [**crm_notes_post**](docs/CRMApi.md#crm_notes_post) | **POST** /crm/notes | Create a note
+*CRMApi* | [**crm_tasks_get**](docs/CRMApi.md#crm_tasks_get) | **GET** /crm/tasks | Get all tasks
 *CRMApi* | [**crm_tasks_id_delete**](docs/CRMApi.md#crm_tasks_id_delete) | **DELETE** /crm/tasks/{id} | Delete a task
 *CRMApi* | [**crm_tasks_id_get**](docs/CRMApi.md#crm_tasks_id_get) | **GET** /crm/tasks/{id} | Get a task
 *CRMApi* | [**crm_tasks_id_patch**](docs/CRMApi.md#crm_tasks_id_patch) | **PATCH** /crm/tasks/{id} | Update a task
@@ -212,10 +210,13 @@ Class | Method | HTTP request | Description
 *TransactionalEmailsApi* | [**create_smtp_template**](docs/TransactionalEmailsApi.md#create_smtp_template) | **POST** /smtp/templates | Create an email template
 *TransactionalEmailsApi* | [**delete_blocked_domain**](docs/TransactionalEmailsApi.md#delete_blocked_domain) | **DELETE** /smtp/blockedDomains/{domain} | Unblock an existing domain from the list of blocked domains
 *TransactionalEmailsApi* | [**delete_hardbounces**](docs/TransactionalEmailsApi.md#delete_hardbounces) | **POST** /smtp/deleteHardbounces | Delete hardbounces
+*TransactionalEmailsApi* | [**delete_scheduled_email_by_id**](docs/TransactionalEmailsApi.md#delete_scheduled_email_by_id) | **DELETE** /smtp/email/{identifier} | Delete scheduled emails by batchId or messageId
 *TransactionalEmailsApi* | [**delete_smtp_template**](docs/TransactionalEmailsApi.md#delete_smtp_template) | **DELETE** /smtp/templates/{templateId} | Delete an inactive email template
 *TransactionalEmailsApi* | [**get_aggregated_smtp_report**](docs/TransactionalEmailsApi.md#get_aggregated_smtp_report) | **GET** /smtp/statistics/aggregatedReport | Get your transactional email activity aggregated over a period of time
 *TransactionalEmailsApi* | [**get_blocked_domains**](docs/TransactionalEmailsApi.md#get_blocked_domains) | **GET** /smtp/blockedDomains | Get the list of blocked domains
 *TransactionalEmailsApi* | [**get_email_event_report**](docs/TransactionalEmailsApi.md#get_email_event_report) | **GET** /smtp/statistics/events | Get all your transactional email activity (unaggregated events)
+*TransactionalEmailsApi* | [**get_scheduled_email_by_batch_id**](docs/TransactionalEmailsApi.md#get_scheduled_email_by_batch_id) | **GET** /smtp/emailStatus/{batchId} | Fetch scheduled emails by batchId
+*TransactionalEmailsApi* | [**get_scheduled_email_by_message_id**](docs/TransactionalEmailsApi.md#get_scheduled_email_by_message_id) | **GET** /smtp/emailStatus/{messageId} | Fetch scheduled email by messageId
 *TransactionalEmailsApi* | [**get_smtp_report**](docs/TransactionalEmailsApi.md#get_smtp_report) | **GET** /smtp/statistics/reports | Get your transactional email activity aggregated per day
 *TransactionalEmailsApi* | [**get_smtp_template**](docs/TransactionalEmailsApi.md#get_smtp_template) | **GET** /smtp/templates/{templateId} | Returns the template information
 *TransactionalEmailsApi* | [**get_smtp_templates**](docs/TransactionalEmailsApi.md#get_smtp_templates) | **GET** /smtp/templates | Get the list of email templates
@@ -248,7 +249,6 @@ Class | Method | HTTP request | Description
  - [BlockDomain](docs/BlockDomain.md)
  - [Body](docs/Body.md)
  - [Body1](docs/Body1.md)
- - [Contact](docs/Contact.md)
  - [CreateAttribute](docs/CreateAttribute.md)
  - [CreateAttributeEnumeration](docs/CreateAttributeEnumeration.md)
  - [CreateChild](docs/CreateChild.md)
@@ -269,6 +269,7 @@ Class | Method | HTTP request | Description
  - [CreateSmtpTemplate](docs/CreateSmtpTemplate.md)
  - [CreateSmtpTemplateSender](docs/CreateSmtpTemplateSender.md)
  - [CreateSubAccount](docs/CreateSubAccount.md)
+ - [CreateSubAccountResponse](docs/CreateSubAccountResponse.md)
  - [CreateUpdateContactModel](docs/CreateUpdateContactModel.md)
  - [CreateUpdateFolder](docs/CreateUpdateFolder.md)
  - [CreateWebhook](docs/CreateWebhook.md)
@@ -276,7 +277,6 @@ Class | Method | HTTP request | Description
  - [DeleteHardbounces](docs/DeleteHardbounces.md)
  - [EmailExportRecipients](docs/EmailExportRecipients.md)
  - [ErrorModel](docs/ErrorModel.md)
- - [FileData](docs/FileData.md)
  - [GetAccountMarketingAutomation](docs/GetAccountMarketingAutomation.md)
  - [GetAccountPlan](docs/GetAccountPlan.md)
  - [GetAccountRelay](docs/GetAccountRelay.md)
@@ -341,6 +341,9 @@ Class | Method | HTTP request | Description
  - [GetProcesses](docs/GetProcesses.md)
  - [GetReports](docs/GetReports.md)
  - [GetReportsReports](docs/GetReportsReports.md)
+ - [GetScheduledEmailByBatchId](docs/GetScheduledEmailByBatchId.md)
+ - [GetScheduledEmailByBatchIdBatches](docs/GetScheduledEmailByBatchIdBatches.md)
+ - [GetScheduledEmailByMessageId](docs/GetScheduledEmailByMessageId.md)
  - [GetSendersList](docs/GetSendersList.md)
  - [GetSendersListIps](docs/GetSendersListIps.md)
  - [GetSendersListSenders](docs/GetSendersListSenders.md)
@@ -369,6 +372,7 @@ Class | Method | HTTP request | Description
  - [GetTransacSmsReportReports](docs/GetTransacSmsReportReports.md)
  - [GetWebhook](docs/GetWebhook.md)
  - [GetWebhooks](docs/GetWebhooks.md)
+ - [InlineResponse201](docs/InlineResponse201.md)
  - [ManageIp](docs/ManageIp.md)
  - [MasterDetailsResponse](docs/MasterDetailsResponse.md)
  - [MasterDetailsResponseBillingInfo](docs/MasterDetailsResponseBillingInfo.md)
@@ -378,6 +382,8 @@ Class | Method | HTTP request | Description
  - [MasterDetailsResponsePlanInfoFeatures](docs/MasterDetailsResponsePlanInfoFeatures.md)
  - [Note](docs/Note.md)
  - [NoteData](docs/NoteData.md)
+ - [NoteId](docs/NoteId.md)
+ - [NoteList](docs/NoteList.md)
  - [PostContactInfo](docs/PostContactInfo.md)
  - [PostContactInfoContacts](docs/PostContactInfoContacts.md)
  - [PostSendFailed](docs/PostSendFailed.md)
@@ -392,6 +398,7 @@ Class | Method | HTTP request | Description
  - [RequestContactImport](docs/RequestContactImport.md)
  - [RequestContactImportNewList](docs/RequestContactImportNewList.md)
  - [RequestSmsRecipientExport](docs/RequestSmsRecipientExport.md)
+ - [ScheduleSmtpEmail](docs/ScheduleSmtpEmail.md)
  - [SendReport](docs/SendReport.md)
  - [SendReportEmail](docs/SendReportEmail.md)
  - [SendSms](docs/SendSms.md)
@@ -423,6 +430,7 @@ Class | Method | HTTP request | Description
  - [SubAccountsResponse](docs/SubAccountsResponse.md)
  - [SubAccountsResponseSubAccounts](docs/SubAccountsResponseSubAccounts.md)
  - [Task](docs/Task.md)
+ - [TaskList](docs/TaskList.md)
  - [TaskReminder](docs/TaskReminder.md)
  - [TaskTypes](docs/TaskTypes.md)
  - [UpdateAttribute](docs/UpdateAttribute.md)
