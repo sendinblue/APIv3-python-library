@@ -891,8 +891,10 @@ class TransactionalEmailsApi(object):
             params[key] = val
         del params['kwargs']
 
-        if 'limit' in params and params['limit'] > 100:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `get_email_event_report`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] > 5000:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_email_event_report`, must be a value less than or equal to `5000`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_email_event_report`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1026,6 +1028,8 @@ class TransactionalEmailsApi(object):
 
         if 'limit' in params and params['limit'] > 500:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_scheduled_email_by_batch_id`, must be a value less than or equal to `500`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_scheduled_email_by_batch_id`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1252,6 +1256,8 @@ class TransactionalEmailsApi(object):
 
         if 'limit' in params and params['limit'] > 30:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_smtp_report`, must be a value less than or equal to `30`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_smtp_report`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1462,6 +1468,8 @@ class TransactionalEmailsApi(object):
 
         if 'limit' in params and params['limit'] > 1000:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_smtp_templates`, must be a value less than or equal to `1000`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_smtp_templates`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1573,6 +1581,8 @@ class TransactionalEmailsApi(object):
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_transac_blocked_contacts`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_transac_blocked_contacts`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1792,6 +1802,8 @@ class TransactionalEmailsApi(object):
 
         if 'limit' in params and params['limit'] > 1000:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_transac_emails_list`, must be a value less than or equal to `1000`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_transac_emails_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

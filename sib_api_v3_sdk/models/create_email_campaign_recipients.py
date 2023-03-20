@@ -32,25 +32,30 @@ class CreateEmailCampaignRecipients(object):
     """
     swagger_types = {
         'exclusion_list_ids': 'list[int]',
-        'list_ids': 'list[int]'
+        'list_ids': 'list[int]',
+        'segment_ids': 'list[int]'
     }
 
     attribute_map = {
         'exclusion_list_ids': 'exclusionListIds',
-        'list_ids': 'listIds'
+        'list_ids': 'listIds',
+        'segment_ids': 'segmentIds'
     }
 
-    def __init__(self, exclusion_list_ids=None, list_ids=None):  # noqa: E501
+    def __init__(self, exclusion_list_ids=None, list_ids=None, segment_ids=None):  # noqa: E501
         """CreateEmailCampaignRecipients - a model defined in Swagger"""  # noqa: E501
 
         self._exclusion_list_ids = None
         self._list_ids = None
+        self._segment_ids = None
         self.discriminator = None
 
         if exclusion_list_ids is not None:
             self.exclusion_list_ids = exclusion_list_ids
         if list_ids is not None:
             self.list_ids = list_ids
+        if segment_ids is not None:
+            self.segment_ids = segment_ids
 
     @property
     def exclusion_list_ids(self):
@@ -97,6 +102,29 @@ class CreateEmailCampaignRecipients(object):
         """
 
         self._list_ids = list_ids
+
+    @property
+    def segment_ids(self):
+        """Gets the segment_ids of this CreateEmailCampaignRecipients.  # noqa: E501
+
+        Mandatory if listIds are not used. Segment ids to send the campaign to.  # noqa: E501
+
+        :return: The segment_ids of this CreateEmailCampaignRecipients.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._segment_ids
+
+    @segment_ids.setter
+    def segment_ids(self, segment_ids):
+        """Sets the segment_ids of this CreateEmailCampaignRecipients.
+
+        Mandatory if listIds are not used. Segment ids to send the campaign to.  # noqa: E501
+
+        :param segment_ids: The segment_ids of this CreateEmailCampaignRecipients.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._segment_ids = segment_ids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

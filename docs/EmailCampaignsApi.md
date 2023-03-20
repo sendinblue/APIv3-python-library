@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_email_campaign**
-> GetEmailCampaign get_email_campaign(campaign_id)
+> GetEmailCampaign get_email_campaign(campaign_id, statistics=statistics)
 
 Get an email campaign report
 
@@ -277,10 +277,11 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
+statistics = 'statistics_example' # str | Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
 
 try:
     # Get an email campaign report
-    api_response = api_instance.get_email_campaign(campaign_id)
+    api_response = api_instance.get_email_campaign(campaign_id, statistics=statistics)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->get_email_campaign: %s\n" % e)
@@ -291,6 +292,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| Id of the campaign | 
+ **statistics** | **str**| Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. | [optional] 
 
 ### Return type
 
@@ -308,7 +310,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_email_campaigns**
-> GetEmailCampaigns get_email_campaigns(type=type, status=status, start_date=start_date, end_date=end_date, limit=limit, offset=offset, sort=sort)
+> GetEmailCampaigns get_email_campaigns(type=type, status=status, statistics=statistics, start_date=start_date, end_date=end_date, limit=limit, offset=offset, sort=sort, exclude_html_content=exclude_html_content)
 
 Return all your created email campaigns
 
@@ -335,15 +337,17 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 type = 'type_example' # str | Filter on the type of the campaigns (optional)
 status = 'status_example' # str | Filter on the status of the campaign (optional)
+statistics = 'statistics_example' # str | Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. (optional)
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
 limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
+exclude_html_content = true # bool | Use this flag to exclude htmlContent from the response body. If set to **true**, htmlContent field will be returned as empty string in the response body (optional)
 
 try:
     # Return all your created email campaigns
-    api_response = api_instance.get_email_campaigns(type=type, status=status, start_date=start_date, end_date=end_date, limit=limit, offset=offset, sort=sort)
+    api_response = api_instance.get_email_campaigns(type=type, status=status, statistics=statistics, start_date=start_date, end_date=end_date, limit=limit, offset=offset, sort=sort, exclude_html_content=exclude_html_content)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->get_email_campaigns: %s\n" % e)
@@ -355,11 +359,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **str**| Filter on the type of the campaigns | [optional] 
  **status** | **str**| Filter on the status of the campaign | [optional] 
+ **statistics** | **str**| Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response. | [optional] 
  **start_date** | **str**| Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
  **end_date** | **str**| Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
  **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
+ **exclude_html_content** | **bool**| Use this flag to exclude htmlContent from the response body. If set to **true**, htmlContent field will be returned as empty string in the response body | [optional] 
 
 ### Return type
 
@@ -726,7 +732,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_image_to_gallery**
-> upload_image_to_gallery(upload_image)
+> UploadImageModel upload_image_to_gallery(upload_image)
 
 Upload an image to your account's image gallery
 
@@ -755,7 +761,8 @@ upload_image = sib_api_v3_sdk.UploadImageToGallery() # UploadImageToGallery | Pa
 
 try:
     # Upload an image to your account's image gallery
-    api_instance.upload_image_to_gallery(upload_image)
+    api_response = api_instance.upload_image_to_gallery(upload_image)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->upload_image_to_gallery: %s\n" % e)
 ```
@@ -768,7 +775,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**UploadImageModel**](UploadImageModel.md)
 
 ### Authorization
 

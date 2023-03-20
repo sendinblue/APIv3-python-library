@@ -58,7 +58,9 @@ class CreateEmailCampaign(object):
         'winner_delay': 'int',
         'ip_warmup_enable': 'bool',
         'initial_quota': 'int',
-        'increase_rate': 'int'
+        'increase_rate': 'int',
+        'unsubscription_page_id': 'str',
+        'update_form_id': 'str'
     }
 
     attribute_map = {
@@ -89,10 +91,12 @@ class CreateEmailCampaign(object):
         'winner_delay': 'winnerDelay',
         'ip_warmup_enable': 'ipWarmupEnable',
         'initial_quota': 'initialQuota',
-        'increase_rate': 'increaseRate'
+        'increase_rate': 'increaseRate',
+        'unsubscription_page_id': 'unsubscriptionPageId',
+        'update_form_id': 'updateFormId'
     }
 
-    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, template_id=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, footer=None, header=None, utm_campaign=None, params=None, send_at_best_time=False, ab_testing=False, subject_a=None, subject_b=None, split_rule=None, winner_criteria=None, winner_delay=None, ip_warmup_enable=False, initial_quota=None, increase_rate=None):  # noqa: E501
+    def __init__(self, tag=None, sender=None, name=None, html_content=None, html_url=None, template_id=None, scheduled_at=None, subject=None, reply_to=None, to_field=None, recipients=None, attachment_url=None, inline_image_activation=False, mirror_active=None, footer=None, header=None, utm_campaign=None, params=None, send_at_best_time=False, ab_testing=False, subject_a=None, subject_b=None, split_rule=None, winner_criteria=None, winner_delay=None, ip_warmup_enable=False, initial_quota=None, increase_rate=None, unsubscription_page_id=None, update_form_id=None):  # noqa: E501
         """CreateEmailCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._tag = None
@@ -123,6 +127,8 @@ class CreateEmailCampaign(object):
         self._ip_warmup_enable = None
         self._initial_quota = None
         self._increase_rate = None
+        self._unsubscription_page_id = None
+        self._update_form_id = None
         self.discriminator = None
 
         if tag is not None:
@@ -179,6 +185,10 @@ class CreateEmailCampaign(object):
             self.initial_quota = initial_quota
         if increase_rate is not None:
             self.increase_rate = increase_rate
+        if unsubscription_page_id is not None:
+            self.unsubscription_page_id = unsubscription_page_id
+        if update_form_id is not None:
+            self.update_form_id = update_form_id
 
     @property
     def tag(self):
@@ -841,6 +851,52 @@ class CreateEmailCampaign(object):
             raise ValueError("Invalid value for `increase_rate`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._increase_rate = increase_rate
+
+    @property
+    def unsubscription_page_id(self):
+        """Gets the unsubscription_page_id of this CreateEmailCampaign.  # noqa: E501
+
+        Enter an unsubscription page id. The page id is a 24 digit alphanumeric id that can be found in the URL when editing the page. If not entered, then the default unsubscription page will be used.  # noqa: E501
+
+        :return: The unsubscription_page_id of this CreateEmailCampaign.  # noqa: E501
+        :rtype: str
+        """
+        return self._unsubscription_page_id
+
+    @unsubscription_page_id.setter
+    def unsubscription_page_id(self, unsubscription_page_id):
+        """Sets the unsubscription_page_id of this CreateEmailCampaign.
+
+        Enter an unsubscription page id. The page id is a 24 digit alphanumeric id that can be found in the URL when editing the page. If not entered, then the default unsubscription page will be used.  # noqa: E501
+
+        :param unsubscription_page_id: The unsubscription_page_id of this CreateEmailCampaign.  # noqa: E501
+        :type: str
+        """
+
+        self._unsubscription_page_id = unsubscription_page_id
+
+    @property
+    def update_form_id(self):
+        """Gets the update_form_id of this CreateEmailCampaign.  # noqa: E501
+
+        Mandatory if templateId is used containing the {{ update_profile }} tag. Enter an update profile form id. The form id is a 24 digit alphanumeric id that can be found in the URL when editing the form. If not entered, then the default update profile form will be used.  # noqa: E501
+
+        :return: The update_form_id of this CreateEmailCampaign.  # noqa: E501
+        :rtype: str
+        """
+        return self._update_form_id
+
+    @update_form_id.setter
+    def update_form_id(self, update_form_id):
+        """Sets the update_form_id of this CreateEmailCampaign.
+
+        Mandatory if templateId is used containing the {{ update_profile }} tag. Enter an update profile form id. The form id is a 24 digit alphanumeric id that can be found in the URL when editing the form. If not entered, then the default update profile form will be used.  # noqa: E501
+
+        :param update_form_id: The update_form_id of this CreateEmailCampaign.  # noqa: E501
+        :type: str
+        """
+
+        self._update_form_id = update_form_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

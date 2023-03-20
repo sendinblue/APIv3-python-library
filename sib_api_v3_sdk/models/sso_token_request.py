@@ -32,24 +32,29 @@ class SsoTokenRequest(object):
     """
     swagger_types = {
         'id': 'int',
-        'email': 'str'
+        'email': 'str',
+        'target': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'email': 'email'
+        'email': 'email',
+        'target': 'target'
     }
 
-    def __init__(self, id=None, email=None):  # noqa: E501
+    def __init__(self, id=None, email=None, target=None):  # noqa: E501
         """SsoTokenRequest - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._email = None
+        self._target = None
         self.discriminator = None
 
         self.id = id
         if email is not None:
             self.email = email
+        if target is not None:
+            self.target = target
 
     @property
     def id(self):
@@ -98,6 +103,35 @@ class SsoTokenRequest(object):
         """
 
         self._email = email
+
+    @property
+    def target(self):
+        """Gets the target of this SsoTokenRequest.  # noqa: E501
+
+        Set target after login success * automation - Redirect to Automation after login * email_campaign - Redirect to Email Campaign after login * contacts - Redirect to Contacts after login * landing_pages - Redirect to Landing Pages after login * email_transactional - Redirect to Email Transactional after login * senders - Redirect to Contacts after login * sms_campaign - Redirect to Sms Campaign after login * sms_transactional - Redirect to Sms Transactional after login   # noqa: E501
+
+        :return: The target of this SsoTokenRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this SsoTokenRequest.
+
+        Set target after login success * automation - Redirect to Automation after login * email_campaign - Redirect to Email Campaign after login * contacts - Redirect to Contacts after login * landing_pages - Redirect to Landing Pages after login * email_transactional - Redirect to Email Transactional after login * senders - Redirect to Contacts after login * sms_campaign - Redirect to Sms Campaign after login * sms_transactional - Redirect to Sms Transactional after login   # noqa: E501
+
+        :param target: The target of this SsoTokenRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["automation", "email_campaign", "contacts", "landing_pages", "email_transactional", "senders", "sms_campaign", "sms_transactional"]  # noqa: E501
+        if target not in allowed_values:
+            raise ValueError(
+                "Invalid value for `target` ({0}), must be one of {1}"  # noqa: E501
+                .format(target, allowed_values)
+            )
+
+        self._target = target
 
     def to_dict(self):
         """Returns the model properties as a dict"""

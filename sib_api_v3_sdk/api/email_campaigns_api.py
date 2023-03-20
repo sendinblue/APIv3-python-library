@@ -437,6 +437,7 @@ class EmailCampaignsApi(object):
 
         :param async_req bool
         :param int campaign_id: Id of the campaign (required)
+        :param str statistics: Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response.
         :return: GetEmailCampaign
                  If the method is called asynchronously,
                  returns the request thread.
@@ -458,12 +459,13 @@ class EmailCampaignsApi(object):
 
         :param async_req bool
         :param int campaign_id: Id of the campaign (required)
+        :param str statistics: Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response.
         :return: GetEmailCampaign
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['campaign_id']  # noqa: E501
+        all_params = ['campaign_id', 'statistics']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -490,6 +492,8 @@ class EmailCampaignsApi(object):
             path_params['campaignId'] = params['campaign_id']  # noqa: E501
 
         query_params = []
+        if 'statistics' in params:
+            query_params.append(('statistics', params['statistics']))  # noqa: E501
 
         header_params = {}
 
@@ -535,11 +539,13 @@ class EmailCampaignsApi(object):
         :param async_req bool
         :param str type: Filter on the type of the campaigns
         :param str status: Filter on the status of the campaign
+        :param str statistics: Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response.
         :param str start_date: Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param str end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number of documents per page
         :param int offset: Index of the first document in the page
         :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
+        :param bool exclude_html_content: Use this flag to exclude htmlContent from the response body. If set to **true**, htmlContent field will be returned as empty string in the response body
         :return: GetEmailCampaigns
                  If the method is called asynchronously,
                  returns the request thread.
@@ -562,17 +568,19 @@ class EmailCampaignsApi(object):
         :param async_req bool
         :param str type: Filter on the type of the campaigns
         :param str status: Filter on the status of the campaign
+        :param str statistics: Filter on the type of statistics required. Example **globalStats** value will only fetch globalStats info of the campaign in returned response.
         :param str start_date: Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param str end_date: Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' )
         :param int limit: Number of documents per page
         :param int offset: Index of the first document in the page
         :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
+        :param bool exclude_html_content: Use this flag to exclude htmlContent from the response body. If set to **true**, htmlContent field will be returned as empty string in the response body
         :return: GetEmailCampaigns
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['type', 'status', 'start_date', 'end_date', 'limit', 'offset', 'sort']  # noqa: E501
+        all_params = ['type', 'status', 'statistics', 'start_date', 'end_date', 'limit', 'offset', 'sort', 'exclude_html_content']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -590,6 +598,8 @@ class EmailCampaignsApi(object):
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_email_campaigns`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_email_campaigns`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -599,6 +609,8 @@ class EmailCampaignsApi(object):
             query_params.append(('type', params['type']))  # noqa: E501
         if 'status' in params:
             query_params.append(('status', params['status']))  # noqa: E501
+        if 'statistics' in params:
+            query_params.append(('statistics', params['statistics']))  # noqa: E501
         if 'start_date' in params:
             query_params.append(('startDate', params['start_date']))  # noqa: E501
         if 'end_date' in params:
@@ -609,6 +621,8 @@ class EmailCampaignsApi(object):
             query_params.append(('offset', params['offset']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'exclude_html_content' in params:
+            query_params.append(('excludeHtmlContent', params['exclude_html_content']))  # noqa: E501
 
         header_params = {}
 
@@ -1271,7 +1285,7 @@ class EmailCampaignsApi(object):
 
         :param async_req bool
         :param UploadImageToGallery upload_image: Parameters to upload an image (required)
-        :return: None
+        :return: UploadImageModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1292,7 +1306,7 @@ class EmailCampaignsApi(object):
 
         :param async_req bool
         :param UploadImageToGallery upload_image: Parameters to upload an image (required)
-        :return: None
+        :return: UploadImageModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1350,7 +1364,7 @@ class EmailCampaignsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='UploadImageModel',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

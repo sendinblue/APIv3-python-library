@@ -688,8 +688,8 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration))
 identifier = 'identifier_example' # str | Email (urlencoded) OR ID of the contact OR its SMS attribute value
-start_date = NULL # object | **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate  (optional)
-end_date = NULL # object | **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate.  (optional)
+start_date = 'start_date_example' # str | **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate  (optional)
+end_date = 'end_date_example' # str | **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate.  (optional)
 
 try:
     # Get a contact's details
@@ -704,8 +704,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **identifier** | **str**| Email (urlencoded) OR ID of the contact OR its SMS attribute value | 
- **start_date** | [**object**](.md)| **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate  | [optional] 
- **end_date** | [**object**](.md)| **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate.  | [optional] 
+ **start_date** | **str**| **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate  | [optional] 
+ **end_date** | **str**| **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate.  | [optional] 
 
 ### Return type
 
@@ -784,7 +784,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_contacts**
-> GetContacts get_contacts(limit=limit, offset=offset, modified_since=modified_since, sort=sort)
+> GetContacts get_contacts(limit=limit, offset=offset, modified_since=modified_since, created_since=created_since, sort=sort)
 
 Get all the contacts
 
@@ -812,11 +812,12 @@ api_instance = sib_api_v3_sdk.ContactsApi(sib_api_v3_sdk.ApiClient(configuration
 limit = 50 # int | Number of documents per page (optional) (default to 50)
 offset = 0 # int | Index of the first document of the page (optional) (default to 0)
 modified_since = 'modified_since_example' # str | Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
+created_since = 'created_since_example' # str | Filter (urlencoded) the contacts created after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. (optional)
 sort = 'desc' # str | Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed (optional) (default to desc)
 
 try:
     # Get all the contacts
-    api_response = api_instance.get_contacts(limit=limit, offset=offset, modified_since=modified_since, sort=sort)
+    api_response = api_instance.get_contacts(limit=limit, offset=offset, modified_since=modified_since, created_since=created_since, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactsApi->get_contacts: %s\n" % e)
@@ -829,6 +830,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Number of documents per page | [optional] [default to 50]
  **offset** | **int**| Index of the first document of the page | [optional] [default to 0]
  **modified_since** | **str**| Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
+ **created_since** | **str**| Filter (urlencoded) the contacts created after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result. | [optional] 
  **sort** | **str**| Sort the results in the ascending/descending order of record creation. Default order is **descending** if &#x60;sort&#x60; is not passed | [optional] [default to desc]
 
 ### Return type

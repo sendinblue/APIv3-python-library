@@ -31,112 +31,51 @@ class FileData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'url': 'str',
-        'id': 'str',
         'name': 'str',
         'author_id': 'str',
-        'author': 'object',
         'contact_id': 'int',
-        'deal_ids': 'list[str]',
+        'deal_id': 'str',
+        'company_id': 'str',
         'size': 'int',
-        'created_at': 'datetime',
-        'updated_at': 'datetime'
+        'created_at': 'datetime'
     }
 
     attribute_map = {
-        'url': 'url',
-        'id': 'id',
         'name': 'name',
         'author_id': 'authorId',
-        'author': 'author',
         'contact_id': 'contactId',
-        'deal_ids': 'dealIds',
+        'deal_id': 'dealId',
+        'company_id': 'companyId',
         'size': 'size',
-        'created_at': 'createdAt',
-        'updated_at': 'updatedAt'
+        'created_at': 'createdAt'
     }
 
-    def __init__(self, url=None, id=None, name=None, author_id=None, author=None, contact_id=None, deal_ids=None, size=None, created_at=None, updated_at=None):  # noqa: E501
+    def __init__(self, name=None, author_id=None, contact_id=None, deal_id=None, company_id=None, size=None, created_at=None):  # noqa: E501
         """FileData - a model defined in Swagger"""  # noqa: E501
 
-        self._url = None
-        self._id = None
         self._name = None
         self._author_id = None
-        self._author = None
         self._contact_id = None
-        self._deal_ids = None
+        self._deal_id = None
+        self._company_id = None
         self._size = None
         self._created_at = None
-        self._updated_at = None
         self.discriminator = None
 
-        if url is not None:
-            self.url = url
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if author_id is not None:
             self.author_id = author_id
-        if author is not None:
-            self.author = author
         if contact_id is not None:
             self.contact_id = contact_id
-        if deal_ids is not None:
-            self.deal_ids = deal_ids
+        if deal_id is not None:
+            self.deal_id = deal_id
+        if company_id is not None:
+            self.company_id = company_id
         if size is not None:
             self.size = size
         if created_at is not None:
             self.created_at = created_at
-        if updated_at is not None:
-            self.updated_at = updated_at
-
-    @property
-    def url(self):
-        """Gets the url of this FileData.  # noqa: E501
-
-        Url of uploaded file  # noqa: E501
-
-        :return: The url of this FileData.  # noqa: E501
-        :rtype: str
-        """
-        return self._url
-
-    @url.setter
-    def url(self, url):
-        """Sets the url of this FileData.
-
-        Url of uploaded file  # noqa: E501
-
-        :param url: The url of this FileData.  # noqa: E501
-        :type: str
-        """
-
-        self._url = url
-
-    @property
-    def id(self):
-        """Gets the id of this FileData.  # noqa: E501
-
-        Id of uploaded file  # noqa: E501
-
-        :return: The id of this FileData.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this FileData.
-
-        Id of uploaded file  # noqa: E501
-
-        :param id: The id of this FileData.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def name(self):
@@ -185,29 +124,6 @@ class FileData(object):
         self._author_id = author_id
 
     @property
-    def author(self):
-        """Gets the author of this FileData.  # noqa: E501
-
-        Account details of user which created the file  # noqa: E501
-
-        :return: The author of this FileData.  # noqa: E501
-        :rtype: object
-        """
-        return self._author
-
-    @author.setter
-    def author(self, author):
-        """Sets the author of this FileData.
-
-        Account details of user which created the file  # noqa: E501
-
-        :param author: The author of this FileData.  # noqa: E501
-        :type: object
-        """
-
-        self._author = author
-
-    @property
     def contact_id(self):
         """Gets the contact_id of this FileData.  # noqa: E501
 
@@ -231,33 +147,56 @@ class FileData(object):
         self._contact_id = contact_id
 
     @property
-    def deal_ids(self):
-        """Gets the deal_ids of this FileData.  # noqa: E501
+    def deal_id(self):
+        """Gets the deal_id of this FileData.  # noqa: E501
 
-        Deal ids linked to a file  # noqa: E501
+        Deal id linked to a file  # noqa: E501
 
-        :return: The deal_ids of this FileData.  # noqa: E501
-        :rtype: list[str]
+        :return: The deal_id of this FileData.  # noqa: E501
+        :rtype: str
         """
-        return self._deal_ids
+        return self._deal_id
 
-    @deal_ids.setter
-    def deal_ids(self, deal_ids):
-        """Sets the deal_ids of this FileData.
+    @deal_id.setter
+    def deal_id(self, deal_id):
+        """Sets the deal_id of this FileData.
 
-        Deal ids linked to a file  # noqa: E501
+        Deal id linked to a file  # noqa: E501
 
-        :param deal_ids: The deal_ids of this FileData.  # noqa: E501
-        :type: list[str]
+        :param deal_id: The deal_id of this FileData.  # noqa: E501
+        :type: str
         """
 
-        self._deal_ids = deal_ids
+        self._deal_id = deal_id
+
+    @property
+    def company_id(self):
+        """Gets the company_id of this FileData.  # noqa: E501
+
+        Company id linked to a file  # noqa: E501
+
+        :return: The company_id of this FileData.  # noqa: E501
+        :rtype: str
+        """
+        return self._company_id
+
+    @company_id.setter
+    def company_id(self, company_id):
+        """Sets the company_id of this FileData.
+
+        Company id linked to a file  # noqa: E501
+
+        :param company_id: The company_id of this FileData.  # noqa: E501
+        :type: str
+        """
+
+        self._company_id = company_id
 
     @property
     def size(self):
         """Gets the size of this FileData.  # noqa: E501
 
-        Size of file uploaded  # noqa: E501
+        Size of file in bytes  # noqa: E501
 
         :return: The size of this FileData.  # noqa: E501
         :rtype: int
@@ -268,7 +207,7 @@ class FileData(object):
     def size(self, size):
         """Sets the size of this FileData.
 
-        Size of file uploaded  # noqa: E501
+        Size of file in bytes  # noqa: E501
 
         :param size: The size of this FileData.  # noqa: E501
         :type: int
@@ -298,29 +237,6 @@ class FileData(object):
         """
 
         self._created_at = created_at
-
-    @property
-    def updated_at(self):
-        """Gets the updated_at of this FileData.  # noqa: E501
-
-        File updated date/time  # noqa: E501
-
-        :return: The updated_at of this FileData.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._updated_at
-
-    @updated_at.setter
-    def updated_at(self, updated_at):
-        """Sets the updated_at of this FileData.
-
-        File updated date/time  # noqa: E501
-
-        :param updated_at: The updated_at of this FileData.  # noqa: E501
-        :type: datetime
-        """
-
-        self._updated_at = updated_at
 
     def to_dict(self):
         """Returns the model properties as a dict"""

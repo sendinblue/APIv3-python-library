@@ -36,7 +36,9 @@ class CreateSmsCampaign(object):
         'content': 'str',
         'recipients': 'CreateSmsCampaignRecipients',
         'scheduled_at': 'str',
-        'unicode_enabled': 'bool'
+        'unicode_enabled': 'bool',
+        'organisation_prefix': 'str',
+        'unsubscribe_instruction': 'str'
     }
 
     attribute_map = {
@@ -45,10 +47,12 @@ class CreateSmsCampaign(object):
         'content': 'content',
         'recipients': 'recipients',
         'scheduled_at': 'scheduledAt',
-        'unicode_enabled': 'unicodeEnabled'
+        'unicode_enabled': 'unicodeEnabled',
+        'organisation_prefix': 'organisationPrefix',
+        'unsubscribe_instruction': 'unsubscribeInstruction'
     }
 
-    def __init__(self, name=None, sender=None, content=None, recipients=None, scheduled_at=None, unicode_enabled=False):  # noqa: E501
+    def __init__(self, name=None, sender=None, content=None, recipients=None, scheduled_at=None, unicode_enabled=False, organisation_prefix=None, unsubscribe_instruction=None):  # noqa: E501
         """CreateSmsCampaign - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
@@ -57,6 +61,8 @@ class CreateSmsCampaign(object):
         self._recipients = None
         self._scheduled_at = None
         self._unicode_enabled = None
+        self._organisation_prefix = None
+        self._unsubscribe_instruction = None
         self.discriminator = None
 
         self.name = name
@@ -68,6 +74,10 @@ class CreateSmsCampaign(object):
             self.scheduled_at = scheduled_at
         if unicode_enabled is not None:
             self.unicode_enabled = unicode_enabled
+        if organisation_prefix is not None:
+            self.organisation_prefix = organisation_prefix
+        if unsubscribe_instruction is not None:
+            self.unsubscribe_instruction = unsubscribe_instruction
 
     @property
     def name(self):
@@ -212,6 +222,52 @@ class CreateSmsCampaign(object):
         """
 
         self._unicode_enabled = unicode_enabled
+
+    @property
+    def organisation_prefix(self):
+        """Gets the organisation_prefix of this CreateSmsCampaign.  # noqa: E501
+
+        A recognizable prefix will ensure your audience knows who you are. Recommended by U.S. carriers. This will be added as your Brand Name before the message content. **Prefer verifying maximum length of 160 characters including this prefix in message content to avoid multiple sending of same sms.**  # noqa: E501
+
+        :return: The organisation_prefix of this CreateSmsCampaign.  # noqa: E501
+        :rtype: str
+        """
+        return self._organisation_prefix
+
+    @organisation_prefix.setter
+    def organisation_prefix(self, organisation_prefix):
+        """Sets the organisation_prefix of this CreateSmsCampaign.
+
+        A recognizable prefix will ensure your audience knows who you are. Recommended by U.S. carriers. This will be added as your Brand Name before the message content. **Prefer verifying maximum length of 160 characters including this prefix in message content to avoid multiple sending of same sms.**  # noqa: E501
+
+        :param organisation_prefix: The organisation_prefix of this CreateSmsCampaign.  # noqa: E501
+        :type: str
+        """
+
+        self._organisation_prefix = organisation_prefix
+
+    @property
+    def unsubscribe_instruction(self):
+        """Gets the unsubscribe_instruction of this CreateSmsCampaign.  # noqa: E501
+
+        Instructions to unsubscribe from future communications. Recommended by U.S. carriers. Must include **STOP** keyword. This will be added as instructions after the end of message content. **Prefer verifying maximum length of 160 characters including this instructions in message content to avoid multiple sending of same sms.**  # noqa: E501
+
+        :return: The unsubscribe_instruction of this CreateSmsCampaign.  # noqa: E501
+        :rtype: str
+        """
+        return self._unsubscribe_instruction
+
+    @unsubscribe_instruction.setter
+    def unsubscribe_instruction(self, unsubscribe_instruction):
+        """Sets the unsubscribe_instruction of this CreateSmsCampaign.
+
+        Instructions to unsubscribe from future communications. Recommended by U.S. carriers. Must include **STOP** keyword. This will be added as instructions after the end of message content. **Prefer verifying maximum length of 160 characters including this instructions in message content to avoid multiple sending of same sms.**  # noqa: E501
+
+        :param unsubscribe_instruction: The unsubscribe_instruction of this CreateSmsCampaign.  # noqa: E501
+        :type: str
+        """
+
+        self._unsubscribe_instruction = unsubscribe_instruction
 
     def to_dict(self):
         """Returns the model properties as a dict"""

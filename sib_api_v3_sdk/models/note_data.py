@@ -33,21 +33,24 @@ class NoteData(object):
     swagger_types = {
         'text': 'str',
         'contact_ids': 'list[int]',
-        'deal_ids': 'list[str]'
+        'deal_ids': 'list[str]',
+        'company_ids': 'list[str]'
     }
 
     attribute_map = {
         'text': 'text',
         'contact_ids': 'contactIds',
-        'deal_ids': 'dealIds'
+        'deal_ids': 'dealIds',
+        'company_ids': 'companyIds'
     }
 
-    def __init__(self, text=None, contact_ids=None, deal_ids=None):  # noqa: E501
+    def __init__(self, text=None, contact_ids=None, deal_ids=None, company_ids=None):  # noqa: E501
         """NoteData - a model defined in Swagger"""  # noqa: E501
 
         self._text = None
         self._contact_ids = None
         self._deal_ids = None
+        self._company_ids = None
         self.discriminator = None
 
         self.text = text
@@ -55,6 +58,8 @@ class NoteData(object):
             self.contact_ids = contact_ids
         if deal_ids is not None:
             self.deal_ids = deal_ids
+        if company_ids is not None:
+            self.company_ids = company_ids
 
     @property
     def text(self):
@@ -130,6 +135,29 @@ class NoteData(object):
         """
 
         self._deal_ids = deal_ids
+
+    @property
+    def company_ids(self):
+        """Gets the company_ids of this NoteData.  # noqa: E501
+
+        Company Ids linked to a note  # noqa: E501
+
+        :return: The company_ids of this NoteData.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._company_ids
+
+    @company_ids.setter
+    def company_ids(self, company_ids):
+        """Sets the company_ids of this NoteData.
+
+        Company Ids linked to a note  # noqa: E501
+
+        :param company_ids: The company_ids of this NoteData.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._company_ids = company_ids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

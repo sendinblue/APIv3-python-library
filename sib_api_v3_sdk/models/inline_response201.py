@@ -50,7 +50,7 @@ class InlineResponse201(object):
     def id(self):
         """Gets the id of this InlineResponse201.  # noqa: E501
 
-        Unique task id  # noqa: E501
+        Unique deal id  # noqa: E501
 
         :return: The id of this InlineResponse201.  # noqa: E501
         :rtype: str
@@ -61,7 +61,7 @@ class InlineResponse201(object):
     def id(self, id):
         """Sets the id of this InlineResponse201.
 
-        Unique task id  # noqa: E501
+        Unique deal id  # noqa: E501
 
         :param id: The id of this InlineResponse201.  # noqa: E501
         :type: str
