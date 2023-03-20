@@ -32,26 +32,31 @@ class CreateAttribute(object):
     """
     swagger_types = {
         'value': 'str',
+        'is_recurring': 'bool',
         'enumeration': 'list[CreateAttributeEnumeration]',
         'type': 'str'
     }
 
     attribute_map = {
         'value': 'value',
+        'is_recurring': 'isRecurring',
         'enumeration': 'enumeration',
         'type': 'type'
     }
 
-    def __init__(self, value=None, enumeration=None, type=None):  # noqa: E501
+    def __init__(self, value=None, is_recurring=None, enumeration=None, type=None):  # noqa: E501
         """CreateAttribute - a model defined in Swagger"""  # noqa: E501
 
         self._value = None
+        self._is_recurring = None
         self._enumeration = None
         self._type = None
         self.discriminator = None
 
         if value is not None:
             self.value = value
+        if is_recurring is not None:
+            self.is_recurring = is_recurring
         if enumeration is not None:
             self.enumeration = enumeration
         if type is not None:
@@ -79,6 +84,29 @@ class CreateAttribute(object):
         """
 
         self._value = value
+
+    @property
+    def is_recurring(self):
+        """Gets the is_recurring of this CreateAttribute.  # noqa: E501
+
+        Type of the attribute. Use only if the attribute's category is 'calculated' or 'global'  # noqa: E501
+
+        :return: The is_recurring of this CreateAttribute.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_recurring
+
+    @is_recurring.setter
+    def is_recurring(self, is_recurring):
+        """Sets the is_recurring of this CreateAttribute.
+
+        Type of the attribute. Use only if the attribute's category is 'calculated' or 'global'  # noqa: E501
+
+        :param is_recurring: The is_recurring of this CreateAttribute.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_recurring = is_recurring
 
     @property
     def enumeration(self):

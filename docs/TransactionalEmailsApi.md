@@ -521,7 +521,7 @@ configuration.api_key['partner-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
-limit = 50 # int | Number limitation for the result returned (optional) (default to 50)
+limit = 2500 # int | Number limitation for the result returned (optional) (default to 2500)
 offset = 0 # int | Beginning point in the list to retrieve from. (optional) (default to 0)
 start_date = 'start_date_example' # str | Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate (optional)
 end_date = 'end_date_example' # str | Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate (optional)
@@ -545,7 +545,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Number limitation for the result returned | [optional] [default to 50]
+ **limit** | **int**| Number limitation for the result returned | [optional] [default to 2500]
  **offset** | **int**| Beginning point in the list to retrieve from. | [optional] [default to 0]
  **start_date** | **str**| Mandatory if endDate is used. Starting date of the report (YYYY-MM-DD). Must be lower than equal to endDate | [optional] 
  **end_date** | **str**| Mandatory if startDate is used. Ending date of the report (YYYY-MM-DD). Must be greater than equal to startDate | [optional] 

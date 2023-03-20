@@ -34,6 +34,7 @@ class UpdateBatchContactsContacts(object):
         'email': 'str',
         'id': 'int',
         'sms': 'str',
+        'ext_id': 'str',
         'attributes': 'dict(str, object)',
         'email_blacklisted': 'bool',
         'sms_blacklisted': 'bool',
@@ -46,6 +47,7 @@ class UpdateBatchContactsContacts(object):
         'email': 'email',
         'id': 'id',
         'sms': 'sms',
+        'ext_id': 'ext_id',
         'attributes': 'attributes',
         'email_blacklisted': 'emailBlacklisted',
         'sms_blacklisted': 'smsBlacklisted',
@@ -54,12 +56,13 @@ class UpdateBatchContactsContacts(object):
         'smtp_blacklist_sender': 'smtpBlacklistSender'
     }
 
-    def __init__(self, email=None, id=None, sms=None, attributes=None, email_blacklisted=None, sms_blacklisted=None, list_ids=None, unlink_list_ids=None, smtp_blacklist_sender=None):  # noqa: E501
+    def __init__(self, email=None, id=None, sms=None, ext_id=None, attributes=None, email_blacklisted=None, sms_blacklisted=None, list_ids=None, unlink_list_ids=None, smtp_blacklist_sender=None):  # noqa: E501
         """UpdateBatchContactsContacts - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
         self._id = None
         self._sms = None
+        self._ext_id = None
         self._attributes = None
         self._email_blacklisted = None
         self._sms_blacklisted = None
@@ -74,6 +77,8 @@ class UpdateBatchContactsContacts(object):
             self.id = id
         if sms is not None:
             self.sms = sms
+        if ext_id is not None:
+            self.ext_id = ext_id
         if attributes is not None:
             self.attributes = attributes
         if email_blacklisted is not None:
@@ -155,6 +160,29 @@ class UpdateBatchContactsContacts(object):
         """
 
         self._sms = sms
+
+    @property
+    def ext_id(self):
+        """Gets the ext_id of this UpdateBatchContactsContacts.  # noqa: E501
+
+        Pass your own Id to update ext_id of a contact.  # noqa: E501
+
+        :return: The ext_id of this UpdateBatchContactsContacts.  # noqa: E501
+        :rtype: str
+        """
+        return self._ext_id
+
+    @ext_id.setter
+    def ext_id(self, ext_id):
+        """Sets the ext_id of this UpdateBatchContactsContacts.
+
+        Pass your own Id to update ext_id of a contact.  # noqa: E501
+
+        :param ext_id: The ext_id of this UpdateBatchContactsContacts.  # noqa: E501
+        :type: str
+        """
+
+        self._ext_id = ext_id
 
     @property
     def attributes(self):

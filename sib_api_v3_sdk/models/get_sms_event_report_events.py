@@ -166,7 +166,7 @@ class GetSmsEventReportEvents(object):
         :param event: The event of this GetSmsEventReportEvents.  # noqa: E501
         :type: str
         """
-        allowed_values = ["bounces", "hardBounces", "softBounces", "delivered", "sent", "accepted", "unsubscription", "replies", "blocked"]  # noqa: E501
+        allowed_values = ["bounces", "hardBounces", "softBounces", "delivered", "sent", "accepted", "unsubscription", "replies", "blocked", "rejected"]  # noqa: E501
         if event not in allowed_values:
             raise ValueError(
                 "Invalid value for `event` ({0}), must be one of {1}"  # noqa: E501

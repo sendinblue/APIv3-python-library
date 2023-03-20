@@ -32,6 +32,7 @@ class UpdateContact(object):
     """
     swagger_types = {
         'attributes': 'object',
+        'ext_id': 'str',
         'email_blacklisted': 'bool',
         'sms_blacklisted': 'bool',
         'list_ids': 'list[int]',
@@ -41,6 +42,7 @@ class UpdateContact(object):
 
     attribute_map = {
         'attributes': 'attributes',
+        'ext_id': 'ext_id',
         'email_blacklisted': 'emailBlacklisted',
         'sms_blacklisted': 'smsBlacklisted',
         'list_ids': 'listIds',
@@ -48,10 +50,11 @@ class UpdateContact(object):
         'smtp_blacklist_sender': 'smtpBlacklistSender'
     }
 
-    def __init__(self, attributes=None, email_blacklisted=None, sms_blacklisted=None, list_ids=None, unlink_list_ids=None, smtp_blacklist_sender=None):  # noqa: E501
+    def __init__(self, attributes=None, ext_id=None, email_blacklisted=None, sms_blacklisted=None, list_ids=None, unlink_list_ids=None, smtp_blacklist_sender=None):  # noqa: E501
         """UpdateContact - a model defined in Swagger"""  # noqa: E501
 
         self._attributes = None
+        self._ext_id = None
         self._email_blacklisted = None
         self._sms_blacklisted = None
         self._list_ids = None
@@ -61,6 +64,8 @@ class UpdateContact(object):
 
         if attributes is not None:
             self.attributes = attributes
+        if ext_id is not None:
+            self.ext_id = ext_id
         if email_blacklisted is not None:
             self.email_blacklisted = email_blacklisted
         if sms_blacklisted is not None:
@@ -94,6 +99,29 @@ class UpdateContact(object):
         """
 
         self._attributes = attributes
+
+    @property
+    def ext_id(self):
+        """Gets the ext_id of this UpdateContact.  # noqa: E501
+
+        Pass your own Id to update ext_id of a contact.  # noqa: E501
+
+        :return: The ext_id of this UpdateContact.  # noqa: E501
+        :rtype: str
+        """
+        return self._ext_id
+
+    @ext_id.setter
+    def ext_id(self, ext_id):
+        """Sets the ext_id of this UpdateContact.
+
+        Pass your own Id to update ext_id of a contact.  # noqa: E501
+
+        :param ext_id: The ext_id of this UpdateContact.  # noqa: E501
+        :type: str
+        """
+
+        self._ext_id = ext_id
 
     @property
     def email_blacklisted(self):

@@ -534,6 +534,105 @@ class MasterAccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def corporate_sub_account_key_post(self, create_api_key_request, **kwargs):  # noqa: E501
+        """Create an API key for a sub-account  # noqa: E501
+
+        This endpoint will generate an API v3 key for a sub account  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.corporate_sub_account_key_post(create_api_key_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CreateApiKeyRequest create_api_key_request: Values to generate API key for sub-account (required)
+        :return: CreateApiKeyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.corporate_sub_account_key_post_with_http_info(create_api_key_request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.corporate_sub_account_key_post_with_http_info(create_api_key_request, **kwargs)  # noqa: E501
+            return data
+
+    def corporate_sub_account_key_post_with_http_info(self, create_api_key_request, **kwargs):  # noqa: E501
+        """Create an API key for a sub-account  # noqa: E501
+
+        This endpoint will generate an API v3 key for a sub account  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.corporate_sub_account_key_post_with_http_info(create_api_key_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CreateApiKeyRequest create_api_key_request: Values to generate API key for sub-account (required)
+        :return: CreateApiKeyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['create_api_key_request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method corporate_sub_account_key_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'create_api_key_request' is set
+        if ('create_api_key_request' not in params or
+                params['create_api_key_request'] is None):
+            raise ValueError("Missing the required parameter `create_api_key_request` when calling `corporate_sub_account_key_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'create_api_key_request' in params:
+            body_params = params['create_api_key_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['api-key', 'partner-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/corporate/subAccount/key', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CreateApiKeyResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def corporate_sub_account_post(self, sub_account_create, **kwargs):  # noqa: E501
         """Create a new sub-account under a master account.  # noqa: E501
 
@@ -636,7 +735,7 @@ class MasterAccountApi(object):
     def corporate_sub_account_sso_token_post(self, sso_token_request, **kwargs):  # noqa: E501
         """Generate SSO token to access Sendinblue  # noqa: E501
 
-        This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://app.sendinblue.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.  # noqa: E501
+        This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://account-app.sendinblue.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.corporate_sub_account_sso_token_post(sso_token_request, async_req=True)
@@ -658,7 +757,7 @@ class MasterAccountApi(object):
     def corporate_sub_account_sso_token_post_with_http_info(self, sso_token_request, **kwargs):  # noqa: E501
         """Generate SSO token to access Sendinblue  # noqa: E501
 
-        This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://app.sendinblue.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.  # noqa: E501
+        This endpoint generates an sso token to authenticate and access a sub-account of the master using the account endpoint https://account-app.sendinblue.com/account/login/sub-account/sso/[token], where [token] will be replaced by the actual token.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.corporate_sub_account_sso_token_post_with_http_info(sso_token_request, async_req=True)

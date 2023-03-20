@@ -65,3 +65,4 @@ target/
 
 # Miscellaneous
 playground.py
+/env

@@ -1135,8 +1135,8 @@ class ContactsApi(object):
 
         :param async_req bool
         :param str identifier: Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
-        :param object start_date: **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate 
-        :param object end_date: **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. 
+        :param str start_date: **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate 
+        :param str end_date: **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. 
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1159,8 +1159,8 @@ class ContactsApi(object):
 
         :param async_req bool
         :param str identifier: Email (urlencoded) OR ID of the contact OR its SMS attribute value (required)
-        :param object start_date: **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate 
-        :param object end_date: **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. 
+        :param str start_date: **Mandatory if endDate is used.** Starting date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be lower than equal to endDate 
+        :param str end_date: **Mandatory if startDate is used.** Ending date (YYYY-MM-DD) of the statistic events specific to campaigns. Must be greater than equal to startDate. 
         :return: GetExtendedContactDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1348,6 +1348,7 @@ class ContactsApi(object):
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :param str modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
+        :param str created_since: Filter (urlencoded) the contacts created after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetContacts
                  If the method is called asynchronously,
@@ -1372,13 +1373,14 @@ class ContactsApi(object):
         :param int limit: Number of documents per page
         :param int offset: Index of the first document of the page
         :param str modified_since: Filter (urlencoded) the contacts modified after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
+        :param str created_since: Filter (urlencoded) the contacts created after a given UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ). Prefer to pass your timezone in date-time format for accurate result.
         :param str sort: Sort the results in the ascending/descending order of record creation. Default order is **descending** if `sort` is not passed
         :return: GetContacts
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'offset', 'modified_since', 'sort']  # noqa: E501
+        all_params = ['limit', 'offset', 'modified_since', 'created_since', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1396,6 +1398,8 @@ class ContactsApi(object):
 
         if 'limit' in params and params['limit'] > 1000:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_contacts`, must be a value less than or equal to `1000`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_contacts`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1407,6 +1411,8 @@ class ContactsApi(object):
             query_params.append(('offset', params['offset']))  # noqa: E501
         if 'modified_since' in params:
             query_params.append(('modifiedSince', params['modified_since']))  # noqa: E501
+        if 'created_since' in params:
+            query_params.append(('createdSince', params['created_since']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
 
@@ -1509,6 +1515,8 @@ class ContactsApi(object):
 
         if 'limit' in params and params['limit'] > 500:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_contacts_from_list`, must be a value less than or equal to `500`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_contacts_from_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1719,6 +1727,8 @@ class ContactsApi(object):
 
         if 'limit' in params and params['limit'] > 50:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_folder_lists`, must be a value less than or equal to `50`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_folder_lists`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1832,6 +1842,8 @@ class ContactsApi(object):
 
         if 'limit' in params and params['limit'] > 50:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_folders`, must be a value less than or equal to `50`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_folders`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2032,6 +2044,8 @@ class ContactsApi(object):
 
         if 'limit' in params and params['limit'] > 50:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_lists`, must be a value less than or equal to `50`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_lists`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

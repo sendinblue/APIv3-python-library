@@ -1095,6 +1095,8 @@ class ResellerApi(object):
 
         if 'limit' in params and params['limit'] > 20:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `get_reseller_childs`, must be a value less than or equal to `20`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `get_reseller_childs`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

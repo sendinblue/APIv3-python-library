@@ -32,6 +32,7 @@ class CreateContact(object):
     """
     swagger_types = {
         'email': 'str',
+        'ext_id': 'str',
         'attributes': 'object',
         'email_blacklisted': 'bool',
         'sms_blacklisted': 'bool',
@@ -42,6 +43,7 @@ class CreateContact(object):
 
     attribute_map = {
         'email': 'email',
+        'ext_id': 'ext_id',
         'attributes': 'attributes',
         'email_blacklisted': 'emailBlacklisted',
         'sms_blacklisted': 'smsBlacklisted',
@@ -50,10 +52,11 @@ class CreateContact(object):
         'smtp_blacklist_sender': 'smtpBlacklistSender'
     }
 
-    def __init__(self, email=None, attributes=None, email_blacklisted=None, sms_blacklisted=None, list_ids=None, update_enabled=False, smtp_blacklist_sender=None):  # noqa: E501
+    def __init__(self, email=None, ext_id=None, attributes=None, email_blacklisted=None, sms_blacklisted=None, list_ids=None, update_enabled=False, smtp_blacklist_sender=None):  # noqa: E501
         """CreateContact - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
+        self._ext_id = None
         self._attributes = None
         self._email_blacklisted = None
         self._sms_blacklisted = None
@@ -64,6 +67,8 @@ class CreateContact(object):
 
         if email is not None:
             self.email = email
+        if ext_id is not None:
+            self.ext_id = ext_id
         if attributes is not None:
             self.attributes = attributes
         if email_blacklisted is not None:
@@ -99,6 +104,29 @@ class CreateContact(object):
         """
 
         self._email = email
+
+    @property
+    def ext_id(self):
+        """Gets the ext_id of this CreateContact.  # noqa: E501
+
+        Pass your own Id to create a contact.  # noqa: E501
+
+        :return: The ext_id of this CreateContact.  # noqa: E501
+        :rtype: str
+        """
+        return self._ext_id
+
+    @ext_id.setter
+    def ext_id(self, ext_id):
+        """Sets the ext_id of this CreateContact.
+
+        Pass your own Id to create a contact.  # noqa: E501
+
+        :param ext_id: The ext_id of this CreateContact.  # noqa: E501
+        :type: str
+        """
+
+        self._ext_id = ext_id
 
     @property
     def attributes(self):

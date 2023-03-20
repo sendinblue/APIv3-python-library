@@ -37,7 +37,8 @@ class SendTransacSms(object):
         'type': 'str',
         'tag': 'str',
         'web_url': 'str',
-        'unicode_enabled': 'bool'
+        'unicode_enabled': 'bool',
+        'organisation_prefix': 'str'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class SendTransacSms(object):
         'type': 'type',
         'tag': 'tag',
         'web_url': 'webUrl',
-        'unicode_enabled': 'unicodeEnabled'
+        'unicode_enabled': 'unicodeEnabled',
+        'organisation_prefix': 'organisationPrefix'
     }
 
-    def __init__(self, sender=None, recipient=None, content=None, type='transactional', tag=None, web_url=None, unicode_enabled=False):  # noqa: E501
+    def __init__(self, sender=None, recipient=None, content=None, type='transactional', tag=None, web_url=None, unicode_enabled=False, organisation_prefix=None):  # noqa: E501
         """SendTransacSms - a model defined in Swagger"""  # noqa: E501
 
         self._sender = None
@@ -60,6 +62,7 @@ class SendTransacSms(object):
         self._tag = None
         self._web_url = None
         self._unicode_enabled = None
+        self._organisation_prefix = None
         self.discriminator = None
 
         self.sender = sender
@@ -73,6 +76,8 @@ class SendTransacSms(object):
             self.web_url = web_url
         if unicode_enabled is not None:
             self.unicode_enabled = unicode_enabled
+        if organisation_prefix is not None:
+            self.organisation_prefix = organisation_prefix
 
     @property
     def sender(self):
@@ -248,6 +253,29 @@ class SendTransacSms(object):
         """
 
         self._unicode_enabled = unicode_enabled
+
+    @property
+    def organisation_prefix(self):
+        """Gets the organisation_prefix of this SendTransacSms.  # noqa: E501
+
+        A recognizable prefix will ensure your audience knows who you are. Recommended by U.S. carriers. This will be added as your Brand Name before the message content. **Prefer verifying maximum length of 160 characters including this prefix in message content to avoid multiple sending of same sms.**  # noqa: E501
+
+        :return: The organisation_prefix of this SendTransacSms.  # noqa: E501
+        :rtype: str
+        """
+        return self._organisation_prefix
+
+    @organisation_prefix.setter
+    def organisation_prefix(self, organisation_prefix):
+        """Sets the organisation_prefix of this SendTransacSms.
+
+        A recognizable prefix will ensure your audience knows who you are. Recommended by U.S. carriers. This will be added as your Brand Name before the message content. **Prefer verifying maximum length of 160 characters including this prefix in message content to avoid multiple sending of same sms.**  # noqa: E501
+
+        :param organisation_prefix: The organisation_prefix of this SendTransacSms.  # noqa: E501
+        :type: str
+        """
+
+        self._organisation_prefix = organisation_prefix
 
     def to_dict(self):
         """Returns the model properties as a dict"""
